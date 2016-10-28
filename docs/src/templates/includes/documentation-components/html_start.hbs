@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js{{#is multiTenant true}} is-multiTenant{{/is}}"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{{title}}{{#if docs}} – JUST EAT Front-End Documentation{{/if}}</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+
+		<!--[if lte IE 8]>
+			<link rel="stylesheet" href="{{ baseUrl }}/assets/dist/css/je-old-ie.css">
+		<![endif]-->
+		<!--[if gt IE 8]><!-->
+			<link rel="stylesheet" href="{{ baseUrl }}/assets/dist/css/je.css">
+		<!--<![endif]-->
+
+		{{#if docs}}
+			<link rel="stylesheet" href="{{ baseUrl }}/assets/dist/css/styleguide.css">
+		{{/if}}
+
+		<script src="{{ baseUrl }}/assets/dist/js/libs/modernizr.js"></script>
+		<script src="{{ baseUrl }}/assets/dist/js/libs/prism.min.js"></script> <!-- Code highlighting for docs -->
+	</head>
+	<body class="{{#is layout 'site-frame'}}{{else}}body-docs{{/is}} {{ bodyClass }}">
+
+

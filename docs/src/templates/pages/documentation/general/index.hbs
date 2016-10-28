@@ -1,0 +1,44 @@
+---
+title: Development Principles
+section-title: General Documentation
+docs: true
+
+navgroup: documentation
+navsub: docs-general
+navactive: principles
+---
+
+JUST EAT has a large codebase, which is currently undergoing a merge of multiple front-end platforms.  Although we have many language specific principles, our fundamental front-end principles are:
+
+- Think in terms of components
+- Leave code in a better state than you found it
+- Reuse as much as possible: technologies and components
+- The entire code base should look like one person wrote it
+- Keep it simple
+- Ensure we can pivot away from a dependency/pattern
+
+## Reuse as much as possible
+
+More than anything, please try to follow existing patterns as much as possible.
+
+Inconsistency soon manifests as complexity and then technical debt. What we are aiming to build is a maintainable platform where developers can move between applications with very little up-front learning required. [The best tool for the job, isn’t always](https://medium.com/@bentlegen/the-best-tool-for-the-job-isnt-always-6ed364f3f775) by Ben Vinegar covers this concept perfectly.
+
+Sometimes reusing code will take more initial work but it shouldn't be avoided. When building new features, try to identify reusable parts which can be abstracted to help other developers.
+
+
+## Components
+
+When building anything for use on the JUST EAT platform, think about the thing you are building and break it down as much as possible.  The simpler you can make that piece of functionality, the easier it will be for other developers to pick up at a later date (or yourself down the line).
+
+JUST EAT is built of many small UI components pieced together to make a more complex application.  By writing small components, we can change smaller pieces of our platform without worrying about the implications across whole templates and pages.
+
+When done well, this also vastly speeds up the time needed to create new functionality, as we can likely reuse tested components that are already productionised on the platform, extending this functionality to our needs.
+
+
+## Ensure we can pivot
+
+When making broad decisions about JUST EAT trust that your expertise means you're right now, but realise that things will change and we may possibly need to pivot away from what you decide on. There is a cost to removing something from the codebase which far outweighs the cost of adding it.
+
+Everything is up for discussion, but pivoting on such a large code base is a slow process so it's always worth spending the extra time to consider how deeply we would be tied into the decision and how quickly we could change course.
+
+

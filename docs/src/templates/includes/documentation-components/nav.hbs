@@ -1,0 +1,14 @@
+<!-- Global Navigation links -->
+<nav class="nav nav--global nav--sg">
+    <label data-navglobal-toggle="" class="nav-toggle " for="menu-visible" role="button" aria-pressed="false" aria-label="Navigation visibility toggle">
+        <span class="nav-toggle-icon" title="Menu">Open Menu</span>
+    </label>
+    <input type="checkbox" class="nav-trigger" name="menuVisible" id="menu-visible" aria-hidden="true">
+    <div class="nav-container">
+    	<ul class="nav-list">
+    		<li class="nav-list-item{{#is navgroup 'styleguide'}} nav-list-item--active{{/is}}"><a href="{{ baseUrl }}/styleguide/design-elements/colours" class="nav-list-link">Styleguide &amp; Components</a></li>
+    		<li class="nav-list-item{{#is navgroup 'documentation'}} nav-list-item--active{{/is}}"><a href="{{ baseUrl }}/documentation/general/" class="nav-list-link">Documentation</a></li>
+    		<li class="nav-list-item{{#is navgroup 'perf'}} nav-list-item--active{{/is}}"><a href="{{ baseUrl }}/performance/" class="nav-list-link">Performance Monitoring</a></li>
+    	</ul>
+    </div>
+</nav>

@@ -1,0 +1,60 @@
+<ul class="sidebar-nav unstyled">
+    <li><a href="{{ baseUrl }}/getting-started.html"{{#is navactive 'docsindex'}} class="is-active"{{/is}} data-trak='{"category":"Docs nav","action":"Getting Started"}'>Getting Started</a></li>
+        {{#is navactive 'docsindex'}}
+        <ul class="sidebar-subnav unstyled">
+            <li><a href="#proj-structure">Project Structure</a></li>
+            <li><a href="#proj-setup">Setting up your Environment</a></li>
+            <li><a href="#proj-feprocess">FE Processes and Structure</a></li>
+        </ul>
+        {{/is}}
+    </li>
+</ul>
+
+<ul class="sidebar-nav unstyled">
+    <li><a href="{{ baseUrl }}/process/gulp.html"{{#is navactive 'docsgulp'}} class="is-active"{{/is}} data-trak='{"category":"Docs nav","action":"Grunt"}'>Gulp</a>
+        {{#is navactive 'docsgulp'}}
+        <ul class="sidebar-subnav unstyled">
+            <li><a href="#gulp-setup">Setup</a></li>
+            <li><a href="#gulp-vs">Using Gulp in VS</a></li>
+            <li><a href="#gulp-cmd">Using Gulp on Command Line</a></li>
+            <li><a href="#gulp-tasks">Gulp Tasks</a></li>
+            <li><a href="#gulp-config">Config</a></li>
+            <li><a href="#gulp-taskindex">Task index</a></li>
+        </ul>
+        {{/is}}
+    </li>
+    <li><a href="{{ baseUrl }}/css/"{{#is navactive 'docscss'}} class="is-active"{{/is}} data-trak='{"category":"Docs nav","action":"CSS"}'>CSS</a>
+        {{#is navactive 'docscss'}}
+        <ul class="sidebar-subnav unstyled">
+            <li><a href="#philosophy">Philosophy</a></li>
+            <li><a href="#bestpractices">Best Practices</a></li>
+            <li><a href="#sass">Sass</a></li>
+            <li><a href="#structure">Structure</a></li>
+            <li><a href="#namingscheme">CSS Naming scheme</a></li>
+            <li><a href="#variables">Sass Variables</a></li>
+            <li><a href="#responsive">Responsive</a></li>
+            <li><a href="#modernizr">Modernizr</a></li>
+        </ul>
+        {{/is}}
+    </li>
+    <li><a href="{{ baseUrl }}/js/"{{#is navactive 'docsjs'}} class="is-active"{{/is}} data-trak='{"category":"Docs nav","action":"Javascript"}'>Javascript</a>
+        {{#is navactive 'docsjs'}}
+        <ul class="sidebar-subnav unstyled">
+            <li><a href="#philosophy">Philosophy</a></li>
+            <li><a href="#structure">Structure</a></li>
+            <li><a href="#polyfills">Polyfills</a></li>
+            <li><a href="#libs">Libraries</a></li>
+        </ul>
+        {{/is}}
+    </li>
+    <li><a href="{{ baseUrl }}/accessibility.html"{{#is navactive 'a11y'}} class="is-active"{{/is}}>Accessibility</a></li>
+    <!-- <li><a href="{{ baseUrl }}/fe/html.html"{{#is navactive 'docshtml'}} class="is-active"{{/is}} data-trak='{"category":"Docs nav","action":"HTML"}'>HTML</a>
+        {{#is navactive 'docshtml'}}
+        <ul class="sidebar-subnav unstyled">
+            <li><a href="#svg">SVG icons</a></li>
+            <li><a href="#iconmeta">Icon meta tags</a></li>
+            <li><a href="#jquery">jQuery</a></li>
+        </ul>
+        {{/is}}
+    </li> -->
+</ul>

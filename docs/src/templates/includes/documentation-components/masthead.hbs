@@ -1,0 +1,20 @@
+<!--  ==============  -->
+<!--  === Masthead ===  -->
+<!--  ==============  -->
+<header class="header">
+	<div class="l-container header-wrap">
+		<div class="logo logo--sg">
+            <a href="{{ baseUrl }}/"><img alt="@Translations.header_logo_alttext" src="{{ baseUrl }}/assets/dist/img/logos/je-logo-rebrand.svg" width="124" height="34" title="@Translations.header_logo_alttext"></a>
+        </div>
+		{{> nav }}
+	</div>
+</header>
+{{#is layout 'home'}}{{else}}
+<div class="sg-secondaryBar">
+    <div class="l-container g">
+        <h2 class="sg-secondaryBar-title g-col g-col--shrink gamma">{{ section-title }}</h2>
+
+        {{> subnav }}
+    </div>
+</div>
+{{/is}}
