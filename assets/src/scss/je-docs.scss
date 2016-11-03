@@ -1,0 +1,541 @@
+/**
+ * Setup styleguide imports
+ */
+
+@import 'tools/functions/index';
+@import 'tools/mixins/index';
+
+@import 'kickoff-utils'; // imports a set of helper functions and mixins
+@import 'include-media'; // http://include-media.com (for our responsive mixins)
+
+@import 'settings/color-palette';
+@import 'settings/variables';
+@import 'tools/code-highlighting';
+
+@import 'kickoff-grid';
+
+$styleguide-color-primary: $color-primary;
+$assetPath: '../../../assets/dist'; //relative for gh-pages
+
+
+@font-face {
+    font-family: 'Aleo-Regular';
+    src: url('#{$assetPath}/fonts/Aleo-Regular.eot');
+    src: url('#{$assetPath}/fonts/Aleo-Regular.eot?#iefix') format('embedded-opentype'),
+         url('#{$assetPath}/fonts/Aleo-Regular.woff') format('woff'),
+         url('#{$assetPath}/fonts/Aleo-Regular.ttf') format('truetype'),
+         url('#{$assetPath}/fonts/Aleo-Regular.svg#droid_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JustEatIcons';
+    src: url('#{$assetPath}/fonts/JustEatIcons.eot');
+    src: url('#{$assetPath}/fonts/JustEatIcons.eot?#iefix') format('embedded-opentype'),
+         url('#{$assetPath}/fonts/JustEatIcons.woff') format('woff'),
+         url('#{$assetPath}/fonts/JustEatIcons.ttf') format('truetype'),
+         url('#{$assetPath}/fonts/JustEatIcons.svg#JustEatIcons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/**
+ * Styleguide styles
+ * Where possible, prefix all classnames with .sg
+ */
+body {
+    background-color: #fff;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+// ==========================================================================
+// Styleguide specific classes
+// ==========================================================================
+
+    /**
+     * Styleguide .page styles
+     */
+    .sg-page {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        overflow: hidden;
+
+        h1,
+        h2 {
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .sg-page--start {
+        background-color: $styleguide-color-primary;
+        padding: 20px 0;
+        padding: 6vh 0;
+
+        * {
+            color: #fff;
+        }
+    }
+
+    .sg-headerBlock {
+        padding: spacing(x3) 0;
+    }
+
+    .sg-content {
+        margin-top: spacing(x3);
+    }
+
+    .sg-footer {
+        background-color: $styleguide-color-primary;
+        color: #fff;
+        padding: 30px;
+        margin-top: 30px;
+
+        :last-child {
+            margin-bottom: 0;
+        }
+        a {
+            color: currentColor;
+            text-decoration: underline;
+        }
+    }
+
+
+//
+// Type classes
+// ==========================================================================
+
+    // Major section title – i.e. homepage of docs
+    .sg-sectionTitle {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        color: #333;
+        font-weight: 100;
+
+        @include media('>=mid') {
+            @include font-size(50);
+        }
+
+        & + .sg-text {
+            margin-top: spacing(x2);
+        }
+    }
+
+    .sg-index {
+        h2,
+        h3 {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 200;
+            color: #333;
+        }
+
+        ul {
+            & ul {
+                margin-top: spacing();
+            }
+        }
+
+        a {
+            // color: currentColor;
+            text-decoration: underline;
+
+            &:hover {
+                color: $color-link-hover;
+            }
+        }
+    }
+
+
+.sg-interfaceType {
+    font-weight: 300;
+}
+
+.sg-interfaceType--subtle {
+    color: #888;
+}
+
+
+.sg-sectionHeading {
+    color: $styleguide-color-primary;
+    padding: spacing(x2) 10px;
+    border-top: 1px solid $grey--light;
+    border-bottom: 1px solid $grey--light;
+}
+h2.sg-sectionHeading:first-child {
+    margin-top: 0;
+    border-top: 0;
+    padding-top: 0;
+}
+
+.sg-sectionHeading--main {
+    padding: 6vh 10px;
+    text-align: center;
+}
+
+.sg-logos {
+    background-color: $grey--offWhite;
+    padding: 6vh 10px;
+
+    & > img {
+        margin-top: spacing(x2);
+    }
+}
+
+.sg-spacer {
+    padding: 20px;
+}
+
+.sg-darken {
+    background: #333;
+}
+
+.sg-stickToBottom {
+    flex: 1;
+}
+
+.btn--codeToggle {
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid $grey--light;
+    border-top: 0;
+    background-color: $grey--offWhite;
+}
+
+
+//
+// Demo Blocks
+// ==========================================================================
+
+.demo {
+    position: relative;
+    margin-top: spacing(x2);
+    margin-bottom: spacing(x6);
+
+    & + .demo {
+        margin-top: - spacing(x5);
+    }
+}
+
+    .demo-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        margin-top: 0;
+        padding: 6px 10px;
+        background-color: $red;
+        color: $white;
+
+        @include font-size(12);
+    }
+    .demo-visual {
+        border: 1px solid #ddd;
+        padding: spacing(x5) spacing(x5);
+        position: relative;
+    }
+        .demo-visual-bottomSpacer {
+            height: 200px;
+        }
+        .demo-visual-logOutput {
+            height: 300px;
+        }
+    .demo-code {
+        margin-bottom: 0;
+
+        pre {
+            margin: 0;
+        }
+    }
+
+
+
+
+
+/**
+ * Colour swatches
+ */
+.sg-swatch {
+    text-align: center;
+    line-height: 30px;
+    margin: 10px 10px 0;
+}
+
+.sg-swatch-color {
+    height: 60px;
+    padding: 15px;
+    @include font-size(13);
+    font-family: $font-family-mono;
+}
+
+@mixin swatch($color) {
+    color: $color;
+
+    .sg-swatch-color {
+        background-color: $color;
+
+        @if lightness($color) < 60 {
+            color: #fff;
+        }
+        @else {
+            color: #444;
+        }
+
+        @if lightness($color) > 90 {
+            border: #f1f1f1 solid 1px;
+        }
+
+        &:before {
+            content: '#{$color}';
+            display: block;
+        }
+    }
+}
+
+.sg-color-link-hover { @include swatch($color-link-hover); }
+.sg-color-primary { @include swatch($color-primary); }
+.sg-color-secondary { @include swatch($color-secondary); }
+.sg-color-text { @include swatch($color-text); }
+.sg-color-background { @include swatch($color-bg); }
+.sg-color-border { @include swatch($color-border); }
+.sg-color-link { @include swatch($color-link-default); }
+
+/**
+ * Typography
+ */
+.sg-type {
+    margin-bottom: 1em;
+}
+
+
+@mixin sgTypeTest($size) {
+    .sg-type-item {
+        @include font-size($size, false);
+    }
+
+    code {
+        &:after { content: ' :: #{$size}px'; }
+    }
+}
+
+
+.sg-type-small { @include sgTypeTest(small); }
+.sg-type-base { @include sgTypeTest(base); }
+.sg-type-mid { @include sgTypeTest(mid); }
+.sg-type-large { @include sgTypeTest(large); }
+.sg-type-jumbo { @include sgTypeTest(jumbo); }
+
+.sg-typeSpecimen {
+    margin-bottom: 0;
+    margin-top: 0;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+
+    &:after {
+        display: block;
+        @extend .sg-interfaceType;
+        @extend .sg-interfaceType--subtle;
+        @include font-size(16);
+        margin-top: 5px;
+        border-top: 1px solid #ddd;
+        font-weight: normal;
+    }
+}
+
+// h1.typeSpecimen:after { content: 'Font stack: #{$font-family-headings}'; }
+// p.typeSpecimen:after  { content: 'Font stack: #{$font-family-base}'; }
+
+.sg-typeSpecimen--primary {
+    @include font-size(30);
+    font-family: $font-family-headings;
+    font-weight: $font-weight-headings;
+
+}
+
+.sg-typeSpecimen--secondary {
+    @include font-size(30);
+    font-family: $font-family-base;
+}
+
+.sg-typeSpecimen--giant {
+    @include font-size(120);
+    line-height: 1;
+}
+
+hr {
+    margin: spacing(x5) 0;
+}
+
+.sectionSplitter {
+    border-color: $red;
+    margin: spacing(x5) 40px;
+}
+
+/**
+ * Icons
+ */
+.icon-sg {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.sg-favicon {
+    padding: 5px;
+
+    img {
+        vertical-align: middle;
+        margin-right: 15px;
+    }
+}
+
+/*
+   Tiled List Module
+   Only currently used on documentation site
+   ========================================================================== */
+
+$tile-yellow    : #f3cc2c;
+$tile-red       : #eb6015;
+$tile-blue      : #396ab2;
+$tile-green     : #3da432;
+$tile-lightblue : #7fc6ef;
+$tile-orange    : #f7b64e;
+
+.list--tiled {
+    margin-top: spacing(x2);
+
+    & > li {
+        margin-bottom: spacing(x2);
+    }
+}
+    .list--tiled-item {
+        color: #fff;
+
+        &:nth-child(1) .list--tiled-link {
+            background-color: $tile-yellow;
+
+            &:hover {
+                background-color: darken($tile-yellow, 10%);
+            }
+        }
+        &:nth-child(2) .list--tiled-link {
+            background-color: $tile-red;
+
+            &:hover {
+                background-color: darken($tile-red, 10%);
+            }
+        }
+        &:nth-child(3) .list--tiled-link {
+            background-color: $tile-blue;
+
+            &:hover {
+                background-color: darken($tile-blue, 10%);
+            }
+        }
+        &:nth-child(4) .list--tiled-link {
+            background-color: $tile-green;
+
+            &:hover {
+                background-color: darken($tile-green, 10%);
+            }
+        }
+        &:nth-child(5) .list--tiled-link {
+            background-color: $tile-lightblue;
+
+            &:hover {
+                background-color: darken($tile-lightblue, 10%);
+            }
+        }
+        &:nth-child(6) .list--tiled-link {
+            background-color: $tile-orange;
+
+            &:hover {
+                background-color: darken($tile-orange, 10%);
+            }
+        }
+    }
+
+    .list--tiled-item--dark {
+        color: #333;
+    }
+
+        .list--tiled-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+
+            font-family: $font-family-headings;
+            @include font-size(mid, false);
+            color: currentColor;
+            text-align: center;
+
+            @include media('>=mid') {
+                min-height: 300px;
+            }
+
+            &:hover {
+                text-decoration: none;
+                color: currentColor;
+            }
+        }
+
+
+/*
+   Sidebar Nav
+   ========================================================================== */
+
+.sidebar-nav {
+    font-family: $font-family-headings;
+
+    & a {
+        display: block;
+        border-left: 3px solid;
+        border-color: $red;
+        padding: 0.4em 0.8em 0.5em;
+        color: $black;
+        text-decoration: none;
+    }
+    & .is-active,
+    & a:hover {
+        background-color: $red;
+        color: #fff;
+        border-color: $red;
+    }
+}
+
+    .sidebar-subnav {
+        margin-top: 0;
+        margin-left: 15px;
+    }
+
+
+.sg--disabled {
+    position: relative;
+
+    // apply to any disabled button not in a demo block
+    &:hover {
+        &:after {
+            content: 'Coming Soon';
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 5px 10px;
+            background-color: $grey--mid;
+            color: #fff;
+        }
+    }
+}
+
+.js-options td {
+    max-width: 450px;
+}
+

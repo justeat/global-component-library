@@ -1,0 +1,12 @@
+// _spacing.scss
+@function spacing($key: 'base') {
+
+    @if type-of($spacing) == 'map' {
+        @if map-has-key($spacing, $key) {
+            @return map-get($spacing, $key);
+        }
+    }
+
+    @warn 'Unknown `#{$key}` in $spacing.';
+    @return null;
+}
