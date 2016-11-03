@@ -19,4 +19,4 @@ var requireDir = require('require-dir');
 requireDir('./_gulp/tasks', { recurse: true });
 
 // uncomment if you want to use docs tasks – don’t check in uncommented! :)
-requireDir('./_gulp/tasks-dev', { recurse: false });
+requireDir('./_gulp/tasks-local', { recurse: false });

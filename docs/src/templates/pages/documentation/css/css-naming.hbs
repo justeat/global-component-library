@@ -16,43 +16,78 @@ To make this somewhat easier and ensure our naming is consistent we use a naming
 Using a naming scheme helps to document the intent and relationships from our classnames, as well as easily being able to distinguish classes used solely for state, layout or as a utility operation.
 
 ```scss
-/* Descriptors use camel-case if more than one word: e.g. twoWords */
-.skipToContent {
+/* We use a number of prefixes to distinguish the purpose of our CSS classnames */
+
+/*
+ *  Objects are prefixed: .o-
+ *  An object is a type of component that can be implicitly linked to an HTML tag.
+ *  For example a button class or a form class.
+ */
+.o-btn {
     ...
 }
 
-/* ========= */
-
-/* Child elements use single hyphens: - */
-.form-controlGroup {
+/*
+ *  Components are prefixed: .c-
+ *  A component is any CSS module that isn’t classified as an object.
+ *  For example a modal or star ratings components.
+ */
+.c-rating {
     ...
 }
 
-/* ========= */
-
-/* Modifier element use a double hyphen: -- */
-.btn.btn--primary {
+/*
+ *  Utility classes are prefixed: .u-
+ *  These are generic, reusable classes that could potentially be used across many components
+ *  For example, clearfix classes or an is-hidden class
+ */
+.u-clearfix {
     ...
 }
 
-/* Layout classes prefixed: .l- */
+/*
+ *  Layout classes prefixed: .l-
+ *  These are classes specific to global site layout
+ */
 .l-container {
     ...
 }
 
-/* Utility classes prefixed: .u- */
-.u-clearfix {
+/*
+ *  Grid classes prefixed: .g-
+ *  Any classes that rely on the grid.  i.e. .g-col
+ */
+.g-col {
     ...
 }
+
+/* Descriptors in a classname use camel-case if more than one word: e.g. twoWords */
+.c-myComponentName {
+    ...
+}
+
+/* ========= */
+
+/* Child elements are indicated using single hyphens: - */
+.o-form-controlGroup {
+    ...
+}
+
+/* ========= */
+
+/* Modifier classes use a double hyphen: -- */
+.o-btn.o-btn--primary {
+    ...
+}
+
+
 ```
 
-## State
+## State Classes
 
 We use the `is-` or `has-` prefixes to indicate state.
 
 ```
-/* ========= */
-
 /* Element state: .is- or .has- */
 .is-active {
     ...
@@ -65,11 +100,15 @@ We use the `is-` or `has-` prefixes to indicate state.
 When defining Sass variables, we use dash-case.
 
 ```
-/* ========= */
+// Sass variables use dashes and double dashes a similar way to our classnames
 
-/* Sass variables use dash-case */
-a {
-    color: $color-primary;
-}
+$blue: blue;
+$blue--light: lightblue;
+$color-primary: $blue; // variable prefixed with color to show that is it’s use
+
+// example of component variable naming
+$modal-border-color: $blue;
+$modal-border-size: 1px;
+
 ```
 
