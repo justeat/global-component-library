@@ -100,15 +100,11 @@ gulp.task('css', ['clean:css', 'css:lint'], function () {
             postcss([ cssnano() ])
         )
 
-        .pipe( gulpif( !config.isProduction, sourcemaps.write(undefined, { sourceRoot: null })) ) // if not in production, add sourcemaps to our compiled CSS
-
         .pipe( //add .min suffix to CSS files
             rename({
                 suffix: ".min"
             })
         )
-
-        .pipe( gulp.dest(config.docs.rootDir + config.docs.distDir + config.css.distDir) )
 
         // Output file-size
         .pipe(
@@ -121,8 +117,13 @@ gulp.task('css', ['clean:css', 'css:lint'], function () {
 
         .pipe( gulpif( !config.isProduction, sourcemaps.write(undefined, { sourceRoot: null })) ) // if not in production, add sourcemaps to our compiled CSS
 
-        .pipe( rev() ) // revision control for caching
 
+        .pipe( gulp.dest(config.docs.rootDir + config.docs.distDir + config.css.distDir) )
+
+
+        .pipe( gulpif( !config.isProduction, sourcemaps.write(undefined, { sourceRoot: null })) ) // if not in production, add sourcemaps to our compiled CSS
+
+        .pipe( rev() ) // revision control for caching
 
         // output to destination CSS folder and the docs assets folder
         .pipe(gulp.dest(config.css.distDir));

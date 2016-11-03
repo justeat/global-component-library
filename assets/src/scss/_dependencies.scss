@@ -33,7 +33,7 @@
 
 
 // CSS Normalise and then Reset
-// @import 'normalize.css'; // https://github.com/necolas/normalize.css
+@import '../../../node_modules/normalize.css/normalize.css'; // https://github.com/necolas/normalize.css
 @import 'base/reset';
 
 // Global typography styles

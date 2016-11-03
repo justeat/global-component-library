@@ -61,6 +61,7 @@
     "kickoff-grid.css": "^1.1.0",
     "kickoff-utils.scss": "^2.0.2",
     "lite-ready": "^1.0.4",
+    "normalize.css": "^5.0.0",
     "postcss-assets": "^4.1.0",
     "postcss-reporter": "^1.4.1",
     "postcss-scss": "^0.3.1",
