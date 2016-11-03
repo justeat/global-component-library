@@ -117,11 +117,7 @@ gulp.task('css', ['clean:css', 'css:lint'], function () {
 
         .pipe( gulpif( !config.isProduction, sourcemaps.write(undefined, { sourceRoot: null })) ) // if not in production, add sourcemaps to our compiled CSS
 
-
         .pipe( gulp.dest(config.docs.rootDir + config.docs.distDir + config.css.distDir) )
-
-
-        .pipe( gulpif( !config.isProduction, sourcemaps.write(undefined, { sourceRoot: null })) ) // if not in production, add sourcemaps to our compiled CSS
 
         .pipe( rev() ) // revision control for caching
 
