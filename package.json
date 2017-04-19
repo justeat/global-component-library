@@ -73,6 +73,7 @@
   },
   "devDependencies": {
     "assemble": "^0.17.1",
+    "eslint": "^3.19.0",
     "expand": "^0.4.3",
     "gulp-extname": "^0.2.2",
     "gulp-gh-pages": "^0.5.4",
