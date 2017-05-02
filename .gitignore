@@ -151,3 +151,5 @@ template.tmp
 
 .nyc_output
 coverage
+
+dist/*

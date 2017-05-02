@@ -19,4 +19,12 @@ var requireDir = require('require-dir');
 requireDir('./_gulp/tasks', { recurse: true });
 
 // uncomment if you want to use docs tasks – don’t check in uncommented! :)
-requireDir('./_gulp/tasks-local', { recurse: false });
+// requireDir('./_gulp/tasks-local', { recurse: false });
+
+require('gulp-build-fozzie')({
+    js: {
+        srcDir: 'assets/src/js',
+        srcFile: 'index.js',
+        distDir: 'assets/dist/js'
+    }
+});
