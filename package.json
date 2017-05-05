@@ -29,7 +29,7 @@
     "eyeglass": "^1.1.2",
     "filesizegzip": "^2.0.0",
     "gulp": "^3.9.1",
-    "gulp-build-fozzie": "^1.0.1",
+    "gulp-build-fozzie": "^1.0.7",
     "gulp-debug": "^2.1.2",
     "gulp-if": "^2.0.1",
     "gulp-plumber": "^1.1.0",

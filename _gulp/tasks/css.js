@@ -25,43 +25,6 @@ var gulp          = require('gulp'),
 
 
 /**
- * css:lint Task
- * -------------
- * Uses our config rules set in .stylelintrc to validate syntax and structure of the CSS
- *
- */
-gulp.task('css:lint', function () {
-
-    return gulp.src([ `${config.css.srcDir}/**/*.scss` ])
-        .pipe(
-            postcss([
-                stylelint(),
-                reporter({
-                    clearMessages: true,
-                    throwError: true
-                })
-            ],
-            { syntax: scss })
-        );
-
-});
-
-
-/**
- * css:prod Task
- * -------------
- * Ovewrites config vars to act replicate production compilation
- * Then runs CSS Task
- *
- */
-gulp.task('css:prod', function () {
-    config.isProduction = true;
-
-    gulp.start('css');
-});
-
-
-/**
  *  css Task
  *  -------------
  *  Removes old CSS from dist folders, runs the css:lint task
@@ -73,7 +36,7 @@ gulp.task('css:prod', function () {
  * 3. A compiled, minified & versioned CSS file (used by .Net and production)
  *
  */
-gulp.task('css', ['clean:css', 'css:lint'], function () {
+gulp.task('css:bundle', ['clean:css', 'css:lint'], function () {
 
     return gulp.src([ `${config.css.srcDir}/**/*.scss` ])
         .pipe( plumber( config.gulp.onError ) ) // stops watch from breaking if an error occurs
