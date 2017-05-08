@@ -22,6 +22,7 @@
     "node": ">=4.0.0"
   },
   "dependencies": {
+    "@justeat/eslint-config-fozzie": "^0.1.2",
     "autoprefixer": "^6.5.1",
     "browser-sync": "^2.17.5",
     "cssnano": "^3.8.0",
@@ -54,6 +55,7 @@
   "devDependencies": {
     "assemble": "^0.17.1",
     "eslint": "^3.19.0",
+    "eslint-plugin-import": "^2.2.0",
     "expand": "^0.4.3",
     "gulp-extname": "^0.2.2",
     "gulp-gh-pages": "^0.5.4",
