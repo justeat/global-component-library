@@ -13,15 +13,14 @@
   when you run `gulp`.
 */
 
-var requireDir = require('require-dir');
+const gulp = require('gulp');
+const build = require('@justeat/gulp-build-fozzie');
 
-// Require all tasks in gulp/tasks, including subfolders
-requireDir('./_gulp/tasks', { recurse: true });
-
-// uncomment if you want to use docs tasks – don’t check in uncommented! :)
-// requireDir('./_gulp/tasks-local', { recurse: false });
-
-require('gulp-build-fozzie')({
+gulp.tasks = build({
+    css: {
+        srcDir: 'assets/src/scss',
+        distDir: 'assets/dist/css'
+    },
     js: {
         srcDir: 'assets/src/js',
         srcFile: 'index.js',
