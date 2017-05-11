@@ -16,7 +16,7 @@
 const gulp = require('gulp');
 const build = require('@justeat/gulp-build-fozzie');
 
-gulp.tasks = build({
+build(gulp, {
     css: {
         srcDir: 'assets/src/scss',
         distDir: 'assets/dist/css'
