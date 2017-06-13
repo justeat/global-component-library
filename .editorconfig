@@ -2,14 +2,14 @@
 root = true
 
 [*]
-indent_style = space
-end_of_line = crlf
 charset = utf-8
+end_of_line = lf
+indent_style = space
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[**/*.{config,csproj,dotsettings,feature,fxcop,markdown,md,ncrunch*,ndepend,rb,targets,xml,xsd}]
+[**/*.{config,csproj,dotsettings,feature,fxcop,markdown,md,ncrunch*,ndepend,rb,targets,xml,xsd,json}]
 indent_size = 2
 
-[**/*.{cs,cshtml,css,html,js,json,less}]
+[**/*.{cs,cshtml,scss,css,html,js,json,less}]
 indent_size = 4

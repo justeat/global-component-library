@@ -1,3 +1,6 @@
 {
-    "extends": "@justeat/eslint-config-fozzie"
+    "extends": "@justeat/eslint-config-fozzie",
+    "env": {
+        "browser": true
+    }
 }

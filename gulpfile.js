@@ -17,13 +17,9 @@ const gulp = require('gulp');
 const build = require('@justeat/gulp-build-fozzie');
 
 build(gulp, {
-    css: {
-        srcDir: 'assets/src/scss',
-        distDir: 'assets/dist/css'
-    },
+    assetSrcDir: 'assets/src',
+    assetDistDir: 'assets/dist',
+
     js: {
-        srcDir: 'assets/src/js',
-        srcFile: 'index.js',
-        distDir: 'assets/dist/js'
     }
 });
