@@ -1,7 +1,0 @@
-/**
- * Given a font-size and a line-height (in pixels)
- * Returns a unitless line-height value
- */
-@function line-height($font-size, $line-height) {
-    @return $line-height / $font-size;
-}

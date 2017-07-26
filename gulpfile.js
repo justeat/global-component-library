@@ -21,5 +21,9 @@ build(gulp, {
     assetDistDir: 'assets/dist',
 
     js: {
+        lintPaths: [
+            '!**/shims/**/*.*',
+            '!**/libs/**/*.*'
+        ]
     }
 });
