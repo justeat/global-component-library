@@ -2,7 +2,7 @@
   "name": "je-global-component-library",
   "title": "Just Eat – Component Library",
   "description": "Component Library and Guidelines for all of Just Eat’s Front-End Platforms",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/justeat/global-component-library",
   "contributors": [
     "Github contributors <https://github.com/justeat/global-component-library/graphs/contributors>"
@@ -19,24 +19,17 @@
     "node": ">=4.0.0"
   },
   "dependencies": {
-    "@justeat/eslint-config-fozzie": "^0.1.2",
-    "@justeat/gulp-build-fozzie": "^1.10.1",
+    "@justeat/f-header": "^0.4.0",
+    "@justeat/fozzie": "^0.4.1",
+    "@justeat/gulp-build-fozzie": "^3.1.0",
     "babel-preset-es2015": "^6.24.1",
-    "eyeglass": "^1.1.2",
     "gulp": "^3.9.1",
-    "include-media": "^1.4.8",
     "kickoff-grid.css": "^1.1.0",
-    "kickoff-utils.scss": "^2.0.2",
     "lite-ready": "^1.0.4",
-    "normalize.css": "^5.0.0",
-    "postcss-assets": "^4.1.0",
-    "postcss-reporter": "^1.4.1",
-    "postcss-scss": "^0.3.1",
-    "stylelint": "^7.5.0"
+    "qwery": "^4.0.0"
   },
   "devDependencies": {
     "assemble": "^0.17.1",
-    "eslint": "^3.19.0",
     "eslint-plugin-import": "^2.2.0"
   },
   "keywords": [],

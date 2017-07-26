@@ -14,30 +14,11 @@
 // but we should not need them if autoprefixer is being used
 // See mixins/css3.scss for the full list
 
-@import 'tools/functions/index';
-@import 'tools/mixins/index';
+// @import 'tools/functions/index'; // TODO: this will be separated into a separate utilities module
+// @import 'tools/mixins/index'; // TODO: this will be separated into a separate utilities module
 
-// Including helper modules
-@import 'kickoff-utils'; // imports a set of helper functions and mixins
-@import 'include-media'; // Cleaner media query declarations – http://include-media.com
-
-
-// =================================
-// Core variables
-// =================================
-// Edit your color palette and app vars before your begin
-
-@import 'settings/color-palette';
-@import 'settings/variables';
-
-
-
-// CSS Normalise and then Reset
-@import '../../../node_modules/normalize.css/normalize.css'; // https://github.com/necolas/normalize.css
-@import 'base/reset';
-
-// Global typography styles
-@import 'base/typography';
+@import 'fozzie';
+@import 'f-header';
 
 /**
  * Objects
@@ -84,11 +65,3 @@
  * These should always come last as they should 'trump' other properties
  */
 @import 'trumps/utilities';
-@import 'trumps/rwd';
-
-
-
-/**
- * Print styles
- */
-@import 'base/print';
