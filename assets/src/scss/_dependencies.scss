@@ -21,6 +21,17 @@
 @import 'f-header';
 
 /**
+ * Fozzie Extensions
+ * =================================
+ * Fozzie includes a number of generic component styles that can
+ * be accessed via mixins
+ *
+ */
+
+@include card();
+
+
+/**
  * Objects
  * =================================
  * Styles apply to an object if they are directly associated to a HTML element.

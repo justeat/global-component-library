@@ -3,7 +3,6 @@
  */
 
 @import 'dependencies';
-@import 'f-header';
 
 @import 'tools/code-highlighting';
 
@@ -16,13 +15,12 @@ $assetPath: '../../../assets/dist'; //relative for gh-pages
  * Styleguide styles
  * Where possible, prefix all classnames with .sg
  */
-body {
-    background-color: #fff;
+.body-docs {
+    background-color: $grey--offWhite;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
-
 
 // ==========================================================================
 // Styleguide specific classes
@@ -78,6 +76,94 @@ body {
         }
     }
 
+//
+// SG Specific Navigation Styles
+// ==========================================================================
+
+$subnav-padding-bottom: spacing();
+$subnav-border-thickness: 3px;
+
+.nav--sg {
+    float: none;
+}
+
+.sg-subnav {
+    @include font-size();
+}
+    .sg-subnav-item {
+        margin-left: spacing(x2);
+
+        a {
+            display: block;
+            padding-bottom: $subnav-padding-bottom;
+            color: $grey--dark;
+            border-bottom: $subnav-border-thickness solid transparent;
+            text-decoration: none;
+            font-weight: $font-weight-bold;
+        }
+        a:hover,
+        a:focus,
+        &.is-active a {
+            border-bottom: $subnav-border-thickness solid $color-primary;
+            text-decoration: none;
+        }
+    }
+
+
+.sg-secondaryBar {
+    background-color: $white;
+    padding: spacing() 0 0;
+    margin-bottom: spacing() / 2;
+}
+    .sg-secondaryBar-title {
+        margin-top: 0;
+        margin-bottom: ($subnav-padding-bottom + $subnav-border-thickness);
+    }
+
+/*
+   Sidebar Nav
+   ========================================================================== */
+
+.sg-sideNav {
+    font-family: $font-family-headings;
+
+    & a {
+        display: block;
+        border-left: 3px solid transparent;
+        border-bottom: 1px solid $grey--lightest;
+        padding: 0.4em 0.8em 0.5em;
+        color: $black;
+        font-weight: $font-weight-bold;
+        text-decoration: none;
+    }
+    & .is-active,
+    & a:hover {
+        border-left-color: $red;
+    }
+}
+
+    .sg-sideNav-subnav {
+        margin-top: 0;
+        margin-left: 15px;
+    }
+
+    .is-incomplete {
+        background-color: $grey--mid;
+    }
+
+// WIP Banner
+
+.sg-wip {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: $orange;
+    color: $white;
+    padding: spacing(x6);
+    border: 10px solid $orange--light;
+    text-shadow: 1px 1px $black;
+}
 
 //
 // Type classes
@@ -87,7 +173,7 @@ body {
     .sg-sectionTitle {
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         color: #333;
-        font-weight: 100;
+        font-weight: 400;
 
         @include media('>=mid') {
             @include font-size(50);
@@ -447,6 +533,7 @@ $tile-orange    : #f7b64e;
             font-family: $font-family-headings;
             @include font-size(mid, false);
             color: currentColor;
+            text-decoration: none;
             text-align: center;
 
             @include media('>=mid') {
@@ -459,34 +546,6 @@ $tile-orange    : #f7b64e;
             }
         }
 
-
-/*
-   Sidebar Nav
-   ========================================================================== */
-
-.sidebar-nav {
-    font-family: $font-family-headings;
-
-    & a {
-        display: block;
-        border-left: 3px solid;
-        border-color: $red;
-        padding: 0.4em 0.8em 0.5em;
-        color: $black;
-        text-decoration: none;
-    }
-    & .is-active,
-    & a:hover {
-        background-color: $red;
-        color: #fff;
-        border-color: $red;
-    }
-}
-
-    .sidebar-subnav {
-        margin-top: 0;
-        margin-left: 15px;
-    }
 
 
 .sg--disabled {
