@@ -10,7 +10,9 @@
             <div class="g-col g-span10--mid">
                 <div class="card card--rounded">
                     <h1>{{ title }}</h1>
-                    {% body %}
+                    {{#markdown}}
+{% body %}
+                    {{/markdown}}
                 </div>
             </div>
         </div>

@@ -19,8 +19,8 @@
     "node": ">=4.0.0"
   },
   "dependencies": {
-    "@justeat/f-header": "^0.4.0",
-    "@justeat/fozzie": "^0.4.1",
+    "@justeat/f-header": "^0.5.0",
+    "@justeat/fozzie": "^0.5.0",
     "@justeat/gulp-build-fozzie": "^3.1.0",
     "babel-preset-es2015": "^6.24.1",
     "gulp": "^3.9.1",
@@ -29,7 +29,6 @@
     "qwery": "^4.0.0"
   },
   "devDependencies": {
-    "assemble": "^0.17.1",
     "eslint-plugin-import": "^2.2.0"
   },
   "keywords": [],
