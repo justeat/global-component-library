@@ -25,5 +25,19 @@ build(gulp, {
             '!**/shims/**/*.*',
             '!**/libs/**/*.*'
         ]
+    },
+    copy: {
+        js: {
+            'prism': {
+                path: `/libs/prism.min.js`,
+                dest: '/libs',
+                revision: false,
+            },
+            'modernizr': {
+                path: `/libs/modernizr.min.js`,
+                dest: '/libs',
+                revision: false,
+            }
+        }
     }
 });
