@@ -14,7 +14,7 @@
 */
 
 const gulp = require('gulp');
-const build = require('@justeat/gulp-build-fozzie');
+const { build } = require('@justeat/gulp-build-fozzie');
 
 build(gulp, {
     assetSrcDir: 'assets/src',
@@ -25,5 +25,19 @@ build(gulp, {
             '!**/shims/**/*.*',
             '!**/libs/**/*.*'
         ]
+    },
+    copy: {
+        js: {
+            'prism': {
+                path: `/libs/prism.min.js`,
+                dest: '/libs',
+                revision: false,
+            },
+            'modernizr': {
+                path: `/libs/modernizr.min.js`,
+                dest: '/libs',
+                revision: false,
+            }
+        }
     }
 });
