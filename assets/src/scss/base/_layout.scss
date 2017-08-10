@@ -1,17 +1,192 @@
 /**
- * Global Layout Definitions & Helpers
+ * Layout Definitions for the docs
  * ===================================
  */
 
-body {
-	background-color: $color-bg;
+/**
+ * Where it makes sense, prefix all styleguide classnames with .sg
+ * This makes it very clear which ones are specifically styleguide related
+ */
+
+.body-docs {
+    background-color: $grey--offWhite;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
+// ==========================================================================
+// Styleguide specific classes
+// ==========================================================================
+
 /**
- * Default layout container
+ * Styleguide .page styles
  */
-.l-container {
-	width: 90%;
-	max-width: #{$layout-max-width}px;
-	margin: 0 auto;
+.sg-page {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+
+    h1,
+    h2 {
+        &:first-child {
+            margin-top: 0;
+        }
+    }
 }
+
+.sg-page--start {
+    background-color: $styleguide-color-primary;
+    padding: 20px 0;
+    padding: 6vh 0;
+
+    * {
+        color: #fff;
+    }
+}
+
+.sg-headerBlock {
+    padding: spacing(x3) 0;
+}
+
+.sg-content {
+    margin-top: spacing(x3);
+}
+
+.sg-footer {
+    background-color: $styleguide-color-primary;
+    color: #fff;
+    padding: 30px;
+    margin-top: 30px;
+
+    :last-child {
+        margin-bottom: 0;
+    }
+    a {
+        color: currentColor;
+        text-decoration: underline;
+    }
+}
+
+
+// WIP Banner
+
+.sg-wip {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: $orange;
+    color: $white;
+    padding: spacing(x6);
+    border: 10px solid $orange--light;
+    text-shadow: 1px 1px $black;
+}
+
+
+
+
+// used to darken a whole section/component
+.sg-darken {
+    background: #333;
+}
+
+// sticks a component to the bottom of the page (when used with flexbox)
+.sg-stickToBottom {
+    flex: 1;
+}
+
+.sg--disabled {
+    position: relative;
+
+    // apply to any disabled button not in a demo block
+    &:hover {
+        &:after {
+            content: 'Coming Soon';
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 5px 10px;
+            background-color: $grey--mid;
+            color: #fff;
+        }
+    }
+}
+
+.js-options td {
+    max-width: 450px;
+}
+
+
+
+
+/**
+ * Typography
+ */
+.sg-type {
+    margin-bottom: 1em;
+}
+
+
+@mixin sgTypeTest($size) {
+    .sg-type-item {
+        @include font-size($size, false);
+    }
+
+    code {
+        &:after { content: ' :: #{$size}px'; }
+    }
+}
+
+
+.sg-type-small { @include sgTypeTest(small); }
+.sg-type-base { @include sgTypeTest(base); }
+.sg-type-mid { @include sgTypeTest(mid); }
+.sg-type-large { @include sgTypeTest(large); }
+.sg-type-jumbo { @include sgTypeTest(jumbo); }
+
+.sg-typeSpecimen {
+    margin-bottom: 0;
+    margin-top: 0;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+
+    &:after {
+        display: block;
+        @extend .sg-interfaceType;
+        @extend .sg-interfaceType--subtle;
+        @include font-size(16);
+        margin-top: 5px;
+        border-top: 1px solid #ddd;
+        font-weight: normal;
+    }
+}
+
+// h1.typeSpecimen:after { content: 'Font stack: #{$font-family-headings}'; }
+// p.typeSpecimen:after  { content: 'Font stack: #{$font-family-base}'; }
+
+.sg-typeSpecimen--primary {
+    @include font-size(30);
+    font-family: $font-family-headings;
+    font-weight: $font-weight-headings;
+
+}
+
+.sg-typeSpecimen--secondary {
+    @include font-size(30);
+    font-family: $font-family-base;
+}
+
+.sg-typeSpecimen--giant {
+    @include font-size(120);
+    line-height: 1;
+}
+
+
+
+
+
+
+
+
