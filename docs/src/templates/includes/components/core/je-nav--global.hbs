@@ -4,7 +4,8 @@
         <span class="c-nav-toggle-icon" title="Menu">Open Menu</span>
     </label>
     <div class="c-nav-container">
-        <ul class="c-nav-list">
+        <ul class="c-nav-list u-unstyled">
+            {{#if loggedin}}
             <li class="c-nav-list-item has-sublist" data-test-id="navList">
                 <p class="c-nav-list-text">
                     <svg class="c-nav-icon" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
@@ -34,9 +35,16 @@
                     </li>
                 </ul>
             </li>
+            {{else}}
+            <li class="c-nav-list-item c-nav-list-item--support" data-test-id="login">
+                <a href="/login" data-gtm="header|click - navigation|login" class="c-nav-list-link">Login</a>
+            </li>
+            {{/if}}
+            {{#if languageSwitcher}}
             <li class="c-nav-list-item u-showAboveMid" data-test-id="languageToggle">
                 <a href="@returnUrl" class="c-nav-list-link">Francais</a>
             </li>
+            {{/if}}
             <li class="c-nav-list-item c-nav-list-item--support" data-test-id="support">
                 <a href="/faq" data-gtm="header|click - navigation|help" class="c-nav-list-link">Help</a>
             </li>

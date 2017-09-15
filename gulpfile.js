@@ -21,6 +21,13 @@ build(gulp, {
     assetDistDir: 'assets/dist',
 
     js: {
+        files: {
+            'docs': {
+                srcPath: 'docs/index.js',
+                distFile: 'docs.js',
+                applyRevision: true
+            }
+        },
         lintPaths: [
             '!**/shims/**/*.*',
             '!**/libs/**/*.*'
