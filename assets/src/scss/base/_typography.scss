@@ -1,0 +1,130 @@
+//
+// Type classes
+// ==========================================================================
+
+// Major section title – i.e. homepage of docs
+.sg-sectionTitle {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
+    font-weight: 400;
+
+    @include media('>=mid') {
+        @include font-size(50);
+    }
+
+    & + .sg-text {
+        margin-top: spacing(x2);
+    }
+}
+
+.sg-index {
+    h2,
+    h3 {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight: 200;
+        color: #333;
+    }
+
+    ul {
+        & ul {
+            margin-top: spacing();
+        }
+    }
+
+    a {
+        // color: currentColor;
+        text-decoration: underline;
+
+        &:hover {
+            color: $color-link-hover;
+        }
+    }
+}
+
+.sg-interfaceType {
+    font-weight: 300;
+}
+
+.sg-interfaceType--subtle {
+    color: #888;
+}
+
+.sg-sectionHeading {
+    color: $styleguide-color-primary;
+    padding: spacing(x2) 10px;
+    border-top: 1px solid $grey--light;
+    border-bottom: 1px solid $grey--light;
+}
+h2.sg-sectionHeading:first-child {
+    margin-top: 0;
+    border-top: 0;
+    padding-top: 0;
+}
+
+.sg-sectionHeading--main {
+    padding: 6vh 10px;
+    text-align: center;
+}
+
+
+/**
+ * Typography
+ */
+.sg-type {
+    margin-bottom: 1em;
+}
+
+
+@mixin sgTypeTest($size) {
+    .sg-type-item {
+        @include font-size($size, false);
+    }
+
+    code {
+        &:after { content: ' :: #{$size}px'; }
+    }
+}
+
+
+.sg-type-small { @include sgTypeTest(small); }
+.sg-type-base { @include sgTypeTest(base); }
+.sg-type-mid { @include sgTypeTest(mid); }
+.sg-type-large { @include sgTypeTest(large); }
+.sg-type-jumbo { @include sgTypeTest(jumbo); }
+
+.sg-typeSpecimen {
+    margin-bottom: 0;
+    margin-top: 0;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+
+    &:after {
+        display: block;
+        @extend .sg-interfaceType;
+        @extend .sg-interfaceType--subtle;
+        @include font-size(16);
+        margin-top: 5px;
+        border-top: 1px solid #ddd;
+        font-weight: normal;
+    }
+}
+
+// h1.typeSpecimen:after { content: 'Font stack: #{$font-family-headings}'; }
+// p.typeSpecimen:after  { content: 'Font stack: #{$font-family-base}'; }
+
+.sg-typeSpecimen--primary {
+    @include font-size(30);
+    font-family: $font-family-headings;
+    font-weight: $font-weight-headings;
+
+}
+
+.sg-typeSpecimen--secondary {
+    @include font-size(30);
+    font-family: $font-family-base;
+}
+
+.sg-typeSpecimen--giant {
+    @include font-size(120);
+    line-height: 1;
+}

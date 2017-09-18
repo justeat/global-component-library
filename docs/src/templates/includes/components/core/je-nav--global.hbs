@@ -1,0 +1,53 @@
+<nav data-navglobal="" class="c-nav c-nav--global" aria-labelledby="Main Menu">
+    <input type="checkbox" class="c-nav-trigger" name="menuVisible" id="nav-checkbox" aria-hidden="true" aria-label="Navigation visibility toggle" tabindex="0">
+    <label data-navglobal-toggle="" class="c-nav-toggle" for="nav-checkbox">
+        <span class="c-nav-toggle-icon" title="Menu">Open Menu</span>
+    </label>
+    <div class="c-nav-container">
+        <ul class="c-nav-list u-unstyled">
+            {{#if loggedin}}
+            <li class="c-nav-list-item has-sublist" data-test-id="navList">
+                <p class="c-nav-list-text">
+                    <svg class="c-nav-icon" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
+                        <path fill="#535353" fill-rule="evenodd" d="M34.657 17.5c0 9.608-7.755 17.363-17.363 17.363S0 27.039 0 17.5C0 7.96 7.755.137 17.363.137S34.657 7.892 34.657 17.5zm-17.294-.137c2.47 0 4.53-4.05 4.53-6.588 0-2.471-2.06-4.53-4.53-4.53s-4.53 2.059-4.53 4.53c0 2.47 2.06 6.588 4.53 6.588zm9.127 6.588c-.068-.069.206-5.696-2.333-6.382-1.304-.344-2.402-.55-2.951-.687-.892 1.167-2.333 2.265-3.912 2.265-1.647 0-3.02-1.03-3.912-2.265-.617.138-1.715.412-2.95.687-2.471.617-2.197 6.725-2.197 6.725C10.5 26.627 13.657 28 17.157 28c3.706 0 7-1.578 9.333-4.049z" />
+                    </svg>
+                    <span class="c-nav-list-text-sub"><strong>Amanda Hugginkiss</strong></span>
+                    <span class="c-nav-list-text-sub u-showBelowMid">amanda.hugginkiss@gmail.com</span>
+                </p>
+                <ul class="c-nav-popoverList">
+                    <li class="c-nav-list-item">
+                        <a class="c-nav-list-link" data-gtm="header|click - navigation|account" data-test-id="accountInfo" href="">Account Info</a>
+                    </li>
+                    <li class="c-nav-list-item">
+                        <a class="c-nav-list-link" data-gtm="header|click - navigation|orders" data-test-id="orders" href="">Orders</a>
+                    </li>
+                    <li class="c-nav-list-item">
+                        <a class="c-nav-list-link" data-gtm="header|click - navigation|credit balance" data-test-id="accountCredit" href="">Account Credit</a>
+                    </li>
+                    <li class="c-nav-list-item u-showAboveMid">
+                        <a class="c-nav-list-link" data-gtm="header|click - navigation|payment methods" data-test-id="paymentMethods" href="">Payment Methods</a>
+                    </li>
+                    <li class="c-nav-list-item">
+                        <a class="c-nav-list-link" data-gtm="header|click - navigation|address book" data-test-id="addressBook" href="">Delivery Addresses</a>
+                    </li>
+                    <li class="c-nav-list-item c-nav-list-item--forceLast">
+                        <a class="c-nav-list-link" data-gtm="header|click - navigation|logout" data-test-id="logout" href="">Log Out</a>
+                    </li>
+                </ul>
+            </li>
+            {{else}}
+            <li class="c-nav-list-item c-nav-list-item--support" data-test-id="login">
+                <a href="" data-gtm="header|click - navigation|login" class="c-nav-list-link">Login</a>
+            </li>
+            {{/if}}
+            {{#if languageSwitcher}}
+            <li class="c-nav-list-item u-showAboveMid" data-test-id="languageToggle">
+                <a href="" class="c-nav-list-link">Francais</a>
+            </li>
+            {{/if}}
+            <li class="c-nav-list-item c-nav-list-item--support" data-test-id="support">
+                <a href="" data-gtm="header|click - navigation|help" class="c-nav-list-link">Help</a>
+            </li>
+        </ul>
+    </div>
+</nav>

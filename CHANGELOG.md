@@ -4,6 +4,48 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v0.6.0
+------------------------------
+*September 15, 2017*
+
+### Added
+- Documentation for static content page added
+- Documentation for default header component added
+- Incomplete attribute added for pages so we can see which pages are most up to date
+
+
+### Changed
+- Documentation CSS now sorted out properly (lots of removals and additions)
+- JS docs specific file added to compilation task
+- Header code blocks tidied up
+- Adding `.u-unstyled` class to lists in documentation
+- Updated CHANGELOG
+
+
+v0.5.0
+------------------------------
+*September 6, 2017*
+
+### Added
+- Documentation for default footer added to documentation
+
+
+v0.4.0
+------------------------------
+*August 31, 2017*
+
+### Added
+- Documentation for button styles
+
+
+v0.4.0
+------------------------------
+*August 31, 2017*
+
+### Added
+- Documentation for button styles
+
+
 v0.3.0
 ------------------------------
 *August 9, 2017*
