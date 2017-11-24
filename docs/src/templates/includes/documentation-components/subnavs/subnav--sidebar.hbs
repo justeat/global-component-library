@@ -155,6 +155,14 @@
     <li><a href="{{ baseUrl }}/documentation/images/img-icons" class="{{#is navactive 'img-icons'}} is-active{{/is}}">Icons</a></li>
     <li><a href="{{ baseUrl }}/documentation/images/img-optimisation" class="{{#is navactive 'img-optimisation'}} is-active{{/is}}">Image Optimisation</a></li>
 {{/is}}
+
+
+{{#is navsub 'open-source'}}
+<!-- subnav for Documentation > Images and icons -->
+    <li><a href="{{ baseUrl }}/documentation/open-source" class="{{#is navactive 'os-creating'}} is-active{{/is}}">Creating a module</a></li>
+    <li><a href="{{ baseUrl }}/documentation/open-source/module-maintenance" class="{{#is navactive 'os-maintenance'}} is-active{{/is}}">Module maintenance</a></li>
+    <li><a href="{{ baseUrl }}/documentation/open-source/module-issues" class="{{#is navactive 'os-issues'}} is-active{{/is}}">Issues</a></li>
+{{/is}}
 </ul>
 
     <!-- <li><a href="{{ baseUrl }}/process/gulp.html"{{#is navactive 'docsgulp'}} class="is-active"{{/is}} data-trak='{"category":"Docs nav","action":"Grunt"}'>Gulp</a>
