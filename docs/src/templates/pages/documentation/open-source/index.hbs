@@ -1,0 +1,100 @@
+---
+title: Creating a Fozzie module
+section-title: Open source
+description:
+docs: true
+
+navgroup: documentation
+navsub: open-source
+navactive: os-creating
+---
+
+## Naming your module
+
+The general naming convention for a fozzie module is to use `f-{your-repo-name}` e.g. [`f-icons`](https://github.com/justeat/f-icons), [`f-dom`](https://github.com/justeat/f-dom), [`f-serviceworker`](https://github.com/justeat/f-serviceworker).
+
+
+## Create the GitHub repository
+
+To create a new repository go to the [new repository page](https://github.com/new) and set the owner to the `justeat` org, visiblity to `private`, initialise with a README, and add a Node `.gitignore` & Apache-2.0 license.
+
+![Create a new repository on GitHub](images/create-new-repo.png)
+
+
+## Access settings
+
+Configure the access settings in `Settings` -> `Collaborators & teams` giving the ***UI Admins*** team "admin" permissions, and the ***UI Developers*** team "write" permissions.
+
+![GitHub repository access settings](images/access-settings.png)
+
+
+## Configure master branch protection
+
+Configure branch protection in `Settings` -> `Branches` selecting the master branch from the dropdown in the "Protected branches" section.
+
+The recommended settings to select are
+
+```
+* [x] Protect this branch
+  * [x] Require pull request reviews before merging
+    * [x] Dismiss stale pull request approvals when new commits are pushed
+    * [x] Require review from Code Owners
+    * [ ] Restrict who can dismiss pull request reviews
+  * [x] Require status checks to pass before merging
+    * [x] Require branches to be up to date before merging
+  * [ ] Restrict who can push to this branch
+  * [ ] Include administrators
+```
+
+
+### Status checks
+
+If/once you have any services set up with status checks then you'll be able to select them in the "Require status checks to pass before merging" section in order to require the checks to pass before a pull request can be merged.
+
+![Setting up status checks](images/status-checks.png)
+
+
+## Set up the project on your computer
+
+First, clone the new repository on your machine, then:
+
+* Create a new branch
+* Copy the [Fozzie Component Template](https://github.je-labs.com/UI/component-template/archive/master.zip) files into the new project directory
+* Remove any files not needed e.g. if this is a JS module then remove everything but the js directory in src
+* Ensure that you update `package.json` with the name of your module (replace all instances of `{package-name}`)
+* Commit the changes to your new branch
+* Push the branch to origin and open a pull request
+
+
+## Publishing to npm
+
+Before attempting to publish to the npm registry please ensure that you have been added to the Just Eat npm org — [refer to this page](https://www.npmjs.com/org/justeat/members) for a list of owners who can add you to the org.
+
+Once you are happy that the package is ready to be published to the npm registry, ensure you are on the correct branch — typically the master branch with the latest changes pulled — then run `npm publish` on the command line.
+
+
+## Badges
+
+### General Badges
+
+These badges should be added to all repositories
+
+* npm version badge from [https://badge.fury.io/](https://badge.fury.io/)
+* Gemnasium badge from [https://gemnasium.com/dashboard](https://gemnasium.com/dashboard)
+
+
+### Optional Badges
+
+Travis badge from [https://travis-ci.org/justeat/{your-repo-name](https://travis-ci.org/justeat/%257Byour-repo-name)}
+
+If there are unit tests — coveralls badge from [https://coveralls.io/github/justeat/{your-repo-name](https://coveralls.io/github/justeat/%257Byour-repo-name)}
+
+
+## Making the package public
+
+Please refer to the [readme](readme.md) for details on this process.
+
+
+## Problems
+
+Have a look at the [module issues page]({{ baseUrl }}/documentation/open-source/module-issues) for common issues and how to resolve them.
