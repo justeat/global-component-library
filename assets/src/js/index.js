@@ -1,8 +1,11 @@
 import ready from 'lite-ready';
 import svg4everybody from 'svg4everybody';
-import toggle from '@justeat/f-toggle';
+
+// Fozzie imports
+import '@justeat/f-header';
+import '@justeat/f-footer';
+import '@justeat/f-toggle';
 
 ready(() => {
     svg4everybody();
-    toggle();
 });

@@ -19,20 +19,21 @@
     "node": ">=4.0.0"
   },
   "dependencies": {
-    "@justeat/f-footer": "^0.3.1",
-    "@justeat/f-header": "^0.6.0",
-    "@justeat/f-toggle": "^0.1.0",
-    "@justeat/fozzie": "^0.13.0",
-    "@justeat/gulp-build-fozzie": "^6.0.0",
-    "babel-preset-es2015": "^6.24.1",
-    "gulp": "^3.9.1",
+    "@justeat/f-footer": "^0.14.1",
+    "@justeat/f-header": "^0.11.1",
+    "@justeat/f-icons": "^0.2.2",
+    "@justeat/f-toggle": "^0.5.0",
+    "@justeat/fozzie": "^0.21.0",
     "kickoff-grid.css": "^1.1.0",
     "lite-ready": "^1.0.4",
     "qwery": "^4.0.0",
     "svg4everybody": "^2.1.9"
   },
   "devDependencies": {
-    "eslint-plugin-import": "^2.2.0"
+    "@justeat/gulp-build-fozzie": "^6.3.0",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint-plugin-import": "^2.2.0",
+    "gulp": "^3.9.1"
   },
   "keywords": [],
   "scripts": {
