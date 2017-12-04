@@ -1,0 +1,13 @@
+<li>
+    <a class="c-countrySelector-link {{#if selected}}c-countrySelector-link--selected{{/if}}" target="_blank" href="#">
+        <svg class="c-icon--flag--small">
+            <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-flags-flag.{{countryCode}}" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        <p>{{countryName}}</p>
+    </a>
+    {{#if selected}}
+    <svg class="c-countrySelector-cross" data-toggle-target="countrySelector-list">
+        <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-operators-cross" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+    {{/if}}
+</li>
