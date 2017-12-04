@@ -47,5 +47,11 @@ build(gulp, {
                 revision: false,
             }
         }
+    },
+
+    docs: {
+        helpers: {
+            concat: (...args) => args.slice(0, -1).join('')
+        }
     }
 });

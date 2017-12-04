@@ -4,9 +4,7 @@
             <div class="g-col g-span3 c-footer-panel" data-panel-collapsible="" data-toggle-name="footer-panel-1">
                 <h2 class="c-footer-heading" data-toggle-target="footer-panel-1" data-toggle-class="is-collapsed">
                     Customer service
-                    <svg class="c-footer-chevron c-icon--chevron u-showBelowMid">
-                        <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-arrows-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                    </svg>
+                    {{> je-svg-sprite cssClass="c-footer-chevron c-icon--chevron u-showBelowMid" spriteId="icons-arrows-chevron" }}
                 </h2>
                 <ul class="c-footer-list">
                     <li>
@@ -35,9 +33,7 @@
             <div class="g-col g-span3 c-footer-panel" data-panel-collapsible="" data-toggle-name="footer-panel-2">
                 <h2 data-test-id="cuisine-footer-heading" class="c-footer-heading" data-toggle-target="footer-panel-2" data-toggle-class="is-collapsed">
                     Top cuisines
-                    <svg class="c-footer-chevron c-icon--chevron u-showBelowMid">
-                        <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-arrows-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                    </svg>
+                    {{> je-svg-sprite cssClass="c-footer-chevron c-icon--chevron u-showBelowMid" spriteId="icons-arrows-chevron" }}
                 </h2>
                 <ul class="c-footer-list">
                     <li>
@@ -63,9 +59,7 @@
             <div class="g-col g-span3 c-footer-panel" data-panel-collapsible="" data-toggle-name="footer-panel-3">
                 <h2 class="c-footer-heading" data-toggle-target="footer-panel-3" data-toggle-class="is-collapsed">
                     Locations
-                    <svg class="c-footer-chevron c-icon--chevron u-showBelowMid">
-                        <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-arrows-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                    </svg>
+                    {{> je-svg-sprite cssClass="c-footer-chevron c-icon--chevron u-showBelowMid" spriteId="icons-arrows-chevron" }}
                 </h2>
                 <ul class="c-footer-list">
                     <li>
@@ -91,9 +85,7 @@
             <div class="g-col g-span3 c-footer-panel" data-panel-collapsible="" data-toggle-name="footer-panel-4">
                 <h2 class="c-footer-heading" data-toggle-target="footer-panel-4" data-toggle-class="is-collapsed">
                     A bit more about us
-                    <svg class="c-footer-chevron c-icon--chevron u-showBelowMid">
-                        <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-arrows-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                    </svg>
+                    {{> je-svg-sprite cssClass="c-footer-chevron c-icon--chevron u-showBelowMid" spriteId="icons-arrows-chevron" }}
                 </h2>
                 <ul class="c-footer-list">
                     <li>
@@ -141,48 +133,12 @@
             <div class="g-col g-span3 c-footer-social">
                 <h2 class="c-footer-heading">Follow us</h2>
                 <ul class="c-footer-list c-footer-list--inline">
-                    <li>
-                        <a href="#" target="_blank">
-                            <svg class="c-footer-icon c-footer-icon--social">
-                                <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-social-icon-facebook" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <svg class="c-footer-icon c-footer-icon--social">
-                                <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-social-icon-twitter" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <svg class="c-footer-icon c-footer-icon--social">
-                                <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-social-icon-google-plus" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <svg class="c-footer-icon c-footer-icon--social">
-                                <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-social-icon-rss" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <svg class="c-footer-icon c-footer-icon--social">
-                                <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-social-icon-instagram" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <svg class="c-footer-icon c-footer-icon--social">
-                                <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-social-icon-pinterest" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                            </svg>
-                        </a>
-                    </li>
+                    {{> je-footer-social-item socialNetwork="facebook" }}
+                    {{> je-footer-social-item socialNetwork="twitter" }}
+                    {{> je-footer-social-item socialNetwork="google-plus" }}
+                    {{> je-footer-social-item socialNetwork="rss" }}
+                    {{> je-footer-social-item socialNetwork="instagram" }}
+                    {{> je-footer-social-item socialNetwork="pinterest" }}
                 </ul>
             </div>
             <div class="g-col g-span3 c-footer-feedback">
@@ -200,25 +156,11 @@
             <div class="g-col g-span8 c-footer-cards">
                 <ul class="c-footer-list c-footer-list--inline">
                     <li class="c-footer-certificate">
-                        <svg class="c-footer-icon c-footer-icon--certificate c-icon--confianza">
-                            <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-certificates-confianza" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg>
+                        {{> je-svg-sprite cssClass="c-footer-icon c-footer-icon--certificate c-icon--confianza" spriteId="icons-certificates-confianza" }}
                     </li>
-                    <li>
-                        <svg class="c-footer-icon c-footer-icon--card c-icon--mastercard--securecode">
-                            <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-cards-mastercard--securecode" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg>
-                    </li>
-                    <li>
-                        <svg class="c-footer-icon c-footer-icon--card c-icon--visa--verified">
-                            <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-cards-visa--verified" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg>
-                    </li>
-                    <li>
-                        <svg class="c-footer-icon c-footer-icon--card c-icon--paypal">
-                            <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-cards-paypal" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                        </svg>
-                    </li>
+                    {{> je-footer-card-item cardName="mastercard--securecode" }}
+                    {{> je-footer-card-item cardName="visa--verified" }}
+                    {{> je-footer-card-item cardName="paypal" }}
                 </ul>
             </div>
             <div class="g-col g-span4 c-footer-countries">

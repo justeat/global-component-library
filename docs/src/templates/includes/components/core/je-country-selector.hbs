@@ -1,12 +1,8 @@
 <div class="c-countrySelector">
     <a class="c-countrySelector-link c-countrySelector-link--selected" href="#" data-toggle-target="countrySelector-list">
-        <svg class="c-icon--flag--small">
-            <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-flags-flag.gb" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-        </svg>
+        {{> je-svg-sprite cssClass="c-icon--flag--small" spriteId="icons-flags-flag.gb" }}
         <p>United Kingdom</p>
-        <svg class="c-countrySelector-chevron c-icon--chevron--small">
-            <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-arrows-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-        </svg>
+        {{> je-svg-sprite cssClass="c-countrySelector-chevron c-icon--chevron--small" spriteId="icons-arrows-chevron" }}
     </a>
     <ul class="c-countrySelector-list is-hidden" data-toggle-name="countrySelector-list">
         {{> je-country-selector-item countryName="Brazil" countryCode="br"}}

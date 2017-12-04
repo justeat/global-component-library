@@ -1,8 +1,6 @@
 <li>
     <a class="c-countrySelector-link {{#if selected}}c-countrySelector-link--selected{{/if}}" target="_blank" href="#">
-        <svg class="c-icon--flag--small">
-            <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-flags-flag.{{countryCode}}" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-        </svg>
+        {{> je-svg-sprite cssClass="c-icon--flag--small" spriteId=(concat "icons-flags-flag." countryCode) }}
         <p>{{countryName}}</p>
     </a>
     {{#if selected}}
