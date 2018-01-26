@@ -138,7 +138,7 @@ $pre-bgColor                  : #f9f8f8;
 // Inline and block code styles
 code,
 pre {
-    border: 1px solid #ddd;
+    border: 1px solid $color-border--interactive;
     padding: 10px;
     font-family: $font-family-mono;
     @include font-size(small, false);

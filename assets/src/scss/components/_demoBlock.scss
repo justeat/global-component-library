@@ -26,7 +26,7 @@
     }
 
     .demo-visual {
-        border: 1px solid #ddd;
+        border: 1px solid $color-border--interactive;
         padding: spacing(x5) spacing(x5);
         position: relative;
     }
@@ -46,10 +46,14 @@
     }
 
 
-.btn--codeToggle {
+.o-btn--codeToggle {
     width: 100%;
     border-radius: 0;
-    border: 1px solid $grey--light;
+    border: 1px solid $color-border--interactive;
     border-top: 0;
     background-color: $grey--offWhite;
+
+    &.is-clicked {
+        border-bottom: 0;
+    }
 }

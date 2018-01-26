@@ -4,6 +4,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v0.7.0
+------------------------------
+*January 29, 2018*
+
+### Changed
+- Updated `browserlist` in `package.json`
+- Updated to use `babel-preset-env`
+- Updated codeblock styling
+- Changed how docs JS is referenced
+
+
 v0.6.0
 ------------------------------
 *September 15, 2017*

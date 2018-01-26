@@ -17,24 +17,24 @@ const docs = {
     // controls all of our base initialsation functions
     init: () => {
 
-        this._demoHandler();
+        docs._demoHandler();
 
     },
 
     _demoHandler: () => {
 
-        const demoElCount = this.demoEls.length;
+        const demoElCount = docs.demoEls.length;
 
         for (let i = 0; i < demoElCount; i++) {
-            const demoEl = this.demoEls[i],
+            const demoEl = docs.demoEls[i],
                 codeBlock = demoEl.querySelector('.demo-code');
 
             codeBlock.classList.add('is-hidden');
 
             const demoToggleBtn = document.createElement('a');
-            demoToggleBtn.classList.add('btn', 'btn--codeToggle');
-            demoToggleBtn.textContent = this.demoBtnText.whenHidden;
-            demoToggleBtn.addEventListener('click', this._demoToggle);
+            demoToggleBtn.classList.add('o-btn', 'o-btn--codeToggle');
+            demoToggleBtn.textContent = docs.demoBtnText.whenHidden;
+            demoToggleBtn.addEventListener('click', docs._demoToggle);
             demoEl.insertBefore(demoToggleBtn, codeBlock);
         }
 
@@ -42,15 +42,17 @@ const docs = {
 
     _demoToggle: () => {
 
-        const codeBlock = this.nextElementSibling,
+        const btn = event.target,
+            codeBlock = btn.nextElementSibling,
             isHidden = codeBlock.classList.contains('is-hidden');
 
         codeBlock.classList.toggle('is-hidden');
+        btn.classList.toggle('is-clicked');
 
         if (isHidden) {
-            this.textContent = docs.demoBtnText.whenVisible;
+            btn.textContent = docs.demoBtnText.whenVisible;
         } else {
-            this.textContent = docs.demoBtnText.whenHidden;
+            btn.textContent = docs.demoBtnText.whenHidden;
         }
 
     }
