@@ -4,6 +4,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v0.8.0
+------------------------------
+*February 8, 2018*
+
+### Added
+- Logo! :bear:
+- Dangerfile.js usage documented
+- License added
+
+### Changed
+- Package dependencies updated
+- Gitignore updated (to the fozzie standard definition)
+- Moved images into better folder structure
+- Bumped up the documentation font-size (as was a bit small for large amounts of documentation text)
+
+
 v0.7.0
 ------------------------------
 *January 29, 2018*
