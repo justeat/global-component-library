@@ -5,7 +5,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 v0.8.0
 ------------------------------
-*February 8, 2018*
+*February 9, 2018*
 
 ### Added
 - Search page mock up
