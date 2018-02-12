@@ -1,21 +1,15 @@
-<ul class="c-breadcrumb u-unstyled u-clearfix">
-    {{#if secondParent}}
+<ul class="c-breadcrumb u-unstyled u-clearfix">   
     <li class="c-breadcrumb-item c-breadcrumb-item--home" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
         <a class="c-breadcrumb-item-link" href="#" itemprop="url" title="Home link">
-            <span itemprop="title">{{secondParent}}</span>
+            <span itemprop="title">{{secondparent}}</span>
         </a>
     </li>
-    {{/if}}
-    {{#if firstParent}}
     <li class="c-breadcrumb-item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
         <a class="c-breadcrumb-item-link" href="#" itemprop="url" title="Second level Link">
-            <span itemprop="title">{{firstParent}}</span>
+            <span itemprop="title">{{firstparent}}</span>
         </a>
     </li>
-    {{/if}}
-    {{#if current}}
     <li class="c-breadcrumb-item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
         <span itemprop="title">{{current}}</span>
     </li>
-    {{/if}}
 </ul>
