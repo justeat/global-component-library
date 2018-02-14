@@ -6,6 +6,21 @@
     border: 3px dashed $grey--lightest;
     margin: 5px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.componentPlaceholder--1xRow {
+    height: spacing(x4);
+}
+
+.componentPlaceholder--2xRow {
+    height: spacing(x4) * 2;
+}
+
+.componentPlaceholder--3xRow {
+    height: spacing(x4) * 3;
 }
 
     .componentPlaceholder-info {
