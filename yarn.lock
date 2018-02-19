@@ -57,9 +57,9 @@
     include-media "^1.4.9"
     lite-ready "^1.0.4"
 
-"@justeat/f-icons@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-0.2.3.tgz#5bf4468bdbb0532457d85fdb931bc909d28ac712"
+"@justeat/f-icons@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-0.3.4.tgz#f504daf5fe140a6a912b89f2c27f07786edb36d7"
   dependencies:
     "@kickoff/utils.scss" "2.1.1"
     include-media "^1.4.9"

@@ -21,7 +21,7 @@
   "dependencies": {
     "@justeat/f-footer": "^0.16.0",
     "@justeat/f-header": "^0.16.0",
-    "@justeat/f-icons": "^0.2.3",
+    "@justeat/f-icons": "^0.3.4",
     "@justeat/f-toggle": "^0.10.0",
     "@justeat/fozzie": "^0.26.0",
     "kickoff-grid.css": "^1.1.0",
