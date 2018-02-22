@@ -38,7 +38,7 @@ navactive: mediaElement
 {{/demo-block }}
 
 <h2 class="sg-sectionHeading">Fully Stacked Media Element</h2>
-<p>Stacked on al view widths – image on the top, the block of information below it.</p>
+<p>Stacked on all view widths – image on the top, the block of information below it.</p>
 {{#>demo-block }}
 <div class="c-mediaElement c-mediaElement--fullstack">
     <div class="c-mediaElement-img">
@@ -47,6 +47,33 @@ navactive: mediaElement
     <div class="c-mediaElement-content">
         <h3 itemprop="name">Kebab King</h3>
         <p class="u-showAboveMid" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">10 Green Street, Bristol</p>
+    </div>
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Modifiers</h2>
+<p>Image outlined</p>
+{{#>demo-block }}
+<div class="c-mediaElement">
+    <div class="c-mediaElement-img c-mediaElement-img--outlined">
+        <img src="/assets/img/examples/restaurant-logo.gif" alt="Kebab King" itemprop="image">
+    </div>
+    <div class="c-mediaElement-content">
+        <h3 itemprop="name">Kebab King</h3>
+        <p class="u-showAboveMid" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">10 Green Street, Bristol</p>
+    </div>
+</div>
+{{/demo-block }}
+
+<p>Text large</p>
+{{#>demo-block }}
+<div class="c-mediaElement">
+    <div class="c-mediaElement-img">
+        <img src="/assets/img/examples/restaurant-logo.gif" alt="Kebab King" itemprop="image">
+    </div>
+    <div class="c-mediaElement-content">
+        <h3 itemprop="name">Kebab King</h3>
+        <p class="u-showAboveMid c-mediaElement-text--large" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">10 Green Street, Bristol (large)</p>
     </div>
 </div>
 {{/demo-block }}
