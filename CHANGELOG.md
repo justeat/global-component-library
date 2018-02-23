@@ -3,6 +3,19 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+v0.11.0
+------------------------------
+*February 26, 2018*
+
+### Added
+- Documentation page for the `f-validate` component added
+- Documentation helpers for initialising example forms added
+
+### Changed
+- Code highlighting updated to Prism v1.11
+- Updated package dependencies
+
+
 v0.10.0
 ------------------------------
 *February 22, 2018*

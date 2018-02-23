@@ -95,6 +95,18 @@
 
 {{#is navsub 'js-components'}}
 <!-- subnav for Styleguide > JS Components -->
+    <li><a href="{{ baseUrl }}/styleguide/js-components/validation" class="{{#is navactive 'validation'}} is-active{{/is}}">Form Validation</a>
+        {{#is navactive 'validation'}}
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="{{ baseUrl }}/styleguide/js-components/validation/#usage">Usage</a></li>
+            <li><a href="{{ baseUrl }}/styleguide/js-components/validation/#rules">Rules</a></li>
+            <li><a href="{{ baseUrl }}/styleguide/js-components/validation/#messages">Custom Error Messages</a></li>
+            <li><a href="{{ baseUrl }}/styleguide/js-components/validation/#options">Options</a></li>
+            <li><a href="{{ baseUrl }}/styleguide/js-components/validation/#messages-grouped">Grouped Error Messages</a></li>
+            <li><a href="{{ baseUrl }}/styleguide/js-components/validation/#multiple-rules">Applying Multiple Rules</a></li>
+        </ul>
+        {{/is}}
+    </li>
     <li><a href="{{ baseUrl }}/styleguide/js-components/modal" class="is-incomplete {{#is navactive 'modal'}} is-active{{/is}}">Modal</a></li>
     <li><a href="{{ baseUrl }}/styleguide/js-components/address-lookup" class="is-incomplete {{#is navactive 'address-lookup'}} is-active{{/is}}">Address Lookup</a></li>
     <li><a href="{{ baseUrl }}/styleguide/js-components/lazy-images" class="is-incomplete {{#is navactive 'lazy-images'}} is-active{{/is}}">Lazy Images</a></li>
