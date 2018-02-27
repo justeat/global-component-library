@@ -1,4 +1,5 @@
-/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+scss */
+/* PrismJS 1.11.0
+http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+bash+scss */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -8,18 +9,20 @@
 code[class*='language-'],
 pre[class*='language-'] {
     color: black;
+    background: none;
     text-shadow: 0 1px white;
-    font-family: Consolas, Monaco, 'Andale Mono', monospace;
-    direction: ltr;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
     word-break: normal;
+    word-wrap: normal;
     line-height: 1.5;
 
     tab-size: 4;
     hyphens: none;
 }
+
 
 pre[class*='language-']::selection,
 pre[class*='language-'] ::selection,
@@ -39,7 +42,7 @@ code[class*='language-'] ::selection {
 /* Code blocks */
 pre[class*='language-'] {
     padding: 1em;
-    margin: spacing(x2) 0;
+    margin: 1em 0;
     overflow: auto;
 }
 
@@ -52,6 +55,7 @@ pre[class*='language-'] {
 :not(pre) > code[class*='language-'] {
     padding: 0.1em;
     border-radius: 0.3em;
+    white-space: normal;
 }
 
 .token.comment,
@@ -117,7 +121,6 @@ pre[class*='language-'] {
 .token.bold {
     font-weight: bold;
 }
-
 .token.italic {
     font-style: italic;
 }
@@ -128,7 +131,7 @@ pre[class*='language-'] {
 
 
 /**
- * Define associated Code variables
+ * Define associated Code variables - not Prism CSS
  */
 $code-textColor               : #444;
 $code-bgColor                 : #f9f8f8;
@@ -141,7 +144,7 @@ pre {
     border: 1px solid $color-border--interactive;
     padding: 10px;
     font-family: $font-family-mono;
-    @include font-size(small, false);
+    @include font-size(base, false);
     color: $code-textColor;
     tab-size: 3;
     overflow: auto;

@@ -67,7 +67,7 @@ $subnav-border-thickness: 3px;
 
     .sg-sideNav-subnav {
         margin-top: 0;
-        margin-left: 15px;
+        border-left: 15px solid $grey--lightest;
     }
 
     .is-incomplete {

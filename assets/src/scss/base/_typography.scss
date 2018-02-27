@@ -48,7 +48,12 @@
     }
     > ul,
     > ol {
-        @include font-size(16);
+        @include font-size(mid);
+        line-height: 1.2;
+
+        li {
+            margin-bottom: 0;
+        }
     }
 
     > p > img,
@@ -78,6 +83,9 @@ h2.sg-sectionHeading:first-child {
     margin-top: 0;
     border-top: 0;
     padding-top: 0;
+}
+h3.sg-sectionHeading {
+    border-top: 0;
 }
 
 .sg-sectionHeading--main {
