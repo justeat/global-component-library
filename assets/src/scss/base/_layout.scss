@@ -112,6 +112,10 @@
 
 .js-options td {
     max-width: 450px;
+
+    p:first-child {
+        margin-top: 0;
+    }
 }
 
 

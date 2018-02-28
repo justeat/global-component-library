@@ -11,6 +11,19 @@ v0.11.0
 - Listing Element documentation added
 
 
+v0.11.0
+------------------------------
+*February 26, 2018*
+
+### Added
+- Documentation page for the `f-validate` component added
+- Documentation helpers for initialising example forms added
+
+### Changed
+- Code highlighting updated to Prism v1.11
+- Updated package dependencies
+
+
 v0.10.0
 ------------------------------
 *February 22, 2018*
