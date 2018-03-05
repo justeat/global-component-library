@@ -5,7 +5,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 v0.12.0
 ------------------------------
-*February 28, 2018*
+*March 5, 2018*
 
 ### Added
 - Listing Element documentation added
