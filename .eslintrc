@@ -1,6 +1,0 @@
-{
-    "extends": "@justeat/eslint-config-fozzie",
-    "env": {
-        "browser": true
-    }
-}
