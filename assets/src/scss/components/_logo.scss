@@ -1,0 +1,30 @@
+/**
+ * Documentation Logo
+ */
+
+$fozzieLogo-size--narrow: 45px;
+$fozzieLogo-size: 60px;
+
+.c-logo-fozzie {
+    width: $fozzieLogo-size--narrow;
+    height: $fozzieLogo-size--narrow;
+    margin-top: -($fozzieLogo-size--narrow/4);
+    margin-right: spacing();
+
+    @include media('>mid') {
+        width: $fozzieLogo-size;
+        height: $fozzieLogo-size;
+        margin-top: -($fozzieLogo-size/4);
+    }
+}
+
+.c-logo > a {
+    text-decoration: none;
+}
+.c-logo-subText {
+    font-style: italic;
+    display: block;
+    margin-top: -4px;
+    margin-right: (spacing() / 2);
+    color: $red;
+}

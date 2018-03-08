@@ -1,0 +1,57 @@
+---
+title: Images
+section-title: Image Documentation
+description: Our commitment to creating an accessible platform
+docs: true
+
+navgroup: documentation
+navsub: docs-images
+navactive: image-index
+
+wip: true
+---
+
+## Naming conventions
+
+All images should be semantically named according to what they are and not what they represent or the section of the website they are displayed on.
+
+Images should also be named using dash-case, with double dashes indicating variants on a base image or icon.
+
+### Good
+
+`touch-icon.png` or `arrow--up.png` and `arrow--down.png`
+
+### Bad
+
+`inf-pnl-collapse.png` or `searchresults-banner.png`
+
+
+## Important vs Decorative Images
+
+It is important to always consider whether an image is being included for purely decorative reasons, or whether it conveys a key aspect of the UI to the user.
+
+For example, decorative images are usually ones that are displayed alongside a word, such as a search filter; without the image, the user would still be able to determine what the filter does by the text label.  On the flip-side, if an image is used for a navigation component, such as a hamburger menu icon, then it would compromise the user experience should that image fail to load for some reason.
+
+Always consider these
+
+
+Inline images should be included in the HTML as img tags. Note that the alt attribute should be populated with semantic text, that is, text that makes sense when read out in the context of the document, as alt attributes are read out by screen reader software and are available on the page if for some reason, the image file doesn't load.
+
+**This works in *all* browsers.**
+
+
+## Decorative images
+
+Decorative images are images that compliment the *visual* design of the page or component, but are not essential in conveying information to the user.
+
+An example would be up and down arrows used to emphasise links and buttons that expand or collapse sections of a document.
+
+Another example would be the delivery, collection, address and time icons displayed in the restaurant info panels.
+
+Without these images, all the information would still be there for the user in the text - the images are there to compliment the visual design and scanability of the content.
+
+In these cases, background CSS images should be used.
+
+**This works in *all* browsers.**
+
+

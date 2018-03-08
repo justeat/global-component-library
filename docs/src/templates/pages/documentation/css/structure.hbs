@@ -1,0 +1,117 @@
+---
+title: CSS Structure
+section-title: CSS Documentation
+docs: true
+
+navgroup: documentation
+navsub: docs-css
+navactive: css-structure
+
+wip: true
+---
+
+Rather than use large frameworks such as Bootstrap or Zend, we maintain our own minimal framework which is loosely based on [Kickoff](http://trykickoff.github.io/).
+
+This minimal approach has two goals; to provide clear structure and to define CSS conventions – such as a consistent naming scheme – to which the development team should adhere to.
+
+Our Sass files are structured so that it is clear which styles are defined as base styles – intended to be extended upon – and which styles are the components or modules that extend this base styling.
+
+The `scss` folder contains the following directories:
+
+```
+scss
+┣ base
+┃ ┗ [...]
+┣ functions
+┃ ┗ [...]
+┣ mixins
+┃ ┗ [...]
+┣ partials
+┃ ┣ [...]
+┃ ┗ components
+┃   ┗ [...]
+┃ ┗ modules
+┃   ┗ [...]
+┣ views
+┃ ┗ [...]
+```
+
+<hr>
+
+### /base
+
+The [base](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/base) folder is where the styles that make up the foundation of the project are defined.  For example, [reset](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/base/_reset.scss) and [typographic](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/base/_typography.scss) styles are defined here, as are files containing globally relevant [CSS variables](](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/base/_variables.scss)) and [colors](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/base/_color-palette.scss).
+
+<hr>
+
+### /partials
+
+The [partials](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials) folder contains two folders; `/components` and `/modules`.
+
+The [components](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/components/) folder is for defining CSS that is used to style common HTML tags such as [buttons](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/components/_buttons.scss), [form elements](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/components/_forms.scss) or the project [grid](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/components/_grid.scss).
+
+The [modules](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/modules) folder is where components that would be specific to the project are located, such as [navigation](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/modules/_nav.scss) and [social-login](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/modules/_social-login.scss).
+
+**Please [browse through](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/) the included partials to see what is already defined before adding your own**.
+
+<hr>
+
+### /views
+
+The [views](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/views) folder should contain view-specific styles that don't fit into their own module.  Think `_home.scss` or `_search-results.scss` for example.
+
+Ideally, view specific markup should be kept to a minimum, as it is usually very specific and therefore non-reusable.  It is better to try to develop with components in mind, creating or extending existing components where possible.
+
+<hr>
+
+### /mixins
+
+The [mixins](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/mixins/) folder contains mixins that help with repetitive CSS tasks.
+
+Amongst others, `_responsive.scss` contains media query mixins ([read below](#responsive) for more info on this), `_alerts.scss` contains mixins for working with alerts and `_utility.scss` has a bunch of helpful mixins. For example, the `@include font-size()` mixin allows tou to specify your font sizes as a `px` value but output values for both `rem` and `px` in your compiled styles.
+
+<hr>
+
+### /functions
+
+The [functions](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/functions/) folder contains various Sass functions that are used in the base framework that you might find useful.
+
+<hr>
+
+### Important files
+
+It’s important to become familiar with **all of these files** so that you can make full use of the framework.
+
+#### [je.scss](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/je.scss) & [je-old-ie.scss](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/je-old-ie.scss)
+All roads lead to here. These files are compiled to associated CSS files by Gulp. Inspecting the source of these files reveals only one `@import`; for `_dependencies.scss`. Both files require the exact same dependencies so it made sense to extract all of those into another partial.
+
+* `je.scss` is compiled to `/assets/dist/css/je.css` which is used by Internet Explorer 9+, Chrome, Safari, Firefox and Opera.
+* `je-old-ie.scss` is compiled to `/assets/dist/css/je-old-ie.css` and is used by Internet Explorer 8 and below only.
+
+	These browsers do not support media queries and so rather than having old IE show mobile-first styles (which would suck), we serve them a slightly different CSS file instead. We use some clever Sass mixins to determine what CSS should be served – [see below](#responsive) for more details on this.
+
+#### The stylesheets are then added to HTML using the code below
+```markup
+<!--[if lte IE 8]>
+	<link rel="stylesheet" href="/assets/dist/css/je-old-ie.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+	<link rel="stylesheet" href="/assets/dist/css/je.css">
+<!--<![endif]-->
+```
+
+---
+#### [_dependencies.scss](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/_dependencies.scss)
+This file is where all of the projects Sass dependencies are defined. It imports all of the scss files that will be compiled into your project.
+
+If you need to add or remove a file, do it here. The order of the imported files is the same order that the CSS will be compiled to.
+
+---
+#### [_global.scss](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/_global.scss) – located in the `/base` folder
+This file contains all global styles that do not obviously fit within any other scss partial. For example, we include our body's background styles and the main `.l-container` styles.
+
+**Try not to fill this up with all your styles though.**  Your Sass should be written in a modular way, and so the majority of your Sass should be organised within the `partials` or `views` folders.
+
+---
+#### [_helper-classes.scss](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/_helper-classes.scss) – located in the `/base` folder
+This file contains a bunch of helper styles, like `.u-clearfix` (for clearing floats), `.ir` for using background image replacement, `.is-hidden` etc.

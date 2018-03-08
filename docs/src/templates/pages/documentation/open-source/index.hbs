@@ -1,0 +1,102 @@
+---
+title: Creating a Fozzie module
+section-title: Open source
+description:
+docs: true
+
+navgroup: documentation
+navsub: open-source
+navactive: os-creating
+---
+
+<a name="naming-your-module"></a>
+## Naming your module
+
+The general naming convention for a fozzie module is to use `f-{your-repo-name}` e.g. [`f-icons`](https://github.com/justeat/f-icons), [`f-dom`](https://github.com/justeat/f-dom), [`f-serviceworker`](https://github.com/justeat/f-serviceworker).
+
+
+<a name="create-the-github-repository"></a>
+## Create the GitHub repository
+
+To create a new repository go to the [new repository page](https://github.com/new) and set the owner to the `justeat` org, visiblity to `private`, initialise with a README, and add a Node `.gitignore` &amp; Apache-2.0 license.
+
+![Create a new repository on GitHub]({{baseUrl}}/assets/img/os/create-new-repo.png)
+
+
+<a name="access-settings"></a>
+## Access settings
+
+Configure the access settings in `Settings` -> `Collaborators &amp; teams` giving the ***UI Admins*** team "admin" permissions, and the ***UI Developers*** team "write" permissions.
+
+![GitHub repository access settings]({{baseUrl}}/assets/img/os/access-settings.png)
+
+
+<a name="configure-master-branch-protection"></a>
+## Configure master branch protection
+
+Configure branch protection in `Settings` -> `Branches` selecting the master branch from the dropdown in the "Protected branches" section.
+
+The minimum recommended settings to select are
+
+```
+* [x] Protect this branch
+  * [x] Require pull request reviews before merging
+    * [x] Dismiss stale pull request approvals when new commits are pushed
+    * [x] Require review from Code Owners
+  * [x] Require status checks to pass before merging
+    * [x] Require branches to be up to date before merging
+```
+
+
+<a name="status-checks"></a>
+### Status checks
+
+If/once you have any services set up with status checks then you'll be able to select them in the "Require status checks to pass before merging" section in order to require the checks to pass before a pull request can be merged.
+
+
+<a name="set-up-the-project-on-your-computer"></a>
+## Seting up the project on your computer
+
+The recommended way to add the files required as a starting point for a new module is to [use the Fozzie yeoman generator](https://github.com/justeat/generator-fozzie), follow the instructions in the readme of the project to get started, then follow these steps:
+
+1. Clone the repository you created above on your machine
+1. Create a new branch which will contain the initial files you're going to add
+1. On the command line, esure you are in the new modules' directory then run `yo fozzie` and follow the guide.
+1. Ensure that all the files you expect have been added
+1. Commit the changes to your new branch
+    1. At this point you can begin work on your module and do the next step once you are happy with your changes.
+1. Push the branch to GitHub and open a pull request
+
+
+<a name="publishing-to-npm"></a>
+## Publishing to npm
+
+Before attempting to publish to the npm registry please ensure that you have been added to the Just Eat npm org — [refer to this page](https://www.npmjs.com/org/justeat/members) for a list of owners who can add you to the org.
+
+Once you are happy that the package is ready to be published to the npm registry, ensure you are on the correct branch — typically the master branch with the latest changes pulled — then run `npm publish` on the command line.
+
+
+<a name="badges"></a>
+## Badges
+
+<a name="general-badges"></a>
+### General Badges
+
+These badges should be added to all repositories
+
+* npm version badge from [badge.fury.io](https://badge.fury.io/).
+* Gemnasium badge from [gemnasium.com](https://gemnasium.com/dashboard).
+
+
+<a name="optional-badges"></a>
+### Optional Badges
+
+To report the build status you can [add a Travis CI badge](https://travis-ci.org/justeat/).
+
+If there are JavaScript unit tests in the module you can [add a coveralls badge](https://coveralls.io/github/justeat/).
+
+
+<a name="problems"></a>
+## Problems
+
+Have a look at the [module issues page]({{ baseUrl }}/documentation/open-source/module-issues) for common issues and how to resolve them.

@@ -1,0 +1,78 @@
+/**
+ * SG Specific Navigation Styles
+ * ===================================
+ */
+
+$subnav-padding-bottom: spacing();
+$subnav-border-thickness: 3px;
+
+.nav--sg {
+    float: none;
+}
+
+.sg-subnav {
+    @include font-size();
+}
+    .sg-subnav-item {
+        margin-left: spacing(x2);
+
+        a {
+            display: block;
+            padding-bottom: $subnav-padding-bottom;
+            color: $grey--dark;
+            border-bottom: $subnav-border-thickness solid transparent;
+            text-decoration: none;
+            font-weight: $font-weight-bold;
+        }
+        a:hover,
+        a:focus,
+        &.is-active a {
+            border-bottom: $subnav-border-thickness solid $color-primary;
+            text-decoration: none;
+        }
+    }
+
+
+.sg-secondaryBar {
+    background-color: $white;
+    padding: spacing() 0 0;
+    margin-bottom: spacing();
+}
+    .sg-secondaryBar-title {
+        margin-top: 0;
+        margin-bottom: ($subnav-padding-bottom + $subnav-border-thickness);
+    }
+
+/*
+   Sidebar Nav
+   ========================================================================== */
+
+.sg-sideNav {
+    font-family: $font-family-headings;
+
+    & a {
+        display: block;
+        border-left: 3px solid transparent;
+        border-bottom: 1px solid $grey--lightest;
+        padding: 0.4em 0.8em 0.5em;
+        color: $black;
+        font-weight: $font-weight-bold;
+        text-decoration: none;
+    }
+    & .is-active,
+    & a:hover {
+        border-left-color: $red;
+    }
+}
+
+    .sg-sideNav-subnav {
+        margin-top: 0;
+        border-left: 15px solid $grey--lightest;
+    }
+
+    .is-incomplete {
+        background-color: $grey--mid;
+    }
+
+
+
