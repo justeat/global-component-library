@@ -1,0 +1,110 @@
+/**
+ * Component for displaying colour swatches
+ * ========================================
+ */
+
+// swatch mixin
+// Takes a colour and dependent
+@mixin swatch($color) {
+    .sg-swatch-color {
+        background-color: $color;
+
+        @if lightness($color) < 70 {
+            color: $white;
+            text-shadow: 0 0 6px $grey--mid;
+        }
+        @else {
+            color: $color-text;
+        }
+
+        @if lightness($color) > 80 {
+            border: $color-border solid 1px;
+        }
+
+        &:before {
+            content: '#{$color}';
+        }
+    }
+}
+
+.sg-swatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: spacing(x3) 0;
+}
+
+    .sg-swatch-color {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        padding: 15px;
+        @include font-size(13);
+        font-family: $font-family-mono;
+        border-radius: 50%;
+
+        &:before {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .sg-swatch-desc {
+        flex-grow: 1;
+    }
+    .sg-swatch-subText {
+        display: block;
+        margin-top: spacing();
+    }
+
+
+
+// Main AA Accessible Colours
+.sg-color-red { @include swatch($red); }
+.sg-color-blue { @include swatch($blue); }
+.sg-color-green { @include swatch($green); }
+.sg-color-orange { @include swatch($orange); }
+
+// Main Typographic Colours
+.sg-color-grey--dark { @include swatch($grey--dark); }
+.sg-color-grey--darkest { @include swatch($grey--darkest); }
+.sg-color-grey--mid { @include swatch($grey--mid); }
+.sg-color-grey--offWhite { @include swatch($grey--offWhite); }
+
+.sg-color-blue--dark { @include swatch($blue--dark); }
+.sg-color-blue--darkest { @include swatch($blue--darkest); }
+
+// backgrounds
+.sg-color-white { @include swatch($white); }
+.sg-color-yellow--light { @include swatch($yellow--light); }
+.sg-color-green--offWhite { @include swatch($green--offWhite); }
+.sg-color-blue--offWhite { @include swatch($blue--offWhite); }
+.sg-color-red--offWhite { @include swatch($red--offWhite); }
+
+// keylines
+.sg-color-grey--lightest { @include swatch($grey--lightest); }
+.sg-color-grey--lighter { @include swatch($grey--lighter); }
+
+// other
+.sg-color-purple { @include swatch($purple); }
+.sg-color-purple--light { @include swatch($purple--light); }
+.sg-color-grey--light { @include swatch($grey--light); }
+.sg-color-red--dark { @include swatch($red--dark); }
+.sg-color-red--darkest { @include swatch($red--darkest); }
+.sg-color-red--offwhite { @include swatch($red--offWhite); }
+.sg-color-red--brand { @include swatch($brand--red); }
+.sg-color-green--dark { @include swatch($green--dark); }
+.sg-color-green--darkest { @include swatch($green--darkest); }
+.sg-color-orange--light { @include swatch($orange--light); }
+
+
+// secondary non-aa colours
+.sg-color-pink { @include swatch($pink); }
+.sg-color-blue--light { @include swatch($blue--light); }
+.sg-color-blue--lighter { @include swatch($blue--lighter); }
+.sg-color-green--light { @include swatch($green--light); }
+.sg-color-yellow { @include swatch($yellow); }

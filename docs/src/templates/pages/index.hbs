@@ -1,0 +1,47 @@
+---
+title: UI Documentation
+docs: true
+
+layout: home
+---
+
+<section class="l-container">
+    <div class="g g--stack--mid g--gutter sg-headerBlock">
+
+        <h1 class="sg-sectionTitle g-col g-span6"><span>Fozzie</span> {{ title }}</h1>
+
+        <div class="g-col g-span6 sg-content">
+
+        {{#markdown}}
+
+Welcome to the Fozzie UI Documentation.
+
+This documentation is evolving over time, so if something is missing that you would expect to see, or a section needs updating, then let us know (or create a PR).
+
+        {{/markdown}}
+
+        </div>
+    </div>
+</section>
+
+<section class="sg-stickToBottom sg-darken">
+    <div class="l-container">
+
+        {{#markdown}}
+
+        {{/markdown}}
+
+        <ul class="u-unstyled g g--gutter g--stack--narrow list--tiled">
+        	<li class="g-col g-span6--narrow g-span4--mid list--tiled-item list--tiled-item--dark">
+                <a href="{{ baseUrl }}/styleguide/design-elements/colours" class="list--tiled-link"><span>Style Guide &amp; Components</span></a>
+            </li>
+		<li class="g-col g-span6--narrow g-span4--mid list--tiled-item">
+                <a href="{{ baseUrl }}/documentation/general/" class="list--tiled-link"><span>Documentation</span></a>
+            </li>
+            <li class="g-col g-span6--narrow g-span4--mid list--tiled-item">
+                <a href="{{ baseUrl }}/performance/" class="list--tiled-link"><span>Performance Monitoring</span></a>
+            </li>
+        </ul>
+
+    </div>
+</section>

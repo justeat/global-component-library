@@ -1,0 +1,133 @@
+/**
+ * Layout Definitions for the docs
+ * ===================================
+ */
+
+/**
+ * Where it makes sense, prefix all styleguide classnames with .sg
+ * This makes it very clear which ones are specifically styleguide related
+ */
+
+.body-docs {
+    background-color: $grey--offWhite;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+// ==========================================================================
+// Styleguide specific classes
+// ==========================================================================
+
+/**
+ * Styleguide .page styles
+ */
+.sg-page {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+
+    h1,
+    h2 {
+        &:first-child {
+            margin-top: spacing();
+        }
+    }
+}
+
+.sg-page--start {
+    background-color: $styleguide-color-primary;
+    padding: 20px 0;
+    padding: 6vh 0;
+
+    * {
+        color: #fff;
+    }
+}
+
+.sg-headerBlock {
+    padding: spacing(x3) 0;
+}
+
+.sg-footer {
+    background-color: $styleguide-color-primary;
+    color: #fff;
+    padding: 30px;
+    margin-top: 30px;
+
+    :last-child {
+        margin-bottom: 0;
+    }
+    a {
+        color: currentColor;
+        text-decoration: underline;
+    }
+}
+
+
+// WIP Banner
+
+.sg-wip {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: $orange;
+    color: $white;
+    padding: spacing(x6);
+    border: 10px solid $orange--light;
+    text-shadow: 1px 1px $black;
+}
+
+
+
+
+// used to darken a whole section/component
+.sg-darken {
+    background: #333;
+}
+
+// sticks a component to the bottom of the page (when used with flexbox)
+.sg-stickToBottom {
+    flex: 1;
+}
+
+.sg--disabled {
+    position: relative;
+
+    // apply to any disabled button not in a demo block
+    &:hover {
+        &:after {
+            content: 'Coming Soon';
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 5px 10px;
+            background-color: $grey--mid;
+            color: #fff;
+        }
+    }
+}
+
+.js-options td {
+    max-width: 450px;
+
+    p:first-child {
+        margin-top: 0;
+    }
+}
+
+
+// Class that should be added to an <hr> to make it bolder in style
+.sectionSplitter {
+    border-color: $red;
+    margin: spacing(x5) 40px;
+}
+
+
+
+
+
+
+

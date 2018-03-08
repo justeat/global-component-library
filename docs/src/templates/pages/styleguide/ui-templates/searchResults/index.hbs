@@ -1,0 +1,80 @@
+---
+title: Component Library
+docs: true
+
+layout: site-frame
+styleguide: true
+---
+
+<div class="u-lightenBg l-divider">
+    <div class="l-container">
+        {{>je-breadcrumbs current='M5V' firstparent='Toronto' secondparent='Home'}}
+    </div>
+</div>
+<div class="l-container">
+    <h1>295 restaurants serving Adelaide Street West, M5V Toronto</h1>
+    <a href="#">change location</a>       
+</div>
+<div class="l-container">    
+    <div class="g g--stack g--gutter">
+        <div class="g-col g-span3--mid g-span2--wide">
+            <h2 class="l-inlined">
+                {{> je-svg-sprite cssClass="c-icon--inline c-icon--eyeglass" spriteId="icons-tools-eyeglass" }}
+                Search
+            </h2>   
+            {{>component-placeholder description='Radio Input' cssClass="componentPlaceholder--1xRow"}}            
+            <h2 class="l-inlined">
+                {{> je-svg-sprite cssClass="c-icon--inline c-icon--sortAmount" spriteId="icons-tools-sortAmount" }}
+                List by
+            </h2>
+            <div class="c-card c-card--noPadVertical u-bordered">
+                {{>component-placeholder description='Radio Input' cssClass="componentPlaceholder--1xRow"}}
+                {{>component-placeholder description='Radio Input' cssClass="componentPlaceholder--1xRow"}}
+                {{>component-placeholder description='Radio Input' cssClass="componentPlaceholder--1xRow"}}
+                {{>component-placeholder description='Radio Input' cssClass="componentPlaceholder--1xRow"}}
+            </div>
+            <h2 class="l-inlined">
+                {{> je-svg-sprite cssClass="c-icon--inline c-icon--forkAndSpoon" spriteId="icons-general-forkAndSpoon" }}
+                Cuisines
+            </h2>
+            <div class="c-card c-card--noPadVertical u-bordered c-listing">
+                {{>component-placeholder description='Radio Input' cssClass="componentPlaceholder--1xRow"}}
+                {{>component-placeholder description='Radio Input' cssClass="componentPlaceholder--1xRow"}}
+                {{>component-placeholder description='Radio Input' cssClass="componentPlaceholder--1xRow"}}
+                {{>component-placeholder description='Radio Input' cssClass="componentPlaceholder--1xRow"}}
+            </div>
+            <h2 class="l-inlined">
+                {{> je-svg-sprite cssClass="c-icon--inline c-icon--slidersHorizontal" spriteId="icons-tools-slidersHorizontal" }}
+                Refine
+            </h2>
+            <div class="c-card c-card--noPadVertical u-bordered">
+                {{>component-placeholder description='Radio Input' cssClass="componentPlaceholder--1xRow"}}
+                {{>component-placeholder description='Radio Input' cssClass="componentPlaceholder--1xRow"}}
+                {{>component-placeholder description='Radio Input' cssClass="componentPlaceholder--1xRow"}}
+                {{>component-placeholder description='Radio Input' cssClass="componentPlaceholder--1xRow"}}
+            </div>
+        </div>
+        <div class="g-col g-span9--mid g-span10--wide">
+            <div class="c-card c-card--noPadVertical u-bordered c-listing">
+                {{> je-restaurant-listing }}  
+                {{> je-restaurant-listing }}  
+                {{> je-restaurant-listing }}  
+                {{> je-restaurant-listing }}                       
+            </div>
+            <h2>19 restaurants taking pre-orders for later</h3>
+            <div class="c-card c-card--noPadVertical u-bordered c-listing">
+                {{> je-restaurant-listing }}  
+                {{> je-restaurant-listing }}  
+                {{> je-restaurant-listing }}  
+                {{> je-restaurant-listing }}                     
+            </div>
+            <h2>Aren't taking orders</h3>
+            <div class="c-card c-card--noPadVertical u-bordered c-listing">
+                {{> je-restaurant-listing }}  
+                {{> je-restaurant-listing }}  
+                {{> je-restaurant-listing }}  
+                {{> je-restaurant-listing }}                         
+            </div>
+        </div>
+    </div>
+</div>

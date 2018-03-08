@@ -1,0 +1,21 @@
+{{> html_start }}
+
+	{{> masthead }}
+
+    <div class="l-container sg-page">
+        <div class="g g--gutter g--stack">
+            <div class="g-col g-span2--mid">
+                {{> subnav--sidebar }}
+            </div>
+            <div class="g-col g-span10--mid">
+                <div class="c-card c-card--rounded sg-content">
+                    <h1>{{ title }}</h1>
+                    {{#markdown}}
+{% body %}
+                    {{/markdown}}
+                </div>
+            </div>
+        </div>
+    </div><!-- Close .l-container -->
+
+{{> html_end }}
