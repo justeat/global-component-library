@@ -3,6 +3,14 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+v0.13.0
+------------------------------
+*March 12, 2018*
+
+### Added
+- Checkbox and Tickbox documention added
+- Radio button documentation added
+
 v0.12.0
 ------------------------------
 *March 5, 2018*
