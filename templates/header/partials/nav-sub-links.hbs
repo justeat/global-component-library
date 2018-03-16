@@ -1,0 +1,17 @@
+<ul class="c-nav-popoverList">
+    {{#each navigationLinks as | link |}}
+        <li class="c-nav-list-item">
+            <a class="c-nav-list-link"
+                data-gtm="header|click - navigation|{{ link.gtmSuffix }}"
+                data-test-id="{{link.dataTestId}}"
+                href="{{ link.url }}">{{#with ../this}}{{ i18n link.label }}{{/with}}</a>
+        </li>
+    {{/each}}
+
+    <li class="c-nav-list-item c-nav-list-item--forceLast">
+        <a class="c-nav-list-link"
+            data-gtm="header|click - navigation|logout"
+            data-test-id="logout"
+            href="{{ logoutUrl }}">{{ i18n "logoutLinkText" }}</a>
+    </li>
+</ul>
