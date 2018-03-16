@@ -170,6 +170,7 @@
 </code></pre>
 <p>When set on an <code>input</code>, <code>select</code> or <code>textarea</code> field, a value must be present for this rule to pass validation.</p>
 <p>For fields of type <code>checkbox</code>, this rule checks that the field has been <code>checked</code> and for fields of type <code>radio</code>, this rule will validate as true as long as one radio button with the same <code>name</code> attribute has been selected.</p>
+<p></p>
 <div class="demo">
     <div class="demo-visual">
         <h4 class="demo-title">Example</h4>
@@ -209,6 +210,7 @@
 <p>This rule uses the following regular expression to validate email addresses:</p>
 <pre><code class="language-bash">/^[a-zA-Z0-9.!<span class="hljs-comment">#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/</span>
 </code></pre>
+<p></p>
 <div class="demo">
     <div class="demo-visual">
         <h4 class="demo-title">Example</h4>
@@ -250,6 +252,7 @@
 <span class="hljs-comment">// via data-val-minlength attribute</span>
 &lt;input <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"text"</span> data-<span class="hljs-keyword">val</span>-minlength=<span class="hljs-string">"5"</span> /&gt;
 </code></pre>
+<p></p>
 <div class="demo">
     <div class="demo-visual">
         <h4 class="demo-title">Example</h4>
@@ -291,6 +294,7 @@
 &lt;input <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"text"</span> data-<span class="hljs-keyword">val</span>-maxlength=<span class="hljs-string">"20"</span> /&gt;
 </code></pre>
 <p>Note that when using the <code>maxlength</code> attribute, most modern browsers will stop the user entering more than the number of characters specified.</p>
+<p></p>
 <div class="demo">
     <div class="demo-visual">
         <h4 class="demo-title">Example</h4>
@@ -332,6 +336,7 @@
 &lt;input <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"text"</span> data-<span class="hljs-keyword">val</span>-regex=<span class="hljs-string">"[a-z]{1,6}"</span> /&gt;
 </code></pre>
 <p>It's considered best practice to set the title attribute when validating with this rule to describe the pattern to help the user.</p>
+<p></p>
 <div class="demo">
     <div class="demo-visual">
         <h4 class="demo-title">Example</h4>
@@ -372,6 +377,7 @@
 <span class="hljs-comment">// note that a field with the name passed should exist, or the rule will always fail</span>
 &lt;input <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"text"</span> name=<span class="hljs-string">"matchedField"</span> /&gt;
 </code></pre>
+<p></p>
 <div class="demo">
     <div class="demo-visual">
         <h4 class="demo-title">Example</h4>
@@ -439,6 +445,7 @@
     &lt;/<span class="hljs-keyword">select</span>&gt;
 &lt;/div&gt;
 </code></pre>
+<p></p>
 <div class="demo">
     <div class="demo-visual">
         <h4 class="demo-title">Example</h4>
@@ -521,6 +528,7 @@
 <span class="hljs-comment">// the checkbox to test against</span>
 &lt;input <span class="hljs-class"><span class="hljs-keyword">type</span></span>=<span class="hljs-string">"checkbox"</span> name=<span class="hljs-string">"nameOfcheckedInput"</span> /&gt;
 </code></pre>
+<p></p>
 <div class="demo">
     <div class="demo-visual">
         <h4 class="demo-title">Example</h4>
@@ -591,6 +599,7 @@ validateForm.addCustomValidation(<span class="hljs-string">'customRule'</span>, 
     <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
 });
 </code></pre>
+<p></p>
 <div class="demo">
     <div class="demo-visual">
         <h4 class="demo-title">Example</h4>
@@ -692,6 +701,7 @@ validateForm.addCustomValidation(<span class="hljs-string">'customRule'</span>, 
 // <span class="hljs-keyword">for</span> dateInFuture, <span class="hljs-keyword">apply</span> the <span class="hljs-string">`data-val-dateinfuture`</span> <span class="hljs-keyword">to</span> the <span class="hljs-keyword">outer</span> <span class="hljs-keyword">container</span>
 &lt;<span class="hljs-keyword">div</span> <span class="hljs-keyword">data</span>-val-<span class="hljs-keyword">group</span> <span class="hljs-keyword">data</span>-val-dateinfuture <span class="hljs-keyword">data</span>-val-dateinfuture-<span class="hljs-keyword">error</span>=<span class="hljs-string">"This is my new dateInFuture error message"</span>&gt;
 </code></pre>
+<p></p>
 <div class="demo">
     <div class="demo-visual">
         <h4 class="demo-title">Example</h4>
@@ -785,6 +795,7 @@ validateForm.addCustomValidation(<span class="hljs-string">'customRule'</span>, 
 });
 </code></pre>
 <p>To see all possible options that <code>groupErrorPlacement</code> accepts, check the <a href="#options">options</a> section of the documentation.</p>
+<p></p>
 <div class="demo">
     <div class="demo-visual">
         <h4 class="demo-title">Example</h4>
@@ -853,6 +864,7 @@ validateForm.addCustomValidation(<span class="hljs-string">'customRule'</span>, 
     <span class="hljs-class"><span class="hljs-keyword">data</span>-val-minlength-error="<span class="hljs-type">Custom</span> error minlength"</span>
     <span class="hljs-class"><span class="hljs-keyword">data</span>-val-maxlength-error="<span class="hljs-type">Custom</span> error maxlength" /&gt;</span>
 </code></pre>
+<p></p>
 <div class="demo">
     <div class="demo-visual">
         <h4 class="demo-title">Example</h4>
