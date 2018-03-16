@@ -1,0 +1,54 @@
+{{> order-count }}
+
+{{> skip-to }}
+
+<header class="c-header">
+    {{> language-switcher }}
+
+    <div class="l-container c-header-wrap">
+        {{> logo }}
+
+        <nav data-navglobal class="c-nav c-nav--global">
+            <input data-nav-enhance type="checkbox" class="c-nav-trigger" id="nav-trigger" />
+
+            <label data-nav-toggle class="c-nav-toggle" for="nav-trigger">
+                <span class="c-nav-toggle-icon">{{ i18n "openMenuText" }}</span>
+            </label>
+
+            <div data-nav-container class="c-nav-container">
+                <ul class="c-nav-list">
+                    <li data-auth-wrapper class="c-nav-list-item has-sublist is-hidden" data-test-id="navList" tabindex="0">
+                        <p class="c-nav-list-text">
+                            {{> nav-icon }}
+                            <span data-name class="c-nav-list-text-sub"></span>
+                            <span data-email class="c-nav-list-text-sub u-showBelowMid"></span>
+                        </p>
+
+                        {{> nav-sub-links }}
+                    </li>
+
+                    <li data-login class="c-nav-list-item is-hidden" data-test-id="login">
+                        <a href="{{ loginUrl }}" class="c-nav-list-link">
+                            {{ i18n "loginLinkText" }}
+                        </a>
+                    </li>
+
+                    <li class="c-nav-list-item is-hidden is-shown--noJS" data-test-id="noscript-myaccount">
+                        <a href="{{ loginUrl }}" class="c-nav-list-link">
+                            {{ i18n "loginNoScriptLinkText" }}
+                        </a>
+                    </li>
+
+                    {{> nav-alternate-language-links }}
+
+                    <li class="c-nav-list-item c-nav-list-item--support" data-test-id="support">
+                        <a href="{{ helpUrl }}" data-gtm="header|click - navigation|help" class="c-nav-list-link">
+                            {{ i18n "helpLinkText" }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+</header>

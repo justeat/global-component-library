@@ -1,0 +1,17 @@
+<div class="c-infoBar c-infoBar--dark u-showBelowMid" data-test-id="languageToggle">
+    <div class="c-infoBar-row languageSwitcher">
+        <span class="languageSwitcher-indicator">
+            {{ languageSwitchText }}
+        </span>
+
+        {{#each alternativeLanguages as | lang |}}
+            <a href="{{ lang.returnUrl }}">
+                <span class="is-visuallyHidden">
+                    {{#with ../this}}{{ i18n "languageSwitcherAccessibility" language=lang.name }}{{/with}}
+                </span>
+                {{#with ../this}}{{ i18n "languageSwitcherName" language=lang.name }}{{/with}}
+            </a>
+            <i class="icon icon--small icon--chevron--right--light">></i>
+        {{/each}}
+    </div>
+</div>
