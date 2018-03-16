@@ -3,6 +3,23 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+
+v1.0.1
+------------------------------
+*March 16, 2018*
+
+### Fixed
+- Remote links for assets and page links fixed to use the correct `baseUrl`
+
+
+v1.0.0
+------------------------------
+*March 15, 2018*
+
+### Changed
+- Updated to v1 release and squashed history
+
+
 v0.12.0
 ------------------------------
 *March 5, 2018*
