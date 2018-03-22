@@ -2,7 +2,7 @@
   "name": "je-global-component-library",
   "title": "Just Eat – Component Library",
   "description": "Component Library and Guidelines for all of Just Eat’s Front-End Platforms",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "homepage": "https://github.com/justeat/global-component-library",
   "contributors": [
     "Github contributors <https://github.com/justeat/global-component-library/graphs/contributors>"
@@ -19,12 +19,12 @@
     "node": ">=4.0.0"
   },
   "dependencies": {
-    "@justeat/f-dom": "^0.3.0",
+    "@justeat/f-dom": "^0.4.0",
     "@justeat/f-footer": "^0.17.0",
-    "@justeat/f-header": "^0.20.4",
-    "@justeat/f-icons": "^0.3.4",
-    "@justeat/f-toggle": "^0.11.2",
-    "@justeat/f-validate": "^0.14.0",
+    "@justeat/f-header": "^0.20.5",
+    "@justeat/f-icons": "^0.5.0",
+    "@justeat/f-toggle": "^0.12.0",
+    "@justeat/f-validate": "^0.15.0",
     "@justeat/fozzie": "^0.37.0",
     "kickoff-grid.css": "^1.1.0",
     "lite-ready": "^1.0.4",
@@ -32,8 +32,9 @@
     "svg4everybody": "^2.1.9"
   },
   "devDependencies": {
-    "@justeat/gulp-build-fozzie": "^7.11.0",
+    "@justeat/gulp-build-fozzie": "^7.13.0",
     "babel-preset-env": "^1.6.1",
+    "danger": "^3.3.2",
     "eslint-plugin-import": "^2.9.0",
     "gulp": "^3.9.1"
   },
@@ -42,7 +43,7 @@
     "prestart": "yarn",
     "start": "gulp docs",
     "predeploy": "yarn --ignore-optional",
-    "deploy": "gulp --prod"
+    "deploy": "gulp docs:deploy"
   },
   "scripts-info": {
     "start": "Start up the Global Component Library locally",
