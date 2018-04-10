@@ -4,8 +4,8 @@
 
 # Dependencies
 # - Node modules directory. comment this line to commit them.
-node_modules/*
-jspm_packages/*
+node_modules
+jspm_packages
 
 
 # OS or Editor folders
@@ -25,7 +25,10 @@ logs
 *.log
 .yalc
 yalc.lock
+.eyeglass_cache
+
+# Templates
 templates
 !docs/src/templates/
 
-**/dist/*
+dist

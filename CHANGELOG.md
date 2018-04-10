@@ -3,6 +3,24 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+
+v1.3.0
+------------------------------
+*March 21, 2018*
+
+### Added
+- Added shared header templates to UI Components section.
+- Added shared header documentation JavaScript to display header examples in correct state.
+
+### Changed
+- Updated `gulp-build-fozzie` version.
+- Updated `f-header` version.
+- Updated `.gitignore` file.
+- Fixed lint issues in `gulpfile.js`.
+- Fixed JavaScript issue when toggling code demo elements.
+- Small refactor of the main documentation module.
+
+
 v1.2.0
 ------------------------------
 *March 21, 2018*

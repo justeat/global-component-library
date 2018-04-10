@@ -3,12 +3,12 @@
  *
  * Can pull in logging modules – such as those used for the address lookup
  */
+import $ from '@justeat/f-dom';
+import './ui-components/header';
 
-import $ from 'qwery';
 
 // any additional docs functionality goes in here
 const docs = {
-    demoEls: $('.demo'),
     demoBtnText: {
         whenHidden: 'Show Code',
         whenVisible: 'Hide Code'
@@ -23,28 +23,27 @@ const docs = {
 
     _demoHandler: () => {
 
-        const demoElCount = docs.demoEls.length;
-
-        for (let i = 0; i < demoElCount; i++) {
-            const demoEl = docs.demoEls[i],
-                codeBlock = demoEl.querySelector('.demo-code');
+        $('.demo').forEach(demoEl => {
+            const codeBlock = $.first('.demo-code', demoEl);
 
             codeBlock.classList.add('is-hidden');
 
             const demoToggleBtn = document.createElement('a');
+
             demoToggleBtn.classList.add('o-btn', 'o-btn--codeToggle');
             demoToggleBtn.textContent = docs.demoBtnText.whenHidden;
             demoToggleBtn.addEventListener('click', docs._demoToggle);
+
             demoEl.insertBefore(demoToggleBtn, codeBlock);
-        }
+        });
 
     },
 
-    _demoToggle: () => {
+    _demoToggle: event => {
 
-        const btn = event.target,
-            codeBlock = btn.nextElementSibling,
-            isHidden = codeBlock.classList.contains('is-hidden');
+        const btn = event.target;
+        const codeBlock = btn.nextElementSibling;
+        const isHidden = codeBlock.classList.contains('is-hidden');
 
         codeBlock.classList.toggle('is-hidden');
         btn.classList.toggle('is-clicked');

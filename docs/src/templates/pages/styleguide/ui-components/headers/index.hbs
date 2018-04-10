@@ -10,9 +10,21 @@ layout: components
 ---
 
 
-<h2 class="sg-sectionHeading">Default Header</h2>
-<p>Default bog-standard Header Component</p>
+<h2 class="sg-sectionHeading">Header (signed in)</h2>
+<p>Header Component as shown when user is signed in</p>
 
+<div data-js-header-signed-in>
 {{#>demo-block }}
-{{> je-header loggedin=false languageSwitcher=false }}
+{{> f-header }}
 {{/demo-block }}
+</div>
+
+
+<h2 class="sg-sectionHeading">Header (signed out)</h2>
+<p>Header Component as shown when user is signed out</p>
+
+<div data-js-header-signed-out>
+{{#>demo-block }}
+{{> f-header }}
+{{/demo-block }}
+</div>
