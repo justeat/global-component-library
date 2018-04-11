@@ -11,9 +11,7 @@ if (signedInDemoEl) {
     $.first('[data-name]', signedInDemoEl).textContent = 'Bear';
     $.first('[data-email]', signedInDemoEl).textContent = 'ui@just-eat.com';
 
-    $.first('[data-auth-wrapper]', signedInDemoEl).classList.remove(
-        'is-hidden'
-    );
+    $.first('[data-auth-wrapper]', signedInDemoEl).classList.remove('is-hidden');
     $.first('[data-login]', signedInDemoEl).remove();
 }
 
