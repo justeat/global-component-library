@@ -37,14 +37,14 @@ build(gulp, {
     copy: {
         js: {
             prism: {
-                path: `/libs/prism.min.js`,
+                path: '/libs/prism.min.js',
                 dest: '/libs',
-                revision: false,
+                revision: false
             },
             modernizr: {
-                path: `/libs/modernizr.min.js`,
+                path: '/libs/modernizr.min.js',
                 dest: '/libs',
-                revision: false,
+                revision: false
             }
         }
     },
