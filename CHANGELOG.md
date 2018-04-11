@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 v1.3.0
 ------------------------------
-*March 21, 2018*
+*April 11, 2018*
 
 ### Added
 - Added shared header templates to UI Components section.
@@ -16,9 +16,11 @@ v1.3.0
 - Updated `gulp-build-fozzie` version.
 - Updated `f-header` version.
 - Updated `.gitignore` file.
+- Small refactor of the main documentation module.
+
+### Fixed
 - Fixed lint issues in `gulpfile.js`.
 - Fixed JavaScript issue when toggling code demo elements.
-- Small refactor of the main documentation module.
 
 
 v1.2.0
