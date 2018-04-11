@@ -9,6 +9,14 @@ v1.3.0
 *April 11, 2018*
 
 ### Added
+- Added documentation for developing shared HTML templates.
+
+
+v1.3.0
+------------------------------
+*April 11, 2018*
+
+### Added
 - Added shared header templates to UI Components section.
 - Added shared header documentation JavaScript to display header examples in correct state.
 

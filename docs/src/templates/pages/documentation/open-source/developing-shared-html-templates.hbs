@@ -1,0 +1,275 @@
+---
+title: Developing Shared HTML Templates
+section-title: Open source
+description:
+docs: true
+
+navgroup: documentation
+navsub: open-source
+navactive: developing-shared-html-templates
+---
+
+<a name="naming-your-module"></a>
+## Naming your module
+
+
+It is possible, and recommended, to develop HTML templates within the Fozzie UI documentation. In order to do this there are a few steps required to get things set up.
+
+In this walkthrough we will use the footer template as an example.
+
+## Adding templates to a Fozzie module
+
+### Getting the project ready
+
+The first step is to check out the relevant Fozzie module (in this case the f-footer module) and create a branch to work on.
+
+### Add the config to copy the templates
+
+The first step is to decide where your template files are going to live. Recommended practice is to place them inside a `/src/templates` folder.
+
+Next, you'll need to add an "assets" section to the package.json file which will tell the gulp build scripts where it should look for the newly created template files and where it should place them in consuming modules.
+
+Add the section like so:
+
+```json
+"assets": {
+  "root": "src/",
+  "glob": "templates/**/*",
+  "dest": "./"
+}
+```
+
+The `root` property tells the copy service where to look for the files you wish to copy, the `glob` property tells it which files it should copy, and the `dest` property tell it where to copy the files to — in this case `"./"` indicates that they should be copied into the root of the consuming project.
+
+The default value for the `dest` property will be the value you have set for the asset dest directory in the gulp config.
+
+If there is already an assets section then you can add multiple configurations inside of an array like so:
+
+```json
+"assets": [
+  {
+    "root": "src/",
+    "glob": "img/**/*"
+  },
+  {
+    "root": "src/",
+    "glob": "templates/**/*",
+    "dest": "./"
+  }
+]
+```
+
+The first item in the array, for the images, doesn't specify the `dest` property as it defaults to the asset `dest` directory which is where the images should go.
+
+One final thing to check is the `files` property in your `package.json`, if it is present you need to make sure that you add the line `"src/templates"` so that the template files are added to the publish npm package.
+
+### Creating the template folders
+
+Next, let's create the folder structure. Add the `/templates` folder in the location you set in the config in the previous step.
+
+Inside of this folder you'll add two more folders; the first will be the name of the template you are creating, in this case `/footer`, and the second should be called `/resources`.
+
+The `/footer` folder is where all of the templates will go, and the `/resources` folder will hold translations and data to be used in the documentation.
+
+Your folder structure should look like this at this point:
+
+![Folder structure]({{ ../baseUrl }}/assets/img/os/folder-structure-1.png)
+
+### Creating a template
+
+The main template should live in the root of your `/templates/{templateName}` folder and it should be called `index.hbs` e.g. `/templates/footer/index.hbs`
+
+Feel free to add some HTML to the file at this point e.g.
+
+```html
+<p>{{variableName}}</p>
+```
+
+### Adding documentation data
+
+If your template has any handlebars expressions containing variables which are populated from data (this will be true for pretty much all of our templates) e.g. `{{variableName}}` then it is recommended that you create a data file which will be used to populate those values when the template is added to the Fozzie UI docs.
+
+The convention for this file is to place it in the root of the `/resources` folder and name it `{templatename}-docs-data.json` e.g. `/resources/footer-docs-data.json`. As the name suggests the content of this file should be in JSON format e.g.
+
+```json
+{
+  "variableName": "Hi, I'm a variable value",
+  ...
+}
+```
+
+At this point if you were to compile the template with the values given in the examples you'd end up with this HTML:
+
+```html
+<p>Hi, I'm a variable value</p>
+```
+
+### Adding translations
+
+To add translations create a file to the root of the `/resources` folder in the following format `{templateName}.json` e.g. `/resources/footer.json`.
+
+Again, as the filename suggests, the content of this file should be in JSON format e.g.
+
+```json
+{
+  "da-DK": {
+    "loginLinkText": "Log ind"
+  },
+  "en-AU": {
+    "loginLinkText": "Log-in",
+  },
+  "en-CA": {
+    "loginLinkText": "Log-in"
+  },
+  "en-GB": {
+    "loginLinkText": "Log-in"
+  },
+  "en-IE": {
+    "loginLinkText": "Log-in"
+  },
+  "es-ES": {
+    "loginLinkText": "Inicia sesión"
+  },
+  "en-NZ": {
+    "loginLinkText": "Log-in",
+  },
+  "fr-CA": {
+    "loginLinkText": "Connexion"
+  },
+  "it-IT": {
+    "loginLinkText": "Accedi"
+  },
+  "nb-NO": {
+    "loginLinkText": "Logg inn"
+  }
+}
+```
+
+Where `loginLinkText` is the key to be referenced in your templates, and the string value will be the text to be displayed when the template is compiled.
+
+### Adding translations to a template
+
+You can display translations in your view using the i18n helper. The translation key must be passed in as a string e.g.
+
+<pre class="language-html"><code>&#123;&#123; i18n "loginLinkText" &#125;&#125;</code></pre>
+
+In order for the translation to display in the Fozzie UI docs you need to ensure that you add a language property to the `{templatename}-docs-data.json` file e.g.
+
+```json
+{
+  "language": "en-CA",
+  ...
+}
+```
+
+#### Translations inside loops
+
+Because of the way that `#each` blocks are scoped in Handlebars a little more work is required to get translations to display correctly.
+
+To illustrate let's add a loop item to the docs data file:
+
+```json
+{
+  ...
+  "items": [
+    {
+      "name": "Item 1"
+    },
+    {
+      "name": "Item 2"
+    }
+  ]
+}
+```
+
+Then add an each loop to your template:
+
+```html
+<ul>
+  {{#each items as | item |}}
+    <li>{{#with ../this}}{{item.name}} - {{ i18n "loginLinkText" }}{{/with}}</li>
+  {{/each}}
+</ul>
+```
+
+Notice the `#with` block, this has been added as the scope changes within an `#each` block in Handlebars.
+
+Removing the `#with` block will cause the template compilation to fail with a message like
+
+```bash
+{{i18n}} helper: the 'language' parameter is not defined.
+```
+
+This is because the i18n helper is on the parent scope of the `#each` block and therefore couldn't be found.
+
+### Adding partials
+
+As you start to build up templates you may find that it makes sense to move some of the content out into partials, this helps to keep template sizes down, makes it easier to find the part you'd like to work on, and reduces duplication as you can reference partials inside of loops.
+
+To create a partial add a new folder like this `/templates/{templateName}/partials`. For the footer this would be `/templates/footer/partials`.
+
+Next, add a template file e.g. `my-partial.hbs`.  Feel free to add some HTML to the file at this point e.g.
+
+```html
+<p>I'm a partial!</p>
+```
+
+In order to reference this partial update your `index.hbs` file with the following content:
+
+<pre class="language-html"><code>&#123;&#123;> my-partial &#125;&#125;</code></pre>
+
+The `>` character in handlebars indicates that the following text refers to a partial file.
+
+We use kebab-case for the file names but using another casing will not cause any errors, you may receive a PR comment from an OCD reviewer though!
+
+### Final file structure
+
+The final structure should look like the image below
+
+![Folder structure]({{ ../baseUrl }}/assets/img/os/folder-structure-2.png)
+
+## Adding templates to the Fozzie UI Documentation
+
+Follow these steps in order to get your newly created template files integrated into the Fozzie UI docs.
+
+When you run the `gulp docs` task your template will be automatically registered as a handlebars partial which you can then reference in the Fozzie UI docs templates.
+
+### Link to your local changes
+
+If you are working locally on your machine, i.e. your template files have not yet been released to npm, then you'll need to link your module to the Fozzie UI docs. You can do this by running `yarn link` in your module, this will display a message like this:
+
+```bash
+yarn link v1.3.2
+success Registered "@justeat/f-footer".
+info You can now run `yarn link "@justeat/f-footer"` in the projects where you want to use this module and it will be used instead.
+```
+
+Then, in the Fozzie UI docs module, run `yarn link @justeat/f-footer`. You should see a message like this:
+
+```bash
+success Using linked module for "@justeat/f-footer".
+```
+
+You may need to run the yarn command again at this point so that any additional dependencies can be added to the project.
+
+### Copying the files into the Fozzie UI Documentation
+
+This step is an easy one; simply run `gulp` on the command line and then any template files which have been configured to be copied will be added to your project.
+
+You should now see a `/templates` folder in the root of your project which contains all of your template files.
+
+### Referencing the template
+
+In order to display your template on a page you reference the template like so:
+
+<pre class=" language-html"><code>&#123;&#123;> f-footer &#125;&#125;</code></pre>
+
+Notice that the name of your template has been prefixed with `f-`, this was done automatically during the build process and is there to help avoid name conflicts and to signify that the template comes from a fozzie module (`f-` is shorthand for `Fozzie-`).
+
+Also notice that the template has been added as a partial so make sure to remember to add the `>` prefix.
+
+### Generating the documentation
+
+The last step is to run the `gulp docs` command which will generate the Fozzie UI docs website files and open the website automatically. Navigate to the page which you added the template reference to and you should see something like this on the page:
+
+![Screenshot of the final template]({{ ../baseUrl }}/assets/img/os/template.png)
