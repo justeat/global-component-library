@@ -21,7 +21,7 @@
   "dependencies": {
     "@justeat/f-dom": "^0.4.0",
     "@justeat/f-footer": "^0.17.0",
-    "@justeat/f-header": "^0.21.3",
+    "@justeat/f-header": "^0.22.1",
     "@justeat/f-icons": "^0.7.0",
     "@justeat/f-toggle": "^0.12.0",
     "@justeat/f-validate": "^0.15.0",

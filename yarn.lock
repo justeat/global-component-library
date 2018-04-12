@@ -170,9 +170,9 @@
     lite-ready "^1.0.4"
     qwery "^4.0.0"
 
-"@justeat/f-header@^0.21.3":
-  version "0.21.3"
-  resolved "https://registry.yarnpkg.com/@justeat/f-header/-/f-header-0.21.3.tgz#a020f1f408aee13e69f95fa46021a5dcbbb11f9c"
+"@justeat/f-header@^0.22.1":
+  version "0.22.1"
+  resolved "https://registry.yarnpkg.com/@justeat/f-header/-/f-header-0.22.1.tgz#45666a2bf03f9d1e7555825d8dc6baa89d1e8624"
   dependencies:
     "@justeat/fozzie-colour-palette" "^0.9.0"
     "@kickoff/utils.scss" "^2.1.1"

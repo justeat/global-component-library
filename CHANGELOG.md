@@ -6,15 +6,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 v1.5.0
 ------------------------------
-*April 12, 2018*
+*April 17, 2018*
 
 ### Added
-- Import f-footer in `docs/index.js`.
+- Import `f-footer` in `docs/index.js`.
 - `docs/ui-components/footer.js`.
 
 ### Changed
 - Use footer handlebars templates.
 - Disable the default on-click behaviour of the logos in the header demo blocks.
+- Updated `f-header` version.
 
 
 v1.4.0
