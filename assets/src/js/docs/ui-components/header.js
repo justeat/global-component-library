@@ -15,6 +15,13 @@ if (signedInDemoEl) {
     $.first('[data-login]', signedInDemoEl).remove();
 }
 
+const demoLogos = $('.demo .c-logo');
+demoLogos.forEach(logo => {
+    logo.addEventListener('click', e => {
+        e.preventDefault();
+    });
+});
+
 const navEls = $('[data-navglobal]');
 navEls.forEach(nav => {
     const navAnchors = $('a', nav);

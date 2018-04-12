@@ -3,8 +3,11 @@
  *
  * Can pull in logging modules – such as those used for the address lookup
  */
+
+import '@justeat/f-toggle';
 import $ from '@justeat/f-dom';
 import './ui-components/header';
+import './ui-components/footer';
 
 
 // any additional docs functionality goes in here
