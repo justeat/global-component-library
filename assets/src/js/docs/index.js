@@ -37,6 +37,18 @@ const docs = {
             demoEl.insertBefore(demoToggleBtn, codeBlock);
         });
 
+        $('.sg-sideNav .is-incomplete').forEach(el => {
+            el.setAttribute('tabindex', -1);
+            el.addEventListener('click', e => {
+                e.preventDefault();
+            });
+        });
+
+        $('.o-btn--codeToggle').forEach(demoToggle => {
+            demoToggle.setAttribute('tabindex', 0);
+        });
+
+
     },
 
     _demoToggle: event => {
