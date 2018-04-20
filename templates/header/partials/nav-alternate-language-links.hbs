@@ -1,7 +1,7 @@
 {{#if isMultiLingual}}
     {{#each alternativeLanguageLinks as | lang |}}
         <li class="c-nav-list-item u-showAboveMid" data-test-id="languageToggle">
-            <a href="{{ lang.returnUrl }}" class="c-nav-list-link">
+            <a href="{{ lang.changeLanguageUrl }}" class="c-nav-list-link">
                 <span class="is-visuallyHidden">
                     {{#with ../this}}{{ i18n "languageSwitcherAccessibility" language=lang.name }}{{/with}}
                 </span>

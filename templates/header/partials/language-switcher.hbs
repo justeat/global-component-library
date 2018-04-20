@@ -5,7 +5,7 @@
         </span>
 
         {{#each alternativeLanguages as | lang |}}
-            <a href="{{ lang.returnUrl }}">
+            <a href="{{ lang.changeLanguageUrl }}">
                 <span class="is-visuallyHidden">
                     {{#with ../this}}{{ i18n "languageSwitcherAccessibility" language=lang.name }}{{/with}}
                 </span>
