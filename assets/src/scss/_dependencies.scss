@@ -15,7 +15,6 @@
 // See mixins/css3.scss for the full list
 
 // @import 'tools/functions/index'; // TODO: this will be separated into a separate utilities module
-@import 'tools/mixins/index'; // TODO: this will be separated into a separate utilities module
 
 @import 'fozzie';
 @import 'f-header';
@@ -55,7 +54,6 @@
  * This is where the majority of our day-to-day styling will take place.  Component styles should be prefixed with `.c-`
  */
 // @import 'components/…';
-@import 'components/ratings';
 
 /**
  * Experiments

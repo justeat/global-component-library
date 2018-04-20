@@ -179,9 +179,15 @@
     include-media "^1.4.9"
     lite-ready "^1.0.4"
 
+<<<<<<< HEAD
 "@justeat/f-icons@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-0.7.0.tgz#8cc8e97a54f5667673069e4c211d0262c51b2928"
+=======
+"@justeat/f-icons@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-0.8.0.tgz#d1cf9699c4a9fd42bda0e5d4d5b89a131e013d0b"
+>>>>>>> Added star ratings and selectable star ratings, bumped up version number
   dependencies:
     "@kickoff/utils.scss" "2.1.1"
     include-media "^1.4.9"
@@ -215,9 +221,15 @@
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-0.9.1.tgz#3c48988580c8ed803a38c04ce2eb1475dc34fc12"
 
+<<<<<<< HEAD
 "@justeat/fozzie@^0.37.0":
   version "0.37.0"
   resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.37.0.tgz#9ee52988640f5fb24c88ac3e1e3c63af96fcc4d6"
+=======
+"@justeat/fozzie@^0.39.0":
+  version "0.39.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.39.0.tgz#e9a4f565abf409bf05ce84e1dfb7af73f9ca1de1"
+>>>>>>> Added star ratings and selectable star ratings, bumped up version number
   dependencies:
     "@justeat/f-dom" "^0.3.0"
     "@justeat/fozzie-colour-palette" "^0.9.1"
