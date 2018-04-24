@@ -21,6 +21,7 @@ const docs = {
     init: () => {
 
         docs._demoHandler();
+        docs._disableDemoLinks();
 
     },
 
@@ -57,6 +58,14 @@ const docs = {
             btn.textContent = docs.demoBtnText.whenHidden;
         }
 
+    },
+
+    _disableDemoLinks: () => {
+        $('.demo a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+            });
+        });
     }
 
 };

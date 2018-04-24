@@ -7,9 +7,3 @@ $('.demo .c-countrySelector-link').forEach(country => {
         });
     }
 });
-
-$('.demo .c-footer-icon').forEach(icon => {
-    icon.addEventListener('click', e => {
-        e.preventDefault();
-    });
-});
