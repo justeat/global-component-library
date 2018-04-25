@@ -160,9 +160,9 @@
   dependencies:
     qwery "^4.0.0"
 
-"@justeat/f-footer@^0.17.0":
-  version "0.17.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-footer/-/f-footer-0.17.0.tgz#ca52595d7cb3a1e01833775fc4dc8ddcb76e47fd"
+"@justeat/f-footer@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@justeat/f-footer/-/f-footer-0.18.1.tgz#cf677b0f38e003a6b18a05a2e998395e2e28bbfe"
   dependencies:
     "@justeat/fozzie-colour-palette" "^0.9.0"
     "@kickoff/utils.scss" "2.1.1"
@@ -170,18 +170,18 @@
     lite-ready "^1.0.4"
     qwery "^4.0.0"
 
-"@justeat/f-header@^0.21.3":
-  version "0.21.3"
-  resolved "https://registry.yarnpkg.com/@justeat/f-header/-/f-header-0.21.3.tgz#a020f1f408aee13e69f95fa46021a5dcbbb11f9c"
+"@justeat/f-header@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-header/-/f-header-0.25.0.tgz#f9a59c8207d1f250d67687d1ba365272b42dc4f4"
   dependencies:
     "@justeat/fozzie-colour-palette" "^0.9.0"
     "@kickoff/utils.scss" "^2.1.1"
     include-media "^1.4.9"
     lite-ready "^1.0.4"
 
-"@justeat/f-icons@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-0.7.0.tgz#8cc8e97a54f5667673069e4c211d0262c51b2928"
+"@justeat/f-icons@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-0.8.0.tgz#d1cf9699c4a9fd42bda0e5d4d5b89a131e013d0b"
   dependencies:
     "@kickoff/utils.scss" "2.1.1"
     include-media "^1.4.9"
@@ -193,17 +193,17 @@
     handlebars "^4.0.11"
     handlebars-helper-i18n "^0.1.0"
 
-"@justeat/f-toggle@^0.12.0":
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/@justeat/f-toggle/-/f-toggle-0.12.1.tgz#ff093d4f6220b940f0bc5f5c3735aeb913a210ce"
+"@justeat/f-toggle@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-toggle/-/f-toggle-0.13.0.tgz#b502c1c017abac76cb09c204a5fe9cb769ccfc54"
   dependencies:
     "@justeat/f-dom" "^0.3.0"
     closest "^0.0.1"
     lite-ready "^1.0.4"
 
-"@justeat/f-validate@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-validate/-/f-validate-0.15.0.tgz#f3e7b664f530638829daef89992bd1fcdf2b9602"
+"@justeat/f-validate@^0.17.1":
+  version "0.17.1"
+  resolved "https://registry.yarnpkg.com/@justeat/f-validate/-/f-validate-0.17.1.tgz#1b3d2c093e39473ade0c8ace46b4776c8e96dbf4"
   dependencies:
     "@justeat/f-dom" "^0.2.0"
 
@@ -215,9 +215,9 @@
   version "0.9.1"
   resolved "https://registry.yarnpkg.com/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-0.9.1.tgz#3c48988580c8ed803a38c04ce2eb1475dc34fc12"
 
-"@justeat/fozzie@^0.37.0":
-  version "0.37.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.37.0.tgz#9ee52988640f5fb24c88ac3e1e3c63af96fcc4d6"
+"@justeat/fozzie@^0.41.0":
+  version "0.41.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.41.0.tgz#d018703cd08874ad87f98f161cd27cd0086788c7"
   dependencies:
     "@justeat/f-dom" "^0.3.0"
     "@justeat/fozzie-colour-palette" "^0.9.1"

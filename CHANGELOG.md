@@ -4,6 +4,26 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v1.5.0
+------------------------------
+*April 25, 2018*
+
+### Added
+- Import `f-footer` in `docs/index.js`.
+- `docs/ui-components/footer.js`.
+
+### Changed
+- Use footer handlebars templates.
+- Updated dependencies:
+    - `f-footer`
+    - `f-header`
+    - `f-icons`
+    - `f-toggle`
+    - `f-validate`
+    - `fozzie`
+- Disable the default on-click behaviour of all anchors within demo blocks.
+
+
 v1.4.0
 ------------------------------
 *April 11, 2018*
