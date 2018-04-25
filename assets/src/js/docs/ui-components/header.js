@@ -14,14 +14,3 @@ if (signedInDemoEl) {
     $.first('[data-auth-wrapper]', signedInDemoEl).classList.remove('is-hidden');
     $.first('[data-login]', signedInDemoEl).remove();
 }
-
-const navEls = $('[data-navglobal]');
-navEls.forEach(nav => {
-    const navAnchors = $('a', nav);
-
-    navAnchors.forEach(anchor => {
-        anchor.addEventListener('click', e => {
-            e.preventDefault();
-        });
-    });
-});
