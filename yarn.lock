@@ -160,9 +160,9 @@
   dependencies:
     qwery "^4.0.0"
 
-"@justeat/f-footer@^0.18.0":
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-footer/-/f-footer-0.18.0.tgz#0f35c66353db0808145085c92a9e8d25922feb52"
+"@justeat/f-footer@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@justeat/f-footer/-/f-footer-0.18.1.tgz#cf677b0f38e003a6b18a05a2e998395e2e28bbfe"
   dependencies:
     "@justeat/fozzie-colour-palette" "^0.9.0"
     "@kickoff/utils.scss" "2.1.1"

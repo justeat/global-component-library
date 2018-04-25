@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@justeat/f-dom": "^0.4.0",
-    "@justeat/f-footer": "^0.18.0",
+    "@justeat/f-footer": "^0.18.1",
     "@justeat/f-header": "^0.25.0",
     "@justeat/f-icons": "^0.8.0",
     "@justeat/f-toggle": "^0.13.0",

@@ -6,12 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 v1.5.0
 ------------------------------
-*April 24, 2018*
+*April 25, 2018*
 
 ### Added
 - Import `f-footer` in `docs/index.js`.
 - `docs/ui-components/footer.js`.
-- Temporary fix for footer overflow issue in mobile view.
 
 ### Changed
 - Use footer handlebars templates.

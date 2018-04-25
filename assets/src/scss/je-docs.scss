@@ -21,8 +21,3 @@
 @import 'components/icons';
 @import 'components/list--tiled';
 @import 'components/logo';
-
-.c-footer {
-    // Temporary fix to stop the apps row from overflowing the demo block in mobile view
-    overflow-x: hidden;
-}
