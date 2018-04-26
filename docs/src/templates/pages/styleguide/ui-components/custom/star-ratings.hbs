@@ -1,0 +1,54 @@
+---
+title: Star ratings
+section-title: UI Components
+docs: true
+
+navgroup: styleguide
+navsub: ui-components
+navactive: star-ratings
+---
+
+<h2 class="sg-sectionHeading">Small rated stars</h2>
+{{#>demo-block }}
+<p>1.8 star rating</p>
+{{> je-star-ratings star-rating='18' }}
+<p>3 star rating</p>
+{{> je-star-ratings star-rating='30' }}
+<p>4.5 star rating</p>
+{{> je-star-ratings star-rating='45' }}
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Medium rated stars</h2>
+{{#>demo-block }}
+<p>1.8 star rating</p>
+{{> je-star-ratings size-class='c-rating--medium' star-rating='18' }}
+<p>3 star rating</p>
+{{> je-star-ratings size-class='c-rating--medium' star-rating='30' }}
+<p>4.5 star rating</p>
+{{> je-star-ratings size-class='c-rating--medium' star-rating='45' }}
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Large rated stars</h2>
+{{#>demo-block }}
+<p>1.8 star rating</p>
+{{> je-star-ratings size-class='c-rating--large' star-rating='18' }}
+<p>3 star rating</p>
+{{> je-star-ratings size-class='c-rating--large' star-rating='30' }}
+<p>4.5 star rating</p>
+{{> je-star-ratings size-class='c-rating--large' star-rating='45' }}
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Small selectable stars</h2>
+{{#>demo-block }}
+{{> je-star-ratings-selectable size='small' }}
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Medium selectable stars</h2>
+{{#>demo-block }}
+{{> je-star-ratings-selectable size='medium'  star-size='c-icon--star--medium' }}
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Large selectable stars</h2>
+{{#>demo-block }}
+{{> je-star-ratings-selectable size='large' star-size='c-icon--star--large' }}
+{{/demo-block }}
