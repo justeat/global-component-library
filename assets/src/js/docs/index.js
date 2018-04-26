@@ -31,14 +31,23 @@ const docs = {
 
             codeBlock.classList.add('is-hidden');
 
-            const demoToggleBtn = document.createElement('a');
+            const demoToggleBtn = document.createElement('button');
 
-            demoToggleBtn.classList.add('o-btn', 'o-btn--codeToggle');
+            demoToggleBtn.type = 'button';
+            demoToggleBtn.classList.add('o-btn', 'o-btn--secondary', 'o-btn--codeToggle');
             demoToggleBtn.textContent = docs.demoBtnText.whenHidden;
             demoToggleBtn.addEventListener('click', docs._demoToggle);
 
             demoEl.insertBefore(demoToggleBtn, codeBlock);
         });
+
+        $('.sg-sideNav .is-incomplete').forEach(el => {
+            el.setAttribute('tabindex', -1);
+            el.addEventListener('click', e => {
+                e.preventDefault();
+            });
+        });
+
 
     },
 
