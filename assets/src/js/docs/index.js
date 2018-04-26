@@ -3,6 +3,8 @@
  *
  * Can pull in logging modules – such as those used for the address lookup
  */
+
+import '@justeat/f-toggle';
 import $ from '@justeat/f-dom';
 import './ui-components/header';
 
@@ -18,6 +20,7 @@ const docs = {
     init: () => {
 
         docs._demoHandler();
+        docs._disableDemoLinks();
 
     },
 
@@ -54,6 +57,14 @@ const docs = {
             btn.textContent = docs.demoBtnText.whenHidden;
         }
 
+    },
+
+    _disableDemoLinks: () => {
+        $('.demo a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+            });
+        });
     }
 
 };
