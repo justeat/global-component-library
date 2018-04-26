@@ -31,9 +31,10 @@ const docs = {
 
             codeBlock.classList.add('is-hidden');
 
-            const demoToggleBtn = document.createElement('a');
+            const demoToggleBtn = document.createElement('button');
 
-            demoToggleBtn.classList.add('o-btn', 'o-btn--codeToggle');
+            demoToggleBtn.type = 'button';
+            demoToggleBtn.classList.add('o-btn', 'o-btn--secondary', 'o-btn--codeToggle');
             demoToggleBtn.textContent = docs.demoBtnText.whenHidden;
             demoToggleBtn.addEventListener('click', docs._demoToggle);
 
@@ -45,10 +46,6 @@ const docs = {
             el.addEventListener('click', e => {
                 e.preventDefault();
             });
-        });
-
-        $('.o-btn--codeToggle').forEach(demoToggle => {
-            demoToggle.setAttribute('tabindex', 0);
         });
 
 
