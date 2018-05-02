@@ -86,66 +86,41 @@ Colours specific to components should be defined at the top of each component sc
 
 As is considered best practice, we develop with a mobile-first approach to our projects.
 
-Media queries are typically handled with a [set of useful mixins](https://github.je-labs.com/I18N-Production-ROTW/ConsumerWeb/tree/master/src/ConsumerWeb/Assets/src/scss/mixins/_responsive.scss). These are used so that we can define separate media-query content for `< IE9` and browsers with support for media queries. These are directly related to the global `$fix-mqs` var defined in `js-old-ie.scss`. `js-old-ie.scss` ignores any content in media-queries with values less than the `$fix-mqs` var value.
+On the global platform, we recommend using the [@include-media](https://include-media.com/) Sass library. This provides an elegant way to define our media queries in a more readbale way while also hooking into  the [breakpoint map](https://github.com/justeat/fozzie/blob/8a1094ae5a467e9e2afd86a4aab62f9ea65b1bee/src/scss/settings/_variables.scss#L65-L72) defined in fozzie's variables.
 
-When using these mixins, the width should be specified in pixels; the mixins will convert this value into ems to provide better accessibility for users that use text zoom.
+When using these mixins, the easiest way to write your media queries is to specify the breakpoint name; the @include-media library will then convert this into a media query with a value in ems to provide a more consistent experience for users that use text zoom.
 
-The available responsive mixins are:
-
-* `respond-min` for `min-width` media queries
-* `respond-max` for `max-width` media queries
-* `respond-min-max` for `min-width` & `max-width` media queries
 
 #### Media query example
 
 ```scss
 /**
- * This Sass mixin:
- * The value for the width should be unitless and we suggest
- * using your predefined breakpoint variables as the argument
+ * Using @include-media you can specify breakpoints
+ * using the map key's defined in Fozzie's [breakpoint map](https://github.com/justeat/fozzie/blob/8a1094ae5a467e9e2afd86a4aab62f9ea65b1bee/src/scss/settings/_variables.scss#L65-L72)
  */
-@include respond-min(800) {
+@include media('>=mid') {
 	a {
 		color: darkgoldenrod;
 	}
 }
 /* Is the same as: */
-@media screen and (min-width: 800px) {
+@media (min-width: 48em) {
 	a {
 		color: darkgoldenrod;
-	}
-}
-
-/**
- * All the mixins:
- */
-@include respond-min($bp-wide) {
-	a {
-		color: darkgoldenrod;
-	}
-}
-@include respond-max($bp-single-col) {
-	a {
-		color: green;
-	}
-}
-@include respond-min-max($bp-narrow, $bp-mid) {
-	a {
-		color: purple;
 	}
 }
 ```
 
 #### Better media query example
-Rather than having all of your media queries for different widths stored in separate scss files or placed at the bottom of each SCSS partial, it is suggested that you make use of Sass' inline media queries.
+Rather than having all of your media queries for different widths stored in separate `SCSS` files or placed at the bottom of each `SCSS` partial, it is suggested that you make use of Sass' inline media queries.
 
-This means that all styles related to an element are together, for example:
+This means that all styles related to an element are grouped together, for example:
 
 ```scss
 a {
 	padding: 1em;
 
-	@include respond-min(800) {
+	@include media('>=mid') {
 		padding: 2em;
 	}
 }

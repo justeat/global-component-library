@@ -1,0 +1,145 @@
+---
+title: Browser Support
+section-title: General Documentation
+description: The platforms and browsers that we support
+docs: true
+
+navgroup: documentation
+navsub: docs-general
+navactive: browser-support
+---
+
+The number of browsers available to our users is vast, especially for those using mobile devices. Below, we have defined a rating system that helps us to specify the level of browser support we aim to achieve and to clarify what level of testing is required.
+
+As with any browser support checklist, this list should be reviewed often and updated in-line with the browsers and devices that our users are choosing to access our platforms via.
+
+
+<h2 class="sg-sectionHeading">Priority definitions</h2>
+
+### Priority level A – Fully supported
+
+- Testing is required.
+- All content must be available.
+- Layout must comply with the creative design unless there is a technical need not to do so.
+- All functionality must be available and work as required.
+
+
+### Priority level B – Mostly supported*
+
+- Testing is required.
+- All content must be available.
+- Layout does not have to look identical to creative design (i.e. degradation of appearance is acceptable).
+- All functionality must be available and work as required.
+
+### Priority level C – Partially supported*
+
+- Testing is required.
+- All content must be available.
+- Layout does not have to look identical to creative design (ie degradation of appearance is acceptable).
+- All functionality must be available and work as required, however it may function in a more basic manner.
+
+### Priority level D – Not supported*
+
+- Testing is not required
+
+With any platforms rated this level, no testing will be carried out, however the experience may still result in a higher level experience due to responsive build approach.
+
+**N.b.** With all grading the actual experience/functionality & design may result in a higher grade. The site is going to be built in a responsive nature so support may be better than stated.
+
+<h2 class="sg-sectionHeading">Browser Matrices</h2>
+
+### Desktop
+
+<table class="o-table c-matrix not-striped" role="grid">
+    <thead>
+        <tr role="row">
+            <th data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none">Browser</th>
+            <th data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none">Grading</th>
+        </tr>
+    </thead>
+    <tbody aria-live="polite" aria-relevant="all">
+        <tr role="row">
+            <td>Chrome 59+ (MacOS &amp; Windows)</td>
+            <td class="c-matrix-gradeA">A</td>
+        </tr>
+        <tr role="row">
+            <td>Safari 10+ (MacOS)</td>
+            <td class="c-matrix-gradeA">A</td>
+        </tr>
+        <tr role="row">
+            <td>IE11</td>
+            <td class="c-matrix-gradeA">A</td>
+        </tr>
+        <tr role="row">
+            <td>Firefox 54+ (Windows)</td>
+            <td class="c-matrix-gradeA">A</td>
+        </tr>
+        <tr role="row">
+            <td>Edge 14+</td>
+            <td class="c-matrix-gradeB">B</td>
+        </tr>
+        <tr role="row">
+            <td>Safari 9 (MacOS)</td>
+            <td class="c-matrix-gradeC">C</td>
+        </tr>
+        <tr role="row">
+            <td>All other browsers &amp; versions</td>
+            <td class="c-matrix-gradeD">D</td>
+        </tr>
+    </tbody>
+</table>
+
+### Mobile
+
+<table class="o-table c-matrix not-striped" role="grid" resolved="">
+    <thead>
+        <tr role="row">
+            <th data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending">Browser</th>
+            <th data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none">Grading</th>
+        </tr>
+    </thead>
+    <tbody aria-live="polite" aria-relevant="all">
+        <tr role="row">
+            <tr role="row">
+                <td>Android Chrome 51</td>
+                <td class="c-matrix-gradeA">A</td>
+            </tr>
+            <tr role="row">
+                <td>Android Chrome 56</td>
+                <td class="c-matrix-gradeC">C</td>
+            </tr>
+            <tr role="row">
+                <td>Android Chrome 58</td>
+                <td class="c-matrix-gradeC">C</td>
+            </tr>
+            <tr role="row">
+                <td>Android Chrome 59</td>
+                <td class="c-matrix-gradeA">A</td>
+            </tr>
+            <tr role="row">
+                <td>Android Chrome 60</td>
+                <td class="c-matrix-gradeC">C</td>
+            </tr>
+            <tr role="row">
+                <td>iOS Chrome 60 - iPhone/iPad</td>
+                <td class="c-matrix-gradeC">C</td>
+            </tr>
+            <tr role="row">
+                <td>iOS Safari 9 - iPhone/iPad</td>
+                <td class="c-matrix-gradeB">B</td>
+            </tr>
+            <tr role="row">
+                <td>iOS Safari 10 - iPhone/iPad</td>
+                <td class="c-matrix-gradeA">A</td>
+            </tr>
+            <tr role="row">
+                <td>iOS Safari 602.x - iPhone/iPad</td>
+                <td class="c-matrix-gradeC">C</td>
+            </tr>
+                <td>All other versions*</td>
+                <td class="c-matrix-gradeD">D</td>
+            </tr>
+    </tbody>
+</table>
+
+* may work but will not be tested

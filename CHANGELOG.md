@@ -4,6 +4,26 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v1.8.0
+------------------------------
+*May 2, 2018*
+
+### Added
+- Documentation page on browser support added
+- Documentation page on accessibility checklist added
+
+### Changed
+- Updated Colour Palette in line with new brand changes
+- Updated Accessibility page links
+- Comments updated to be consistent throughout SCSS files
+
+### Fixed
+- Site nav fixed on mobile devices
+
+### Removed
+- Old IE CSS file - not needed in documentation as not supporting <IE9
+
+
 v1.7.0
 ------------------------------
 *April 26, 2018*

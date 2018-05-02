@@ -139,8 +139,26 @@
     <li><a href="{{ baseUrl }}/documentation/general/" class="{{#is navactive 'principles'}} is-active{{/is}}">Development Principles</a></li>
     <li><a href="{{ baseUrl }}/documentation/general/getting-started" class="{{#is navactive 'getting-started'}} is-active{{/is}}">Getting Started</a></li>
     <li><a href="{{ baseUrl }}/documentation/general/gulp" class="{{#is navactive 'gulp'}} is-active{{/is}}">Gulp</a></li>
-    <li><a href="{{ baseUrl }}/documentation/general/whom-we-support" class="is-incomplete {{#is navactive 'whom-we-support'}} is-active{{/is}}">Whom we support</a></li>
-    <li><a href="{{ baseUrl }}/documentation/general/accessibility" class="{{#is navactive 'a11y'}} is-active{{/is}}">Accessibility</a></li>
+    <li><a href="{{ baseUrl }}/documentation/general/browser-support" class="{{#is navactive 'browser-support'}} is-active{{/is}}">Browser support</a></li>
+    <li><a href="{{ baseUrl }}/documentation/general/accessibility" class="{{#is navactive 'a11y'}} is-active{{/is}}">Accessibility</a>
+    <li><a href="{{ baseUrl }}/documentation/general/accessibility/checklist" class="{{#is navactive 'a11y-checklist'}} is-active{{/is}}">A11y Checklist</a>
+        {{#is navactive 'a11y-checklist'}}
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="{{ baseUrl }}/documentation/general/accessibility/checklist#htmlvalid">HTML is Valid</a></li>
+            <li><a href="{{ baseUrl }}/documentation/general/accessibility/checklist#htmlstructure">HTML Structure</a></li>
+            <li><a href="{{ baseUrl }}/documentation/general/accessibility/checklist#htmlorder">HTML Order</a></li>
+            <li><a href="{{ baseUrl }}/documentation/general/accessibility/checklist#htmlsemantic">HTML Semantic</a></li>
+            <li><a href="{{ baseUrl }}/documentation/general/accessibility/checklist#htmllabelled">HTML Labelled</a></li>
+            <li><a href="{{ baseUrl }}/documentation/general/accessibility/checklist#audit">Running an Audit</a></li>
+            <li><a href="{{ baseUrl }}/documentation/general/accessibility/checklist#keyboard">Keyboard Support</a></li>
+            <li><a href="{{ baseUrl }}/documentation/general/accessibility/checklist#tabstops">Tab Support</a></li>
+            <li><a href="{{ baseUrl }}/documentation/general/accessibility/checklist#focus">Focus Management</a></li>
+            <li><a href="{{ baseUrl }}/documentation/general/accessibility/checklist#state">Page State</a></li>
+            <li><a href="{{ baseUrl }}/documentation/general/accessibility/checklist#wellspoken">Screen Readers</a></li>
+            <li><a href="{{ baseUrl }}/documentation/general/accessibility/checklist#examples">Examples</a></li>
+        </ul>
+        {{/is}}
+    </li>
 {{/is}}
 
 

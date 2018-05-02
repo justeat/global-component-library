@@ -1,6 +1,7 @@
 /**
- * SG Specific Navigation Styles
- * ===================================
+ * Components > Nav
+ * =================================
+ * Stylguide specific Navigation styles
  */
 
 $subnav-padding-bottom: spacing();
@@ -8,15 +9,39 @@ $subnav-padding-top: spacing();
 $subnav-padding-side: spacing();
 $subnav-border-thickness: 3px;
 
+.c-header-wrap {
+    flex-wrap: wrap;
+}
+
+.c-logo--sg,
+.c-nav--sg {
+    @include media('>=mid', '<=wide') {
+        flex-basis: 100%;
+        justify-content: center;
+    }
+}
+.c-logo--sg > a {
+    justify-content: center;
+}
+
 .nav--sg {
     float: none;
 }
 
 .sg-subnav {
     @include font-size();
+
+    @include media('<=mid') {
+        flex-basis: 100%;
+        justify-content: left;
+    }
 }
     .sg-subnav-item {
         margin-left: spacing();
+
+        @include media('<=mid') {
+            margin-left: 0;
+        }
 
         a {
             display: block;
@@ -42,7 +67,7 @@ $subnav-border-thickness: 3px;
 }
     .sg-secondaryBar-title {
         margin-top: 0;
-        margin-bottom: ($subnav-padding-bottom + $subnav-border-thickness);
+        line-height: 1.8;
     }
 
 /*
