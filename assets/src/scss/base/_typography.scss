@@ -1,6 +1,10 @@
-//
-// Type classes
-// ==========================================================================
+/**
+ * Base > Type
+ * =================================
+ * Type definitions
+ * Specific to styleguide
+ */
+
 
 // Major section title – i.e. homepage of docs
 .sg-sectionTitle {
@@ -44,11 +48,11 @@
 // bump up the font-size for documentation text
 .sg-content {
     > p {
-        @include font-size(mid);
+        @include font-size(base--scaleUp);
     }
     > ul,
     > ol {
-        @include font-size(mid);
+        @include font-size(base--scaleUp);
         line-height: 1.2;
 
         li {

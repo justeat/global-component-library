@@ -50,7 +50,6 @@ build(gulp, {
     },
 
     docs: {
-        remoteBase: '/global-component-library',
         helpers: {
             concat: (...args) => args.slice(0, -1).join('')
         }

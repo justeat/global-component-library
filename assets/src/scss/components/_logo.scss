@@ -1,5 +1,7 @@
 /**
- * Documentation Logo
+ * Components > logo
+ * =================================
+ * Extension styles specific to the documentation site logo
  */
 
 $fozzieLogo-size--narrow: 45px;
@@ -21,6 +23,7 @@ $fozzieLogo-size: 60px;
 .c-logo > a {
     text-decoration: none;
 }
+
 .c-logo-subText {
     font-style: italic;
     display: block;

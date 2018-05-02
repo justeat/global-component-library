@@ -1,0 +1,32 @@
+/**
+ * Components > Matrix
+ * =================================
+ * Used to extend the base table classes to define
+ * something that looks like a browser matrix
+ */
+
+.c-matrix {
+    border: 1px solid $table-verticalBorder--color;
+
+    th {
+        background-color: $table-bgColor--accent;
+
+        &:first-child {
+            border-radius: 4px 0 0;
+        }
+        &:last-child {
+            border-radius: 0 4px 0 0;
+        }
+    }
+    td {
+        border-top: 1px solid $table-verticalBorder--color;
+    }
+    tr:last-child td:last-child {
+        border-radius: 0 0 4px;
+    }
+}
+
+.c-matrix-gradeA { background-color: $green--offWhite; }
+.c-matrix-gradeB { background-color: $yellow--light; }
+.c-matrix-gradeC { background-color: $yellow--light; }
+.c-matrix-gradeD { background-color: $red--offWhite; }

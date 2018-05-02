@@ -1,6 +1,9 @@
 /**
- * Component for displaying colour swatches
- * ========================================
+ * Components > swatch
+ * =================================
+ * Displays colour swatches
+ *
+ * E.g. on the colour documentation page
  */
 
 // swatch mixin
@@ -102,9 +105,14 @@
 .sg-color-orange--light { @include swatch($orange--light); }
 
 
+// non-aa large text colours
+.sg-color-brandPink { @include swatch($brand--pink); }
+.sg-color-brandBlue { @include swatch($brand--blue); }
+.sg-color-brandGreen { @include swatch($brand--green); }
+.sg-color-brandOrange { @include swatch($brand--orange); }
+
+
 // secondary non-aa colours
-.sg-color-pink { @include swatch($pink); }
 .sg-color-blue--light { @include swatch($blue--light); }
 .sg-color-blue--lighter { @include swatch($blue--lighter); }
-.sg-color-green--light { @include swatch($green--light); }
 .sg-color-yellow { @include swatch($yellow); }
