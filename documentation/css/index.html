@@ -154,58 +154,32 @@
 <p><a name="responsive"></a></p>
 <h2>Responsive</h2>
 <p>As is considered best practice, we develop with a mobile-first approach to our projects.</p>
-<p>Media queries are typically handled with a <a href="https://github.je-labs.com/I18N-Production-ROTW/ConsumerWeb/tree/master/src/ConsumerWeb/Assets/src/scss/mixins/_responsive.scss">set of useful mixins</a>. These are used so that we can define separate media-query content for <code>&lt; IE9</code> and browsers with support for media queries. These are directly related to the global <code>$fix-mqs</code> var defined in <code>js-old-ie.scss</code>. <code>js-old-ie.scss</code> ignores any content in media-queries with values less than the <code>$fix-mqs</code> var value.</p>
-<p>When using these mixins, the width should be specified in pixels; the mixins will convert this value into ems to provide better accessibility for users that use text zoom.</p>
-<p>The available responsive mixins are:</p>
-<ul>
-<li><code>respond-min</code> for <code>min-width</code> media queries</li>
-<li><code>respond-max</code> for <code>max-width</code> media queries</li>
-<li><code>respond-min-max</code> for <code>min-width</code> &amp; <code>max-width</code> media queries</li>
-</ul>
+<p>On the global platform, we recommend using the <a href="https://include-media.com/">@include-media</a> Sass library. This provides an elegant way to define our media queries in a more readbale way while also hooking into  the <a href="https://github.com/justeat/fozzie/blob/8a1094ae5a467e9e2afd86a4aab62f9ea65b1bee/src/scss/settings/_variables.scss#L65-L72">breakpoint map</a> defined in fozzie's variables.</p>
+<p>When using these mixins, the easiest way to write your media queries is to specify the breakpoint name; the @include-media library will then convert this into a media query with a value in ems to provide a more consistent experience for users that use text zoom.</p>
 <h4>Media query example</h4>
 <pre><code class="language-scss"><span class="hljs-comment">/**
- * This Sass mixin:
- * The value for the width should be unitless and we suggest
- * using your predefined breakpoint variables as the argument
+ * Using @include-media you can specify breakpoints
+ * using the map key's defined in Fozzie's [breakpoint map](https://github.com/justeat/fozzie/blob/8a1094ae5a467e9e2afd86a4aab62f9ea65b1bee/src/scss/settings/_variables.scss#L65-L72)
  */</span>
-@<span class="hljs-keyword">include</span> respond-min(<span class="hljs-number">800</span>) {
+@<span class="hljs-keyword">include</span> media(<span class="hljs-string">'&gt;=mid'</span>) {
     <span class="hljs-selector-tag">a</span> {
         <span class="hljs-attribute">color</span>: darkgoldenrod;
     }
 }
 <span class="hljs-comment">/* Is the same as: */</span>
-@<span class="hljs-keyword">media</span> screen and (min-width: 800px) {
+@<span class="hljs-keyword">media</span> (min-width: 48em) {
     <span class="hljs-selector-tag">a</span> {
         <span class="hljs-attribute">color</span>: darkgoldenrod;
-    }
-}
-
-<span class="hljs-comment">/**
- * All the mixins:
- */</span>
-@<span class="hljs-keyword">include</span> respond-min(<span class="hljs-variable">$bp-wide</span>) {
-    <span class="hljs-selector-tag">a</span> {
-        <span class="hljs-attribute">color</span>: darkgoldenrod;
-    }
-}
-@<span class="hljs-keyword">include</span> respond-max(<span class="hljs-variable">$bp-single-col</span>) {
-    <span class="hljs-selector-tag">a</span> {
-        <span class="hljs-attribute">color</span>: green;
-    }
-}
-@<span class="hljs-keyword">include</span> respond-min-max(<span class="hljs-variable">$bp-narrow</span>, <span class="hljs-variable">$bp-mid</span>) {
-    <span class="hljs-selector-tag">a</span> {
-        <span class="hljs-attribute">color</span>: purple;
     }
 }
 </code></pre>
 <h4>Better media query example</h4>
-<p>Rather than having all of your media queries for different widths stored in separate scss files or placed at the bottom of each SCSS partial, it is suggested that you make use of Sass' inline media queries.</p>
-<p>This means that all styles related to an element are together, for example:</p>
+<p>Rather than having all of your media queries for different widths stored in separate <code>SCSS</code> files or placed at the bottom of each <code>SCSS</code> partial, it is suggested that you make use of Sass' inline media queries.</p>
+<p>This means that all styles related to an element are grouped together, for example:</p>
 <pre><code class="language-scss"><span class="hljs-selector-tag">a</span> {
     <span class="hljs-attribute">padding</span>: <span class="hljs-number">1em</span>;
 
-    @<span class="hljs-keyword">include</span> respond-min(<span class="hljs-number">800</span>) {
+    @<span class="hljs-keyword">include</span> media(<span class="hljs-string">'&gt;=mid'</span>) {
         <span class="hljs-attribute">padding</span>: <span class="hljs-number">2em</span>;
     }
 }

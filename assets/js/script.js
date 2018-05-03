@@ -591,8 +591,8 @@ var FormValidation = function () {
             this.fields.forEach(function (field) {
 
                 // currentElement refers to an element that is being validated on blur/keyup
-                // only validate on blur/keyup if the field is not empty
-                if (currentElement && (currentElement.field !== field || field.value === '')) {
+                // only validate on blur/keyup if the field is not empty and is not required
+                if (currentElement && (currentElement.field !== field || field.value === '' && !_rules2.default.required.condition(field))) {
                     return;
                 }
 

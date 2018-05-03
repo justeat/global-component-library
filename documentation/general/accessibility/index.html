@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Development Principles – Just Eat Front-End Component Library and Documentation</title>
+		<title>Accessibility – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -65,10 +65,7 @@
     </div>
 </div>
 
-	    <div class="sg-wip">
-        <h2 class="l-container">This page of the docs needs to be reviewed and is a work in progress.<br> Don’t believe anything that it says!</h2>
-    </div>
-
+	
     <div class="l-container sg-page">
         <div class="g g--gutter g--stack">
             <div class="g-col g-span2--mid">
@@ -83,11 +80,11 @@
                 
                 
                 <!-- subnav for Documentation > General -->
-    <li><a href="/documentation/general/" class=" is-active">Development Principles</a></li>
+    <li><a href="/documentation/general/" class="">Development Principles</a></li>
     <li><a href="/documentation/general/getting-started" class="">Getting Started</a></li>
     <li><a href="/documentation/general/gulp" class="">Gulp</a></li>
     <li><a href="/documentation/general/browser-support" class="">Browser support</a></li>
-    <li><a href="/documentation/general/accessibility" class="">Accessibility</a>
+    <li><a href="/documentation/general/accessibility" class=" is-active">Accessibility</a>
     <li><a href="/documentation/general/accessibility/checklist" class="">A11y Checklist</a>
     </li>
 
@@ -106,7 +103,7 @@
                     </li>
                     <li><a href="/js/" data-trak='{"category":"Docs nav","action":"Javascript"}'>Javascript</a>
                     </li>
-                    <li><a href="/accessibility.html">Accessibility</a></li>
+                    <li><a href="/accessibility.html" class="is-active">Accessibility</a></li>
                     <li><a href="/fe/html.html" data-trak='{"category":"Docs nav","action":"HTML"}'>HTML</a>
                     </li>
                 </ul>
@@ -114,27 +111,65 @@
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
-                    <h1>Development Principles</h1>
-<p>JUST EAT has a large codebase, which is currently undergoing a merge of multiple front-end platforms.  Although we have many language specific principles, our fundamental front-end principles are:</p>
+                    <h1>Accessibility</h1>
+<p><strong>JUST EAT websites should be inclusive experiences that are accessible to all.</strong></p>
+<p>Okay great, but what does that mean to me as a developer? This page introduces tools and techniques you can use to weave accessibility into your workflow. It covers just a small part of this massive topic, but following the recommendations on this page will make a big difference.</p>
+<p><h2 class="sg-sectionHeading">What is Accessibility?</h2></p>
+<p>Accessibility (<em>AXS</em> or <em>a11y</em>) is an inclusive effort to support as many users as possible, especially those with a disability. They may use <em>assitive technology</em> like a <em>screen reader</em> to access the web. We need to code with them in mind.</p>
+<p><h2 class="sg-sectionHeading">Before we get started</h2></p>
+<p>This page assumes you have a good understand of the semantic elements in HTML5. You also know that ARIA (Accessible Rich Internet Applications) is a set of special attributes that we can add to HTML. There are links to these topics and more in the <a href="#resources">resources</a> section.</p>
+<h3>Development tools</h3>
+<p>There are two really useful free tools that help you develop and test your work. Add <a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en">Accessibility developer tools</a> to Chrome to to bring accessibility inspection and auditing to DevTools. Install the <a href="https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en">Chromevox</a> screen reader to experience your site as a blind user would. There's a bit of a learning curve with these tools but it's well worth the effort.</p>
+<p><h2 class="sg-sectionHeading">Accessible markup</h2></p>
+<p>Unexpected markup confuses assitive tech, make sure that pages are standards compliant HTML 5. Regularly check for validity as you go with a tool like the <a href="https://validator.w3.org/">W3C validator</a>.</p>
+<h3>Structure and landmarks</h3>
+<p>Give pages structure by using tags like <code>section</code> and <code>header</code> appropriately. This helps users of assitive tech navigate the page. As well as tag semantics you can use ARIA landmarks if you need to.</p>
+<p>DOM order is really important here too, assistive technologies read through pages in source order. Test this by removing CSS from your page and reading it from top to bottom, does it make sense?</p>
+<h3>Semantic content</h3>
+<p>As well as for structure, semantics are just as important for content. If a sentence has emphases, <code>span.emphases</code> will not convey this to a screen reader but <code>em</code> will.</p>
+<p>Similarly, interactive elements need to declare themselves as such semantically. With CSS and JavaScript you can make a <code>div</code> look and behave like a button, but it wont be a button for a blind user. In this case you would either have to re-implement semantics with <code>role=&quot;button&quot;</code> or much better, just use a <code>button</code> tag. That may mean that more CSS work needed, but it results in a button that everyone can use.</p>
+<p>Don't forget labeling. Form controls need labels even if they don't visually appear to. All <code>img</code> elements need an <code>alt</code> attribute. If an image doesn't warrant alternative text, use an empty string as the <code>alt</code> tag rather than ommit it.</p>
+<p><h2 class="sg-sectionHeading">Support the keyboard</h2></p>
+<p>An accessible site may be navigated and interacted with using just the keyboard. Try it with the pages you're building – you should be able to reach every interactive element (and <em>only</em> interactive elements) with the Tab key.</p>
+<h3>Tab stops</h3>
+<p>Anchors, buttons and other interactive controls are focusable by default and their focus state is clearly styled, some users depend on this. That means that as you tab through the page by repeatedly hitting the Tab key, each interactive element (a 'tab stop') will be a focussed and may be controlled with keys.</p>
+<p>If you've added interactive elements that don't use native tags, make sure these are focussable by setting <code>tabindex=&quot;0&quot;</code>. The zero means that this tab stop will be arrived at as the element is reached in DOM order. Because you've grouped and ordered your HTML semantically, this is probably what you want.</p>
+<h3>Other keys</h3>
+<p>Notice how native components like buttons, select dropdowns and alert dialogs work with keys. The Enter or Space keys follow a link or 'click' a button, the arrow keys move between options in a menu, the Esc key dismisses a dialog. These conventions are important, make sure that your JavaScript doesn't interfere with them and follow them if you make your own composite components.</p>
+<h3>Focus management</h3>
+<p>When you try to use your pages with keys you may notice interactions where you 'drop focus'. Consider a button that opens a modal window — when the user focusses that button (with Tab) and follows it (with Space or Enter) focus the modal that opens or the first button within it. When the user follows a modal button that dismisses the modal and it disappears, don't drop focus, hand it back to the page or the opening button. This sounds confusing but it's easy to discover and test if you interact with your page using just the keyboard.</p>
+<p><h2 class="sg-sectionHeading">Composite widgets and complex pages</h2></p>
+<p>You may be creating a more complex widget for which there isn't a native tag. For example a set of tabs, a carousel, or an expandable tree. Composite widgets need to be constructed carefully so that they work well with assitive tech.</p>
+<p>Before you roll your own, consider components in existing JS frameworks that are good at accessibility. Customise or at least learn from a component that's already benefited from lots of community development.</p>
+<p>If you do build composite widgets from scratch, or your pages involve complex interactivity or asynchronous content, you might need to understand screen reader modes, composite roles, dynamic states and properties, live content and more. Hopefully the <a href="#resources">resources</a> below will point you in the right direction.</p>
+<p><a name="aria-resources"></a><h2 class="sg-sectionHeading">Resources</h2></p>
 <ul>
-<li>Think in terms of components</li>
-<li>Leave code in a better state than you found it</li>
-<li>Reuse as much as possible: technologies and components</li>
-<li>The entire code base should look like one person wrote it</li>
-<li>Keep it simple</li>
-<li>Ensure we can pivot away from a dependency/pattern</li>
+<li><a href="https://validator.w3.org/">W3C validator</a></li>
+<li><a href="https://www.w3schools.com/html/html5_semantic_elements.asp">HTML5 semantic elements</a></li>
+<li>[Chromevox](https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en], its [keyboard shortcuts](http://www.chromevox.com/keyboard_shortcuts.html] and <a href="http:/">tutorial</a>www.chromevox.com/tutorial/index.html]</li>
+<li><a href="https://www.youtube.com/watch?v=x18vEEfpK3g">Making accessible Web Apps Using HTML5 and ChromeVox</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en">Accessibility developer tools</a></li>
+<li>Google's excellent <a href="https://webaccessibility.withgoogle.com/course">Introduction to Web Accessibility</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">MDN on ARIA</a></li>
+<li><a href="http://html5doctor.com/using-aria-in-html/">Using ARIA in HTML</a></li>
 </ul>
-<h2>Reuse as much as possible</h2>
-<p>More than anything, please try to follow existing patterns as much as possible.</p>
-<p>Inconsistency soon manifests as complexity and then technical debt. What we are aiming to build is a maintainable platform where developers can move between applications with very little up-front learning required. <a href="https://medium.com/@bentlegen/the-best-tool-for-the-job-isnt-always-6ed364f3f775">The best tool for the job, isn’t always</a> by Ben Vinegar covers this concept perfectly.</p>
-<p>Sometimes reusing code will take more initial work but it shouldn't be avoided. When building new features, try to identify reusable parts which can be abstracted to help other developers.</p>
-<h2>Components</h2>
-<p>When building anything for use on the JUST EAT platform, think about the thing you are building and break it down as much as possible.  The simpler you can make that piece of functionality, the easier it will be for other developers to pick up at a later date (or yourself down the line).</p>
-<p>JUST EAT is built of many small UI components pieced together to make a more complex application.  By writing small components, we can change smaller pieces of our platform without worrying about the implications across whole templates and pages.</p>
-<p>When done well, this also vastly speeds up the time needed to create new functionality, as we can likely reuse tested components that are already productionised on the platform, extending this functionality to our needs.</p>
-<h2>Ensure we can pivot</h2>
-<p>When making broad decisions about JUST EAT trust that your expertise means you're right now, but realise that things will change and we may possibly need to pivot away from what you decide on. There is a cost to removing something from the codebase which far outweighs the cost of adding it.</p>
-<p>Everything is up for discussion, but pivoting on such a large code base is a slow process so it's always worth spending the extra time to consider how deeply we would be tied into the decision and how quickly we could change course.</p>
+<p><h2 class="sg-sectionHeading">Finally</h2></p>
+<p>By following the steps above you've made a dramatic difference to disabled users. These are real people, using our sites every day. Here's some of their feedback, good and bad.</p>
+<blockquote>
+<p>&quot;WELL DONE! You have locked every BLIND person out of Just Eat by using a security system that BLIND people can't SEE! I tried to login but because I use a screen reader, I can't get past the sign in page. YOU HAVE LOST ME AS A CUSTOMER..... I bet you don't even respond to this message.&quot;</p>
+</blockquote>
+<blockquote>
+<p>Love this website, first time we have used it and found it very easy to use. Finding a takeaway and ordering what we wanted was straight forward it was 100%easy and because my husband is disabled which means I cannot always get out to a takeaway this is very handy and reliable thank you for an easy transaction.</p>
+</blockquote>
+<blockquote>
+<p>hello i tried to click the keep up to date for exclusive offers and it lets me put in name and email but no matter what way i do my postcode it will not accept it- I am disabled so maybe i am doing it wrong i tried XX16 7AX XX167AX CAN YOU PLEASE LET ME KNOW HOW TO DO IT AS I AM A REGULAR JUST EAT USER IN BRISTOL AND WOULD LIKE TO TAKE ADVANTAGE IF ANY OFFERS APPLY TO ME- SORRY TO BE BOTHER X</p>
+</blockquote>
+<blockquote>
+<p>I find just eat very good,as I live in an isolated spot and am disabled</p>
+</blockquote>
+<blockquote>
+<p>I am a long-time customer who was satisfied until today. I am blind, and use a screen reader to access your site. four days ago, all functions of the site were readable and usable with my screen reader. Today, I can't add anything to my order. Whatever was changed on how the add to basket function is displayed rendored it unclickable for me. It used to be a plus button, and now my screen reader says it is a clickable element which does nothing when clicked. In effect, the site has become absolutely and completely useless to me. Since I doubt that this one comment will change anything, I'll say so long. It was a great run.</p>
+</blockquote>
                 </div>
             </div>
         </div>

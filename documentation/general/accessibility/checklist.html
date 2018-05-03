@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Accessibility – Just Eat Front-End Component Library and Documentation</title>
+		<title>Accessibility Checklist – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -65,10 +65,7 @@
     </div>
 </div>
 
-	    <div class="sg-wip">
-        <h2 class="l-container">This page of the docs needs to be reviewed and is a work in progress.<br> Don’t believe anything that it says!</h2>
-    </div>
-
+	
     <div class="l-container sg-page">
         <div class="g g--gutter g--stack">
             <div class="g-col g-span2--mid">
@@ -86,8 +83,24 @@
     <li><a href="/documentation/general/" class="">Development Principles</a></li>
     <li><a href="/documentation/general/getting-started" class="">Getting Started</a></li>
     <li><a href="/documentation/general/gulp" class="">Gulp</a></li>
-    <li><a href="/documentation/general/whom-we-support" class="is-incomplete  is-active">Whom we support</a></li>
-    <li><a href="/documentation/general/accessibility" class="">Accessibility</a></li>
+    <li><a href="/documentation/general/browser-support" class="">Browser support</a></li>
+    <li><a href="/documentation/general/accessibility" class="">Accessibility</a>
+    <li><a href="/documentation/general/accessibility/checklist" class=" is-active">A11y Checklist</a>
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="/documentation/general/accessibility/checklist#htmlvalid">HTML is Valid</a></li>
+            <li><a href="/documentation/general/accessibility/checklist#htmlstructure">HTML Structure</a></li>
+            <li><a href="/documentation/general/accessibility/checklist#htmlorder">HTML Order</a></li>
+            <li><a href="/documentation/general/accessibility/checklist#htmlsemantic">HTML Semantic</a></li>
+            <li><a href="/documentation/general/accessibility/checklist#htmllabelled">HTML Labelled</a></li>
+            <li><a href="/documentation/general/accessibility/checklist#audit">Running an Audit</a></li>
+            <li><a href="/documentation/general/accessibility/checklist#keyboard">Keyboard Support</a></li>
+            <li><a href="/documentation/general/accessibility/checklist#tabstops">Tab Support</a></li>
+            <li><a href="/documentation/general/accessibility/checklist#focus">Focus Management</a></li>
+            <li><a href="/documentation/general/accessibility/checklist#state">Page State</a></li>
+            <li><a href="/documentation/general/accessibility/checklist#wellspoken">Screen Readers</a></li>
+            <li><a href="/documentation/general/accessibility/checklist#examples">Examples</a></li>
+        </ul>
+    </li>
 
                 
                 
@@ -112,7 +125,144 @@
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
-                    <h1>Accessibility</h1>
+                    <h1>Accessibility Checklist</h1>
+<p><a name="htmlvalid"></a><h2 class="sg-sectionHeading">HTML is valid</h2></p>
+<p>Paste your markup into a validator a fix any reported issues. As well as reporting markup issues, the W3C Markup Validation Service will also report incorrect use of ARIA attributes.</p>
+<h3>Tools</h3>
+<ul>
+<li><a href="https://validator.w3.org/">W3C Markup Validation Service</a></li>
+</ul>
+<h3>Learn more</h3>
+<ul>
+<li><a href="https://validator.w3.org/docs/why.html#why_pros">Why Validate?</a></li>
+</ul>
+<p><a name="htmlstructure"></a><h2 class="sg-sectionHeading">HTML is well structured</h2></p>
+<p>Think about the structure of tags used, are elements like <code>header</code> and <code>section</code> used appropriately? Are headings structured in a logical order according to level of importance? Correct type of lists used? i.e. ordered / unordered.</p>
+<h3>Tools</h3>
+<ul>
+<li>Use the <a href="https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh">WAVE Evaluation Tool</a> to analyse the document outline.</li>
+</ul>
+<h3>Learn more</h3>
+<ul>
+<li><a href="http://html.com/document/">HTML Document Structure</a></li>
+<li><a href="http://webaim.org/techniques/semanticstructure/">Semantic Structure</a></li>
+</ul>
+<h3>Reference</h3>
+<ul>
+<li><a href="http://html5doctor.com/">HTML5 Doctor</a></li>
+<li><a href="https://developer.mozilla.org/en/docs/Web/HTML/Element">HTML element reference</a></li>
+</ul>
+<p><a name="htmlorder"></a><h2 class="sg-sectionHeading">HTML is well ordered</h2></p>
+<p>Turn off CSS and read page from top to bottom, is it possible to read the document? Does it make sense?</p>
+<p>Use heading order to show importance.</p>
+<h3>Tools</h3>
+<ul>
+<li>Use the <a href="http://chrispederick.com/work/web-developer/">Web Developer Toolbar</a> to disable CSS (look in the CSS tab).</li>
+<li>Use the <a href="https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh">WAVE Evaluation Tool</a> to analyse the document outline.</li>
+</ul>
+<p><a name="htmlsemantic"></a><h2 class="sg-sectionHeading">HTML is semantic</h2></p>
+<p>Ensure semantics are conveyed with tags or roles (if necessary), not with style, e.g. <code>em</code> not <code>class=&quot;italic&quot;</code> and <code>button</code> or <code>role=&quot;button&quot;</code> not <code>div</code>.</p>
+<h3>Learn more</h3>
+<ul>
+<li><a href="http://html.com/semantic-markup/">Semantic Markup</a></li>
+<li><a href="https://www.youtube.com/watch?v=g2tzEil5TL0">Why do semantics matter? (video)</a></li>
+<li><a href="http://a11yproject.com/posts/aria-landmark-roles/">ARIA Landmark Roles and HTML5 Implicit Mapping</a></li>
+</ul>
+<h3>Reference</h3>
+<ul>
+<li><a href="https://www.w3.org/TR/wai-aria-1.1/#state_prop_def">ARIA - Definitions of States and Properties</a></li>
+<li><a href="http://www.html5accessibility.com/#support">Check the HTML5 accessibility website to see if an element requires additional role attributes</a></li>
+</ul>
+<p><a name="htmllabelled"></a><h2 class="sg-sectionHeading">HTML is labelled</h2></p>
+<p>Controls and images are labelled.</p>
+<p>Form elements have an associated <code>label</code>, even those with <code>placeholder</code>, the label must always be visible. Alternatively they may make use of ARIA attributes such as <code>aria-described-by</code> or <code>aria-label</code>.</p>
+<p>Images must have an <code>alt</code> attribute, even if it's empty. Think about the context of the image; is it followed by descriptive text? Is it contained within a link? Is it a decorative image?</p>
+<h3>Learn more</h3>
+<ul>
+<li><a href="https://youtu.be/fUt5pLJp0HQ?t=1s">Writing Accessible HTML (video)</a></li>
+<li><a href="http://webaim.org/techniques/alttext/#basics">Alternative Text Basics</a></li>
+<li><a href="https://youtu.be/LjUT2T29bDw?t=18s">Ways to label with ARIA (video)</a></li>
+<li><a href="http://webaim.org/standards/wcag/checklist#g1.1">WCAG Checklist - Non-text Content</a></li>
+</ul>
+<h3>Reference</h3>
+<ul>
+<li><a href="https://www.w3.org/WAI/WCAG20/quickref/#text-equiv">How to Meet WCAG 2.0 - Text alternatives</a></li>
+<li>WAI-ARIA - <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-describedby">aria-describedby</a> <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby">aria-labelledby</a> <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label">aria-label</a></li>
+</ul>
+<p><a name="audit"></a><h2 class="sg-sectionHeading">Passed an accessibility audit</h2></p>
+<p>Run an in-browser audit and fix any issues.</p>
+<p>Paste your markup into a validator such as the <a href="http://achecker.ca/checker/">Web Accessibility Checker</a> and fix any reported issues. The <a href="https://validator.w3.org/">W3C Markup Validation Service</a> will also report some accessibility related issues.</p>
+<h3>Tools</h3>
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh">WAVE Evaluation Tool</a></li>
+<li><a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en">Accessibility Developer Tools</a></li>
+<li><a href="https://www.paciellogroup.com/resources/wat/">Web Accessibility Toolbar</a></li>
+</ul>
+<p><a name="keyboard"></a><h2 class="sg-sectionHeading">Keyboard is supported</h2></p>
+<p>Using only the keyboard; you can action links and buttons with Space or Enter; dialogues may be dismissed and menus closed with Escape; composite components (such as dropdown menus) support arrow keys. Follow the conventions in native web components.</p>
+<h3>Learn more</h3>
+<ul>
+<li><a href="http://webaim.org/techniques/keyboard/#testing">WebAIM - Keyboard Testing</a></li>
+</ul>
+<h3>Reference</h3>
+<ul>
+<li><a href="https://www.w3.org/TR/wai-aria-practices/#intro">ARIA authoring practices document</a></li>
+</ul>
+<p><a name="tabstops"></a><h2 class="sg-sectionHeading">Tab stops in place</h2></p>
+<p>Use only the keyboard. You should be able to navigate to every interactive element (and <em>only</em> interactive elements) with the Tab key. Use <code>tabindex=&quot;0&quot;</code> on interactive elements that aren't natively focusable.</p>
+<h3>Learn more</h3>
+<ul>
+<li><a href="https://www.paciellogroup.com/blog/2014/08/using-the-tabindex-attribute/">Using the tabindex attribute</a></li>
+<li><a href="https://www.youtube.com/watch?v=Pe0Ce1WtnUM">Controlling focus with tabindex (video)</a></li>
+</ul>
+<h3>Reference</h3>
+<ul>
+<li><a href="http://w3c.github.io/html/editing.html#the-tabindex-attribute">HTML 5.1 - The tabindex attribute</a></li>
+</ul>
+<p><a name="focus"></a><h2 class="sg-sectionHeading">Focus is managed</h2></p>
+<p>Using only the keyboard, interact with any scripted components and ensure focus is never 'dropped'. For example opening a dialogue (Space or Enter) focusses a button within that dialogue, dismissing the dialogue (Escape) hands focus back to the element which opened it.</p>
+<h3>Learn more</h3>
+<ul>
+<li><a href="https://bitsofco.de/accessible-modal-dialog/">Creating An Accessible Modal Dialog</a></li>
+<li><a href="https://www.youtube.com/watch?v=EFv9ubbZLKw">What is Focus?</a></li>
+<li><a href="https://www.youtube.com/watch?v=BoAsayPVogE">Modals and Keyboard Traps (video)</a></li>
+</ul>
+<h3>Reference</h3>
+<ul>
+<li><a href="https://www.w3.org/TR/wai-aria-1.1/#managingfocus">WAI-ARIA - Managing Focus</a></li>
+</ul>
+<p><a name="state"></a><h2 class="sg-sectionHeading">States are updated</h2></p>
+<p>Examine the live DOM (devtools) and manipulate the site (open, close, expand elements). Any states, such as <code>aria-valuenow</code> and <code>aria-expanded</code>, update accordingly.</p>
+<h3>Reference</h3>
+<ul>
+<li><a href="https://www.w3.org/TR/wai-aria-1.1/#state_prop_def">Definitions of States and Properties</a></li>
+<li><a href="https://www.w3.org/TR/html-aria/#allowed-aria-roles-states-and-properties">Allowed ARIA roles, states and properties</a></li>
+</ul>
+<p><a name="wellspoken"></a><h2 class="sg-sectionHeading">Page is well spoken</h2><br>
+Use the site with a screen reader (and if you can, switch off your monitor). Landmarks mean it is easy to navigate the page. Semantic elements and attributes tell a meaningful story. Dynamic content is spoken as a live region. All content and functionality is available without seeing or using a mouse/trackpad.</p>
+<h3>Tools</h3>
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn">Chromevox</a></li>
+<li><a href="http://www.nvaccess.org/download/">NVDA</a></li>
+</ul>
+<h3>Learn more</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Jao3s_CwdRU">Screen Reader Basics: NVDA</a></li>
+<li><a href="https://www.youtube.com/watch?v=5R-6WvAihms">Screen Reader Basics: VoiceOver</a></li>
+</ul>
+<h3>Reference</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">Live regions</a></li>
+</ul>
+<p><a name="example"></a><h2 class="sg-sectionHeading">Examples</h2></p>
+<h3>Adding text for assistive software</h3>
+<p>Use a class helper to hide text visually:</p>
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>Add <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"is-visuallyHidden"</span>&gt;</span>burger to basket<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>When you have an element which uses a graphic to indicate its purpose, make sure you label it as w=such</p>
+<pre><code class="language-markup">&lt;button aria-<span class="hljs-keyword">label</span><span class="bash">=<span class="hljs-string">"Add burger to basket"</span>&gt;Add&lt;/button&gt;
+</span></code></pre>
+<p><em>Only the <code>aria-label</code> value will be used</em></p>
                 </div>
             </div>
         </div>
