@@ -1,0 +1,153 @@
+---
+title: f-trak – Analytics Module
+section-title: JS Components
+docs: true
+
+navgroup: styleguide
+navsub: js-components
+navactive: trak
+---
+
+
+The f-trak module is used for pushing analytics data to a third party service – in our case, Google Tag Manager (GTM).
+
+The module aims to provide a consistent interface for binding analytics events to components and interactions.
+
+<a name="usage"></a><h2 class="sg-sectionHeading">Usage</h2>
+
+To setup `f-trak`, you first need to install the module using Yarn or NPM.
+
+```bash
+yarn add @justeat/f-trak
+```
+
+Then within your JavaScript, import the module:
+
+```javascript
+import Trak from '@justeat/f-trak';
+```
+
+Once imported there are two ways of defining your analytics events.
+
+### Using `data-trak` attributes
+
+The first way to define events is by specifying them in your markup as attributes that `f-trak` can hook onto.
+
+You can specify a `data-trak` attribute on any element in your markup like so:
+
+```markup
+<button data-trak='{
+    "trakEvent": "click",
+    "event": "My Event Descriptor"
+    "category": "My Category Descriptor",
+    "action": "My Action Descriptor",
+    "label": "My Label Descriptor"
+'>Submit</button>
+```
+
+The above attribute tells `f-trak` to fire a tracking event with the button is clicked, with the values specified.  For a full list of available parameter values that you can pass (including how to define custom values), then see the [trak parameters](trak-parameters) section below.
+
+Once you have defined all of your `data-trak` attributes, you need to initialise the `f-trak` module in your JavaScript.  To do this, simply call `Trak.start()`, which will then set up the analytics events specified by the data-trak attributes.
+
+
+### Using `Trak.event`
+
+Data attributes are useful for handling events linked to actions, but sometimes we need to fire off events from within our JavaScript as well – for example, as a result of an API call.
+
+To do this, use the `Trak.event` method to fire off analytics events as you need to.
+
+```javascript
+import Trak from '@justeat/f-trak';
+
+const errorEvent = () => {
+    Trak.event({
+        event: 'javascriptError',
+        custom: {
+            errorData: { errorLine, errorMsg, errorUrl }
+        }
+    });
+}
+```
+
+The above example shows how this may be used within a function that is used to handle errors.  The `Trak.event` call is populated with the analytics data you would like to send to the dataLayer.
+
+<a name="trak-trigger"></a><h2 class="sg-sectionHeading">Manually Triggering a `data-trak` call</h2>
+
+It is possible to use `data-trak` attributes to define your analytics data, while triggering the actual event within your JavaScript.  This is useful if we want to attach some data from the server, without having to define that data as global JS variables so our JavaScript can access it.
+
+To do this, use the `Trak.trigger()` method, which takes a single parameter – the element on which the `data-trak` attribute has been defined.  For example:
+
+```markup
+<button data-trak='{
+    "category": "My test category",
+    "action": "My test action",
+    "label": "My test label"
+}'>My Test Button</button>```
+```
+
+```javascript
+Trak.start();
+
+const button = document.querySelector('button');
+Trak.trigger(button);
+```
+
+The above code will trigger an analytics event with the data specified inside the data-trak attribute.
+
+
+<a name="trak-parameters"></a><h2 class="sg-sectionHeading">Event Parameters</h2>
+
+There are several different parameters that you can define when sending an analytics event using `f-trak`.  These are:
+
+<a name="rules-required"></a><h3 class="sg-sectionHeading">trakEvent</h3>
+
+The `trakEvent` parameter is used when adding an event via the data-attribute method.  This indicates when you would like the analytics evet to be invoked.
+
+For example, a specifying a value of `click` for our `trakEvent` parameter will fire a trak event when that element is clicked.  Likewise, specifying `submit` – for example on a form element – will fire the trak event when the form is submitted.
+
+For a full list of the values that `trakEvent` has available, check out the [trakEvent Hooks](#trak-hooks) section of this documentation.
+
+
+<a name="rules-required"></a><h3 class="sg-sectionHeading">Analytics Parameters</h3>
+
+The `event`, `category`, `action`, `label` and `nonInteraction` parameters are all commonly used values used for analytics.  You can specify one or more of these parameters when sending a `trak` event and this value will then be passed onto the dataLayer.
+
+
+<a name="rules-required"></a><h3 class="sg-sectionHeading">Custom Parameter</h3>
+
+By using the `custom` parameter, you can define any number of custom attributes to be passed onto the dataLayer.  This is useful for more custom analytics scenarios – for example, passing an orderID and any associated details.
+
+You can define custom parameters like so:
+
+```markup
+<button data-trak='{
+    "event": "trackEvent",
+    "category": "My test category",
+    "action": "My test action",
+    "label": "My test label",
+    "value": "My test value",
+    "nonInteraction": true,
+    "custom": {
+        "key1": "additional value 1",
+        "key2": "additional value 2"
+    }
+}'>My Test Button</button>
+```
+
+
+<a name="trak-hooks"></a><h2 class="sg-sectionHeading">trakEvent Hooks</h2>
+
+The `trakEvent` parameter accepts a variety of different values to hook into a number of different DOM events.  The full list of these values is as follows:
+
+```js
+[
+    'focus', 'blur', // focus Events
+    'animationstart', 'animationend', 'animationiteration', // CSS Animation Events
+    'transitionstart', 'transitioncancel', 'transitionend', 'transitionrun', // CSS Transition Events
+    'reset', 'submit', // Form Events
+    'keydown', 'keypress', 'keyup', // Keyboard Events
+    'click', 'mouseenter', 'mouseover', 'mouseleave', 'mouseout', 'mousedown', 'mouseup', 'contextmenu', // Mouse Events
+    'load', 'error', // Resource Events
+    'resize', 'scroll' // View Events
+]
+```
