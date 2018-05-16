@@ -45,7 +45,7 @@ You can specify a `data-trak` attribute on any element in your markup like so:
 '>Submit</button>
 ```
 
-The above attribute tells `f-trak` to fire a tracking event with the button is clicked, with the values specified.  For a full list of available parameter values that you can pass (including how to define custom values), then see the [trak parameters](#trak-parameters) section below.
+The above attribute tells `f-trak` to fire a tracking event when the button is clicked, with the values specified.  For a full list of available parameter values that you can pass (including how to define custom values), then see the [trak parameters](#trak-parameters) section below.
 
 Once you have defined all of your `data-trak` attributes, you need to initialise the `f-trak` module in your JavaScript.  To do this, simply call `Trak.start()`, which will then set up the analytics events specified by the data-trak attributes.
 
@@ -101,7 +101,7 @@ There are several different parameters that you can define when sending an analy
 
 <a name="rules-required"></a><h3 class="sg-sectionHeading">trakEvent</h3>
 
-The `trakEvent` parameter is used when adding an event via the data-attribute method.  This indicates when you would like the analytics evet to be invoked.
+The `trakEvent` parameter is used when adding an event via the data-attribute method.  This indicates when you would like the analytics event to be invoked.
 
 For example, a specifying a value of `click` for our `trakEvent` parameter will fire a trak event when that element is clicked.  Likewise, specifying `submit` – for example on a form element – will fire the trak event when the form is submitted.
 
