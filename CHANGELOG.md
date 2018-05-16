@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 v1.9.0
 ------------------------------
-*May 15, 2018*
+*May 16, 2018*
 
 ### Added
 - Privacy Policy content page added
