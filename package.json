@@ -26,7 +26,6 @@
     "@justeat/f-toggle": "^0.13.0",
     "@justeat/f-validate": "^0.18.0",
     "@justeat/fozzie": "^0.44.0",
-    "gift": "^0.10.2",
     "kickoff-grid.css": "^1.1.0",
     "lite-ready": "^1.0.4",
     "qwery": "^4.0.0",
@@ -47,7 +46,6 @@
     "deploy": "gulp docs:deploy"
   },
   "resolutions": {
-    "gift": "0.10.2",
     "@justeat/fozzie-colour-palette": "1.1.0"
   },
   "scripts-info": {
