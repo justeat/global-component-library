@@ -160,21 +160,23 @@
   dependencies:
     qwery "^4.0.0"
 
-"@justeat/f-footer@^0.18.2":
-  version "0.18.2"
-  resolved "https://registry.yarnpkg.com/@justeat/f-footer/-/f-footer-0.18.2.tgz#e5d6cc927951afd11122c5e5882f019e4a5e92ef"
+"@justeat/f-footer@^0.21.0":
+  version "0.21.0"
+  resolved "https://registry.npmjs.org/@justeat/f-footer/-/f-footer-0.21.0.tgz#05a36f16672842573e6a0d9734aea5c29d8fca14"
   dependencies:
-    "@justeat/fozzie-colour-palette" "^0.9.0"
+    "@justeat/fozzie" "^0.43.0"
+    "@justeat/fozzie-colour-palette" "^1.1.0"
     "@kickoff/utils.scss" "2.1.1"
     include-media "^1.4.9"
     lite-ready "^1.0.4"
+    lodash.debounce "^4.0.8"
     qwery "^4.0.0"
 
-"@justeat/f-header@^0.26.0":
-  version "0.26.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-header/-/f-header-0.26.0.tgz#a5ee22f14af6761c79e3e83783808f255793ec6b"
+"@justeat/f-header@^0.27.0":
+  version "0.27.0"
+  resolved "https://registry.npmjs.org/@justeat/f-header/-/f-header-0.27.0.tgz#fa281c3f4d7c572f0fe33320b52e7f256c32c548"
   dependencies:
-    "@justeat/fozzie-colour-palette" "^0.9.0"
+    "@justeat/fozzie-colour-palette" "^1.1.0"
     "@kickoff/utils.scss" "^2.1.1"
     include-media "^1.4.9"
     lite-ready "^1.0.4"
@@ -207,17 +209,24 @@
   dependencies:
     "@justeat/f-dom" "^0.2.0"
 
-"@justeat/fozzie-colour-palette@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-0.9.0.tgz#8c35dbe604a8d42bf6377dfd9b4618e46a8db982"
-
-"@justeat/fozzie-colour-palette@^1.1.0":
+"@justeat/fozzie-colour-palette@1.1.0", "@justeat/fozzie-colour-palette@^1.1.0":
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-1.1.0.tgz#05a49eaa55000fa1f0b916603d341eef8bfbf439"
+  resolved "https://registry.npmjs.org/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-1.1.0.tgz#05a49eaa55000fa1f0b916603d341eef8bfbf439"
 
-"@justeat/fozzie@^0.42.2":
-  version "0.42.2"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.42.2.tgz#131afe50081824491743822fef618d292535bce2"
+"@justeat/fozzie@^0.43.0":
+  version "0.43.0"
+  resolved "https://registry.npmjs.org/@justeat/fozzie/-/fozzie-0.43.0.tgz#27beb2f2272e6c2a87422517b795dfa4eb1116e4"
+  dependencies:
+    "@justeat/f-dom" "^0.3.0"
+    "@justeat/fozzie-colour-palette" "^1.1.0"
+    "@kickoff/utils.scss" "^2.1.1"
+    include-media "^1.4.9"
+    kickoff-grid.css "^1.1.2"
+    normalize-scss "^7.0.1"
+
+"@justeat/fozzie@^0.44.0":
+  version "0.44.0"
+  resolved "https://registry.npmjs.org/@justeat/fozzie/-/fozzie-0.44.0.tgz#e406a7f61326e132aa32f239a9153746b61ae8fd"
   dependencies:
     "@justeat/f-dom" "^0.3.0"
     "@justeat/fozzie-colour-palette" "^1.1.0"
@@ -1620,9 +1629,9 @@ babel-polyfill@^6.23.0:
     core-js "^2.5.0"
     regenerator-runtime "^0.10.5"
 
-babel-preset-env@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.6.1.tgz#a18b564cc9b9afdf4aae57ae3c1b0d99188e6f48"
+babel-preset-env@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.npmjs.org/babel-preset-env/-/babel-preset-env-1.7.0.tgz#dea79fa4ebeb883cd35dab07e260c1c9c04df77a"
   dependencies:
     babel-plugin-check-es2015-constants "^6.22.0"
     babel-plugin-syntax-trailing-function-commas "^6.22.0"
@@ -1651,7 +1660,7 @@ babel-preset-env@^1.6.1:
     babel-plugin-transform-es2015-unicode-regex "^6.22.0"
     babel-plugin-transform-exponentiation-operator "^6.22.0"
     babel-plugin-transform-regenerator "^6.22.0"
-    browserslist "^2.1.2"
+    browserslist "^3.2.6"
     invariant "^2.2.2"
     semver "^5.3.0"
 
@@ -2431,19 +2440,19 @@ browserslist@^1.3.6, browserslist@^1.5.2, browserslist@^1.7.6:
     caniuse-db "^1.0.30000639"
     electron-to-chromium "^1.2.7"
 
-browserslist@^2.1.2:
-  version "2.11.3"
-  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.11.3.tgz#fe36167aed1bbcde4827ebfe71347a2cc70b99b2"
-  dependencies:
-    caniuse-lite "^1.0.30000792"
-    electron-to-chromium "^1.3.30"
-
 browserslist@^3.2.0:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-3.2.4.tgz#fb9ad70fd09875137ae943a31ab815ed76896031"
   dependencies:
     caniuse-lite "^1.0.30000821"
     electron-to-chromium "^1.3.41"
+
+browserslist@^3.2.6:
+  version "3.2.7"
+  resolved "https://registry.npmjs.org/browserslist/-/browserslist-3.2.7.tgz#aa488634d320b55e88bab0256184dbbcca1e6de9"
+  dependencies:
+    caniuse-lite "^1.0.30000835"
+    electron-to-chromium "^1.3.45"
 
 bs-recipes@1.3.4:
   version "1.3.4"
@@ -2643,13 +2652,13 @@ caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
   version "1.0.30000730"
   resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000730.tgz#c9e1919a9f586c85d79265e7a84261b8421f92bd"
 
-caniuse-lite@^1.0.30000792:
-  version "1.0.30000792"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000792.tgz#d0cea981f8118f3961471afbb43c9a1e5bbf0332"
-
 caniuse-lite@^1.0.30000817, caniuse-lite@^1.0.30000821:
   version "1.0.30000824"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000824.tgz#de3bc1ba0bff4937302f8cb2a8632a8cc1c07f9a"
+
+caniuse-lite@^1.0.30000835:
+  version "1.0.30000840"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30000840.tgz#344513f8f843536cf99694964c09811277eee395"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -3428,9 +3437,9 @@ d@1:
   dependencies:
     es5-ext "^0.10.9"
 
-danger@^3.6.2:
-  version "3.6.2"
-  resolved "https://registry.yarnpkg.com/danger/-/danger-3.6.2.tgz#454b25208233f10a863d2beee67133344acbdf1a"
+danger@^3.6.6:
+  version "3.6.6"
+  resolved "https://registry.npmjs.org/danger/-/danger-3.6.6.tgz#683ecd1644f9444a15644d698c6ac4f6e1499c92"
   dependencies:
     "@octokit/rest" "^15.2.6"
     babel-polyfill "^6.23.0"
@@ -3458,7 +3467,7 @@ danger@^3.6.2:
     require-from-string "^2.0.1"
     rfc6902 "^2.2.2"
     supports-hyperlinks "^1.0.1"
-    vm2 patriksimek/vm2#custom_files
+    vm2 "^3.6.0"
     voca "^1.4.0"
 
 dashdash@^1.12.0:
@@ -3999,13 +4008,13 @@ electron-to-chromium@^1.2.7:
   version "1.3.21"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.21.tgz#a967ebdcfe8ed0083fc244d1894022a8e8113ea2"
 
-electron-to-chromium@^1.3.30:
-  version "1.3.31"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.31.tgz#00d832cba9fe2358652b0c48a8816c8e3a037e9f"
-
 electron-to-chromium@^1.3.41:
   version "1.3.42"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.42.tgz#95c33bf01d0cc405556aec899fe61fd4d76ea0f9"
+
+electron-to-chromium@^1.3.45:
+  version "1.3.45"
+  resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.3.45.tgz#458ac1b1c5c760ce8811a16d2bfbd97ec30bafb8"
 
 elliptic@^6.0.0:
   version "6.4.0"
@@ -8079,6 +8088,10 @@ lodash.bind@^4.1.4:
 lodash.clonedeep@^4.3.2:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
+
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
 
 lodash.defaults@^4.0.1, lodash.defaults@^4.2.0:
   version "4.2.0"
@@ -12819,8 +12832,8 @@ underscore.string@~2.4.0:
   resolved "https://registry.yarnpkg.com/underscore.string/-/underscore.string-2.4.0.tgz#8cdd8fbac4e2d2ea1e7e2e8097c42f442280f85b"
 
 underscore@1.x.x:
-  version "1.8.3"
-  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.8.3.tgz#4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022"
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.9.0.tgz#31dbb314cfcc88f169cd3692d9149d81a00a73e4"
 
 underscore@~1.7.0:
   version "1.7.0"
@@ -13260,9 +13273,9 @@ vm-browserify@~0.0.1:
   dependencies:
     indexof "0.0.1"
 
-"vm2@github:patriksimek/vm2#custom_files":
-  version "3.5.0"
-  resolved "https://codeload.github.com/patriksimek/vm2/tar.gz/7e82f90ac705fc44fad044147cb0df09b4c79a57"
+vm2@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.npmjs.org/vm2/-/vm2-3.6.0.tgz#a6e6370c57e6edd77decfb7b1ad64fc87dbf2d4e"
 
 voca@^1.4.0:
   version "1.4.0"
