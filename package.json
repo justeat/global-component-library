@@ -2,7 +2,7 @@
   "name": "je-global-component-library",
   "title": "Just Eat – Component Library",
   "description": "Component Library and Guidelines for all of Just Eat’s Front-End Platforms",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "homepage": "https://github.com/justeat/global-component-library",
   "contributors": [
     "Github contributors <https://github.com/justeat/global-component-library/graphs/contributors>"
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@justeat/f-dom": "^0.4.0",
-    "@justeat/f-footer": "^0.21.0",
+    "@justeat/f-footer": "^0.25.0",
     "@justeat/f-header": "^0.27.0",
     "@justeat/f-icons": "^0.8.0",
     "@justeat/f-toggle": "^0.13.0",
