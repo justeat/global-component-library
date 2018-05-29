@@ -4,12 +4,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
-v1.9.1
+v1.9.2
 ------------------------------
 *May 29, 2018*
 
-### Changed
-- Update f-footer to latest version
+### Updated
+- Updated f-footer to 0.26.0
+
+
+v1.9.1
+------------------------------
+*May 25, 2018*
+
+### Updated
+- Updated f-footer to 0.25.0
 
 
 v1.9.0

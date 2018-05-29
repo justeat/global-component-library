@@ -160,9 +160,9 @@
   dependencies:
     qwery "^4.0.0"
 
-"@justeat/f-footer@^0.21.0":
-  version "0.21.0"
-  resolved "https://registry.npmjs.org/@justeat/f-footer/-/f-footer-0.21.0.tgz#05a36f16672842573e6a0d9734aea5c29d8fca14"
+"@justeat/f-footer@^0.25.0":
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-footer/-/f-footer-0.25.0.tgz#c12f1ce9f9abb5ee597907d12959196d6a20f049"
   dependencies:
     "@justeat/fozzie" "^0.43.0"
     "@justeat/fozzie-colour-palette" "^1.1.0"
@@ -209,7 +209,7 @@
   dependencies:
     "@justeat/f-dom" "^0.2.0"
 
-"@justeat/fozzie-colour-palette@1.1.0", "@justeat/fozzie-colour-palette@^1.1.0":
+"@justeat/fozzie-colour-palette@^1.1.0":
   version "1.1.0"
   resolved "https://registry.npmjs.org/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-1.1.0.tgz#05a49eaa55000fa1f0b916603d341eef8bfbf439"
 
