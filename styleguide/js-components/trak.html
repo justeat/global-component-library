@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>JS Components – Just Eat Front-End Component Library and Documentation</title>
+		<title>f-trak – Analytics Module – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -52,7 +52,7 @@
 	
 <div class="sg-secondaryBar">
     <div class="l-container g">
-        <h2 class="sg-secondaryBar-title g-col g-col--shrink gamma"></h2>
+        <h2 class="sg-secondaryBar-title g-col g-col--shrink gamma">JS Components</h2>
 
         <ul class="sg-subnav g-col g g--alignRight g--alignBottom u-unstyled">
             <li class="sg-subnav-item"><a href="/styleguide/design-elements/colours">Design Elements</a></li>
@@ -78,7 +78,7 @@
                 <!-- subnav for Styleguide > JS Components -->
     <li><a href="/styleguide/js-components/validation" class="">Form Validation</a>
     </li>
-    <li><a href="/styleguide/js-components/trak" class="">f-trak – Analytics</a></li>
+    <li><a href="/styleguide/js-components/trak" class=" is-active">f-trak – Analytics</a></li>
     <li><a href="/styleguide/js-components/toggle" class="is-incomplete ">Toggle</a></li>
 
                 
@@ -108,13 +108,97 @@
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
-                    <h1>JS Components</h1>
-<!--This is an overview of any JS centric modules along with associated documentation.-->
-<p>This section of the documentation focuses on the Fozzie JavaScript Components.</p>
-<ul>
-<li><a href="/styleguide/js-components/validation"><code>f-validate</code> - Form Validation</a></li>
-<li><a href="/styleguide/js-components/trak"><code>f-trak</code> - Analytics Components</a></li>
-</ul>
+                    <h1>f-trak – Analytics Module</h1>
+<p>The f-trak module is used for pushing analytics data to a third party service – in our case, Google Tag Manager (GTM).</p>
+<p>The module aims to provide a consistent interface for binding analytics events to components and interactions.</p>
+<p><a name="usage"></a><h2 class="sg-sectionHeading">Usage</h2></p>
+<p>To setup <code>f-trak</code>, you first need to install the module using Yarn or NPM.</p>
+<pre><code class="language-bash">yarn add @justeat/f-trak
+</code></pre>
+<p>Then within your JavaScript, import the module:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> Trak <span class="hljs-keyword">from</span> <span class="hljs-string">'@justeat/f-trak'</span>;
+</code></pre>
+<p>Once imported there are two ways of defining your analytics events.</p>
+<h3>Using <code>data-trak</code> attributes</h3>
+<p>The first way to define events is by specifying them in your markup as attributes that <code>f-trak</code> can hook onto.</p>
+<p>You can specify a <code>data-trak</code> attribute on any element in your markup like so:</p>
+<pre><code class="language-markup">&lt;button <span class="hljs-class"><span class="hljs-keyword">data</span>-trak='{
+    "<span class="hljs-title">trakEvent</span>": "<span class="hljs-title">click</span>",
+    "<span class="hljs-title">event</span>": "<span class="hljs-type">My</span> <span class="hljs-type">Event</span> <span class="hljs-type">Descriptor</span>"
+    "<span class="hljs-title">category</span>": "<span class="hljs-type">My</span> <span class="hljs-type">Category</span> <span class="hljs-type">Descriptor</span>",
+    "<span class="hljs-title">action</span>": "<span class="hljs-type">My</span> <span class="hljs-type">Action</span> <span class="hljs-type">Descriptor</span>",
+    "<span class="hljs-title">label</span>": "<span class="hljs-type">My</span> <span class="hljs-type">Label</span> <span class="hljs-type">Descriptor</span>"
+'&gt;<span class="hljs-type">Submit</span>&lt;/<span class="hljs-title">button</span>&gt;
+</span></code></pre>
+<p>The above attribute tells <code>f-trak</code> to fire a tracking event when the button is clicked, with the values specified.  For a full list of available parameter values that you can pass (including how to define custom values), then see the <a href="#trak-parameters">trak parameters</a> section below.</p>
+<p>Once you have defined all of your <code>data-trak</code> attributes, you need to initialise the <code>f-trak</code> module in your JavaScript.  To do this, simply call <code>Trak.start()</code>, which will then set up the analytics events specified by the data-trak attributes.</p>
+<h3>Using <code>Trak.event</code></h3>
+<p>Data attributes are useful for handling events linked to actions, but sometimes we need to fire off events from within our JavaScript as well – for example, as a result of an API call.</p>
+<p>To do this, use the <code>Trak.event</code> method to fire off analytics events as you need to.</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> Trak <span class="hljs-keyword">from</span> <span class="hljs-string">'@justeat/f-trak'</span>;
+
+<span class="hljs-keyword">const</span> errorEvent = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    Trak.event({
+        <span class="hljs-attr">event</span>: <span class="hljs-string">'javascriptError'</span>,
+        <span class="hljs-attr">custom</span>: {
+            <span class="hljs-attr">errorData</span>: { errorLine, errorMsg, errorUrl }
+        }
+    });
+}
+</code></pre>
+<p>The above example shows how this may be used within a function that is used to handle errors.  The <code>Trak.event</code> call is populated with the analytics data you would like to send to the dataLayer.</p>
+<p><a name="trak-trigger"></a><h2 class="sg-sectionHeading">Manually Triggering a <code>data-trak</code> call</h2></p>
+<p>It is possible to use <code>data-trak</code> attributes to define your analytics data, while triggering the actual event within your JavaScript.  This is useful if we want to attach some data from the server, without having to define that data as global JS variables so our JavaScript can access it.</p>
+<p>To do this, use the <code>Trak.trigger()</code> method, which takes a single parameter – the element on which the <code>data-trak</code> attribute has been defined.  For example:</p>
+<pre><code class="language-markup">&lt;button data-trak='{
+    <span class="hljs-string">"category"</span>: <span class="hljs-string">"My test category"</span>,
+    <span class="hljs-string">"action"</span>: <span class="hljs-string">"My test action"</span>,
+    <span class="hljs-string">"label"</span>: <span class="hljs-string">"My test label"</span>
+}'&gt;My Test Button&lt;/button&gt;```
+</code></pre>
+<pre><code class="language-javascript">Trak.start();
+
+<span class="hljs-keyword">const</span> button = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'button'</span>);
+Trak.trigger(button);
+</code></pre>
+<p>The above code will trigger an analytics event with the data specified inside the data-trak attribute.</p>
+<p><a name="trak-parameters"></a><h2 class="sg-sectionHeading">Event Parameters</h2></p>
+<p>There are several different parameters that you can define when sending an analytics event using <code>f-trak</code>.  These are:</p>
+<p><a name="rules-required"></a><h3 class="sg-sectionHeading">trakEvent</h3></p>
+<p>The <code>trakEvent</code> parameter is used when adding an event via the data-attribute method.  This indicates when you would like the analytics event to be invoked.</p>
+<p>For example, a specifying a value of <code>click</code> for our <code>trakEvent</code> parameter will fire a trak event when that element is clicked.  Likewise, specifying <code>submit</code> – for example on a form element – will fire the trak event when the form is submitted.</p>
+<p>For a full list of the values that <code>trakEvent</code> has available, check out the <a href="#trak-hooks">trakEvent Hooks</a> section of this documentation.</p>
+<p><a name="rules-required"></a><h3 class="sg-sectionHeading">Analytics Parameters</h3></p>
+<p>The <code>event</code>, <code>category</code>, <code>action</code>, <code>label</code> and <code>nonInteraction</code> parameters are all commonly used values used for analytics.  You can specify one or more of these parameters when sending a <code>trak</code> event and this value will then be passed onto the dataLayer.</p>
+<p><a name="rules-required"></a><h3 class="sg-sectionHeading">Custom Parameter</h3></p>
+<p>By using the <code>custom</code> parameter, you can define any number of custom attributes to be passed onto the dataLayer.  This is useful for more custom analytics scenarios – for example, passing an orderID and any associated details.</p>
+<p>You can define custom parameters like so:</p>
+<pre><code class="language-markup">&lt;button data-trak='{
+    <span class="hljs-string">"event"</span>: <span class="hljs-string">"trackEvent"</span>,
+    <span class="hljs-string">"category"</span>: <span class="hljs-string">"My test category"</span>,
+    <span class="hljs-string">"action"</span>: <span class="hljs-string">"My test action"</span>,
+    <span class="hljs-string">"label"</span>: <span class="hljs-string">"My test label"</span>,
+    <span class="hljs-string">"value"</span>: <span class="hljs-string">"My test value"</span>,
+    <span class="hljs-string">"nonInteraction"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"custom"</span>: {
+        <span class="hljs-string">"key1"</span>: <span class="hljs-string">"additional value 1"</span>,
+        <span class="hljs-string">"key2"</span>: <span class="hljs-string">"additional value 2"</span>
+    }
+}'&gt;My Test Button&lt;<span class="hljs-string">/button</span>&gt;
+</code></pre>
+<p><a name="trak-hooks"></a><h2 class="sg-sectionHeading">trakEvent Hooks</h2></p>
+<p>The <code>trakEvent</code> parameter accepts a variety of different values to hook into a number of different DOM events.  The full list of these values is as follows:</p>
+<pre><code class="language-js">[
+    <span class="hljs-string">'focus'</span>, <span class="hljs-string">'blur'</span>, <span class="hljs-comment">// focus Events</span>
+    <span class="hljs-string">'animationstart'</span>, <span class="hljs-string">'animationend'</span>, <span class="hljs-string">'animationiteration'</span>, <span class="hljs-comment">// CSS Animation Events</span>
+    <span class="hljs-string">'transitionstart'</span>, <span class="hljs-string">'transitioncancel'</span>, <span class="hljs-string">'transitionend'</span>, <span class="hljs-string">'transitionrun'</span>, <span class="hljs-comment">// CSS Transition Events</span>
+    <span class="hljs-string">'reset'</span>, <span class="hljs-string">'submit'</span>, <span class="hljs-comment">// Form Events</span>
+    <span class="hljs-string">'keydown'</span>, <span class="hljs-string">'keypress'</span>, <span class="hljs-string">'keyup'</span>, <span class="hljs-comment">// Keyboard Events</span>
+    <span class="hljs-string">'click'</span>, <span class="hljs-string">'mouseenter'</span>, <span class="hljs-string">'mouseover'</span>, <span class="hljs-string">'mouseleave'</span>, <span class="hljs-string">'mouseout'</span>, <span class="hljs-string">'mousedown'</span>, <span class="hljs-string">'mouseup'</span>, <span class="hljs-string">'contextmenu'</span>, <span class="hljs-comment">// Mouse Events</span>
+    <span class="hljs-string">'load'</span>, <span class="hljs-string">'error'</span>, <span class="hljs-comment">// Resource Events</span>
+    <span class="hljs-string">'resize'</span>, <span class="hljs-string">'scroll'</span> <span class="hljs-comment">// View Events</span>
+]
+</code></pre>
                 </div>
             </div>
         </div>

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Component Library – Just Eat Front-End Component Library and Documentation</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+
+			<link rel="stylesheet" href="/assets/css/je-docs.min.css">
+
+		<script src="/assets/js/libs/modernizr.min.js"></script>
+		<script src="/assets/js/libs/prism.min.js"></script> <!-- Code highlighting for docs -->
+
+        <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:400,500' rel='stylesheet' type='text/css' />
+	</head>
+	<body class=" ">
+
+
+
+    <div class="skipTo">
+        <a class="is-visuallyHidden focusable u-text-marker" href="#skipToMain">Skip to main content</a>
+    </div>
+    <header class="c-header">
+        <div class="l-container c-header-wrap">
+            <div class="c-logo">
+                <a href="/" aria-label="Just Eat Homepage">
+                    <div class="c-logo-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2611.9 513.4"><path fill="#FA0029" d="M2033.7 245l62.2-136c5.2-11.5 5.2-11.5 12.3-11.5 8 0 8 0 9.8 12.4l18.8 135h-103zm168-189.2c-10-53.3-10-53.3-85.4-53.3-71 0-70.2 0-91.5 43.5L1864 379.2c-23 48-19.5 51.5 40 51.5 46.2 0 45.3 0 65-42.7l25.7-57h154.6l8 57c6.2 42.7 8 42.7 54.2 42.7 52 0 57-3.7 47-55l-57-320zM1832.2 93c37.8 0 38-.3 45.6-45.2 7.8-45.2 7.7-45.3-27-45.3H1659c-67.5 0-66.2 0-77.8 68.4L1532 357c-12.5 73.8-11.8 73.8 57.6 73.8H1777c39.2 0 38.3 0 46.3-44.4 8-46.2 8-46.2-27.5-46.2H1634l13.3-82.6h134.2c36.4 0 36.4 0 42.7-42.7 7-43.6 7-43.6-42.7-43.6h-120l13.3-78.2h157.4zM1360.3 2.5h-269c-38 0-38 0-46 45.3S1038 93 1071.8 93h87.5l-48.8 282.7c-9 55-8 55 41.6 55 45.4 0 48 0 54.3-39L1258 93h83.5c37.7 0 37.7 0 45.6-45.2 8-45.2 8-45.3-26.7-45.3M625 2.5c-46.7 0-47.6.3-54.3 39.2l-35.4 205.8c-9.8 59.5-26 94.5-83.7 94.5-57.8 0-77.5-34.7-68.6-88l33.6-196.7c9-55 7.3-54.8-41.6-54.8-47.7 0-49-.4-55.2 38.7l-35.4 206.5C264 364.7 336 437 439 437c115.6 0 173.8-51.5 193.3-175l35.2-204.5c9.5-55 7.3-55-42.4-55m-396.8 0H110.6C72 2.5 72 2.5 64.2 47c-8 44.7-7 46 27.2 46h69.8l-38.8 226.2c-8.7 50.8-31.4 85-99.7 106C5.3 430 0 437 0 445c0 8.7 3.5 17.5 10.5 36 10.5 27 17.5 32.2 27 32.2 9.7 0 27.2-5.3 33.3-7 97-31.5 135.6-106 151.3-195l44-254.6c9.6-53.4 9.6-54.3-37.7-54.3m613 338.1c38-2.2 57.8-18.5 57.8-37 0-22.3-27.5-30.3-64-41-72-22.2-136-47.4-136-123.8C699.2 48.8 773.2 0 866.4 0c39 0 84 2.3 113 5 26.2 2.4 31 11.7 24.3 50.8-6.7 39-15.8 43-37.4 41.2-27-2.3-61.7-4.8-102.3-4.3-48 .6-61.6 17-61.6 33.7 0 20.4 18.7 32 63 43.5 82.7 24 137 56.4 137 127.5 0 83.5-62.3 132.4-161.8 136.3-54.2 2-100.8-2-142-8-31.8-4.5-33-5-25-50.6 7.2-41.5 8.2-44.4 37.3-41 56 7 92.5 8.4 130.4 6.2M2580.8 2.5h-269c-38 0-38 0-46 45.3s-7.2 45.3 26.6 45.3h87.6l-48.8 282.7c-9 55-8 55 41.6 55 45.4 0 48 0 54.3-39L2478.6 93h83.5c37.7 0 37.7 0 45.6-45.2 8-45.2 7.8-45.3-26.8-45.3"/></svg>
+                    </div>
+            
+                    <span class="is-visuallyHidden">Just Eat</span>
+                </a>
+            </div>
+    
+            <nav data-navglobal="" class="c-nav c-nav--global">
+                <input data-nav-enhance type="checkbox" class="c-nav-trigger" id="nav-trigger" />
+                <label data-nav-toggle class="c-nav-toggle" for="nav-trigger">
+                    <span class="c-nav-toggle-icon">Open Menu</span>
+                </label>
+                <div data-nav-container class="c-nav-container">
+                    <ul class="c-nav-list">
+                        <li data-login class="c-nav-list-item is-hidden" data-test-id="login">
+                <a href="#" data-gtm="header|click - navigation|login" class="c-nav-list-link">Log-in</a>
+            </li>
+             <li class="c-nav-list-item is-hidden is-shown--noJS" data-test-id="noscript-myaccount">
+                            <a href="#" class="c-nav-list-link">Account</a>
+                        </li>
+                        <li class="c-nav-list-item c-nav-list-item--support" data-test-id="support">
+                            <a href="#" data-gtm="header|click - navigation|help" class="c-nav-list-link">Help</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="u-lightenBg">
+    <div class="l-container l-content">
+        <div class="g g--stacked g--alignCenter">
+            <div class="g-col g-span10--mid g-span9--wide g-span8--huge">
+                <div class="l-content-header l-content-header--centred l-content-header--highlight">
+                    <h1>Just Eat Ireland Limited – Cookies policy</h1>
+                </div>
+
+                <div class="l-content-main">
+                    <h2>Updated 1 March 2013</h2>
+
+                    <p>We use cookies to improve the quality of our site and service, and to try and make your browsing experience meaningful. When you enter our site our web server sends a cookie to your computer which allows us to recognise your computer but not specifically who is using it. By associating the identification numbers in the cookies with other customer information when for example you log-in to the site, then we know that the cookie information relates to you. By proceeding beyond this page you consent to our cookie settings and agree that you understand this Cookies Policy which explains how you can manage your cookie choices and preferences.</p>
+
+                    <p>This cookies policy explains:</p>
+
+                    <ul>
+                        <li><a href="#what">What are cookies?</a></li>
+                        <li><a href="#why">Why do we use cookies?</a></li>
+                        <li><a href="#managing">Managing your cookies preferences</a></li>
+                    </ul>
+
+                    <h2><a id="what"></a>What are cookies?</h2>
+
+                    <p>Cookies are small pieces of information which are issued to your computer when you visit a website and which store and sometimes track information about your use of the site. A number of cookies we use last only for the duration of your web session and expire when you close your browser. Other cookies are only used where you ask us to remember your login details for when you next return to the site and will last for a longer duration.</p>
+
+                    <h2><a id="why"></a>Why do we use cookies?</h2>
+
+                    <p>The cookies used on Just-Eat.ie are explained below and based on the International Chamber of Commerce guide for cookie categories.</p>
+
+                    <h3>1.  Strictly necessary cookies</h3>
+
+                    <p>Strictly necessary cookies allow you to use  essential features of our site such as enabling you to order takeaway more  easily.</p>
+
+                    <p>The essential features of our site require strictly necessary cookies so that we can remember your postcode and what is in your shopping basket whilst you continue to order products from our site and/or navigate to different pages of the site during your browsing session. We are also able to identify you as being logged in to Just-Eat.ie and to ensure that you are able to access the appropriate features on our site.</p>
+
+                    <p>If you choose not to accept these cookies, you will be unable to use our site for ordering takeaway, only for browsing.</p>
+
+                    <p>The following list of cookies are those used on our site which we have identified as being strictly necessary:</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="20%">Cookie name</th>
+                                <th width="80%">What does it do?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td width="20%">ASP.Net_SessionID</td>
+                                <td width="80%">JUST EAT uses a session cookie to ensure that you can order takeaway more easily. This cookie remembers your postcode and what is in your basket so that you can continue order from Just Eat easily. We do not store any personal information about you.</td>
+                            </tr>
+                            <tr>
+                                <td width="20%">bIPs</td>
+                                <td width="80%">JUST EAT uses a cookie to ensure that you use the same server throughout your session and improve the overall user experience.</td>
+                            </tr>
+                            <tr>
+                                <td width="20%">je_cookie_message</td>
+                                <td width="80%">JUST EAT uses a cookie to track that you have been informed of our use of cookies and have consented to it, in line with recent EU Privacy Law changes.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>2. Performance cookies</h3>
+
+                    <p>Performance cookies collect information about how you use  our site, so that we can improve the quality of our site and service.</p>
+
+                    <p>Our performance cookies do not collect any information that could potentially identify you. All information collected is anonymous and is used by us to:</p>
+
+                    <ul>
+                        <li>provide statistics on how our site is used;</li>
+                        <li>monitor which website  our users arrived from; and</li>
+                        <li>help us improve the  site by measuring usage information and any errors which occur during our users  browsing experience.</li>
+                    </ul>
+
+                    <p>The following list of cookies are those used on our site which we have identified as being for performance:</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="20%">Cookie name</th>
+                                <th width="80%">What does it do?
+                            </th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td width="20%">__utma</td>
+                                <td width="80%">
+                                    The Just Eat website uses Google Analytics, a web analytics service provided by Google. Google Analytics sets 4 cookies in order to evaluate your use of the JUST EAT site.<br><br>
+
+                                    Google stores the information collected by the cookie on servers in the United States. Google may also transfer this information to third parties where required to do so by law, or where such third parties process the information on Google's behalf. Google will not associate your IP address with any other data held by Google.  <br><br>
+
+                                    How to reject or delete these cookies: <a href="http://www.google.com/intl/en/policies/privacy/">google.com/intl/en/policies/privacy/</a><br><br>
+
+                                    The __utma cookie keeps track of the number of times a visitor has been to the site pertaining to the cookie, when their first visit was, and when their last visit occurred. Google Analytics uses the information from this cookie to calculate things like Days and Visits to purchase.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">__utmb<br>__utmc</td>
+                                <td width="80%">
+                                    The __utmb and __utmc cookies are brothers, working together to calculate how long a visit takes. __utmb takes a timestamp of the exact moment in time when a visitor enters a site, while __utmc takes a timestamp of the exact moment in time when a visitor leaves a site. __utmb expires at the end of the session. __utmc waits 30 minutes, and then it expires. You see, __utmc has no way of knowing when a user closes their browser or leaves a website, so it waits 30 minutes for another pageview to happen, and if it doesn't, it expires.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">__utmz</td>
+                                <td width="80%">
+                                    __utmz keeps track of where the visitor came from, what search engine you used, what link you clicked on, what keyword you used, and where they were in the world when you accessed a website. It expires in 6 months. This cookie is how Google Analytics knows to whom and to what source / medium / keyword to assign the credit for a Goal Conversion or an Ecommerce Transaction. __utmz also lets you edit its length with a simple customization to the Google Analytics Tracking code.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">NID</td>
+                                <td width="80%">
+                                    This cookie is a unique identifier given to each computer to allow traffic analysis to Google Maps. Data is only used in aggregate. Cookies persist until they expire, and are then deleted.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">PREF</td>
+                                <td width="80%">
+                                    This cookie is a unique identifier given to each computer to allow traffic analysis to Google Maps. Data is only used in aggregate. Cookies persist until they expire, and are then deleted.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">providesupport-mr</td>
+                                <td width="80%">
+                                    Providesupport.com host our Live Chat service. This currently uses cookies, though ProvideSupport were unable to say exactly what they do, though did reassure us that they are currently developing a cookie-free system
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">_zendesk_apps_session</td>
+                                <td width="80%">JUST EAT's customer care team use a 3rd Party provider - Zendesk - for their FAQ section.  Zendesk use these cookies to report on usage of their service. This cookie is to pass some basic session information to the Zendesk App Market (ZAM) via a cookie. ZAM currently runs on an external server and thus does not have access to the normal shared session secret and cannot decode the regular session.</td>
+                            </tr>
+                            <tr>
+                            </tr><tr>
+                                <td width="20%">_zendesk_session</td>
+                                <td width="80%">
+                                    This is the session used to save data across multiple requests i.e. the current logged in user.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">_zendesk_shared_session</td>
+                                <td width="80%">
+                                    Zendesk are starting to create more independent services on the backend and this is the cookie that will represent a shared session across those services. It's still specific to a single help desk, though. Nothing's getting shared with other accounts or third parties.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">je_order</td>
+                                <td width="80%">
+                                    This cookie is used by JUST EAT to track customer usage of the 'Re-order' feature, which allows customers to quickly order a meal they've had previously.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">l4f6y</td>
+                                <td width="80%">
+                                    JUST EAT uses this cookie to track visits and conversions via the Twitter website and app
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">je_t</td>
+                                <td width="80%">
+                                    JUST EAT uses this cookie to track a user's session for reporting purposes.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">je_user_percentage</td>
+                                <td width="80%">
+                                    JUST EAT uses this cookie to specify which version of the website the user sees and to ensure they see the same version throughout their visit.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">JERPSERVERID</td>
+                                <td width="80%">
+                                    This cookie improves website experience by ensuring that each user uses the same JUST EAT server throughout their visit.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">ADX_com.justeat.JUSTEAT</td>
+                                <td width="80%">
+                                    Only for app users. The ADX_com.justeat.JUSTEAT cookie allows us to identify which source an app was installed from and additional user actions after that, such as whether an order was placed.
+                                    <br><br>
+                                    This service is provided by Ad-X. Should you wish not to be tracked by Ad-X you can install one of their free opt-out apps:Android users click <a href="https://play.google.com/store/apps/details?id=com.adxtracking.optout">here</a>, and iOS users click <a href="https://itunes.apple.com/us/app/ad-x-tracking-opt-out/id651367370?mt=8">here</a>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">optimizelyEndUserId, optimizelyBuckets, optimizelyCustomEvents, optimizelyRedirect</td>
+                                <td width="80%">
+                                    These types of cookies are used by Optimizely. We use Optimizely to A/B test our website. This means we can show different variations of parts of our website to users. We use the aggregated data to see which variation performs best and this way optimize the user experience on our website. For more info on these cookies visit the <a href="http://support.optimizely.com/customer/portal/articles/580451-what-information-does-optimizely-store-in-its-cookies">Optimizely knowledge base</a>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">id (DoubleClick / Google)</td>
+                                <td width="80%">
+                                    We use DoubleClick to help us monitor the performance of our online advertisements. For information about the data DoubleClick's cookies contain, <a href="https://support.google.com/adsense/answer/2839090?hl=en-GB">click here</a>.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>3.  Functionality cookies</h3>
+
+                    <p>Functionality cookies provide you with improved site functionality by allowing access to additional services or to enhance your future visits to our site.</p>
+
+                    <p>Functionality cookies used on our site provide you with improved site functionality whilst you are browsing for example, ensuring you stay logged in to our site if you tick the relevant box when you register or login. In the future these cookies may share information with partners to provide services on our site, in which case we will update our cookies policy accordingly. Any information which is shared with partners in the future is only to be used to provide the service, product or function and not for any other purpose.</p>
+
+                    <p>The following list of cookies are those used on our site which we have identified as providing functionality:</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="20%">Cookie name</th>
+                                <th width="80%">What does it do?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td width="20%">je_last_location_used</td>
+                                <td width="80%">
+                                    JUST EAT uses this cookie to remember the last postcode the customer used, so that we can provide personalised information for that location and improve their ordering experience.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">userid</td>
+                                <td width="80%">
+                                    JUST EAT uses an encrypted unique ID to identify the customer and provide them with personalised information to improve their experience.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">keepLoggedIn</td>
+                                <td width="80%">
+                                    JUST EAT uses this cookie to track users that have chosen (at the point of login of registration) to stay logged in for future visits to the site.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">BlockbusterOK</td>
+                                <td width="80%">
+                                    Now redundant, this cookie was used by JUST EAT to track usage of the Blockbuster DVD cross-promotion<br><br>This cookie is due to be removed from JUST EAT in the coming weeks
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>4.  Targeting &amp; Sharing cookies</h3>
+
+                    <p>Targeting &amp; sharing cookies offer you a customised browsing experience by providing you with interest based services both on this site and on some other websites too.
+                        Cookies which customise your browsing experience on our site only collect information by reference to the IP address that you are using. Some of these customised browsing experiences may be linked to services provided by third parties which provide these services for recognising that you have visited our site. This information is used to inform you of products and/or services which may be of interest to you or for services provided by our third party partners. These cookies may also link to social networks such as Facebook or Twitter provide advertising agencies with information on your visit so that they can present you with adverts which may be of interest to you. For more information about this type of interest based advertising, and about how to turn this feature off please visit <a href="http://www.youronlinechoices.co.uk">www.youronlinechoices.co.uk</a>.</p>
+
+                    <p>The following list of cookies are those used on our site which we have identified as being for targeting and sharing:</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="20%">Cookie name</th>
+                                <th width="80%">What does it do?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td width="20%">Google cookies (beginning with __ut)</td>
+                                <td width="80%">
+                                    We use the online advertising program Google AdWords and the Google Remarketing technology, both operated by the company Google Inc. ("Google") .<br><br>
+                                    When you click on one of our Ads, a Google Remarketing cookie is placed. This cookie helps to serve our Ads to you at a later time when you browse pages of the Google content network. Remarketing cookies expire after 30 days and are not used for personal identification. <br><br>
+                                    See <a href="http://www.google.com/intl/en/policies/privacy/">google.com/intl/en/policies/privacy/</a> for more information about Google cookies.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">adRoll (_ar_v4)</td>
+                                <td width="80%">
+                                    Just Eat uses this cookie to create adaptive, personalized banners/ads that display relevant offers (such as recommendations of products that you might be interested in) when you visit other websites. See <a href="http://www.adroll.com/about/privacy">http://www.adroll.com/about/privacy</a> for more information.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20%">ADX_com.justeat.JUSTEAT</td>
+                                <td width="80%">
+                                    Only for app users. The ADX_com.justeat.JUSTEAT cookie allows us to identify which source an app was installed from and additional user actions after that, such as whether an order was placed.
+
+                                    This service is provided by Ad-X. Should you wish not to be tracked by Ad-X you can install one of their free opt-out apps:Android users click <a href="https://play.google.com/store/apps/details?id=com.adxtracking.optout">here</a>, and iOS users click <a href="https://itunes.apple.com/us/app/ad-x-tracking-opt-out/id651367370?mt=8">here</a>.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2><a id="managing"></a>Managing your cookie preferences</h2>
+
+                    <p>Some of the cookies used by our site are  served by us, and some are served by third parties who are delivering services  on our behalf. Most web browsers automatically accept cookies but, if you  prefer, you can change your browser to prevent that or to notify you each time a cookie is set. You can also learn more about cookies by visiting <a href="http://www.allaboutcookies.org">www.allaboutcookies.org</a> which includes additional useful information on cookies and how to block  cookies using different types of browser. Please note however, that by blocking  or deleting cookies used on our site you may not be able to take full advantage of our site if you do so.</p>
+
+                    <p>Our <a href="http://www.just-eat.ie/privacy-policy">privacy policy</a> can provide you with further details about how we use any personal information  you give us, although not all information captured by using cookies will  identify you.  We are continually striving to develop improved ways of managing your cookie preferences. As new technologies and  solutions emerge, this cookies policy may be updated to reflect any such  advances in technology and preference management tools.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <footer class="c-footer">
+        <div class="l-container c-footer-row">
+            <div class="g g--stack--mid">
+                <div class="g-col g-span3 c-footer-panel" data-panel-collapsible="" data-toggle-name="footer-panel-1">
+                    <h2 class="c-footer-heading" data-toggle-target="footer-panel-1" data-toggle-class="is-collapsed">
+                        Customer service
+                        <svg class="c-footer-chevron c-icon--chevron u-showBelowMid" >
+                            <use xlink:href="/assets/img/sprite.svg#icons-arrows-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </h2>
+                    <ul class="c-footer-list">
+                        <li>
+                            <a href="#">Contact us</a>
+                        </li>
+                        <li>
+                            <a href="#">Log in</a>
+                        </li>
+                        <li>
+                            <a href="#">Sign up</a>
+                        </li>
+                        <li>
+                            <a href="#">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Mobile apps</a>
+                        </li>
+                        <li>
+                            <a href="#">Suggest a restaurant</a>
+                        </li>
+                        <li>
+                            <a href="#">My account</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="g-col g-span3 c-footer-panel" data-panel-collapsible="" data-toggle-name="footer-panel-2">
+                    <h2 data-test-id="cuisine-footer-heading" class="c-footer-heading" data-toggle-target="footer-panel-2" data-toggle-class="is-collapsed">
+                        Top cuisines
+                        <svg class="c-footer-chevron c-icon--chevron u-showBelowMid" >
+                            <use xlink:href="/assets/img/sprite.svg#icons-arrows-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </h2>
+                    <ul class="c-footer-list">
+                        <li>
+                            <a href="#">Chinese</a>
+                        </li>
+                        <li>
+                            <a href="#">Indian</a>
+                        </li>
+                        <li>
+                            <a href="#">Italian</a>
+                        </li>
+                        <li>
+                            <a href="#">Japanese</a>
+                        </li>
+                        <li>
+                            <a href="#">Pizza delivery</a>
+                        </li>
+                        <li>
+                            <a href="#">View all cuisines</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="g-col g-span3 c-footer-panel" data-panel-collapsible="" data-toggle-name="footer-panel-3">
+                    <h2 class="c-footer-heading" data-toggle-target="footer-panel-3" data-toggle-class="is-collapsed">
+                        Locations
+                        <svg class="c-footer-chevron c-icon--chevron u-showBelowMid" >
+                            <use xlink:href="/assets/img/sprite.svg#icons-arrows-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </h2>
+                    <ul class="c-footer-list">
+                        <li>
+                            <a href="#">Birmingham</a>
+                        </li>
+                        <li>
+                            <a href="#">Cardiff</a>
+                        </li>
+                        <li>
+                            <a href="#">Glasgow</a>
+                        </li>
+                        <li>
+                            <a href="#">Leeds</a>
+                        </li>
+                        <li>
+                            <a href="#">Manchester</a>
+                        </li>
+                        <li>
+                            <a href="#">View all locations</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="g-col g-span3 c-footer-panel" data-panel-collapsible="" data-toggle-name="footer-panel-4">
+                    <h2 class="c-footer-heading" data-toggle-target="footer-panel-4" data-toggle-class="is-collapsed">
+                        A bit more about us
+                        <svg class="c-footer-chevron c-icon--chevron u-showBelowMid" >
+                            <use xlink:href="/assets/img/sprite.svg#icons-arrows-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </h2>
+                    <ul class="c-footer-list">
+                        <li>
+                            <a href="#" target="_self">Restaurant sign up</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_self">Price promise</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_self">How do we use cookies?</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_self">Privacy policy / T&amp;Cs</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_self">About us</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_self">Company website</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_self">Jobs</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="c-footer-row c-footer-row--light">
+            <div class="g g--stack--mid l-container">
+                <div class="g-col g-span6">
+                    <h2 class="c-footer-heading">Download our apps</h2>
+                    <ul class="c-footer-list c-footer-list--inline">
+                        <li>
+                            <a href="#" target="_blank">
+                                <img class="c-footer-icon c-icon--ios" alt="Download on the App Store" src="/assets/img/icons/appstore/ios.svg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <img class="c-footer-icon c-icon--android" alt="Get it on Google Play" src="/assets/img/icons/appstore/android.svg">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="g-col g-span3 c-footer-social">
+                    <h2 class="c-footer-heading">Follow us</h2>
+                    <ul class="c-footer-list c-footer-list--inline">
+                        <li>
+                            <a href="#" target="_blank">
+                                <svg class="c-footer-icon c-footer-icon--social" >
+                                    <use xlink:href="/assets/img/sprite.svg#icons-social-icon-facebook" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <svg class="c-footer-icon c-footer-icon--social" >
+                                    <use xlink:href="/assets/img/sprite.svg#icons-social-icon-twitter" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <svg class="c-footer-icon c-footer-icon--social" >
+                                    <use xlink:href="/assets/img/sprite.svg#icons-social-icon-google-plus" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <svg class="c-footer-icon c-footer-icon--social" >
+                                    <use xlink:href="/assets/img/sprite.svg#icons-social-icon-rss" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <svg class="c-footer-icon c-footer-icon--social" >
+                                    <use xlink:href="/assets/img/sprite.svg#icons-social-icon-instagram" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <svg class="c-footer-icon c-footer-icon--social" >
+                                    <use xlink:href="/assets/img/sprite.svg#icons-social-icon-pinterest" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="g-col g-span3 c-footer-feedback">
+                    <h2 class="c-footer-heading">Feedback</h2>
+                    <p class="c-footer-feedbackText">
+                        Help us improve our website
+                        <br>
+                        <a href="#">Send feedback</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="l-container c-footer-row">
+            <div class="g g--stack--mid">
+                <div class="g-col g-span8 c-footer-cards">
+                    <ul class="c-footer-list c-footer-list--inline">
+                        <li class="c-footer-certificate">
+                            <svg class="c-footer-icon c-footer-icon--certificate c-icon--confianza" >
+                                <use xlink:href="/assets/img/sprite.svg#icons-certificates-confianza" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </li>
+                        <li>
+                            <svg class="c-footer-icon c-footer-icon--card c-icon--mastercard--securecode" >
+                                <use xlink:href="/assets/img/sprite.svg#icons-cards-mastercard--securecode" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </li>
+                        <li>
+                            <svg class="c-footer-icon c-footer-icon--card c-icon--visa--verified" >
+                                <use xlink:href="/assets/img/sprite.svg#icons-cards-visa--verified" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </li>
+                        <li>
+                            <svg class="c-footer-icon c-footer-icon--card c-icon--paypal" >
+                                <use xlink:href="/assets/img/sprite.svg#icons-cards-paypal" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </li>
+                    </ul>
+                </div>
+                <div class="g-col g-span4 c-footer-countries">
+                    <div class="c-countrySelector">
+                        <a class="c-countrySelector-link c-countrySelector-link--selected" href="#" data-toggle-target="countrySelector-list">
+                            <svg class="c-icon--flag--small" >
+                                <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.gb" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                            <p>United Kingdom</p>
+                            <svg class="c-countrySelector-chevron c-icon--chevron--small" >
+                                <use xlink:href="/assets/img/sprite.svg#icons-arrows-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </a>
+                        <ul class="c-countrySelector-list is-hidden" data-toggle-name="countrySelector-list">
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+                                    <svg class="c-icon--flag--small" >
+                                        <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.br" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                    <p>Brazil</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+                                    <svg class="c-icon--flag--small" >
+                                        <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.ca" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                    <p>Canada</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+                                    <svg class="c-icon--flag--small" >
+                                        <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.dk" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                    <p>Denmark</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+                                    <svg class="c-icon--flag--small" >
+                                        <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.fr" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                    <p>France</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+                                    <svg class="c-icon--flag--small" >
+                                        <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.ie" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                    <p>Ireland</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+                                    <svg class="c-icon--flag--small" >
+                                        <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.it" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                    <p>Italy</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+                                    <svg class="c-icon--flag--small" >
+                                        <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.no" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                    <p>Norway</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+                                    <svg class="c-icon--flag--small" >
+                                        <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.es" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                    <p>Spain</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+                                    <svg class="c-icon--flag--small" >
+                                        <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.ca" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                    <p>Switzerland</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="c-countrySelector-link c-countrySelector-link--selected" target="_blank" href="#">
+                                    <svg class="c-icon--flag--small" >
+                                        <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.gb" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
+                                    <p>United Kingdom</p>
+                                </a>
+                                <svg class="c-countrySelector-cross" data-toggle-target="countrySelector-list">
+        <use xlink:href="/assets/img/sprite.svg#icons-operators-cross" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+    </svg>
+</li>
+                        </ul>
+                    </div>
+                    <p class="c-footer-vatNumber is-hidden">Just Eat Italy S.r.l. - P.IVA 07392740960</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+        <script>
+            var mockPaths = {
+            };
+        </script>
+        <script src="/assets/js/script.min.js"></script>
+        <script src="/assets/js/docs.min.js"></script>
+	</body>
+</html>

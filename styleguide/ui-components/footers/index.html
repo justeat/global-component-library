@@ -153,7 +153,7 @@
             <div class="l-container c-footer-row">
                 <div class="g g--stack--mid">
                     <div class="g-col g-span3 c-footer-panel" data-panel-collapsible data-toggle-name="footer-panel-1">
-                            <h2 class="c-footer-heading" data-toggle-target="footer-panel-1" data-toggle-class="is-collapsed">
+                        <h2 class="c-footer-heading" data-footer-panel-heading data-toggle-target="footer-panel-1" data-toggle-class="is-collapsed">
                             Servizio Clienti
                             <img class="c-footer-chevron c-icon--chevron u-showBelowMid" src="/assets/img/icons/arrows/chevron.svg" alt="" />
                         </h2>
@@ -168,7 +168,7 @@
                     </div>
                     
                     <div class="g-col g-span3 c-footer-panel" data-panel-collapsible data-toggle-name="footer-panel-2">
-                        <h2 data-test-id="cuisine-footer-heading" class="c-footer-heading" data-toggle-target="footer-panel-2" data-toggle-class="is-collapsed">
+                        <h2 data-test-id="cuisine-footer-heading" class="c-footer-heading" data-footer-panel-heading data-toggle-target="footer-panel-2" data-toggle-class="is-collapsed">
                             Cucine
                             <img class="c-footer-chevron c-icon--chevron u-showBelowMid" src="/assets/img/icons/arrows/chevron.svg" alt="" />
                         </h2>
@@ -183,7 +183,7 @@
                     </div>
                     
                     <div class="g-col g-span3 c-footer-panel" data-panel-collapsible data-toggle-name="footer-panel-3">
-                        <h2 class="c-footer-heading" data-toggle-target="footer-panel-3" data-toggle-class="is-collapsed">
+                        <h2 class="c-footer-heading" data-footer-panel-heading data-toggle-target="footer-panel-3" data-toggle-class="is-collapsed">
                             Città
                             <img class="c-footer-chevron c-icon--chevron u-showBelowMid" src="/assets/img/icons/arrows/chevron.svg" alt="" />
                         </h2>
@@ -201,7 +201,7 @@
                     </div>
                     
                     <div class="g-col g-span3 c-footer-panel" data-panel-collapsible data-toggle-name="footer-panel-4">
-                        <h2 class="c-footer-heading" data-toggle-target="footer-panel-4" data-toggle-class="is-collapsed">
+                        <h2 class="c-footer-heading" data-footer-panel-heading data-toggle-target="footer-panel-4" data-toggle-class="is-collapsed">
                             Chi siamo
                             <img class="c-footer-chevron c-icon--chevron u-showBelowMid" src="/assets/img/icons/arrows/chevron.svg" alt="" />
                         </h2>
@@ -226,12 +226,12 @@
                         <h2 class="c-footer-heading">Scarica l&#x27;app</h2>
                     
                         <ul class="c-footer-list c-footer-list--inline">
-                                <li>
+                                <li class="c-footer-list-item">
                                     <a href="#" target="_blank">
                                         <img class="c-footer-icon c-icon--ios" src="/assets/img/icons/appstore/ios.it.svg" alt="Scarica su App Store" />
                                     </a>
                                 </li>
-                                <li>
+                                <li class="c-footer-list-item">
                                     <a href="#" target="_blank">
                                         <img class="c-footer-icon c-icon--android" src="/assets/img/icons/appstore/android.it.svg" alt="Disponibile su Google Play" />
                                     </a>
@@ -243,12 +243,12 @@
                         <h2 class="c-footer-heading">Seguici su:</h2>
                     
                         <ul class="c-footer-list c-footer-list--inline">
-                                <li>
+                                <li class="c-footer-list-item">
                                     <a href="#" target="_blank">
                                         <img class="c-footer-icon c-footer-icon--social" src="/assets/img/icons/social/icon-facebook.svg" alt="Facebook" />
                                     </a>
                                 </li>
-                                <li>
+                                <li class="c-footer-list-item">
                                     <a href="#" target="_blank">
                                         <img class="c-footer-icon c-footer-icon--social" src="/assets/img/icons/social/icon-twitter.svg" alt="Twitter" />
                                     </a>
@@ -271,13 +271,13 @@
                 <div class="g g--stack--mid">
                     <div class="g-col g-span8 c-footer-cards">
                         <ul class="c-footer-list c-footer-list--inline">
-                                <li> 
+                                <li class="c-footer-list-item"> 
                                     <img class="c-footer-icon c-footer-icon--card c-icon--mastercard--securecode" src="/assets/img/icons/cards/mastercard--securecode.svg" alt="Mastercard Securecode" />
                                 </li>
-                                <li> 
+                                <li class="c-footer-list-item"> 
                                     <img class="c-footer-icon c-footer-icon--card c-icon--visa--verified" src="/assets/img/icons/cards/visa--verified.svg" alt="Verified by Visa" />
                                 </li>
-                                <li> 
+                                <li class="c-footer-list-item"> 
                                     <img class="c-footer-icon c-footer-icon--card c-icon--paypal" src="/assets/img/icons/cards/paypal.svg" alt="Paypal" />
                                 </li>
                         </ul>
@@ -285,7 +285,7 @@
         
                     <div class="g-col g-span4 c-footer-countries">
                         <div class="c-countrySelector">
-                            <button type="button" class="o-btn o-btnLink c-countrySelector-link c-countrySelector-link--selected" data-toggle-target="countrySelector-list">
+                            <button type="button" class="o-btn o-btnLink c-countrySelector-link c-countrySelector-link--selected" data-toggle-target="countrySelector-list" aria-label="Sei sul sito Italiano. Clicca qui per cambiare stato.">
                                 <img class="c-icon--flag--small" src="/assets/img/icons/flags/flag.it.svg" alt="" />
                                 <p>Italia</p>
                                 <img class="c-countrySelector-chevron c-icon--chevron--small" src="/assets/img/icons/arrows/chevron.svg" alt="" />
@@ -364,7 +364,9 @@
                                         <p>Italia</p>
                                     </button>
                         
-                                    <img class="c-countrySelector-cross" src="/assets/img/icons/operators/cross.svg" data-toggle-target="countrySelector-list" alt="" />
+                                    <button type="button" class="o-btnLink" data-toggle-target="countrySelector-list" aria-label="Chiudi">
+                                        <img class="c-countrySelector-cross" src="/assets/img/icons/operators/cross.svg" alt="" />
+                                    </button>
                                 </li>
                             </ul>
                         </div>
@@ -380,7 +382,7 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-container c-footer-row"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g g--stack--mid"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span3 c-footer-panel"</span> <span class="hljs-attr">data-panel-collapsible</span> <span class="hljs-attr">data-toggle-name</span>=<span class="hljs-string">"footer-panel-1"</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"footer-panel-1"</span> <span class="hljs-attr">data-toggle-class</span>=<span class="hljs-string">"is-collapsed"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span> <span class="hljs-attr">data-footer-panel-heading</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"footer-panel-1"</span> <span class="hljs-attr">data-toggle-class</span>=<span class="hljs-string">"is-collapsed"</span>&gt;</span>
                     Servizio Clienti
                     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-chevron c-icon--chevron u-showBelowMid"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/arrows/chevron.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
@@ -395,7 +397,7 @@
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span3 c-footer-panel"</span> <span class="hljs-attr">data-panel-collapsible</span> <span class="hljs-attr">data-toggle-name</span>=<span class="hljs-string">"footer-panel-2"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"cuisine-footer-heading"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"footer-panel-2"</span> <span class="hljs-attr">data-toggle-class</span>=<span class="hljs-string">"is-collapsed"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"cuisine-footer-heading"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span> <span class="hljs-attr">data-footer-panel-heading</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"footer-panel-2"</span> <span class="hljs-attr">data-toggle-class</span>=<span class="hljs-string">"is-collapsed"</span>&gt;</span>
                     Cucine
                     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-chevron c-icon--chevron u-showBelowMid"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/arrows/chevron.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
@@ -410,7 +412,7 @@
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span3 c-footer-panel"</span> <span class="hljs-attr">data-panel-collapsible</span> <span class="hljs-attr">data-toggle-name</span>=<span class="hljs-string">"footer-panel-3"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"footer-panel-3"</span> <span class="hljs-attr">data-toggle-class</span>=<span class="hljs-string">"is-collapsed"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span> <span class="hljs-attr">data-footer-panel-heading</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"footer-panel-3"</span> <span class="hljs-attr">data-toggle-class</span>=<span class="hljs-string">"is-collapsed"</span>&gt;</span>
                     Città
                     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-chevron c-icon--chevron u-showBelowMid"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/arrows/chevron.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
@@ -428,7 +430,7 @@
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span3 c-footer-panel"</span> <span class="hljs-attr">data-panel-collapsible</span> <span class="hljs-attr">data-toggle-name</span>=<span class="hljs-string">"footer-panel-4"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"footer-panel-4"</span> <span class="hljs-attr">data-toggle-class</span>=<span class="hljs-string">"is-collapsed"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span> <span class="hljs-attr">data-footer-panel-heading</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"footer-panel-4"</span> <span class="hljs-attr">data-toggle-class</span>=<span class="hljs-string">"is-collapsed"</span>&gt;</span>
                     Chi siamo
                     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-chevron c-icon--chevron u-showBelowMid"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/arrows/chevron.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
@@ -453,12 +455,12 @@
                 <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span>&gt;</span>Scarica l&amp;#x27;app<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
             
                 <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list c-footer-list--inline"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list-item"</span>&gt;</span>
                             <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>
                                 <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-icon--ios"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/appstore/ios.it.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Scarica su App Store"</span> /&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
                         <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list-item"</span>&gt;</span>
                             <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>
                                 <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-icon--android"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/appstore/android.it.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Disponibile su Google Play"</span> /&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -470,12 +472,12 @@
                 <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span>&gt;</span>Seguici su:<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
             
                 <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list c-footer-list--inline"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list-item"</span>&gt;</span>
                             <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>
                                 <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-footer-icon--social"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/social/icon-facebook.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Facebook"</span> /&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
                         <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list-item"</span>&gt;</span>
                             <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>
                                 <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-footer-icon--social"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/social/icon-twitter.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Twitter"</span> /&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -498,13 +500,13 @@
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g g--stack--mid"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span8 c-footer-cards"</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list c-footer-list--inline"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span> 
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list-item"</span>&gt;</span> 
                             <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-footer-icon--card c-icon--mastercard--securecode"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/cards/mastercard--securecode.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Mastercard Securecode"</span> /&gt;</span>
                         <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span> 
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list-item"</span>&gt;</span> 
                             <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-footer-icon--card c-icon--visa--verified"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/cards/visa--verified.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Verified by Visa"</span> /&gt;</span>
                         <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span> 
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list-item"</span>&gt;</span> 
                             <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-footer-icon--card c-icon--paypal"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/cards/paypal.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Paypal"</span> /&gt;</span>
                         <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
@@ -512,7 +514,7 @@
 
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span4 c-footer-countries"</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector"</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btn o-btnLink c-countrySelector-link c-countrySelector-link--selected"</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"countrySelector-list"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btn o-btnLink c-countrySelector-link c-countrySelector-link--selected"</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"countrySelector-list"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Sei sul sito Italiano. Clicca qui per cambiare stato."</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--flag--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/flags/flag.it.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Italia<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-chevron c-icon--chevron--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/arrows/chevron.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
@@ -591,7 +593,9 @@
                                 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Italia<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
                 
-                            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-cross"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/operators/cross.svg"</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"countrySelector-list"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btnLink"</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"countrySelector-list"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Chiudi"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-cross"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/operators/cross.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
                         <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                     <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
