@@ -3,6 +3,18 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+v1.17.0
+------------------------------
+*August28, 2018*
+
+### Added
+- Added restaurant listing with distance information
+- Added restaurant listing offline variation
+
+### Changed
+- Amended markup to standard restaurant listing
+- Amended markup to listing item meta block
+
 
 v1.16.0
 ------------------------------
@@ -93,6 +105,11 @@ v1.10.0
 ### Fixed
 - Included `resolutions` option to `package.json` to ensure version of `gift` installed is up-to-date and doesn't break the build.
 
+<<<<<<< HEAD
+=======
+### Removed
+- `resolutions` value for `fozzie-colour-palette` no longer needed
+>>>>>>> v1.10.0 - update markup of restaurant listing, addition of restaurant listing item with distance information, addition of offline restaurant listing item, version bumps in changelog and package.json
 
 v1.9.3
 ------------------------------
