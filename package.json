@@ -25,7 +25,7 @@
     "@justeat/f-icons": "^0.11.0",
     "@justeat/f-toggle": "^0.13.0",
     "@justeat/f-validate": "^1.1.0",
-    "@justeat/fozzie": "^0.50.0",
+    "@justeat/fozzie": "^0.51.2",
     "kickoff-grid.css": "^1.1.0",
     "lite-ready": "^1.0.4",
     "qwery": "^4.0.0",

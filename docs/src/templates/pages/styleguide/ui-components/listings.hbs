@@ -9,12 +9,32 @@ navactive: listings
 ---
 <p>A listing of items.  Visually split by separators</p>
 
-<h3>Fully linked Listing Items</h3>
-<p>Listing in which each `list–item` is a link (so that the whole item is clickable).</p>
+<h2 class="sg-sectionHeading">Fully linked Listing Items with Address</h2>
+
 {{#>demo-block baseUrl=../baseUrl }}
-<div class="c-card c-card--noPadVertical u-bordered c-listing">
+<div class="c-listing">
     {{> je-restaurant-listing }}
     {{> je-restaurant-listing }}
     {{> je-restaurant-listing }}
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Fully linked Listing Items with Distance</h2>
+
+{{#>demo-block baseUrl=../baseUrl }}
+<div class="c-listing">
+    {{> je-restaurant-listing--delivery }}
+    {{> je-restaurant-listing--delivery }}
+    {{> je-restaurant-listing--delivery }}
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Fully linked Listing Items Offline</h2>
+
+{{#>demo-block baseUrl=../baseUrl }}
+<div class="c-listing c-listing--offline">
+    {{> je-restaurant-listing--delivery }}
+    {{> je-restaurant-listing--delivery }}
+    {{> je-restaurant-listing--delivery }}
 </div>
 {{/demo-block }}

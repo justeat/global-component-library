@@ -3,6 +3,18 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+v1.11.0
+------------------------------
+*July 25, 2018*
+
+### Added
+- Added restaurant listing with distance information
+- Added restaurant listing offline variation
+
+### Changed
+- Amended markup to standard restaurant listing
+- Amended markup to listing item meta block
+
 v1.10.0
 ------------------------------
 *July 11, 2018*
@@ -18,7 +30,6 @@ v1.10.0
 
 ### Removed
 - `resolutions` value for `fozzie-colour-palette` no longer needed
-
 
 v1.9.3
 ------------------------------
