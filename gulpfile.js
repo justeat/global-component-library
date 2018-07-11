@@ -46,6 +46,11 @@ build(gulp, {
                 dest: '/libs',
                 revision: false
             }
+        },
+        docs: {
+            CNAME: {
+                path: '/templates/pages/CNAME'
+            }
         }
     },
 
