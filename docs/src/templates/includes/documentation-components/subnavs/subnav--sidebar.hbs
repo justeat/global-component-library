@@ -160,9 +160,52 @@
 
 {{#is navsub 'docs-css'}}
 <!-- subnav for Documentation > CSS -->
-    <li><a href="{{ baseUrl }}/documentation/css/" class="{{#is navactive 'css-principles'}} is-active{{/is}}">Principles</a></li>
-    <li><a href="{{ baseUrl }}/documentation/css/css-naming" class="{{#is navactive 'css-naming'}} is-active{{/is}}">Naming</a></li>
-    <li><a href="{{ baseUrl }}/documentation/css/structure" class="{{#is navactive 'css-structure'}} is-active{{/is}}">Structure</a></li>
+    <li><a href="{{ baseUrl }}/documentation/css/" class="{{#is navactive 'css-principles'}} is-active{{/is}}">Principles</a>
+        {{#is navactive 'css-principles'}}
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#philosophy">Philosophy</a></li>
+            <li><a href="#bestpractices">Best Practices</a></li>
+            <li><a href="#preprocessors">Preprocessors</a></li>
+            <li><a href="#progressive">Progressive Enhancement</a></li>
+        </ul>
+        {{/is}}
+    </li>
+    <li><a href="{{ baseUrl }}/documentation/css/sass" class="{{#is navactive 'sass'}} is-active{{/is}}">Sass</a>
+        {{#is navactive 'css-sass'}}
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#scss">SCSS</a></li>
+            <li><a href="#guidelines">Guidelines</a></li>
+            <li><a href="#mediaqueries">Media Queries</a></li>
+            <li><a href="#variables">Variables</a></li>
+        </ul>
+        {{/is}}
+    </li>
+    <li><a href="{{ baseUrl }}/documentation/css/css-naming" class="{{#is navactive 'css-naming'}} is-active{{/is}}">Naming</a>
+        {{#is navactive 'css-naming'}}
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#scheme">Our Naming Scheme</a></li>
+            <li><a href="#modifiers">Modifiers</a></li>
+            <li><a href="#state">State</a></li>
+            <li><a href="#variables">Variable Naming</a></li>
+        </ul>
+        {{/is}}
+    </li>
+    <li><a href="{{ baseUrl }}/documentation/css/fozzie" class="{{#is navactive 'css-principles'}} is-active{{/is}}">Fozzie</a>
+        {{#is navactive 'css-fozzie'}}
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#modules">Modules</a></li>
+            <li><a href="#import">Importing Fozzie Modules</a></li>
+        </ul>
+        {{/is}}
+    </li>
+    <li><a href="{{ baseUrl }}/documentation/css/structure" class="{{#is navactive 'css-structure'}} is-active{{/is}}">Structure</a>
+        {{#is navactive 'css-structure'}}
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#folder-structure">SCSS Folder structure</a></li>
+            <li><a href="#key-files">Key files</a></li>
+        </ul>
+        {{/is}}
+    </li>
 {{/is}}
 
 

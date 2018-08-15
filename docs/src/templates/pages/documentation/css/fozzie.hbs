@@ -1,0 +1,61 @@
+---
+title: Fozzie
+section-title: CSS Documentation
+description: Fozzie - Just Eat's component Library
+docs: true
+
+navgroup: documentation
+navsub: docs-css
+navactive: css-fozzie
+---
+
+Fozzie is Just Eat's UI Component Framework, built to help modularise and share the UI code we write across all of our teams at Just Eat.
+
+Fozzie encompasses a number of modules developed by our UI team, which can be split roughly into four categories:
+
+- **The Base [Fozzie Module](https://github.com/justeat/fozzie)**
+    The shared base Fozzie module gives a base set of styling and helper functions to any Just Eat project.
+- **Shared Components**
+    A component made up of HTML, Sass and JS that can be reused across projects. e.g. site navigation, footer and modal components.
+- **Shared JavaScript Modules**
+    Modules that just contain JS (much like any reusable NPM module). e.g. Common shared JS for features such as form validation, analytics or logging.
+- **Tooling**
+    Modules that help share our tooling across projects. e.g. build modules (gulp/webpack), linting configurations, JS test helpers etc.
+
+
+<a name="modules"></a><h2 class="sg-sectionHeading">Modules</h2>
+
+To see the current list of public Fozzie modules, take a look on [our public Github account](https://github.com/search?q=topic%3Afozzie+org%3Ajusteat&type=Repositories).
+
+
+<a name="import"></a><h2 class="sg-sectionHeading">Importing Fozzie Modules</h2>
+
+To help with importing fozzie SCSS styles, we use a tool called [**Eyeglass**](https://github.com/sass-eyeglass/eyeglass).
+
+Essentially, Eyeglass let's us import modules in our Sass by referencing the name of the module, rather than having to provide absolute paths into the `node_modules` folder.
+
+For example, say you have a project and want to include the base fozzie module in your Sass build, you can do the following:
+
+1. Install the base module using NPM or Yarn.
+
+```
+yarn add @justeat/fozzie
+```
+
+2. Setup Eyeglass.
+
+    If you are using the [fozzie gulp build tasks](https://www.npmjs.com/package/@justeat/gulp-build-fozzie), then Eyeglass is automatically ready to use as part of the Sass compilation task.
+
+    If not, then check out these integration recipes for [Gulp](https://github.com/sass-eyeglass/eyeglass/blob/master/site-src/docs/integrations/gulp.md) and [WebPack](https://github.com/sass-eyeglass/eyeglass/issues/153#issuecomment-300895607).
+
+3. Within your project Sass files, you will then be able to import the base fozzie module like so:
+
+```
+@import 'fozzie';
+```
+
+When your Sass is compiled, it will include the Sass from the fozzie module as well.
+
+If you want to check what `@import` keyword you need to include to import a module, you can check out the [Eyeglass config](https://github.com/justeat/fozzie/blob/master/package.json#L51-L60) which is located in each modules `package.json`.
+
+

@@ -12,6 +12,11 @@
     color: #333;
     font-weight: 400;
 
+    // used for putting a portion of the title on its own line
+    > span {
+        display: block;
+    }
+
     @include media('>=mid') {
         @include font-size(50);
     }
@@ -47,16 +52,27 @@
 
 // bump up the font-size for documentation text
 .sg-content {
-    > p {
+    > p,
+    > ul,
+    > ol,
+    > ul p,
+    > ol p {
         @include font-size(base--scaleUp);
+    }
+    > p {
+        max-width: 50em;
+
+        & > code {
+            display: inline-flex;
+        }
     }
     > ul,
     > ol {
-        @include font-size(base--scaleUp);
         line-height: 1.2;
 
         li {
             margin-bottom: 0;
+            max-width: 50em;
         }
     }
 

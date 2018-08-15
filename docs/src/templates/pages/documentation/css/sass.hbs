@@ -1,0 +1,161 @@
+---
+title: Sass
+section-title: CSS Documentation
+description: How we use Sass on projects at Just Eat
+docs: true
+
+navgroup: documentation
+navsub: docs-css
+navactive: css-sass
+---
+
+
+We use [Sass](http://sass-lang.com/) to compliment how we write our CSS, using it’s features to make our front-end code more maintainable and to give it better structure.
+
+
+<a name="scss"></a><h2 class="sg-sectionHeading">SCSS</h2>
+
+Sass has two variants.  The most common is called **SCSS** and is what we use on our projects at Just Eat.  SCSS files use the extension `.scss`.
+
+SCSS is essentially a superset of CSS syntax. Therefore any valid CSS stylesheet is also valid SCSS as well.
+
+
+<a name="guidelines"></a><h2 class="sg-sectionHeading">Guidelines</h2>
+
+Sass features should only be used where they result in increased clarity and reuse. Care should be taken to ensure that the resulting CSS is not compromised by unnecessary Sass nesting or extending.
+
+The following are some high level guidelines that we try to follow as a team.
+
+---
+
+### Nesting
+
+Don't nest your Sass more than 3 levels deep.  When using a [naming scheme]({{ ../baseUrl }}/documentation/css/css-naming), deep nesting shouldn't be an issue as each class is specific to an individual tag.
+
+---
+
+### @extend
+
+Use the Sass `@extend` feature sparingly.  If you genuinely need to extend a class, it's best to use [Sass placeholder selectors](http://thesassway.com/intermediate/understanding-placeholder-selectors) to help with this.
+
+---
+
+### Nested class shorthands
+
+In Sass, it's possible to shorthand component naming like so:
+
+```scss
+.listing {
+    &-item {
+        …
+    }
+    &--promo {
+        …
+    }
+}
+```
+
+We advise against using this shorthand style, simply as it makes the codebase much less searchable for developers.  When trying to find where the `listing--promo` class is defined in the Sass, a simple 'Find' will return no results because the shorthand has been used.
+
+---
+
+### Commenting
+
+CSS gives the deceptive impression of being a simple language, but can be tricky when writing it at scale.
+
+If something may not be obvious to someone else viewing your styles, comment it extensively.  They are stripped out at compilation time anyway and your future self will also likely thank you for it.
+
+---
+
+### Further Reading
+
+* [Sass Guidelines](https://sass-guidelin.es/) by [Hugo Giraudel](https://hugogiraudel.com/)
+
+
+<a name="mediaqueries"></a><h2 class="sg-sectionHeading">Media Queries</h2>
+
+As is considered best practice, we develop with a mobile-first approach to our projects.
+
+We use a Sass library called [@include-media](https://include-media.com/) to write our media queries.  This provides an elegant way to define our media queries, hooking into the [breakpoint map](https://github.com/justeat/fozzie/blob/8a1094ae5a467e9e2afd86a4aab62f9ea65b1bee/src/scss/settings/_variables.scss#L65-L72) defined in fozzie's variables.
+
+When using these mixins, the easiest way to write your media queries is to specify the breakpoint name; the @include-media library will then convert this into a media query with a value in ems to provide a more consistent experience for users that use text zoom.
+
+
+### Media query example
+
+```scss
+/**
+ * Using @include-media you can specify breakpoints
+ * using the map key's defined in Fozzie's [breakpoint map](https://github.com/justeat/fozzie/blob/8a1094ae5a467e9e2afd86a4aab62f9ea65b1bee/src/scss/settings/_variables.scss#L65-L72)
+ */
+@include media('>=mid') {
+	a {
+		color: darkgoldenrod;
+	}
+}
+/* Is the same as: */
+@media (min-width: 48em) {
+	a {
+		color: darkgoldenrod;
+	}
+}
+```
+
+### Better media query example
+Rather than having all of your media queries for different widths stored in separate `SCSS` files or placed at the bottom of each `SCSS` partial, it is suggested that you make use of Sass' inline media queries.
+
+This means that all styles related to an element are grouped together, for example:
+
+```scss
+a {
+	padding: 1em;
+
+	@include media('>=mid') {
+		padding: 2em;
+	}
+}
+```
+
+
+<a name="variables"></a><h2 class="sg-sectionHeading">Variables</h2>
+
+We take full advantage of Sass variables to help us manage consistency across our projects.
+
+In Fozzie, this is done in two main places:
+
+---
+
+### Colour Variables
+
+Colour variables are managed in the [fozzie-colour-palette](https://github.com/justeat/fozzie-colour-palette) module.
+
+This helps us version our colour palette independently to any of our other code and allows us to roll out brand colour changes quickly across projects hooked into this module.
+
+---
+
+### Fozzie Variables
+
+The other main framwork variables are stored directly in the [base fozzie module](https://github.com/justeat/fozzie), in the [_variables.scss file](https://github.com/justeat/fozzie/blob/master/src/scss/settings/_variables.scss).
+
+Examples of the variables stored here include (but is not limited to):
+
+- **Typographic map**
+    Stores the sizes and line-heights defined for type on Just Eat sites.
+- **Breakpoint map**
+    Stores key value breakpoint declarations so that we can target breakpoints using keys such as 'narrow' and 'wide'.
+- **Font variables**
+    For example, unit values for font-weights and font-family declarations.
+- **Image paths**
+    Stores paths for including icons/images in the CSS.
+- **Spacing map**
+    Allows consistent spacing to be used across components.
+
+---
+
+### Component specific variables
+
+We recommend using variables at a component level to complement those defined globally (as explained above).
+
+Any variables specific to a component should be defined at the top of each component scss file, so that should the component be removed at a later date, any associated variables are deleted at the same time.  This helps with redundancy, as variables aren’t left hanging around in the global definitions should the associated component be removed at a later stage.
+
+

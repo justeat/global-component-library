@@ -1,141 +1,59 @@
 ---
 title: CSS Principles
 section-title: CSS Documentation
-description: Our commitment to creating an accessible platform
+description: The principles around how we use CSS at Just Eat
 docs: true
 
 navgroup: documentation
 navsub: docs-css
 navactive: css-principles
-
-wip: true
 ---
-
-## Note – Page needs updating with Global in mind! (currently international CSS docs here)
 
 The aim when writing CSS on any platform is to ensure it is well structured, maintainable and flexible.
 
-To help us do that at JUST EAT, we have adopted [Sass](#sass), a CSS preprocessor which allows us to use many extra features beyond the capabilities of Vanilla CSS.
+To help us do that at Just Eat, we use [Sass](#sass) and PostCSS, which allows us to utilise extra CSS processing features beyond the capabilities of Vanilla CSS.
 
-This section of the documentation aims to explain how we use CSS and Sass at JUST EAT, as well as covering the methodologies and best practices that have helped to guide our way of thinking.
+Below, we'll aim to explain how we use CSS, Sass and PostCSS on our projects, as well as covering the methodologies and best practices that have helped to guide our way of thinking.
 
 
-<a name="philosophy"></a>
-
-## Philosophy
+<a name="philosophy"></a><h2 class="sg-sectionHeading">Philosophy</h2>
 
 When writing CSS for any website, it is important to write styles that are both maintainable and flexible, so that they are easy to extend and can be reused in the future.
 
-There are many methodologies that support this way of thinking, such as [SMACSS](https://smacss.com/), [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) and [Object Oriented CSS](http://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/).  These all share a lot of common ground in their opinions on constructing good CSS; essentially that when developing styles you should think about how you can write small reusable components that can be easily extended later.
+There are many CSS methodologies that support this way of thinking, such as [SMACSS](https://smacss.com/), [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)) and [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/).  These all share a lot of common ground whn it comes to constructing good CSS; one of main themes being that you should always think about how you can write small reusable components that can be easily extended later.
 
-We encourage this way of thinking at JUST EAT and our Sass is [structured to reflect this](#structure), with base styles defined globally and individual components and modules that extend upon these styles.
+We encourage this way of writing CSS, and our styles are [structured to reflect this](#structure), with base styles defined globally and individual components and modules that extend upon these styles.
 
-If you haven’t already, we recommend reading [SMACSS](https://smacss.com/) in particular.  For a brief overview of the book, [see this excellent article](http://bramsmulders.com/how-i-improved-my-workflow-with-smacss-sass.html).
+N.b. [SMACSS](https://smacss.com/) and [Atomic Design](http://atomicdesign.bradfrost.com/table-of-contents/) are both recommended reading for anyone working with CSS.
 
-<a name="bestpractices"></a>
 
-## Best Practices
+<a name="bestpractices"></a><h2 class="sg-sectionHeading">Best Practices</h2>
 
-We will be authoring our own Guidelines on CSS Best Practices – which will be documented in these pages – but until then, see these excellent [CSS Guidelines](http://tech.tmw.co.uk/code/TMW-frontend-guidelines/#section-css) for information on the Best Practices that we encourage.
-
-### Recommended Reading
+There are a number of great resources outlining CSS Best Practices:
 
 * [CSS Guidelines](http://tech.tmw.co.uk/code/TMW-frontend-guidelines/#section-css)
+* [Sass Guidelines](https://sass-guidelin.es/) by [Hugo Giraudel](https://hugogiraudel.com/)
 * [Code Smells in CSS](http://csswizardry.com/2012/11/code-smells-in-css/)
 * [CSS Specificity](http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/)
 
 
-<a name="sass"></a>
+<a name="preprocessors"></a><h2 class="sg-sectionHeading">Preprocessors</h2>
 
-## Sass
+We use a combination of [Sass](https://sass-lang.com/) and [PostCSS](https://postcss.org/) to author our stylesheets.
 
-We use [Sass](http://sass-lang.com/) to compliment how we write our CSS, using it’s features to help make our front-end code more maintainable and to give it better structure.
-
-Sass has two variants. The most commonly used is known as **SCSS** and is the variant we use on projects at JUST EAT.
-
-SCSS is a superset of CSS3’s syntax. This means that every valid CSS3 stylesheet is valid SCSS as well. SCSS files use the extension `.scss`.
-
-Sass features should only be used where they result in increased clarity and reuse. Care should be taken to ensure that the resulting CSS is not compromised by unnecessary Sass nesting or extending.
+For more information on how we use these tools, check out our documentation sections on [Sass](/css/sass) and [PostCSS](/css/postcss).
 
 
 
-<a name="variables"></a>
+<a name="progressive"></a><h2 class="sg-sectionHeading">Progressive Enhancement</h2>
 
-## Sass Variables
+We strongly believe in using progressive enhancement so that we can provide a service to as many users as we can.  Those using modern browsers will get the best possible experience, with those on [older browsers](/general/browser-support) still able to view and use our site.
 
-We take full advantage of Sass' variables and there are two key files that define project specific variables. These are `scss/base/_variables.scss` and `scss/base/_color-palette.scss`.
+As part of this effort, we strongly recommend using feature detection over browser or UI sniffing.
 
----
-#### [_variables.scss](https://github.je-labs.com/I18N-Production-ROTW/ConsumerWeb/tree/master/src/ConsumerWeb/Assets/src/scss/base/_variables.scss)
-This is where any global Sass variables are defined. This includes:
+Where needed, we use Modernizr to help us do this, and where possible [CSS feature queries via `@supports`](https://caniuse.com/#feat=css-featurequeries) (browser support allowing – ironically).
 
-* **Global typographic styles** — including font choices and typographic scale.
-* **Responsive breakpoints** — we try not to target specific devices or device types with these variables.  Instead they should be set with the design in mind.
-
-  Breakpoints included are: `$bp-narrow`, `$bp-mid`, `$bp-wide`, `$bp-huge` and a few *special* vars. These include `$bp-single-col` for when you need your design to break from a single column to multiple columns, and `$font-path` and `$img-path` which defines the path to where fonts and images are located in the asset directory.
-
----
-#### [_color-palette.scss](https://github.je-labs.com/I18N-Production-ROTW/ConsumerWeb/tree/master/src/ConsumerWeb/Assets/src/scss/_color-palette.scss)
-Text colour, link colours and background colour are all specified here.
-
-Colours specific to components should be defined at the top of each component scss files, so that should they be removed at a later date, any associated variables aren’t left as redundant in the global color-palette file.
-
-<a name="responsive"></a>
-
-## Responsive
-
-As is considered best practice, we develop with a mobile-first approach to our projects.
-
-On the global platform, we recommend using the [@include-media](https://include-media.com/) Sass library. This provides an elegant way to define our media queries in a more readbale way while also hooking into  the [breakpoint map](https://github.com/justeat/fozzie/blob/8a1094ae5a467e9e2afd86a4aab62f9ea65b1bee/src/scss/settings/_variables.scss#L65-L72) defined in fozzie's variables.
-
-When using these mixins, the easiest way to write your media queries is to specify the breakpoint name; the @include-media library will then convert this into a media query with a value in ems to provide a more consistent experience for users that use text zoom.
-
-
-#### Media query example
-
-```scss
-/**
- * Using @include-media you can specify breakpoints
- * using the map key's defined in Fozzie's [breakpoint map](https://github.com/justeat/fozzie/blob/8a1094ae5a467e9e2afd86a4aab62f9ea65b1bee/src/scss/settings/_variables.scss#L65-L72)
- */
-@include media('>=mid') {
-	a {
-		color: darkgoldenrod;
-	}
-}
-/* Is the same as: */
-@media (min-width: 48em) {
-	a {
-		color: darkgoldenrod;
-	}
-}
-```
-
-#### Better media query example
-Rather than having all of your media queries for different widths stored in separate `SCSS` files or placed at the bottom of each `SCSS` partial, it is suggested that you make use of Sass' inline media queries.
-
-This means that all styles related to an element are grouped together, for example:
-
-```scss
-a {
-	padding: 1em;
-
-	@include media('>=mid') {
-		padding: 2em;
-	}
-}
-```
-
-
-<a name="modernizr"></a>
-
-### Modernizr
-
-At JUST EAT, we strongly advocate feature detection over browser or UI sniffing.
-
-Our minimal framework includes a custom build of Modernizr. To update this with an extra feature test that isn’t already included in our build, ensure you copy the url in the current [modernizr.min.js](https://github.je-labs.com/I18N-Production-ROTW/ConsumerWeb/blob/master/src/ConsumerWeb/Assets/src/js/libs/modernizr.min.js) so that the current tests are preserved in the new build.
-
-For full information on using Modernizr, see [their documentation](http://modernizr.com) or see our [Javascript documentation]({{ baseUrl }}/js/#js-modernizr) to find out where it is included.
-
+Resources:
+- [Modernizr Documentation](http://modernizr.com)
 
 

@@ -18,14 +18,11 @@ const docs = {
 
     // controls all of our base initialsation functions
     init: () => {
-
         docs._demoHandler();
         docs._disableDemoLinks();
-
     },
 
     _demoHandler: () => {
-
         $('.demo').forEach(demoEl => {
             const codeBlock = $.first('.demo-code', demoEl);
 
@@ -47,12 +44,9 @@ const docs = {
                 e.preventDefault();
             });
         });
-
-
     },
 
     _demoToggle: event => {
-
         const btn = event.target;
         const codeBlock = btn.nextElementSibling;
         const isHidden = codeBlock.classList.contains('is-hidden');
@@ -65,7 +59,6 @@ const docs = {
         } else {
             btn.textContent = docs.demoBtnText.whenHidden;
         }
-
     },
 
     _disableDemoLinks: () => {

@@ -3,6 +3,32 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+
+v1.11.0
+------------------------------
+*August 15, 2018*
+
+### Added
+- Sass docs page added
+- Fozzie docs page added
+
+### Updated
+- CSS Principles docs page now up-to-date
+- CSS Naming Scheme docs page now up-to-date
+- CSS Structure docs page now up-to-date
+- Footer for documentation pages added to the site
+- Updating navigation and homepage with more accurate/useful descriptions
+- Changed `max-width` of content docs to be a more sensible line-length
+
+### Fixed
+- UI Components page fixed to include current UI Components
+- `espree` added to resolutions to fix ESLint dependency issue
+
+### Removed
+- gift `resolutions` value for `fozzie-colour-palette` no longer needed
+- Removed markup from base design elements page (as not needed)
+
+
 v1.10.0
 ------------------------------
 *July 11, 2018*
@@ -15,9 +41,6 @@ v1.10.0
 
 ### Fixed
 - Included `resolutions` option to `package.json` to ensure version of `gift` installed is up-to-date and doesn't break the build.
-
-### Removed
-- `resolutions` value for `fozzie-colour-palette` no longer needed
 
 
 v1.9.3
