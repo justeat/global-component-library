@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 v1.11.0
 ------------------------------
-*August 15, 2018*
+*August 16, 2018*
 
 ### Added
 - Sass docs page added

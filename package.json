@@ -39,7 +39,7 @@
     "gulp": "^3.9.1"
   },
   "resolutions": {
-    "espree": "^3.5.4"
+    "espree": "3.5.4"
   },
   "keywords": [],
   "scripts": {
