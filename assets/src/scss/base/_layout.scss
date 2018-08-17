@@ -52,9 +52,13 @@
     padding: spacing(x3) 0;
 }
 
+.sg-content {
+    padding-bottom: spacing(x6);
+}
+
 .sg-footer {
-    background-color: $styleguide-color-primary;
-    color: #fff;
+    background-color: #fff;
+    color: $color-text;
     padding: 30px;
     margin-top: 30px;
 
@@ -64,6 +68,9 @@
     a {
         color: currentColor;
         text-decoration: underline;
+    }
+    p {
+        margin: 0;
     }
 }
 
