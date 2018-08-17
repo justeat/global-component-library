@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Photography – Just Eat Front-End Component Library and Documentation</title>
+		<title>Sass – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -41,9 +41,9 @@
 			    <input type="checkbox" class="c-nav-trigger" name="menuVisible" id="menu-visible" aria-hidden="true">
 			    <div class="c-nav-container">
 			        <ul class="c-nav-list">
-			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Design Elements</a></li>
-			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/styleguide/ui-components/" class="c-nav-list-link">UI Components</a></li>
-			            <li class="c-nav-list-item"><a href="/documentation/general/" class="c-nav-list-link">Development Docs</a></li>
+			            <li class="c-nav-list-item"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Design Elements</a></li>
+			            <li class="c-nav-list-item"><a href="/styleguide/ui-components/" class="c-nav-list-link">UI Components</a></li>
+			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/documentation/general/" class="c-nav-list-link">Development Docs</a></li>
 			            <!-- <li class="c-nav-list-item"><a href="/performance/" class="c-nav-list-link">Performance Monitoring</a></li> -->
 			        </ul>
 			    </div>
@@ -53,16 +53,16 @@
 	
 <div class="sg-secondaryBar">
     <div class="l-container g">
-        <h2 class="sg-secondaryBar-title g-col g-col--shrink gamma">Design Elements</h2>
+        <h2 class="sg-secondaryBar-title g-col g-col--shrink gamma">CSS Documentation</h2>
 
         <ul class="sg-subnav g-col g g--alignRight g--alignBottom u-unstyled">
-            <li class="sg-subnav-item is-active"><a href="/styleguide/design-elements/colours">Design Elements</a></li>
-    <li class="sg-subnav-item"><a href="/styleguide/ui-components/">UI Components</a></li>
-    <li class="sg-subnav-item"><a href="/styleguide/ui-templates/">UI Templates</a></li>
-    <li class="sg-subnav-item"><a href="/styleguide/js-components/">JS Components</a></li>
-    <li class="sg-subnav-item"><a href="/styleguide/css-utilities/">CSS Utilities</a></li>
-
-        </ul>
+        
+            <li class="sg-subnav-item"><a href="/documentation/general/">General</a></li>
+    <li class="sg-subnav-item is-active"><a href="/documentation/css/">CSS</a></li>
+    <li class="sg-subnav-item"><a href="/documentation/js/">JS</a></li>
+    <li class="sg-subnav-item"><a href="/documentation/images/">Images</a></li>
+    <li class="sg-subnav-item"><a href="/documentation/open-source/">Open source</a></li>
+</ul>
     </div>
 </div>
 
@@ -71,30 +71,35 @@
         <div class="g g--gutter g--stack">
             <div class="g-col g-span2--mid">
                 <ul class="sg-sideNav c-card c-card--rounded c-card--noPad u-unstyled">
-                <!-- subnav for Styleguide > Design Elements -->
-    <li><a href="/styleguide/design-elements/colours" class="">Colours</a></li>
-    <li><a href="/styleguide/design-elements/typography" class="">Typography</a></li>
-    <li><a href="/styleguide/design-elements/icons" class="is-incomplete ">Icons</a></li>
-    <li><a href="/styleguide/design-elements/grid" class="is-incomplete ">Grid</a></li>
-    <li><a href="/styleguide/design-elements/touchtargets" class="is-incomplete ">Touch Target Size</a></li>
-    <li><a href="/styleguide/design-elements/padding" class="is-incomplete ">Padding</a></li>
-    <li><a href="/styleguide/design-elements/colour-rays" class="is-incomplete ">Colour Rays</a></li>
-    <li><a href="/styleguide/design-elements/photography" class="is-incomplete  is-active">Photography</a></li>
-    <li><a href="/styleguide/design-elements/illustrations" class="is-incomplete ">Illustrations</a></li>
-    <li><a href="/styleguide/design-elements/restaurant-logos" class="is-incomplete ">Restaurant Logos</a></li>
-    <li><a href="/styleguide/design-elements/animations" class="is-incomplete ">Animations &amp; Transitions</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <!-- subnav for Documentation > CSS -->
+    <li><a href="/documentation/css/" class="">Principles</a>
+    </li>
+    <li><a href="/documentation/css/sass" class="">Sass</a>
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#scss">SCSS</a></li>
+            <li><a href="#guidelines">Guidelines</a></li>
+            <li><a href="#mediaqueries">Media Queries</a></li>
+            <li><a href="#variables">Variables</a></li>
+        </ul>
+    </li>
+    <li><a href="/documentation/css/css-naming" class="">Naming</a>
+    </li>
+    <li><a href="/documentation/css/fozzie" class="">Fozzie</a>
+    </li>
+    <li><a href="/documentation/css/structure" class="">Structure</a>
+    </li>
 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
                 
                 
                 
@@ -116,9 +121,101 @@
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
-                    <h1>Photography</h1>
-<h2>Title</h2>
-<p>Some info about our use of photography</p>
+                    <h1>Sass</h1>
+<p>We use <a href="http://sass-lang.com/">Sass</a> to complement how we write our CSS, using its features to make our front-end code more maintainable and to give it better structure.</p>
+<p><a name="scss"></a><h2 class="sg-sectionHeading">SCSS</h2></p>
+<p>Sass has two variants.  The most common is called <strong>SCSS</strong> and is what we use on our projects at Just Eat.  SCSS files use the extension <code>.scss</code>.</p>
+<p>SCSS is essentially a superset of CSS syntax. Therefore any valid CSS stylesheet is also valid SCSS as well.</p>
+<p><a name="guidelines"></a><h2 class="sg-sectionHeading">Guidelines</h2></p>
+<p>Sass features should only be used where they result in increased clarity and reuse. Care should be taken to ensure that the resulting CSS is not compromised by unnecessary Sass nesting or extending.</p>
+<p>The following are some high level guidelines that we try to follow as a team.</p>
+<hr>
+<h3>Nesting</h3>
+<p>Don't nest your Sass more than 3 levels deep.  When using a <a href="/documentation/css/css-naming">naming scheme</a>, deep nesting shouldn't be an issue as each class is specific to an individual tag.</p>
+<hr>
+<h3>@extend</h3>
+<p>Use the Sass <code>@extend</code> feature sparingly.  If you genuinely need to extend a class, it's best to use <a href="http://thesassway.com/intermediate/understanding-placeholder-selectors">Sass placeholder selectors</a> to help with this.</p>
+<hr>
+<h3>Nested class shorthands</h3>
+<p>In Sass, it's possible to shorthand component naming like so:</p>
+<pre><code class="language-scss"><span class="hljs-selector-class">.listing</span> {
+    &amp;-item {
+        …
+    }
+    &amp;--promo {
+        …
+    }
+}
+</code></pre>
+<p>We advise against using this shorthand style, simply as it makes the codebase much less searchable for developers.  When trying to find where the <code>listing--promo</code> class is defined in the Sass, a simple 'Find' will return no results because the shorthand has been used.</p>
+<hr>
+<h3>Commenting</h3>
+<p>CSS gives the deceptive impression of being a simple language, but can be tricky when writing it at scale.</p>
+<p>If something may not be obvious to someone else viewing your styles, comment it extensively.  They are stripped out at compilation time anyway and your future self will also likely thank you for it.</p>
+<hr>
+<h3>Further Reading</h3>
+<ul>
+<li><a href="https://sass-guidelin.es/">Sass Guidelines</a> by <a href="https://hugogiraudel.com/">Hugo Giraudel</a></li>
+</ul>
+<p><a name="mediaqueries"></a><h2 class="sg-sectionHeading">Media Queries</h2></p>
+<p>As is considered best practice, we develop with a mobile-first approach to our projects.</p>
+<p>We use a Sass library called <a href="https://include-media.com/">@include-media</a> to write our media queries.  This provides an elegant way to define our media queries, hooking into the <a href="https://github.com/justeat/fozzie/blob/8a1094ae5a467e9e2afd86a4aab62f9ea65b1bee/src/scss/settings/_variables.scss#L65-L72">breakpoint map</a> defined in fozzie's variables.</p>
+<p>When using these mixins, the easiest way to write your media queries is to specify the breakpoint name; the @include-media library will then convert this into a media query with a value in ems to provide a more consistent experience for users that use text zoom.</p>
+<h3>Media query example</h3>
+<pre><code class="language-scss"><span class="hljs-comment">/**
+ * Using @include-media you can specify breakpoints
+ * using the map keys defined in Fozzie's [breakpoint map](https://github.com/justeat/fozzie/blob/8a1094ae5a467e9e2afd86a4aab62f9ea65b1bee/src/scss/settings/_variables.scss#L65-L72)
+ */</span>
+@<span class="hljs-keyword">include</span> media(<span class="hljs-string">'&gt;=mid'</span>) {
+    <span class="hljs-selector-tag">a</span> {
+        <span class="hljs-attribute">color</span>: darkgoldenrod;
+    }
+}
+<span class="hljs-comment">/* Is the same as: */</span>
+@<span class="hljs-keyword">media</span> (min-width: 48em) {
+    <span class="hljs-selector-tag">a</span> {
+        <span class="hljs-attribute">color</span>: darkgoldenrod;
+    }
+}
+</code></pre>
+<h3>Better media query example</h3>
+<p>Rather than having all of your media queries for different widths stored in separate <code>SCSS</code> files or placed at the bottom of each <code>SCSS</code> partial, it is suggested that you make use of Sass' inline media queries.</p>
+<p>This means that all styles related to an element are grouped together, for example:</p>
+<pre><code class="language-scss"><span class="hljs-selector-tag">a</span> {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">1em</span>;
+
+    @<span class="hljs-keyword">include</span> media(<span class="hljs-string">'&gt;=mid'</span>) {
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">2em</span>;
+    }
+}
+</code></pre>
+<p><a name="variables"></a><h2 class="sg-sectionHeading">Variables</h2></p>
+<p>We take full advantage of Sass variables to help us manage consistency across our projects.</p>
+<p>In Fozzie, this is done in two main places:</p>
+<hr>
+<h3>Colour Variables</h3>
+<p>Colour variables are managed in the <a href="https://github.com/justeat/fozzie-colour-palette">fozzie-colour-palette</a> module.</p>
+<p>This helps us version our colour palette independently to any of our other code and allows us to roll out brand colour changes quickly across projects hooked into this module.</p>
+<hr>
+<h3>Fozzie Variables</h3>
+<p>The other main framework variables are stored directly in the <a href="https://github.com/justeat/fozzie">base fozzie module</a>, in the <a href="https://github.com/justeat/fozzie/blob/master/src/scss/settings/_variables.scss"><code>_variables.scss</code> file</a>.</p>
+<p>Examples of the variables stored here include (but are not limited to):</p>
+<ul>
+<li><strong>Typographic map</strong><br>
+Stores the sizes and line-heights defined for type on Just Eat sites.</li>
+<li><strong>Breakpoint map</strong><br>
+Stores key value breakpoint declarations so that we can target breakpoints using keys such as 'narrow' and 'wide'.</li>
+<li><strong>Font variables</strong><br>
+For example, unit values for font-weights and font-family declarations.</li>
+<li><strong>Image paths</strong><br>
+Stores paths for including icons/images in the CSS.</li>
+<li><strong>Spacing map</strong><br>
+Allows consistent spacing to be used across components.</li>
+</ul>
+<hr>
+<h3>Component specific variables</h3>
+<p>We recommend using variables at a component level to complement those defined globally (as explained above).</p>
+<p>Any variables specific to a component should be defined at the top of each component scss file, so that should the component be removed at a later date, any associated variables are deleted at the same time.  This helps with redundancy, as variables aren’t left hanging around in the global definitions should the associated component be removed at a later stage.</p>
                 </div>
             </div>
         </div>

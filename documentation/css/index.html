@@ -40,11 +40,12 @@
 			    </label>
 			    <input type="checkbox" class="c-nav-trigger" name="menuVisible" id="menu-visible" aria-hidden="true">
 			    <div class="c-nav-container">
-			    	<ul class="c-nav-list">
-			    		<li class="c-nav-list-item"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Styleguide &amp; Components</a></li>
-			    		<li class="c-nav-list-item c-nav-list-item--active"><a href="/documentation/general/" class="c-nav-list-link">Documentation</a></li>
-			    		<li class="c-nav-list-item"><a href="/performance/" class="c-nav-list-link">Performance Monitoring</a></li>
-			    	</ul>
+			        <ul class="c-nav-list">
+			            <li class="c-nav-list-item"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Design Elements</a></li>
+			            <li class="c-nav-list-item"><a href="/styleguide/ui-components/" class="c-nav-list-link">UI Components</a></li>
+			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/documentation/general/" class="c-nav-list-link">Development Docs</a></li>
+			            <!-- <li class="c-nav-list-item"><a href="/performance/" class="c-nav-list-link">Performance Monitoring</a></li> -->
+			        </ul>
 			    </div>
 			</nav>
 		</div>
@@ -65,10 +66,7 @@
     </div>
 </div>
 
-	    <div class="sg-wip">
-        <h2 class="l-container">This page of the docs needs to be reviewed and is a work in progress.<br> Don’t believe anything that it says!</h2>
-    </div>
-
+	
     <div class="l-container sg-page">
         <div class="g g--gutter g--stack">
             <div class="g-col g-span2--mid">
@@ -85,9 +83,22 @@
                 
                 
                 <!-- subnav for Documentation > CSS -->
-    <li><a href="/documentation/css/" class=" is-active">Principles</a></li>
-    <li><a href="/documentation/css/css-naming" class="">Naming</a></li>
-    <li><a href="/documentation/css/structure" class="">Structure</a></li>
+    <li><a href="/documentation/css/" class=" is-active">Principles</a>
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#philosophy">Philosophy</a></li>
+            <li><a href="#bestpractices">Best Practices</a></li>
+            <li><a href="#preprocessors">Preprocessors</a></li>
+            <li><a href="#progressive">Progressive Enhancement</a></li>
+        </ul>
+    </li>
+    <li><a href="/documentation/css/sass" class="">Sass</a>
+    </li>
+    <li><a href="/documentation/css/css-naming" class="">Naming</a>
+    </li>
+    <li><a href="/documentation/css/fozzie" class="">Fozzie</a>
+    </li>
+    <li><a href="/documentation/css/structure" class="">Structure</a>
+    </li>
 
                 
                 
@@ -111,88 +122,47 @@
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
                     <h1>CSS Principles</h1>
-<h2>Note – Page needs updating with Global in mind! (currently international CSS docs here)</h2>
 <p>The aim when writing CSS on any platform is to ensure it is well structured, maintainable and flexible.</p>
-<p>To help us do that at JUST EAT, we have adopted <a href="#sass">Sass</a>, a CSS preprocessor which allows us to use many extra features beyond the capabilities of Vanilla CSS.</p>
-<p>This section of the documentation aims to explain how we use CSS and Sass at JUST EAT, as well as covering the methodologies and best practices that have helped to guide our way of thinking.</p>
-<p><a name="philosophy"></a></p>
-<h2>Philosophy</h2>
+<p>To help us do that at Just Eat, we use <a href="#sass">Sass</a> and PostCSS, which allows us to utilise extra CSS processing features beyond the capabilities of Vanilla CSS.</p>
+<p>Below, we'll aim to explain how we use CSS, Sass and PostCSS on our projects, as well as covering the methodologies and best practices that have helped to guide our way of thinking.</p>
+<p><a name="philosophy"></a><h2 class="sg-sectionHeading">Philosophy</h2></p>
 <p>When writing CSS for any website, it is important to write styles that are both maintainable and flexible, so that they are easy to extend and can be reused in the future.</p>
-<p>There are many methodologies that support this way of thinking, such as <a href="https://smacss.com/">SMACSS</a>, <a href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic Design</a> and <a href="http://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/">Object Oriented CSS</a>.  These all share a lot of common ground in their opinions on constructing good CSS; essentially that when developing styles you should think about how you can write small reusable components that can be easily extended later.</p>
-<p>We encourage this way of thinking at JUST EAT and our Sass is <a href="#structure">structured to reflect this</a>, with base styles defined globally and individual components and modules that extend upon these styles.</p>
-<p>If you haven’t already, we recommend reading <a href="https://smacss.com/">SMACSS</a> in particular.  For a brief overview of the book, <a href="http://bramsmulders.com/how-i-improved-my-workflow-with-smacss-sass.html">see this excellent article</a>.</p>
-<p><a name="bestpractices"></a></p>
-<h2>Best Practices</h2>
-<p>We will be authoring our own Guidelines on CSS Best Practices – which will be documented in these pages – but until then, see these excellent <a href="http://tech.tmw.co.uk/code/TMW-frontend-guidelines/#section-css">CSS Guidelines</a> for information on the Best Practices that we encourage.</p>
-<h3>Recommended Reading</h3>
+<p>There are many CSS methodologies that support this way of thinking, such as <a href="https://smacss.com/">SMACSS</a>, <a href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic Design</a>) and <a href="https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/">ITCSS</a>.  These all share a lot of common ground when it comes to constructing good CSS; one of main themes being that you should always think about how you can write small, reusable components that can be easily extended later.</p>
+<p>We encourage this way of writing CSS, and our styles are <a href="#structure">structured to reflect this</a>, with base styles defined globally and individual components and modules that extend upon these styles.</p>
+<p>N.b. <a href="https://smacss.com/">SMACSS</a> and <a href="http://atomicdesign.bradfrost.com/table-of-contents/">Atomic Design</a> are both recommended reading for anyone working with CSS.</p>
+<p><a name="bestpractices"></a><h2 class="sg-sectionHeading">Best Practices</h2></p>
+<p>There are a number of great resources outlining CSS Best Practices:</p>
 <ul>
 <li><a href="http://tech.tmw.co.uk/code/TMW-frontend-guidelines/#section-css">CSS Guidelines</a></li>
+<li><a href="https://sass-guidelin.es/">Sass Guidelines</a> by <a href="https://hugogiraudel.com/">Hugo Giraudel</a></li>
 <li><a href="http://csswizardry.com/2012/11/code-smells-in-css/">Code Smells in CSS</a></li>
 <li><a href="http://csswizardry.com/2012/07/shoot-to-kill-css-selector-intent/">CSS Specificity</a></li>
 </ul>
-<p><a name="sass"></a></p>
-<h2>Sass</h2>
-<p>We use <a href="http://sass-lang.com/">Sass</a> to compliment how we write our CSS, using it’s features to help make our front-end code more maintainable and to give it better structure.</p>
-<p>Sass has two variants. The most commonly used is known as <strong>SCSS</strong> and is the variant we use on projects at JUST EAT.</p>
-<p>SCSS is a superset of CSS3’s syntax. This means that every valid CSS3 stylesheet is valid SCSS as well. SCSS files use the extension <code>.scss</code>.</p>
-<p>Sass features should only be used where they result in increased clarity and reuse. Care should be taken to ensure that the resulting CSS is not compromised by unnecessary Sass nesting or extending.</p>
-<p><a name="variables"></a></p>
-<h2>Sass Variables</h2>
-<p>We take full advantage of Sass' variables and there are two key files that define project specific variables. These are <code>scss/base/_variables.scss</code> and <code>scss/base/_color-palette.scss</code>.</p>
-<hr>
-<h4><a href="https://github.je-labs.com/I18N-Production-ROTW/ConsumerWeb/tree/master/src/ConsumerWeb/Assets/src/scss/base/_variables.scss">_variables.scss</a></h4>
-<p>This is where any global Sass variables are defined. This includes:</p>
+<p><a name="preprocessors"></a><h2 class="sg-sectionHeading">Preprocessors</h2></p>
+<p>We use a combination of <a href="https://sass-lang.com/">Sass</a> and <a href="https://postcss.org/">PostCSS</a> to author our stylesheets.</p>
+<p>For more information on how we use these tools, check out our documentation sections on <a href="/css/sass">Sass</a> and <a href="/css/postcss">PostCSS</a>.</p>
+<p><a name="progressive"></a><h2 class="sg-sectionHeading">Progressive Enhancement</h2></p>
+<p>We strongly believe in using progressive enhancement so that we can provide a service to as many users as we can.  Those using modern browsers will get the best possible experience, with those on <a href="/general/browser-support">older browsers</a> still able to view and use our site.</p>
+<p>As part of this effort, we strongly recommend using feature detection over browser or UI sniffing.</p>
+<p>Where needed, we use Modernizr to help us do this, and where possible <a href="https://caniuse.com/#feat=css-featurequeries">CSS feature queries via <code>@supports</code></a> (browser support allowing – ironically).</p>
+<p>Resources:</p>
 <ul>
-<li><p><strong>Global typographic styles</strong> — including font choices and typographic scale.</p></li>
-<li><p><strong>Responsive breakpoints</strong> — we try not to target specific devices or device types with these variables.  Instead they should be set with the design in mind.</p>
-<p>Breakpoints included are: <code>$bp-narrow</code>, <code>$bp-mid</code>, <code>$bp-wide</code>, <code>$bp-huge</code> and a few <em>special</em> vars. These include <code>$bp-single-col</code> for when you need your design to break from a single column to multiple columns, and <code>$font-path</code> and <code>$img-path</code> which defines the path to where fonts and images are located in the asset directory.</p></li>
+<li><a href="http://modernizr.com">Modernizr Documentation</a></li>
 </ul>
-<hr>
-<h4><a href="https://github.je-labs.com/I18N-Production-ROTW/ConsumerWeb/tree/master/src/ConsumerWeb/Assets/src/scss/_color-palette.scss">_color-palette.scss</a></h4>
-<p>Text colour, link colours and background colour are all specified here.</p>
-<p>Colours specific to components should be defined at the top of each component scss files, so that should they be removed at a later date, any associated variables aren’t left as redundant in the global color-palette file.</p>
-<p><a name="responsive"></a></p>
-<h2>Responsive</h2>
-<p>As is considered best practice, we develop with a mobile-first approach to our projects.</p>
-<p>On the global platform, we recommend using the <a href="https://include-media.com/">@include-media</a> Sass library. This provides an elegant way to define our media queries in a more readbale way while also hooking into  the <a href="https://github.com/justeat/fozzie/blob/8a1094ae5a467e9e2afd86a4aab62f9ea65b1bee/src/scss/settings/_variables.scss#L65-L72">breakpoint map</a> defined in fozzie's variables.</p>
-<p>When using these mixins, the easiest way to write your media queries is to specify the breakpoint name; the @include-media library will then convert this into a media query with a value in ems to provide a more consistent experience for users that use text zoom.</p>
-<h4>Media query example</h4>
-<pre><code class="language-scss"><span class="hljs-comment">/**
- * Using @include-media you can specify breakpoints
- * using the map key's defined in Fozzie's [breakpoint map](https://github.com/justeat/fozzie/blob/8a1094ae5a467e9e2afd86a4aab62f9ea65b1bee/src/scss/settings/_variables.scss#L65-L72)
- */</span>
-@<span class="hljs-keyword">include</span> media(<span class="hljs-string">'&gt;=mid'</span>) {
-    <span class="hljs-selector-tag">a</span> {
-        <span class="hljs-attribute">color</span>: darkgoldenrod;
-    }
-}
-<span class="hljs-comment">/* Is the same as: */</span>
-@<span class="hljs-keyword">media</span> (min-width: 48em) {
-    <span class="hljs-selector-tag">a</span> {
-        <span class="hljs-attribute">color</span>: darkgoldenrod;
-    }
-}
-</code></pre>
-<h4>Better media query example</h4>
-<p>Rather than having all of your media queries for different widths stored in separate <code>SCSS</code> files or placed at the bottom of each <code>SCSS</code> partial, it is suggested that you make use of Sass' inline media queries.</p>
-<p>This means that all styles related to an element are grouped together, for example:</p>
-<pre><code class="language-scss"><span class="hljs-selector-tag">a</span> {
-    <span class="hljs-attribute">padding</span>: <span class="hljs-number">1em</span>;
-
-    @<span class="hljs-keyword">include</span> media(<span class="hljs-string">'&gt;=mid'</span>) {
-        <span class="hljs-attribute">padding</span>: <span class="hljs-number">2em</span>;
-    }
-}
-</code></pre>
-<p><a name="modernizr"></a></p>
-<h3>Modernizr</h3>
-<p>At JUST EAT, we strongly advocate feature detection over browser or UI sniffing.</p>
-<p>Our minimal framework includes a custom build of Modernizr. To update this with an extra feature test that isn’t already included in our build, ensure you copy the url in the current <a href="https://github.je-labs.com/I18N-Production-ROTW/ConsumerWeb/blob/master/src/ConsumerWeb/Assets/src/js/libs/modernizr.min.js">modernizr.min.js</a> so that the current tests are preserved in the new build.</p>
-<p>For full information on using Modernizr, see <a href="http://modernizr.com">their documentation</a> or see our <a href="/js/#js-modernizr">Javascript documentation</a> to find out where it is included.</p>
                 </div>
             </div>
         </div>
     </div><!-- Close .l-container -->
+            <!--  ==============  -->
+            <!--  === Footer ===  -->
+            <!--  ==============  -->
+            <footer class="sg-footer" role="contentinfo">
+                <div class="l-container text-center">
+                    <p>Fozzie and its associated documentation was created with ❤️ by the UI team at Just Eat.</p>
+                    <hr>
+                    <p>If you want to get in touch about anything mentioned here, feel free to <a href="mailto:ui@just-eat.com">drop us a message</a>!</p>
+                </div>
+            </footer>
 
         <script>
             var mockPaths = {

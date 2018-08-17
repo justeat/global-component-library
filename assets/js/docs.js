@@ -20,13 +20,11 @@ var docs = {
 
     // controls all of our base initialsation functions
     init: function init() {
-
         docs._demoHandler();
         docs._disableDemoLinks();
     },
 
     _demoHandler: function _demoHandler() {
-
         (0, _fDom2.default)('.demo').forEach(function (demoEl) {
             var codeBlock = _fDom2.default.first('.demo-code', demoEl);
 
@@ -51,7 +49,6 @@ var docs = {
     },
 
     _demoToggle: function _demoToggle(event) {
-
         var btn = event.target;
         var codeBlock = btn.nextElementSibling;
         var isHidden = codeBlock.classList.contains('is-hidden');

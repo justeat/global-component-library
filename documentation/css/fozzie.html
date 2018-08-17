@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Photography – Just Eat Front-End Component Library and Documentation</title>
+		<title>Fozzie – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -41,9 +41,9 @@
 			    <input type="checkbox" class="c-nav-trigger" name="menuVisible" id="menu-visible" aria-hidden="true">
 			    <div class="c-nav-container">
 			        <ul class="c-nav-list">
-			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Design Elements</a></li>
-			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/styleguide/ui-components/" class="c-nav-list-link">UI Components</a></li>
-			            <li class="c-nav-list-item"><a href="/documentation/general/" class="c-nav-list-link">Development Docs</a></li>
+			            <li class="c-nav-list-item"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Design Elements</a></li>
+			            <li class="c-nav-list-item"><a href="/styleguide/ui-components/" class="c-nav-list-link">UI Components</a></li>
+			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/documentation/general/" class="c-nav-list-link">Development Docs</a></li>
 			            <!-- <li class="c-nav-list-item"><a href="/performance/" class="c-nav-list-link">Performance Monitoring</a></li> -->
 			        </ul>
 			    </div>
@@ -53,16 +53,16 @@
 	
 <div class="sg-secondaryBar">
     <div class="l-container g">
-        <h2 class="sg-secondaryBar-title g-col g-col--shrink gamma">Design Elements</h2>
+        <h2 class="sg-secondaryBar-title g-col g-col--shrink gamma">CSS Documentation</h2>
 
         <ul class="sg-subnav g-col g g--alignRight g--alignBottom u-unstyled">
-            <li class="sg-subnav-item is-active"><a href="/styleguide/design-elements/colours">Design Elements</a></li>
-    <li class="sg-subnav-item"><a href="/styleguide/ui-components/">UI Components</a></li>
-    <li class="sg-subnav-item"><a href="/styleguide/ui-templates/">UI Templates</a></li>
-    <li class="sg-subnav-item"><a href="/styleguide/js-components/">JS Components</a></li>
-    <li class="sg-subnav-item"><a href="/styleguide/css-utilities/">CSS Utilities</a></li>
-
-        </ul>
+        
+            <li class="sg-subnav-item"><a href="/documentation/general/">General</a></li>
+    <li class="sg-subnav-item is-active"><a href="/documentation/css/">CSS</a></li>
+    <li class="sg-subnav-item"><a href="/documentation/js/">JS</a></li>
+    <li class="sg-subnav-item"><a href="/documentation/images/">Images</a></li>
+    <li class="sg-subnav-item"><a href="/documentation/open-source/">Open source</a></li>
+</ul>
     </div>
 </div>
 
@@ -71,30 +71,33 @@
         <div class="g g--gutter g--stack">
             <div class="g-col g-span2--mid">
                 <ul class="sg-sideNav c-card c-card--rounded c-card--noPad u-unstyled">
-                <!-- subnav for Styleguide > Design Elements -->
-    <li><a href="/styleguide/design-elements/colours" class="">Colours</a></li>
-    <li><a href="/styleguide/design-elements/typography" class="">Typography</a></li>
-    <li><a href="/styleguide/design-elements/icons" class="is-incomplete ">Icons</a></li>
-    <li><a href="/styleguide/design-elements/grid" class="is-incomplete ">Grid</a></li>
-    <li><a href="/styleguide/design-elements/touchtargets" class="is-incomplete ">Touch Target Size</a></li>
-    <li><a href="/styleguide/design-elements/padding" class="is-incomplete ">Padding</a></li>
-    <li><a href="/styleguide/design-elements/colour-rays" class="is-incomplete ">Colour Rays</a></li>
-    <li><a href="/styleguide/design-elements/photography" class="is-incomplete  is-active">Photography</a></li>
-    <li><a href="/styleguide/design-elements/illustrations" class="is-incomplete ">Illustrations</a></li>
-    <li><a href="/styleguide/design-elements/restaurant-logos" class="is-incomplete ">Restaurant Logos</a></li>
-    <li><a href="/styleguide/design-elements/animations" class="is-incomplete ">Animations &amp; Transitions</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <!-- subnav for Documentation > CSS -->
+    <li><a href="/documentation/css/" class="">Principles</a>
+    </li>
+    <li><a href="/documentation/css/sass" class="">Sass</a>
+    </li>
+    <li><a href="/documentation/css/css-naming" class="">Naming</a>
+    </li>
+    <li><a href="/documentation/css/fozzie" class=" is-active">Fozzie</a>
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#modules">Modules</a></li>
+            <li><a href="#import">Importing Fozzie Modules</a></li>
+        </ul>
+    </li>
+    <li><a href="/documentation/css/structure" class="">Structure</a>
+    </li>
 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
                 
                 
                 
@@ -116,9 +119,40 @@
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
-                    <h1>Photography</h1>
-<h2>Title</h2>
-<p>Some info about our use of photography</p>
+                    <h1>Fozzie</h1>
+<p>Fozzie is Just Eat's UI Component Framework, built to help modularise and share the UI code we write across all of our teams at Just Eat.</p>
+<p>Fozzie encompasses a number of modules developed by our UI team, which can be split roughly into four categories:</p>
+<ul>
+<li><strong>The Base <a href="https://github.com/justeat/fozzie">Fozzie Module</a></strong><br>
+The shared base Fozzie module gives a base set of styling and helper functions to any Just Eat project.</li>
+<li><strong>Shared Components</strong><br>
+A component made up of HTML, Sass and JS that can be reused across projects. e.g. site navigation, footer and modal components.</li>
+<li><strong>Shared JavaScript Modules</strong><br>
+Modules that just contain JS (much like any reusable NPM module). e.g. Common shared JS for features such as form validation, analytics or logging.</li>
+<li><strong>Tooling</strong><br>
+Modules that help share our tooling across projects. e.g. build modules (gulp/webpack), linting configurations, JS test helpers etc.</li>
+</ul>
+<p><a name="modules"></a><h2 class="sg-sectionHeading">Modules</h2></p>
+<p>To see the current list of public Fozzie modules, take a look on <a href="https://github.com/search?q=topic%3Afozzie+org%3Ajusteat&amp;type=Repositories">our public Github account</a>.</p>
+<p><a name="import"></a><h2 class="sg-sectionHeading">Importing Fozzie Modules</h2></p>
+<p>To help with importing fozzie SCSS styles, we use a tool called <a href="https://github.com/sass-eyeglass/eyeglass"><strong>Eyeglass</strong></a>.</p>
+<p>Essentially, Eyeglass lets us import modules in our Sass by referencing the name of the module, rather than having to provide absolute paths into the <code>node_modules</code> folder.</p>
+<p>For example, say you have a project and want to include the base fozzie module in your Sass build, you can do the following:</p>
+<ol>
+<li>Install the base module using NPM or Yarn.</li>
+</ol>
+<pre><code>yarn <span class="hljs-keyword">add</span><span class="bash"> @justeat/fozzie
+</span></code></pre>
+<ol start="2">
+<li><p>Setup Eyeglass.</p>
+<p>If you are using the <a href="https://www.npmjs.com/package/@justeat/gulp-build-fozzie">fozzie gulp build tasks</a>, then Eyeglass is automatically ready to use as part of the Sass compilation task.</p>
+<p>If not, then check out these integration recipes for <a href="https://github.com/sass-eyeglass/eyeglass/blob/master/site-src/docs/integrations/gulp.md">Gulp</a> and <a href="https://github.com/sass-eyeglass/eyeglass/issues/153#issuecomment-300895607">WebPack</a>.</p></li>
+<li><p>Within your project Sass files, you will then be able to import the base fozzie module like so:</p></li>
+</ol>
+<pre><code>@<span class="hljs-keyword">import</span> <span class="hljs-string">'fozzie'</span>;
+</code></pre>
+<p>When your Sass is compiled, it will include the Sass from the fozzie module as well.</p>
+<p>If you want to check what <code>@import</code> keyword you need to include to import a module, you can check out the <a href="https://github.com/justeat/fozzie/blob/master/package.json#L51-L60">Eyeglass config</a> which is located in each modules <code>package.json</code>.</p>
                 </div>
             </div>
         </div>

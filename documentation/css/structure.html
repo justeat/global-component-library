@@ -40,11 +40,12 @@
 			    </label>
 			    <input type="checkbox" class="c-nav-trigger" name="menuVisible" id="menu-visible" aria-hidden="true">
 			    <div class="c-nav-container">
-			    	<ul class="c-nav-list">
-			    		<li class="c-nav-list-item"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Styleguide &amp; Components</a></li>
-			    		<li class="c-nav-list-item c-nav-list-item--active"><a href="/documentation/general/" class="c-nav-list-link">Documentation</a></li>
-			    		<li class="c-nav-list-item"><a href="/performance/" class="c-nav-list-link">Performance Monitoring</a></li>
-			    	</ul>
+			        <ul class="c-nav-list">
+			            <li class="c-nav-list-item"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Design Elements</a></li>
+			            <li class="c-nav-list-item"><a href="/styleguide/ui-components/" class="c-nav-list-link">UI Components</a></li>
+			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/documentation/general/" class="c-nav-list-link">Development Docs</a></li>
+			            <!-- <li class="c-nav-list-item"><a href="/performance/" class="c-nav-list-link">Performance Monitoring</a></li> -->
+			        </ul>
 			    </div>
 			</nav>
 		</div>
@@ -65,10 +66,7 @@
     </div>
 </div>
 
-	    <div class="sg-wip">
-        <h2 class="l-container">This page of the docs needs to be reviewed and is a work in progress.<br> Don’t believe anything that it says!</h2>
-    </div>
-
+	
     <div class="l-container sg-page">
         <div class="g g--gutter g--stack">
             <div class="g-col g-span2--mid">
@@ -85,9 +83,20 @@
                 
                 
                 <!-- subnav for Documentation > CSS -->
-    <li><a href="/documentation/css/" class="">Principles</a></li>
-    <li><a href="/documentation/css/css-naming" class="">Naming</a></li>
-    <li><a href="/documentation/css/structure" class=" is-active">Structure</a></li>
+    <li><a href="/documentation/css/" class="">Principles</a>
+    </li>
+    <li><a href="/documentation/css/sass" class="">Sass</a>
+    </li>
+    <li><a href="/documentation/css/css-naming" class="">Naming</a>
+    </li>
+    <li><a href="/documentation/css/fozzie" class="">Fozzie</a>
+    </li>
+    <li><a href="/documentation/css/structure" class=" is-active">Structure</a>
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#folder-structure">SCSS Folder structure</a></li>
+            <li><a href="#key-files">Key files</a></li>
+        </ul>
+    </li>
 
                 
                 
@@ -111,79 +120,83 @@
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
                     <h1>CSS Structure</h1>
-<p>Rather than use large frameworks such as Bootstrap or Zend, we maintain our own minimal framework which is loosely based on <a href="http://trykickoff.github.io/">Kickoff</a>.</p>
-<p>This minimal approach has two goals; to provide clear structure and to define CSS conventions – such as a consistent naming scheme – to which the development team should adhere to.</p>
+<p>Every fozzie module shares the same Sass structure to help keep consistency when moving between working on modules.</p>
+<p>The main goals of this structure are to provide clear structure and to define CSS conventions to which the development team should adhere to (such as a consistent naming scheme).</p>
 <p>Our Sass files are structured so that it is clear which styles are defined as base styles – intended to be extended upon – and which styles are the components or modules that extend this base styling.</p>
-<p>The <code>scss</code> folder contains the following directories:</p>
+<p><a name="folder-structure"></a><h2 class="sg-sectionHeading">SCSS Folder structure</h2></p>
+<p>Our SCSS structure builds on ideas discussed in methodologies such as <a href="https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/">ITCSS</a> and <a href="https://smacss.com/">SMACSS</a>.</p>
+<p>The <code>scss</code> folder in each module is structured as follows:</p>
 <pre><code>scss
 ┣ base
-┃ ┗ <span class="hljs-string">[...]</span>
-┣ functions
-┃ ┗ <span class="hljs-string">[...]</span>
-┣ mixins
-┃ ┗ <span class="hljs-string">[...]</span>
-┣ partials
-┃ ┣ <span class="hljs-string">[...]</span>
-┃ ┗ components
-┃   ┗ <span class="hljs-string">[...]</span>
-┃ ┗ modules
-┃   ┗ <span class="hljs-string">[...]</span>
-┣ views
-┃ ┗ <span class="hljs-string">[...]</span>
+┃ ┗ [<span class="hljs-built_in">..</span>.]
+┣ components
+┃ ┗ [<span class="hljs-built_in">..</span>.]
+┣ objects
+┃ ┗ [<span class="hljs-built_in">..</span>.]
+┣<span class="hljs-built_in"> settings
+</span>┃ ┗ [<span class="hljs-built_in">..</span>.]
+┣ tools
+┃ ┗ [<span class="hljs-built_in">..</span>.]
+┣ trumps
+┃ ┗ [<span class="hljs-built_in">..</span>.]
 </code></pre>
-<hr>
-<h3>/base</h3>
-<p>The <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/base">base</a> folder is where the styles that make up the foundation of the project are defined.  For example, <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/base/_reset.scss">reset</a> and <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/base/_typography.scss">typographic</a> styles are defined here, as are files containing globally relevant <a href="](https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/base/_variables.scss)">CSS variables</a> and <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/base/_color-palette.scss">colors</a>.</p>
-<hr>
-<h3>/partials</h3>
-<p>The <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials">partials</a> folder contains two folders; <code>/components</code> and <code>/modules</code>.</p>
-<p>The <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/components/">components</a> folder is for defining CSS that is used to style common HTML tags such as <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/components/_buttons.scss">buttons</a>, <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/components/_forms.scss">form elements</a> or the project <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/components/_grid.scss">grid</a>.</p>
-<p>The <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/modules">modules</a> folder is where components that would be specific to the project are located, such as <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/modules/_nav.scss">navigation</a> and <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/modules/_social-login.scss">social-login</a>.</p>
-<p><strong>Please <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/partials/">browse through</a> the included partials to see what is already defined before adding your own</strong>.</p>
-<hr>
-<h3>/views</h3>
-<p>The <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/views">views</a> folder should contain view-specific styles that don't fit into their own module.  Think <code>_home.scss</code> or <code>_search-results.scss</code> for example.</p>
-<p>Ideally, view specific markup should be kept to a minimum, as it is usually very specific and therefore non-reusable.  It is better to try to develop with components in mind, creating or extending existing components where possible.</p>
-<hr>
-<h3>/mixins</h3>
-<p>The <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/mixins/">mixins</a> folder contains mixins that help with repetitive CSS tasks.</p>
-<p>Amongst others, <code>_responsive.scss</code> contains media query mixins (<a href="#responsive">read below</a> for more info on this), <code>_alerts.scss</code> contains mixins for working with alerts and <code>_utility.scss</code> has a bunch of helpful mixins. For example, the <code>@include font-size()</code> mixin allows tou to specify your font sizes as a <code>px</code> value but output values for both <code>rem</code> and <code>px</code> in your compiled styles.</p>
-<hr>
-<h3>/functions</h3>
-<p>The <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/functions/">functions</a> folder contains various Sass functions that are used in the base framework that you might find useful.</p>
-<hr>
-<h3>Important files</h3>
-<p>It’s important to become familiar with <strong>all of these files</strong> so that you can make full use of the framework.</p>
-<h4><a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/je.scss">je.scss</a> &amp; <a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/je-old-ie.scss">je-old-ie.scss</a></h4>
-<p>All roads lead to here. These files are compiled to associated CSS files by Gulp. Inspecting the source of these files reveals only one <code>@import</code>; for <code>_dependencies.scss</code>. Both files require the exact same dependencies so it made sense to extract all of those into another partial.</p>
-<ul>
-<li><p><code>je.scss</code> is compiled to <code>/assets/dist/css/je.css</code> which is used by Internet Explorer 9+, Chrome, Safari, Firefox and Opera.</p></li>
-<li><p><code>je-old-ie.scss</code> is compiled to <code>/assets/dist/css/je-old-ie.css</code> and is used by Internet Explorer 8 and below only.</p>
-<p>These browsers do not support media queries and so rather than having old IE show mobile-first styles (which would suck), we serve them a slightly different CSS file instead. We use some clever Sass mixins to determine what CSS should be served – <a href="#responsive">see below</a> for more details on this.</p></li>
-</ul>
-<h4>The stylesheets are then added to HTML using the code below</h4>
-<pre><code class="language-markup"><span class="hljs-comment">&lt;!--[if lte IE 8]&gt;
-    &lt;link rel="stylesheet" href="/assets/dist/css/je-old-ie.css"&gt;
-&lt;![endif]--&gt;</span>
-<span class="hljs-comment">&lt;!--[if gt IE 8]&gt;&lt;!--&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/assets/dist/css/je.css"</span>&gt;</span>
-<span class="hljs-comment">&lt;!--&lt;![endif]--&gt;</span>
-</code></pre>
-<hr>
-<h4><a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/_dependencies.scss">_dependencies.scss</a></h4>
-<p>This file is where all of the projects Sass dependencies are defined. It imports all of the scss files that will be compiled into your project.</p>
-<p>If you need to add or remove a file, do it here. The order of the imported files is the same order that the CSS will be compiled to.</p>
-<hr>
-<h4><a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/_global.scss">_global.scss</a> – located in the <code>/base</code> folder</h4>
-<p>This file contains all global styles that do not obviously fit within any other scss partial. For example, we include our body's background styles and the main <code>.l-container</code> styles.</p>
-<p><strong>Try not to fill this up with all your styles though.</strong>  Your Sass should be written in a modular way, and so the majority of your Sass should be organised within the <code>partials</code> or <code>views</code> folders.</p>
-<hr>
-<h4><a href="https://github.je-labs.com/ICP/app_consumerweb/tree/master/src/ConsumerWeb/Assets/src/scss/_helper-classes.scss">_helper-classes.scss</a> – located in the <code>/base</code> folder</h4>
-<p>This file contains a bunch of helper styles, like <code>.u-clearfix</code> (for clearing floats), <code>.ir</code> for using background image replacement, <code>.is-hidden</code> etc.</p>
+<p>To see the structure of the SCSS directory in the base fozzie module, <a href="https://github.com/justeat/fozzie/tree/master/src/scss">check it out on github</a>.</p>
+<p><h3 class="sg-sectionHeading">Base</h3></p>
+<p>The <a href="https://github.com/justeat/fozzie/tree/master/src/scss/base">base folder</a> is where the styles that make up the foundation of the module are defined.</p>
+<p>For example, typographic styles can be defined here, as can base layout, reset and print styles.</p>
+<p>n.b. We use <a href="https://github.com/justeat/fozzie/blob/2af7b82242549e5662cb675b813c211b84127d0e/src/scss/_dependencies.scss#L36">Normalise.css</a> over a standard reset stylesheet, but styles that are needed on top of this to 'reset' element styling can be added in a module's reset file here.</p>
+<p><h3 class="sg-sectionHeading">Components</h3></p>
+<p>The <a href="https://github.com/justeat/fozzie/tree/master/src/scss/components">components folder</a> should be used to define custom component styles specific to that module.  In the fozzie base module, this includes components such as alerts, breadcrumbs and rating components, among others.</p>
+<p>Component filenames should closely relate to their component name. So a component of <code>c-rating</code> should have its styles in a file called <code>_ratings.scss</code></p>
+<p>To see a list of all currently documented fozzie components, check out the <a href="/styleguide/ui-components/">UI Components</a> section of our documentation.</p>
+<p><h3 class="sg-sectionHeading">Objects</h3></p>
+<p>The definition of an object (in our framework) is any component that can be directly linked to a native HTML element.</p>
+<p>Therefore the <a href="https://github.com/justeat/fozzie/tree/master/src/scss/objects">objects folder</a> will include style definitions for buttons, form elements and links among other native element styling.</p>
+<p>It's likely that most of the object definitions should be included in the base fozzie module, as components such as buttons and form elements should be consistent across our projects.</p>
+<p><h3 class="sg-sectionHeading">Settings</h3></p>
+<p>The <a href="https://github.com/justeat/fozzie/tree/master/src/scss/settings">settings directory</a> should contain anything that is 'set' across your modules styles.</p>
+<p>The most common example of this is CSS variables, such as font-sizes, grid settings and breakpoint definitions.</p>
+<p><h3 class="sg-sectionHeading">Tools</h3></p>
+<p>The <a href="https://github.com/justeat/fozzie/tree/master/src/scss/tools">tools folder</a> is where global mixins and functions are located.</p>
+<p>If you pull in styles from a 3rd party library (such as PrismJS which is used for code highlighting) then these should also be located in this folder.</p>
+<p>For more detail on the mixins and functions available in fozzie, check out the <a href="/styleguide/css-utilities/">CSS Utilities</a> section of these docs.</p>
+<p><h3 class="sg-sectionHeading">Trumps</h3></p>
+<p>Utilities and helper classes which should have the ability to override anything before it in the cascade. Examples include responsive helper classes (i.e. <code>u-showBelowNarrow</code>) or display utility classes (i.e. <code>is-hidden</code> or <code>is-visuallyHidden</code>).</p>
+<p>For a full list of the available CSS utilities in fozzie, check out the <a href="/styleguide/css-utilities/">CSS Utilities</a> section of these docs.</p>
+<p><a name="key-files"></a><h2 class="sg-sectionHeading">Key files</h2></p>
+<p>Within the base fozzie module, there are a few key files that if you want to contribute back into fozzie, it's worth understanding.</p>
+<p><h3 class="sg-sectionHeading"><a href="https://github.com/justeat/fozzie/blob/master/src/scss/fozzie.scss"><strong>fozzie.scss</strong></a></h3></p>
+<p>This is the base Sass file of the fozzie module.  When using <a href="/documentation/css/fozzie#import">Eyeglass</a>, this is the root of the module that gets pulled into your project.</p>
+<p><h3 class="sg-sectionHeading"><a href="https://github.com/justeat/fozzie/blob/master/src/scss/_dependencies.scss"><strong>_dependencies.scss</strong></a></h3></p>
+<p>This file is where all of the modules Sass dependencies are defined. It imports all of the scss files that will be compiled into the base fozzie module.</p>
+<p>If you need to add or remove a dependency, do it here. The order of the imported files is the same order that the CSS will be compiled to, and if this order is particularly important, make sure to include comments saying this.</p>
+<p><h3 class="sg-sectionHeading"><a href="https://github.com/justeat/fozzie/blob/master/src/scss/settings/_variables.scss"><strong>/settings/_variables.scss</strong></a></h3></p>
+<p>Located in the <code>/settings</code> folder, this file contains any variables that could be needed across any component.</p>
+<p>Examples include the font-size and breakpoint maps, font-family declarations, spacing and z-index helper variables and image paths.</p>
+<p>N.b. Any variable that isn't considered useful to multiple components should instead be included at the top of the component file it's used in - not in this variables file.</p>
+<p><h3 class="sg-sectionHeading"><a href="https://github.com/justeat/fozzie/blob/master/src/scss/base/_layout.scss"><strong>/base/_layout.scss</strong></a></h3></p>
+<p>This file contains layout styles which are shared across projects or components (and don't obviously fit within one specific component).</p>
+<p>For example, we include the <code>body</code> background styles and the default layout container <code>.l-container</code> styles in this file.</p>
+<p>Layout class helpers should also be included in this file and prefixed with <code>l-</code> (e.g. <code>l-divider</code> which adds a border to the bottom of elements).</p>
+<p><h3 class="sg-sectionHeading"><a href="https://github.com/justeat/fozzie/blob/master/src/scss/base/_typography.scss"><strong>/base/_typography.scss</strong></a></h3></p>
+<p>This file contains the fozzie default typographic styles.</p>
+<p>This includes styles for setting the base font-size of the project and definitions for headings, paragraphs, blockquotes etc.</p>
+<p><h3 class="sg-sectionHeading"><a href="https://github.com/justeat/fozzie/blob/master/src/scss/trumps/_utilities.scss"><strong>/trumps/_utilities.scss</strong></a></h3></p>
+<p>Located in the <code>/trumps</code> folder, this file contains a bunch of utility classes such as <code>.u-unstyled</code> (to unstyle list elements), <code>.u-ir</code> for background image replacement, <code>.is-hidden</code> and <code>is-visuallyHidden</code> for hiding elements with accessibility in mind etc.</p>
                 </div>
             </div>
         </div>
     </div><!-- Close .l-container -->
+            <!--  ==============  -->
+            <!--  === Footer ===  -->
+            <!--  ==============  -->
+            <footer class="sg-footer" role="contentinfo">
+                <div class="l-container text-center">
+                    <p>Fozzie and its associated documentation was created with ❤️ by the UI team at Just Eat.</p>
+                    <hr>
+                    <p>If you want to get in touch about anything mentioned here, feel free to <a href="mailto:ui@just-eat.com">drop us a message</a>!</p>
+                </div>
+            </footer>
 
         <script>
             var mockPaths = {

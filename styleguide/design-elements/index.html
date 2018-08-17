@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Component Library – Just Eat Front-End Component Library and Documentation</title>
+		<title>Design Elements – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -40,11 +40,12 @@
 			    </label>
 			    <input type="checkbox" class="c-nav-trigger" name="menuVisible" id="menu-visible" aria-hidden="true">
 			    <div class="c-nav-container">
-			    	<ul class="c-nav-list">
-			    		<li class="c-nav-list-item"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Styleguide &amp; Components</a></li>
-			    		<li class="c-nav-list-item"><a href="/documentation/general/" class="c-nav-list-link">Documentation</a></li>
-			    		<li class="c-nav-list-item"><a href="/performance/" class="c-nav-list-link">Performance Monitoring</a></li>
-			    	</ul>
+			        <ul class="c-nav-list">
+			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Design Elements</a></li>
+			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/styleguide/ui-components/" class="c-nav-list-link">UI Components</a></li>
+			            <li class="c-nav-list-item"><a href="/documentation/general/" class="c-nav-list-link">Development Docs</a></li>
+			            <!-- <li class="c-nav-list-item"><a href="/performance/" class="c-nav-list-link">Performance Monitoring</a></li> -->
+			        </ul>
 			    </div>
 			</nav>
 		</div>
@@ -55,7 +56,12 @@
         <h2 class="sg-secondaryBar-title g-col g-col--shrink gamma"></h2>
 
         <ul class="sg-subnav g-col g g--alignRight g--alignBottom u-unstyled">
-        
+            <li class="sg-subnav-item is-active"><a href="/styleguide/design-elements/colours">Design Elements</a></li>
+    <li class="sg-subnav-item"><a href="/styleguide/ui-components/">UI Components</a></li>
+    <li class="sg-subnav-item"><a href="/styleguide/ui-templates/">UI Templates</a></li>
+    <li class="sg-subnav-item"><a href="/styleguide/js-components/">JS Components</a></li>
+    <li class="sg-subnav-item"><a href="/styleguide/css-utilities/">CSS Utilities</a></li>
+
         </ul>
     </div>
 </div>
@@ -65,7 +71,19 @@
         <div class="g g--gutter g--stack">
             <div class="g-col g-span2--mid">
                 <ul class="sg-sideNav c-card c-card--rounded c-card--noPad u-unstyled">
-                
+                <!-- subnav for Styleguide > Design Elements -->
+    <li><a href="/styleguide/design-elements/colours" class="">Colours</a></li>
+    <li><a href="/styleguide/design-elements/typography" class="">Typography</a></li>
+    <li><a href="/styleguide/design-elements/icons" class="is-incomplete ">Icons</a></li>
+    <li><a href="/styleguide/design-elements/grid" class="is-incomplete ">Grid</a></li>
+    <li><a href="/styleguide/design-elements/touchtargets" class="is-incomplete ">Touch Target Size</a></li>
+    <li><a href="/styleguide/design-elements/padding" class="is-incomplete ">Padding</a></li>
+    <li><a href="/styleguide/design-elements/colour-rays" class="is-incomplete ">Colour Rays</a></li>
+    <li><a href="/styleguide/design-elements/photography" class="is-incomplete ">Photography</a></li>
+    <li><a href="/styleguide/design-elements/illustrations" class="is-incomplete ">Illustrations</a></li>
+    <li><a href="/styleguide/design-elements/restaurant-logos" class="is-incomplete ">Restaurant Logos</a></li>
+    <li><a href="/styleguide/design-elements/animations" class="is-incomplete ">Animations &amp; Transitions</a></li>
+
                 
                 
                 
@@ -84,16 +102,8 @@
                 
                 </ul>
                 
-                    <!-- <li><a href="/process/gulp.html" class="is-active" data-trak='{"category":"Docs nav","action":"Grunt"}'>Gulp</a>
-                        <ul class="sg-sideNav-subnav unstyled">
-            <li><a href="#gulp-setup">Setup</a></li>
-            <li><a href="#gulp-vs">Using Gulp in VS</a></li>
-            <li><a href="#gulp-cmd">Using Gulp on Command Line</a></li>
-            <li><a href="#gulp-tasks">Gulp Tasks</a></li>
-            <li><a href="#gulp-config">Config</a></li>
-            <li><a href="#gulp-taskindex">Task index</a></li>
-        </ul>
-    </li>
+                    <!-- <li><a href="/process/gulp.html" data-trak='{"category":"Docs nav","action":"Grunt"}'>Gulp</a>
+                    </li>
                     <li><a href="/css/" data-trak='{"category":"Docs nav","action":"CSS"}'>CSS</a>
                     </li>
                     <li><a href="/js/" data-trak='{"category":"Docs nav","action":"Javascript"}'>Javascript</a>
@@ -106,381 +116,21 @@
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
-                    <h1>Component Library</h1>
-<pre><code>&lt;!-- Logo --&gt;
-&lt;div class=&quot;sg-page&quot;&gt;
-    &lt;div class=&quot;l-container&quot;&gt;
-        &lt;h2 class=&quot;sg-sectionHeading&quot;&gt;Logos&lt;/h2&gt;
-        &lt;div class=&quot;sg-logos&quot;&gt;
-            &lt;h3&gt;Large – Red&lt;/h3&gt;
-            &lt;img alt=&quot;JUST EAT&quot; src=&quot;/assets/dist/img/logos/je-logo-large.png&quot; title=&quot;JUST EAT&quot;&gt;
-            &lt;h3&gt;Small – Red&lt;/h3&gt;
-            &lt;img alt=&quot;JUST EAT&quot; src=&quot;/assets/dist/img/logos/just-eat-logo.png&quot; title=&quot;JUST EAT&quot;&gt;
-            &lt;h3&gt;Large – White&lt;/h3&gt;
-            &lt;img alt=&quot;JUST EAT&quot; src=&quot;/assets/dist/img/logos/je-whiteout-retina.png&quot; title=&quot;JUST EAT&quot;&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;!-- Swatches --&gt;
-&lt;div class=&quot;sg-page&quot;&gt;
-    &lt;div class=&quot;l-container&quot;&gt;
-        &lt;h2 class=&quot;sg-sectionHeading&quot;&gt;Swatches&lt;/h2&gt;
-
-        &lt;ul class=&quot;g g--gutter&quot;&gt;
-            &lt;li class=&quot;g-col g-span6 g-span4--mid&quot;&gt;
-                &lt;div class=&quot;sg-swatch sg-color-primary&quot;&gt;
-                    &lt;div class=&quot;sg-swatch-color&quot;&gt;&lt;/div&gt;
-                    &lt;code&gt;$color-primary&lt;/code&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;g-col g-span6 g-span4--mid&quot;&gt;
-                &lt;div class=&quot;sg-swatch sg-color-secondary&quot;&gt;
-                    &lt;div class=&quot;sg-swatch-color&quot;&gt;&lt;/div&gt;
-                    &lt;code&gt;$color-secondary&lt;/code&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;g-col g-span6 g-span4--mid&quot;&gt;
-                &lt;div class=&quot;sg-swatch sg-color-highlight&quot;&gt;
-                    &lt;div class=&quot;sg-swatch-color&quot;&gt;&lt;/div&gt;
-                    &lt;code&gt;$color-highlight&lt;/code&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;g-col g-span6 g-span4--mid&quot;&gt;
-                &lt;div class=&quot;sg-swatch sg-color-text&quot;&gt;
-                    &lt;div class=&quot;sg-swatch-color&quot;&gt;&lt;/div&gt;
-                    &lt;code&gt;$color-text&lt;/code&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;g-col g-span6 g-span4--mid&quot;&gt;
-                &lt;div class=&quot;sg-swatch sg-color-background&quot;&gt;
-                    &lt;div class=&quot;sg-swatch-color&quot;&gt;&lt;/div&gt;
-                    &lt;code&gt;$color-bg&lt;/code&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;g-col g-span6 g-span4--mid&quot;&gt;
-                &lt;div class=&quot;sg-swatch sg-color-border&quot;&gt;
-                    &lt;div class=&quot;sg-swatch-color&quot;&gt;&lt;/div&gt;
-                    &lt;code&gt;$color-border&lt;/code&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;g-col g-span6 g-span4--mid&quot;&gt;
-                &lt;div class=&quot;sg-swatch sg-color-link&quot;&gt;
-                    &lt;div class=&quot;sg-swatch-color&quot;&gt;&lt;/div&gt;
-                    &lt;code&gt;$color-link-default&lt;/code&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;g-col g-span6 g-span4--mid&quot;&gt;
-                &lt;div class=&quot;sg-swatch sg-color-link-hover&quot;&gt;
-                    &lt;div class=&quot;sg-swatch-color&quot;&gt;&lt;/div&gt;
-                    &lt;code&gt;$color-link-hover&lt;/code&gt;
-                &lt;/div&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;!-- Typography --&gt;
-&lt;div class=&quot;sg-page&quot;&gt;
-    &lt;div class=&quot;l-container&quot;&gt;
-        &lt;h2 class=&quot;sg-sectionHeading&quot;&gt;Typography&lt;/h2&gt;
-
-        &lt;!-- Headings --&gt;
-        &lt;h3 class=&quot;sg-interfaceType sg-interfaceType--subtle&quot;&gt;Primary typeface&lt;/h3&gt;
-        &lt;div class=&quot;g g--gutter&quot;&gt;
-            &lt;div class=&quot;g-span4--mid g-col sg-typeSpecimen sg-typeSpecimen--primary sg-typeSpecimen--giant&quot;&gt;
-                ABC
-            &lt;/div&gt;
-
-            &lt;div class=&quot;g-span8--mid g-col&quot;&gt;
-                &lt;div class=&quot;sg-typeSpecimen sg-typeSpecimen--primary&quot;&gt;ABCDEFGHIJKLMNOPQRSTUVWXYZ &lt;br&gt;
-                    abcdefghijklmnopqrstuvwxyz &lt;br&gt;
-                    0123456789 (.,:;?!£$@*&amp;)
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;!-- Body --&gt;
-        &lt;h3 class=&quot;sg-interfaceType sg-interfaceType--subtle&quot;&gt;Secondary typeface&lt;/h3&gt;
-        &lt;div class=&quot;g g--gutter&quot;&gt;
-            &lt;div class=&quot;g-span4--mid g-col sg-typeSpecimen sg-typeSpecimen--secondary sg-typeSpecimen--giant&quot;&gt;
-                ABC
-            &lt;/div&gt;
-
-            &lt;div class=&quot;g-span8--mid g-col&quot;&gt;
-                &lt;div class=&quot;sg-typeSpecimen sg-typeSpecimen--secondary&quot;&gt;ABCDEFGHIJKLMNOPQRSTUVWXYZ &lt;br&gt;
-                    abcdefghijklmnopqrstuvwxyz &lt;br&gt;
-                    0123456789 (.,:;?!£$@*&amp;)
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;!-- Add any more that you need --&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;!-- Typography examples --&gt;
-&lt;div class=&quot;sg-page&quot;&gt;
-    &lt;div class=&quot;l-container&quot;&gt;
-        &lt;h2 class=&quot;sg-sectionHeading&quot;&gt;Typography examples&lt;/h2&gt;
-        &lt;div class=&quot;g g--gutter&quot;&gt;
-            &lt;div class=&quot;g-span6 g-col&quot;&gt;
-                &lt;h3 class=&quot;sg-interfaceType sg-interfaceType--subtle&quot;&gt;Headings&lt;/h3&gt;
-                &lt;h1&gt;Heading 1&lt;/h1&gt;
-                &lt;h2&gt;Heading 2&lt;/h2&gt;
-                &lt;h3&gt;Heading 3&lt;/h3&gt;
-                &lt;h4&gt;Heading 4&lt;/h4&gt;
-                &lt;h5&gt;Heading 5&lt;/h5&gt;
-                &lt;h6&gt;Heading 6&lt;/h6&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;g-span6 g-col&quot;&gt;
-                &lt;h3 class=&quot;sg-interfaceType sg-interfaceType--subtle&quot;&gt;Paragraphs&lt;/h3&gt;
-                &lt;p&gt;Donec sed odio dui. Curabitur &lt;a href=&quot;&quot;&gt;blandit tempus&lt;/a&gt; porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur &lt;b&gt;purus sit amet fermentum&lt;/b&gt;.&lt;/p&gt;
-                &lt;p&gt;Donec sed odio dui. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum.&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;h3 class=&quot;sg-interfaceType sg-interfaceType--subtle&quot;&gt;Typeface sizes&lt;/h3&gt;
-        &lt;div class=&quot;g g--gutter&quot;&gt;
-            &lt;div class=&quot;g-span6 g-col&quot;&gt;
-                &lt;div class=&quot;sg-type sg-type-smaller&quot;&gt;&lt;div class=&quot;sg-type-item&quot;&gt;Example text&lt;/div&gt; &lt;code&gt;$type-smaller&lt;/code&gt;&lt;/div&gt;
-                &lt;div class=&quot;sg-type sg-type-small&quot;&gt;&lt;div class=&quot;sg-type-item&quot;&gt;Example text&lt;/div&gt; &lt;code&gt;$type-small&lt;/code&gt;&lt;/div&gt;
-                &lt;div class=&quot;sg-type sg-type-base&quot;&gt;&lt;div class=&quot;sg-type-item&quot;&gt;Example text&lt;/div&gt; &lt;code&gt;$type-base&lt;/code&gt;&lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;g-span6 g-col&quot;&gt;
-                &lt;div class=&quot;sg-type sg-type-large&quot;&gt;&lt;div class=&quot;sg-type-item&quot;&gt;Example text&lt;/div&gt; &lt;code&gt;$type-large&lt;/code&gt;&lt;/div&gt;
-                &lt;div class=&quot;sg-type sg-type-larger&quot;&gt;&lt;div class=&quot;sg-type-item&quot;&gt;Example text&lt;/div&gt; &lt;code&gt;$type-larger&lt;/code&gt;&lt;/div&gt;
-                &lt;div class=&quot;sg-type sg-type-largest&quot;&gt;&lt;div class=&quot;sg-type-item&quot;&gt;Example text&lt;/div&gt; &lt;code&gt;$type-largest&lt;/code&gt;&lt;/div&gt;
-                &lt;div class=&quot;sg-type sg-type-jumbo&quot;&gt;&lt;div class=&quot;sg-type-item&quot;&gt;Example text&lt;/div&gt; &lt;code&gt;$type-jumbo&lt;/code&gt;&lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;h3 class=&quot;sg-interfaceType sg-interfaceType--subtle&quot;&gt;Blockquote&lt;/h3&gt;
-        &lt;blockquote&gt;
-            &lt;p&gt;Of all the gin joints in all the towns in all the world, she walks into mine.&lt;/p&gt;
-            &lt;small&gt;Rick Blaine&lt;/small&gt;
-        &lt;/blockquote&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;!-- Components --&gt;
-&lt;div class=&quot;sg-page&quot;&gt;
-    &lt;div class=&quot;l-container&quot;&gt;
-        &lt;h2 class=&quot;sg-sectionHeading&quot;&gt;Components&lt;/h2&gt;
-
-        &lt;h3 class=&quot;sg-interfaceType sg-interfaceType--subtle&quot;&gt;Buttons&lt;/h3&gt;
-        &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Normal button&lt;/a&gt;
-        &lt;br&gt;
-        &lt;br&gt;
-        &lt;a href=&quot;#&quot; class=&quot;btn btn--primary&quot;&gt;Primary button&lt;/a&gt;
-
-
-    &lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;!-- Forms --&gt;
-&lt;div class=&quot;sg-page&quot;&gt;
-    &lt;div class=&quot;l-container&quot;&gt;
-        &lt;h2 class=&quot;sg-sectionHeading&quot;&gt;Form elements&lt;/h2&gt;
-
-        &lt;form action=&quot;#&quot; class=&quot;form form--horizontal&quot;&gt;
-            &lt;fieldset class=&quot;form-fieldset&quot;&gt;
-                &lt;div class=&quot;form-controlGroup&quot;&gt;
-                    &lt;label for=&quot;text&quot; class=&quot;form-label&quot;&gt;Text&lt;/label&gt;
-                    &lt;div class=&quot;form-controlGroup-inputWrapper&quot;&gt;
-                        &lt;input type=&quot;text&quot; id=&quot;text&quot; placeholder=&quot;Joe Bloggs&quot; class=&quot;form-input&quot; required/&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;form-controlGroup&quot;&gt;
-                    &lt;label for=&quot;comments&quot; class=&quot;form-label&quot;&gt;Textarea&lt;/label&gt;
-                    &lt;div class=&quot;form-controlGroup-inputWrapper&quot;&gt;
-                        &lt;textarea id=&quot;comments&quot; rows=&quot;3&quot; cols=&quot;50&quot; class=&quot;form-input form-input--textarea&quot;&gt;&lt;/textarea&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;form-controlGroup&quot;&gt;
-                    &lt;label for=&quot;choice&quot; class=&quot;form-label&quot;&gt;Choice&lt;/label&gt;
-                    &lt;div class=&quot;form-controlGroup-inputWrapper&quot;&gt;
-                        &lt;select id=&quot;choice&quot; class=&quot;form-input form-input--select&quot;&gt;
-                            &lt;option&gt;Option 1&lt;/option&gt;
-                            &lt;option&gt;Option 2&lt;/option&gt;
-                            &lt;option&gt;Option 3&lt;/option&gt;
-                            &lt;option&gt;Option 4&lt;/option&gt;
-                            &lt;option&gt;Option 5&lt;/option&gt;
-                        &lt;/select&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-
-                &lt;div class=&quot;g g--gutter&quot;&gt;
-                    &lt;div class=&quot;form-controlGroup g-span6 g-col&quot;&gt;
-                        &lt;label class=&quot;form-label&quot;&gt;Checkboxes&lt;/label&gt;
-                        &lt;div class=&quot;form-controlGroup-inputWrapper&quot;&gt;
-                            &lt;div class=&quot;control&quot;&gt;
-                                &lt;input id=&quot;check1&quot; type=&quot;checkbox&quot; value=&quot;check1&quot;&gt;
-                                &lt;label for=&quot;check1&quot;&gt;
-                                    This is a checkbox
-                                &lt;/label&gt;
-                            &lt;/div&gt;
-                            &lt;label class=&quot;control control--custom control--checkbox&quot;&gt;
-                                &lt;input type=&quot;checkbox&quot; value=&quot;check4&quot;&gt;
-                                &lt;span class=&quot;control-indicator&quot;&gt;&lt;/span&gt;
-                                This is a custom checkbox
-                            &lt;/label&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-
-                    &lt;div class=&quot;form-controlGroup g-span6 g-col&quot;&gt;
-                        &lt;label class=&quot;form-label&quot;&gt;Radio buttons&lt;/label&gt;
-                        &lt;div class=&quot;form-controlGroup-inputWrapper&quot;&gt;
-                            &lt;label class=&quot;control&quot;&gt;
-                                &lt;input type=&quot;radio&quot; name=&quot;optionsRadios&quot; id=&quot;optionsRadios1&quot; value=&quot;option1&quot; checked&gt;
-                                This is a radio
-                            &lt;/label&gt;
-                            &lt;label class=&quot;control control--custom control--radio&quot;&gt;
-                                &lt;input type=&quot;radio&quot; name=&quot;optionsRadios&quot; id=&quot;optionsRadios4&quot; value=&quot;option4&quot;&gt;
-                                &lt;span class=&quot;control-indicator&quot;&gt;&lt;/span&gt;
-                                This is a custom radio button
-                            &lt;/label&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/fieldset&gt;
-
-            &lt;h3 class=&quot;sg-interfaceType sg-interfaceType--subtle&quot;&gt;Validation information&lt;/h3&gt;
-            &lt;fieldset class=&quot;form-fieldset&quot;&gt;
-                &lt;div class=&quot;form-controlGroup has-success&quot;&gt;
-                    &lt;label for=&quot;textSuccess&quot; class=&quot;form-label&quot;&gt;Input with success&lt;/label&gt;
-                    &lt;div class=&quot;form-controlGroup-inputWrapper&quot;&gt;
-                        &lt;input type=&quot;text&quot; id=&quot;textSuccess&quot; class=&quot;form-input&quot; value=&quot;A value&quot;/&gt;
-                        &lt;div class=&quot;form-message&quot;&gt;
-                            Yay!
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;form-controlGroup has-error&quot;&gt;
-                    &lt;label for=&quot;textError&quot; class=&quot;form-label&quot;&gt;Input with error&lt;/label&gt;
-                    &lt;div class=&quot;form-controlGroup-inputWrapper&quot;&gt;
-                        &lt;input type=&quot;text&quot; id=&quot;textError&quot; class=&quot;form-input&quot; value=&quot;A value&quot;/&gt;
-                        &lt;div class=&quot;form-message&quot;&gt;
-                            Please correct the error
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;form-controlGroup has-warning&quot;&gt;
-                    &lt;label for=&quot;textWarning&quot; class=&quot;form-label&quot;&gt;Input with warning&lt;/label&gt;
-                    &lt;div class=&quot;form-controlGroup-inputWrapper&quot;&gt;
-                        &lt;input type=&quot;text&quot; id=&quot;textWarning&quot; class=&quot;form-input&quot; value=&quot;A value&quot;/&gt;
-                        &lt;div class=&quot;form-message&quot;&gt;
-                            Something may have gone wrong
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;form-controlGroup has-info&quot;&gt;
-                    &lt;label for=&quot;textInfo&quot; class=&quot;form-label&quot;&gt;Input with info&lt;/label&gt;
-                    &lt;div class=&quot;form-controlGroup-inputWrapper&quot;&gt;
-                        &lt;input type=&quot;text&quot; id=&quot;textInfo&quot; class=&quot;form-input&quot; value=&quot;A value&quot;/&gt;
-                        &lt;div class=&quot;form-message&quot;&gt;
-                            Username is taken
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/fieldset&gt;
-
-            &lt;div class=&quot;form-actions&quot;&gt;
-                &lt;div class=&quot;form-message has-warning is-hidden&quot;&gt;
-                    Some fields need attention
-                &lt;/div&gt;
-
-                &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; class=&quot;btn btn--primary&quot; /&gt;
-                &lt;input type=&quot;reset&quot; class=&quot;btn&quot; value=&quot;Cancel&quot; /&gt;
-            &lt;/div&gt;
-
-        &lt;/form&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;!-- Icons --&gt;
-&lt;div class=&quot;sg-page&quot;&gt;
-    &lt;div class=&quot;l-container&quot;&gt;
-        &lt;h2 class=&quot;sg-sectionHeading&quot;&gt;Icons&lt;/h2&gt;
-
-        &lt;h3 class=&quot;sg-interfaceType sg-interfaceType--subtle&quot;&gt;Interface icons&lt;/h3&gt;
-        &lt;ul class=&quot;g g--gutter&quot;&gt;
-            &lt;li class=&quot;g-col g-span6 g-span4--mid&quot;&gt;
-                &lt;div class=&quot;icon-sg icon-social-instagram&quot;&gt;&lt;/div&gt;
-                &lt;code&gt;.icon-social-instagram&lt;/code&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;g-col g-span6 g-span4--mid&quot;&gt;
-                &lt;div class=&quot;icon-sg icon-social-twitter&quot;&gt;&lt;/div&gt;
-                &lt;code&gt;.icon-social-twitter&lt;/code&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;g-col g-span6 g-span4--mid&quot;&gt;
-                &lt;div class=&quot;icon-sg icon-social-pinterest&quot;&gt;&lt;/div&gt;
-                &lt;code&gt;.icon-social-pinterest&lt;/code&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;g-col g-span6 g-span4--mid&quot;&gt;
-                &lt;div class=&quot;icon-sg icon-social-facebook&quot;&gt;&lt;/div&gt;
-                &lt;code&gt;.icon-social-facebook&lt;/code&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;g-col g-span6 g-span4--mid&quot;&gt;
-                &lt;div class=&quot;icon-sg icon-social-youtube&quot;&gt;&lt;/div&gt;
-                &lt;code&gt;.icon-social-youtube&lt;/code&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;g-col g-span6 g-span4--mid&quot;&gt;
-                &lt;div class=&quot;icon-sg icon-email&quot;&gt;&lt;/div&gt;
-                &lt;code&gt;.icon-email&lt;/code&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;
-
-        &lt;h3 class=&quot;sg-interfaceType sg-interfaceType--subtle&quot;&gt;Favicons&lt;/h3&gt;
-
-        &lt;div class=&quot;sg-favicon&quot;&gt;
-            &lt;img src=&quot;/assets/dist/img/icons/core/favicon.ico&quot; alt=&quot;&quot; width=&quot;16&quot;&gt;
-            &lt;code&gt;16x16&lt;/code&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;sg-favicon&quot;&gt;
-            &lt;img src=&quot;/assets/dist/img/icons/core/touch-icon-iphone-precomposed.png&quot; alt=&quot;&quot; width=&quot;57&quot;&gt;
-            &lt;code&gt;57x57 (iPhone app icon)&lt;/code&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;sg-favicon&quot;&gt;
-            &lt;img src=&quot;/assets/dist/img/icons/core/touch-icon-ipad-precomposed.png&quot; alt=&quot;&quot; width=&quot;72&quot;&gt;
-            &lt;code&gt;72x72 (iPad app icon)&lt;/code&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;sg-favicon&quot;&gt;
-            &lt;img src=&quot;/assets/dist/img/icons/core/touch-icon-iphone-retina-precomposed.png&quot; alt=&quot;&quot; width=&quot;114&quot;&gt;
-            &lt;code&gt;114x114 (iPhone app icon retina)&lt;/code&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;sg-favicon&quot;&gt;
-            &lt;img src=&quot;/assets/dist/img/icons/core/touch-icon-ipad-retina-precomposed.png&quot; alt=&quot;&quot; width=&quot;144&quot;&gt;
-            &lt;code&gt;144x144 (iPad app icon retina)&lt;/code&gt;
-        &lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;!-- Please add more to this to keep your styleguide useful --&gt;
-
-&lt;!-- Add more here :) --&gt;
-&lt;!-- &lt;div class=&quot;sg-page&quot;&gt;
-    &lt;div class=&quot;l-container&quot;&gt;
-        &lt;h2 class=&quot;sg-sectionHeading&quot;&gt;More stuff&lt;/h2&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt; --&gt;
-</code></pre>
+                    <h1>Design Elements</h1>
                 </div>
             </div>
         </div>
     </div><!-- Close .l-container -->
+            <!--  ==============  -->
+            <!--  === Footer ===  -->
+            <!--  ==============  -->
+            <footer class="sg-footer" role="contentinfo">
+                <div class="l-container text-center">
+                    <p>Fozzie and its associated documentation was created with ❤️ by the UI team at Just Eat.</p>
+                    <hr>
+                    <p>If you want to get in touch about anything mentioned here, feel free to <a href="mailto:ui@just-eat.com">drop us a message</a>!</p>
+                </div>
+            </footer>
 
         <script>
             var mockPaths = {

@@ -40,11 +40,12 @@
 			    </label>
 			    <input type="checkbox" class="c-nav-trigger" name="menuVisible" id="menu-visible" aria-hidden="true">
 			    <div class="c-nav-container">
-			    	<ul class="c-nav-list">
-			    		<li class="c-nav-list-item"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Styleguide &amp; Components</a></li>
-			    		<li class="c-nav-list-item c-nav-list-item--active"><a href="/documentation/general/" class="c-nav-list-link">Documentation</a></li>
-			    		<li class="c-nav-list-item"><a href="/performance/" class="c-nav-list-link">Performance Monitoring</a></li>
-			    	</ul>
+			        <ul class="c-nav-list">
+			            <li class="c-nav-list-item"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Design Elements</a></li>
+			            <li class="c-nav-list-item"><a href="/styleguide/ui-components/" class="c-nav-list-link">UI Components</a></li>
+			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/documentation/general/" class="c-nav-list-link">Development Docs</a></li>
+			            <!-- <li class="c-nav-list-item"><a href="/performance/" class="c-nav-list-link">Performance Monitoring</a></li> -->
+			        </ul>
 			    </div>
 			</nav>
 		</div>
@@ -65,10 +66,7 @@
     </div>
 </div>
 
-	    <div class="sg-wip">
-        <h2 class="l-container">This page of the docs needs to be reviewed and is a work in progress.<br> Don’t believe anything that it says!</h2>
-    </div>
-
+	
     <div class="l-container sg-page">
         <div class="g g--gutter g--stack">
             <div class="g-col g-span2--mid">
@@ -85,9 +83,22 @@
                 
                 
                 <!-- subnav for Documentation > CSS -->
-    <li><a href="/documentation/css/" class="">Principles</a></li>
-    <li><a href="/documentation/css/css-naming" class=" is-active">Naming</a></li>
-    <li><a href="/documentation/css/structure" class="">Structure</a></li>
+    <li><a href="/documentation/css/" class="">Principles</a>
+    </li>
+    <li><a href="/documentation/css/sass" class="">Sass</a>
+    </li>
+    <li><a href="/documentation/css/css-naming" class=" is-active">Naming</a>
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#scheme">Our Naming Scheme</a></li>
+            <li><a href="#modifiers">Modifiers</a></li>
+            <li><a href="#state">State</a></li>
+            <li><a href="#variables">Variable Naming</a></li>
+        </ul>
+    </li>
+    <li><a href="/documentation/css/fozzie" class="">Fozzie</a>
+    </li>
+    <li><a href="/documentation/css/structure" class="">Structure</a>
+    </li>
 
                 
                 
@@ -111,15 +122,16 @@
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
                     <h1>CSS Naming</h1>
-<p>Naming things is hard but worth getting right.</p>
-<p>To make this somewhat easier and ensure our naming is consistent we use a naming scheme based on the <a href="https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md">SUIT methodology</a> within class names.</p>
-<p>Using a naming scheme helps to document the intent and relationships from our classnames, as well as easily being able to distinguish classes used solely for state, layout or as a utility operation.</p>
-<pre><code class="language-scss"><span class="hljs-comment">/* We use a number of prefixes to distinguish the purpose of our CSS classnames */</span>
+<p>Naming in CSS can be tricky but is worth getting right.</p>
+<p>To ensure our naming is consistent we use a naming scheme based on the <a href="https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md">SUIT methodology</a>.</p>
+<p>Using a naming scheme helps clarify the intent of the author as well as defining the relationships between classes.  It also makes it much easier to distinguish which classes should be used solely for state, layout or as a utility helper.</p>
+<p><a name="scheme"></a><h2 class="sg-sectionHeading">Our Naming Scheme</h2></p>
+<pre><code class="language-scss"><span class="hljs-comment">/* We use a number of class prefixes to categorise our CSS classnames */</span>
 
 <span class="hljs-comment">/*
  *  Objects are prefixed: .o-
  *  An object is a type of component that can be implicitly linked to an HTML tag.
- *  For example a button class or a form class.
+ *  For example, the base styling for buttons or form elements.
  */</span>
 <span class="hljs-selector-class">.o-btn</span> {
     ...
@@ -128,7 +140,7 @@
 <span class="hljs-comment">/*
  *  Components are prefixed: .c-
  *  A component is any CSS module that isn’t classified as an object.
- *  For example a modal or star ratings components.
+ *  For example a modal, listing or star ratings component.
  */</span>
 <span class="hljs-selector-class">.c-rating</span> {
     ...
@@ -153,44 +165,62 @@
 
 <span class="hljs-comment">/*
  *  Grid classes prefixed: .g-
- *  Any classes that rely on the grid.  i.e. .g-col
+ *  Any classes that help define our design grid.  i.e. .g-col
  */</span>
 <span class="hljs-selector-class">.g-col</span> {
     ...
 }
 
-<span class="hljs-comment">/* Descriptors in a classname use camel-case if more than one word: e.g. twoWords */</span>
+<span class="hljs-comment">/* Descriptors in a classname use camel-case if more than one word: e.g. mySelectorComponent */</span>
 <span class="hljs-selector-class">.c-myComponentName</span> {
     ...
 }
 
 <span class="hljs-comment">/* ========= */</span>
 
-<span class="hljs-comment">/* Child elements are indicated using single hyphens: - */</span>
+<span class="hljs-comment">/* Child elements are indicated using a single hyphen: - */</span>
 <span class="hljs-selector-class">.o-form-controlGroup</span> {
     ...
 }
 
 <span class="hljs-comment">/* ========= */</span>
 
-<span class="hljs-comment">/* Modifier classes use a double hyphen: -- */</span>
-<span class="hljs-selector-class">.o-btn</span><span class="hljs-selector-class">.o-btn--primary</span> {
+<span class="hljs-comment">/* Modifier classes are indicated with a double hyphen: -- */</span>
+<span class="hljs-selector-class">.o-btn--primary</span> {
     ...
 }
-
-
 </code></pre>
-<h2>State Classes</h2>
-<p>We use the <code>is-</code> or <code>has-</code> prefixes to indicate state.</p>
-<pre><code>/* Element <span class="hljs-keyword">state</span>: .is- or .has- */
-.is-active {
-    ...
+<p><a name="modifiers"></a><h2 class="sg-sectionHeading">Modifier Classes</h2></p>
+<p>Modifier classes are used to show when an object or component class is being modified slightly.  Think of them as helping to define one or more extensions to your component.</p>
+<p>A typical example is when defining buttons.  Usually all buttons share common styles, that are defined using the <code>o-btn</code> class.  However, buttons usually have various design treatments – some may have a different background colour and font-size, others may have rounded corners.</p>
+<p>To define these different button styles we can use modifiers, allowing us to use the base <code>o-btn</code> class alongside a modifier that will extend those base styles.</p>
+<pre><code class="language-scss"><span class="hljs-selector-class">.o-btn</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
+    <span class="hljs-attribute">color</span>: <span class="hljs-number">#333</span>;
 }
 
+<span class="hljs-selector-class">.o-btn--primary</span> {
+    <span class="hljs-attribute">background-color</span>: Gold;
+}
+
+<span class="hljs-selector-class">.o-btn--secondary</span> {
+    <span class="hljs-attribute">background-color</span>: LightGrey;
+}
 </code></pre>
-<h2>Sass Variables</h2>
-<p>When defining Sass variables, we use dash-case.</p>
-<pre><code><span class="hljs-comment">// Sass variables use dashes and double dashes a similar way to our classnames</span>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btn o-btn--primary"</span>&gt;</span>My Button<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btn o-btn--secondary"</span>&gt;</span>My Other Button<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p><a name="state"></a><h2 class="sg-sectionHeading">State Classes</h2></p>
+<p>We use the <code>is-</code> or <code>has-</code> prefixes to indicate state that changes via JavaScript.</p>
+<p>Usually this is caused by an action performed by the user, but could also come from an API response or similar system level event.</p>
+<pre><code class="language-scss"><span class="hljs-comment">/* Element state: .is- or .has- */</span>
+<span class="hljs-selector-class">.is-active</span> {
+    ...
+}
+</code></pre>
+<p><a name="variables"></a><h2 class="sg-sectionHeading">Sass Variables</h2></p>
+<p>When defining Sass variables, we use dashes in the same way as in our overall class naming scheme.</p>
+<pre><code class="language-scss"><span class="hljs-comment">// Sass variables use dashes and double dashes a similar way to our classnames</span>
 
 <span class="hljs-variable">$blue</span>: blue;
 <span class="hljs-variable">$blue--light</span>: lightblue;
@@ -199,12 +229,21 @@
 <span class="hljs-comment">// example of component variable naming</span>
 <span class="hljs-variable">$modal-border-color</span>: <span class="hljs-variable">$blue</span>;
 <span class="hljs-variable">$modal-border-size</span>: <span class="hljs-number">1px</span>;
-
 </code></pre>
                 </div>
             </div>
         </div>
     </div><!-- Close .l-container -->
+            <!--  ==============  -->
+            <!--  === Footer ===  -->
+            <!--  ==============  -->
+            <footer class="sg-footer" role="contentinfo">
+                <div class="l-container text-center">
+                    <p>Fozzie and its associated documentation was created with ❤️ by the UI team at Just Eat.</p>
+                    <hr>
+                    <p>If you want to get in touch about anything mentioned here, feel free to <a href="mailto:ui@just-eat.com">drop us a message</a>!</p>
+                </div>
+            </footer>
 
         <script>
             var mockPaths = {

@@ -40,11 +40,12 @@
 			    </label>
 			    <input type="checkbox" class="c-nav-trigger" name="menuVisible" id="menu-visible" aria-hidden="true">
 			    <div class="c-nav-container">
-			    	<ul class="c-nav-list">
-			    		<li class="c-nav-list-item c-nav-list-item--active"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Styleguide &amp; Components</a></li>
-			    		<li class="c-nav-list-item"><a href="/documentation/general/" class="c-nav-list-link">Documentation</a></li>
-			    		<li class="c-nav-list-item"><a href="/performance/" class="c-nav-list-link">Performance Monitoring</a></li>
-			    	</ul>
+			        <ul class="c-nav-list">
+			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Design Elements</a></li>
+			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/styleguide/ui-components/" class="c-nav-list-link">UI Components</a></li>
+			            <li class="c-nav-list-item"><a href="/documentation/general/" class="c-nav-list-link">Development Docs</a></li>
+			            <!-- <li class="c-nav-list-item"><a href="/performance/" class="c-nav-list-link">Performance Monitoring</a></li> -->
+			        </ul>
 			    </div>
 			</nav>
 		</div>
@@ -143,24 +144,42 @@
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
                     <h1>UI Components</h1>
-<h2>Note. Only components that are part of the global platform should be added to this page of components.</h2>
-<div class="sg-index">
-    <div class="g g--gutter g--stack--mid">
-        <div class="g-col g-span4">
-<h3>Objects</h3>
-        </div>
-        <div class="g-col g-span4">
-<h3>Components</h3>
-        </div>
-        <div class="g-col g-span4">
-<h3>Experiments</h3>
-        </div>
+<p>Note. Only components that are part of the global platform should be added to this page of components.</p>
+<div class="g g--gutter g--stack--mid">
+    <div class="g-col g-span6">
+<p><h3 class="sg-sectionHeading">Objects</h3></p>
+<ul>
+<li><a href="buttons">Buttons</a></li>
+</ul>
+    </div>
+    <div class="g-col g-span6">
+<p><h3 class="sg-sectionHeading">Components</h3></p>
+<ul>
+<li><a href="headers/">Headers</a></li>
+<li><a href="footers/">Footers</a></li>
+<li><a href="breadcrumbs">Breadcrumbs</a></li>
+<li><a href="star-ratings">Star Ratings</a></li>
+<li><a href="listings">Listings</a></li>
+<li><a href="mediaElement">Media Element</a></li>
+<li><a href="forms/checkboxes">Checkboxes</a></li>
+<li><a href="forms/radio-buttons">Radio Buttons</a></li>
+</ul>
     </div>
 </div>
                 </div>
             </div>
         </div>
     </div><!-- Close .l-container -->
+            <!--  ==============  -->
+            <!--  === Footer ===  -->
+            <!--  ==============  -->
+            <footer class="sg-footer" role="contentinfo">
+                <div class="l-container text-center">
+                    <p>Fozzie and its associated documentation was created with ❤️ by the UI team at Just Eat.</p>
+                    <hr>
+                    <p>If you want to get in touch about anything mentioned here, feel free to <a href="mailto:ui@just-eat.com">drop us a message</a>!</p>
+                </div>
+            </footer>
 
         <script>
             var mockPaths = {
