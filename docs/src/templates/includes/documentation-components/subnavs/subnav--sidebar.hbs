@@ -134,7 +134,16 @@
 <!-- subnav for Documentation > General -->
     <li><a href="{{ baseUrl }}/documentation/general/" class="{{#is navactive 'principles'}} is-active{{/is}}">Development Principles</a></li>
     <li><a href="{{ baseUrl }}/documentation/general/getting-started" class="{{#is navactive 'getting-started'}} is-active{{/is}}">Getting Started</a></li>
-    <li><a href="{{ baseUrl }}/documentation/general/gulp" class="{{#is navactive 'gulp'}} is-active{{/is}}">Gulp</a></li>
+    <li><a href="{{ baseUrl }}/documentation/general/gulp" class="{{#is navactive 'gulp'}} is-active{{/is}}">Build Tasks – Gulp</a>
+        {{#is navactive 'gulp'}}
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#gulp-fozzie">gulp-build-fozzie</a></li>
+            <li><a href="#gulp-setup">Setup</a></li>
+            <li><a href="#gulp-yarn">Yarn</a></li>
+            <li><a href="#gulp-tasks">Available Tasks</a></li>
+        </ul>
+        {{/is}}
+    </li>
     <li><a href="{{ baseUrl }}/documentation/general/browser-support" class="{{#is navactive 'browser-support'}} is-active{{/is}}">Browser support</a></li>
     <li><a href="{{ baseUrl }}/documentation/general/accessibility" class="{{#is navactive 'a11y'}} is-active{{/is}}">Accessibility</a>
     <li><a href="{{ baseUrl }}/documentation/general/accessibility/checklist" class="{{#is navactive 'a11y-checklist'}} is-active{{/is}}">A11y Checklist</a>

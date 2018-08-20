@@ -1,35 +1,33 @@
 ---
 title: Getting Started
 section-title: General Documentation
-description: Our commitment to creating an accessible platform
+description: How to get up and running with our UI tools
 docs: true
 
 navgroup: documentation
 navsub: docs-general
 navactive: getting-started
-
-wip: true
 ---
 
-We have tried to decouple our JUST EAT’s front-end process from our .NET stack so that developing front-end code can be fast and iterative.  This also enables our front-end developers to work in the environment that is most productive for them.
 
-Our current front-end stack uses Gulp (as our task runner), Sass and PostCSS (for our CSS processing) and Browserify with Babel (for our JavaScript).
+We have tried to decouple our UI stack away from out back-end (.NET) stack, so that developing front-end code can be fast and iterative. This also enables our front-end developers to work in the environment that is most productive for them.
 
-If you are going to be developing front-end code for the JUST EAT platform, it’s recommended that you take the time to read all the sections of this documentation to get a better understanding of the tools we use and why we are using them.
-
-
-<a name="proj-setup"></a>
-## Setting up your Environment
-
-For full information about setting up your local environments, see the [Onboarding Documentation](https://wiki.just-eat.com/pages/viewpage.action?title=Onboarding+Tasks&spaceKey=IENG).
-
-For specific information about each individual environment, check out the respective README’s on the ConsumerWeb and PublicWeb repositories.
+If you are going to be developing front-end code for the Just Eat platform, it’s recommended that you take the time to read through this documentation to get a better understanding of the tools we use and why we are using them.
 
 
-<a name="proj-gulp"></a>
-## Front-end Workflow – Gulp
+## Web Stack
 
-Gulp is a front-end task runner that automates many important tasks associated with modern front-end development.
+Fozzie itself has been created to be fairly technology agnostic.  At it's core, it's simply a UI framework built on Sass and Vanilla JS.
 
-We use Gulp on the JUST EAT platforms to tie together all of our front-end workflow tasks.  To find out more about Gulp and how we use it, take a lookat the [Gulp section of this documentation]({{ baseUrl }}/documentation/general/gulp).
+Therefore teams at Just Eat are using Fozzie on projects built in React, Vue.js and Vanilla JS, using WebPack and Gulp as their task runner. It could potentially be used on any stack (including CMS platforms such as WordPress).
 
+In terms of the current Just Eat web front-end stack, we use Gulp (as our task runner), Sass and PostCSS (for our CSS processing), ES6 with Babel (for our JavaScript) and Jest (for JS testing).
+
+We also use Yarn for our package dependencies.
+
+
+## Front-end Build Tasks
+
+Gulp is a front-end task runner that automates tasks such as Sass compilcation and Babel transpilation.
+
+We use Gulp on the Just Eat web platform to tie together all of the front-end workflow tasks.  To find out more about Gulp and how we use it, take a look at the [Gulp section of this documentation]({{ ../baseUrl }}/documentation/general/gulp).
