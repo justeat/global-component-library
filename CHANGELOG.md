@@ -15,6 +15,15 @@ v1.15.0
 - Organised UI Components links better
 
 
+v1.16.0
+------------------------------
+*August 28, 2018*
+
+### Added
+- Full page menu template.
+- Examples of the variations of a menu header.
+
+
 v1.14.0
 ------------------------------
 *August 22, 2018*

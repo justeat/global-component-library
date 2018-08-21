@@ -1,0 +1,21 @@
+<header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-menuHeader c-mediaElement c-mediaElement--fullstack">
+    <img
+        class="c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"
+        src="{{baseUrl}}/assets/img/examples/restaurant-logo.gif"
+        alt="Fozzie Kebab"
+        itemprop="image" />
+    <div class="c-mediaElement-content">
+        <h1 class="text-center u-noSpacing">Fozzie Kebab</h1>
+        <p class="c-badge c-badge--light c-badge--large text-center u-noSpacing">Kebab <span>•</span> Pizza</p>
+        <a class="l-centered u-noUnderline u-spacingTop" href="#">
+            {{> je-star-ratings this }}
+            {{#if star-rating-count}}<strong class="u-spacingLeft">{{star-rating-count}}</strong>{{/if}}
+        </a>
+        {{> (lookup . 'status') }}
+        <a class="c-mediaElement-infoLink u-showAboveMid" href="">
+            {{inlineSVG "@justeat/f-icons/src/img/icons/general/info.svg"
+                class="c-icon c-icon--info c-icon--blue"}}
+            <span class="u-spacingLeft u-showAboveWide">Restaurant info</span>
+        </a>
+    </div>
+</header>
