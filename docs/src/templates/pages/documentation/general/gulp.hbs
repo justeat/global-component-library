@@ -24,7 +24,7 @@ For details on how to use and figure this module, take a look at the [module's d
 
 <a name="gulp-setup"></a><h2 class="sg-sectionHeading">Getting up and running with Gulp</h2>
 
-Here we document two ways of running Gulp tasks locally: using Visual Studio and it’s built-in tools, or running Gulp through the command line.
+Here we document two ways of running Gulp tasks locally: using Visual Studio and its built-in tools, or running Gulp through the command line.
 
 <a name="gulp-cmd"></a>
 #### Using Gulp on Command Line
@@ -33,13 +33,11 @@ The first method of using Gulp is straight through the Command Line or Terminal.
 
 1. **[Install Node.js](https://nodejs.org/)**
 
-    Node.js – and it’s bundled package manager npm – are needed to run Gulp tasks with VS 2013 or VS 2015 Professional.
-
-    Installing this should be as simple as going to the [Node.js website](https://nodejs.org/) and hitting the 'Install' button, which will take you through the install process.  Go with all the defaults throughout the install process and this should install Node and it’s package manager on your system.
+    Installing this should be as simple as going to the [Node.js website](https://nodejs.org/), downloading the latest LTS Version (which should be an even numbered version), and running this installer.  Go with all the defaults throughout the install process and this should install Node and NPM on your system.
 
 2. **Install Gulp**
 
-    Open up a command prompt or terminal window and enter `npm install gulp -g`.  This should install Gulp so that Visual Studio can do it’s magic.
+    Open up a command prompt or terminal window and enter `npm install gulp -g`.  This should install Gulp so that Visual Studio can do its magic.
 
 3. **Install Yarn**
 
@@ -69,13 +67,13 @@ To get up and running with using Gulp in your setup of Visual Studio, just carry
 
 1. **[Install Node.js](https://nodejs.org/)**
 
-	Node.js – and it’s bundled package manager npm – are needed to run Gulp tasks with VS 2013 or VS 2015 Professional.
+	Node.js – and its bundled package manager npm – are needed to run Gulp tasks with VS 2013 or VS 2015 Professional.
 
-	Installing this should be as simple as going to the [Node.js website](https://nodejs.org/) and hitting the 'Install' button, which will take you through the install process.  Go with all the defaults throughout the install process and this should install Node and it’s package manager on your system.
+	Installing this should be as simple as going to the [Node.js website](https://nodejs.org/), downloading the latest LTS Version (which should be an even numbered version), and running this installer.  Go with all the defaults throughout the install process and this should install Node and NPM (its package manager) on your system.
 
 2. **Install Gulp**
 
-	Open up a command prompt or terminal window and enter `npm install gulp -g`.  This should install Gulp so that Visual Studio can do it’s magic.
+	Open up a command prompt or terminal window and enter `npm install gulp -g`.  This should install Gulp so that Visual Studio can do its magic.
 
 3. **Check and Install the project dependencies**
 
@@ -93,7 +91,7 @@ To get up and running with using Gulp in your setup of Visual Studio, just carry
 
 …and that’s it!
 
-If you don’t plan on editing any CSS yourself, you can forget Gulp even exists and it’ll automatically do it’s thing when you build the project through Visual Studio.
+If you don’t plan on editing any CSS yourself, you can forget Gulp even exists and it’ll automatically do its thing when you build the project through Visual Studio.
 
 
 
@@ -114,7 +112,9 @@ yarn
 
 To see a full list of the tasks that are available as part of the `gulp-build-fozzie` module, [check out the module documentation](https://github.com/justeat/gulp-build-fozzie#the-gulp-tasks).
 
-Note that some tasks will require some configuration – such as telling the module which directories should be compiled.  All of these configuartion details are explained in the documentation as well.
+Alternatively, run `gulp --tasks` in your Command Prompt or Terminal in the same directory as your `package.json` to output a list of all available tasks.
+
+Note that some tasks will require some configuration – such as telling the module which directories should be compiled.  All of these configuration details are explained in the documentation as well.
 
 
 
