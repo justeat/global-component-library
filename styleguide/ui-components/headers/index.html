@@ -159,11 +159,14 @@
         
         <header class="c-header">
                 <div class="c-infoBar c-infoBar--dark u-showBelowMid" data-test-id="languageToggle">
-                    <div class="c-infoBar-row languageSwitcher">
-                        <span class="languageSwitcher-indicator">
-                            EN
-                        </span>
+                    <div class="c-infoBar-row c-languageSwitcher">
+                        <span class="c-languageSwitcher-countryCode">EN</span>
             
+                        <a class="c-languageSwitcher-action" href="#">
+                            <span class="is-visuallyHidden">Changer la langue pour le</span>
+                            Français
+                            <svg width="10" height="6" viewBox="0 0 10 6" class="c-languageSwitcher-icon c-icon c-icon--chevron c-icon--chevron--small c-icon--chevron--right c-icon--chevron--light"><path d="M5 4.41L9.29.12a.42.42 0 0 1 .59.6L5.29 5.28a.42.42 0 0 1-.58 0L.12.71a.42.42 0 0 1 .6-.59L5 4.42z" fill="#333" fill-rule="nonzero"/></svg>
+                        </a>
                     </div>
                 </div>
         
@@ -171,9 +174,8 @@
                 <div class="c-logo">
                     <a href="/" aria-label="Just Eat Homepage">
                         <div class="c-logo-img">
-                            <img alt="" src="/assets/img/logos/je-logo.v1.svg" width="152" height="30" />
+                            <img alt="Just Eat Food Delivery" src="/assets/img/logos/je-logo.v1.svg" width="152" height="30" />
                         </div>
-                
                         <span class="is-visuallyHidden">Just Eat</span>
                     </a>
                 </div>
@@ -268,121 +270,123 @@
         </header>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup">&lt;input data-order-count-supported type=<span class="hljs-string">"hidden"</span> value=<span class="hljs-string">"true"</span> /&gt;
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">input</span> data-<span class="hljs-keyword">order</span>-<span class="hljs-keyword">count</span>-supported <span class="hljs-keyword">type</span>=<span class="hljs-string">"hidden"</span> value=<span class="hljs-string">"true"</span> /&gt;
 
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"skipTo"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"is-visuallyHidden focusable u-text-marker"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#skipToMain"</span>&gt;</span>Skip to main content<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"skipTo"</span>&gt;
+    &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"is-visuallyHidden focusable u-text-marker"</span> href=<span class="hljs-string">"#skipToMain"</span>&gt;Skip to main content&lt;/a&gt;
+&lt;/div&gt;
 
-&lt;header <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"c-header"</span>&gt;
-        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-infoBar c-infoBar--dark u-showBelowMid"</span> <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"languageToggle"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-infoBar-row languageSwitcher"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"languageSwitcher-indicator"</span>&gt;</span>
-                    EN
-                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+&lt;header <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-header"</span>&gt;
+        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-infoBar c-infoBar--dark u-showBelowMid"</span> data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"languageToggle"</span>&gt;
+            &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-infoBar-row c-languageSwitcher"</span>&gt;
+                &lt;span <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-languageSwitcher-countryCode"</span>&gt;<span class="hljs-keyword">EN</span>&lt;/span&gt;
     
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+                &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-languageSwitcher-action"</span> href=<span class="hljs-string">"#"</span>&gt;
+                    &lt;span <span class="hljs-keyword">class</span>=<span class="hljs-string">"is-visuallyHidden"</span>&gt;Changer <span class="hljs-keyword">la</span> langue pour le&lt;/span&gt;
+                    Français
+                    &lt;svg width=<span class="hljs-string">"10"</span> height=<span class="hljs-string">"6"</span> viewBox=<span class="hljs-string">"0 0 10 6"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-languageSwitcher-icon c-icon c-icon--chevron c-icon--chevron--small c-icon--chevron--right c-icon--chevron--light"</span>&gt;&lt;path <span class="hljs-keyword">d</span>=<span class="hljs-string">"M5 4.41L9.29.12a.42.42 0 0 1 .59.6L5.29 5.28a.42.42 0 0 1-.58 0L.12.71a.42.42 0 0 1 .6-.59L5 4.42z"</span> fill=<span class="hljs-string">"#333"</span> fill-rule=<span class="hljs-string">"nonzero"</span>/&gt;&lt;/svg&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
 
-    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"l-container c-header-wrap"</span>&gt;
-        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-logo"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Just Eat Homepage"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-logo-img"</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/logos/je-logo.v1.svg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"152"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"30"</span> /&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"is-visuallyHidden"</span>&gt;</span>Just Eat<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"l-container c-header-wrap"</span>&gt;
+        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-logo"</span>&gt;
+            &lt;a href=<span class="hljs-string">"/"</span> aria-<span class="hljs-keyword">label</span>=<span class="hljs-string">"Just Eat Homepage"</span>&gt;
+                &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-logo-img"</span>&gt;
+                    &lt;img alt=<span class="hljs-string">"Just Eat Food Delivery"</span> src=<span class="hljs-string">"/assets/img/logos/je-logo.v1.svg"</span> width=<span class="hljs-string">"152"</span> height=<span class="hljs-string">"30"</span> /&gt;
+                &lt;/div&gt;
+                &lt;span <span class="hljs-keyword">class</span>=<span class="hljs-string">"is-visuallyHidden"</span>&gt;Just Eat&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
 
-        <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">data-navglobal</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav c-nav--global"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">data-nav-enhance</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-trigger"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nav-trigger"</span> /&gt;</span>
+        &lt;nav data-navglobal <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav c-nav--global"</span>&gt;
+            &lt;<span class="hljs-keyword">input</span> data-nav-enhance <span class="hljs-keyword">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-trigger"</span> id=<span class="hljs-string">"nav-trigger"</span> /&gt;
 
-            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">data-nav-toggle</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-toggle"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"nav-trigger"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-toggle-icon"</span>&gt;</span>Open Menu<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            &lt;<span class="hljs-keyword">label</span> data-nav-toggle <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-toggle"</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"nav-trigger"</span>&gt;
+                &lt;span <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-toggle-icon"</span>&gt;<span class="hljs-keyword">Open</span> Menu&lt;/span&gt;
+            &lt;/<span class="hljs-keyword">label</span>&gt;
 
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-nav-container</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-container"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list"</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-auth-wrapper</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item has-sublist is-hidden"</span> <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"navList"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-text"</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"22"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 12 13"</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-icon"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M2.67 11.33V9a.33.33 0 0 1 .66 0v2.67c0 .18-.15.33-.33.33H1.67a1 1 0 0 1-1-1V9.67c0-2.6 1.8-4.34 5.33-4.34 3.53 0 5.33 1.74 5.33 4.34V11a1 1 0 0 1-1 1H9a.33.33 0 0 1-.33-.33V9a.33.33 0 1 1 .66 0v2.33h1c.19 0 .34-.15.34-.33V9.67C10.67 7.44 9.17 6 6 6S1.33 7.44 1.33 9.67V11c0 .18.15.33.34.33h1zm3.33-6c1.09 0 2-1.02 2-2.33C8 1.7 7.09.67 6 .67 4.91.67 4 1.69 4 3c0 1.3.91 2.33 2 2.33zM6 6C4.53 6 3.33 4.66 3.33 3S4.53 0 6 0s2.67 1.34 2.67 3S7.47 6 6 6zm2.67 3.67a.33.33 0 1 1 .66 0v2c0 .09-.03.17-.1.23-.12.12-.37.28-.8.42-.65.22-1.56.35-2.76.35-.92 0-1.65-.14-2.21-.36-.36-.14-.58-.3-.7-.4a.33.33 0 0 1-.1-.24v-2a.33.33 0 1 1 .67 0v1.84a5.33 5.33 0 0 0 2.33.5c1.14-.01 1.98-.13 2.57-.33.2-.07.35-.13.44-.18V9.67z"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#266ABD"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>                            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-name</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-text-sub"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-email</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-text-sub u-showBelowMid"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            &lt;div data-nav-container <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-container"</span>&gt;
+                &lt;ul <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list"</span>&gt;
+                    &lt;<span class="hljs-keyword">li</span> data-auth-wrapper <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item has-sublist is-hidden"</span> data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"navList"</span> tabindex=<span class="hljs-string">"0"</span>&gt;
+                        &lt;p <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-text"</span>&gt;
+                            &lt;svg width=<span class="hljs-string">"20"</span> height=<span class="hljs-string">"22"</span> viewBox=<span class="hljs-string">"0 0 12 13"</span> xmlns=<span class="hljs-string">"http://www.w3.org/2000/svg"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-icon"</span>&gt;&lt;path <span class="hljs-keyword">d</span>=<span class="hljs-string">"M2.67 11.33V9a.33.33 0 0 1 .66 0v2.67c0 .18-.15.33-.33.33H1.67a1 1 0 0 1-1-1V9.67c0-2.6 1.8-4.34 5.33-4.34 3.53 0 5.33 1.74 5.33 4.34V11a1 1 0 0 1-1 1H9a.33.33 0 0 1-.33-.33V9a.33.33 0 1 1 .66 0v2.33h1c.19 0 .34-.15.34-.33V9.67C10.67 7.44 9.17 6 6 6S1.33 7.44 1.33 9.67V11c0 .18.15.33.34.33h1zm3.33-6c1.09 0 2-1.02 2-2.33C8 1.7 7.09.67 6 .67 4.91.67 4 1.69 4 3c0 1.3.91 2.33 2 2.33zM6 6C4.53 6 3.33 4.66 3.33 3S4.53 0 6 0s2.67 1.34 2.67 3S7.47 6 6 6zm2.67 3.67a.33.33 0 1 1 .66 0v2c0 .09-.03.17-.1.23-.12.12-.37.28-.8.42-.65.22-1.56.35-2.76.35-.92 0-1.65-.14-2.21-.36-.36-.14-.58-.3-.7-.4a.33.33 0 0 1-.1-.24v-2a.33.33 0 1 1 .67 0v1.84a5.33 5.33 0 0 0 2.33.5c1.14-.01 1.98-.13 2.57-.33.2-.07.35-.13.44-.18V9.67z"</span> fill=<span class="hljs-string">"#266ABD"</span>&gt;&lt;/path&gt;&lt;/svg&gt;                            &lt;span data-name <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-text-sub"</span>&gt;&lt;/span&gt;
+                            &lt;span data-email <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-text-sub u-showBelowMid"</span>&gt;&lt;/span&gt;
+                        &lt;/p&gt;
 
-                        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-popoverList"</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
-                                        <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"header|click - navigation|account"</span>
-                                        <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"accountInfo"</span>
-                                        <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Account info<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
-                                        <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"header|click - navigation|orders"</span>
-                                        <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"orders"</span>
-                                        <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Orders<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
-                                        <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"header|click - navigation|credit balance"</span>
-                                        <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"accountCredit"</span>
-                                        <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Account credit<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
-                                        <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"header|click - navigation|payment methods"</span>
-                                        <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"paymentMethods"</span>
-                                        <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Payment methods<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
-                                        <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"header|click - navigation|address book"</span>
-                                        <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"addressBook"</span>
-                                        <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Delivery addresses<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        &lt;ul <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-popoverList"</span>&gt;
+                                &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;
+                                    &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
+                                        data-gtm=<span class="hljs-string">"header|click - navigation|account"</span>
+                                        data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"accountInfo"</span>
+                                        href=<span class="hljs-string">"#"</span>&gt;Account info&lt;/a&gt;
+                                &lt;/<span class="hljs-keyword">li</span>&gt;
+                                &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;
+                                    &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
+                                        data-gtm=<span class="hljs-string">"header|click - navigation|orders"</span>
+                                        data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"orders"</span>
+                                        href=<span class="hljs-string">"#"</span>&gt;Orders&lt;/a&gt;
+                                &lt;/<span class="hljs-keyword">li</span>&gt;
+                                &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;
+                                    &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
+                                        data-gtm=<span class="hljs-string">"header|click - navigation|credit balance"</span>
+                                        data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"accountCredit"</span>
+                                        href=<span class="hljs-string">"#"</span>&gt;Account credit&lt;/a&gt;
+                                &lt;/<span class="hljs-keyword">li</span>&gt;
+                                &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;
+                                    &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
+                                        data-gtm=<span class="hljs-string">"header|click - navigation|payment methods"</span>
+                                        data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"paymentMethods"</span>
+                                        href=<span class="hljs-string">"#"</span>&gt;Payment methods&lt;/a&gt;
+                                &lt;/<span class="hljs-keyword">li</span>&gt;
+                                &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;
+                                    &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
+                                        data-gtm=<span class="hljs-string">"header|click - navigation|address book"</span>
+                                        data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"addressBook"</span>
+                                        href=<span class="hljs-string">"#"</span>&gt;Delivery addresses&lt;/a&gt;
+                                &lt;/<span class="hljs-keyword">li</span>&gt;
                         
-                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item c-nav-list-item--forceLast"</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
-                                    <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"header|click - navigation|logout"</span>
-                                    <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"logout"</span>
-                                    <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Log out<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                            &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item c-nav-list-item--forceLast"</span>&gt;
+                                &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
+                                    data-gtm=<span class="hljs-string">"header|click - navigation|logout"</span>
+                                    data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"logout"</span>
+                                    href=<span class="hljs-string">"#"</span>&gt;<span class="hljs-keyword">Log</span> <span class="hljs-keyword">out</span>&lt;/a&gt;
+                            &lt;/<span class="hljs-keyword">li</span>&gt;
+                        &lt;/ul&gt;
+                    &lt;/<span class="hljs-keyword">li</span>&gt;
 
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-login</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item is-hidden"</span> <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"login"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;</span>
-                            Log-in
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                    &lt;<span class="hljs-keyword">li</span> data-login <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item is-hidden"</span> data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"login"</span>&gt;
+                        &lt;a href=<span class="hljs-string">"#"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;
+                            <span class="hljs-keyword">Log</span>-<span class="hljs-keyword">in</span>
+                        &lt;/a&gt;
+                    &lt;/<span class="hljs-keyword">li</span>&gt;
 
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item is-hidden is-shown--noJS"</span> <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"noscript-myaccount"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;</span>
+                    &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item is-hidden is-shown--noJS"</span> data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"noscript-myaccount"</span>&gt;
+                        &lt;a href=<span class="hljs-string">"#"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;
                             Account
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        &lt;/a&gt;
+                    &lt;/<span class="hljs-keyword">li</span>&gt;
 
-                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item u-showAboveMid"</span> <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"languageToggle"</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"is-visuallyHidden"</span>&gt;</span>
-                                        Changer la langue pour le
-                                    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                            &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item u-showAboveMid"</span> data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"languageToggle"</span>&gt;
+                                &lt;a href=<span class="hljs-string">"#"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;
+                                    &lt;span <span class="hljs-keyword">class</span>=<span class="hljs-string">"is-visuallyHidden"</span>&gt;
+                                        Changer <span class="hljs-keyword">la</span> langue pour le
+                                    &lt;/span&gt;
                                     Français
-                                <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                                &lt;/a&gt;
+                            &lt;/<span class="hljs-keyword">li</span>&gt;
 
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item c-nav-list-item--support"</span> <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"support"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>  <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"header|click - navigation|help"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;</span>
-                            Help
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+                    &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item c-nav-list-item--support"</span> data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"support"</span>&gt;
+                        &lt;a href=<span class="hljs-string">"#"</span>  data-gtm=<span class="hljs-string">"header|click - navigation|help"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;
+                            <span class="hljs-keyword">Help</span>
+                        &lt;/a&gt;
+                    &lt;/<span class="hljs-keyword">li</span>&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
 
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span></span>
+    &lt;/div&gt;
+&lt;/header&gt;
 </code></pre>
     </div>
 </div>
@@ -404,11 +408,14 @@
         
         <header class="c-header">
                 <div class="c-infoBar c-infoBar--dark u-showBelowMid" data-test-id="languageToggle">
-                    <div class="c-infoBar-row languageSwitcher">
-                        <span class="languageSwitcher-indicator">
-                            EN
-                        </span>
+                    <div class="c-infoBar-row c-languageSwitcher">
+                        <span class="c-languageSwitcher-countryCode">EN</span>
             
+                        <a class="c-languageSwitcher-action" href="#">
+                            <span class="is-visuallyHidden">Changer la langue pour le</span>
+                            Français
+                            <svg width="10" height="6" viewBox="0 0 10 6" class="c-languageSwitcher-icon c-icon c-icon--chevron c-icon--chevron--small c-icon--chevron--right c-icon--chevron--light"><path d="M5 4.41L9.29.12a.42.42 0 0 1 .59.6L5.29 5.28a.42.42 0 0 1-.58 0L.12.71a.42.42 0 0 1 .6-.59L5 4.42z" fill="#333" fill-rule="nonzero"/></svg>
+                        </a>
                     </div>
                 </div>
         
@@ -416,9 +423,8 @@
                 <div class="c-logo">
                     <a href="/" aria-label="Just Eat Homepage">
                         <div class="c-logo-img">
-                            <img alt="" src="/assets/img/logos/je-logo.v1.svg" width="152" height="30" />
+                            <img alt="Just Eat Food Delivery" src="/assets/img/logos/je-logo.v1.svg" width="152" height="30" />
                         </div>
-                
                         <span class="is-visuallyHidden">Just Eat</span>
                     </a>
                 </div>
@@ -513,121 +519,123 @@
         </header>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup">&lt;input data-order-count-supported type=<span class="hljs-string">"hidden"</span> value=<span class="hljs-string">"true"</span> /&gt;
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">input</span> data-<span class="hljs-keyword">order</span>-<span class="hljs-keyword">count</span>-supported <span class="hljs-keyword">type</span>=<span class="hljs-string">"hidden"</span> value=<span class="hljs-string">"true"</span> /&gt;
 
-<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"skipTo"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"is-visuallyHidden focusable u-text-marker"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#skipToMain"</span>&gt;</span>Skip to main content<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"skipTo"</span>&gt;
+    &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"is-visuallyHidden focusable u-text-marker"</span> href=<span class="hljs-string">"#skipToMain"</span>&gt;Skip to main content&lt;/a&gt;
+&lt;/div&gt;
 
-&lt;header <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"c-header"</span>&gt;
-        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-infoBar c-infoBar--dark u-showBelowMid"</span> <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"languageToggle"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-infoBar-row languageSwitcher"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"languageSwitcher-indicator"</span>&gt;</span>
-                    EN
-                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+&lt;header <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-header"</span>&gt;
+        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-infoBar c-infoBar--dark u-showBelowMid"</span> data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"languageToggle"</span>&gt;
+            &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-infoBar-row c-languageSwitcher"</span>&gt;
+                &lt;span <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-languageSwitcher-countryCode"</span>&gt;<span class="hljs-keyword">EN</span>&lt;/span&gt;
     
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+                &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-languageSwitcher-action"</span> href=<span class="hljs-string">"#"</span>&gt;
+                    &lt;span <span class="hljs-keyword">class</span>=<span class="hljs-string">"is-visuallyHidden"</span>&gt;Changer <span class="hljs-keyword">la</span> langue pour le&lt;/span&gt;
+                    Français
+                    &lt;svg width=<span class="hljs-string">"10"</span> height=<span class="hljs-string">"6"</span> viewBox=<span class="hljs-string">"0 0 10 6"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-languageSwitcher-icon c-icon c-icon--chevron c-icon--chevron--small c-icon--chevron--right c-icon--chevron--light"</span>&gt;&lt;path <span class="hljs-keyword">d</span>=<span class="hljs-string">"M5 4.41L9.29.12a.42.42 0 0 1 .59.6L5.29 5.28a.42.42 0 0 1-.58 0L.12.71a.42.42 0 0 1 .6-.59L5 4.42z"</span> fill=<span class="hljs-string">"#333"</span> fill-rule=<span class="hljs-string">"nonzero"</span>/&gt;&lt;/svg&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
 
-    &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"l-container c-header-wrap"</span>&gt;
-        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-logo"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Just Eat Homepage"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-logo-img"</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/logos/je-logo.v1.svg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"152"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"30"</span> /&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"is-visuallyHidden"</span>&gt;</span>Just Eat<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"l-container c-header-wrap"</span>&gt;
+        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-logo"</span>&gt;
+            &lt;a href=<span class="hljs-string">"/"</span> aria-<span class="hljs-keyword">label</span>=<span class="hljs-string">"Just Eat Homepage"</span>&gt;
+                &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-logo-img"</span>&gt;
+                    &lt;img alt=<span class="hljs-string">"Just Eat Food Delivery"</span> src=<span class="hljs-string">"/assets/img/logos/je-logo.v1.svg"</span> width=<span class="hljs-string">"152"</span> height=<span class="hljs-string">"30"</span> /&gt;
+                &lt;/div&gt;
+                &lt;span <span class="hljs-keyword">class</span>=<span class="hljs-string">"is-visuallyHidden"</span>&gt;Just Eat&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
 
-        <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">data-navglobal</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav c-nav--global"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">data-nav-enhance</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-trigger"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"nav-trigger"</span> /&gt;</span>
+        &lt;nav data-navglobal <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav c-nav--global"</span>&gt;
+            &lt;<span class="hljs-keyword">input</span> data-nav-enhance <span class="hljs-keyword">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-trigger"</span> id=<span class="hljs-string">"nav-trigger"</span> /&gt;
 
-            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">data-nav-toggle</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-toggle"</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"nav-trigger"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-toggle-icon"</span>&gt;</span>Open Menu<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+            &lt;<span class="hljs-keyword">label</span> data-nav-toggle <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-toggle"</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"nav-trigger"</span>&gt;
+                &lt;span <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-toggle-icon"</span>&gt;<span class="hljs-keyword">Open</span> Menu&lt;/span&gt;
+            &lt;/<span class="hljs-keyword">label</span>&gt;
 
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-nav-container</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-container"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list"</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-auth-wrapper</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item has-sublist is-hidden"</span> <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"navList"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-text"</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"20"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"22"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 12 13"</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-icon"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">d</span>=<span class="hljs-string">"M2.67 11.33V9a.33.33 0 0 1 .66 0v2.67c0 .18-.15.33-.33.33H1.67a1 1 0 0 1-1-1V9.67c0-2.6 1.8-4.34 5.33-4.34 3.53 0 5.33 1.74 5.33 4.34V11a1 1 0 0 1-1 1H9a.33.33 0 0 1-.33-.33V9a.33.33 0 1 1 .66 0v2.33h1c.19 0 .34-.15.34-.33V9.67C10.67 7.44 9.17 6 6 6S1.33 7.44 1.33 9.67V11c0 .18.15.33.34.33h1zm3.33-6c1.09 0 2-1.02 2-2.33C8 1.7 7.09.67 6 .67 4.91.67 4 1.69 4 3c0 1.3.91 2.33 2 2.33zM6 6C4.53 6 3.33 4.66 3.33 3S4.53 0 6 0s2.67 1.34 2.67 3S7.47 6 6 6zm2.67 3.67a.33.33 0 1 1 .66 0v2c0 .09-.03.17-.1.23-.12.12-.37.28-.8.42-.65.22-1.56.35-2.76.35-.92 0-1.65-.14-2.21-.36-.36-.14-.58-.3-.7-.4a.33.33 0 0 1-.1-.24v-2a.33.33 0 1 1 .67 0v1.84a5.33 5.33 0 0 0 2.33.5c1.14-.01 1.98-.13 2.57-.33.2-.07.35-.13.44-.18V9.67z"</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"#266ABD"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">path</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>                            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-name</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-text-sub"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-email</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-text-sub u-showBelowMid"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            &lt;div data-nav-container <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-container"</span>&gt;
+                &lt;ul <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list"</span>&gt;
+                    &lt;<span class="hljs-keyword">li</span> data-auth-wrapper <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item has-sublist is-hidden"</span> data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"navList"</span> tabindex=<span class="hljs-string">"0"</span>&gt;
+                        &lt;p <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-text"</span>&gt;
+                            &lt;svg width=<span class="hljs-string">"20"</span> height=<span class="hljs-string">"22"</span> viewBox=<span class="hljs-string">"0 0 12 13"</span> xmlns=<span class="hljs-string">"http://www.w3.org/2000/svg"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-icon"</span>&gt;&lt;path <span class="hljs-keyword">d</span>=<span class="hljs-string">"M2.67 11.33V9a.33.33 0 0 1 .66 0v2.67c0 .18-.15.33-.33.33H1.67a1 1 0 0 1-1-1V9.67c0-2.6 1.8-4.34 5.33-4.34 3.53 0 5.33 1.74 5.33 4.34V11a1 1 0 0 1-1 1H9a.33.33 0 0 1-.33-.33V9a.33.33 0 1 1 .66 0v2.33h1c.19 0 .34-.15.34-.33V9.67C10.67 7.44 9.17 6 6 6S1.33 7.44 1.33 9.67V11c0 .18.15.33.34.33h1zm3.33-6c1.09 0 2-1.02 2-2.33C8 1.7 7.09.67 6 .67 4.91.67 4 1.69 4 3c0 1.3.91 2.33 2 2.33zM6 6C4.53 6 3.33 4.66 3.33 3S4.53 0 6 0s2.67 1.34 2.67 3S7.47 6 6 6zm2.67 3.67a.33.33 0 1 1 .66 0v2c0 .09-.03.17-.1.23-.12.12-.37.28-.8.42-.65.22-1.56.35-2.76.35-.92 0-1.65-.14-2.21-.36-.36-.14-.58-.3-.7-.4a.33.33 0 0 1-.1-.24v-2a.33.33 0 1 1 .67 0v1.84a5.33 5.33 0 0 0 2.33.5c1.14-.01 1.98-.13 2.57-.33.2-.07.35-.13.44-.18V9.67z"</span> fill=<span class="hljs-string">"#266ABD"</span>&gt;&lt;/path&gt;&lt;/svg&gt;                            &lt;span data-name <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-text-sub"</span>&gt;&lt;/span&gt;
+                            &lt;span data-email <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-text-sub u-showBelowMid"</span>&gt;&lt;/span&gt;
+                        &lt;/p&gt;
 
-                        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-popoverList"</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
-                                        <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"header|click - navigation|account"</span>
-                                        <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"accountInfo"</span>
-                                        <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Account info<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
-                                        <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"header|click - navigation|orders"</span>
-                                        <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"orders"</span>
-                                        <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Orders<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
-                                        <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"header|click - navigation|credit balance"</span>
-                                        <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"accountCredit"</span>
-                                        <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Account credit<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
-                                        <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"header|click - navigation|payment methods"</span>
-                                        <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"paymentMethods"</span>
-                                        <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Payment methods<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
-                                        <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"header|click - navigation|address book"</span>
-                                        <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"addressBook"</span>
-                                        <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Delivery addresses<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                                <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        &lt;ul <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-popoverList"</span>&gt;
+                                &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;
+                                    &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
+                                        data-gtm=<span class="hljs-string">"header|click - navigation|account"</span>
+                                        data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"accountInfo"</span>
+                                        href=<span class="hljs-string">"#"</span>&gt;Account info&lt;/a&gt;
+                                &lt;/<span class="hljs-keyword">li</span>&gt;
+                                &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;
+                                    &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
+                                        data-gtm=<span class="hljs-string">"header|click - navigation|orders"</span>
+                                        data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"orders"</span>
+                                        href=<span class="hljs-string">"#"</span>&gt;Orders&lt;/a&gt;
+                                &lt;/<span class="hljs-keyword">li</span>&gt;
+                                &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;
+                                    &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
+                                        data-gtm=<span class="hljs-string">"header|click - navigation|credit balance"</span>
+                                        data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"accountCredit"</span>
+                                        href=<span class="hljs-string">"#"</span>&gt;Account credit&lt;/a&gt;
+                                &lt;/<span class="hljs-keyword">li</span>&gt;
+                                &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;
+                                    &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
+                                        data-gtm=<span class="hljs-string">"header|click - navigation|payment methods"</span>
+                                        data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"paymentMethods"</span>
+                                        href=<span class="hljs-string">"#"</span>&gt;Payment methods&lt;/a&gt;
+                                &lt;/<span class="hljs-keyword">li</span>&gt;
+                                &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item"</span>&gt;
+                                    &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
+                                        data-gtm=<span class="hljs-string">"header|click - navigation|address book"</span>
+                                        data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"addressBook"</span>
+                                        href=<span class="hljs-string">"#"</span>&gt;Delivery addresses&lt;/a&gt;
+                                &lt;/<span class="hljs-keyword">li</span>&gt;
                         
-                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item c-nav-list-item--forceLast"</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
-                                    <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"header|click - navigation|logout"</span>
-                                    <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"logout"</span>
-                                    <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Log out<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                            &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item c-nav-list-item--forceLast"</span>&gt;
+                                &lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>
+                                    data-gtm=<span class="hljs-string">"header|click - navigation|logout"</span>
+                                    data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"logout"</span>
+                                    href=<span class="hljs-string">"#"</span>&gt;<span class="hljs-keyword">Log</span> <span class="hljs-keyword">out</span>&lt;/a&gt;
+                            &lt;/<span class="hljs-keyword">li</span>&gt;
+                        &lt;/ul&gt;
+                    &lt;/<span class="hljs-keyword">li</span>&gt;
 
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">data-login</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item is-hidden"</span> <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"login"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;</span>
-                            Log-in
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                    &lt;<span class="hljs-keyword">li</span> data-login <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item is-hidden"</span> data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"login"</span>&gt;
+                        &lt;a href=<span class="hljs-string">"#"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;
+                            <span class="hljs-keyword">Log</span>-<span class="hljs-keyword">in</span>
+                        &lt;/a&gt;
+                    &lt;/<span class="hljs-keyword">li</span>&gt;
 
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item is-hidden is-shown--noJS"</span> <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"noscript-myaccount"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;</span>
+                    &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item is-hidden is-shown--noJS"</span> data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"noscript-myaccount"</span>&gt;
+                        &lt;a href=<span class="hljs-string">"#"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;
                             Account
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        &lt;/a&gt;
+                    &lt;/<span class="hljs-keyword">li</span>&gt;
 
-                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item u-showAboveMid"</span> <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"languageToggle"</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"is-visuallyHidden"</span>&gt;</span>
-                                        Changer la langue pour le
-                                    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                            &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item u-showAboveMid"</span> data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"languageToggle"</span>&gt;
+                                &lt;a href=<span class="hljs-string">"#"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;
+                                    &lt;span <span class="hljs-keyword">class</span>=<span class="hljs-string">"is-visuallyHidden"</span>&gt;
+                                        Changer <span class="hljs-keyword">la</span> langue pour le
+                                    &lt;/span&gt;
                                     Français
-                                <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                                &lt;/a&gt;
+                            &lt;/<span class="hljs-keyword">li</span>&gt;
 
-                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-item c-nav-list-item--support"</span> <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"support"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>  <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"header|click - navigation|help"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;</span>
-                            Help
-                        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-                    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+                    &lt;<span class="hljs-keyword">li</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-item c-nav-list-item--support"</span> data-<span class="hljs-keyword">test</span>-id=<span class="hljs-string">"support"</span>&gt;
+                        &lt;a href=<span class="hljs-string">"#"</span>  data-gtm=<span class="hljs-string">"header|click - navigation|help"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-nav-list-link"</span>&gt;
+                            <span class="hljs-keyword">Help</span>
+                        &lt;/a&gt;
+                    &lt;/<span class="hljs-keyword">li</span>&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/nav&gt;
 
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span></span>
+    &lt;/div&gt;
+&lt;/header&gt;
 </code></pre>
     </div>
 </div>

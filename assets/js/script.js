@@ -107,9 +107,14 @@ var _lodash2 = _interopRequireDefault(_lodash);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var footerPanels = void 0;
-var breakpoints = (0, _fozzie.getBreakpoints)();
+var breakpoints = null;
 
 var tabindexResize = function tabindexResize() {
+
+    if (breakpoints === null) {
+        breakpoints = (0, _fozzie.getBreakpoints)();
+    }
+
     if (window.matchMedia('(min-width: ' + breakpoints.mid + ')').matches) {
         footerPanels.forEach(function (panel) {
             panel.removeAttribute('tabindex');

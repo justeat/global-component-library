@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Gulp – Just Eat Front-End Component Library and Documentation</title>
+		<title>Build Tasks – Gulp – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -66,10 +66,7 @@
     </div>
 </div>
 
-	    <div class="sg-wip">
-        <h2 class="l-container">This page of the docs needs to be reviewed and is a work in progress.<br> Don’t believe anything that it says!</h2>
-    </div>
-
+	
     <div class="l-container sg-page">
         <div class="g g--gutter g--stack">
             <div class="g-col g-span2--mid">
@@ -86,7 +83,14 @@
                 <!-- subnav for Documentation > General -->
     <li><a href="/documentation/general/" class="">Development Principles</a></li>
     <li><a href="/documentation/general/getting-started" class="">Getting Started</a></li>
-    <li><a href="/documentation/general/gulp" class=" is-active">Gulp</a></li>
+    <li><a href="/documentation/general/gulp" class=" is-active">Build Tasks – Gulp</a>
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#gulp-fozzie">gulp-build-fozzie</a></li>
+            <li><a href="#gulp-setup">Setup</a></li>
+            <li><a href="#gulp-yarn">Yarn</a></li>
+            <li><a href="#gulp-tasks">Available Tasks</a></li>
+        </ul>
+    </li>
     <li><a href="/documentation/general/browser-support" class="">Browser support</a></li>
     <li><a href="/documentation/general/accessibility" class="">Accessibility</a>
     <li><a href="/documentation/general/accessibility/checklist" class="">A11y Checklist</a>
@@ -115,86 +119,62 @@
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
-                    <h1>Gulp</h1>
-<p><h2>Note – Page needs updating with Global in mind!</h2>
-<p><a name="gulp-setup"></a></p>
-<h2>Setup</h2>
-<p>Gulp helps to tie together all of the front-end tasks that are run on the JUST EAT platform.</p>
-<p>Gulp and Gulp plugins are managed via <a href="https://www.npmjs.com/">NPM</a>, the <a href="https://nodejs.org/">Node.js</a> package manager.</p>
-<p>Here we document two ways of running Gulp tasks locally: using Visual Studio and it’s built-in tools, or running Gulp through the command line.</p>
-<hr class="sectionSplitter">
+                    <h1>Build Tasks – Gulp</h1>
+<p>Gulp ties together the front-end tasks that are run on the Just Eat web platform, such as Sass compilation and Babel transpilation.</p>
+<p>Gulp and its associated plugins can be managed via <a href="https://www.npmjs.com/">NPM</a> or <a href="https://yarnpkg.com/en/">Yarn</a> package managers. We recomemnd using Yarn, which is why all fozzie modules come with a <code>yarn.lock</code> file at their root.</p>
+<p><a name="gulp-fozzie"></a><h2 class="sg-sectionHeading">gulp-build-fozzie</h2></p>
+<p>We manage all of our gulp tasks across projects with a shared set of configurable tasks using the <a href="https://www.npmjs.com/package/@justeat/gulp-build-fozzie"><code>gulp-build-fozzie</code> module</a>.</p>
+<p>For details on how to use and figure this module, take a look at the <a href="https://www.npmjs.com/package/@justeat/gulp-build-fozzie#setup">module's documentation</a>.</p>
+<p><a name="gulp-setup"></a><h2 class="sg-sectionHeading">Getting up and running with Gulp</h2></p>
+<p>Here we document two ways of running Gulp tasks locally: using Visual Studio and its built-in tools, or running Gulp through the command line.</p>
+<p><a name="gulp-cmd"></a></p>
+<h4>Using Gulp on Command Line</h4>
+<p>The first method of using Gulp is straight through the Command Line or Terminal.  To do this simply:</p>
+<ol>
+<li><p><strong><a href="https://nodejs.org/">Install Node.js</a></strong></p>
+<p>Installing this should be as simple as going to the <a href="https://nodejs.org/">Node.js website</a>, downloading the latest LTS Version (which should be an even numbered version), and running this installer.  Go with all the defaults throughout the install process and this should install Node and NPM on your system.</p></li>
+<li><p><strong>Install Gulp</strong></p>
+<p>Open up a command prompt or terminal window and enter <code>npm install gulp -g</code>.  This should install Gulp so that Visual Studio can do its magic.</p></li>
+<li><p><strong>Install Yarn</strong></p>
+<p>We currently use <a href="https://yarnpkg.com/en/">Yarn</a> for our project dependencies.  Yarn is very similar to NPM with some small differences in performance and features.</p>
+<p>To install yarn check out the <a href="https://yarnpkg.com/en/docs/install">current recommended process in their documentation</a> for your platform.</p></li>
+<li><p><strong>Install the project dependencies</strong></p>
+<p>Navigate to the directory containing the projects <code>package.json</code> using your Command Prompt or Terminal window and then run <code>yarn</code>.  Yarn will then install the project dependencies locally on your machine.</p></li>
+</ol>
+<p>You should now be able to run <code>gulp</code> from the directory containing the projects <code>package.json</code>.</p>
+<p>By default, Gulp will run the default task, but you can run any of the project tasks by appending the name of the task to your <code>gulp</code> call. For example, running<code>gulp css</code> will run the task that compiles the CSS files.</p>
+<p>For a full list of tasks avilable, <a href="https://github.com/justeat/gulp-build-fozzie#the-gulp-tasks">take a look at the modules documentation</a>.</p>
 <p><a name="gulp-vs"></a></p>
-<h2>Using Gulp in Visual Studio</h2>
-<p>Here we document the steps needed to successfully run Gulp using Visual Studio 2013 and 2015.</p>
-<p>It is recommended that you upgrade to VS 2015 as the extension required to run Gulp tasks – Task Runner Explorer – comes baked in by default.</p>
-<h3>Setup steps</h3>
-<p>Future versions of Visual Studio (or the current enterprise )</p>
+<h3>Using Gulp in Visual Studio</h3>
+<p>Here we document the steps needed to successfully run Gulp using Visual Studio 2017.</p>
+<h4>Setup steps</h4>
 <p>To get up and running with using Gulp in your setup of Visual Studio, just carry out the following steps:</p>
 <ol>
 <li><p><strong><a href="https://nodejs.org/">Install Node.js</a></strong></p>
-<p>Node.js – and it’s bundled package manage npm – are needed to run Gulp tasks with VS 2013 or VS 2015 Professional.</p>
-<p>Installing this should be as simple as going to the <a href="https://nodejs.org/">Node.js website</a> and hitting the 'Install' button, which will take you through the install process.  Go with all the defaults throughout the install process and this should install Node and it’s package manager on your system.</p></li>
-<li><p><strong>For users of VS 2013 only</strong> – <strong><a href="https://visualstudiogallery.msdn.microsoft.com/8e1b4368-4afb-467a-bc13-9650572db708">Install Task Runner Explorer</a></strong></p>
-<p>We recommend that you upgrade to Visual Studio 2015 rather than doing this, but if you really want to keep using VS 2013 then you’ll need to install the <a href="https://visualstudiogallery.msdn.microsoft.com/8e1b4368-4afb-467a-bc13-9650572db708">Task Runner Explorer extenson</a>.</p></li>
+<p>Node.js – and its bundled package manager npm – are needed to run Gulp tasks with VS 2013 or VS 2015 Professional.</p>
+<p>Installing this should be as simple as going to the <a href="https://nodejs.org/">Node.js website</a>, downloading the latest LTS Version (which should be an even numbered version), and running this installer.  Go with all the defaults throughout the install process and this should install Node and NPM (its package manager) on your system.</p></li>
 <li><p><strong>Install Gulp</strong></p>
-<p>Open up a command prompt or terminal window and enter <code>npm install gulp -g</code>.  This should install Gulp so that Visual Studio can do it’s magic.</p></li>
-<li><p><strong>Install the project dependencies</strong></p>
-<p>This will eventually be done automatically by Visual Studio, but for the moment, we have to do it ourselves.</p>
-<p>Navigate to the <code>/src/ConsumerWeb/</code> directory of your local ConsumerWeb project in a Command Prompt or Terminal window and then run <code>npm install</code>.  NPM will then install the project dependencies locally on your machine.  If you see any errors in your command prompt during this step, don’t worry about them, they shouldn’t affect the Gulp build.</p></li>
+<p>Open up a command prompt or terminal window and enter <code>npm install gulp -g</code>.  This should install Gulp so that Visual Studio can do its magic.</p></li>
+<li><p><strong>Check and Install the project dependencies</strong></p>
+<p>This <em>should</em> be done automatically by Visual Studio.  To check if this is the case, look for a <code>node_modules</code> folder in the same directory as the `package.json of your project.</p>
+<p>If there isn't a <code>node_modules</code> folder, navigate to the directory containing the projects <code>package.json</code> using a Command Prompt or Terminal window and then run <code>npm install</code>.  NPM will then install the project dependencies locally on your machine.  If you see any warnings in your command prompt during this step, don’t worry about them, they shouldn’t affect the Gulp build.</p></li>
 <li><p><strong>Prioritise local Node config in VS</strong></p>
 <p>Ok, so that’s the dependencies you need installed.  There is just one more option that needs adjusting within Visual Studio.</p>
-<p>In the Visual Studio Menu Bar, go to <code>Tools –&gt; Options –&gt; Projects and Solutions –&gt; External Web Tools</code>.  Then, move the <code>$(PATH)</code> reference in the displayed list to the top of the list.  It should <a href="http://i.imgur.com/SmzYdZs.png">look like this</a>.</p></li>
+<p>In the Visual Studio Menu Bar, go to <code>Tools –&gt; Options –&gt; Projects and Solutions –&gt; External Web Tools</code>.  Then, move the <code>$(PATH)</code> reference in the displayed list to the top of the list.  It should <a href="http://i.imgur.com/SmzYdZs.png">look like this</a>.</p>
+<p>This prioritises your own locally installed version of Node over that which comes along with Visual Studio (which can become out-of-date).</p></li>
 </ol>
 <p>…and that’s it!</p>
-<p>If you don’t plan on editing any CSS yourself, you can forget Gulp even exists and it’ll automatically do it’s thing when you build the project through Visual Studio.</p>
-<p>Otherwise, if you take a look at the Task Runner Explorer Window in Visual Studio, you will see all of the Gulp tasks available for you to run.</p>
-<p>If you want to get more familiar with the Gulp tasks in the project, <a href="#gulp-tasks">checkout what tasks have been pre-configured</a> for use on the project.</p>
-<hr class="sectionSplitter">
-<p><a name="gulp-cmd"></a></p>
-<h2>Using Gulp on Command Line</h2>
-<p>Another method of using Gulp is straight through the Command Line or Terminal.  If you’ve already followed the installation steps above, you should be able to do this by running <code>gulp</code> from the <code>/src/ConsumerWeb/</code> directory.</p>
-<p>By default, Gulp will run the default task, but you can run any of the project tasks by appending the name of the task to your <code>gulp</code> call. For example, running<code>gulp css</code> will run the task that compiles the CSS files.</p>
-<hr class="sectionSplitter">
-<p><a name="npm"></a></p>
-<h2>NPM</h2>
-<p>We use NPM – Node Package Manager – to install and manage the Gulp packages that we use.  NPM comes packaged with Node, so you don’t have to instal anything extra to use it.</p>
-<p>To see a full list of the packages we use, check out the <a href="https://github.je-labs.com/I18N-Production-ROTW/ConsumerWeb/tree/master/src/ConsumerWeb/package.json">package.json</a> in Consumer Web.  When using Gulp for the first time, you will need to install these dependencies through Visual Studio, or by running the following command in a command prompt or terminal:</p>
-<pre><code class="language-sh">npm install
+<p>If you don’t plan on editing any CSS yourself, you can forget Gulp even exists and it’ll automatically do its thing when you build the project through Visual Studio.</p>
+<p><a name="gulp-yarn"></a><h2 class="sg-sectionHeading">Yarn</h2></p>
+<p>We use Yarn – a Node Package Manager – to install and manage the Gulp packages that we use.  To install Yarn, take a look at their <a href="https://yarnpkg.com/en/docs/install">installation guide for your platform</a>,</p>
+<p>To see a full list of the packages we use, check out the <a href="https://github.com/justeat/gulp-build-fozzie/blob/master/package.json">gulp-build-fozzie <code>package.json</code></a>.</p>
+<p>When using Gulp for the first time, you will need to install these dependencies through Visual Studio, or by running the following command in a command prompt or terminal:</p>
+<pre><code class="language-sh">yarn
 </code></pre>
-<hr>
-<h3>NPM and Windows file paths</h3>
-<p>When using NPM v2 on Windows, it can be hard to delete the <code>node_modules</code> folder, due to the <a href="http://stackoverflow.com/questions/28175200/unable-to-delete-node-modules-folder">path names produced by project dependencies being too long</a>.</p>
-<p>This will <a href="http://www.infoq.com/news/2015/06/npm">soon be resolved</a> with the release of NPM v3, which is currently in beta, but until then, there is a workaround should you ever need to do this.</p>
-<p>Install a package called <strong>rimraf</strong> by running <code>npm install rimraf -g</code> from the command line.  Then, from your project folder, you can delete your <code>node_modules</code> folder by typing <code>rimraf node_modules</code>.</p>
-<hr class="sectionSplitter">
-<p><a name="gulp-tasks"></a></p>
-<h2>Gulp Tasks</h2>
-<p>All tasks can be run from Visual Studio by right clicking the name of the task, and selecting <strong>Run</strong>.</p>
-<hr>
-<h3>gulp default</h3>
-<p>The default Gulp task is made up of 3 other tasks.  It will run the <a href="#gulp-css">css</a>, <a href="#gulp-scripts">scripts</a> and <a href="#gulp-copy">copy:fonts</a> Gulp tasks, which will give you a compiled version of the front–end code for use in your local build.</p>
-<p>To find out more information on what each of these tasks do, see their individual documentation below.</p>
-<p>The default Gulp task can also be run by entering <code>gulp default</code>, or simply <code>gulp</code> as a shorthand, on the command line.</p>
-<hr>
-<h3>gulp css</h3>
-<p>The <code>gulp css</code> task takes the SCSS files located in <code>Assets/src/scss</code> and compiles them into CSS files that get included in the project.</p>
-<p>It uses <a href="http://www.sitepoint.com/using-source-maps-debug-sass-chrome/">sourcemaps</a>, which help with CSS debugging, as they will specify the location of the styles in the original SCSS when viewing the styles in devtools.</p>
-<p>This task currently creates 4 CSS files; je.css, je-old.css, opinion-labs.css and styleguide.css.</p>
-<p>For more details on the CSS structure, see the <a href="/css/">CSS documenation</a> which goes into more detail.</p>
-<hr>
-<h3>gulp scripts</h3>
-<p>The <code>gulp scripts</code> task takes the projects JavaScripts files and concatenates and minifies them together.</p>
-<p>Like the CSS task, it also uses <a href="https://www.npmjs.com/package/gulp-sourcemaps">sourcemaps</a> which help when debugging JS by referencing the location of any errors in the original files, before compilation too place.</p>
-<p>For more details on the JavaScript structure, see the <a href="/js/">JS documenation</a> which goes into more detail.</p>
-<hr>
-<h3>gulp copy:fonts</h3>
-<p>The <code>gulp copy:fonts</code> task does as you might expect.  It copies the font files from the <code>Assets/src</code> directory into the <code>Assets/dist</code> directory.</p>
-<p>We will be doing more with our fonts, in terms of caching and optimisation, in the future and so this task is here as a means to enable this process later.</p>
-<hr>
-<h3>gulp watch</h3>
-<p>The <code>gulp watch</code> task allows you to set a watcher on your files, so that when a SCSS or JavaScript file changes, the relevant Gulp task with run automatically.</p>
-<p>So for example, when adding or changing a SCSS file, the <code>gulp css</code> task will compile automatically when it detects this change.</p>
-</p>
+<p><a name="gulp-tasks"></a><h2 class="sg-sectionHeading">Available Tasks</h2></p>
+<p>To see a full list of the tasks that are available as part of the <code>gulp-build-fozzie</code> module, <a href="https://github.com/justeat/gulp-build-fozzie#the-gulp-tasks">check out the module documentation</a>.</p>
+<p>Alternatively, run <code>gulp --tasks</code> in your Command Prompt or Terminal in the same directory as your <code>package.json</code> to output a list of all available tasks.</p>
+<p>Note that some tasks will require some configuration – such as telling the module which directories should be compiled.  All of these configuration details are explained in the documentation as well.</p>
                 </div>
             </div>
         </div>

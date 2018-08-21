@@ -66,10 +66,7 @@
     </div>
 </div>
 
-	    <div class="sg-wip">
-        <h2 class="l-container">This page of the docs needs to be reviewed and is a work in progress.<br> Don’t believe anything that it says!</h2>
-    </div>
-
+	
     <div class="l-container sg-page">
         <div class="g g--gutter g--stack">
             <div class="g-col g-span2--mid">
@@ -86,7 +83,8 @@
                 <!-- subnav for Documentation > General -->
     <li><a href="/documentation/general/" class="">Development Principles</a></li>
     <li><a href="/documentation/general/getting-started" class=" is-active">Getting Started</a></li>
-    <li><a href="/documentation/general/gulp" class="">Gulp</a></li>
+    <li><a href="/documentation/general/gulp" class="">Build Tasks – Gulp</a>
+    </li>
     <li><a href="/documentation/general/browser-support" class="">Browser support</a></li>
     <li><a href="/documentation/general/accessibility" class="">Accessibility</a>
     <li><a href="/documentation/general/accessibility/checklist" class="">A11y Checklist</a>
@@ -116,17 +114,16 @@
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
                     <h1>Getting Started</h1>
-<p>We have tried to decouple our JUST EAT’s front-end process from our .NET stack so that developing front-end code can be fast and iterative.  This also enables our front-end developers to work in the environment that is most productive for them.</p>
-<p>Our current front-end stack uses Gulp (as our task runner), Sass and PostCSS (for our CSS processing) and Browserify with Babel (for our JavaScript).</p>
-<p>If you are going to be developing front-end code for the JUST EAT platform, it’s recommended that you take the time to read all the sections of this documentation to get a better understanding of the tools we use and why we are using them.</p>
-<p><a name="proj-setup"></a></p>
-<h2>Setting up your Environment</h2>
-<p>For full information about setting up your local environments, see the <a href="https://wiki.just-eat.com/pages/viewpage.action?title=Onboarding+Tasks&amp;spaceKey=IENG">Onboarding Documentation</a>.</p>
-<p>For specific information about each individual environment, check out the respective README’s on the ConsumerWeb and PublicWeb repositories.</p>
-<p><a name="proj-gulp"></a></p>
-<h2>Front-end Workflow – Gulp</h2>
-<p>Gulp is a front-end task runner that automates many important tasks associated with modern front-end development.</p>
-<p>We use Gulp on the JUST EAT platforms to tie together all of our front-end workflow tasks.  To find out more about Gulp and how we use it, take a lookat the <a href="/documentation/general/gulp">Gulp section of this documentation</a>.</p>
+<p>We have tried to decouple our UI stack away from our back-end (.NET) stack, so that developing front-end code can be fast and iterative. This also enables our front-end developers to work in the environment that is most productive for them.</p>
+<p>If you are going to be developing front-end code for the Just Eat platform, it’s recommended that you take the time to read through this documentation to get a better understanding of the tools we use and why we are using them.</p>
+<h2>Web Stack</h2>
+<p>Fozzie itself has been created to be fairly technology agnostic.  At its core, it's simply a UI framework built on Sass and Vanilla JS.</p>
+<p>Therefore teams at Just Eat are using Fozzie on projects built in React, Vue.js and Vanilla JS, using WebPack and Gulp as their task runner. It could potentially be used on any stack (including CMS platforms such as WordPress).</p>
+<p>In terms of the current Just Eat web front-end stack, we use Gulp (as our task runner), Sass and PostCSS (for our CSS processing), ES6 with Babel (for our JavaScript) and Jest (for JS testing).</p>
+<p>We also use Yarn for our package dependencies.</p>
+<h2>Front-end Build Tasks</h2>
+<p>Gulp is a front-end task runner that automates tasks such as Sass compilation and Babel transpilation.</p>
+<p>We use Gulp on the Just Eat web platform to tie together all of the front-end workflow tasks.  To find out more about Gulp and how we use it, take a look at the <a href="/documentation/general/gulp">Gulp section of this documentation</a>.</p>
                 </div>
             </div>
         </div>

@@ -66,10 +66,7 @@
     </div>
 </div>
 
-	    <div class="sg-wip">
-        <h2 class="l-container">This page of the docs needs to be reviewed and is a work in progress.<br> Don’t believe anything that it says!</h2>
-    </div>
-
+	
     <div class="l-container sg-page">
         <div class="g g--gutter g--stack">
             <div class="g-col g-span2--mid">
@@ -86,7 +83,8 @@
                 <!-- subnav for Documentation > General -->
     <li><a href="/documentation/general/" class=" is-active">Development Principles</a></li>
     <li><a href="/documentation/general/getting-started" class="">Getting Started</a></li>
-    <li><a href="/documentation/general/gulp" class="">Gulp</a></li>
+    <li><a href="/documentation/general/gulp" class="">Build Tasks – Gulp</a>
+    </li>
     <li><a href="/documentation/general/browser-support" class="">Browser support</a></li>
     <li><a href="/documentation/general/accessibility" class="">Accessibility</a>
     <li><a href="/documentation/general/accessibility/checklist" class="">A11y Checklist</a>
@@ -116,26 +114,39 @@
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
                     <h1>Development Principles</h1>
-<p>JUST EAT has a large codebase, which is currently undergoing a merge of multiple front-end platforms.  Although we have many language specific principles, our fundamental front-end principles are:</p>
+<p>UI at Just Eat encompasses many different projects and platforms.</p>
+<p>Although we have language specific principles, our fundamental front-end principles are:</p>
 <ul>
-<li>Think in terms of components</li>
-<li>Leave code in a better state than you found it</li>
-<li>Reuse as much as possible: technologies and components</li>
-<li>The entire code base should look like one person wrote it</li>
-<li>Keep it simple</li>
-<li>Ensure we can pivot away from a dependency/pattern</li>
+<li><a href="#components">Think in terms of components</a></li>
+<li><a href="#reuse">Reuse as much as possible: technologies and components</a></li>
+<li><a href="#improve">Try to leave code in a better state than you found it</a></li>
+<li><a href="#consistency">Our UI code should look like one person wrote it (or a team of people using the same rules)</a></li>
+<li><a href="#pivot">Ensure that we can pivot away from a dependency/pattern if needed</a></li>
+<li><a href="#simple">Keep it simple</a></li>
 </ul>
-<h2>Reuse as much as possible</h2>
-<p>More than anything, please try to follow existing patterns as much as possible.</p>
-<p>Inconsistency soon manifests as complexity and then technical debt. What we are aiming to build is a maintainable platform where developers can move between applications with very little up-front learning required. <a href="https://medium.com/@bentlegen/the-best-tool-for-the-job-isnt-always-6ed364f3f775">The best tool for the job, isn’t always</a> by Ben Vinegar covers this concept perfectly.</p>
-<p>Sometimes reusing code will take more initial work but it shouldn't be avoided. When building new features, try to identify reusable parts which can be abstracted to help other developers.</p>
-<h2>Components</h2>
-<p>When building anything for use on the JUST EAT platform, think about the thing you are building and break it down as much as possible.  The simpler you can make that piece of functionality, the easier it will be for other developers to pick up at a later date (or yourself down the line).</p>
-<p>JUST EAT is built of many small UI components pieced together to make a more complex application.  By writing small components, we can change smaller pieces of our platform without worrying about the implications across whole templates and pages.</p>
-<p>When done well, this also vastly speeds up the time needed to create new functionality, as we can likely reuse tested components that are already productionised on the platform, extending this functionality to our needs.</p>
-<h2>Ensure we can pivot</h2>
-<p>When making broad decisions about JUST EAT trust that your expertise means you're right now, but realise that things will change and we may possibly need to pivot away from what you decide on. There is a cost to removing something from the codebase which far outweighs the cost of adding it.</p>
-<p>Everything is up for discussion, but pivoting on such a large code base is a slow process so it's always worth spending the extra time to consider how deeply we would be tied into the decision and how quickly we could change course.</p>
+<p><a name="components"></a><h2 class="sg-sectionHeading">Think in terms of Components</h2></p>
+<p>When developing, think about the thing you are building and break it down as much as possible. The simpler you can make that piece of functionality, the easier it will be for other developers to pick up at a later date (or yourself down the line).</p>
+<p>The Just Eat website is built of many small UI components pieced together to make a more complex application. By writing small components, we can change smaller pieces of our platform without worrying about the implications across whole templates and pages.</p>
+<p>When done well, this also vastly speeds up the time needed to create new functionality, as we can likely reuse tested, accessible components that are already productionised on our platform, extending this functionality to our needs.</p>
+<p><a name="reuse"></a><h2 class="sg-sectionHeading">Reuse as much as possible</h2></p>
+<p>Try to follow existing patterns as much as possible.</p>
+<p>Inconsistency soon manifests as complexity and then technical debt. What we are aiming to build is a maintainable platform where developers can move between applications with a low barrier to entry. <a href="https://medium.com/@bentlegen/the-best-tool-for-the-job-isnt-always-6ed364f3f775">The best tool for the job, isn’t always</a> by Ben Vinegar covers this concept perfectly.</p>
+<p>Sometimes reusing code will take more initial work but it shouldn't be avoided. When building new features, try to identify reusable parts which can be abstracted to help other developers in the future.</p>
+<p><a name="improve"></a><h2 class="sg-sectionHeading">Improve upon what's been built</h2></p>
+<p>Try to leave code in a better state than you found it.</p>
+<p>If you notice that a piece of code can be improved while you are fixing a bug or adding a feature, take the time to make that change (within reason).</p>
+<p>Teams don't often get dedicated time to simply 'make the codebase better'. It's every UI engineers job at Just Eat to ensure the UI code is the best it can be.</p>
+<p><a name="consistency"></a><h2 class="sg-sectionHeading">Consistency in our conventions</h2></p>
+<p>As a team, we should decide on conventions to adhere to and stick to them.</p>
+<p>If done well, this leads to code that looks like anyone in the team could've written it, rather than every CSS and JavaScript file using a different set of conventions.</p>
+<p>We encourage the use of automation tools to help with this as much as possible.</p>
+<p><a name="pivot"></a><h2 class="sg-sectionHeading">Ensure we can Pivot</h2></p>
+<p>When making broad decisions about any project that you are working on, trust your expertise, but realise that things will change and we will likely need to pivot away from the technologies you choose (as front-end technology moves fast). There is a cost to removing something from the codebase which far outweighs the cost of adding it.</p>
+<p>Everything is up for discussion, but pivoting on such a large codebase can be a slow process so it's always worth spending the extra time to consider how deeply we would be tied into the decision and how quickly we could change course if needed.</p>
+<p><a name="simple"></a><h2 class="sg-sectionHeading">Keep it Simple</h2></p>
+<p>If the code you're writing looks complicated to you, it's likely going to look complicated to the next developer to come across it.</p>
+<p>Try to make sure the code you write is as simple as possible.  If a function you're writing in JavaScript is getting unwieldy, break it up into smaller functions.</p>
+<p>While it's not always possible to write code that is self documenting, it's always possible to comment your code. We encourage the liberal use of code comments – especially when describing JS functions and parameters, or when explaining what a component is used for in CSS.</p>
                 </div>
             </div>
         </div>
