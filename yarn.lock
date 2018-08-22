@@ -119,9 +119,9 @@
   version "1.4.0"
   resolved "https://registry.npmjs.org/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-1.4.0.tgz#70dffb05eafc834f348957a6ff06588ebdf877c9"
 
-"@justeat/fozzie@0.57.0":
-  version "0.57.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.57.0.tgz#ff76caf32dc98ff9868fdfb534287a60c413f94b"
+"@justeat/fozzie@0.58.0":
+  version "0.58.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.58.0.tgz#418bfecfbf1e85ac2f3bf1d390368525b1c0ba2b"
   dependencies:
     "@justeat/f-dom" "^0.3.0"
     "@justeat/fozzie-colour-palette" "^1.1.0"
