@@ -4,6 +4,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v1.13.0
+------------------------------
+*August 22, 2018*
+
+### Added
+- `c-card` component documentation.
+
+
 v1.12.0
 ------------------------------
 *August 21, 2018*

@@ -1,0 +1,106 @@
+---
+title: Cards
+section-title: UI Components
+docs: true
+
+navgroup: styleguide
+navsub: ui-components
+navactive: cards
+---
+<p>Cards are simple content containers. They can be used in a variety of different ways such as separating sections of a page or wrapping content.</p>
+
+<h2 class="sg-sectionHeading">Default Card – <code>.c-card</code></h2>
+{{#>demo-block }}
+<div class="c-card">
+    Default Card
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Outlined Card – <code>.c-card c-card--outline</code></h2>
+<p>Displays a border around the card.</p>
+{{#>demo-block }}
+<div class="c-card c-card--outline">
+    Outlined Card
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Non-padded Card – <code>.c-card c-card--noPad</code></h2>
+<p>All padding has been remove</p>
+<p>(the <code>c-card--outline</code> class has been used here to highlight the removal of the padding).</p>
+{{#>demo-block }}
+<div class="c-card c-card--outline c-card--noPad">
+    Non-padded Card
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Non-padded Card – <code>.c-card c-card--noPadVertical</code></h2>
+<p>This card has horizontal padding but no vertical padding.</p>
+<p>(the <code>c-card--outline</code> class has been used here to highlight the removal of the padding).</p>
+{{#>demo-block }}
+<div class="c-card c-card--outline c-card--noPadVertical">
+    Non-padded Vertical Card
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Rounded Corners – <code>.c-card c-card--rounded</code></h2>
+<p>Used in conjunction with the <code>c-card--outline</code> class, this will apply rounded corners to the border.</p>
+{{#>demo-block }}
+<div class="c-card c-card--outline c-card--rounded">
+    Rounded Corners
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Larger Rounded Corners – <code>.c-card c-card--rounded--large</code></h2>
+<p>Used in conjunction with the <code>c-card--outline</code> class, this will apply larger rounded corners to the border.</p>
+{{#>demo-block }}
+<div class="c-card c-card--outline c-card--rounded--large">
+    Larger Rounded Corners
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Disabled Card – <code>.c-card c-card--disabled</code></h2>
+<p>Applies a grey background to indicate that the card is disabled.</p>
+{{#>demo-block }}
+<div class="c-card c-card--disabled">
+    Disabled Card
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Card With Content</h2>
+<p>Applies a darker background to indicate that the card is disabled.</p>
+{{#>demo-block }}
+<div class="c-card c-card--outline">
+    <h2>Card Title</h2>
+    <p>Card content</p>
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Card With Media Element</h2>
+<p>You can nest other types of components, such as a <code>c-mediaElement</code> component, within a card.</p>
+{{#>demo-block }}
+<div class="c-card c-card--outline c-card--rounded--large c-mediaElement c-mediaElement--fullstack text-center">
+    <img class="c-mediaElement-img" src="{{ baseUrl }}/assets/img/examples/restaurant-logo.gif" alt="Fozzie Kebab" />
+    <div class="c-mediaElement-content">
+        <h1>Fozzie Kebab</h1>
+        <p class="c-badge c-badge--light c-badge--large">Kebab <span>•</span> Pizza</p>
+    </div>
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Cards Within a Grid</h2>
+<p>Use cards inside a grid to create a layout.</p>
+{{#>demo-block }}
+<div class="g g--gutter g--stack--mid">
+    <div class="g-col g-span4">
+        <div class="c-card c-card--outline">
+            <h3>Left Outlined Card</h3>
+        </div>
+    </div>
+    <div class="g-col g-span8">
+        <div class="c-card c-card--outline">
+            <h3>Right Outlined Card</h3>
+            <p>Content</p>
+        </div>
+    </div>
+</div>
+{{/demo-block }}
