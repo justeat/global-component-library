@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>UI Components – Just Eat Front-End Component Library and Documentation</title>
+		<title>Badges – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -79,7 +79,7 @@
     <li><a href="/styleguide/ui-components/grid" class="is-incomplete ">Grid</a></li>
     <li><a href="/styleguide/ui-components/buttons" class="">Buttons</a></li>
     <li><a href="/styleguide/ui-components/cards" class="">Cards</a></li>
-    <li><a href="/styleguide/ui-components/badges" class="">Badges</a></li>
+    <li><a href="/styleguide/ui-components/badges" class=" is-active">Badges</a></li>
     <li><a href="/styleguide/ui-components/pagination" class="is-incomplete ">Pagination</a></li>
     <li><a href="/styleguide/ui-components/icons" class="is-incomplete ">Icons</a></li>
 
@@ -145,30 +145,118 @@
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
-                    <h1>UI Components</h1>
-<p>Note. Only components that are part of the global platform should be added to this page of components.</p>
-<div class="g g--gutter g--stack--mid">
-    <div class="g-col g-span6">
-<p><h3 class="sg-sectionHeading">Objects</h3></p>
-<ul>
-<li><a href="buttons">Buttons</a></li>
-</ul>
+                    <h1>Badges</h1>
+<p><em>The <code>badge</code> component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding <code>@include badge();</code> into your SCSS dependencies file.</em></p>
+<p>Badges can be used to display small pieces of information.</p>
+<p><h2 class="sg-sectionHeading">Default Badge – <code>.c-badge</code></h2></p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <span class="c-badge">Badge</span>
     </div>
-    <div class="g-col g-span6">
-<p><h3 class="sg-sectionHeading">Components</h3></p>
-<ul>
-<li><a href="headers/">Headers</a></li>
-<li><a href="footers/">Footers</a></li>
-<li><a href="breadcrumbs">Breadcrumbs</a></li>
-<li><a href="buttons">Buttons</a></li>
-<li><a href="cards">Cards</a></li>
-<li><a href="Badges">Badges</a></li>
-<li><a href="star-ratings">Star Ratings</a></li>
-<li><a href="listings">Listings</a></li>
-<li><a href="mediaElement">Media Element</a></li>
-<li><a href="forms/checkboxes">Checkboxes</a></li>
-<li><a href="forms/radio-buttons">Radio Buttons</a></li>
-</ul>
+    <div class="demo-code">
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge"</span>&gt;</span>Badge<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Rounded Badge – <code>.c-badge c-badge--rounded</code></h2></p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <span class="c-badge c-badge--rounded">Rounded</span>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--rounded"</span>&gt;</span>Rounded<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Light Badge – <code>.c-badge c-badge--light</code></h2></p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <span class="c-badge c-badge--light">Light <span>•</span> badge</span>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light"</span>&gt;</span>Light <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>•<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> badge<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Info Badge – <code>.c-badge c-badge--info</code></h2></p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <span class="c-badge c-badge--info">Info</span>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--info"</span>&gt;</span>Info<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Warning Badge – <code>.c-badge c-badge--warning</code></h2></p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <span class="c-badge c-badge--warning">Warning</span>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--warning"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Alert Badge – <code>.c-badge c-badge--alert</code></h2></p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <span class="c-badge c-badge--alert">Alert</span>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--alert"</span>&gt;</span>Alert<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Large Badge – <code>.c-badge c-badge--large</code></h2></p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <span class="c-badge c-badge--large">Large</span>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--large"</span>&gt;</span>Large<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Large Badges</h2></p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <span class="c-badge c-badge--large c-badge--light">Light</span>
+        <span class="c-badge c-badge--large c-badge--info">Info</span>
+        <span class="c-badge c-badge--large c-badge--warning">Warning</span>
+        <span class="c-badge c-badge--large c-badge--alert">Alert</span>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--large c-badge--light"</span>&gt;</span>Light<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--large c-badge--info"</span>&gt;</span>Info<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--large c-badge--warning"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--large c-badge--alert"</span>&gt;</span>Alert<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Large Rounded Badges</h2></p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <span class="c-badge c-badge--large c-badge--rounded c-badge--light">Light</span>
+        <span class="c-badge c-badge--large c-badge--rounded c-badge--info">Info</span>
+        <span class="c-badge c-badge--large c-badge--rounded c-badge--warning">Warning</span>
+        <span class="c-badge c-badge--large c-badge--rounded c-badge--alert">Alert</span>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--large c-badge--rounded c-badge--light"</span>&gt;</span>Light<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--large c-badge--rounded c-badge--info"</span>&gt;</span>Info<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--large c-badge--rounded c-badge--warning"</span>&gt;</span>Warning<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--large c-badge--rounded c-badge--alert"</span>&gt;</span>Alert<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
     </div>
 </div>
                 </div>

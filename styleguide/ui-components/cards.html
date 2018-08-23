@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>UI Components – Just Eat Front-End Component Library and Documentation</title>
+		<title>Cards – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -78,7 +78,7 @@
     <li><a href="/styleguide/ui-components/breadcrumbs" class="">Breadcrumbs</a></li>
     <li><a href="/styleguide/ui-components/grid" class="is-incomplete ">Grid</a></li>
     <li><a href="/styleguide/ui-components/buttons" class="">Buttons</a></li>
-    <li><a href="/styleguide/ui-components/cards" class="">Cards</a></li>
+    <li><a href="/styleguide/ui-components/cards" class=" is-active">Cards</a></li>
     <li><a href="/styleguide/ui-components/badges" class="">Badges</a></li>
     <li><a href="/styleguide/ui-components/pagination" class="is-incomplete ">Pagination</a></li>
     <li><a href="/styleguide/ui-components/icons" class="is-incomplete ">Icons</a></li>
@@ -145,30 +145,198 @@
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
-                    <h1>UI Components</h1>
-<p>Note. Only components that are part of the global platform should be added to this page of components.</p>
-<div class="g g--gutter g--stack--mid">
-    <div class="g-col g-span6">
-<p><h3 class="sg-sectionHeading">Objects</h3></p>
-<ul>
-<li><a href="buttons">Buttons</a></li>
-</ul>
+                    <h1>Cards</h1>
+<p><em>The <code>card</code> component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding <code>@include card();</code> into your SCSS dependencies file.</em></p>
+<p>Cards are simple content containers. They can be used in a variety of different ways such as separating sections of a page or wrapping content.</p>
+<p><h2 class="sg-sectionHeading">Default Card – <code>.c-card</code></h2></p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <div class="c-card">
+            Default Card
+        </div>
     </div>
-    <div class="g-col g-span6">
-<p><h3 class="sg-sectionHeading">Components</h3></p>
-<ul>
-<li><a href="headers/">Headers</a></li>
-<li><a href="footers/">Footers</a></li>
-<li><a href="breadcrumbs">Breadcrumbs</a></li>
-<li><a href="buttons">Buttons</a></li>
-<li><a href="cards">Cards</a></li>
-<li><a href="Badges">Badges</a></li>
-<li><a href="star-ratings">Star Ratings</a></li>
-<li><a href="listings">Listings</a></li>
-<li><a href="mediaElement">Media Element</a></li>
-<li><a href="forms/checkboxes">Checkboxes</a></li>
-<li><a href="forms/radio-buttons">Radio Buttons</a></li>
-</ul>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"c-card"</span>&gt;
+    Default Card
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Outlined Card – <code>.c-card c-card--outline</code></h2></p>
+<p>Displays a border around the card.</p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <div class="c-card c-card--outline">
+            Outlined Card
+        </div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"c-card c-card--outline"</span>&gt;
+    Outlined Card
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Non-padded Card – <code>.c-card c-card--noPad</code></h2></p>
+<p>All padding has been remove</p>
+<p>(the <code>c-card--outline</code> class has been used here to highlight the removal of the padding).</p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <div class="c-card c-card--outline c-card--noPad">
+            Non-padded Card
+        </div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--noPad"</span>&gt;
+    Non-padded Card
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Non-padded Card – <code>.c-card c-card--noPadVertical</code></h2></p>
+<p>This card has horizontal padding but no vertical padding.</p>
+<p>(the <code>c-card--outline</code> class has been used here to highlight the removal of the padding).</p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <div class="c-card c-card--outline c-card--noPadVertical">
+            Non-padded Vertical Card
+        </div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--noPadVertical"</span>&gt;
+    Non-padded Vertical Card
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Rounded Corners – <code>.c-card c-card--rounded</code></h2></p>
+<p>Used in conjunction with the <code>c-card--outline</code> class, this will apply rounded corners to the border.</p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <div class="c-card c-card--outline c-card--rounded">
+            Rounded Corners
+        </div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--rounded"</span>&gt;
+    Rounded Corners
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Larger Rounded Corners – <code>.c-card c-card--rounded--large</code></h2></p>
+<p>Used in conjunction with the <code>c-card--outline</code> class, this will apply larger rounded corners to the border.</p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <div class="c-card c-card--outline c-card--rounded--large">
+            Larger Rounded Corners
+        </div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--rounded--large"</span>&gt;
+    Larger Rounded Corners
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Disabled Card – <code>.c-card c-card--disabled</code></h2></p>
+<p>Applies a grey background to indicate that the card is disabled.</p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <div class="c-card c-card--disabled">
+            Disabled Card
+        </div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"c-card c-card--disabled"</span>&gt;
+    Disabled Card
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Card With Content</h2></p>
+<p>Applies a darker background to indicate that the card is disabled.</p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <div class="c-card c-card--outline">
+            <h2>Card Title</h2>
+            <p>Card content</p>
+        </div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Card Title<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Card content<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Card With Media Element</h2></p>
+<p>You can nest other types of components, such as a <code>c-mediaElement</code> component, within a card.</p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <div class="c-card c-card--outline c-card--rounded--large c-mediaElement c-mediaElement--fullstack text-center">
+            <img class="c-mediaElement-img" src="/assets/img/examples/restaurant-logo.gif" alt="Fozzie Kebab" />
+            <div class="c-mediaElement-content">
+                <h1>Fozzie Kebab</h1>
+                <p class="c-badge c-badge--light c-badge--large">Kebab <span>•</span> Pizza</p>
+            </div>
+        </div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"c-card c-card--outline c-card--rounded--large c-mediaElement c-mediaElement--fullstack text-center"</span>&gt;
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement-img"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/examples/restaurant-logo.gif"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Fozzie Kebab"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement-content"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Fozzie Kebab<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>•<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+</code></pre>
+    </div>
+</div>
+<p><h2 class="sg-sectionHeading">Cards Within a Grid</h2></p>
+<p>Use cards inside a grid to create a layout.</p>
+<div class="demo">
+    <div class="demo-visual">
+        <h4 class="demo-title">Example</h4>
+        <div class="g g--gutter g--stack--mid">
+            <div class="g-col g-span4">
+                <div class="c-card c-card--outline">
+                    <h3>Left Outlined Card</h3>
+                </div>
+            </div>
+            <div class="g-col g-span8">
+                <div class="c-card c-card--outline">
+                    <h3>Right Outlined Card</h3>
+                    <p>Content</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g g--gutter g--stack--mid"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span4"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Left Outlined Card<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span8"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Right Outlined Card<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Content<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
     </div>
 </div>
                 </div>

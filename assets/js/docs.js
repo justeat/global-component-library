@@ -105,15 +105,327 @@ if (signedInDemoEl) {
 
 },{"@justeat/f-dom":3}],3:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var _qwery=require('qwery'),_qwery2=_interopRequireDefault(_qwery);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var first=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)[0]},all=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)},exists=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return 0<(0,_qwery2.default)(a,b).length},dom=all;dom.all=all,dom.first=first,dom.exists=exists,exports.default=dom;
-},{"qwery":11}],4:[function(require,module,exports){
-'use strict';var _typeof='function'==typeof Symbol&&'symbol'==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&'function'==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?'symbol':typeof a},_fDom=require('@justeat/f-dom'),_fDom2=_interopRequireDefault(_fDom),_internal=require('./internal');Object.defineProperty(exports,'__esModule',{value:!0}),exports.setToggleCallback=exports.toggleSection=exports.toggleAccordion=void 0;function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var toggleAccordion=function(a,b){return(0,_internal.handleAccordionToggles)(b,_fDom2.default.first(a),'show')},toggleSection=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:'is-hidden';return(0,_internal.handleToggles)(a,b)},setToggleCallback=function(a,b){var c='object'===('undefined'==typeof a?'undefined':_typeof(a))?a:_fDom2.default.first(a);if(!c)throw new Error('f-toggle: unable to find element from selector');var d=c.hasAttribute('data-toggle-accordion');if('function'!=typeof b)throw new Error('f-toggle: callback expects a function');if(!d&&!c.hasAttribute('data-toggle-target'))throw new Error('f-toggle: this element is missing a \'data-toggle-accordion\' or \'data-toggle-target\' attribute');d?(0,_fDom2.default)('[data-toggle-target]',c).filter(function(a){return!a.hasAttribute('data-toggle-accordion-exclude')}).forEach(function(a){a.addEventListener('click',function(){b.call(void 0,a)})}):c.addEventListener('click',function(){b.call(void 0,c)})};exports.toggleAccordion=toggleAccordion,exports.toggleSection=toggleSection,exports.setToggleCallback=setToggleCallback;
-},{"./internal":5,"@justeat/f-dom":7}],5:[function(require,module,exports){
-'use strict';var _slicedToArray=function(){function a(a,b){var c=[],d=!0,e=!1,f=void 0;try{for(var g,h=a[Symbol.iterator]();!(d=(g=h.next()).done)&&(c.push(g.value),!(b&&c.length===b));d=!0);}catch(a){e=!0,f=a}finally{try{!d&&h['return']&&h['return']()}finally{if(e)throw f}}return c}return function(b,c){if(Array.isArray(b))return b;if(Symbol.iterator in Object(b))return a(b,c);throw new TypeError('Invalid attempt to destructure non-iterable instance')}}(),_fDom=require('@justeat/f-dom'),_fDom2=_interopRequireDefault(_fDom);Object.defineProperty(exports,'__esModule',{value:!0}),exports.handleAccordionToggles=exports.handleToggles=exports.toggles=void 0;function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var toggles=function(a){return{toggle:function toggle(b){b.classList.toggle(a)},show:function show(b){b.classList.remove(a)},hide:function hide(b){b.classList.add(a)}}},handleToggles=function(a,b){return Array.isArray(a)?void a.forEach(function(a){var c=a.split(':');1===c.length&&c.unshift('toggle');var d=_slicedToArray(c,2),e=d[0],f=d[1];(0,_fDom2.default)('[data-toggle-name~='+f+']').forEach(toggles(b)[e])}):void handleToggles(a.split(' '),b)},handleAccordionToggles=function(a,b){var c=2<arguments.length&&arguments[2]!==void 0?arguments[2]:'toggle',d=b.getAttribute('data-toggle-class')||'is-hidden';(0,_fDom2.default)('[data-toggle-name]',b).filter(function(a){return!a.hasAttribute('data-toggle-accordion-exclude')}).forEach(function(b){var e=b.getAttribute('data-toggle-name')===a?c:'hide';toggles(d)[e](b)})};exports.toggles=toggles,exports.handleToggles=handleToggles,exports.handleAccordionToggles=handleAccordionToggles;
-},{"@justeat/f-dom":7}],6:[function(require,module,exports){
-'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.setToggleCallback=exports.toggleSection=exports.toggleAccordion=exports.setupToggle=void 0;var _fDom=require('@justeat/f-dom'),_fDom2=_interopRequireDefault(_fDom),_liteReady=require('lite-ready'),_liteReady2=_interopRequireDefault(_liteReady),_closest=require('closest'),_closest2=_interopRequireDefault(_closest),_internal=require('./helpers/internal'),_external=require('./helpers/external');function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var onKeydown=function(a,b,c,d){if('Enter'===a.key&&b(a),c&&!d){var e=c.getAttribute('data-toggle-class')||'is-hidden',f=a.target.parentNode,g=!a.shiftKey&&'Tab'===a.key,h=a.shiftKey&&'Tab'===a.key;g&&f.nextElementSibling&&f.nextElementSibling.hasAttribute('data-toggle-name')&&f.classList.contains(e)&&(a.preventDefault(),f.nextElementSibling.querySelector('[data-toggle-target]').focus()),h&&f.previousElementSibling&&f.previousElementSibling.hasAttribute('data-toggle-name')&&f.previousElementSibling.classList.contains(e)&&(a.preventDefault(),f.previousElementSibling.querySelector('[data-toggle-target]').focus())}},setupToggle=function(){(0,_fDom2.default)('[data-toggle-accordion]').forEach(function(a){var b=a.getAttribute('data-toggle-class')||'is-hidden',c=a.hasAttribute('data-toggle-first-section-expanded');(0,_fDom2.default)('[data-toggle-name]',a).filter(function(a){return!a.hasAttribute('data-toggle-accordion-exclude')}).slice(c?1:0).forEach((0,_internal.toggles)(b).hide)}),(0,_fDom2.default)('[data-toggle-target]').forEach(function(a){var b=a.getAttribute('data-toggle-target'),c=a.hasAttribute('data-toggle-accordion-exclude'),d=(0,_closest2.default)(a,'[data-toggle-accordion]'),e=a.getAttribute('data-toggle-class')||'is-hidden',f=function(a){return a.preventDefault(),d&&!c?(0,_internal.handleAccordionToggles)(b,d):(0,_internal.handleToggles)(b,e)};a.addEventListener('click',f),a.addEventListener('keydown',function(a){onKeydown(a,f,d,c)})})};exports.setupToggle=setupToggle,exports.toggleAccordion=_external.toggleAccordion,exports.toggleSection=_external.toggleSection,exports.setToggleCallback=_external.setToggleCallback,(0,_liteReady2.default)(function(){setupToggle()});
-},{"./helpers/external":4,"./helpers/internal":5,"@justeat/f-dom":7,"closest":8,"lite-ready":9}],7:[function(require,module,exports){
-arguments[4][3][0].apply(exports,arguments)
-},{"dup":3,"qwery":11}],8:[function(require,module,exports){
+},{"qwery":10}],4:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.setToggleCallback = exports.toggleSection = exports.toggleAccordion = undefined;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _fDom = require('@justeat/f-dom');
+
+var _fDom2 = _interopRequireDefault(_fDom);
+
+var _internal = require('./internal');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Allows user to toggle an accordion from another module
+ *
+ * @example <caption>This would 'show' section 'two', and hide all others</caption>
+ *
+ * import { toggleAccordion } from '@justeat/f-toggle';
+ *
+ * <div data-toggle-accordion>
+ *   <div data-toggle-name="one"></div>
+ *   <button data-toggle-target="one"></button>
+ *   <div data-toggle-name="two"></div>
+ *   <button data-toggle-target="two"></button>
+ * </div>
+ *
+ * toggleAccordion('[data-toggle-accordion]', 'two');
+ *
+ * @param {string} selector
+ * @param {string} target
+ */
+var toggleAccordion = function toggleAccordion(selector, target) {
+    return (0, _internal.handleAccordionToggles)(target, _fDom2.default.first(selector), 'show');
+};
+
+/**
+ * Allows user to toggle sections based on options passed in
+ *
+ * @example <caption>This would 'hide' section 'one' and 'two'</caption>
+ *
+ * import { toggleSection } from '@justeat/f-toggle';
+ *
+ *   <div data-toggle-name="one"></div>
+ *   <button data-toggle-target="one"></button>
+ *   <div data-toggle-name="two"></div>
+ *   <button data-toggle-target="two"></button>
+ *
+ * toggleSection('hide:one hide:two');
+ *
+ * @param {string} target
+ * @param {string} toggleClass
+ */
+var toggleSection = function toggleSection(target) {
+    var toggleClass = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'is-hidden';
+    return (0, _internal.handleToggles)(target, toggleClass);
+};
+
+/**
+ * Allows user to run callback when a section is toggled
+ *
+ * @example <caption>This would call the callback if any section within the accordion is toggled</caption>
+ *
+ * setToggleCallback('[data-toggle-accordion]', () => {
+ *   callbackFn();
+ * });
+ *
+ * @example <caption>This would call the callback if the section is toggled</caption>
+ *
+ * setToggleCallback('[data-toggle-target]', () => {
+ *   callbackFn();
+ * });
+ *
+ * @param {string|Element} selector
+ * @param {function} callback
+ */
+var setToggleCallback = function setToggleCallback(selector, callback) {
+    var container = (typeof selector === 'undefined' ? 'undefined' : _typeof(selector)) === 'object' ? selector : _fDom2.default.first(selector);
+
+    if (!container) {
+        throw new Error('f-toggle: unable to find element from selector');
+    }
+
+    var isAccordion = container.hasAttribute('data-toggle-accordion');
+
+    if (typeof callback !== 'function') {
+        throw new Error('f-toggle: callback expects a function');
+    }
+
+    if (!isAccordion && !container.hasAttribute('data-toggle-target')) {
+        throw new Error('f-toggle: this element is missing a \'data-toggle-accordion\' or \'data-toggle-target\' attribute');
+    }
+
+    if (isAccordion) {
+        (0, _fDom2.default)('[data-toggle-target]', container).filter(function (toggle) {
+            return !toggle.hasAttribute('data-toggle-accordion-exclude');
+        }).forEach(function (toggle) {
+            toggle.addEventListener('click', function () {
+                callback.call(undefined, toggle);
+            });
+        });
+    } else {
+        container.addEventListener('click', function () {
+            callback.call(undefined, container);
+        });
+    }
+};
+
+exports.toggleAccordion = toggleAccordion;
+exports.toggleSection = toggleSection;
+exports.setToggleCallback = setToggleCallback;
+},{"./internal":5,"@justeat/f-dom":3}],5:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.handleAccordionToggles = exports.handleToggles = exports.toggles = undefined;
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _fDom = require('@justeat/f-dom');
+
+var _fDom2 = _interopRequireDefault(_fDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Toggles, shows or hides elements by adding/removing 'toggleClass'
+ *
+ * @example <caption>This would call the 'show' method, removing the class 'is-hidden-custom' from the element</caption>
+ *
+ * toggles('is-hidden-custom')['show'](element);
+ *
+ * @param {string} toggleClass
+ *
+ * @property {object} toggle Toggle an element's visibility.
+ * @property {object} show Shows an element.
+ * @property {object} hide Hides an element.
+ */
+var toggles = function toggles(toggleClass) {
+    return {
+        toggle: function toggle(element) {
+            element.classList.toggle(toggleClass);
+        },
+        show: function show(element) {
+            element.classList.remove(toggleClass);
+        },
+        hide: function hide(element) {
+            element.classList.add(toggleClass);
+        }
+    };
+};
+
+/**
+ * Applies toggle behaviour to referenced 'data-toggle-name' elements based on options passed in
+ *
+ * @example <caption>This would attach the 'show' method to the 'data-toggle-name="one"' element, and
+ * attach the 'hide' method to the 'data-toggle-name="two"' element</caption
+ *
+ * handleToggles('show:one hide:two', 'is-hidden-custom');
+ *
+ * @param {string|string[]} targets
+ * @param {string} toggleClass
+ */
+var handleToggles = function handleToggles(targets, toggleClass) {
+    if (!Array.isArray(targets)) {
+        handleToggles(targets.split(' '), toggleClass);
+        return;
+    }
+
+    targets.forEach(function (target) {
+        var parts = target.split(':');
+
+        if (parts.length === 1) {
+            parts.unshift('toggle');
+        }
+
+        var _parts = _slicedToArray(parts, 2),
+            toggleType = _parts[0],
+            toggleName = _parts[1];
+
+        (0, _fDom2.default)('[data-toggle-name~=' + toggleName + ']').forEach(toggles(toggleClass)[toggleType]);
+    });
+};
+
+/**
+ * Toggles the target you have clicked, and hides all other elements in the accordion
+ *
+ * @example <caption>This would toggle the section 'one', and close all other accordion sections
+ *
+ * handleAccordionToggles('one', element);
+ *
+ * @param {string} target
+ * @param {object} accordion
+ * @param {string} visibility
+ */
+var handleAccordionToggles = function handleAccordionToggles(target, accordion) {
+    var visibility = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'toggle';
+
+    var toggleClass = accordion.getAttribute('data-toggle-class') || 'is-hidden';
+
+    (0, _fDom2.default)('[data-toggle-name]', accordion).filter(function (toggle) {
+        return !toggle.hasAttribute('data-toggle-accordion-exclude');
+    }).forEach(function (element) {
+        var type = element.getAttribute('data-toggle-name') === target ? visibility : 'hide';
+        toggles(toggleClass)[type](element);
+    });
+};
+
+exports.toggles = toggles;
+exports.handleToggles = handleToggles;
+exports.handleAccordionToggles = handleAccordionToggles;
+},{"@justeat/f-dom":3}],6:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.setToggleCallback = exports.toggleSection = exports.toggleAccordion = exports.setupToggle = undefined;
+
+var _fDom = require('@justeat/f-dom');
+
+var _fDom2 = _interopRequireDefault(_fDom);
+
+var _liteReady = require('lite-ready');
+
+var _liteReady2 = _interopRequireDefault(_liteReady);
+
+var _closest = require('closest');
+
+var _closest2 = _interopRequireDefault(_closest);
+
+var _internal = require('./helpers/internal');
+
+var _external = require('./helpers/external');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var onKeydown = function onKeydown(event, bindToggleBehaviour, accordion, accordionExclude) {
+    // if user has pressed 'enter' bind toggle behaviour
+    if (event.key === 'Enter') {
+        bindToggleBehaviour(event);
+    }
+
+    // if the section clicked is an accordion element
+    if (accordion && !accordionExclude) {
+        var toggleAccordionClass = accordion.getAttribute('data-toggle-class') || 'is-hidden';
+        var parent = event.target.parentNode;
+        var tabbed = !event.shiftKey && event.key === 'Tab';
+        var reverseTabbed = event.shiftKey && event.key === 'Tab';
+
+        // if user has tabbed then focus on next accordion section
+        if (tabbed && parent.nextElementSibling && parent.nextElementSibling.hasAttribute('data-toggle-name') && parent.classList.contains(toggleAccordionClass)) {
+            event.preventDefault();
+            parent.nextElementSibling.querySelector('[data-toggle-target]').focus();
+        }
+
+        // if user has reverse tabbed then focus on previous accordion section
+        if (reverseTabbed && parent.previousElementSibling && parent.previousElementSibling.hasAttribute('data-toggle-name') && parent.previousElementSibling.classList.contains(toggleAccordionClass)) {
+            event.preventDefault();
+            parent.previousElementSibling.querySelector('[data-toggle-target]').focus();
+        }
+    }
+}; /**
+    * @overview Fozzie vanilla JS toggle library.
+    *
+    * @module f-toggle
+    */
+
+var setupToggle = function setupToggle() {
+    /**
+     * If accordion, display first section on initialisation based on "data-toggle-first-section-expanded" attribute presence
+     */
+
+    (0, _fDom2.default)('[data-toggle-accordion]').forEach(function (accordion) {
+        var toggleClass = accordion.getAttribute('data-toggle-class') || 'is-hidden';
+        var isFirstSectionExpanded = accordion.hasAttribute('data-toggle-first-section-expanded');
+
+        (0, _fDom2.default)('[data-toggle-name]', accordion).filter(function (toggle) {
+            return !toggle.hasAttribute('data-toggle-accordion-exclude');
+        }).slice(isFirstSectionExpanded ? 1 : 0).forEach((0, _internal.toggles)(toggleClass).hide);
+    });
+
+    /**
+     * Bind the toggle element click events
+     */
+
+    (0, _fDom2.default)('[data-toggle-target]').forEach(function (toggle) {
+        var target = toggle.getAttribute('data-toggle-target');
+        var accordionExclude = toggle.hasAttribute('data-toggle-accordion-exclude');
+        var accordion = (0, _closest2.default)(toggle, '[data-toggle-accordion]');
+        var toggleClass = toggle.getAttribute('data-toggle-class') || 'is-hidden';
+
+        var addToggleBehaviour = function addToggleBehaviour(event) {
+            event.preventDefault();
+            return accordion && !accordionExclude ? (0, _internal.handleAccordionToggles)(target, accordion) : (0, _internal.handleToggles)(target, toggleClass);
+        };
+
+        toggle.addEventListener('click', addToggleBehaviour);
+        toggle.addEventListener('keydown', function (event) {
+            onKeydown(event, addToggleBehaviour, accordion, accordionExclude);
+        });
+    });
+};
+
+exports.setupToggle = setupToggle;
+exports.toggleAccordion = _external.toggleAccordion;
+exports.toggleSection = _external.toggleSection;
+exports.setToggleCallback = _external.setToggleCallback;
+
+
+(0, _liteReady2.default)(function () {
+    setupToggle();
+});
+},{"./helpers/external":4,"./helpers/internal":5,"@justeat/f-dom":3,"closest":7,"lite-ready":8}],7:[function(require,module,exports){
 var matches = require('matches-selector')
 
 module.exports = function (element, selector, checkYoSelf) {
@@ -125,7 +437,7 @@ module.exports = function (element, selector, checkYoSelf) {
   }
 }
 
-},{"matches-selector":10}],9:[function(require,module,exports){
+},{"matches-selector":9}],8:[function(require,module,exports){
 module.exports = function (callback) {
 
 	if (document.readyState === 'complete' || document.readyState === 'interactive') {
@@ -145,7 +457,7 @@ module.exports = function (callback) {
 	}
 }
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 
 /**
  * Element prototype.
@@ -186,7 +498,7 @@ function match(el, selector) {
   }
   return false;
 }
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /*!
   * @preserve Qwery - A selector engine
   * https://github.com/ded/qwery
