@@ -222,11 +222,23 @@
 
 {{#is navsub 'docs-js'}}
 <!-- subnav for Documentation > JS -->
-    <li><a href="{{ baseUrl }}/documentation/js/js-architecture" class="{{#is navactive 'js-architecture'}} is-active{{/is}}">Architecture</a></li>
-    <li><a href="{{ baseUrl }}/documentation/js/js-frameworks" class="{{#is navactive 'js-frameworks'}} is-active{{/is}}">Frameworks</a></li>
-    <li><a href="{{ baseUrl }}/documentation/js/js-modules" class="{{#is navactive 'js-modules'}} is-active{{/is}}">Modules</a></li>
-    <li><a href="{{ baseUrl }}/documentation/js/js-jquery" class="{{#is navactive 'js-jquery'}} is-active{{/is}}">jQuery</a></li>
-    <li><a href="{{ baseUrl }}/documentation/js/js-codestyle" class="{{#is navactive 'js-codestyle'}} is-active{{/is}}">Code Style</a></li>
+    <li><a href="{{ baseUrl }}/documentation/js/" class="{{#is navactive 'js-architecture'}} is-active{{/is}}">Architecture</a></li>
+    <li><a href="{{ baseUrl }}/documentation/js/codestyle" class="{{#is navactive 'js-codestyle'}} is-active{{/is}}">Code Style</a></li>
+    <li><a href="{{ baseUrl }}/documentation/js/modules" class="{{#is navactive 'js-modules'}} is-active{{/is}}">Modules</a></li>
+    <li><a href="{{ baseUrl }}/documentation/js/frameworks" class="{{#is navactive 'js-frameworks'}} is-active{{/is}}">Frameworks and Libraries</a></li>
+    <li><a href="{{ baseUrl }}/documentation/js/testing" class="{{#is navactive 'js-testing'}} is-active{{/is}}">Testing</a>{{#is navactive 'js-testing'}}
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#folder-structure">Folder Structure</a></li>
+            <li><a href="#running-the-tests">Running the tests</a></li>
+            <li><a href="#writing-tests">Writing Tests</a></li>
+        </ul>
+        {{/is}}</li>
+    <li><a href="{{ baseUrl }}/documentation/js/writing-tests" class="{{#is navactive 'js-writing-tests'}} is-active{{/is}}">Writing Great Tests</a>{{#is navactive 'js-writing-tests'}}
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#principles">General principles</a></li>
+            <li><a href="#guidelines">Guidelines</a></li>
+        </ul>
+        {{/is}}</li>
 {{/is}}
 
 

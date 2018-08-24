@@ -1,0 +1,304 @@
+---
+title: How to write great JavaScript unit tests
+section-title: How to write great JavaScript unit tests
+docs: true
+
+navgroup: documentation
+navsub: docs-js
+navactive: js-writing-tests
+---
+
+> ***The majority of the content here has been taken, and slightly modified, from [Marc Mignonsin's guide to unit testing in JavaScript](https://github.com/mawrkus/js-unit-testing-guide/blob/master/README.md).***
+
+<a name="contents"></a><h2 class="sg-sectionHeading">Contents</h2>
+
+1. General principles
+    1. [Unit tests](#unit-tests)
+    1. [Design principles](#design-principles)
+1. Guidelines
+    1. [Name your tests properly](#name-your-tests-properly)
+    1. [Don't comment tests](#dont-comment-tests)
+    1. [Avoid logic in your tests](#avoid-logic-in-your-tests)
+    1. [Don't test multiple concerns in the same test](#dont-test-multiple-concerns-in-the-same-test)
+    1. [Cover the general case and the edge cases](#cover-the-general-case-and-the-edge-cases)
+    1. [Test the behaviour, not the internal implementation](#test-the-behaviour-not-the-internal-implementation)
+    1. [Don't mock everything](#dont-mock-everything)
+    1. [Create new tests for every defect](#create-new-tests-for-every-defect)
+    1. [Don't write unit tests for complex user interactions](#dont-write-unit-tests-for-complex-user-interactions)
+    1. [Test simple user actions](#test-simple-user-actions)
+    1. [Review test code first](#review-test-code-first)
+    1. [Practice code katas, learn with pair programming](#practice-code-katas-learn-with-pair-programming)
+
+<a name="principles"></a><h2 class="sg-sectionHeading">General principles</h2>
+
+<h3 class="sg-sectionHeading">Unit tests</h3>
+
+**Unit tests are isolated and independent of each other**
+
+- Any given behaviour should be specified in one and only one test
+- The execution/order of execution of one test cannot affect the others
+
+**Unit tests are lightweight tests**
+
+- Repeatable
+- Fast
+- Consistent
+- Easy to write and read
+
+**Unit tests are code too**
+
+They must meet the same level of quality as the code being tested. They can be refactored as well to make them more maintainable and/or readable.
+
+
+<h3 class="sg-sectionHeading">Design principles</h3>
+
+The key to good unit testing is to write **testable code**. Applying simple design principles can help, in particular:
+
+- Use a **good naming** and **comment** your code (the "why?" not the "how"), keep in mind that comments are not a substitute for bad naming or bad design
+- **DRY**: Don't Repeat Yourself, avoid code duplication
+- **Single responsibility**: each object/function must focus on a single task
+- Keep a **single level of abstraction** in the same component (for example, do not mix business logic with lower-level technical details in the same method)
+- **Minimize dependencies** between components: encapsulate, interchange less information between components
+- **Support configurability** rather than hard-coding, this prevents from having to replicate the exact same environment when testing (e.g.: markup)
+- Avoid global mutable state
+
+
+<a name="guidelines"></a><h2 class="sg-sectionHeading">Guidelines</h2>
+
+The goal of these guidelines is to make your tests:
+
+- **Readable**
+- **Maintainable**
+- **Trustworthy**
+
+These are the 3 pillars of good unit testing.
+
+
+<h3 class="sg-sectionHeading">Name your tests properly</h3>
+
+Tests names should be concise, explicit, descriptive and in correct English. Read the output of the spec runner and verify that it is understandable! Keep in mind that someone else will read it too. Tests can be the live documentation of the code.
+
+**:(**
+
+```javascript
+it('invalid selector works', () => {
+    // ..
+});
+```
+
+**:)**
+
+```javascript
+it('showElements does not affect hiddenClass if invalid selector is passed in', () => {
+    // ..
+});
+```
+
+
+<h3 class="sg-sectionHeading">Don't comment tests</h3>
+
+Never. Ever. Tests have a reason to be or not.
+
+Don't comment them because they are too slow, too complex or produce false negatives. Instead, make them fast, simple and trustworthy. If not, remove them completely.
+
+
+<h3 class="sg-sectionHeading">Avoid logic in your tests</h3>
+
+Always use simple statements. Loops and conditionals must not be used. If they are, you add a possible entry point for bugs in the test itself:
+
+- Conditionals: you don't know which path the test will take
+- Loops: you could be sharing state between tests
+
+Write a test for each type of sanitization. It will give a nice output of all possible cases, improving readability and maintainability.
+
+```javascript
+const invalidModalTypes = [null, undefined];
+invalidModalTypes.forEach(modalType => {
+    it(`type option defaults to "full" when invalid value of "${modalType}" is set`, () => {
+        // Act
+        const options = { modalType };
+
+        // Act
+        const modal = new MegaModal(options);
+
+        // Assert
+        expect(modal.options.modalType).toBe('full');
+    });
+});
+```
+
+**:)**
+
+```javascript
+it('default value is set when passing null', () => {
+    // Act
+    const modalType = null;
+    const options = { modalType };
+
+    // Act
+    const modal = new MegaModal(options);
+
+    // Assert
+    expect(modal.options.modalType).toBe('full');
+});
+
+it('default value is set when passing undefined', () => {
+    // Act
+    const modalType = undefined;
+    const options = { modalType };
+
+    // Act
+    const modal = new MegaModal(options);
+
+    // Assert
+    expect(modal.options.modalType).toBe('full');
+});
+```
+
+<h3 class="sg-sectionHeading">Don't test multiple concerns in the same test</h3>
+
+If a method has several end results, each one should be tested separately. Whenever a bug occurs, it will help you locate the source of the problem.
+
+**:(**
+
+```javascript
+it('should send the profile data to the server and update the profile view properly', () => {
+    expect(...).toBe(...);
+    expect(...).toBe(...);
+});
+```
+
+**:)**
+
+```javascript
+it('should send the profile data to the server', () => {
+    expect(...).toBe(...);
+});
+
+it('should update the profile view properly', () => {
+    expect(...).toBe(...);
+});
+```
+
+
+<h3 class="sg-sectionHeading">Cover the general case and the edge cases</h3>
+
+"Strange behaviour" usually happens at the edges... Remember that your tests can be the live documentation of your code.
+
+**:(**
+
+```javascript
+it('should properly calculate a RPN expression', () => {
+    const result = RPN('5 1 2 + 4 * - 10 /');
+    expect(result).toBe(-0.7);
+});
+```
+
+**:)**
+
+```javascript
+it('should return null when the expression is an empty string', () => {
+    const result = RPN('');
+    expect(result).toBe(null);
+});
+
+it('should return the same value when the expression holds a single value', () => {
+    const result = RPN('42');
+    expect(result).toBe(42);
+});
+
+it('should properly calculate an expression', () => {
+    const result = RPN('5 1 2 + 4 * - 10 /');
+    expect(result).toBe(-0.7);
+});
+
+it('should throw an error whenever an invalid expression is passed', () => {
+    expect(() => RPN('1 + - 1')).toThrow();
+});
+```
+
+
+<h3 class="sg-sectionHeading">Test the behaviour, not the internal implementation</h3>
+
+**:(**
+
+```javascript
+it('should add a user in memory', () => {
+    userManager.addUser('Dr. Falker', 'Joshua');
+
+    expect(userManager._users[0].name).toBe('Dr. Falker');
+    expect(userManager._users[0].password).toBe('Joshua');
+});
+```
+
+A better approach is to test at the same level of the API:
+
+**:)**
+
+```javascript
+it('should add a user in memory', () => {
+    userManager.addUser('Dr. Falker', 'Joshua');
+
+    const result = userManager.loginUser('Dr. Falker', 'Joshua');
+
+    expect(result).toBe(true);
+});
+```
+
+Advantage:
+
+- Changing the internal implementation of a class/object will not necessarily force you to refactor the tests
+
+Disadvantage:
+
+- If a test is failing, we might have to debug to know which part of the code needs to be fixed
+
+Here, a balance has to be found, unit-testing some key parts can be beneficial.
+
+
+<h3 class="sg-sectionHeading">Don't mock everything</h3>
+
+The idea to keep in mind is that *dependencies can still be "real" objects*. Don't mock everything because you can.
+In particular, consider using the "real" version of the objects if:
+
+- it leads to a simple, nice and easy tests setup
+- it does not create a shared state between the tests, causing unexpected side effects
+- the code being tested does not make AJAX requests, API calls or browser page reloads
+- the speed of execution of the tests stays *within the limits you fixed*
+
+
+<h3 class="sg-sectionHeading">Create new tests for every defect</h3>
+
+Whenever a bug is found, create a test that replicates the problem **before touching any code**. From there, you can apply TDD as usual to fix it.
+
+
+<h3 class="sg-sectionHeading">Don't write unit tests for complex user interactions</h3>
+
+Examples of complex user interactions:
+
+- Filling a form, drag and dropping some items then submitting the form
+- Clicking a tab, clicking an image thumbnail then navigating through a gallery of images previously loaded from a database
+
+These interactions might involve many units of work and should be handled at a higher level by **functional tests**. They will take more time to execute. They could be flaky (false negatives) and they need debugging whenever a failure is reported.
+
+
+<h3 class="sg-sectionHeading">Test simple user actions</h3>
+
+Example of simple user actions:
+
+- Clicking on a link that toggles the visibility of a DOM element
+- Submitting a form that triggers the form validation
+
+These actions can be easily tested **by simulating DOM events**
+
+
+<h3 class="sg-sectionHeading">Review test code first</h3>
+
+When reviewing code, always start by reading the code of the tests. Tests are mini use cases of the code that you can drill into.
+
+It will help you understand the intent of the developer very quickly (could be just by looking at the name of the tests).
+
+
+<h3 class="sg-sectionHeading">Practice code katas, learn with pair programming</h3>
+
+Because experience is the _only_ teacher. Ultimately, greatness comes from practicing ; applying the theory over and over again, using feedback to get better every time.
