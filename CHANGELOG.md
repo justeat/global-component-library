@@ -10,6 +10,7 @@ v1.17.0
 ### Added
 - Added restaurant listing with distance information
 - Added restaurant listing offline variation
+- Added restaurant listing container component
 
 ### Changed
 - Amended markup to standard restaurant listing
