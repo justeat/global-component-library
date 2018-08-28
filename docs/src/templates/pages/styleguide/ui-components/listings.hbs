@@ -12,29 +12,17 @@ navactive: listings
 <h2 class="sg-sectionHeading">Fully linked Listing Items with Address</h2>
 
 {{#>demo-block baseUrl=../baseUrl }}
-<div class="c-listing">
-    {{> je-restaurant-listing }}
-    {{> je-restaurant-listing }}
-    {{> je-restaurant-listing }}
-</div>
+    {{> je-restaurant-listing-container listingType='je-restaurant-listing' }}
 {{/demo-block }}
 
 <h2 class="sg-sectionHeading">Fully linked Listing Items with Distance</h2>
 
 {{#>demo-block baseUrl=../baseUrl }}
-<div class="c-listing">
-    {{> je-restaurant-listing--delivery }}
-    {{> je-restaurant-listing--delivery }}
-    {{> je-restaurant-listing--delivery }}
-</div>
+    {{> je-restaurant-listing-container listingType='je-restaurant-listing--delivery' }}
 {{/demo-block }}
 
 <h2 class="sg-sectionHeading">Fully linked Listing Items Offline</h2>
 
 {{#>demo-block baseUrl=../baseUrl }}
-<div class="c-listing c-listing--offline">
-    {{> je-restaurant-listing--delivery }}
-    {{> je-restaurant-listing--delivery }}
-    {{> je-restaurant-listing--delivery }}
-</div>
+    {{> je-restaurant-listing-container listingType='je-restaurant-listing--delivery' classname='c-listing--offline'}}
 {{/demo-block }}
