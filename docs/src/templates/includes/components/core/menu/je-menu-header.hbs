@@ -9,7 +9,13 @@
         <p class="c-badge c-badge--light c-badge--large text-center u-noSpacing">Kebab <span>•</span> Pizza</p>
         <a class="l-centered u-noUnderline u-spacingTop" href="#">
             {{> je-star-ratings this }}
-            {{#if star-rating-count}}<strong class="u-spacingLeft">{{star-rating-count}}</strong>{{/if}}
+            <strong class="u-spacingLeft">
+                <span class="is-visuallyHidden"> {{star-rating-display}} stars out of 6.</span>
+                {{#if star-rating-count}}
+                    {{star-rating-count}}
+                    <span class="is-visuallyHidden"> total ratings.</span>
+                {{/if}}
+            </strong>
         </a>
         {{> (lookup . 'status') }}
         <a class="c-mediaElement-infoLink u-showAboveMid" href="">
