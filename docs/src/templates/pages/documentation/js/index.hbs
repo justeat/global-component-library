@@ -1,85 +1,79 @@
 ---
-title: JS Architcture
+title: JavaScript Architecture
 section-title: JS Documentation
 docs: true
 
 navgroup: documentation
 navsub: docs-js
 navactive: js-architecture
-
-wip: true
 ---
 
-{{#markdown}}
 
-<a name="philosophy"></a>
-## JavaScript Philosophy
+<a name="js-overview"></a><h2 class="sg-sectionHeading">Overview</h2>
 
-We are currently transitioning between a legacy JavaScript structure, to a more modular dependency managed approach.
+We currently write our JavaScript using native ES2015 modules.
 
-This approach uses a tool called [Browserify](http://browserify.org/), which handles the module bundling by defining your dependencies in each of your JavaScript files.
+To help us do this we use [Browserify](http://browserify.org/), which handles module bundling through the defined dependencies in each of our JavaScript files.
 
-We also use [Babel](https://babeljs.io/) to allow us to use the latest JavaScript syntax (ES6) while still providing support for older browsers.
+We also use [Babel](https://babeljs.io/) which allows us to write code using the latest syntax and features (ES6/ES2015/ES Next) while still providing support for older browsers.  For more information on this, [see the section on Babel below](#js-babel).
 
-All of our JavaScript workflow tasks are handled by Gulp.
-
-<hr class="sectionSplitter">
-
-<a name="structure"></a>
-## JavaScript Structure
-
-All of our new-style JavaScript should go into the `js/modules` folder.
-
-JavaScript should be structured so that there is a clear `export` at the base of the file, so that it is clear what is being exported from the module.
-
-You should **always** provide a comment at the top of the module explaining what it is, how it relates to the site and examples of places it is used.
+All of our JavaScript workflow tasks on the main global website are currently handled by Gulp, but our JavaScript modules are used by other teams using Webpack (which we may also move to in the future).
 
 
-<hr class="sectionSplitter">
+<a name="js-es2015"></a><h2 class="sg-sectionHeading">ES2015+ Ideals</h2>
 
-<a name="polyfills"></a>
-## Polyfills
+In order to help us stay up to date with the latest JavaScript features we write our modules using [the features introduced in the ES2015 release](https://github.com/lukehoban/es6features).
 
-To support older browsers, we use a service called [Polyfill.io](https://cdn.polyfill.io/v2/docs/).
-
-In short, Polyfill.io reads the User-Agent header of each request and returns polyfills that are suitable for the requesting browser.
-
-As any downtime for our site could potentially cost us a lot of revenue, we also need to ensure that should polyfill.io not be available – for whatever reason – we have provided a fallback for their service.  To do this, we use a small script that attempts to load the service via their CDN, and should that fail to load, we instead load in a local script of polyfills we maintain on our server.
-
-Once the polyfills have loaded, we then run the rest of our bundled JavaScript and load in the JUST EAT legacy script files (these are files that we will convert over to our new module syntax as we get chance).
+As these new features are not widely supported across the browsers that we currently support, we make use of [babelify](https://github.com/babel/babelify) & [Babel](https://github.com/babel/babel) to transform the code into ES5 and create a JavaScript bundle ready to serve in the browser.
 
 
-<hr class="sectionSplitter">
+<h3 class="sg-sectionHeading">Vanilla JavaScript</h3>
 
-<a name="libs"></a>
-## Libraries
-
-If you need to add any 3rd party library code, it should be placed in the [assets/src/js/libs/](https://github.com/trykickoff/kickoff/tree/master/assets/src/js/libs) folder.
-
-Our aim is to keep our JavaScript as lightweight as possible.  Therefore, before adding a library, think about the value it is giving the project and weigh it up against it’s filesize footprint.
-
-Currently, we use the following libraries:
-
----
-
-<a name="js-modernizr"></a>
-### Modernizr
-
-We use a custom build of Modernizr configured to detect some commonly used CSS features.
-
-You may wish to extend this [custom Modernizr build](http://www.modernizr.com/download/) and replace the current version.  To do this, ensure you copy the url in the current [modernizr.min.js](https://github.je-labs.com/I18N-Production-ROTW/ConsumerWeb/blob/master/src/ConsumerWeb/Assets/src/js/libs/modernizr.min.js) so that the current tests are preserved in your new custom build.
-
-Modernizr is included in the `HEAD` of layout templates to ensure it runs before any CSS rules that it may influence are loaded.
-
-For full information on using Modernizr, see [their documentation](http://modernizr.com).
-
----
-
-<a name="js-qwery"></a>
-### Qwery
-
-We use Qwery to provide developers a simple DOM selection utlility.  It is extremely lightweight and all it does is select DOM elements by providing selection criteria (similar to other selector libraries such as jQuery’s Sizzle).
+As part of a drive to reduce JavaScript bundle sizes and remove unnecessary code from our codebase we write all of our modules using vanilla JavaScript, with a sprinkle of help via NPM packages where necessary.
 
 
+<h3 class="sg-sectionHeading">Code Conventions</h3>
 
-{{/markdown}}
+JavaScript code conventions and best practices across projects at Just Eat are discussed and decided upon as part of the UI Guild.  This is a regular meetup of UI Engineers across the company to ensure consistency in the way we develop, held each month.  These conventions apply to all of the JavaScript code we write within web applications and NPM modules at Just Eat.
+
+Thanks to these conventions it has become very easy for engineers to pick up a new codebase and get up and running quickly, as well as improving the onboarding process for new starters.
+
+Any discussions are documented through Github issues and Pull Requests, and then when put into practice, should be documented in the relevant section of the fozzie documentation. All UI engineers are encouraged to feed back in to this process as we see our code conventions as an ever-evolving discussion rather than permanently set in stone.
+
+For details on our agreed JavaScript coding conventions see the [Code Style section]({{ ../baseUrl }}/documentation/js/codestyle).
+
+
+<h3 class="sg-sectionHeading">Unit Testing</h3>
+
+All JavaScript code should include unit tests. We use the [Jest framework](https://facebook.github.io/jest/).
+
+See the [JavaScript unit testing section]({{ ../baseUrl }}/documentation/js/testing) for details on best practices and recommended coding styles.
+
+
+<a name="js-babel"></a><h2 class="sg-sectionHeading">Babel</h2>
+
+We use Babel which allows us to write code using ES2015 syntax and then transform it back to ES5. This means that it is compatible with a wider variety of browsers.
+
+To get an idea of what the transformed code will look like you can try out the [Babel REPL](https://babeljs.io/repl/).
+
+This transformation happens as part of the [`gulp scripts`](https://github.com/justeat/gulp-build-fozzie#scripts) build task – a task that is provided by the [‘gulp-build-fozzie’ NPM module](https://github.com/justeat/gulp-build-fozzie).
+
+We currently use the Babel [env preset](https://babeljs.io/docs/plugins/preset-env/) which takes a list of supported browsers (via a [browserslist config](https://github.com/browserslist/browserslist)) and only applies the transformations which are not supported by those browsers.
+
+
+<a name="js-yarn"></a><h2 class="sg-sectionHeading">Yarn</h2>
+
+We use the Yarn package manager to handle our projects JavaScript module dependencies.  Yarn is very similar to NPM with some small differences in performance and features.
+
+Yarn shares the same package directory as NPM, so anything published on NPM can be installed as a Yarn module.
+
+We use semver (Semantic Versioning) to version our NPM packages – to find out more about semver check out [these semver docs](https://docs.npmjs.com/getting-started/semantic-versioning).
+
+
+<a name="js-polyfills"></a><h2 class="sg-sectionHeading">Polyfills</h2>
+
+To provide polyfills for features not widely supported, we use a service called [Polyfill.io](https://cdn.polyfill.io/v2/docs/).
+
+In short, Polyfill.io reads the User-Agent header of each request and returns polyfills that are suitable for the requesting browser.  This means that the user only receives the polyfills they require to view our site (rather than providing a bundle of polyfills that all users would need to download).
+
+

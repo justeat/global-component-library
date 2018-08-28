@@ -1,0 +1,163 @@
+---
+title: JavaScript Unit Testing
+section-title: JS Unit Testing
+docs: true
+
+navgroup: documentation
+navsub: docs-js
+navactive: js-testing
+---
+
+We use [Jest](https://jestjs.io/en/) as our JavaScript unit testing framework.
+
+All JavaScript written on the global web platform (and in Fozzie modules) must have associated unit tests.  We aim for 100% coverage, with this checked by coveralls as part of our PR review workflow.
+
+
+<a name="folder-structure"></a><h2 class="sg-sectionHeading">Folder structure</h2>
+
+The tests for each directory can be found in the `tests` folder.
+
+```
+src/
+├── js/
+│   └── tests/
+```
+
+
+<a name="running-the-tests"></a><h2 class="sg-sectionHeading">Running the tests</h2>
+
+The JavaScript unit tests can be run by typing the following from the folder containing the module’s `package.json`:
+
+```bash
+yarn test
+```
+
+This will run the [gulp-build-fozzie `scripts:test` task](https://github.com/justeat/gulp-build-fozzie#scriptstest) which runs any unit tests found in the JavaScript source directory using Jest.
+
+
+### Code coverage
+
+To run the tests and see code coverage run:
+
+```bash
+yarn test:cover
+```
+
+This will run the tests and display a report once finished showing source files with coverage stats.
+
+
+<a name="writing-tests"></a><h2 class="sg-sectionHeading">Writing tests</h2>
+
+We use [Jest](https://facebook.github.io/jest/) to write our unit tests, which uses [jsdom](#testing-the-browser-dom) behind the scenes to provide DOM functionality.
+
+A basic test file looks like this:
+
+```javascript
+it('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+```
+
+You can also use `describe()` to create a block which groups together several related tests in one "test suite", this can be handy if you prefer your tests to be organized into groups.
+
+Note that when using `describe` to wrap tests together, the full statement formed from both the `describe()` and `it()` descriptions should read correctly as a full sentence.
+
+```javascript
+describe('the sum function', () => {
+  it('adds 1 + 2 to equal 3', () => {
+    expect(sum(1, 2)).toBe(3);
+  });
+});
+```
+
+Take a look at the Jest docs for the full list of [globals](https://facebook.github.io/jest/docs/api.html#content) and [expectations](https://facebook.github.io/jest/docs/expect.html#content) available.
+
+
+<a name="#testing-modules"></a><h3 class="sg-sectionHeading">Testing modules</h3>
+
+When testing modules, import the module you wish to test, then write your tests against the imported functions or variables:
+
+```javascript
+import MegaModal from 'MegaModal';
+
+it('instance should be correct type', () => {
+    // Act
+    const modal = new MegaModal();
+
+    // Assert
+    expect(modal instanceof MegaModal).toBe(true);
+});
+```
+
+
+<a name="#testing-the-browser-dom"></a><h3 class="sg-sectionHeading">Testing the browser DOM</h3>
+
+Our test setup makes use of jsdom, which allows us to test code which uses DOM methods. For example:
+
+```javascript
+import { showLoader } from 'loader';
+
+it('loader class is added to element', () => {
+    // Arrange
+    const element = document.querySelector('body');
+
+    // Act
+    showLoader(element);
+
+    // Assert
+    expect(element.classList.contains('is-loading')).toBe(true);
+});
+```
+
+In this example we use `document.querySelector()` to select the body element of the document, and later use `element.classList` to verify that a class is present. Both of these methods are part of the DOM.
+
+#### Testing code with specific page HTML
+
+Set the HTML of the webpage using `document.body.innerHTML` for a single test.
+
+```javascript
+import { checkInputByValue } from 'checkboxHelper';
+
+it('can check correct checkbox', () => {
+    // Arrange
+    const value = 'test';
+    document.body.innerHTML = `<input type="checkbox" value="${value}" />`;
+
+    // Act
+    const result = checkInputByValue(value);
+
+    // Assert
+    expect(document.querySelector('input').checked).toBe(true);
+});
+```
+
+Now we can verify, using DOM methods, that the expected actions were carried out inside the code under test.
+
+
+<a name="#arrange-act-assert"></a><h3 class="sg-sectionHeading">Arrange, Act, Assert</h3>
+
+Tests should be split into three parts, using the AAA pattern. This keeps the structure of the tests consistent across all test files.
+
+Right now, if you open up most of the test files, you'll notice comments inside the tests which explicitly state each section (arrange, act, assert), this is to help you to easily parse and understand what is happening inside the test, and also for newcomers to the tests so that they are aware that there is a pattern in use here and they should also follow this convention.
+
+#### `Arrange`
+
+Declare any variables which are going to used inside the test e.g. parameters for functions, expected results, etc.
+
+#### `Act`
+
+Invoke the unit under test, usually a function call.
+
+#### `Assert`
+
+Verify that the results are as expected.
+
+
+<a name="#simple-tests"></a><h3 class="sg-sectionHeading">Stupidly simple tests</h3>
+
+The tests should be *very* easy to read and understand. They should also be very short and focused.
+
+Because jsdom is used to create an in-memory representation of the DOM, we avoid the need for most of the mocking seen in the older tests. This helps us achieve the goal of keeping tests short and focused.
+
+See this guide on [how to write great JavaScript unit tests]({{ ../baseUrl }}/documentation/js/writing-tests) for some principles and guidelines you should keep in mind when writing your unit tests.
+

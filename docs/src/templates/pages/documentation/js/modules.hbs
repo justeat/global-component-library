@@ -1,0 +1,28 @@
+---
+title: JavaScript Modules
+section-title: JS Modules
+docs: true
+
+navgroup: documentation
+navsub: docs-js
+navactive: js-modules
+---
+
+<a name="js-structure"></a><h2 class="sg-sectionHeading">Structure</h2>
+
+Some Fozzie modules will include JavaScript as part of its structure (such as the [f-header module](https://github.com/justeat/f-header)), others will be specifically a JavaScript module like the [f-validate module](https://github.com/justeat/f-validate).
+
+If the module includes SCSS as well, the JS should be located inside the `src/js` folder (from the root).
+
+If the module is being written specifically to be a JavaScript module, then the entry file should be at `src/index.js`.
+
+
+<a name="js-create"></a><h2 class="sg-sectionHeading">Creating a Fozzie JS module</h2>
+
+The easiest way to create a Fozzie JS module is to use the [Fozzie Yeoman generator](https://github.com/justeat/generator-fozzie).
+
+This will let you specify a number of options as to what aspects of your Fozzie module you would like to include – such as whether you want CSS and JS folders as part of your module.
+
+![Create a new repository on GitHub]({{ ../baseUrl }}/assets/img/js-docs/yo-fozzie.png)
+
+If you want more information on using Yeoman, [check out their documentation](http://yeoman.io/).

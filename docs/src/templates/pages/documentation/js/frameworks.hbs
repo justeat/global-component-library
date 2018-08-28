@@ -1,0 +1,34 @@
+---
+title: Frameworks & Libraries
+section-title: Frameworks & Libraries
+docs: true
+
+navgroup: documentation
+navsub: docs-js
+navactive: js-frameworks
+---
+
+
+<a name="js-frameworks"></a><h2 class="sg-sectionHeading">Frameworks</h2>
+
+We are currently looking at frameworks to help us as we rewrite our global platform.  We've been looking closely at Vue.js, React and Angular, with the former two looking like they would be a good fit for our projects and team.  Essentially we would like whichever framework we choose to help us on more complex stateful pages like the menu.
+
+Once we've gone further down this path, we'll no doubt have more to write up here!
+
+
+<a name="js-libraries"></a><h2 class="sg-sectionHeading">Libraries</h2>
+
+If you need to add any 3rd party library code, it should be placed in a libs folder within the JS folder for that project.
+
+The aim across all our projects is to keep our JavaScript as lightweight as possible.  Therefore, before adding a library, think about the value it is giving the project and weigh it up against its filesize footprint. The import-cost plugin for [Sublime](https://packagecontrol.io/packages/Import%20Cost) or [VSCode](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost) can help give better visibility over additional dependency weight.
+
+Currently, we use the following libraries:
+
+---
+<a name="js-qwery"></a>
+### Qwery
+
+We use Qwery to provide developers a simple DOM selection utlility.  We access it through the [`f-dom` module](https://github.com/justeat/f-dom), which provides a very small abstraction layer on top of Qwery – this makes it much easier to change selector engine further down the line should we wish to.
+
+Qwery itself is extremely lightweight.  Essentially all it does is select DOM elements by providing selection criteria (similar to other selector libraries such as Sizzle – jQuery's selector engine).
+

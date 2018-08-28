@@ -1,0 +1,141 @@
+---
+title: JS Codestyle
+section-title: JS Codestyle
+docs: true
+
+navgroup: documentation
+navsub: docs-js
+navactive: js-codestyle
+---
+
+<a name="js-linting"></a><h2 class="sg-sectionHeading">Linting Rules</h2>
+
+Most of the code conventions we suggest here are enforced by ESLint, which is run as part of the gulp build tasks.
+
+We extend the [eslint-config-airbnb-base ruleset](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base/rules) with our own set of JS linting rules in the [eslint-config-fozzie module](https://github.com/justeat/eslint-config-fozzie).
+
+We set this ESLint task to autofix the JS when it runs, so many of the issues found will be fixed automatically.  If you'd like to extend this to work with your code editor of choice, most allow you to autofix files you're developing on when saved.
+
+
+<h3 class="sg-sectionHeading">Selecting DOM elements</h3>
+
+We use the [`f-dom` module](https://github.com/justeat/f-dom) to select DOM elements. This uses the ‘qwery’ selector engine behind the scenes and takes any valid CSS selector as input. It also comes with some helper functions to make DOM selection easier (see the [documentation for more details](https://github.com/justeat/f-dom#usage)).
+
+You should always use data attributes to select DOM elements using JavaScript; *never* use classes as they should be used purely for styling. Classes are very brittle when used in JS (they break easily) – they can quite often be moved onto another element or their names changed as components’ styling adapts over time.  Keeping this separation helps with code refactoring as the developer then knows that changing a classname(s) won't break any behaviour set in the JS.
+
+Don't hook onto any existing `data-test` attributes as these are there for the feature tests to use as hooks, not to be used as JS selector hooks.
+
+#### Naming Data Attributes
+
+When naming data-attributes to use as a JavaScript DOM hook, use the prefix `data-js` so that it's clear that it is being used in this way.
+
+If you are using data-attributes to pass data to a JavaScript module, then the `js-` part of the prefix can be omitted for these attributes.
+
+```html
+<!-- Use "data-js" prefix for hooks but not data -->
+<button data-js-megamodal
+        data-megamodal-classname="testClass"
+        >Open Modal</button>
+```
+
+
+
+<h3 class="sg-sectionHeading">Loops</h3>
+
+Where possible use `forEach` to loop over items.
+
+To avoid issues when selecting elements with `document.querySelectorAll` — which returns an "array like" object that doesn't have the `forEach` method — use the `f-dom` module which returns an array of `NodeList` objects. The `forEach` method has actually been added to `NodeList` in newer versions of some browsers, however it isn't part of any standard so be sure to always use `f-dom`.
+
+
+<h3 class="sg-sectionHeading">JavaScript Class Syntax</h3>
+
+We should be cautious when using JavaScript Class syntax. Unless you are creating a large number of instances of a module then you can likely write your module following our [module structure guidelines](#js-modulestructure).
+
+Classes should ideally only be used for something that is truly a Class. Ultimately JavaScript classes are simply syntactic sugar over JavaScript's existing prototype-based inheritance and their functionality should not be compared to classes in other languages.
+
+
+<h3 class="sg-sectionHeading">Code Commenting</h3>
+
+Code comments are essential for understanding what the original author intended and for understanding relevant usecases.
+
+You should **always** provide a comment at the top of a JavaScript module explaining what it is, what it does (at a high level) and any examples of situations in which it is used.
+
+All JavaScript functions and Classes should also include JSDoc comments which include details about what the code does, parameters (and associated descriptions), return type etc.
+
+This helps other engineers to quickly understand the code and also provides intellisense descriptions in some IDEs.
+
+
+<h3 class="sg-sectionHeading">Binding events</h3>
+
+When binding events always use `[element].addEventListener` as it allows you to add multiple events to a single element.
+
+Binding events in this way also helps to keep the JavaScript unit tests consistent as we use a set of helpers which interact with JavaScript events.
+
+Never bind events in the HTML. All event binding should be done from within JavaScript files as this greatly improves the maintainability of a project's JS, as well as making runtime testing (using breakpoints) more accessible.
+
+
+<a name="js-modulestructure"></a><h3 class="sg-sectionHeading">Module structure</h3>
+
+We make use of the private nature of ES2015 modules so there is no longer a need to use the revealing module pattern in order to hide private functions and variables — everything is private until it is explicitly exported or assigned to the `window` global.
+
+
+<h3 class="sg-sectionHeading">Naming</h3>
+
+Use camelCase when you export-default a function. Your filename should be identical to your function’s name.
+
+```js
+// for myAwesomeFunction.js
+export default myAwesomeFunction;
+```
+
+Use PascalCase when you export a constructor / class / singleton / function library / bare object.
+
+```js
+// Export Class
+export class MyAwesomeClass { … };
+
+// Export Singleton
+export MyAwesomeSingleton = { … };
+```
+
+#### Filename conventions
+
+JavaScript filenames should either be `index.js` (if it's the entry point to the module or sub-folder of the module) or should match the name on the exported function contained in the file.
+
+For instance, a filename of `myAwesomeFunction.js` should export `myAwesomeFunction` (whether it's a Class/singleton/function).
+
+If there isn't one main entry point for the file (as there are multiple exported functions) then the filename should reflect the purpose of the code inside it and be named using camelCase.
+
+
+<h3 class="sg-sectionHeading">Export style</h3>
+
+Default exports should be declared at end of file, not next to where the function is defined.  This makes it easy to spot if the file has a default export set.
+
+JavaScript should be structured so that there is a clear `export` at the base of the file so that it is clear what is being exported from the module.  If exporting multiple functions, each export should be grouped together at the end of the file, rather than being declared inline alongside the function declaration.
+
+
+#### Don't export directly from an import
+
+**Bad:**
+```js
+export {
+    getHtml,
+    setHtml
+} from 'dom-buddy';
+```
+
+**Good:**
+```js
+Import {
+    getHtml,
+    setHtml
+} from 'dom-buddy';
+
+export default {
+    getHtml,
+    setHtml
+};
+```
+
+Reference: [AirBnb Filename/import/export conventions](https://github.com/airbnb/javascript#naming--filename-matches-export)
+
