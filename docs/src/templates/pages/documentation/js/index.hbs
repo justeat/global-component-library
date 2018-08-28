@@ -9,7 +9,7 @@ navactive: js-architecture
 ---
 
 
-<a name="js-overview"></a><h2 class="sg-sectionHeading">Overiew</h2>
+<a name="js-overview"></a><h2 class="sg-sectionHeading">Overview</h2>
 
 We currently write our JavaScript using native ES2015 modules.
 
@@ -26,8 +26,6 @@ In order to help us stay up to date with the latest JavaScript features we write
 
 As these new features are not widely supported across the browsers that we currently support, we make use of [babelify](https://github.com/babel/babelify) & [Babel](https://github.com/babel/babel) to transform the code into ES5 and create a JavaScript bundle ready to serve in the browser.
 
-As new JavaScript features are released beyond ES2015 (with ES2016 and ES next in the future), we must continue to evolve our compilation config using Babel to ensure that we are compiling back to a version that is acceptable for our supported browsers.
-
 
 <h3 class="sg-sectionHeading">Vanilla JavaScript</h3>
 
@@ -36,11 +34,11 @@ As part of a drive to reduce JavaScript bundle sizes and remove unnecessary code
 
 <h3 class="sg-sectionHeading">Code Conventions</h3>
 
-JavaScript code conventions and best practices across projects at Just Eat are discussed and decided upon as part of the UI Guild.  The is essentially a regular meetup of UI Engineers across the company to ensure consistency in the way we develop, held each month.  These conventions apply to all of the JavaScript code we write within web applications and NPM modules at Just Eat.
+JavaScript code conventions and best practices across projects at Just Eat are discussed and decided upon as part of the UI Guild.  This is a regular meetup of UI Engineers across the company to ensure consistency in the way we develop, held each month.  These conventions apply to all of the JavaScript code we write within web applications and NPM modules at Just Eat.
 
 Thanks to these conventions it has become very easy for engineers to pick up a new codebase and get up and running quickly, as well as improving the onboarding process for new starters.
 
-Any discussions are documented through Github issues and Pull Requests, and then when put into practice, should be documented in the relevant section of the fozzie documentation. All UI engineers are encouraged to feed back in to this process as we see our code conventions as an ever evolving discussion rather than permanently set in stone.
+Any discussions are documented through Github issues and Pull Requests, and then when put into practice, should be documented in the relevant section of the fozzie documentation. All UI engineers are encouraged to feed back in to this process as we see our code conventions as an ever-evolving discussion rather than permanently set in stone.
 
 For details on our agreed JavaScript coding conventions see the [Code Style section]({{ ../baseUrl }}/documentation/js/codestyle).
 
@@ -49,7 +47,7 @@ For details on our agreed JavaScript coding conventions see the [Code Style sect
 
 All JavaScript code should include unit tests. We use the [Jest framework](https://facebook.github.io/jest/).
 
-See the [JavaScript unit testing section](#todo) for details on best practices and recommended coding styles.
+See the [JavaScript unit testing section]({{ ../baseUrl }}/documentation/js/testing) for details on best practices and recommended coding styles.
 
 
 <a name="js-babel"></a><h2 class="sg-sectionHeading">Babel</h2>

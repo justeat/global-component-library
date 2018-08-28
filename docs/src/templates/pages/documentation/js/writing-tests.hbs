@@ -54,7 +54,7 @@ They must meet the same level of quality as the code being tested. They can be r
 
 The key to good unit testing is to write **testable code**. Applying simple design principles can help, in particular:
 
-- Use a **good naming** and **comment** your code (the "why?" not the "how"), keep in mind that comments are not a substitute for bad naming or bad design
+- Use **good naming** and **comment** your code (the "why?" not the "how"). Keep in mind that comments are not a substitute for bad naming or bad design
 - **DRY**: Don't Repeat Yourself, avoid code duplication
 - **Single responsibility**: each object/function must focus on a single task
 - Keep a **single level of abstraction** in the same component (for example, do not mix business logic with lower-level technical details in the same method)
@@ -78,7 +78,7 @@ These are the 3 pillars of good unit testing.
 
 Tests names should be concise, explicit, descriptive and in correct English. Read the output of the spec runner and verify that it is understandable! Keep in mind that someone else will read it too. Tests can be the live documentation of the code.
 
-**:(**
+**Bad:**
 
 ```javascript
 it('invalid selector works', () => {
@@ -86,7 +86,7 @@ it('invalid selector works', () => {
 });
 ```
 
-**:)**
+**Good:**
 
 ```javascript
 it('showElements does not affect hiddenClass if invalid selector is passed in', () => {
@@ -127,9 +127,9 @@ invalidModalTypes.forEach(modalType => {
 });
 ```
 
-**:)**
-
 ```javascript
+// Example of well-separated tests
+
 it('default value is set when passing null', () => {
     // Act
     const modalType = null;
@@ -159,7 +159,7 @@ it('default value is set when passing undefined', () => {
 
 If a method has several end results, each one should be tested separately. Whenever a bug occurs, it will help you locate the source of the problem.
 
-**:(**
+**Bad:**
 
 ```javascript
 it('should send the profile data to the server and update the profile view properly', () => {
@@ -168,7 +168,7 @@ it('should send the profile data to the server and update the profile view prope
 });
 ```
 
-**:)**
+**Good:**
 
 ```javascript
 it('should send the profile data to the server', () => {
@@ -185,7 +185,7 @@ it('should update the profile view properly', () => {
 
 "Strange behaviour" usually happens at the edges... Remember that your tests can be the live documentation of your code.
 
-**:(**
+**Bad:**
 
 ```javascript
 it('should properly calculate a RPN expression', () => {
@@ -194,7 +194,7 @@ it('should properly calculate a RPN expression', () => {
 });
 ```
 
-**:)**
+**Good:**
 
 ```javascript
 it('should return null when the expression is an empty string', () => {
@@ -220,7 +220,7 @@ it('should throw an error whenever an invalid expression is passed', () => {
 
 <h3 class="sg-sectionHeading">Test the behaviour, not the internal implementation</h3>
 
-**:(**
+**Bad:**
 
 ```javascript
 it('should add a user in memory', () => {
@@ -233,7 +233,7 @@ it('should add a user in memory', () => {
 
 A better approach is to test at the same level of the API:
 
-**:)**
+**Good:**
 
 ```javascript
 it('should add a user in memory', () => {
@@ -279,7 +279,7 @@ Examples of complex user interactions:
 - Filling a form, drag and dropping some items then submitting the form
 - Clicking a tab, clicking an image thumbnail then navigating through a gallery of images previously loaded from a database
 
-These interactions might involve many units of work and should be handled at a higher level by **functional tests**. They will take more time to execute. They could be flaky (false negatives) and they need debugging whenever a failure is reported.
+These interactions might involve many units of work and should be handled at a higher level by **functional or system tests**. They will take more time to execute. They could be flaky (false negatives) and they need debugging whenever a failure is reported.
 
 
 <h3 class="sg-sectionHeading">Test simple user actions</h3>
@@ -301,4 +301,4 @@ It will help you understand the intent of the developer very quickly (could be j
 
 <h3 class="sg-sectionHeading">Practice code katas, learn with pair programming</h3>
 
-Because experience is the _only_ teacher. Ultimately, greatness comes from practicing ; applying the theory over and over again, using feedback to get better every time.
+Because experience is the _only_ teacher. Ultimately, greatness comes from practicing; applying the theory over and over again, using feedback to get better every time.

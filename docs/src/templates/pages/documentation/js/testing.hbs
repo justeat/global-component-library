@@ -26,7 +26,7 @@ src/
 
 <a name="running-the-tests"></a><h2 class="sg-sectionHeading">Running the tests</h2>
 
-The JavaScript unit tests can be run by typing the following from the folder containing the modules `package.json`:
+The JavaScript unit tests can be run by typing the following from the folder containing the module’s `package.json`:
 
 ```bash
 yarn test
@@ -59,6 +59,8 @@ it('adds 1 + 2 to equal 3', () => {
 ```
 
 You can also use `describe()` to create a block which groups together several related tests in one "test suite", this can be handy if you prefer your tests to be organized into groups.
+
+Note that when using `describe` to wrap tests together, the full statement formed from both the `describe()` and `it()` descriptions should read correctly as a full sentence.
 
 ```javascript
 describe('the sum function', () => {
