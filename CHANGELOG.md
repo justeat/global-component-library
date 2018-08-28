@@ -3,6 +3,16 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+
+v1.16.0
+------------------------------
+*August 28, 2018*
+
+### Added
+- Full page menu template.
+- Examples of the variations of a menu header.
+
+
 v1.15.0
 ------------------------------
 *August 28, 2018*
@@ -13,15 +23,6 @@ v1.15.0
 ### Changed
 - WIP banner text updated to be more informative
 - Organised UI Components links better
-
-
-v1.16.0
-------------------------------
-*August 28, 2018*
-
-### Added
-- Full page menu template.
-- Examples of the variations of a menu header.
 
 
 v1.14.0
