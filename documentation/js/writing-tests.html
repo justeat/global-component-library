@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>How to write great JavaScript unit tests – Just Eat Front-End Component Library and Documentation</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+
+			<link rel="stylesheet" href="/assets/css/je-docs.min.css">
+
+		<script src="/assets/js/libs/modernizr.min.js"></script>
+		<script src="/assets/js/libs/prism.min.js"></script> <!-- Code highlighting for docs -->
+
+        <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:400,500' rel='stylesheet' type='text/css' />
+	</head>
+	<body class="body-docs ">
+
+
+
+	<!--  ==============  -->
+	<!--  === Masthead ===  -->
+	<!--  ==============  -->
+	<header class="c-header">
+		<div class="l-container c-header-wrap">
+			<div class="c-logo c-logo--sg">
+	            <a href="/">
+	                <svg class="c-logo-fozzie" viewBox="0 0 619 645" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><text stroke="#2B2B2B" fill="#BC5410" font-family="Avenir-BlackOblique, Avenir" font-size="200" font-style="italic" font-weight="700" letter-spacing="4.375" transform="translate(-13)"><tspan x=".175" y="640">Fozzie</tspan></text><g transform="translate(48)" fill-rule="nonzero"><circle fill="#DFDFDF" cx="256" cy="256" r="256"/><g transform="translate(54 18)" fill="#BC5410"><path d="M403.731 395.632c-46.864 59.883-119.798 98.367-201.728 98.367S47.139 455.515.275 395.632c7.199-28.003 20.929-53.708 39.612-75.191 31.932-36.728 78.346-61.158 131.427-63.843a607.6 607.6 0 0 1 61.377 0c53.081 2.685 99.495 27.115 131.427 63.843 18.684 21.483 32.414 47.188 39.613 75.191z"/><circle cx="359.78" cy="64.829" r="64.784"/></g><circle fill="#91420E" cx="409.161" cy="87.448" r="37.012"/><circle fill="#A5490C" cx="98.22" cy="82.829" r="64.784"/><circle fill="#91420E" cx="102.839" cy="87.448" r="37.012"/><path d="M286.692 274.598a598.116 598.116 0 0 0-33.813-.752c-.126-.011-.878 0-1.62 0-1.327.01-2.654.021-3.981.042-1.264.021-2.529.052-3.793.073-1.191.021-2.382.042-3.574.073l-3.96.125c-1.118.042-2.247.073-3.365.115-2.424.094-4.848.199-7.272.324-84.156 4.253-151.531 63.164-171.039 139.034a257.428 257.428 0 0 0 66.456 59.747c-.71-13.59-.42-27.214.867-40.761 3.371-35.248 34.523-60.942 69.499-58.533a6.194 6.194 0 0 1 4.686 2.674l14.286 20.883c2.911 4.256 9.25 4.067 11.903-.354l6.432-10.72c2.456-4.092 8.432-3.951 10.691.252l16.031 29.818c3.046 5.664 11.458 4.655 13.077-1.569l7.119-27.379c1.196-4.602 6.939-6.164 10.302-2.801l6.399 6.399c3.264 3.264 8.729 2.578 11.085-1.392l7.278-12.263a6.145 6.145 0 0 1 4.657-2.971 590.152 590.152 0 0 0 48.104-6.975c21.295-3.98 40.323-14.408 54.972-29.246-31.932-36.728-78.346-61.158-131.427-63.843z" fill="#A5490C"/><path d="M284.954 48.85a572.999 572.999 0 0 0-57.908 0C121.787 54.174 44.33 150.122 63.048 253.839c1.01 5.59 2.18 11.15 3.508 16.673 9.611 40.004 41.861 70.799 82.3 78.368 71.43 13.369 142.859 13.369 214.29 0 40.44-7.569 72.689-38.364 82.3-78.368a298.09 298.09 0 0 0 3.508-16.673c18.716-103.717-58.741-199.665-164-204.989z" fill="#BC5410"/><path d="M256 358.914c-35.715 0-71.429-3.344-107.144-10.031-40.438-7.565-72.694-38.358-82.296-78.367a296.283 296.283 0 0 1-3.511-16.677C44.335 150.123 121.783 54.18 227.046 48.851c8.861-.439 17.721-.69 26.593-.721a250.6 250.6 0 0 0-16.572.721C168.24 54.18 117.593 150.123 129.829 253.839a433.506 433.506 0 0 0 2.299 16.677c6.28 40.009 27.366 70.802 53.812 78.367 23.353 6.687 46.707 10.031 70.06 10.031z" fill="#A5490C"/><path d="M303.483 359.117c-31.655 4.992-63.31 4.992-94.966 0-19.669-3.102-35.52-19.763-38.561-41.374a86.264 86.264 0 0 1 0-24.167c3.041-21.61 18.892-38.271 38.561-41.374 31.65-4.991 63.301-4.993 94.951-.002 20.089 3.167 35.95 20.499 38.742 42.62a86.291 86.291 0 0 1-.166 22.923c-3.04 21.61-18.892 38.271-38.561 41.374z" fill="#E6E6E6"/><path d="M229.449 359.116c8.296 2.33 16.593 3.584 24.889 3.73a305.094 305.094 0 0 1-45.819-3.73c-19.675-3.103-35.527-19.769-38.567-41.378a86.725 86.725 0 0 1 0-24.168c3.041-21.608 18.892-38.275 38.567-41.367a303.912 303.912 0 0 1 45.829-3.741c-8.296.146-16.603 1.4-24.9 3.741-11.003 3.093-19.863 19.759-21.567 41.367a155.496 155.496 0 0 0 0 24.168c1.705 21.608 10.565 38.274 21.568 41.378z" fill="#CCC"/><path d="M291.246 270.638c0 12.774-15.78 30.473-35.245 30.473-19.465 0-35.245-17.7-35.245-30.473 0-12.774 15.78-15.786 35.245-15.786 19.465 0 35.245 3.011 35.245 15.786z" fill="#0F0F0E"/><circle fill="#807272" cx="273.763" cy="269.343" r="9.404"/><path d="M339.071 256.281c-13.828 0-25.078-11.249-25.078-25.078 0-11.319 7.628-21.275 18.55-24.213a25.171 25.171 0 0 1 6.527-.864c13.828 0 25.078 11.249 25.078 25.078 0 2.194-.29 4.389-.864 6.523-2.936 10.926-12.893 18.554-24.213 18.554zm-166.142 0c-13.828 0-25.078-11.249-25.078-25.078 0-11.319 7.628-21.275 18.55-24.213a25.171 25.171 0 0 1 6.527-.864c13.828 0 25.078 11.249 25.078 25.078 0 2.194-.29 4.389-.864 6.523-2.938 10.926-12.895 18.554-24.213 18.554z" fill="#91420E"/><g transform="translate(159 212)" fill="#0F0F0E"><path d="M193.655 13.979c0 1.223-.167 2.414-.47 3.542-1.557 5.789-6.834 10.041-13.113 10.041-7.502 0-13.584-6.081-13.584-13.584 0-6.28 4.253-11.557 10.041-13.113 1.128-.303 2.32-.47 3.542-.47 7.503 0 13.584 6.082 13.584 13.584z"/><circle cx="13.931" cy="13.98" r="13.584"/></g><path d="M352.655 225.979c0 1.223-.167 2.414-.47 3.542a12.536 12.536 0 0 1-5.277 1.16c-6.928 0-12.539-5.611-12.539-12.539 0-1.881.418-3.678 1.16-5.277 1.128-.303 2.32-.47 3.542-.47 7.503 0 13.584 6.082 13.584 13.584zm-166.143 0c0 1.223-.167 2.414-.47 3.542a12.536 12.536 0 0 1-5.277 1.16c-6.928 0-12.539-5.611-12.539-12.539 0-1.881.418-3.678 1.16-5.277 1.128-.303 2.32-.47 3.542-.47 7.503 0 13.584 6.082 13.584 13.584z" fill="#E6E6E6"/><path d="M99.541 379.98c2.834-4.355 9.692-2.907 10.326 2.251 1.17 9.539-8.215 22.913-19.569 27.238-11.782 4.488 1.859-18.141 9.243-29.489zm3.397 33.378c1.875-4.846 8.885-4.843 10.568.072 3.113 9.093-3.312 24.115-13.529 30.689-10.604 6.823-1.924-18.134 2.961-30.761z" fill="#BC5410"/></g></g></svg>
+	                <span class="c-logo-subText">by</span>
+	                <div class="c-logo-img">
+	                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2611.9 513.4"><path fill="#FA0029" d="M2033.7 245l62.2-136c5.2-11.5 5.2-11.5 12.3-11.5 8 0 8 0 9.8 12.4l18.8 135h-103zm168-189.2c-10-53.3-10-53.3-85.4-53.3-71 0-70.2 0-91.5 43.5L1864 379.2c-23 48-19.5 51.5 40 51.5 46.2 0 45.3 0 65-42.7l25.7-57h154.6l8 57c6.2 42.7 8 42.7 54.2 42.7 52 0 57-3.7 47-55l-57-320zM1832.2 93c37.8 0 38-.3 45.6-45.2 7.8-45.2 7.7-45.3-27-45.3H1659c-67.5 0-66.2 0-77.8 68.4L1532 357c-12.5 73.8-11.8 73.8 57.6 73.8H1777c39.2 0 38.3 0 46.3-44.4 8-46.2 8-46.2-27.5-46.2H1634l13.3-82.6h134.2c36.4 0 36.4 0 42.7-42.7 7-43.6 7-43.6-42.7-43.6h-120l13.3-78.2h157.4zM1360.3 2.5h-269c-38 0-38 0-46 45.3S1038 93 1071.8 93h87.5l-48.8 282.7c-9 55-8 55 41.6 55 45.4 0 48 0 54.3-39L1258 93h83.5c37.7 0 37.7 0 45.6-45.2 8-45.2 8-45.3-26.7-45.3M625 2.5c-46.7 0-47.6.3-54.3 39.2l-35.4 205.8c-9.8 59.5-26 94.5-83.7 94.5-57.8 0-77.5-34.7-68.6-88l33.6-196.7c9-55 7.3-54.8-41.6-54.8-47.7 0-49-.4-55.2 38.7l-35.4 206.5C264 364.7 336 437 439 437c115.6 0 173.8-51.5 193.3-175l35.2-204.5c9.5-55 7.3-55-42.4-55m-396.8 0H110.6C72 2.5 72 2.5 64.2 47c-8 44.7-7 46 27.2 46h69.8l-38.8 226.2c-8.7 50.8-31.4 85-99.7 106C5.3 430 0 437 0 445c0 8.7 3.5 17.5 10.5 36 10.5 27 17.5 32.2 27 32.2 9.7 0 27.2-5.3 33.3-7 97-31.5 135.6-106 151.3-195l44-254.6c9.6-53.4 9.6-54.3-37.7-54.3m613 338.1c38-2.2 57.8-18.5 57.8-37 0-22.3-27.5-30.3-64-41-72-22.2-136-47.4-136-123.8C699.2 48.8 773.2 0 866.4 0c39 0 84 2.3 113 5 26.2 2.4 31 11.7 24.3 50.8-6.7 39-15.8 43-37.4 41.2-27-2.3-61.7-4.8-102.3-4.3-48 .6-61.6 17-61.6 33.7 0 20.4 18.7 32 63 43.5 82.7 24 137 56.4 137 127.5 0 83.5-62.3 132.4-161.8 136.3-54.2 2-100.8-2-142-8-31.8-4.5-33-5-25-50.6 7.2-41.5 8.2-44.4 37.3-41 56 7 92.5 8.4 130.4 6.2M2580.8 2.5h-269c-38 0-38 0-46 45.3s-7.2 45.3 26.6 45.3h87.6l-48.8 282.7c-9 55-8 55 41.6 55 45.4 0 48 0 54.3-39L2478.6 93h83.5c37.7 0 37.7 0 45.6-45.2 8-45.2 7.8-45.3-26.8-45.3"/></svg>
+	                </div>
+	            </a>
+	        </div>
+			<!-- Global Navigation links -->
+			<nav class="c-nav c-nav--global c-nav--sg">
+			    <label data-navglobal-toggle="" class="c-nav-toggle " for="menu-visible" role="button" aria-pressed="false" aria-label="Navigation visibility toggle">
+			        <span class="c-nav-toggle-icon" title="Menu">Open Menu</span>
+			    </label>
+			    <input type="checkbox" class="c-nav-trigger" name="menuVisible" id="menu-visible" aria-hidden="true">
+			    <div class="c-nav-container">
+			        <ul class="c-nav-list">
+			            <li class="c-nav-list-item"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Design Elements</a></li>
+			            <li class="c-nav-list-item"><a href="/styleguide/ui-components/" class="c-nav-list-link">UI Components</a></li>
+			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/documentation/general/" class="c-nav-list-link">Development Docs</a></li>
+			            <!-- <li class="c-nav-list-item"><a href="/performance/" class="c-nav-list-link">Performance Monitoring</a></li> -->
+			        </ul>
+			    </div>
+			</nav>
+		</div>
+	</header>
+	
+<div class="sg-secondaryBar">
+    <div class="l-container g">
+        <h2 class="sg-secondaryBar-title g-col g-col--shrink gamma">How to write great JavaScript unit tests</h2>
+
+        <ul class="sg-subnav g-col g g--alignRight g--alignBottom u-unstyled">
+        
+            <li class="sg-subnav-item"><a href="/documentation/general/">General</a></li>
+    <li class="sg-subnav-item"><a href="/documentation/css/">CSS</a></li>
+    <li class="sg-subnav-item is-active"><a href="/documentation/js/">JS</a></li>
+    <li class="sg-subnav-item"><a href="/documentation/images/">Images</a></li>
+    <li class="sg-subnav-item"><a href="/documentation/open-source/">Open source</a></li>
+</ul>
+    </div>
+</div>
+
+	
+    <div class="l-container sg-page">
+        <div class="g g--gutter g--stack">
+            <div class="g-col g-span2--mid">
+                <ul class="sg-sideNav c-card c-card--rounded c-card--noPad u-unstyled">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <!-- subnav for Documentation > JS -->
+    <li><a href="/documentation/js/" class="">Architecture</a></li>
+    <li><a href="/documentation/js/codestyle" class="">Code Style</a></li>
+    <li><a href="/documentation/js/modules" class="">Modules</a></li>
+    <li><a href="/documentation/js/frameworks" class="">Frameworks and Libraries</a></li>
+    <li><a href="/documentation/js/testing" class="">Testing</a></li>
+    <li><a href="/documentation/js/writing-tests" class=" is-active">Writing Great Tests</a>
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#principles">General principles</a></li>
+            <li><a href="#guidelines">Guidelines</a></li>
+        </ul>
+        </li>
+
+                
+                
+                
+                </ul>
+                
+                    <!-- <li><a href="/process/gulp.html" data-trak='{"category":"Docs nav","action":"Grunt"}'>Gulp</a>
+                    </li>
+                    <li><a href="/css/" data-trak='{"category":"Docs nav","action":"CSS"}'>CSS</a>
+                    </li>
+                    <li><a href="/js/" data-trak='{"category":"Docs nav","action":"Javascript"}'>Javascript</a>
+                    </li>
+                    <li><a href="/accessibility.html">Accessibility</a></li>
+                    <li><a href="/fe/html.html" data-trak='{"category":"Docs nav","action":"HTML"}'>HTML</a>
+                    </li>
+                </ul>
+                 -->
+            </div>
+            <div class="g-col g-span10--mid">
+                <div class="c-card c-card--rounded sg-content">
+                    <h1>How to write great JavaScript unit tests</h1>
+<blockquote>
+<p><strong><em>The majority of the content here has been taken, and slightly modified, from <a href="https://github.com/mawrkus/js-unit-testing-guide/blob/master/README.md">Marc Mignonsin's guide to unit testing in JavaScript</a>.</em></strong></p>
+</blockquote>
+<p><a name="contents"></a><h2 class="sg-sectionHeading">Contents</h2></p>
+<ol>
+<li>General principles
+<ol>
+<li><a href="#unit-tests">Unit tests</a></li>
+<li><a href="#design-principles">Design principles</a></li>
+</ol></li>
+<li>Guidelines
+<ol>
+<li><a href="#name-your-tests-properly">Name your tests properly</a></li>
+<li><a href="#dont-comment-tests">Don't comment tests</a></li>
+<li><a href="#avoid-logic-in-your-tests">Avoid logic in your tests</a></li>
+<li><a href="#dont-test-multiple-concerns-in-the-same-test">Don't test multiple concerns in the same test</a></li>
+<li><a href="#cover-the-general-case-and-the-edge-cases">Cover the general case and the edge cases</a></li>
+<li><a href="#test-the-behaviour-not-the-internal-implementation">Test the behaviour, not the internal implementation</a></li>
+<li><a href="#dont-mock-everything">Don't mock everything</a></li>
+<li><a href="#create-new-tests-for-every-defect">Create new tests for every defect</a></li>
+<li><a href="#dont-write-unit-tests-for-complex-user-interactions">Don't write unit tests for complex user interactions</a></li>
+<li><a href="#test-simple-user-actions">Test simple user actions</a></li>
+<li><a href="#review-test-code-first">Review test code first</a></li>
+<li><a href="#practice-code-katas-learn-with-pair-programming">Practice code katas, learn with pair programming</a></li>
+</ol></li>
+</ol>
+<p><a name="principles"></a><h2 class="sg-sectionHeading">General principles</h2></p>
+<p><h3 class="sg-sectionHeading">Unit tests</h3></p>
+<p><strong>Unit tests are isolated and independent of each other</strong></p>
+<ul>
+<li>Any given behaviour should be specified in one and only one test</li>
+<li>The execution/order of execution of one test cannot affect the others</li>
+</ul>
+<p><strong>Unit tests are lightweight tests</strong></p>
+<ul>
+<li>Repeatable</li>
+<li>Fast</li>
+<li>Consistent</li>
+<li>Easy to write and read</li>
+</ul>
+<p><strong>Unit tests are code too</strong></p>
+<p>They must meet the same level of quality as the code being tested. They can be refactored as well to make them more maintainable and/or readable.</p>
+<p><h3 class="sg-sectionHeading">Design principles</h3></p>
+<p>The key to good unit testing is to write <strong>testable code</strong>. Applying simple design principles can help, in particular:</p>
+<ul>
+<li>Use <strong>good naming</strong> and <strong>comment</strong> your code (the &quot;why?&quot; not the &quot;how&quot;). Keep in mind that comments are not a substitute for bad naming or bad design</li>
+<li><strong>DRY</strong>: Don't Repeat Yourself, avoid code duplication</li>
+<li><strong>Single responsibility</strong>: each object/function must focus on a single task</li>
+<li>Keep a <strong>single level of abstraction</strong> in the same component (for example, do not mix business logic with lower-level technical details in the same method)</li>
+<li><strong>Minimize dependencies</strong> between components: encapsulate, interchange less information between components</li>
+<li><strong>Support configurability</strong> rather than hard-coding, this prevents from having to replicate the exact same environment when testing (e.g.: markup)</li>
+<li>Avoid global mutable state</li>
+</ul>
+<p><a name="guidelines"></a><h2 class="sg-sectionHeading">Guidelines</h2></p>
+<p>The goal of these guidelines is to make your tests:</p>
+<ul>
+<li><strong>Readable</strong></li>
+<li><strong>Maintainable</strong></li>
+<li><strong>Trustworthy</strong></li>
+</ul>
+<p>These are the 3 pillars of good unit testing.</p>
+<p><h3 class="sg-sectionHeading">Name your tests properly</h3></p>
+<p>Tests names should be concise, explicit, descriptive and in correct English. Read the output of the spec runner and verify that it is understandable! Keep in mind that someone else will read it too. Tests can be the live documentation of the code.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="language-javascript">it(<span class="hljs-string">'invalid selector works'</span>, () =&gt; {
+    <span class="hljs-comment">// ..</span>
+});
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="language-javascript">it(<span class="hljs-string">'showElements does not affect hiddenClass if invalid selector is passed in'</span>, () =&gt; {
+    <span class="hljs-comment">// ..</span>
+});
+</code></pre>
+<p><h3 class="sg-sectionHeading">Don't comment tests</h3></p>
+<p>Never. Ever. Tests have a reason to be or not.</p>
+<p>Don't comment them because they are too slow, too complex or produce false negatives. Instead, make them fast, simple and trustworthy. If not, remove them completely.</p>
+<p><h3 class="sg-sectionHeading">Avoid logic in your tests</h3></p>
+<p>Always use simple statements. Loops and conditionals must not be used. If they are, you add a possible entry point for bugs in the test itself:</p>
+<ul>
+<li>Conditionals: you don't know which path the test will take</li>
+<li>Loops: you could be sharing state between tests</li>
+</ul>
+<p>Write a test for each type of sanitization. It will give a nice output of all possible cases, improving readability and maintainability.</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">const</span> invalidModalTypes = [<span class="hljs-literal">null</span>, <span class="hljs-literal">undefined</span>];
+invalidModalTypes.forEach(<span class="hljs-function"><span class="hljs-params">modalType</span> =&gt;</span> {
+    it(<span class="hljs-string">`type option defaults to "full" when invalid value of "<span class="hljs-subst">${modalType}</span>" is set`</span>, () =&gt; {
+        <span class="hljs-comment">// Act</span>
+        <span class="hljs-keyword">const</span> options = { modalType };
+
+        <span class="hljs-comment">// Act</span>
+        <span class="hljs-keyword">const</span> modal = <span class="hljs-keyword">new</span> MegaModal(options);
+
+        <span class="hljs-comment">// Assert</span>
+        expect(modal.options.modalType).toBe(<span class="hljs-string">'full'</span>);
+    });
+});
+</code></pre>
+<pre><code class="language-javascript"><span class="hljs-comment">// Example of well-separated tests</span>
+
+it(<span class="hljs-string">'default value is set when passing null'</span>, () =&gt; {
+    <span class="hljs-comment">// Act</span>
+    <span class="hljs-keyword">const</span> modalType = <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">const</span> options = { modalType };
+
+    <span class="hljs-comment">// Act</span>
+    <span class="hljs-keyword">const</span> modal = <span class="hljs-keyword">new</span> MegaModal(options);
+
+    <span class="hljs-comment">// Assert</span>
+    expect(modal.options.modalType).toBe(<span class="hljs-string">'full'</span>);
+});
+
+it(<span class="hljs-string">'default value is set when passing undefined'</span>, () =&gt; {
+    <span class="hljs-comment">// Act</span>
+    <span class="hljs-keyword">const</span> modalType = <span class="hljs-literal">undefined</span>;
+    <span class="hljs-keyword">const</span> options = { modalType };
+
+    <span class="hljs-comment">// Act</span>
+    <span class="hljs-keyword">const</span> modal = <span class="hljs-keyword">new</span> MegaModal(options);
+
+    <span class="hljs-comment">// Assert</span>
+    expect(modal.options.modalType).toBe(<span class="hljs-string">'full'</span>);
+});
+</code></pre>
+<p><h3 class="sg-sectionHeading">Don't test multiple concerns in the same test</h3></p>
+<p>If a method has several end results, each one should be tested separately. Whenever a bug occurs, it will help you locate the source of the problem.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="language-javascript">it(<span class="hljs-string">'should send the profile data to the server and update the profile view properly'</span>, () =&gt; {
+    expect(...).toBe(...);
+    expect(...).toBe(...);
+});
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="language-javascript">it(<span class="hljs-string">'should send the profile data to the server'</span>, () =&gt; {
+    expect(...).toBe(...);
+});
+
+it(<span class="hljs-string">'should update the profile view properly'</span>, () =&gt; {
+    expect(...).toBe(...);
+});
+</code></pre>
+<p><h3 class="sg-sectionHeading">Cover the general case and the edge cases</h3></p>
+<p>&quot;Strange behaviour&quot; usually happens at the edges... Remember that your tests can be the live documentation of your code.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="language-javascript">it(<span class="hljs-string">'should properly calculate a RPN expression'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> result = RPN(<span class="hljs-string">'5 1 2 + 4 * - 10 /'</span>);
+    expect(result).toBe(<span class="hljs-number">-0.7</span>);
+});
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="language-javascript">it(<span class="hljs-string">'should return null when the expression is an empty string'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> result = RPN(<span class="hljs-string">''</span>);
+    expect(result).toBe(<span class="hljs-literal">null</span>);
+});
+
+it(<span class="hljs-string">'should return the same value when the expression holds a single value'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> result = RPN(<span class="hljs-string">'42'</span>);
+    expect(result).toBe(<span class="hljs-number">42</span>);
+});
+
+it(<span class="hljs-string">'should properly calculate an expression'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> result = RPN(<span class="hljs-string">'5 1 2 + 4 * - 10 /'</span>);
+    expect(result).toBe(<span class="hljs-number">-0.7</span>);
+});
+
+it(<span class="hljs-string">'should throw an error whenever an invalid expression is passed'</span>, () =&gt; {
+    expect(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> RPN(<span class="hljs-string">'1 + - 1'</span>)).toThrow();
+});
+</code></pre>
+<p><h3 class="sg-sectionHeading">Test the behaviour, not the internal implementation</h3></p>
+<p><strong>Bad:</strong></p>
+<pre><code class="language-javascript">it(<span class="hljs-string">'should add a user in memory'</span>, () =&gt; {
+    userManager.addUser(<span class="hljs-string">'Dr. Falker'</span>, <span class="hljs-string">'Joshua'</span>);
+
+    expect(userManager._users[<span class="hljs-number">0</span>].name).toBe(<span class="hljs-string">'Dr. Falker'</span>);
+    expect(userManager._users[<span class="hljs-number">0</span>].password).toBe(<span class="hljs-string">'Joshua'</span>);
+});
+</code></pre>
+<p>A better approach is to test at the same level of the API:</p>
+<p><strong>Good:</strong></p>
+<pre><code class="language-javascript">it(<span class="hljs-string">'should add a user in memory'</span>, () =&gt; {
+    userManager.addUser(<span class="hljs-string">'Dr. Falker'</span>, <span class="hljs-string">'Joshua'</span>);
+
+    <span class="hljs-keyword">const</span> result = userManager.loginUser(<span class="hljs-string">'Dr. Falker'</span>, <span class="hljs-string">'Joshua'</span>);
+
+    expect(result).toBe(<span class="hljs-literal">true</span>);
+});
+</code></pre>
+<p>Advantage:</p>
+<ul>
+<li>Changing the internal implementation of a class/object will not necessarily force you to refactor the tests</li>
+</ul>
+<p>Disadvantage:</p>
+<ul>
+<li>If a test is failing, we might have to debug to know which part of the code needs to be fixed</li>
+</ul>
+<p>Here, a balance has to be found, unit-testing some key parts can be beneficial.</p>
+<p><h3 class="sg-sectionHeading">Don't mock everything</h3></p>
+<p>The idea to keep in mind is that <em>dependencies can still be &quot;real&quot; objects</em>. Don't mock everything because you can.<br>
+In particular, consider using the &quot;real&quot; version of the objects if:</p>
+<ul>
+<li>it leads to a simple, nice and easy tests setup</li>
+<li>it does not create a shared state between the tests, causing unexpected side effects</li>
+<li>the code being tested does not make AJAX requests, API calls or browser page reloads</li>
+<li>the speed of execution of the tests stays <em>within the limits you fixed</em></li>
+</ul>
+<p><h3 class="sg-sectionHeading">Create new tests for every defect</h3></p>
+<p>Whenever a bug is found, create a test that replicates the problem <strong>before touching any code</strong>. From there, you can apply TDD as usual to fix it.</p>
+<p><h3 class="sg-sectionHeading">Don't write unit tests for complex user interactions</h3></p>
+<p>Examples of complex user interactions:</p>
+<ul>
+<li>Filling a form, drag and dropping some items then submitting the form</li>
+<li>Clicking a tab, clicking an image thumbnail then navigating through a gallery of images previously loaded from a database</li>
+</ul>
+<p>These interactions might involve many units of work and should be handled at a higher level by <strong>functional or system tests</strong>. They will take more time to execute. They could be flaky (false negatives) and they need debugging whenever a failure is reported.</p>
+<p><h3 class="sg-sectionHeading">Test simple user actions</h3></p>
+<p>Example of simple user actions:</p>
+<ul>
+<li>Clicking on a link that toggles the visibility of a DOM element</li>
+<li>Submitting a form that triggers the form validation</li>
+</ul>
+<p>These actions can be easily tested <strong>by simulating DOM events</strong></p>
+<p><h3 class="sg-sectionHeading">Review test code first</h3></p>
+<p>When reviewing code, always start by reading the code of the tests. Tests are mini use cases of the code that you can drill into.</p>
+<p>It will help you understand the intent of the developer very quickly (could be just by looking at the name of the tests).</p>
+<p><h3 class="sg-sectionHeading">Practice code katas, learn with pair programming</h3></p>
+<p>Because experience is the <em>only</em> teacher. Ultimately, greatness comes from practicing; applying the theory over and over again, using feedback to get better every time.</p>
+                </div>
+            </div>
+        </div>
+    </div><!-- Close .l-container -->
+            <!--  ==============  -->
+            <!--  === Footer ===  -->
+            <!--  ==============  -->
+            <footer class="sg-footer" role="contentinfo">
+                <div class="l-container text-center">
+                    <p>Fozzie and its associated documentation was created with ❤️ by the UI team at Just Eat.</p>
+                    <hr>
+                    <p>If you want to get in touch about anything mentioned here, feel free to <a href="mailto:ui@just-eat.com">drop us a message</a>!</p>
+                </div>
+            </footer>
+
+        <script>
+            var mockPaths = {
+            };
+        </script>
+        <script src="/assets/js/script.min.js"></script>
+        <script src="/assets/js/docs.min.js"></script>
+	</body>
+</html>

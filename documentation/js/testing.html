@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Typography – Just Eat Front-End Component Library and Documentation</title>
+		<title>JavaScript Unit Testing – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -41,9 +41,9 @@
 			    <input type="checkbox" class="c-nav-trigger" name="menuVisible" id="menu-visible" aria-hidden="true">
 			    <div class="c-nav-container">
 			        <ul class="c-nav-list">
-			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Design Elements</a></li>
-			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/styleguide/ui-components/" class="c-nav-list-link">UI Components</a></li>
-			            <li class="c-nav-list-item"><a href="/documentation/general/" class="c-nav-list-link">Development Docs</a></li>
+			            <li class="c-nav-list-item"><a href="/styleguide/design-elements/colours" class="c-nav-list-link">Design Elements</a></li>
+			            <li class="c-nav-list-item"><a href="/styleguide/ui-components/" class="c-nav-list-link">UI Components</a></li>
+			            <li class="c-nav-list-item c-nav-list-item--active"><a href="/documentation/general/" class="c-nav-list-link">Development Docs</a></li>
 			            <!-- <li class="c-nav-list-item"><a href="/performance/" class="c-nav-list-link">Performance Monitoring</a></li> -->
 			        </ul>
 			    </div>
@@ -53,53 +53,51 @@
 	
 <div class="sg-secondaryBar">
     <div class="l-container g">
-        <h2 class="sg-secondaryBar-title g-col g-col--shrink gamma">Design Elements</h2>
+        <h2 class="sg-secondaryBar-title g-col g-col--shrink gamma">JS Unit Testing</h2>
 
         <ul class="sg-subnav g-col g g--alignRight g--alignBottom u-unstyled">
-            <li class="sg-subnav-item is-active"><a href="/styleguide/design-elements/colours">Design Elements</a></li>
-    <li class="sg-subnav-item"><a href="/styleguide/ui-components/">UI Components</a></li>
-    <li class="sg-subnav-item"><a href="/styleguide/ui-templates/">UI Templates</a></li>
-    <li class="sg-subnav-item"><a href="/styleguide/js-components/">JS Components</a></li>
-    <li class="sg-subnav-item"><a href="/styleguide/css-utilities/">CSS Utilities</a></li>
-
-        </ul>
+        
+            <li class="sg-subnav-item"><a href="/documentation/general/">General</a></li>
+    <li class="sg-subnav-item"><a href="/documentation/css/">CSS</a></li>
+    <li class="sg-subnav-item is-active"><a href="/documentation/js/">JS</a></li>
+    <li class="sg-subnav-item"><a href="/documentation/images/">Images</a></li>
+    <li class="sg-subnav-item"><a href="/documentation/open-source/">Open source</a></li>
+</ul>
     </div>
 </div>
 
-	    <div class="sg-wip">
-        <h2 class="l-container">This page of the docs is a work in progress.<br> The information may be incomplete or out-of-date.</h2>
-    </div>
-
+	
     <div class="l-container sg-page">
         <div class="g g--gutter g--stack">
             <div class="g-col g-span2--mid">
                 <ul class="sg-sideNav c-card c-card--rounded c-card--noPad u-unstyled">
-                <!-- subnav for Styleguide > Design Elements -->
-    <li><a href="/styleguide/design-elements/colours" class="">Colours</a></li>
-    <li><a href="/styleguide/design-elements/typography" class=" is-active">Typography</a></li>
-    <li><a href="/styleguide/design-elements/icons" class="is-incomplete ">Icons</a></li>
-    <li><a href="/styleguide/design-elements/grid" class="is-incomplete ">Grid</a></li>
-    <li><a href="/styleguide/design-elements/touchtargets" class="is-incomplete ">Touch Target Size</a></li>
-    <li><a href="/styleguide/design-elements/padding" class="is-incomplete ">Padding</a></li>
-    <li><a href="/styleguide/design-elements/colour-rays" class="is-incomplete ">Colour Rays</a></li>
-    <li><a href="/styleguide/design-elements/photography" class="is-incomplete ">Photography</a></li>
-    <li><a href="/styleguide/design-elements/illustrations" class="is-incomplete ">Illustrations</a></li>
-    <li><a href="/styleguide/design-elements/restaurant-logos" class="is-incomplete ">Restaurant Logos</a></li>
-    <li><a href="/styleguide/design-elements/animations" class="is-incomplete ">Animations &amp; Transitions</a></li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <!-- subnav for Documentation > JS -->
+    <li><a href="/documentation/js/" class="">Architecture</a></li>
+    <li><a href="/documentation/js/codestyle" class="">Code Style</a></li>
+    <li><a href="/documentation/js/modules" class="">Modules</a></li>
+    <li><a href="/documentation/js/frameworks" class="">Frameworks and Libraries</a></li>
+    <li><a href="/documentation/js/testing" class=" is-active">Testing</a>
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#folder-structure">Folder Structure</a></li>
+            <li><a href="#running-the-tests">Running the tests</a></li>
+            <li><a href="#writing-tests">Writing Tests</a></li>
+        </ul>
+        </li>
+    <li><a href="/documentation/js/writing-tests" class="">Writing Great Tests</a></li>
 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
                 
                 
                 
@@ -119,37 +117,99 @@
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
-                    <h1>Typography</h1>
-<p><strong>Insert some sort of description here</strong></p>
-<!-- Typography -->
-<h2>Primary typeface</h2>
-<!-- Headings -->
-<div class="g g--gutter">
-    <div class="g-col g-span3--mid sg-typeSpecimen sg-typeSpecimen--primary sg-typeSpecimen--giant">Aa</div>
-    <div class="g-col g-span6--mid sg-typeSpecimen sg-typeSpecimen--primary">ABCDEFGHIJKLMNOPQRSTUVWXYZ <br>
-        abcdefghijklmnopqrstuvwxyz <br>
-        0123456789 (.,:;?!£$@*&)
-    </div>
-    <div class="g-col g-span3--mid l-align--end">
-        <p>Aleo</p>
-        <p class="u-noSeparator"><span class="u-text-soften">Weight: </span>400</p>
-        <p class="u-noSeparator"><span class="u-text-soften">Style: </span>Normal</p>
-    </div>
-</div>
-<h2>Secondary typeface</h2>
-<div class="g g--gutter">
-    <div class="g-col g-span3--mid sg-typeSpecimen sg-typeSpecimen--secondary sg-typeSpecimen--giant">Aa</div>
-    <div class="g-col g-span6--mid sg-typeSpecimen sg-typeSpecimen--secondary">ABCDEFGHIJKLMNOPQRSTUVWXYZ <br>
-        abcdefghijklmnopqrstuvwxyz <br>
-        0123456789 (.,:;?!£$@*&)
-    </div>
-    <div class="g-col g-span3--mid l-align--end">
-        <p>Helvetica Neue</p>
-        <p class="u-noSeparator"><span class="u-text-soften">Weight: </span>400</p>
-        <p class="u-noSeparator"><span class="u-text-soften">Style: </span>Normal</p>
-    </div>
-</div>
-<!-- Add any more that you need -->
+                    <h1>JavaScript Unit Testing</h1>
+<p>We use <a href="https://jestjs.io/en/">Jest</a> as our JavaScript unit testing framework.</p>
+<p>All JavaScript written on the global web platform (and in Fozzie modules) must have associated unit tests.  We aim for 100% coverage, with this checked by coveralls as part of our PR review workflow.</p>
+<p><a name="folder-structure"></a><h2 class="sg-sectionHeading">Folder structure</h2></p>
+<p>The tests for each directory can be found in the <code>tests</code> folder.</p>
+<pre><code>src/
+├── <span class="hljs-keyword">js</span>/
+│   └── tests/
+</code></pre>
+<p><a name="running-the-tests"></a><h2 class="sg-sectionHeading">Running the tests</h2></p>
+<p>The JavaScript unit tests can be run by typing the following from the folder containing the module’s <code>package.json</code>:</p>
+<pre><code class="language-bash">yarn <span class="hljs-built_in">test</span>
+</code></pre>
+<p>This will run the <a href="https://github.com/justeat/gulp-build-fozzie#scriptstest">gulp-build-fozzie <code>scripts:test</code> task</a> which runs any unit tests found in the JavaScript source directory using Jest.</p>
+<h3>Code coverage</h3>
+<p>To run the tests and see code coverage run:</p>
+<pre><code class="language-bash">yarn <span class="hljs-built_in">test</span>:cover
+</code></pre>
+<p>This will run the tests and display a report once finished showing source files with coverage stats.</p>
+<p><a name="writing-tests"></a><h2 class="sg-sectionHeading">Writing tests</h2></p>
+<p>We use <a href="https://facebook.github.io/jest/">Jest</a> to write our unit tests, which uses <a href="#testing-the-browser-dom">jsdom</a> behind the scenes to provide DOM functionality.</p>
+<p>A basic test file looks like this:</p>
+<pre><code class="language-javascript">it(<span class="hljs-string">'adds 1 + 2 to equal 3'</span>, () =&gt; {
+  expect(sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)).toBe(<span class="hljs-number">3</span>);
+});
+</code></pre>
+<p>You can also use <code>describe()</code> to create a block which groups together several related tests in one &quot;test suite&quot;, this can be handy if you prefer your tests to be organized into groups.</p>
+<p>Note that when using <code>describe</code> to wrap tests together, the full statement formed from both the <code>describe()</code> and <code>it()</code> descriptions should read correctly as a full sentence.</p>
+<pre><code class="language-javascript">describe(<span class="hljs-string">'the sum function'</span>, () =&gt; {
+  it(<span class="hljs-string">'adds 1 + 2 to equal 3'</span>, () =&gt; {
+    expect(sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)).toBe(<span class="hljs-number">3</span>);
+  });
+});
+</code></pre>
+<p>Take a look at the Jest docs for the full list of <a href="https://facebook.github.io/jest/docs/api.html#content">globals</a> and <a href="https://facebook.github.io/jest/docs/expect.html#content">expectations</a> available.</p>
+<p><a name="#testing-modules"></a><h3 class="sg-sectionHeading">Testing modules</h3></p>
+<p>When testing modules, import the module you wish to test, then write your tests against the imported functions or variables:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> MegaModal <span class="hljs-keyword">from</span> <span class="hljs-string">'MegaModal'</span>;
+
+it(<span class="hljs-string">'instance should be correct type'</span>, () =&gt; {
+    <span class="hljs-comment">// Act</span>
+    <span class="hljs-keyword">const</span> modal = <span class="hljs-keyword">new</span> MegaModal();
+
+    <span class="hljs-comment">// Assert</span>
+    expect(modal <span class="hljs-keyword">instanceof</span> MegaModal).toBe(<span class="hljs-literal">true</span>);
+});
+</code></pre>
+<p><a name="#testing-the-browser-dom"></a><h3 class="sg-sectionHeading">Testing the browser DOM</h3></p>
+<p>Our test setup makes use of jsdom, which allows us to test code which uses DOM methods. For example:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { showLoader } <span class="hljs-keyword">from</span> <span class="hljs-string">'loader'</span>;
+
+it(<span class="hljs-string">'loader class is added to element'</span>, () =&gt; {
+    <span class="hljs-comment">// Arrange</span>
+    <span class="hljs-keyword">const</span> element = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'body'</span>);
+
+    <span class="hljs-comment">// Act</span>
+    showLoader(element);
+
+    <span class="hljs-comment">// Assert</span>
+    expect(element.classList.contains(<span class="hljs-string">'is-loading'</span>)).toBe(<span class="hljs-literal">true</span>);
+});
+</code></pre>
+<p>In this example we use <code>document.querySelector()</code> to select the body element of the document, and later use <code>element.classList</code> to verify that a class is present. Both of these methods are part of the DOM.</p>
+<h4>Testing code with specific page HTML</h4>
+<p>Set the HTML of the webpage using <code>document.body.innerHTML</code> for a single test.</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { checkInputByValue } <span class="hljs-keyword">from</span> <span class="hljs-string">'checkboxHelper'</span>;
+
+it(<span class="hljs-string">'can check correct checkbox'</span>, () =&gt; {
+    <span class="hljs-comment">// Arrange</span>
+    <span class="hljs-keyword">const</span> value = <span class="hljs-string">'test'</span>;
+    <span class="hljs-built_in">document</span>.body.innerHTML = <span class="hljs-string">`&lt;input type="checkbox" value="<span class="hljs-subst">${value}</span>" /&gt;`</span>;
+
+    <span class="hljs-comment">// Act</span>
+    <span class="hljs-keyword">const</span> result = checkInputByValue(value);
+
+    <span class="hljs-comment">// Assert</span>
+    expect(<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'input'</span>).checked).toBe(<span class="hljs-literal">true</span>);
+});
+</code></pre>
+<p>Now we can verify, using DOM methods, that the expected actions were carried out inside the code under test.</p>
+<p><a name="#arrange-act-assert"></a><h3 class="sg-sectionHeading">Arrange, Act, Assert</h3></p>
+<p>Tests should be split into three parts, using the AAA pattern. This keeps the structure of the tests consistent across all test files.</p>
+<p>Right now, if you open up most of the test files, you'll notice comments inside the tests which explicitly state each section (arrange, act, assert), this is to help you to easily parse and understand what is happening inside the test, and also for newcomers to the tests so that they are aware that there is a pattern in use here and they should also follow this convention.</p>
+<h4><code>Arrange</code></h4>
+<p>Declare any variables which are going to used inside the test e.g. parameters for functions, expected results, etc.</p>
+<h4><code>Act</code></h4>
+<p>Invoke the unit under test, usually a function call.</p>
+<h4><code>Assert</code></h4>
+<p>Verify that the results are as expected.</p>
+<p><a name="#simple-tests"></a><h3 class="sg-sectionHeading">Stupidly simple tests</h3></p>
+<p>The tests should be <em>very</em> easy to read and understand. They should also be very short and focused.</p>
+<p>Because jsdom is used to create an in-memory representation of the DOM, we avoid the need for most of the mocking seen in the older tests. This helps us achieve the goal of keeping tests short and focused.</p>
+<p>See this guide on <a href="/documentation/js/writing-tests">how to write great JavaScript unit tests</a> for some principles and guidelines you should keep in mind when writing your unit tests.</p>
                 </div>
             </div>
         </div>
