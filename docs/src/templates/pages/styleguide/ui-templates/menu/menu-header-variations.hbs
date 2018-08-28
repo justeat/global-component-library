@@ -14,20 +14,35 @@ navactive: template-menu
 
 <h2 class="sg-sectionHeading">Delivery Open</h2>
 {{#>demo-block }}
-{{> je-menu-header status='je-menu-status-delivery-open' star-rating='30' star-rating-count=566 }}
+{{> je-menu-header
+    status='je-menu-status-delivery-open'
+    star-rating=30
+    star-rating-display=3
+    star-rating-count=566 }}
 {{/demo-block }}
 
-<h2 class="sg-sectionHeading">Delivery Preorder</h2>
+<h2 class="sg-sectionHeading">Delivery Pre-order</h2>
 {{#>demo-block }}
-{{> je-menu-header status='je-menu-status-delivery-preorder' star-rating='30' star-rating-count=566 }}
+{{> je-menu-header
+    status='je-menu-status-delivery-preorder'
+    star-rating=30
+    star-rating-display=3
+    star-rating-count=566 }}
 {{/demo-block }}
 
 <h2 class="sg-sectionHeading">No Reviews</h2>
 {{#>demo-block }}
-{{> je-menu-header status='je-menu-status-delivery-open' star-rating='00' }}
+{{> je-menu-header
+    status='je-menu-status-delivery-open'
+    star-rating='00'
+    star-rating-display=0 }}
 {{/demo-block }}
 
 <h2 class="sg-sectionHeading">Closed</h2>
 {{#>demo-block }}
-{{> je-menu-header status='je-menu-status-delivery-closed' star-rating='30' star-rating-count=566 }}
+{{> je-menu-header
+    status='je-menu-status-delivery-closed'
+    star-rating=30
+    star-rating-display=3
+    star-rating-count=566 }}
 {{/demo-block }}
