@@ -18,7 +18,7 @@
 
 "@gimenete/type-writer@^0.1.3":
   version "0.1.3"
-  resolved "https://registry.npmjs.org/@gimenete/type-writer/-/type-writer-0.1.3.tgz#2d4f26118b18d71f5b34ca24fdd6d1fd455c05b6"
+  resolved "https://registry.yarnpkg.com/@gimenete/type-writer/-/type-writer-0.1.3.tgz#2d4f26118b18d71f5b34ca24fdd6d1fd455c05b6"
   dependencies:
     camelcase "^5.0.0"
     prettier "^1.13.7"
@@ -40,9 +40,9 @@
     normalize-path "^2.0.1"
     through2 "^2.0.3"
 
-"@justeat/eslint-config-fozzie@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.npmjs.org/@justeat/eslint-config-fozzie/-/eslint-config-fozzie-2.0.1.tgz#79945f58aaa014e3f3c97db88349529cc10186c7"
+"@justeat/eslint-config-fozzie@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@justeat/eslint-config-fozzie/-/eslint-config-fozzie-2.1.0.tgz#b647699ce1c8e6063737c45114ebe79085a65a09"
   dependencies:
     eslint-config-airbnb-base "^13.0.0"
 
@@ -67,7 +67,7 @@
 
 "@justeat/f-footer@^0.35.2":
   version "0.35.2"
-  resolved "https://registry.npmjs.org/@justeat/f-footer/-/f-footer-0.35.2.tgz#f909219ff985aaced43a2389821d1109cc88b0e6"
+  resolved "https://registry.yarnpkg.com/@justeat/f-footer/-/f-footer-0.35.2.tgz#f909219ff985aaced43a2389821d1109cc88b0e6"
   dependencies:
     "@justeat/fozzie" "^0.43.0"
     "@justeat/fozzie-colour-palette" "^1.1.0"
@@ -77,18 +77,18 @@
     lodash.debounce "^4.0.8"
     qwery "^4.0.0"
 
-"@justeat/f-header@^0.32.0":
-  version "0.32.0"
-  resolved "https://registry.npmjs.org/@justeat/f-header/-/f-header-0.32.0.tgz#abb81b2a3c774f8782095f6c75e83127be592dab"
+"@justeat/f-header@0.34.0":
+  version "0.34.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-header/-/f-header-0.34.0.tgz#5d9ef493474383bbe3952ab588efbfb09747a4cb"
   dependencies:
     "@justeat/fozzie-colour-palette" "^1.2.0"
     "@kickoff/utils.scss" "^2.1.1"
     include-media "^1.4.9"
     lite-ready "^1.0.4"
 
-"@justeat/f-icons@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-1.3.0.tgz#33d464713b5cdd585d90b53391b242f76b20aea6"
+"@justeat/f-icons@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-1.5.0.tgz#5f70ce20743975b2f271c1a94aeae66a8b997ab5"
   dependencies:
     "@kickoff/utils.scss" "2.1.1"
     include-media "^1.4.9"
@@ -119,9 +119,9 @@
   version "1.4.0"
   resolved "https://registry.npmjs.org/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-1.4.0.tgz#70dffb05eafc834f348957a6ff06588ebdf877c9"
 
-"@justeat/fozzie@0.58.0":
-  version "0.58.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.58.0.tgz#418bfecfbf1e85ac2f3bf1d390368525b1c0ba2b"
+"@justeat/fozzie@0.63.0":
+  version "0.63.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.63.0.tgz#9bd1b3a55a4f42a176ae724b7ec4ab964c1a6a1d"
   dependencies:
     "@justeat/f-dom" "^0.3.0"
     "@justeat/fozzie-colour-palette" "^1.1.0"
@@ -141,11 +141,11 @@
     kickoff-grid.css "^1.1.2"
     normalize-scss "^7.0.1"
 
-"@justeat/gulp-build-fozzie@^7.20.1":
-  version "7.23.0"
-  resolved "https://registry.npmjs.org/@justeat/gulp-build-fozzie/-/gulp-build-fozzie-7.23.0.tgz#bf3c79fb9b104873b48519522a7006682e53f27d"
+"@justeat/gulp-build-fozzie@7.25.0":
+  version "7.25.0"
+  resolved "https://registry.yarnpkg.com/@justeat/gulp-build-fozzie/-/gulp-build-fozzie-7.25.0.tgz#f612abaf82af9e2b8411ffa9715ac47c8df33c7a"
   dependencies:
-    "@justeat/eslint-config-fozzie" "^2.0.1"
+    "@justeat/eslint-config-fozzie" "2.1.0"
     "@justeat/f-copy-assets" "^0.6.0"
     "@justeat/f-templates-loader" "0.1.0"
     "@justeat/gulp-gh-pages" "^1.0.3"
@@ -186,7 +186,7 @@
     gulp-svgmin "^1.2.4"
     gulp-svgstore "^6.1.1"
     gulp-tap "^1.0.1"
-    gulp-uglify "^3.0.1"
+    gulp-uglify-es "^1.0.4"
     gulp-util "^3.0.8"
     handlebars-helper-i18n "^0.1.0"
     handlebars-helpers "^0.10.0"
@@ -208,7 +208,7 @@
 
 "@justeat/gulp-gh-pages@^1.0.3":
   version "1.0.3"
-  resolved "https://registry.npmjs.org/@justeat/gulp-gh-pages/-/gulp-gh-pages-1.0.3.tgz#45e4aa7fcd6a4e97194ea6833eafccdf68300dfe"
+  resolved "https://registry.yarnpkg.com/@justeat/gulp-gh-pages/-/gulp-gh-pages-1.0.3.tgz#45e4aa7fcd6a4e97194ea6833eafccdf68300dfe"
   dependencies:
     fancy-log "^1.3.2"
     finished "^1.2.2"
@@ -240,7 +240,7 @@
 
 "@octokit/rest@^15.9.5":
   version "15.10.0"
-  resolved "https://registry.npmjs.org/@octokit/rest/-/rest-15.10.0.tgz#9baf7430e55edf1a1024c35ae72ed2f5fc6e90e9"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-15.10.0.tgz#9baf7430e55edf1a1024c35ae72ed2f5fc6e90e9"
   dependencies:
     "@gimenete/type-writer" "^0.1.3"
     before-after-hook "^1.1.0"
@@ -2490,7 +2490,7 @@ camelcase@^4.0.0, camelcase@^4.1.0:
 
 camelcase@^5.0.0:
   version "5.0.0"
-  resolved "https://registry.npmjs.org/camelcase/-/camelcase-5.0.0.tgz#03295527d58bd3cd4aa75363f35b2e8d97be2f42"
+  resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.0.0.tgz#03295527d58bd3cd4aa75363f35b2e8d97be2f42"
 
 caniuse-api@^3.0.0:
   version "3.0.0"
@@ -3303,9 +3303,9 @@ d@1:
   dependencies:
     es5-ext "^0.10.9"
 
-danger@^3.8.6:
-  version "3.8.6"
-  resolved "https://registry.npmjs.org/danger/-/danger-3.8.6.tgz#6760e17a191e0b0e5a255cc9389a0f303033950d"
+danger@3.8.8:
+  version "3.8.8"
+  resolved "https://registry.yarnpkg.com/danger/-/danger-3.8.8.tgz#4bd7715c38a5f82dad6ef6b069cc23065a6bcd27"
   dependencies:
     "@octokit/rest" "^15.9.5"
     babel-polyfill "^6.23.0"
@@ -3853,7 +3853,7 @@ ecdsa-sig-formatter@1.0.10:
 
 ee-first@1.0.3:
   version "1.0.3"
-  resolved "https://registry.npmjs.org/ee-first/-/ee-first-1.0.3.tgz#6c98c4089abecb5a7b85c1ac449aa603d3b3dabe"
+  resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.0.3.tgz#6c98c4089abecb5a7b85c1ac449aa603d3b3dabe"
 
 ee-first@1.1.1:
   version "1.1.1"
@@ -4136,9 +4136,9 @@ eslint-module-utils@^2.2.0:
     debug "^2.6.8"
     pkg-dir "^1.0.0"
 
-eslint-plugin-import@^2.14.0:
+eslint-plugin-import@2.14.0:
   version "2.14.0"
-  resolved "https://registry.npmjs.org/eslint-plugin-import/-/eslint-plugin-import-2.14.0.tgz#6b17626d2e3e6ad52cfce8807a845d15e22111a8"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.14.0.tgz#6b17626d2e3e6ad52cfce8807a845d15e22111a8"
   dependencies:
     contains-path "^0.1.0"
     debug "^2.6.8"
@@ -4231,7 +4231,7 @@ eslint@^5.0.1, eslint@^5.2.0:
 
 espree@3.5.4, espree@^3.5.3, espree@^4.0.0:
   version "3.5.4"
-  resolved "https://registry.npmjs.org/espree/-/espree-3.5.4.tgz#b0f447187c8a8bed944b815a660bddf5deb5d1a7"
+  resolved "https://registry.yarnpkg.com/espree/-/espree-3.5.4.tgz#b0f447187c8a8bed944b815a660bddf5deb5d1a7"
   dependencies:
     acorn "^5.5.0"
     acorn-jsx "^3.0.0"
@@ -4799,7 +4799,7 @@ fined@^1.0.1:
 
 finished@^1.2.2:
   version "1.2.2"
-  resolved "https://registry.npmjs.org/finished/-/finished-1.2.2.tgz#41608eafadfd65683b46a1220bc4b1ec3daedcd8"
+  resolved "https://registry.yarnpkg.com/finished/-/finished-1.2.2.tgz#41608eafadfd65683b46a1220bc4b1ec3daedcd8"
   dependencies:
     ee-first "1.0.3"
 
@@ -5644,18 +5644,15 @@ gulp-tap@^1.0.1:
   dependencies:
     through2 "^2.0.3"
 
-gulp-uglify@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.npmjs.org/gulp-uglify/-/gulp-uglify-3.0.1.tgz#8d3eee466521bea6b10fd75dff72adf8b7ea2d97"
+gulp-uglify-es@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/gulp-uglify-es/-/gulp-uglify-es-1.0.4.tgz#59ee0d5ea98c1e09c6eaa58c8b018a6ad33f48d4"
   dependencies:
-    gulplog "^1.0.0"
-    has-gulplog "^0.1.0"
-    lodash "^4.13.1"
-    make-error-cause "^1.1.1"
-    safe-buffer "^5.1.2"
-    through2 "^2.0.0"
-    uglify-js "^3.0.5"
-    vinyl-sourcemaps-apply "^0.2.0"
+    o-stream "^0.2.2"
+    plugin-error "^1.0.1"
+    terser "^3.7.5"
+    vinyl "^2.1.0"
+    vinyl-sourcemaps-apply "^0.2.1"
 
 gulp-util@>=2.2.0, gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.4, gulp-util@^3.0.8:
   version "3.0.8"
@@ -6090,7 +6087,7 @@ https-proxy-agent@^1.0.0:
 
 https-proxy-agent@^2.2.0, https-proxy-agent@^2.2.1:
   version "2.2.1"
-  resolved "https://registry.npmjs.org/https-proxy-agent/-/https-proxy-agent-2.2.1.tgz#51552970fa04d723e04c56d04178c3f92592bbc0"
+  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-2.2.1.tgz#51552970fa04d723e04c56d04178c3f92592bbc0"
   dependencies:
     agent-base "^4.1.0"
     debug "^3.1.0"
@@ -8023,7 +8020,7 @@ lodash.templatesettings@^4.0.0:
 
 lodash.union@^4.6.0:
   version "4.6.0"
-  resolved "https://registry.npmjs.org/lodash.union/-/lodash.union-4.6.0.tgz#48bb5088409f16f1821666641c44dd1aaae3cd88"
+  resolved "https://registry.yarnpkg.com/lodash.union/-/lodash.union-4.6.0.tgz#48bb5088409f16f1821666641c44dd1aaae3cd88"
 
 lodash.uniq@^4.5.0:
   version "4.5.0"
@@ -8172,16 +8169,6 @@ make-dir@^1.0.0, make-dir@^1.1.0:
   resolved "https://registry.npmjs.org/make-dir/-/make-dir-1.3.0.tgz#79c1033b80515bd6d24ec9933e860ca75ee27f0c"
   dependencies:
     pify "^3.0.0"
-
-make-error-cause@^1.1.1:
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/make-error-cause/-/make-error-cause-1.2.2.tgz#df0388fcd0b37816dff0a5fb8108939777dcbc9d"
-  dependencies:
-    make-error "^1.2.0"
-
-make-error@^1.2.0:
-  version "1.3.4"
-  resolved "https://registry.npmjs.org/make-error/-/make-error-1.3.4.tgz#19978ed575f9e9545d2ff8c13e33b5d18a67d535"
 
 make-iterator@^1.0.0:
   version "1.0.1"
@@ -8945,6 +8932,10 @@ number-is-nan@^1.0.0:
 nwsapi@^2.0.0:
   version "2.0.4"
   resolved "https://registry.npmjs.org/nwsapi/-/nwsapi-2.0.4.tgz#dc79040a5f77b97716dc79565fc7fc3ef7d50570"
+
+o-stream@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/o-stream/-/o-stream-0.2.2.tgz#7fe03af870b8f9537af33b312b381b3034ab410f"
 
 oauth-sign@~0.8.1, oauth-sign@~0.8.2:
   version "0.8.2"
@@ -10006,7 +9997,7 @@ preserve@^0.2.0:
 
 prettier@^1.13.7:
   version "1.14.2"
-  resolved "https://registry.npmjs.org/prettier/-/prettier-1.14.2.tgz#0ac1c6e1a90baa22a62925f41963c841983282f9"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.14.2.tgz#0ac1c6e1a90baa22a62925f41963c841983282f9"
 
 pretty-bytes@^1.0.0:
   version "1.0.4"
@@ -11365,6 +11356,13 @@ source-map-support@^0.5.6:
     buffer-from "^1.0.0"
     source-map "^0.6.0"
 
+source-map-support@~0.5.6:
+  version "0.5.9"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.9.tgz#41bc953b2534267ea2d605bccfa7bfa3111ced5f"
+  dependencies:
+    buffer-from "^1.0.0"
+    source-map "^0.6.0"
+
 source-map-url@^0.4.0:
   version "0.4.0"
   resolved "https://registry.npmjs.org/source-map-url/-/source-map-url-0.4.0.tgz#3e935d7ddd73631b97659956d55128e87b5084a3"
@@ -12091,6 +12089,14 @@ ternary-stream@^2.0.1:
     merge-stream "^1.0.0"
     through2 "^2.0.1"
 
+terser@^3.7.5:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-3.8.1.tgz#cb70070ac9e0a71add169dfb63c0a64fca2738ac"
+  dependencies:
+    commander "~2.16.0"
+    source-map "~0.6.1"
+    source-map-support "~0.5.6"
+
 test-exclude@^4.2.1:
   version "4.2.1"
   resolved "https://registry.npmjs.org/test-exclude/-/test-exclude-4.2.1.tgz#dfa222f03480bca69207ca728b37d74b45f724fa"
@@ -12393,13 +12399,6 @@ uglify-js@^2.6:
     yargs "~3.10.0"
   optionalDependencies:
     uglify-to-browserify "~1.0.0"
-
-uglify-js@^3.0.5:
-  version "3.4.4"
-  resolved "https://registry.npmjs.org/uglify-js/-/uglify-js-3.4.4.tgz#92e79532a3aeffd4b6c65755bdba8d5bad98d607"
-  dependencies:
-    commander "~2.16.0"
-    source-map "~0.6.1"
 
 uglify-to-browserify@~1.0.0:
   version "1.0.2"
