@@ -35,14 +35,10 @@
     }
         .demo-visual--spacingBottom {
             padding-bottom: 160px;
-        }
 
-        .demo-visual-bottomSpacer {
-            height: 200px;
-        }
-
-        .demo-visual-logOutput {
-            height: 300px;
+            @include media('<mid') {
+                padding-bottom: spacing(x5);
+            }
         }
 
     .demo-code {
