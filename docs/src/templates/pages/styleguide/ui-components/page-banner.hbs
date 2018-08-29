@@ -1,0 +1,18 @@
+---
+title: Page Banner
+section-title: UI Components
+docs: true
+
+navgroup: styleguide
+navsub: ui-components
+navactive: pagebanner
+---
+
+<p>Page Banners stretch to the full width of their container, and contain banner images which typically use a <code>picture</code> element. They also display a white version of the Just Eat rays at the bottom.</p>
+
+<p><em>The <code>pageBanner</code> component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding <code>@include pageBanner();</code> into your SCSS dependencies file.</em></p>
+
+<h2 class="sg-sectionHeading">Page Banner</h2>
+{{#>demo-block demoVisualCssClass="demo-visual--spacingBottom" }}
+{{> je-pageBanner }}
+{{/demo-block }}

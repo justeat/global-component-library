@@ -33,9 +33,14 @@
         padding: spacing(x5) spacing(x5);
         position: relative;
     }
+        .demo-visual--spacingBottom {
+            padding-bottom: 160px;
+        }
+
         .demo-visual-bottomSpacer {
             height: 200px;
         }
+
         .demo-visual-logOutput {
             height: 300px;
         }
