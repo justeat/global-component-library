@@ -3,6 +3,19 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+v1.17.0
+------------------------------
+*August 28, 2018*
+
+### Added
+- Added restaurant listing with distance information
+- Added restaurant listing offline variation
+- Added restaurant listing container component
+
+### Changed
+- Amended markup to standard restaurant listing
+- Amended markup to listing item meta block
+
 
 v1.16.0
 ------------------------------
