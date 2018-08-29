@@ -3,6 +3,25 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+
+v1.18.0
+------------------------------
+*August 29, 2018*
+
+### Added
+- Page Banner documentation.
+- Icon documentation.
+- Ability to specify a visual docs demo CSS class.
+- Docs visual spacing bottom CSS class.
+
+### Changed
+- Reordered component subnav items.
+- Tweaks to the sentence order of the cards and badges documentation.
+- Component index split across three columns.
+- Menu template using new `je-pagebanner` partial.
+- Updated project dependencies.
+
+
 v1.17.0
 ------------------------------
 *August 28, 2018*

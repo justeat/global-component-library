@@ -86,9 +86,9 @@
     include-media "^1.4.9"
     lite-ready "^1.0.4"
 
-"@justeat/f-icons@1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-1.5.0.tgz#5f70ce20743975b2f271c1a94aeae66a8b997ab5"
+"@justeat/f-icons@1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-1.6.0.tgz#d6df78400c4781105d5b50c09c733cff4fa9ebaa"
   dependencies:
     "@kickoff/utils.scss" "2.1.1"
     include-media "^1.4.9"
@@ -119,9 +119,9 @@
   version "1.4.0"
   resolved "https://registry.npmjs.org/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-1.4.0.tgz#70dffb05eafc834f348957a6ff06588ebdf877c9"
 
-"@justeat/fozzie@0.63.0":
-  version "0.63.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.63.0.tgz#9bd1b3a55a4f42a176ae724b7ec4ab964c1a6a1d"
+"@justeat/fozzie@0.65.0":
+  version "0.65.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.65.0.tgz#8c02bf828bdb95121c6206de906b19888b3defb5"
   dependencies:
     "@justeat/f-dom" "^0.3.0"
     "@justeat/fozzie-colour-palette" "^1.1.0"
