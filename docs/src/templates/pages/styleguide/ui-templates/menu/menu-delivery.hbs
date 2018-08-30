@@ -11,12 +11,16 @@ bodyClass: o-body--bgWhite--belowMid
 
 <div class="l-container">
     <div class="g g--stack g--gutter l-content">
-        <div class="g-col g-span3--mid g-span2--wide">
+        <div class="g-col g-span2--mid">
         </div>
-        <div class="g-col g-span6--mid g-span7--wide">
-            {{> je-menu-header status='je-menu-status-delivery-open'}}
+        <div class="g-col g-span6--mid">
+            {{> je-menu-header
+                status='je-menu-status-delivery-open'
+                star-rating=30
+                star-rating-display=3
+                star-rating-count=566}}
         </div>
-        <div class="g-col g-span3--mid g-span3--wide">
+        <div class="g-col g-span4--mid">
         </div>
     </div>
 </div>

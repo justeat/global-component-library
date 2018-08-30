@@ -65,17 +65,17 @@
   dependencies:
     qwery "^4.0.0"
 
-"@justeat/f-footer@^0.35.2":
-  version "0.35.2"
-  resolved "https://registry.yarnpkg.com/@justeat/f-footer/-/f-footer-0.35.2.tgz#f909219ff985aaced43a2389821d1109cc88b0e6"
+"@justeat/f-footer@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-footer/-/f-footer-1.1.0.tgz#2c31967a5e97d29c624dd7c06638a7b50fcddf51"
   dependencies:
-    "@justeat/fozzie" "^0.43.0"
-    "@justeat/fozzie-colour-palette" "^1.1.0"
+    "@justeat/fozzie" "0.43.0"
+    "@justeat/fozzie-colour-palette" "1.1.0"
     "@kickoff/utils.scss" "2.1.1"
-    include-media "^1.4.9"
-    lite-ready "^1.0.4"
-    lodash.debounce "^4.0.8"
-    qwery "^4.0.0"
+    include-media "1.4.9"
+    lite-ready "1.0.4"
+    lodash.debounce "4.0.8"
+    qwery "4.0.0"
 
 "@justeat/f-header@0.34.0":
   version "0.34.0"
@@ -109,19 +109,23 @@
     closest "0.0.1"
     lite-ready "1.0.4"
 
-"@justeat/f-validate@^1.1.0":
+"@justeat/f-validate@1.1.0":
   version "1.1.0"
-  resolved "https://registry.npmjs.org/@justeat/f-validate/-/f-validate-1.1.0.tgz#195b477733c30a81f6dd867c79b159532cd8767a"
+  resolved "https://registry.yarnpkg.com/@justeat/f-validate/-/f-validate-1.1.0.tgz#195b477733c30a81f6dd867c79b159532cd8767a"
   dependencies:
     "@justeat/f-dom" "^0.4.0"
+
+"@justeat/fozzie-colour-palette@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-1.1.0.tgz#05a49eaa55000fa1f0b916603d341eef8bfbf439"
 
 "@justeat/fozzie-colour-palette@^1.1.0", "@justeat/fozzie-colour-palette@^1.2.0":
   version "1.4.0"
   resolved "https://registry.npmjs.org/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-1.4.0.tgz#70dffb05eafc834f348957a6ff06588ebdf877c9"
 
-"@justeat/fozzie@0.65.0":
-  version "0.65.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.65.0.tgz#8c02bf828bdb95121c6206de906b19888b3defb5"
+"@justeat/fozzie@0.43.0":
+  version "0.43.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.43.0.tgz#27beb2f2272e6c2a87422517b795dfa4eb1116e4"
   dependencies:
     "@justeat/f-dom" "^0.3.0"
     "@justeat/fozzie-colour-palette" "^1.1.0"
@@ -130,9 +134,9 @@
     kickoff-grid.css "^1.1.2"
     normalize-scss "^7.0.1"
 
-"@justeat/fozzie@^0.43.0":
-  version "0.43.0"
-  resolved "https://registry.npmjs.org/@justeat/fozzie/-/fozzie-0.43.0.tgz#27beb2f2272e6c2a87422517b795dfa4eb1116e4"
+"@justeat/fozzie@0.65.0":
+  version "0.65.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.65.0.tgz#8c02bf828bdb95121c6206de906b19888b3defb5"
   dependencies:
     "@justeat/f-dom" "^0.3.0"
     "@justeat/fozzie-colour-palette" "^1.1.0"
@@ -1500,9 +1504,9 @@ babel-polyfill@^6.23.0:
     core-js "^2.5.0"
     regenerator-runtime "^0.10.5"
 
-babel-preset-env@^1.7.0:
+babel-preset-env@1.7.0:
   version "1.7.0"
-  resolved "https://registry.npmjs.org/babel-preset-env/-/babel-preset-env-1.7.0.tgz#dea79fa4ebeb883cd35dab07e260c1c9c04df77a"
+  resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.7.0.tgz#dea79fa4ebeb883cd35dab07e260c1c9c04df77a"
   dependencies:
     babel-plugin-check-es2015-constants "^6.22.0"
     babel-plugin-syntax-trailing-function-commas "^6.22.0"
@@ -5677,7 +5681,7 @@ gulp-util@>=2.2.0, gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.4, gulp-ut
     through2 "^2.0.0"
     vinyl "^0.5.0"
 
-gulp@^3.9.1:
+gulp@3.9.1, gulp@^3.9.1:
   version "3.9.1"
   resolved "https://registry.npmjs.org/gulp/-/gulp-3.9.1.tgz#571ce45928dd40af6514fc4011866016c13845b4"
   dependencies:
@@ -6194,7 +6198,7 @@ in-publish@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/in-publish/-/in-publish-2.0.0.tgz#e20ff5e3a2afc2690320b6dc552682a9c7fadf51"
 
-include-media@^1.4.8, include-media@^1.4.9:
+include-media@1.4.9, include-media@^1.4.8, include-media@^1.4.9:
   version "1.4.9"
   resolved "https://registry.npmjs.org/include-media/-/include-media-1.4.9.tgz#d0020b7be3eb2d54868a20943595ce380e0bc43b"
 
@@ -7488,7 +7492,18 @@ kew@^0.7.0:
   version "0.7.0"
   resolved "https://registry.npmjs.org/kew/-/kew-0.7.0.tgz#79d93d2d33363d6fdd2970b335d9141ad591d79b"
 
-kickoff-grid.css@^1.1.0, kickoff-grid.css@^1.1.2:
+kickoff-grid.css@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/kickoff-grid.css/-/kickoff-grid.css-1.1.0.tgz#506222709b282261aa9b4974b4f603cb3e57b7b8"
+  dependencies:
+    eyeglass "^1.1.2"
+    include-media "^1.4.8"
+    kickoff-utils.scss "^2.0.1"
+  optionalDependencies:
+    npm-scripts-info "^0.3.6"
+    release-it "2.4.0"
+
+kickoff-grid.css@^1.1.2:
   version "1.2.0"
   resolved "https://registry.npmjs.org/kickoff-grid.css/-/kickoff-grid.css-1.2.0.tgz#1765f12b4ffd2bafbe358ad0823c58c419f3f9c3"
   dependencies:
@@ -7832,9 +7847,9 @@ lodash.clonedeep@^4.3.2:
   version "4.5.0"
   resolved "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
 
-lodash.debounce@^4.0.8:
+lodash.debounce@4.0.8:
   version "4.0.8"
-  resolved "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
 
 lodash.defaults@^4.0.1, lodash.defaults@^4.2.0:
   version "4.2.0"
@@ -10183,7 +10198,7 @@ quick-lru@^1.0.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/quick-lru/-/quick-lru-1.1.0.tgz#4360b17c61136ad38078397ff11416e186dcfbb8"
 
-qwery@^4.0.0:
+qwery@4.0.0, qwery@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmjs.org/qwery/-/qwery-4.0.0.tgz#7d21e3b4f7e9eed7e68728f4dab4de8b7303febe"
 
@@ -11889,9 +11904,9 @@ svg-tags@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/svg-tags/-/svg-tags-1.0.0.tgz#58f71cee3bd519b59d4b2a843b6c7de64ac04764"
 
-svg4everybody@^2.1.9:
+svg4everybody@2.1.9:
   version "2.1.9"
-  resolved "https://registry.npmjs.org/svg4everybody/-/svg4everybody-2.1.9.tgz#5bd9f6defc133859a044646d4743fabc28db7e2d"
+  resolved "https://registry.yarnpkg.com/svg4everybody/-/svg4everybody-2.1.9.tgz#5bd9f6defc133859a044646d4743fabc28db7e2d"
 
 svgo@^0.7.0:
   version "0.7.2"

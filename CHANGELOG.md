@@ -4,6 +4,25 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v1.19.0
+------------------------------
+*August 30, 2018*
+
+### Changed
+- Replaced JE header and footer partials with shared Fozzie versions.
+- Updated project dependencies.
+- Always apply `is-multiLanguage` class.
+
+### Fixed
+- Menu layout ratings count now displayed.
+- Menu layout accessible text is now displayed correctly.
+- Order of SCSS dependencies.
+
+### Removed
+- JE header and related partials.
+- JE footer and related partials.
+
+
 v1.18.0
 ------------------------------
 *August 29, 2018*
