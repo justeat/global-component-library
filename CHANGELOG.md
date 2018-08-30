@@ -6,21 +6,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 v1.19.0
 ------------------------------
-*August 30, 2018*
+*August 31, 2018*
 
 ### Changed
-- Replaced JE header and footer partials with shared Fozzie versions.
+- Menu grid layout updated.
 - Updated project dependencies.
-- Always apply `is-multiLanguage` class.
+- Updated style guide styles.
+- Components pages using correct layout.
 
 ### Fixed
 - Menu layout ratings count now displayed.
 - Menu layout accessible text is now displayed correctly.
 - Order of SCSS dependencies.
+- Icons sub-nav link.
 
 ### Removed
-- JE header and related partials.
-- JE footer and related partials.
+- Multilingual class from `html` tag.
 
 
 v1.18.0
