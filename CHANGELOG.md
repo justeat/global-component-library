@@ -4,6 +4,26 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v1.19.0
+------------------------------
+*August 31, 2018*
+
+### Changed
+- Menu grid layout updated.
+- Updated project dependencies.
+- Updated style guide styles.
+- Components pages using correct layout.
+
+### Fixed
+- Menu layout ratings count now displayed.
+- Menu layout accessible text is now displayed correctly.
+- Order of SCSS dependencies.
+- Icons sub-nav link.
+
+### Removed
+- Multilingual class from `html` tag.
+
+
 v1.18.0
 ------------------------------
 *August 29, 2018*

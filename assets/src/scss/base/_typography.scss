@@ -8,10 +8,6 @@
 
 // Major section title – i.e. homepage of docs
 .sg-sectionTitle {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #333;
-    font-weight: 400;
-
     // used for putting a portion of the title on its own line
     > span {
         display: block;
@@ -27,13 +23,6 @@
 }
 
 .sg-index {
-    h2,
-    h3 {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-weight: 200;
-        color: #333;
-    }
-
     ul {
         & ul {
             margin-top: spacing();
@@ -163,7 +152,6 @@ h3.sg-sectionHeading {
     @include font-size(30);
     font-family: $font-family-headings;
     font-weight: $font-weight-headings;
-
 }
 
 .sg-typeSpecimen--secondary {

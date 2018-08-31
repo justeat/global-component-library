@@ -1,6 +1,5 @@
 <ul class="sg-sideNav c-card c-card--rounded c-card--noPad u-unstyled">
 {{#is navsub 'design-els'}}
-<!-- subnav for Styleguide > Design Elements -->
     <li><a href="{{ baseUrl }}/styleguide/design-elements/colours" class="{{#is navactive 'colours'}} is-active{{/is}}">Colours</a></li>
     <li><a href="{{ baseUrl }}/styleguide/design-elements/typography" class="{{#is navactive 'typography'}} is-active{{/is}}">Typography</a></li>
     <li><a href="{{ baseUrl }}/styleguide/design-elements/icons" class="is-incomplete {{#is navactive 'icons'}} is-active{{/is}}">Icons</a></li>
@@ -27,7 +26,7 @@
     <li><a href="{{ baseUrl }}/styleguide/ui-components/custom/star-ratings" class="{{#is navactive 'star-ratings'}} is-active{{/is}}">Star Ratings</a></li>
     <li><a href="{{ baseUrl }}/styleguide/ui-components/listings" class="{{#is navactive 'listings'}} is-active{{/is}}">Listings</a></li>
     <li><a href="{{ baseUrl }}/styleguide/ui-components/mediaElement" class="{{#is navactive 'media-element'}} is-active{{/is}}">Media Element</a></li>
-    <li><a href="{{ baseUrl }}/styleguide/ui-components/icons" {{#is navactive 'ui-icons'}} is-active{{/is}}">Icons</a></li>
+    <li><a href="{{ baseUrl }}/styleguide/ui-components/ui-icons" class="{{#is navactive 'ui-icons'}} is-active{{/is}}">Icons</a></li>
 
     <!-- subnav for Styleguide > Optional Components -->
     <li><a href="{{ baseUrl }}/styleguide/ui-components/cards" class="{{#is navactive 'cards'}} is-active{{/is}}">Cards</a></li>
@@ -58,15 +57,14 @@
 
 
 {{#is navsub 'ui-templates'}}
-<!-- subnav for Styleguide > UI Components -->
-        <!-- title here - Order Flow -->
+    <!-- title here - Order Flow -->
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/homepage/" class="is-incomplete {{#is navactive 'template-homepage'}} is-active{{/is}}">HomePage</a></li>
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/searchResults/" class="is-incomplete {{#is navactive 'template-searchresults'}} is-active{{/is}}">Search Results</a></li>
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/menu/basket" class="is-incomplete {{#is navactive 'template-basket'}} is-active{{/is}}">Basket</a></li>
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/orderFlow/delivery-details" class="is-incomplete {{#is navactive 'template-deliverydetails'}} is-active{{/is}}">Delivery Details</a></li>
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/orderFlow/delivery-time" class="is-incomplete {{#is navactive 'template-deliverytime'}} is-active{{/is}}">Delivery Time</a></li>
 
-        <!-- title here - Account -->
+    <!-- title here - Account -->
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/login/" class="is-incomplete {{#is navactive 'template-login'}} is-active{{/is}}">Login</a></li>
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/account/" class="is-incomplete {{#is navactive 'template-accountindex'}} is-active{{/is}}">Account Index</a></li>
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/account/change-pw" class="is-incomplete {{#is navactive 'template-changepw'}} is-active{{/is}}">Change Password</a></li>
@@ -76,23 +74,22 @@
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/account/account-credit" class="is-incomplete {{#is navactive 'template-accountcredit'}} is-active{{/is}}">Account Credit</a></li>
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/account/address-book" class="is-incomplete {{#is navactive 'template-addressbook'}} is-active{{/is}}">Address Book</a></li>
 
-        <!-- title here - Order Details Page -->
+    <!-- title here - Order Details Page -->
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/account/order-summary-mvp" class="is-incomplete {{#is navactive 'template-ordersummary'}} is-active{{/is}}">Order Summary – MVP</a></li>
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/account/order-summary--duringOrder" class="is-incomplete {{#is navactive 'template-ordersummaryduring'}} is-active{{/is}}">Order Summary – During Order</a></li>
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/account/order-summary--postOrder" class="is-incomplete {{#is navactive 'template-ordersummarypost'}} is-active{{/is}}">Order Summary – Post Order</a></li>
 
-        <!-- title here - Misc -->
+    <!-- title here - Misc -->
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/thematic/" class="is-incomplete {{#is navactive 'template-thematiclanding'}} is-active{{/is}}">Thematic Landing Page</a></li>
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/thematic/listing" class="is-incomplete {{#is navactive 'template-thematiclisting'}} is-active{{/is}}">Thematic Listing Page</a></li>
 
-        <!-- title here - Experiments -->
+    <!-- title here - Experiments -->
     <li><a href="{{ baseUrl }}/styleguide/ui-templates/searchResults/" class="is-incomplete {{#is navactive 'template-expserp'}} is-active{{/is}}">SERP Layout</a></li>
 
 {{/is}}
 
 
 {{#is navsub 'js-components'}}
-<!-- subnav for Styleguide > JS Components -->
     <li><a href="{{ baseUrl }}/styleguide/js-components/validation" class="{{#is navactive 'validation'}} is-active{{/is}}">Form Validation</a>
         {{#is navactive 'validation'}}
         <ul class="sg-sideNav-subnav u-unstyled">
@@ -111,9 +108,9 @@
 
 
 {{#is navsub 'css-utilities'}}
-<!-- subnav for Styleguide > CSS Utilities -->
     <!-- title – Grids -->
     <!-- <li><a href="{{ baseUrl }}/styleguide/css-utilities/grid" class="{{#is navactive 'grid'}} is-active{{/is}}">Responsive Grid</a></li> -->
+
     <!-- title – Classes -->
     <li><a href="{{ baseUrl }}/styleguide/css-utilities/" class="{{#is navactive 'css-utilities'}} is-active{{/is}}">General Utilities</a></li>
     <li><a href="{{ baseUrl }}/styleguide/css-utilities/legacy-support" class="is-incomplete {{#is navactive 'Legacy Support'}} is-active{{/is}}">Legacy Support</a></li>
@@ -129,7 +126,6 @@
 
 
 {{#is navsub 'docs-general'}}
-<!-- subnav for Documentation > General -->
     <li><a href="{{ baseUrl }}/documentation/general/" class="{{#is navactive 'principles'}} is-active{{/is}}">Development Principles</a></li>
     <li><a href="{{ baseUrl }}/documentation/general/getting-started" class="{{#is navactive 'getting-started'}} is-active{{/is}}">Getting Started</a></li>
     <li><a href="{{ baseUrl }}/documentation/general/gulp" class="{{#is navactive 'gulp'}} is-active{{/is}}">Build Tasks – Gulp</a>
@@ -166,7 +162,6 @@
 
 
 {{#is navsub 'docs-css'}}
-<!-- subnav for Documentation > CSS -->
     <li><a href="{{ baseUrl }}/documentation/css/" class="{{#is navactive 'css-principles'}} is-active{{/is}}">Principles</a>
         {{#is navactive 'css-principles'}}
         <ul class="sg-sideNav-subnav u-unstyled">
@@ -217,7 +212,6 @@
 
 
 {{#is navsub 'docs-js'}}
-<!-- subnav for Documentation > JS -->
     <li><a href="{{ baseUrl }}/documentation/js/" class="{{#is navactive 'js-architecture'}} is-active{{/is}}">Architecture</a></li>
     <li><a href="{{ baseUrl }}/documentation/js/codestyle" class="{{#is navactive 'js-codestyle'}} is-active{{/is}}">Code Style</a></li>
     <li><a href="{{ baseUrl }}/documentation/js/modules" class="{{#is navactive 'js-modules'}} is-active{{/is}}">Modules</a></li>
@@ -239,14 +233,12 @@
 
 
 {{#is navsub 'docs-images'}}
-<!-- subnav for Documentation > Images and icons -->
     <li><a href="{{ baseUrl }}/documentation/images/img-icons" class="{{#is navactive 'img-icons'}} is-active{{/is}}">Icons</a></li>
     <li><a href="{{ baseUrl }}/documentation/images/img-optimisation" class="{{#is navactive 'img-optimisation'}} is-active{{/is}}">Image Optimisation</a></li>
 {{/is}}
 
 
 {{#is navsub 'open-source'}}
-<!-- subnav for Documentation > Images and icons -->
     <li><a href="{{ baseUrl }}/documentation/open-source" class="{{#is navactive 'os-creating'}} is-active{{/is}}">Creating a module</a></li>
     <li><a href="{{ baseUrl }}/documentation/open-source/module-maintenance" class="{{#is navactive 'os-maintenance'}} is-active{{/is}}">Module maintenance</a></li>
     <li><a href="{{ baseUrl }}/documentation/open-source/utility-tools" class="{{#is navactive 'os-tools'}} is-active{{/is}}">Utility Tools</a></li>
@@ -254,52 +246,3 @@
     <li><a href="{{ baseUrl }}/documentation/open-source/module-issues" class="{{#is navactive 'os-issues'}} is-active{{/is}}">Issues</a></li>
 {{/is}}
 </ul>
-
-    <!-- <li><a href="{{ baseUrl }}/process/gulp.html"{{#is navactive 'docsgulp'}} class="is-active"{{/is}} data-trak='{"category":"Docs nav","action":"Grunt"}'>Gulp</a>
-        {{#is navactive 'docsgulp'}}
-        <ul class="sg-sideNav-subnav unstyled">
-            <li><a href="#gulp-setup">Setup</a></li>
-            <li><a href="#gulp-vs">Using Gulp in VS</a></li>
-            <li><a href="#gulp-cmd">Using Gulp on Command Line</a></li>
-            <li><a href="#gulp-tasks">Gulp Tasks</a></li>
-            <li><a href="#gulp-config">Config</a></li>
-            <li><a href="#gulp-taskindex">Task index</a></li>
-        </ul>
-        {{/is}}
-    </li>
-    <li><a href="{{ baseUrl }}/css/"{{#is navactive 'docscss'}} class="is-active"{{/is}} data-trak='{"category":"Docs nav","action":"CSS"}'>CSS</a>
-        {{#is navactive 'docscss'}}
-        <ul class="sg-sideNav-subnav unstyled">
-            <li><a href="#philosophy">Philosophy</a></li>
-            <li><a href="#bestpractices">Best Practices</a></li>
-            <li><a href="#sass">Sass</a></li>
-            <li><a href="#structure">Structure</a></li>
-            <li><a href="#namingscheme">CSS Naming scheme</a></li>
-            <li><a href="#variables">Sass Variables</a></li>
-            <li><a href="#responsive">Responsive</a></li>
-            <li><a href="#modernizr">Modernizr</a></li>
-        </ul>
-        {{/is}}
-    </li>
-    <li><a href="{{ baseUrl }}/js/"{{#is navactive 'docsjs'}} class="is-active"{{/is}} data-trak='{"category":"Docs nav","action":"Javascript"}'>Javascript</a>
-        {{#is navactive 'docsjs'}}
-        <ul class="sg-sideNav-subnav unstyled">
-            <li><a href="#philosophy">Philosophy</a></li>
-            <li><a href="#structure">Structure</a></li>
-            <li><a href="#polyfills">Polyfills</a></li>
-            <li><a href="#libs">Libraries</a></li>
-        </ul>
-        {{/is}}
-    </li>
-    <li><a href="{{ baseUrl }}/accessibility.html"{{#is navactive 'a11y'}} class="is-active"{{/is}}>Accessibility</a></li>
-    <li><a href="{{ baseUrl }}/fe/html.html"{{#is navactive 'docshtml'}} class="is-active"{{/is}} data-trak='{"category":"Docs nav","action":"HTML"}'>HTML</a>
-        {{#is navactive 'docshtml'}}
-        <ul class="sg-sideNav-subnav unstyled">
-            <li><a href="#svg">SVG icons</a></li>
-            <li><a href="#iconmeta">Icon meta tags</a></li>
-            <li><a href="#jquery">jQuery</a></li>
-        </ul>
-        {{/is}}
-    </li>
-</ul>
- -->
