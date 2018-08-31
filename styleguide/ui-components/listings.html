@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +12,7 @@
 		<script src="/assets/js/libs/modernizr.min.js"></script>
 		<script src="/assets/js/libs/prism.min.js"></script> <!-- Code highlighting for docs -->
 
-        <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:400,500' rel='stylesheet' type='text/css' />
+        <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:300,500' rel='stylesheet' type='text/css' />
 	</head>
 	<body class="body-docs ">
 
@@ -84,7 +83,7 @@
     <li><a href="/styleguide/ui-components/custom/star-ratings" class="">Star Ratings</a></li>
     <li><a href="/styleguide/ui-components/listings" class=" is-active">Listings</a></li>
     <li><a href="/styleguide/ui-components/mediaElement" class="">Media Element</a></li>
-    <li><a href="/styleguide/ui-components/icons" ">Icons</a></li>
+    <li><a href="/styleguide/ui-components/ui-icons" class="">Icons</a></li>
 
     <!-- subnav for Styleguide > Optional Components -->
     <li><a href="/styleguide/ui-components/cards" class="">Cards</a></li>
@@ -128,24 +127,14 @@
                 
                 
                 </ul>
-                
-                    <!-- <li><a href="/process/gulp.html" data-trak='{"category":"Docs nav","action":"Grunt"}'>Gulp</a>
-                    </li>
-                    <li><a href="/css/" data-trak='{"category":"Docs nav","action":"CSS"}'>CSS</a>
-                    </li>
-                    <li><a href="/js/" data-trak='{"category":"Docs nav","action":"Javascript"}'>Javascript</a>
-                    </li>
-                    <li><a href="/accessibility.html">Accessibility</a></li>
-                    <li><a href="/fe/html.html" data-trak='{"category":"Docs nav","action":"HTML"}'>HTML</a>
-                    </li>
-                </ul>
-                 -->
             </div>
             <div class="g-col g-span10--mid">
-                <div class="c-card c-card--rounded sg-content">
+                <div class="c-card c-card--rounded c-card--smallResponsive">
                     <h1>Listings</h1>
-<p>A listing of items.  Visually split by separators</p>
-<p><h2 class="sg-sectionHeading">Fully linked Listing Items with Address</h2></p>
+                    <p>A listing of items.  Visually split by separators</p>
+
+<h2 class="sg-sectionHeading">Fully linked Listing Items with Address</h2>
+
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
@@ -255,11 +244,13 @@
 </div>    </div>
     <div class="demo-code">
 <pre><code class="language-markup">    &lt;<span class="hljs-built-in">div</span> class=<span class="hljs-string">"c-listing "</span>&gt;
-        {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1959</span><span class="hljs-symbol">$</span>}    {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1961</span><span class="hljs-symbol">$</span>}    {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1963</span><span class="hljs-symbol">$</span>}&lt;/<span class="hljs-built-in">div</span>&gt;```
+        {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1646</span><span class="hljs-symbol">$</span>}    {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1648</span><span class="hljs-symbol">$</span>}    {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1650</span><span class="hljs-symbol">$</span>}&lt;/<span class="hljs-built-in">div</span>&gt;```
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Fully linked Listing Items with Distance</h2></p>
+
+<h2 class="sg-sectionHeading">Fully linked Listing Items with Distance</h2>
+
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
@@ -384,11 +375,13 @@
 </div>    </div>
     <div class="demo-code">
 <pre><code class="language-markup">    &lt;<span class="hljs-built-in">div</span> class=<span class="hljs-string">"c-listing "</span>&gt;
-        {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1972</span><span class="hljs-symbol">$</span>}    {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1974</span><span class="hljs-symbol">$</span>}    {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1976</span><span class="hljs-symbol">$</span>}&lt;/<span class="hljs-built-in">div</span>&gt;```
+        {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1668</span><span class="hljs-symbol">$</span>}    {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1670</span><span class="hljs-symbol">$</span>}    {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1672</span><span class="hljs-symbol">$</span>}&lt;/<span class="hljs-built-in">div</span>&gt;```
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Fully linked Listing Items Offline</h2></p>
+
+<h2 class="sg-sectionHeading">Fully linked Listing Items Offline</h2>
+
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
@@ -513,7 +506,7 @@
 </div>    </div>
     <div class="demo-code">
 <pre><code class="language-markup">    &lt;<span class="hljs-built-in">div</span> class=<span class="hljs-string">"c-listing c-listing--offline"</span>&gt;
-        {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1984</span><span class="hljs-symbol">$</span>}    {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1986</span><span class="hljs-symbol">$</span>}    {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1988</span><span class="hljs-symbol">$</span>}&lt;/<span class="hljs-built-in">div</span>&gt;```
+        {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1689</span><span class="hljs-symbol">$</span>}    {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1691</span><span class="hljs-symbol">$</span>}    {<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1693</span><span class="hljs-symbol">$</span>}&lt;/<span class="hljs-built-in">div</span>&gt;```
 </code></pre>
     </div>
 </div>
@@ -521,16 +514,6 @@
             </div>
         </div>
     </div><!-- Close .l-container -->
-            <!--  ==============  -->
-            <!--  === Footer ===  -->
-            <!--  ==============  -->
-            <footer class="sg-footer" role="contentinfo">
-                <div class="l-container text-center">
-                    <p>Fozzie and its associated documentation was created with ❤️ by the UI team at Just Eat.</p>
-                    <hr>
-                    <p>If you want to get in touch about anything mentioned here, feel free to <a href="mailto:ui@just-eat.com">drop us a message</a>!</p>
-                </div>
-            </footer>
 
         <script>
             var mockPaths = {

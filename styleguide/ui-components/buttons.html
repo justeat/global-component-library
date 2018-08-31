@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +12,7 @@
 		<script src="/assets/js/libs/modernizr.min.js"></script>
 		<script src="/assets/js/libs/prism.min.js"></script> <!-- Code highlighting for docs -->
 
-        <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:400,500' rel='stylesheet' type='text/css' />
+        <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:300,500' rel='stylesheet' type='text/css' />
 	</head>
 	<body class="body-docs ">
 
@@ -84,7 +83,7 @@
     <li><a href="/styleguide/ui-components/custom/star-ratings" class="">Star Ratings</a></li>
     <li><a href="/styleguide/ui-components/listings" class="">Listings</a></li>
     <li><a href="/styleguide/ui-components/mediaElement" class="">Media Element</a></li>
-    <li><a href="/styleguide/ui-components/icons" ">Icons</a></li>
+    <li><a href="/styleguide/ui-components/ui-icons" class="">Icons</a></li>
 
     <!-- subnav for Styleguide > Optional Components -->
     <li><a href="/styleguide/ui-components/cards" class="">Cards</a></li>
@@ -128,23 +127,11 @@
                 
                 
                 </ul>
-                
-                    <!-- <li><a href="/process/gulp.html" data-trak='{"category":"Docs nav","action":"Grunt"}'>Gulp</a>
-                    </li>
-                    <li><a href="/css/" data-trak='{"category":"Docs nav","action":"CSS"}'>CSS</a>
-                    </li>
-                    <li><a href="/js/" data-trak='{"category":"Docs nav","action":"Javascript"}'>Javascript</a>
-                    </li>
-                    <li><a href="/accessibility.html">Accessibility</a></li>
-                    <li><a href="/fe/html.html" data-trak='{"category":"Docs nav","action":"HTML"}'>HTML</a>
-                    </li>
-                </ul>
-                 -->
             </div>
             <div class="g-col g-span10--mid">
-                <div class="c-card c-card--rounded sg-content">
+                <div class="c-card c-card--rounded c-card--smallResponsive">
                     <h1>Buttons</h1>
-<p><h2 class="sg-sectionHeading">Default Button – <code>.o-btn</code></h2></p>
+                    <h2 class="sg-sectionHeading">Default Button – <code>.o-btn</code></h2>
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
@@ -155,7 +142,9 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Button Background Color Modifiers</h2></p>
+
+
+<h2 class="sg-sectionHeading">Button Background Color Modifiers</h2>
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
@@ -166,7 +155,9 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Button secondary and tertiary Modifiers</h2></p>
+
+
+<h2 class="sg-sectionHeading">Button secondary and tertiary Modifiers</h2>
 <p>The secondary button must be used on white background and the tertiary on grey.</p>
 <div class="demo">
     <div class="demo-visual ">
@@ -180,7 +171,9 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Block Button – <code>.o-btn.o-btn--block</code></h2></p>
+
+
+<h2 class="sg-sectionHeading">Block Button – <code>.o-btn.o-btn--block</code></h2>
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
@@ -191,7 +184,9 @@
 </span></code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Button Link – <code>.o-btnLink</code></h2></p>
+
+
+<h2 class="sg-sectionHeading">Button Link – <code>.o-btnLink</code></h2>
 <p>Make a button visually look like a default link.  Useful when we semantically want a button but don’t want all the default styling.</p>
 <p>Should only be applied to buttons</p>
 <div class="demo">
@@ -204,7 +199,9 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Outline Button – <code>.o-btn.o-btn--outline</code></h2></p>
+
+
+<h2 class="sg-sectionHeading">Outline Button – <code>.o-btn.o-btn--outline</code></h2>
 <p></p>
 <div class="demo">
     <div class="demo-visual ">
@@ -216,7 +213,9 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Transparent Button – <code>.o-btn.o-btn--transparent</code></h2></p>
+
+
+<h2 class="sg-sectionHeading">Transparent Button – <code>.o-btn.o-btn--transparent</code></h2>
 <p></p>
 <div class="demo">
     <div class="demo-visual ">
@@ -228,7 +227,9 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Small Button – <code>.o-btn.o-btn--small</code></h2></p>
+
+
+<h2 class="sg-sectionHeading">Small Button – <code>.o-btn.o-btn--small</code></h2>
 <p></p>
 <div class="demo">
     <div class="demo-visual ">
@@ -240,7 +241,9 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Disabled Button – <code>.o-btn.o-btn--disabled</code></h2></p>
+
+
+<h2 class="sg-sectionHeading">Disabled Button – <code>.o-btn.o-btn--disabled</code></h2>
 <p></p>
 <div class="demo">
     <div class="demo-visual ">
@@ -252,7 +255,9 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Rounded Icon Button – <code>.o-btn.o-btn--roundedIcon</code></h2></p>
+
+
+<h2 class="sg-sectionHeading">Rounded Icon Button – <code>.o-btn.o-btn--roundedIcon</code></h2>
 <p></p>
 <div class="demo">
     <div class="demo-visual ">
@@ -260,11 +265,13 @@
         <a class="o-btn o-btn--roundedIcon c-icon--minus"></a>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup">&lt;a class=<span class="hljs-string">"o-btn o-btn--roundedIcon c-icon--minus"</span>&gt;{<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1706</span><span class="hljs-symbol">$</span>}&lt;/a&gt;
+<pre><code class="language-markup">&lt;a class=<span class="hljs-string">"o-btn o-btn--roundedIcon c-icon--minus"</span>&gt;{<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1420</span><span class="hljs-symbol">$</span>}&lt;/a&gt;
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Small rounded Icon Button – <code>.o-btn.o-btn--roundedIcon.o-btn--roundedIcon--small</code></h2></p>
+
+
+<h2 class="sg-sectionHeading">Small rounded Icon Button – <code>.o-btn.o-btn--roundedIcon.o-btn--roundedIcon--small</code></h2>
 <p></p>
 <div class="demo">
     <div class="demo-visual ">
@@ -276,7 +283,9 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Rounded Button – <code>.o-btn.o-btn--rounded</code></h2></p>
+
+
+<h2 class="sg-sectionHeading">Rounded Button – <code>.o-btn.o-btn--rounded</code></h2>
 <p></p>
 <div class="demo">
     <div class="demo-visual ">
@@ -288,7 +297,9 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Remove Button – <code>.o-btn.o-btn--remove</code></h2></p>
+
+
+<h2 class="sg-sectionHeading">Remove Button – <code>.o-btn.o-btn--remove</code></h2>
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
@@ -299,7 +310,9 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Button Group – <code>.o-btn-group .o-btn</code></h2></p>
+
+
+<h2 class="sg-sectionHeading">Button Group – <code>.o-btn-group .o-btn</code></h2>
 <p></p>
 <div class="demo">
     <div class="demo-visual ">
@@ -317,7 +330,9 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Button Toggle – <code>.o-btnToggle</code></h2></p>
+
+
+<h2 class="sg-sectionHeading">Button Toggle – <code>.o-btnToggle</code></h2>
 <p></p>
 <div class="demo">
     <div class="demo-visual ">
@@ -367,20 +382,11 @@
 </code></pre>
     </div>
 </div>
+
                 </div>
             </div>
         </div>
     </div><!-- Close .l-container -->
-            <!--  ==============  -->
-            <!--  === Footer ===  -->
-            <!--  ==============  -->
-            <footer class="sg-footer" role="contentinfo">
-                <div class="l-container text-center">
-                    <p>Fozzie and its associated documentation was created with ❤️ by the UI team at Just Eat.</p>
-                    <hr>
-                    <p>If you want to get in touch about anything mentioned here, feel free to <a href="mailto:ui@just-eat.com">drop us a message</a>!</p>
-                </div>
-            </footer>
 
         <script>
             var mockPaths = {

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +12,7 @@
 		<script src="/assets/js/libs/modernizr.min.js"></script>
 		<script src="/assets/js/libs/prism.min.js"></script> <!-- Code highlighting for docs -->
 
-        <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:400,500' rel='stylesheet' type='text/css' />
+        <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:300,500' rel='stylesheet' type='text/css' />
 	</head>
 	<body class="body-docs ">
 
@@ -84,7 +83,7 @@
     <li><a href="/styleguide/ui-components/custom/star-ratings" class="">Star Ratings</a></li>
     <li><a href="/styleguide/ui-components/listings" class="">Listings</a></li>
     <li><a href="/styleguide/ui-components/mediaElement" class="">Media Element</a></li>
-    <li><a href="/styleguide/ui-components/icons" ">Icons</a></li>
+    <li><a href="/styleguide/ui-components/ui-icons" class="">Icons</a></li>
 
     <!-- subnav for Styleguide > Optional Components -->
     <li><a href="/styleguide/ui-components/cards" class="">Cards</a></li>
@@ -128,22 +127,10 @@
                 
                 
                 </ul>
-                
-                    <!-- <li><a href="/process/gulp.html" data-trak='{"category":"Docs nav","action":"Grunt"}'>Gulp</a>
-                    </li>
-                    <li><a href="/css/" data-trak='{"category":"Docs nav","action":"CSS"}'>CSS</a>
-                    </li>
-                    <li><a href="/js/" data-trak='{"category":"Docs nav","action":"Javascript"}'>Javascript</a>
-                    </li>
-                    <li><a href="/accessibility.html">Accessibility</a></li>
-                    <li><a href="/fe/html.html" data-trak='{"category":"Docs nav","action":"HTML"}'>HTML</a>
-                    </li>
-                </ul>
-                 -->
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded c-card--smallResponsive">
-                    <h1 class="sg-sectionTitle">Footers</h1>
+                    <h1>Footers</h1>
                     <h2 class="sg-sectionHeading">Default Footer</h2>
 <p>Default bog-standard Footer Component</p>
 
@@ -155,67 +142,69 @@
                 <div class="g g--stack--mid">
                     <div class="g-col g-span3 c-footer-panel" data-panel-collapsible data-toggle-name="footer-panel-1">
                         <h2 class="c-footer-heading" data-footer-panel-heading data-toggle-target="footer-panel-1" data-toggle-class="is-collapsed">
-                            Servizio Clienti
+                            Customer service
                             <img class="c-footer-chevron c-icon--chevron u-showBelowMid" src="/assets/img/icons/arrows/chevron.svg" alt="" />
                         </h2>
                     
                         <ul class="c-footer-list">
-                                <li><a href="/help">Contatti</a></li>
-                                <li><a href="/account/login">Affiliazione ristoranti</a></li>
-                                <li><a href="/account/register">Partner centre</a></li>
-                                <li><a href="/blog">Suggerisci un ristorante</a></li>
-                                <li><a href="/apps">Aiuto?</a></li>
+                                <li><a href="/help">Contact us</a></li>
+                                <li><a href="/account/login">Log in</a></li>
+                                <li><a href="/account/register">Sign up</a></li>
+                                <li><a href="/blog">Blog</a></li>
+                                <li><a href="/apps">Mobile apps</a></li>
+                                <li><a href="/suggest-a-restaurant">Suggest a restaurant</a></li>
+                                <li><a href="/member/updateuserinfo">My account</a></li>
                         </ul>
                     </div>
                     
                     <div class="g-col g-span3 c-footer-panel" data-panel-collapsible data-toggle-name="footer-panel-2">
                         <h2 data-test-id="cuisine-footer-heading" class="c-footer-heading" data-footer-panel-heading data-toggle-target="footer-panel-2" data-toggle-class="is-collapsed">
-                            Cucine
+                            Top cuisines
                             <img class="c-footer-chevron c-icon--chevron u-showBelowMid" src="/assets/img/icons/arrows/chevron.svg" alt="" />
                         </h2>
                     
                         <ul class="c-footer-list">
-                                <li><a href="/domicilio/pizza">Pizza a domicilio</a></li>
-                                <li><a href="/domicilio/cinese">Cinese a domicilio</a></li>
-                                <li><a href="/domicilio/sushi">Sushi a domicilio</a></li>
-                                <li><a href="/domicilio/hamburger">Hamburger a domicilio</a></li>
-                                <li><a href="/domicilio/tipi-cucina">Tutti i tipi di cucine</a></li>
+                                <li><a href="/chinese-takeaways">Chinese</a></li>
+                                <li><a href="/indian-takeaways">Indian</a></li>
+                                <li><a href="/italian-takeaways">Italian</a></li>
+                                <li><a href="/japanese-takeaways">Japanese</a></li>
+                                <li><a href="/pizza-delivery">Pizza delivery</a></li>
+                                <li><a href="/cuisine">View all cuisines</a></li>
                         </ul>
                     </div>
                     
                     <div class="g-col g-span3 c-footer-panel" data-panel-collapsible data-toggle-name="footer-panel-3">
                         <h2 class="c-footer-heading" data-footer-panel-heading data-toggle-target="footer-panel-3" data-toggle-class="is-collapsed">
-                            Città
+                            Locations
                             <img class="c-footer-chevron c-icon--chevron u-showBelowMid" src="/assets/img/icons/arrows/chevron.svg" alt="" />
                         </h2>
                     
                         <ul class="c-footer-list">
-                                <li><a href="/domicilio/palermo">Palermo</a></li>
-                                <li><a href="/domicilio/roma">Roma</a></li>
-                                <li><a href="/domicilio/milano">Milano</a></li>
-                                <li><a href="/domicilio/napoli">Napoli</a></li>
-                                <li><a href="/domicilio/Torino">Torino</a></li>
-                                <li><a href="/domicilio/bologna">Bologna</a></li>
-                                <li><a href="/domicilio/citta">Tutte le città</a></li>
-                                <li><a href="/domicilio/citta-offerte">Offerte e Sconti</a></li>
+                                <li><a href="/birmingham-takeaway">Birmingham</a></li>
+                                <li><a href="/cardiff-takeaway">Cardiff</a></li>
+                                <li><a href="/glasgow-takeaway">Glasgow</a></li>
+                                <li><a href="/leeds-takeaway">Leeds</a></li>
+                                <li><a href="/manchester-takeaway">Manchester</a></li>
+                                <li><a href="/takeaway">View all locations</a></li>
                         </ul>
                     </div>
                     
                     <div class="g-col g-span3 c-footer-panel" data-panel-collapsible data-toggle-name="footer-panel-4">
                         <h2 class="c-footer-heading" data-footer-panel-heading data-toggle-target="footer-panel-4" data-toggle-class="is-collapsed">
-                            Chi siamo
+                            A bit more about us
                             <img class="c-footer-chevron c-icon--chevron u-showBelowMid" src="/assets/img/icons/arrows/chevron.svg" alt="" />
                         </h2>
                     
                         <ul class="c-footer-list">
-                                <li><a href="/privacy-policy" >Termini e Condizioni</a></li>
+                                <li><a href="https://restaurants.just-eat.co.uk/" >Restaurant sign up</a></li>
+                                <li><a href="/pricepromise" >Price promise</a></li>
+                                <li><a href="/privacy-policy" >Privacy policy</a></li>
+                                <li><a href="/termsandconditions" >Terms and Conditions</a></li>
                                 <li><a href="/cookiespolicy" >Cookie Policy</a></li>
-                                <li><a href="/about" >Informazioni su Just Eat</a></li>
-                                <li><a href="/faq" >Domande frequenti</a></li>
-                                <li><a href="/domicilio/miglior-prezzo-garantito" >Miglior Prezzo Garantito</a></li>
-                                <li><a href="/jobs" >Lavora con noi</a></li>
-                                <li><a href="/press-info" >Area stampa</a></li>
-                                <li><a href="/app" >Le nostre App</a></li>
+                                <li><a href="/about" >About us</a></li>
+                                <li><a href="/" >Company website</a></li>
+                                <li><a href="https://careers.just-eat.com/" >Careers</a></li>
+                                <li><a href="https://www.justeatplc.com/download_file/view/435/1" target="_blank">Modern Slavery Statement</a></li>
                         </ul>
                     </div>
                 </div>
@@ -224,34 +213,39 @@
             <div class="c-footer-row c-footer-row--light">
                 <div class="g g--stack--mid l-container">
                     <div class="g-col g-span6">
-                        <h2 class="c-footer-heading">Scarica l&#x27;app</h2>
+                        <h2 class="c-footer-heading">Download our apps</h2>
                     
                         <ul class="c-footer-list c-footer-list--inline">
                                 <li class="c-footer-list-item">
-                                    <a href="https://itunes.apple.com/it/app/justeat.it-ristoranti-domicilio/id495607955?mt&#x3D;8" target="_blank">
-                                        <img class="c-footer-icon c-icon--ios" src="/assets/img/icons/appstore/ios.svg" alt="Scarica su App Store" />
+                                    <a href="https://179046.measurementapi.com/serve?action&#x3D;click&amp;publisher_id&#x3D;179046&amp;site_id&#x3D;106656&amp;my_campaign&#x3D;q4-2015" target="_blank">
+                                        <img class="c-footer-icon c-icon--ios" src="/assets/img/icons/appstore/ios.svg" alt="Download on the App Store" />
                                     </a>
                                 </li>
                                 <li class="c-footer-list-item">
-                                    <a href="https://play.google.com/store/apps/details?id&#x3D;com.justeat.app.it" target="_blank">
-                                        <img class="c-footer-icon c-icon--android" src="/assets/img/icons/appstore/android.svg" alt="Disponibile su Google Play" />
+                                    <a href="https://q2d-a.tlnk.io/serve?action&#x3D;click&amp;publisher_id&#x3D;170720&amp;site_id&#x3D;106644&amp;invoke_id&#x3D;178925&amp;my_campaign&#x3D;website-app-page" target="_blank">
+                                        <img class="c-footer-icon c-icon--android" src="/assets/img/icons/appstore/android.svg" alt="Get it on Google Play" />
                                     </a>
                                 </li>
                         </ul>
                     </div>
                     
                     <div class="g-col g-span3 c-footer-social">
-                        <h2 class="c-footer-heading">Seguici su:</h2>
+                        <h2 class="c-footer-heading">Follow us</h2>
                     
                         <ul class="c-footer-list c-footer-list--inline">
                                 <li class="c-footer-list-item">
-                                    <a href="https://www.facebook.com/justeatitaly" target="_blank">
+                                    <a href="https://www.facebook.com/justeat" target="_blank">
                                         <img class="c-footer-icon c-footer-icon--social" src="/assets/img/icons/social/icon-facebook.svg" alt="" />
                                     </a>
                                 </li>
                                 <li class="c-footer-list-item">
-                                    <a href="https://twitter.com/JustEat_it" target="_blank">
+                                    <a href="https://twitter.com/JustEatUK" target="_blank">
                                         <img class="c-footer-icon c-footer-icon--social" src="/assets/img/icons/social/icon-twitter.svg" alt="" />
+                                    </a>
+                                </li>
+                                <li class="c-footer-list-item">
+                                    <a href="https://www.youtube.com/user/TVjusteat" target="_blank">
+                                        <img class="c-footer-icon c-footer-icon--social" src="/assets/img/icons/social/icon-youtube.svg" alt="" />
                                     </a>
                                 </li>
                         </ul>
@@ -292,16 +286,16 @@
                                     <img class="c-footer-icon c-footer-icon--card c-icon--visa--verified" src="/assets/img/icons/cards/visa--verified.svg" alt="Visa" />
                                 </li>
                                 <li class="c-footer-list-item"> 
-                                    <img class="c-footer-icon c-footer-icon--card c-icon--paypal" src="/assets/img/icons/cards/paypal.svg" alt="PayPal" />
+                                    <img class="c-footer-icon c-footer-icon--card c-icon--amex--safekey" src="/assets/img/icons/cards/amex--safekey.svg" alt="American Express" />
                                 </li>
                         </ul>
                     </div>
         
                     <div class="g-col g-span4 c-footer-countries">
                         <div class="c-countrySelector">
-                            <button type="button" class="o-btn o-btnLink c-countrySelector-link c-countrySelector-link--selected" data-toggle-target="countrySelector-list" aria-label="Sei sul sito Italiano. Clicca qui per cambiare stato.">
+                            <button type="button" class="o-btn o-btnLink c-countrySelector-link c-countrySelector-link--selected" data-toggle-target="countrySelector-list" aria-label="You are on the UK website. Click here to change.">
                                 <img class="c-icon--flag--small" src="/assets/img/icons/flags/flag.dk.svg" alt="" />
-                                <p>Italia</p>
+                                <p>United Kingdom</p>
                                 <img class="c-countrySelector-chevron c-icon--chevron--small" src="/assets/img/icons/arrows/chevron.svg" alt="" />
                             </button>
                             <ul class="c-countrySelector-list is-hidden" data-toggle-name="countrySelector-list">
@@ -314,7 +308,7 @@
                                     <li>
                                         <a class="c-countrySelector-link" target="_blank" href="https://www.ifood.com.br">
                                             <img class="c-icon--flag--small" src="/assets/img/icons/flags/flag.br.svg" alt="" />
-                                            <p>Brasile</p>
+                                            <p>Brazil</p>
                                         </a>
                                     </li>
                                     <li>
@@ -326,57 +320,57 @@
                                     <li>
                                         <a class="c-countrySelector-link" target="_blank" href="https://www.just-eat.dk">
                                             <img class="c-icon--flag--small" src="/assets/img/icons/flags/flag.dk.svg" alt="" />
-                                            <p>Danimarca</p>
+                                            <p>Denmark</p>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="c-countrySelector-link" target="_blank" href="https://www.just-eat.fr/">
                                             <img class="c-icon--flag--small" src="/assets/img/icons/flags/flag.fr.svg" alt="" />
-                                            <p>Francia</p>
+                                            <p>France</p>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="c-countrySelector-link" target="_blank" href="https://www.just-eat.ie">
                                             <img class="c-icon--flag--small" src="/assets/img/icons/flags/flag.ie.svg" alt="" />
-                                            <p>Irlanda</p>
+                                            <p>Ireland</p>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="c-countrySelector-link" target="_blank" href="https://www.just-eat.no">
-                                            <img class="c-icon--flag--small" src="/assets/img/icons/flags/flag.no.svg" alt="" />
-                                            <p>Norvegia</p>
+                                        <a class="c-countrySelector-link" target="_blank" href="https://www.justeat.it">
+                                            <img class="c-icon--flag--small" src="/assets/img/icons/flags/flag.it.svg" alt="" />
+                                            <p>Italy</p>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="c-countrySelector-link" target="_blank" href="https://www.menulog.co.nz">
                                             <img class="c-icon--flag--small" src="/assets/img/icons/flags/flag.nz.svg" alt="" />
-                                            <p>Nuova Zelanda</p>
+                                            <p>New Zealand</p>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="c-countrySelector-link" target="_blank" href="https://www.just-eat.co.uk">
-                                            <img class="c-icon--flag--small" src="/assets/img/icons/flags/flag.gb.svg" alt="" />
-                                            <p>Regno Unito</p>
+                                        <a class="c-countrySelector-link" target="_blank" href="https://www.just-eat.no">
+                                            <img class="c-icon--flag--small" src="/assets/img/icons/flags/flag.no.svg" alt="" />
+                                            <p>Norway</p>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="c-countrySelector-link" target="_blank" href="https://www.just-eat.es">
                                             <img class="c-icon--flag--small" src="/assets/img/icons/flags/flag.es.svg" alt="" />
-                                            <p>Spagna</p>
+                                            <p>Spain</p>
                                         </a>
                                     </li>
                                     <li>
                                         <a class="c-countrySelector-link" target="_blank" href="https://www.eat.ch">
                                             <img class="c-icon--flag--small" src="/assets/img/icons/flags/flag.ch.svg" alt="" />
-                                            <p>Svizzera</p>
+                                            <p>Switzerland</p>
                                         </a>
                                     </li>
                                 <li>
                                     <button type="button" class="o-btn o-btnLink c-countrySelector-link c-countrySelector-link--selected" data-toggle-target="countrySelector-list">
                                         <img class="c-icon--flag--small" src="/assets/img/icons/flags/flag.dk.svg" alt="" />
-                                        <p>Italia</p>
+                                        <p>United Kingdom</p>
                                     </button>
-                                    <button type="button" class="o-btnLink" data-toggle-target="countrySelector-list" aria-label="Chiudi">
+                                    <button type="button" class="o-btnLink" data-toggle-target="countrySelector-list" aria-label="Close">
                                         <img class="c-countrySelector-cross" src="/assets/img/icons/operators/cross.svg" alt="" />
                                     </button>
                                 </li>
@@ -395,67 +389,69 @@
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g g--stack--mid"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span3 c-footer-panel"</span> <span class="hljs-attr">data-panel-collapsible</span> <span class="hljs-attr">data-toggle-name</span>=<span class="hljs-string">"footer-panel-1"</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span> <span class="hljs-attr">data-footer-panel-heading</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"footer-panel-1"</span> <span class="hljs-attr">data-toggle-class</span>=<span class="hljs-string">"is-collapsed"</span>&gt;</span>
-                    Servizio Clienti
+                    Customer service
                     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-chevron c-icon--chevron u-showBelowMid"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/arrows/chevron.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
             
                 <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/help"</span>&gt;</span>Contatti<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/account/login"</span>&gt;</span>Affiliazione ristoranti<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/account/register"</span>&gt;</span>Partner centre<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/blog"</span>&gt;</span>Suggerisci un ristorante<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/apps"</span>&gt;</span>Aiuto?<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/help"</span>&gt;</span>Contact us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/account/login"</span>&gt;</span>Log in<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/account/register"</span>&gt;</span>Sign up<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/blog"</span>&gt;</span>Blog<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/apps"</span>&gt;</span>Mobile apps<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/suggest-a-restaurant"</span>&gt;</span>Suggest a restaurant<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/member/updateuserinfo"</span>&gt;</span>My account<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span3 c-footer-panel"</span> <span class="hljs-attr">data-panel-collapsible</span> <span class="hljs-attr">data-toggle-name</span>=<span class="hljs-string">"footer-panel-2"</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">data-test-id</span>=<span class="hljs-string">"cuisine-footer-heading"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span> <span class="hljs-attr">data-footer-panel-heading</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"footer-panel-2"</span> <span class="hljs-attr">data-toggle-class</span>=<span class="hljs-string">"is-collapsed"</span>&gt;</span>
-                    Cucine
+                    Top cuisines
                     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-chevron c-icon--chevron u-showBelowMid"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/arrows/chevron.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
             
                 <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/domicilio/pizza"</span>&gt;</span>Pizza a domicilio<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/domicilio/cinese"</span>&gt;</span>Cinese a domicilio<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/domicilio/sushi"</span>&gt;</span>Sushi a domicilio<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/domicilio/hamburger"</span>&gt;</span>Hamburger a domicilio<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/domicilio/tipi-cucina"</span>&gt;</span>Tutti i tipi di cucine<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/chinese-takeaways"</span>&gt;</span>Chinese<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/indian-takeaways"</span>&gt;</span>Indian<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/italian-takeaways"</span>&gt;</span>Italian<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/japanese-takeaways"</span>&gt;</span>Japanese<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/pizza-delivery"</span>&gt;</span>Pizza delivery<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/cuisine"</span>&gt;</span>View all cuisines<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span3 c-footer-panel"</span> <span class="hljs-attr">data-panel-collapsible</span> <span class="hljs-attr">data-toggle-name</span>=<span class="hljs-string">"footer-panel-3"</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span> <span class="hljs-attr">data-footer-panel-heading</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"footer-panel-3"</span> <span class="hljs-attr">data-toggle-class</span>=<span class="hljs-string">"is-collapsed"</span>&gt;</span>
-                    Città
+                    Locations
                     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-chevron c-icon--chevron u-showBelowMid"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/arrows/chevron.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
             
                 <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/domicilio/palermo"</span>&gt;</span>Palermo<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/domicilio/roma"</span>&gt;</span>Roma<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/domicilio/milano"</span>&gt;</span>Milano<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/domicilio/napoli"</span>&gt;</span>Napoli<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/domicilio/Torino"</span>&gt;</span>Torino<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/domicilio/bologna"</span>&gt;</span>Bologna<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/domicilio/citta"</span>&gt;</span>Tutte le città<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/domicilio/citta-offerte"</span>&gt;</span>Offerte e Sconti<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/birmingham-takeaway"</span>&gt;</span>Birmingham<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/cardiff-takeaway"</span>&gt;</span>Cardiff<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/glasgow-takeaway"</span>&gt;</span>Glasgow<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/leeds-takeaway"</span>&gt;</span>Leeds<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/manchester-takeaway"</span>&gt;</span>Manchester<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/takeaway"</span>&gt;</span>View all locations<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span3 c-footer-panel"</span> <span class="hljs-attr">data-panel-collapsible</span> <span class="hljs-attr">data-toggle-name</span>=<span class="hljs-string">"footer-panel-4"</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span> <span class="hljs-attr">data-footer-panel-heading</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"footer-panel-4"</span> <span class="hljs-attr">data-toggle-class</span>=<span class="hljs-string">"is-collapsed"</span>&gt;</span>
-                    Chi siamo
+                    A bit more about us
                     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-chevron c-icon--chevron u-showBelowMid"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/arrows/chevron.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
             
                 <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list"</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/privacy-policy"</span> &gt;</span>Termini e Condizioni<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://restaurants.just-eat.co.uk/"</span> &gt;</span>Restaurant sign up<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/pricepromise"</span> &gt;</span>Price promise<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/privacy-policy"</span> &gt;</span>Privacy policy<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/termsandconditions"</span> &gt;</span>Terms and Conditions<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/cookiespolicy"</span> &gt;</span>Cookie Policy<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/about"</span> &gt;</span>Informazioni su Just Eat<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/faq"</span> &gt;</span>Domande frequenti<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/domicilio/miglior-prezzo-garantito"</span> &gt;</span>Miglior Prezzo Garantito<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/jobs"</span> &gt;</span>Lavora con noi<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/press-info"</span> &gt;</span>Area stampa<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/app"</span> &gt;</span>Le nostre App<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/about"</span> &gt;</span>About us<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> &gt;</span>Company website<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://careers.just-eat.com/"</span> &gt;</span>Careers<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.justeatplc.com/download_file/view/435/1"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>Modern Slavery Statement<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -464,34 +460,39 @@
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-row c-footer-row--light"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g g--stack--mid l-container"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span6"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span>&gt;</span>Scarica l&amp;#x27;app<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span>&gt;</span>Download our apps<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
             
                 <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list c-footer-list--inline"</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list-item"</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://itunes.apple.com/it/app/justeat.it-ristoranti-domicilio/id495607955?mt&amp;#x3D;8"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-icon--ios"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/appstore/ios.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Scarica su App Store"</span> /&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://179046.measurementapi.com/serve?action&amp;#x3D;click&amp;amp;publisher_id&amp;#x3D;179046&amp;amp;site_id&amp;#x3D;106656&amp;amp;my_campaign&amp;#x3D;q4-2015"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-icon--ios"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/appstore/ios.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Download on the App Store"</span> /&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
                         <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list-item"</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://play.google.com/store/apps/details?id&amp;#x3D;com.justeat.app.it"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-icon--android"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/appstore/android.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Disponibile su Google Play"</span> /&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://q2d-a.tlnk.io/serve?action&amp;#x3D;click&amp;amp;publisher_id&amp;#x3D;170720&amp;amp;site_id&amp;#x3D;106644&amp;amp;invoke_id&amp;#x3D;178925&amp;amp;my_campaign&amp;#x3D;website-app-page"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-icon--android"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/appstore/android.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Get it on Google Play"</span> /&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
                         <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
             
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span3 c-footer-social"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span>&gt;</span>Seguici su:<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-heading"</span>&gt;</span>Follow us<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
             
                 <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list c-footer-list--inline"</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list-item"</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.facebook.com/justeatitaly"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.facebook.com/justeat"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>
                                 <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-footer-icon--social"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/social/icon-facebook.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
                         <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list-item"</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://twitter.com/JustEat_it"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://twitter.com/JustEatUK"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>
                                 <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-footer-icon--social"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/social/icon-twitter.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list-item"</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.youtube.com/user/TVjusteat"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-footer-icon--social"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/social/icon-youtube.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
                         <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
@@ -532,16 +533,16 @@
                             <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-footer-icon--card c-icon--visa--verified"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/cards/visa--verified.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Visa"</span> /&gt;</span>
                         <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-list-item"</span>&gt;</span> 
-                            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-footer-icon--card c-icon--paypal"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/cards/paypal.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"PayPal"</span> /&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-footer-icon c-footer-icon--card c-icon--amex--safekey"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/cards/amex--safekey.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"American Express"</span> /&gt;</span>
                         <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span4 c-footer-countries"</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector"</span>&gt;</span>
-                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btn o-btnLink c-countrySelector-link c-countrySelector-link--selected"</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"countrySelector-list"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Sei sul sito Italiano. Clicca qui per cambiare stato."</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btn o-btnLink c-countrySelector-link c-countrySelector-link--selected"</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"countrySelector-list"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"You are on the UK website. Click here to change."</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--flag--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/flags/flag.dk.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
-                        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Italia<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>United Kingdom<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-chevron c-icon--chevron--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/arrows/chevron.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
                     <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
                     <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-list is-hidden"</span> <span class="hljs-attr">data-toggle-name</span>=<span class="hljs-string">"countrySelector-list"</span>&gt;</span>
@@ -554,7 +555,7 @@
                             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
                                 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-link"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.ifood.com.br"</span>&gt;</span>
                                     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--flag--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/flags/flag.br.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Brasile<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Brazil<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
                                 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
@@ -566,57 +567,57 @@
                             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
                                 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-link"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.just-eat.dk"</span>&gt;</span>
                                     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--flag--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/flags/flag.dk.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Danimarca<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Denmark<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
                                 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
                                 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-link"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.just-eat.fr/"</span>&gt;</span>
                                     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--flag--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/flags/flag.fr.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Francia<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>France<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
                                 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
                                 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-link"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.just-eat.ie"</span>&gt;</span>
                                     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--flag--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/flags/flag.ie.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Irlanda<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Ireland<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
                                 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-link"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.just-eat.no"</span>&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--flag--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/flags/flag.no.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Norvegia<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-link"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.justeat.it"</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--flag--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/flags/flag.it.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Italy<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
                                 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
                                 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-link"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.menulog.co.nz"</span>&gt;</span>
                                     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--flag--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/flags/flag.nz.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Nuova Zelanda<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>New Zealand<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
                                 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-link"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.just-eat.co.uk"</span>&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--flag--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/flags/flag.gb.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Regno Unito<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-link"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.just-eat.no"</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--flag--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/flags/flag.no.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Norway<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
                                 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
                                 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-link"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.just-eat.es"</span>&gt;</span>
                                     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--flag--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/flags/flag.es.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Spagna<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Spain<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
                                 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                             <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
                                 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-link"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.eat.ch"</span>&gt;</span>
                                     <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--flag--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/flags/flag.ch.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
-                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Svizzera<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Switzerland<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
                                 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
                         <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
                             <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btn o-btnLink c-countrySelector-link c-countrySelector-link--selected"</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"countrySelector-list"</span>&gt;</span>
                                 <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--flag--small"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/flags/flag.dk.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
-                                <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Italia<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>United Kingdom<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
-                            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btnLink"</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"countrySelector-list"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Chiudi"</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btnLink"</span> <span class="hljs-attr">data-toggle-target</span>=<span class="hljs-string">"countrySelector-list"</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">"Close"</span>&gt;</span>
                                 <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-countrySelector-cross"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/operators/cross.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> /&gt;</span>
                             <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
                         <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>

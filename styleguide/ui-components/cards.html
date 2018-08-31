@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js"> <!--<![endif]-->
+<html class="no-js">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +12,7 @@
 		<script src="/assets/js/libs/modernizr.min.js"></script>
 		<script src="/assets/js/libs/prism.min.js"></script> <!-- Code highlighting for docs -->
 
-        <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:400,500' rel='stylesheet' type='text/css' />
+        <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:300,500' rel='stylesheet' type='text/css' />
 	</head>
 	<body class="body-docs ">
 
@@ -84,7 +83,7 @@
     <li><a href="/styleguide/ui-components/custom/star-ratings" class="">Star Ratings</a></li>
     <li><a href="/styleguide/ui-components/listings" class="">Listings</a></li>
     <li><a href="/styleguide/ui-components/mediaElement" class="">Media Element</a></li>
-    <li><a href="/styleguide/ui-components/icons" ">Icons</a></li>
+    <li><a href="/styleguide/ui-components/ui-icons" class="">Icons</a></li>
 
     <!-- subnav for Styleguide > Optional Components -->
     <li><a href="/styleguide/ui-components/cards" class=" is-active">Cards</a></li>
@@ -128,25 +127,15 @@
                 
                 
                 </ul>
-                
-                    <!-- <li><a href="/process/gulp.html" data-trak='{"category":"Docs nav","action":"Grunt"}'>Gulp</a>
-                    </li>
-                    <li><a href="/css/" data-trak='{"category":"Docs nav","action":"CSS"}'>CSS</a>
-                    </li>
-                    <li><a href="/js/" data-trak='{"category":"Docs nav","action":"Javascript"}'>Javascript</a>
-                    </li>
-                    <li><a href="/accessibility.html">Accessibility</a></li>
-                    <li><a href="/fe/html.html" data-trak='{"category":"Docs nav","action":"HTML"}'>HTML</a>
-                    </li>
-                </ul>
-                 -->
             </div>
             <div class="g-col g-span10--mid">
-                <div class="c-card c-card--rounded sg-content">
+                <div class="c-card c-card--rounded c-card--smallResponsive">
                     <h1>Cards</h1>
-<p>Cards are simple content containers. They can be used in a variety of different ways such as separating sections of a page or wrapping content.</p>
+                    <p>Cards are simple content containers. They can be used in a variety of different ways such as separating sections of a page or wrapping content.</p>
+
 <p><em>The <code>card</code> component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding <code>@include card();</code> into your SCSS dependencies file.</em></p>
-<p><h2 class="sg-sectionHeading">Default Card – <code>.c-card</code></h2></p>
+
+<h2 class="sg-sectionHeading">Default Card – <code>.c-card</code></h2>
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
@@ -161,7 +150,8 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Outlined Card – <code>.c-card c-card--outline</code></h2></p>
+
+<h2 class="sg-sectionHeading">Outlined Card – <code>.c-card c-card--outline</code></h2>
 <p>Displays a border around the card.</p>
 <div class="demo">
     <div class="demo-visual ">
@@ -177,7 +167,8 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Non-padded Card – <code>.c-card c-card--noPad</code></h2></p>
+
+<h2 class="sg-sectionHeading">Non-padded Card – <code>.c-card c-card--noPad</code></h2>
 <p>All padding has been remove</p>
 <p>(the <code>c-card--outline</code> class has been used here to highlight the removal of the padding).</p>
 <div class="demo">
@@ -194,7 +185,8 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Non-padded Card – <code>.c-card c-card--noPadVertical</code></h2></p>
+
+<h2 class="sg-sectionHeading">Non-padded Card – <code>.c-card c-card--noPadVertical</code></h2>
 <p>This card has horizontal padding but no vertical padding.</p>
 <p>(the <code>c-card--outline</code> class has been used here to highlight the removal of the padding).</p>
 <div class="demo">
@@ -211,7 +203,8 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Rounded Corners – <code>.c-card c-card--rounded</code></h2></p>
+
+<h2 class="sg-sectionHeading">Rounded Corners – <code>.c-card c-card--rounded</code></h2>
 <p>Used in conjunction with the <code>c-card--outline</code> class, this will apply rounded corners to the border.</p>
 <div class="demo">
     <div class="demo-visual ">
@@ -227,7 +220,8 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Larger Rounded Corners – <code>.c-card c-card--rounded--large</code></h2></p>
+
+<h2 class="sg-sectionHeading">Larger Rounded Corners – <code>.c-card c-card--rounded--large</code></h2>
 <p>Used in conjunction with the <code>c-card--outline</code> class, this will apply larger rounded corners to the border.</p>
 <div class="demo">
     <div class="demo-visual ">
@@ -243,7 +237,8 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Disabled Card – <code>.c-card c-card--disabled</code></h2></p>
+
+<h2 class="sg-sectionHeading">Disabled Card – <code>.c-card c-card--disabled</code></h2>
 <p>Applies a grey background to indicate that the card is disabled.</p>
 <div class="demo">
     <div class="demo-visual ">
@@ -259,7 +254,8 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Card With Content</h2></p>
+
+<h2 class="sg-sectionHeading">Card With Content</h2>
 <p>Applies a darker background to indicate that the card is disabled.</p>
 <div class="demo">
     <div class="demo-visual ">
@@ -277,7 +273,8 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Card With Media Element</h2></p>
+
+<h2 class="sg-sectionHeading">Card With Media Element</h2>
 <p>You can nest other types of components, such as a <code>c-mediaElement</code> component, within a card.</p>
 <div class="demo">
     <div class="demo-visual ">
@@ -301,7 +298,8 @@
 </code></pre>
     </div>
 </div>
-<p><h2 class="sg-sectionHeading">Cards Within a Grid</h2></p>
+
+<h2 class="sg-sectionHeading">Cards Within a Grid</h2>
 <p>Use cards inside a grid to create a layout.</p>
 <div class="demo">
     <div class="demo-visual ">
@@ -337,20 +335,11 @@
 </code></pre>
     </div>
 </div>
+
                 </div>
             </div>
         </div>
     </div><!-- Close .l-container -->
-            <!--  ==============  -->
-            <!--  === Footer ===  -->
-            <!--  ==============  -->
-            <footer class="sg-footer" role="contentinfo">
-                <div class="l-container text-center">
-                    <p>Fozzie and its associated documentation was created with ❤️ by the UI team at Just Eat.</p>
-                    <hr>
-                    <p>If you want to get in touch about anything mentioned here, feel free to <a href="mailto:ui@just-eat.com">drop us a message</a>!</p>
-                </div>
-            </footer>
 
         <script>
             var mockPaths = {
