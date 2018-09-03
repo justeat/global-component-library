@@ -4,6 +4,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v1.20.0
+------------------------------
+*September 3, 2018*
+
+### Added
+- Added new `c-badge` modifiers.
+- Added more `c-badge` examples.
+- Added more menu header variations.
+
+### Changed
+- Menu header layout updated to include tags.
+- Restaurant listings now using `c-badge` component.
+- Updated Fozzie dependency.
+
+
 v1.19.0
 ------------------------------
 *August 31, 2018*

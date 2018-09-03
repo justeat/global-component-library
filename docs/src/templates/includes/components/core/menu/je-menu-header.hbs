@@ -7,16 +7,26 @@
     <div class="c-mediaElement-content">
         <h1 class="text-center u-noSpacing">Fozzie Kebab</h1>
         <p class="c-badge c-badge--light c-badge--large text-center u-noSpacing">Kebab <span>•</span> Pizza</p>
-        <a class="l-centered u-noUnderline u-spacingTop" href="#">
-            {{> je-star-ratings this }}
-            <span class="is-visuallyHidden"> {{star-rating-display}} stars out of 6.</span>
-            {{#if star-rating-count}}
-                <strong class="u-spacingLeft">
-                    {{star-rating-count}}
-                    <span class="is-visuallyHidden"> total ratings.</span>
-                </strong>
+        <div class="l-centered u-spacingTop">
+            {{#if isNew}}
+                <p class="c-badge c-badge--angled c-badge--success">New</p>
             {{/if}}
-        </a>
+            <a class="l-centered u-noUnderline {{#if isNew}}u-spacingLeft{{/if}}" href="">
+                {{> je-star-ratings this }}
+                <span class="is-visuallyHidden"> {{star-rating-display}} stars out of 6.</span>
+                {{#if star-rating-count}}
+                    <strong class="u-spacingLeft">
+                        {{star-rating-count}}
+                        <span class="is-visuallyHidden"> total ratings.</span>
+                    </strong>
+                {{/if}}
+            </a>
+        </div>
+        {{#if isBtaWinner}}
+        <div class="text-center u-spacingTop--large">
+            <p class="c-badge c-badge--angled c-badge--award">BTA winner 2017, 2018</p>
+        </div>
+        {{/if}}
         {{> (lookup . 'status') }}
         <a class="c-mediaElement-infoLink u-showAboveMid" href="">
             {{inlineSVG "@justeat/f-icons/src/img/icons/general/info.svg"
