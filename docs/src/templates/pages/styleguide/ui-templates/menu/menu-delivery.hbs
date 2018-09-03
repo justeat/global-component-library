@@ -11,7 +11,10 @@ bodyClass: o-body--bgWhite--belowMid
 
 <div class="l-container">
     <div class="g g--stack g--gutter l-content">
-        <div class="g-col g-span2--mid">
+        <div class="g-col g-span2--mid u-showAboveMid">
+            {{> je-menu
+                cssClass="c-menu--spacingTop--aboveMid"
+                ariaLabelledBy="categories-title" }}
         </div>
         <div class="g-col g-span6--mid">
             {{> je-menu-header
@@ -20,7 +23,7 @@ bodyClass: o-body--bgWhite--belowMid
                 isBtaWinner=true
                 star-rating=30
                 star-rating-display=3
-                star-rating-count=566}}
+                star-rating-count=566 }}
         </div>
         <div class="g-col g-span4--mid">
         </div>

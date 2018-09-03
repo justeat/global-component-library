@@ -1,0 +1,54 @@
+---
+title: Menu
+section-title: UI Components
+docs: true
+
+navgroup: styleguide
+navsub: ui-components
+navactive: menu
+layout: components
+---
+
+{{#markdown}}
+Use the menu component to create styled lists of links used for navigation.
+
+When the container is shorter than the text of a menu link the text will be truncated.
+
+> _The `menu` component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding `@include menu();` into your SCSS dependencies file._
+
+## Accessibility
+
+Be sure to wrap your menu components in a `<nav>` element to aid assistive technologies in identifying the menu. If you have more than one menu component on a page add an `aria-labelledby` attribute and target an element (via its ID) in order to describe the intent of the menu.
+{{/markdown}}
+
+<h2 class="sg-sectionHeading">Menu</h2>
+{{#>demo-block }}
+<div class="g">
+    <div class="g-col g-span3">
+        {{> je-menu ariaLabelledBy="example-1" }}
+    </div>
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Condensed Menu</h2>
+{{#>demo-block }}
+<div class="g">
+    <div class="g-col g-span3">
+        {{> je-menu cssClass="c-menu--condensed" ariaLabelledBy="example-2"}}
+    </div>
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Menu with icons</h2>
+{{#>demo-block }}
+<div class="g">
+    <div class="g-col g-span3">
+        {{> je-menu ariaLabelledBy="example-3" showPopular=true }}
+    </div>
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Horizontal Menu</h2>
+{{#>demo-block }}
+{{> je-menu cssClass="c-menu--horizontal" ariaLabelledBy="example-4" }}
+{{/demo-block }}
