@@ -4,6 +4,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v1.22.0
+------------------------------
+*September 5, 2018*
+
+### Added
+- Menu documentation.
+- Code is linted when the `prepare` hook is fired.
+
+### Changed
+- Updated Travis config to run using Node v8 & v10.
+
+
 v1.21.0
 ------------------------------
 *September 5, 2018*
@@ -11,6 +23,7 @@ v1.21.0
 ### Added
 - Added new `c-badge` modifier - `c-badge--noPad`.
 - Added `c-badge--noPad` examples.
+
 
 v1.20.0
 ------------------------------
