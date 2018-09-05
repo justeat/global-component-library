@@ -4,6 +4,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v1.22.1
+------------------------------
+*September 5, 2018*
+
+### Changed
+- Show popular icon on the menu example layout.
+
+
 v1.22.0
 ------------------------------
 *September 5, 2018*
