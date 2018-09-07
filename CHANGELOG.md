@@ -4,6 +4,24 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v1.23.0
+------------------------------
+*September 7, 2018*
+
+### Added
+- Added restaurant note layout
+- Run prepare scripts using `concurrently` module.
+
+### Changed
+- Menu layout updated.
+- Updated footer layout to match most recent version.
+- Updated Travis config.
+- Updated npm dependencies.
+
+### Fixed
+- Menu layout grid columns set correctly for all screen sizes.
+
+
 v1.22.1
 ------------------------------
 *September 5, 2018*

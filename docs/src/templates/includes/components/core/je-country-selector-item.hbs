@@ -1,11 +1,18 @@
 <li>
+    {{#if selected}}
+    <button type="button" class="o-btn o-btnLink c-countrySelector-link c-countrySelector-link--selected" data-toggle-target="countrySelector-list">
+        {{> je-svg-sprite cssClass="c-icon--flag--small" spriteId=(concat "icons-flags-flag." countryCode) }}
+        <p>{{countryName}}</p>
+    </button>
+    <button type="button" class="o-btnLink" data-toggle-target="countrySelector-list" aria-label="Close">
+        {{> je-svg-sprite cssClass="c-countrySelector-cross" spriteId="icons-operators-cross" }}
+    </button>
+
+
+    {{else}}
     <a class="c-countrySelector-link {{#if selected}}c-countrySelector-link--selected{{/if}}" target="_blank" href="#">
         {{> je-svg-sprite cssClass="c-icon--flag--small" spriteId=(concat "icons-flags-flag." countryCode) }}
         <p>{{countryName}}</p>
     </a>
-    {{#if selected}}
-    <svg class="c-countrySelector-cross" data-toggle-target="countrySelector-list">
-        <use xlink:href="{{baseUrl}}/assets/img/sprite.svg#icons-operators-cross" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-    </svg>
     {{/if}}
 </li>

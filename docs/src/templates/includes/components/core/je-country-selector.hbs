@@ -1,9 +1,9 @@
 <div class="c-countrySelector">
-    <a class="c-countrySelector-link c-countrySelector-link--selected" href="#" data-toggle-target="countrySelector-list">
+    <button type="button" class="o-btn o-btnLink c-countrySelector-link c-countrySelector-link--selected" data-toggle-target="countrySelector-list" aria-label="You are on the UK website. Click here to change.">
         {{> je-svg-sprite cssClass="c-icon--flag--small" spriteId="icons-flags-flag.gb" }}
         <p>United Kingdom</p>
         {{> je-svg-sprite cssClass="c-countrySelector-chevron c-icon--chevron--small" spriteId="icons-arrows-chevron" }}
-    </a>
+    </button>
     <ul class="c-countrySelector-list is-hidden" data-toggle-name="countrySelector-list">
         {{> je-country-selector-item countryName="Brazil" countryCode="br"}}
         {{> je-country-selector-item countryName="Canada" countryCode="ca"}}
