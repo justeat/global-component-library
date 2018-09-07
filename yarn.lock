@@ -148,9 +148,9 @@
     kickoff-grid.css "^1.1.2"
     normalize-scss "^7.0.1"
 
-"@justeat/fozzie@0.75.0":
-  version "0.75.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.75.0.tgz#36eaf11b8d9957cac2039d402dd2eca1dc69ffa4"
+"@justeat/fozzie@0.79.0":
+  version "0.79.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.79.0.tgz#b0b996d09dea8a9b24c11ae09c5b96cf1507d15c"
   dependencies:
     "@justeat/f-dom" "0.4.0"
     "@justeat/fozzie-colour-palette" "1.4.0"
@@ -3335,9 +3335,9 @@ d@1:
   dependencies:
     es5-ext "^0.10.9"
 
-danger@3.8.9:
-  version "3.8.9"
-  resolved "https://registry.yarnpkg.com/danger/-/danger-3.8.9.tgz#bca0f3e6eb24f5c6e3b4740f49921b9308933f50"
+danger@3.9.0:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/danger/-/danger-3.9.0.tgz#41e6257fcfd4b92dcde16a47c96f5731931b5108"
   dependencies:
     "@octokit/rest" "^15.9.5"
     babel-polyfill "^6.23.0"
@@ -7633,17 +7633,6 @@ kew@^0.7.0:
   version "0.7.0"
   resolved "https://registry.npmjs.org/kew/-/kew-0.7.0.tgz#79d93d2d33363d6fdd2970b335d9141ad591d79b"
 
-kickoff-grid.css@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/kickoff-grid.css/-/kickoff-grid.css-1.1.0.tgz#506222709b282261aa9b4974b4f603cb3e57b7b8"
-  dependencies:
-    eyeglass "^1.1.2"
-    include-media "^1.4.8"
-    kickoff-utils.scss "^2.0.1"
-  optionalDependencies:
-    npm-scripts-info "^0.3.6"
-    release-it "2.4.0"
-
 kickoff-grid.css@1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/kickoff-grid.css/-/kickoff-grid.css-1.1.2.tgz#f6a3602358e29a25bc1c61a770fbb621a0a3517e"
@@ -7655,7 +7644,7 @@ kickoff-grid.css@1.1.2:
     npm-scripts-info "^0.3.6"
     release-it "2.4.0"
 
-kickoff-grid.css@^1.1.2:
+kickoff-grid.css@1.2.0, kickoff-grid.css@^1.1.2:
   version "1.2.0"
   resolved "https://registry.npmjs.org/kickoff-grid.css/-/kickoff-grid.css-1.2.0.tgz#1765f12b4ffd2bafbe358ad0823c58c419f3f9c3"
   dependencies:

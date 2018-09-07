@@ -74,8 +74,35 @@ layout: components
 <p>Applies a darker background to indicate that the card is disabled.</p>
 {{#>demo-block }}
 <div class="c-card c-card--outline">
-    <h2>Card Title</h2>
+    <h3>Card Title</h3>
     <p>Card content</p>
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Card With Section</h2>
+<p>Creates a section within the card which is separated by a border on larger screens.</p>
+{{#>demo-block }}
+<div class="c-card c-card--outline">
+    <h3 class="text-center u-spacingBottom--large">Card Title</h3>
+    <div class="c-card-section">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla arcu tellus, consequat ut maximus sit amet, molestie eget enim. Vestibulum commodo urna arcu, id feugiat dolor pharetra sit amet. Nunc id tellus nulla.</p>
+    </div>
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Card With Collapsible Section</h2>
+<p>Creates a section within the card which is collapsible.</p>
+{{#>demo-block }}
+<div class="c-card c-card--outline">
+    <h3 class="text-center u-spacingBottom--large">Card Title</h3>
+    <div class="c-card-section c-card-section--collapsible c-card-section--collapsed"
+        data-toggle-name="card-section-toggle"
+        data-toggle-target="card-section-toggle"
+        data-toggle-class="c-card-section--collapsed">
+        {{inlineSVG "@justeat/f-icons/src/img/icons/arrows/chevron.svg"
+            class="c-card-section-indicator c-icon c-icon--chevron c-icon--blue"}}
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla arcu tellus, consequat ut maximus sit amet, molestie eget enim. Vestibulum commodo urna arcu, id feugiat dolor pharetra sit amet. Nunc id tellus nulla.</p>
+    </div>
 </div>
 {{/demo-block }}
 
