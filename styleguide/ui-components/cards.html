@@ -262,15 +262,69 @@
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
         <div class="c-card c-card--outline">
-            <h2>Card Title</h2>
+            <h3>Card Title</h3>
             <p>Card content</p>
         </div>
     </div>
     <div class="demo-code">
 <pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Card Title<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Card Title<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Card content<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+    </div>
+</div>
+
+<h2 class="sg-sectionHeading">Card With Section</h2>
+<p>Creates a section within the card which is separated by a border on larger screens.</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div class="c-card c-card--outline">
+            <h3 class="text-center u-spacingBottom--large">Card Title</h3>
+            <div class="c-card-section">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla arcu tellus, consequat ut maximus sit amet, molestie eget enim. Vestibulum commodo urna arcu, id feugiat dolor pharetra sit amet. Nunc id tellus nulla.</p>
+            </div>
+        </div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"c-card c-card--outline"</span>&gt;
+    &lt;h3 <span class="hljs-built_in">class</span>=<span class="hljs-string">"text-center u-spacingBottom--large"</span>&gt;Card Title&lt;/h3&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"c-card-section"</span>&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla arcu tellus, consequat ut maximus sit amet, molestie eget enim. Vestibulum commodo urna arcu, <span class="hljs-built_in">id</span> feugiat dolor pharetra sit amet. Nunc <span class="hljs-built_in">id</span> tellus nulla.&lt;/p&gt;
+    &lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+
+<h2 class="sg-sectionHeading">Card With Collapsible Section</h2>
+<p>Creates a section within the card which is collapsible.</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div class="c-card c-card--outline">
+            <h3 class="text-center u-spacingBottom--large">Card Title</h3>
+            <div class="c-card-section c-card-section--collapsible c-card-section--collapsed"
+                data-toggle-name="card-section-toggle"
+                data-toggle-target="card-section-toggle"
+                data-toggle-class="c-card-section--collapsed">
+                <svg width="10" height="6" viewBox="0 0 10 6" class="c-card-section-indicator c-icon c-icon--chevron c-icon--blue"><path d="M5 4.41L9.29.12a.42.42 0 0 1 .59.6L5.29 5.28a.42.42 0 0 1-.58 0L.12.71a.42.42 0 0 1 .6-.59L5 4.42z" fill="#333" fill-rule="nonzero"/></svg>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla arcu tellus, consequat ut maximus sit amet, molestie eget enim. Vestibulum commodo urna arcu, id feugiat dolor pharetra sit amet. Nunc id tellus nulla.</p>
+            </div>
+        </div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"c-card c-card--outline"</span>&gt;
+    &lt;h3 <span class="hljs-built_in">class</span>=<span class="hljs-string">"text-center u-spacingBottom--large"</span>&gt;Card Title&lt;/h3&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"c-card-section c-card-section--collapsible c-card-section--collapsed"</span>
+        data-toggle-<span class="hljs-built_in">name</span>=<span class="hljs-string">"card-section-toggle"</span>
+        data-toggle-target=<span class="hljs-string">"card-section-toggle"</span>
+        data-toggle-<span class="hljs-built_in">class</span>=<span class="hljs-string">"c-card-section--collapsed"</span>&gt;
+        {$ASYNCID$<span class="hljs-number">1</span>$<span class="hljs-number">1469</span>$}
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla arcu tellus, consequat ut maximus sit amet, molestie eget enim. Vestibulum commodo urna arcu, <span class="hljs-built_in">id</span> feugiat dolor pharetra sit amet. Nunc <span class="hljs-built_in">id</span> tellus nulla.&lt;/p&gt;
+    &lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
 </code></pre>
     </div>
 </div>
