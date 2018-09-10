@@ -4,6 +4,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v1.24.0
+------------------------------
+*September 10, 2018*
+
+### Added
+- Added offers to menu layouts.
+- New card modifier examples.
+
+### Fixed
+- Code elements will display on a single line rather than wrap across two lines.
+- Badge link URL case.
+
+
 v1.23.0
 ------------------------------
 *September 7, 2018*

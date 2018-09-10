@@ -1,4 +1,4 @@
-<header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-menuHeader">
+<header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large {{#if showOffer}}c-card--noPad--bottom{{/if}} c-menuHeader">
     <div class="c-mediaElement c-mediaElement--fullstack">
         <img
             class="c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"
@@ -33,6 +33,12 @@
                 <p class="c-badge c-badge--angled c-badge--award">BTA winner 2017, 2018</p>
             </div>
             {{/if}}
+            {{#if showOffer}}
+            <div class="l-centered u-spacingTop--large u-showBelowMid">
+                <p class="c-badge c-badge--angled c-badge--important">Offer</p>
+                <p class="u-noSpacing u-spacingLeft">20% off today on orders over £30</p>
+            </div>
+            {{/if}}
             <div class="l-centered u-spacingBottom--large">
                 {{> (lookup . 'status') }}
             </div>
@@ -40,13 +46,19 @@
     </div>
     {{#if showNote}}
     <div class="c-card-section c-card-section--collapsible c-card-section--collapsible--noPad c-card-section--collapsed"
-        data-toggle-name="r-note"
-        data-toggle-target="r-note"
+        data-toggle-name="{{noteToggleName}}"
+        data-toggle-target="{{noteToggleName}}"
         data-toggle-class="c-card-section--collapsed">
         {{inlineSVG "@justeat/f-icons/src/img/icons/arrows/chevron.svg"
             class="c-card-section-indicator c-icon c-icon--chevron c-icon--blue"}}
         <p>Note<span class="u-showAboveMid"> from the Restaurant</span>: All our dishes are dairy free, except for our mango &amp; Customers are advised to let the restaurant know if any food may cause allergic reaction prior to order. If you would like to know the list of ingredients used in a particular dish from the menu, the restaurant will be happy to assist you.</p>
         <p>Please inform the restaurant directly if you have any allergies or dietary requirements, please ask for avoid dishes contain molluscs, lupin, sulphites, sesame, mustard, celery, nuts, milk, soyabeans, peanuts, fish, eggs, crustaceans, cereals containing gluten.</p>
     </div>
+    {{/if}}
+    {{#if showOffer}}
+    <p class="c-card-section c-card-section--bottom c-card-section--highlight l-centered u-showAboveMid">
+        {{inlineSVG "@justeat/f-icons/src/img/icons/general/offer.svg" class="c-menu-icon c-icon c-icon--offer c-icon--white u-spacingRight"}}
+        20% off today on orders over £30
+    </p>
     {{/if}}
 </header>
