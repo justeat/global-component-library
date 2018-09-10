@@ -1,36 +1,36 @@
-<nav aria-labelledby="{{ariaLabelledBy}}">
+<nav aria-labelledby="{{ariaLabelledBy}}" class="{{navCssClass}}">
     <h2 class="is-visuallyHidden" id="{{ariaLabelledBy}}">Categories</h2>
 
-    <ul class="c-menu {{cssClass}}">
+    <ul class="c-menu {{menuCssClass}}" data-category-menu>
         <li class="c-menu-item c-menu-item--active {{#if showPopular}}has-icon{{/if}}">
-            <a href="" class="c-menu-link">Popular</a>
+            <a href="#cat0" class="c-menu-link">Popular</a>
             {{#if showPopular}}
                 {{inlineSVG "@justeat/f-icons/src/img/icons/general/offer.svg" class="c-menu-icon c-icon c-icon--offer c-icon--offer--small c-icon--orange"}}
             {{/if}}
         </li>
         <li class="c-menu-item">
-            <a href="" class="c-menu-link">Category 1</a>
+            <a href="#cat1" class="c-menu-link">Category 1</a>
         </li>
         <li class="c-menu-item">
-            <a href="" class="c-menu-link">Category 2</a>
+            <a href="#cat2" class="c-menu-link">Category 2</a>
         </li>
         <li class="c-menu-item {{#if showPopular}}has-icon{{/if}}">
-            <a href="" class="c-menu-link">Category 3 has a really really long title</a>
+            <a href="#cat3" class="c-menu-link">Category 3 has a really really long title</a>
             {{#if showPopular}}
                 {{inlineSVG "@justeat/f-icons/src/img/icons/general/offer.svg" class="c-menu-icon c-icon c-icon--offer c-icon--offer--small c-icon--orange"}}
             {{/if}}
         </li>
         <li class="c-menu-item">
-            <a href="" class="c-menu-link">Category 4</a>
+            <a href="#cat4" class="c-menu-link">Category 4</a>
         </li>
         <li class="c-menu-item">
-            <a href="" class="c-menu-link">Category 5</a>
+            <a href="#cat5" class="c-menu-link">Category 5</a>
         </li>
         <li class="c-menu-item">
-            <a href="" class="c-menu-link">Category 6</a>
+            <a href="#cat6" class="c-menu-link">Category 6</a>
         </li>
         <li class="c-menu-item">
-            <a href="" class="c-menu-link">Category 7</a>
+            <a href="#cat7" class="c-menu-link">Category 7</a>
         </li>
     </ul>
 </nav>

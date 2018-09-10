@@ -1,4 +1,4 @@
-<header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large {{#if showOffer}}c-card--noPad--bottom{{/if}} c-menuHeader">
+<header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large {{#if showOffer}}c-card--noPadBottom{{/if}} c-menuHeader">
     <div class="c-mediaElement c-mediaElement--fullstack">
         <img
             class="c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"
@@ -12,10 +12,12 @@
                     class="c-icon c-icon--info c-icon--blue"}}
                 <span class="u-spacingLeft u-showAboveWide">Restaurant info</span>
             </a>
-            <p class="c-badge c-badge--light c-badge--large text-center u-noSpacing">Kebab <span>•</span> Pizza</p>
+            <p class="l-centered u-noSpacing">
+                <span class="c-badge c-badge--light c-badge--large">Kebab <span>•</span> Pizza</span>
+            </p>
             <div class="l-centered u-spacingTop">
                 {{#if isNew}}
-                    <p class="c-badge c-badge--angled c-badge--success">New</p>
+                    <span class="c-badge c-badge--angled c-badge--success">New</span>
                 {{/if}}
                 <a class="l-centered u-noUnderline {{#if isNew}}u-spacingLeft{{/if}}" href="">
                     {{> je-star-ratings this }}
@@ -29,19 +31,19 @@
                 </a>
             </div>
             {{#if isBtaWinner}}
-            <div class="l-centered u-spacingTop--large">
-                <p class="c-badge c-badge--angled c-badge--award">BTA winner 2017, 2018</p>
-            </div>
+            <p class="l-centered">
+                <span class="c-badge c-badge--angled c-badge--award">BTA winner 2017, 2018</span>
+            </p>
             {{/if}}
             {{#if showOffer}}
-            <div class="l-centered u-spacingTop--large u-showBelowMid">
-                <p class="c-badge c-badge--angled c-badge--important">Offer</p>
-                <p class="u-noSpacing u-spacingLeft">20% off today on orders over £30</p>
-            </div>
+            <p class="l-centered u-spacingTop--large u-showBelowMid">
+                <span class="c-badge c-badge--angled c-badge--important">Offer</span>
+                <span class="u-noSpacing u-spacingLeft">20% off today on orders over £30</span>
+            </p>
             {{/if}}
-            <div class="l-centered u-spacingBottom--large">
+            <p class="l-centered u-spacingBottom--large">
                 {{> (lookup . 'status') }}
-            </div>
+            </p>
         </div>
     </div>
     {{#if showNote}}

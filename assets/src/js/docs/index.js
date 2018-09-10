@@ -7,6 +7,7 @@
 import '@justeat/f-toggle';
 import $ from '@justeat/f-dom';
 import './ui-components/header';
+import ScrollSpy from '../ScrollSpy';
 
 
 // any additional docs functionality goes in here
@@ -70,5 +71,7 @@ const docs = {
     }
 
 };
+
+new ScrollSpy({ selector: '[data-category-menu]' }); // eslint-disable-line no-new
 
 docs.init();

@@ -10,16 +10,18 @@ bodyClass: o-body--bgWhite--belowMid
 {{> je-pageBanner }}
 
 <div class="l-container">
-    <div class="g g--stack g--gutter l-content">
+    <div class="g g--stack g--gutter l-content u-spacingBottom--large">
         <div class="g-col g-span2--mid u-showAboveMid">
             {{> je-menu
-                cssClass="c-menu--spacingTop--aboveMid"
+                navCssClass="u-sticky u-spacingBottom"
+                menuCssClass="c-menu--spacingTop--aboveMid"
                 ariaLabelledBy="categories-title"
                 showPopular=true }}
         </div>
+
         <div class="g-col g-span6--mid">
             {{> je-menu-header
-                status='je-menu-status-delivery-open'
+                status="je-menu-status-delivery-open"
                 isNew=true
                 isBtaWinner=true
                 star-rating=30
@@ -28,7 +30,48 @@ bodyClass: o-body--bgWhite--belowMid
                 showNote=true
                 noteToggleName="menu-delivery"
                 showOffer=true }}
+
+            {{> je-menu-category-items
+                title="Popular"
+                description="Some of the most popular offerings from this restaurant"
+                catId="cat0" }}
+
+            {{> je-menu-category-items
+                title="Category 1"
+                description="Some of the most popular offerings from this restaurant"
+                catId="cat1" }}
+
+            {{> je-menu-category-items
+                title="Category 2"
+                description="Some of the most popular offerings from this restaurant"
+                catId="cat2" }}
+
+            {{> je-menu-category-items
+                title="Category 3"
+                description="Some of the most popular offerings from this restaurant"
+                catId="cat3" }}
+
+            {{> je-menu-category-items
+                title="Category 4"
+                description="Some of the most popular offerings from this restaurant"
+                catId="cat4" }}
+
+            {{> je-menu-category-items
+                title="Category 5"
+                description="Some of the most popular offerings from this restaurant"
+                catId="cat5" }}
+
+            {{> je-menu-category-items
+                title="Category 6"
+                description="Some of the most popular offerings from this restaurant"
+                catId="cat6" }}
+
+            {{> je-menu-category-items
+                title="Category 7"
+                description="Some of the most popular offerings from this restaurant"
+                catId="cat7" }}
         </div>
+
         <div class="g-col g-span4--mid">
         </div>
     </div>

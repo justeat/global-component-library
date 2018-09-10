@@ -1,0 +1,14 @@
+<section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
+    <header class="u-spacingTop--large u-spacingBottom--large">
+        <h3 class="beta u-padTop--large--aboveMid" id="{{ catId }}">{{ title }}</h3>
+        <p class="u-spacingTop u-showAboveMid">{{ description }}</p>
+        <p class="u-spacingTop u-showBelowMid u-text-truncate">Build your own pizza, Build your own pizza with a really long name</p>
+    </header>
+
+    <div class="u-showAboveMid">
+        {{> je-menu-category-item-wrapper item-type="je-menu-category-item-full-with-labels" }}
+        {{> je-menu-category-item-wrapper item-type="je-menu-category-item-full-long-name" }}
+        {{> je-menu-category-item-wrapper item-type="je-menu-category-item-basic" }}
+        {{> je-menu-category-item-wrapper item-type="je-menu-category-item-full-without-labels" }}
+    </div>
+</section>
