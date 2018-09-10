@@ -148,9 +148,9 @@
     kickoff-grid.css "^1.1.2"
     normalize-scss "^7.0.1"
 
-"@justeat/fozzie@0.79.0":
-  version "0.79.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.79.0.tgz#b0b996d09dea8a9b24c11ae09c5b96cf1507d15c"
+"@justeat/fozzie@0.80.0":
+  version "0.80.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.80.0.tgz#de1bb9a02108f52855805fcde51fc45dfc4e8717"
   dependencies:
     "@justeat/f-dom" "0.4.0"
     "@justeat/fozzie-colour-palette" "1.4.0"

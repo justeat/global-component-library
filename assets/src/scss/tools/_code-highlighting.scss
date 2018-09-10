@@ -155,6 +155,7 @@ code {
     padding: 2px 4px;
     color: $code-textColor;
     background-color: $code-bgColor;
+    white-space: nowrap;
 }
 
 // Blocks of code
