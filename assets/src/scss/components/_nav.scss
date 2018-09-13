@@ -89,7 +89,7 @@ $subnav-border-thickness: 3px;
     }
     & .is-active,
     & a:hover {
-        border-left: 3px solid $red;
+        border-left: 3px solid $color-primary;
     }
 
     & a.is-incomplete {

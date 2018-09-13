@@ -3,6 +3,22 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+v2.0.0
+------------------------------
+*October 3, 2018*
+
+### Added
+- Menulog theme switching support. `sg-themeToggle` added which adds a button to the bottom right of the screen to toggle between JE & Menulog themes.
+- Added the Menulog theme switch into the SCSS so that we now generate two CSS files – one for the base JE theme and one for Menulog
+
+### Changed
+- Updated to Fozzie v1.1.0
+- Updated so that it works with Babel v7
+- A number of other minor package updates
+
+### Removed
+- Legacy button components no longer needed in Fozzie.
+
 
 v1.31.0
 ------------------------------

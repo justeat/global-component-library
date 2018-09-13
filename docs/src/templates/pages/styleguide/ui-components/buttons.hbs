@@ -10,12 +10,15 @@ layout: components
 ---
 
 <h2 class="sg-sectionHeading">Default Button – <code>.o-btn</code></h2>
+<p>The default button class sets up the defaults for the other modifiers to build upon.  This is just used as a base and it should always have a second class associated with it to define the specific button type.</p>
+
 {{#>demo-block }}
 {{> je-btn-simple text='Button' classname='o-btn' }}
 {{/demo-block }}
 
 
 <h2 class="sg-sectionHeading">Button Background Color Modifiers</h2>
+<p>The primary button design.  This essentially the primary button style used on the website.</p>
 {{#>demo-block }}
 {{> je-btn-simple text='Button Primary' classname='o-btn o-btn--primary' }}
 {{/demo-block }}
@@ -29,38 +32,25 @@ layout: components
 {{/demo-block }}
 
 
-<h2 class="sg-sectionHeading">Block Button – <code>.o-btn.o-btn--block</code></h2>
-{{#>demo-block }}
-{{> je-btn-simple text='Button Block' classname='o-btn o-btn--block' }}
-{{/demo-block }}
-
-
-<h2 class="sg-sectionHeading">Button Link – <code>.o-btnLink</code></h2>
-<p>Make a button visually look like a default link.  Useful when we semantically want a button but don’t want all the default styling.</p>
-<p>Should only be applied to buttons</p>
-{{#>demo-block }}
-{{> je-btn-simple text='Button Link' classname='o-btnLink' }}
-{{/demo-block }}
-
-
 <h2 class="sg-sectionHeading">Outline Button – <code>.o-btn.o-btn--outline</code></h2>
-<p></p>
+<p>Button style that provides an outline with highlighted hover/active state.</p>
 {{#>demo-block }}
 {{> je-btn-simple text='Button Outline' classname='o-btn o-btn--outline' }}
 {{/demo-block }}
 
 
-<h2 class="sg-sectionHeading">Transparent Button – <code>.o-btn.o-btn--transparent</code></h2>
-<p></p>
+<h2 class="sg-sectionHeading">Block Button – <code>.o-btn.o-btn--block</code></h2>
+<p>This modifier makes the button expand to the full-width of it's parent container.</p>
 {{#>demo-block }}
-{{> je-btn-simple text='Button Transparent' classname='o-btn o-btn--transparent' }}
+{{> je-btn-simple text='Button Block' classname='o-btn o-btn--primary o-btn--block' }}
 {{/demo-block }}
 
 
-<h2 class="sg-sectionHeading">Small Button – <code>.o-btn.o-btn--small</code></h2>
-<p></p>
+<h2 class="sg-sectionHeading">Button Link – <code>.o-btnLink</code></h2>
+<p>Make a button visually look like a default link.  Useful when we semantically want to use a button element but don’t want all the default styling that comes with it.</p>
+<p>Should only be applied to button elements (as link elements should already be styled like this).</p>
 {{#>demo-block }}
-{{> je-btn-simple text='Button Small' classname='o-btn o-btn--small' }}
+{{> je-btn-simple text='Button Link' classname='o-btnLink' }}
 {{/demo-block }}
 
 
@@ -71,42 +61,3 @@ layout: components
 {{/demo-block }}
 
 
-<h2 class="sg-sectionHeading">Rounded Icon Button – <code>.o-btn.o-btn--roundedIcon</code></h2>
-<p></p>
-{{#>demo-block }}
-{{> je-btn-simple classname='o-btn o-btn--roundedIcon c-icon--minus' }}
-{{/demo-block }}
-
-
-<h2 class="sg-sectionHeading">Small rounded Icon Button – <code>.o-btn.o-btn--roundedIcon.o-btn--roundedIcon--small</code></h2>
-<p></p>
-{{#>demo-block }}
-{{> je-btn-simple classname='o-btn o-btn--roundedIcon o-btn--roundedIcon--small c-icon--minus' }}
-{{/demo-block }}
-
-
-<h2 class="sg-sectionHeading">Rounded Button – <code>.o-btn.o-btn--rounded</code></h2>
-<p></p>
-{{#>demo-block }}
-{{> je-btn-simple text='+' classname='o-btn o-btn--rounded' }}
-{{/demo-block }}
-
-
-<h2 class="sg-sectionHeading">Remove Button – <code>.o-btn.o-btn--remove</code></h2>
-{{#>demo-block }}
-{{> je-btn-simple text='-' classname='o-btn o-btn--remove' }}
-{{/demo-block }}
-
-
-<h2 class="sg-sectionHeading">Button Group – <code>.o-btn-group .o-btn</code></h2>
-<p></p>
-{{#>demo-block }}
-{{> je-btn-group }}
-{{/demo-block }}
-
-
-<h2 class="sg-sectionHeading">Button Toggle – <code>.o-btnToggle</code></h2>
-<p></p>
-{{#>demo-block }}
-{{> je-btn-toggle }}
-{{/demo-block }}
