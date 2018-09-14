@@ -106,6 +106,13 @@ v1.30.0
 - Update `c-badge` docs with new a11y changes to divider.
 
 
+v1.30.0
+------------------------------
+*September 14, 2018*
+
+### Added
+- Added local legend icons.
+
 v1.29.0
 ------------------------------
 *September 14, 2018*
