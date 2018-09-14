@@ -79,9 +79,9 @@
   dependencies:
     qwery "^4.0.0"
 
-"@justeat/f-footer@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-footer/-/f-footer-1.1.0.tgz#2c31967a5e97d29c624dd7c06638a7b50fcddf51"
+"@justeat/f-footer@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@justeat/f-footer/-/f-footer-1.1.1.tgz#b8466ff1e90b7c0fd03fe7cad658613328b32ca0"
   dependencies:
     "@justeat/fozzie" "0.43.0"
     "@justeat/fozzie-colour-palette" "1.1.0"
@@ -100,9 +100,9 @@
     include-media "^1.4.9"
     lite-ready "^1.0.4"
 
-"@justeat/f-icons@1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-1.8.0.tgz#26046ef80a14a72b5a0909e3f56681d4bf6d1802"
+"@justeat/f-icons@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-1.10.0.tgz#77b31b26d3c87b5b6316cbfbcaf3d6eb4ca96413"
   dependencies:
     "@kickoff/utils.scss" "2.1.1"
     include-media "^1.4.9"
@@ -148,9 +148,9 @@
     kickoff-grid.css "^1.1.2"
     normalize-scss "^7.0.1"
 
-"@justeat/fozzie@0.80.0":
-  version "0.80.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.80.0.tgz#de1bb9a02108f52855805fcde51fc45dfc4e8717"
+"@justeat/fozzie@0.92.0":
+  version "0.92.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.92.0.tgz#86986ebe174c96be23b8cddb7e69b5e94cf2b208"
   dependencies:
     "@justeat/f-dom" "0.4.0"
     "@justeat/fozzie-colour-palette" "1.4.0"
@@ -1988,6 +1988,10 @@ better-assert@~1.0.0:
   resolved "https://registry.npmjs.org/better-assert/-/better-assert-1.0.2.tgz#40866b9e1b9e0b55b481894311e68faffaebc522"
   dependencies:
     callsite "1.0.0"
+
+bezier-easing@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/bezier-easing/-/bezier-easing-2.1.0.tgz#c04dfe8b926d6ecaca1813d69ff179b7c2025d86"
 
 bin-build@^2.0.0:
   version "2.2.0"
@@ -8173,6 +8177,10 @@ lodash.templatesettings@^4.0.0:
   resolved "https://registry.npmjs.org/lodash.templatesettings/-/lodash.templatesettings-4.1.0.tgz#2b4d4e95ba440d915ff08bc899e4553666713316"
   dependencies:
     lodash._reinterpolate "~3.0.0"
+
+lodash.throttle@4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
 
 lodash.union@^4.6.0:
   version "4.6.0"
