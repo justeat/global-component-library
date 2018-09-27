@@ -4,6 +4,7 @@ import { stopFoit } from '@justeat/fozzie';
 import ready from 'lite-ready';
 import svg4everybody from 'svg4everybody';
 import setupValidation from './docs/formValidationSetup';
+import 'picturefill';
 
 ready(() => {
     stopFoit();

@@ -91,9 +91,9 @@
     lodash.debounce "4.0.8"
     qwery "4.0.0"
 
-"@justeat/f-header@0.34.0":
-  version "0.34.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-header/-/f-header-0.34.0.tgz#5d9ef493474383bbe3952ab588efbfb09747a4cb"
+"@justeat/f-header@0.38.0":
+  version "0.38.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-header/-/f-header-0.38.0.tgz#b88feef89a02330d59350b12de784fcfdc81173a"
   dependencies:
     "@justeat/fozzie-colour-palette" "^1.2.0"
     "@kickoff/utils.scss" "^2.1.1"
@@ -106,6 +106,10 @@
   dependencies:
     "@kickoff/utils.scss" "2.1.1"
     include-media "^1.4.9"
+
+"@justeat/f-logger@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@justeat/f-logger/-/f-logger-0.7.1.tgz#06e728d3c65733cab7c9bbfc813b401fa68ba82b"
 
 "@justeat/f-templates-loader@0.1.0":
   version "0.1.0"
@@ -137,6 +141,19 @@
   version "1.4.0"
   resolved "https://registry.npmjs.org/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-1.4.0.tgz#70dffb05eafc834f348957a6ff06588ebdf877c9"
 
+"@justeat/fozzie@0.102.0":
+  version "0.102.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.102.0.tgz#f2dac68a88f2548647fc9e85ce133d0c63ccf773"
+  dependencies:
+    "@justeat/f-dom" "0.4.0"
+    "@justeat/f-logger" "^0.7.1"
+    "@justeat/fozzie-colour-palette" "1.4.0"
+    "@kickoff/utils.scss" "2.1.1"
+    fontfaceobserver "^2.0.13"
+    include-media "1.4.9"
+    kickoff-grid.css "1.1.2"
+    normalize-scss "7.0.1"
+
 "@justeat/fozzie@0.43.0":
   version "0.43.0"
   resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.43.0.tgz#27beb2f2272e6c2a87422517b795dfa4eb1116e4"
@@ -147,17 +164,6 @@
     include-media "^1.4.9"
     kickoff-grid.css "^1.1.2"
     normalize-scss "^7.0.1"
-
-"@justeat/fozzie@0.92.0":
-  version "0.92.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-0.92.0.tgz#86986ebe174c96be23b8cddb7e69b5e94cf2b208"
-  dependencies:
-    "@justeat/f-dom" "0.4.0"
-    "@justeat/fozzie-colour-palette" "1.4.0"
-    "@kickoff/utils.scss" "2.1.1"
-    include-media "1.4.9"
-    kickoff-grid.css "1.1.2"
-    normalize-scss "7.0.1"
 
 "@justeat/gulp-build-fozzie@7.26.0":
   version "7.26.0"
@@ -4938,6 +4944,10 @@ follow-redirects@^1.2.5:
   dependencies:
     debug "^3.1.0"
 
+fontfaceobserver@^2.0.13:
+  version "2.0.13"
+  resolved "https://registry.yarnpkg.com/fontfaceobserver/-/fontfaceobserver-2.0.13.tgz#47adbb343261eda98cb44db2152196ff124d3221"
+
 for-in@^0.1.3:
   version "0.1.8"
   resolved "https://registry.npmjs.org/for-in/-/for-in-0.1.8.tgz#d8773908e31256109952b1fdb9b3fa867d2775e1"
@@ -9673,6 +9683,10 @@ performance-now@^0.2.0:
 performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
+
+picturefill@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/picturefill/-/picturefill-3.0.2.tgz#fa3d35fffbef5ab5300fe2ad9dca8f2e36cba27b"
 
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
