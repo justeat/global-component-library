@@ -14,7 +14,7 @@
 
         <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:300,500' rel='stylesheet' type='text/css' />
 	</head>
-	<body class="body-docs ">
+	<body class="body-docs  is-fontsLoading--base is-fontsLoading--heading">
 
 
 
@@ -220,7 +220,7 @@
 </code></pre>
 <p>Notice the <code>#with</code> block, this has been added as the scope changes within an <code>#each</code> block in Handlebars.</p>
 <p>Removing the <code>#with</code> block will cause the template compilation to fail with a message like</p>
-<pre><code class="language-bash">{<span class="hljs-variable">$ASYNCID</span><span class="hljs-variable">$1</span><span class="hljs-variable">$794</span>$} helper: the <span class="hljs-string">'language'</span> parameter is not defined.
+<pre><code class="language-bash">{<span class="hljs-variable">$ASYNCID</span><span class="hljs-variable">$1</span><span class="hljs-variable">$795</span>$} helper: the <span class="hljs-string">'language'</span> parameter is not defined.
 </code></pre>
 <p>This is because the i18n helper is on the parent scope of the <code>#each</code> block and therefore couldn't be found.</p>
 <h3>Adding partials</h3>
