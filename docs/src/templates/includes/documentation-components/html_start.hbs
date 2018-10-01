@@ -14,7 +14,9 @@
 		{{/if}}
 
 		<script src="{{ baseUrl }}/assets/js/libs/modernizr.min.js"></script>
-		<script src="{{ baseUrl }}/assets/js/libs/prism.min.js"></script> <!-- Code highlighting for docs -->
+		{{#if docs}}
+			<script src="{{ baseUrl }}/assets/js/libs/prism.min.js"></script> <!-- Code highlighting for docs -->
+		{{/if}}
 
         <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:300,500' rel='stylesheet' type='text/css' />
 	</head>

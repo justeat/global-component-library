@@ -2,8 +2,8 @@
     <h2 class="is-visuallyHidden" id="{{ariaLabelledBy}}">Categories</h2>
 
     <ul class="c-menu {{menuCssClass}}" data-category-menu>
-        <li class="c-menu-item c-menu-item--active {{#if showPopular}}has-icon{{/if}}">
-            <a href="#cat0" class="c-menu-link">Popular</a>
+        <li class="c-menu-item {{#if showPopular}}has-icon{{/if}}">
+            <a href="#cat0" class="c-menu-link c-menu-link--active">Popular</a>
             {{#if showPopular}}
                 {{inlineSVG "@justeat/f-icons/src/img/icons/general/offer.svg" class="c-menu-icon c-icon c-icon--offer c-icon--offer--small c-icon--orange"}}
             {{/if}}

@@ -1,4 +1,8 @@
-<header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large {{#if showOffer}}c-card--noPadBottom{{/if}} c-menuHeader">
+{{#if toast}}
+    {{> (lookup . 'toast') }}
+{{/if}}
+
+<header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large {{#if showOffer}}c-card--noPadBottom{{/if}}" style="z-index: 1;">
     <div class="c-mediaElement c-mediaElement--fullstack">
         <img
             class="c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"
@@ -13,7 +17,7 @@
                 <span class="u-spacingLeft u-showAboveWide">Restaurant info</span>
             </a>
             <p class="l-centered u-noSpacing">
-                <span class="c-badge c-badge--light c-badge--large">Kebab <span></span> Pizza</span>
+                <span class="c-badge c-badge--light c-badge--large">Kebab <span class="c-badge-icon"></span> Pizza</span>
             </p>
             <div class="l-centered u-spacingTop">
                 {{#if isNew}}

@@ -16,7 +16,7 @@ export default class ScrollSpy {
         this.currentItem = null;
         this.lastActiveItem = null;
         this.offset = 20;
-        this.activeClass = 'c-menu-item--active';
+        this.activeClass = 'c-menu-link--active';
         this.duration = 600;
         this.alwaysTrack = false;
         this.bezierEasingValue = '.5,0,.35,1';
@@ -46,18 +46,12 @@ export default class ScrollSpy {
         return yPosition;
     }
 
-    static getHash (item) {
-        const { hash } = $.first('.c-menu-link', item);
-        return hash;
-    }
-
     getItemInsideWindow () {
         let currItem;
         const { pageYOffset } = window;
 
         this.items.forEach(item => {
-            const hash = ScrollSpy.getHash(item);
-            const target = document.getElementById(hash.substr(1));
+            const target = document.getElementById(item.hash.substr(1));
 
             if (!target) return;
 
@@ -132,7 +126,7 @@ export default class ScrollSpy {
 
     onClick (event) {
         event.preventDefault();
-        const hash = ScrollSpy.getHash(event.currentTarget);
+        const { hash } = event.currentTarget;
         const target = document.getElementById(hash.substr(1));
 
         if (!target) {
@@ -165,7 +159,7 @@ export default class ScrollSpy {
     }
 
     initScrollActiveItems () {
-        this.items = $('.c-menu-item', this.elem);
+        this.items = $('.c-menu-link', this.elem);
 
         this.items.forEach(item => {
             item.addEventListener('click', this.onClickHandler);

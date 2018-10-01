@@ -1,0 +1,61 @@
+---
+title: Toast
+section-title: UI Components
+docs: true
+
+navgroup: styleguide
+navsub: ui-components
+navactive: toast
+layout: components
+---
+
+<p>The toast component is used to display small pieces of information to the user. They are typically paired with card components as seen in the examples below.</p>
+
+<p><em>The <code>toast</code> component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding <code>@include toast();</code> into your SCSS dependencies file.</em></p>
+
+<h2 class="sg-sectionHeading">Default Toast – <code>.c-toast</code></h2>
+{{#>demo-block }}
+<div class="g g--stack g--gutter" style="height: 135px; padding-top: 90px;">
+    <div class="g-col g-span12" style="position: relative;">
+        <div class="c-toast l-centred">
+            <p>Default toast</p>
+        </div>
+
+        <div class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large">
+            <p>Card Content</p>
+        </div>
+    </div>
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Alert Toast – <code>.c-toast c-toast--alert</code></h2>
+{{#>demo-block }}
+<div class="g g--stack g--gutter" style="height: 135px; padding-top: 90px;">
+    <div class="g-col g-span12" style="position: relative;">
+        <div class="c-toast c-toast--alert l-centred">
+            <p>Alert toast</p>
+        </div>
+
+        <div class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large">
+            <p>Card Content</p>
+        </div>
+    </div>
+</div>
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Toast with multiple lines of content – <code>.c-toast</code></h2>
+<p>Note that the text must be contained within a single element.</p>
+{{#>demo-block }}
+<div class="g g--stack g--gutter" style="height: 135px; padding-top: 90px;">
+    <div class="g-col g-span12" style="position: relative;">
+        <div class="c-toast c-toast--alert l-centred">
+                <p><strong>This restaurant’s popular right now</strong><br />
+                    Delivery could take longer than usual</p>
+        </div>
+
+        <div class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large">
+            <p>Card Content</p>
+        </div>
+    </div>
+</div>
+{{/demo-block }}
