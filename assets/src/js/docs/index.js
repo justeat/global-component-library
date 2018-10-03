@@ -108,14 +108,21 @@ const docs = {
         }
     },
 
+    _getLocalStorageContext: (typeItem, name, value) => {
+        if (window.localStorage) {
+            return window.localStorage[typeItem](name, value);
+        }
+        return null;
+    },
+
     _saveTheme: theme => {
-        if (window.localStorage && theme !== null) {
-            window.localStorage.setItem('docsTheme', theme);
+        if (theme !== null) {
+            docs._getLocalStorageContext('setItem', 'docsTheme', theme);
         }
     },
 
     _getTheme: () => {
-        const storedTheme = window.localStorage.getItem('docsTheme');
+        const storedTheme = docs._getLocalStorageContext('getItem', 'docsTheme');
         if (storedTheme !== null) {
             return storedTheme;
         }
