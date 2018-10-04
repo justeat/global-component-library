@@ -29,10 +29,14 @@
  *
  */
 
-@include card();
 @include badge();
+@include formToggle();
 @include pageBanner();
+@include listing();
 @include menu();
+@include rating();
+
+
 
 
 /**

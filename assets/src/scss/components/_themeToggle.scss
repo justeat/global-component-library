@@ -1,0 +1,41 @@
+/**
+ * Components > themeToggle
+ * =================================
+ * The toggle button slideout for the documentation theme toggle
+ */
+
+.sg-themeToggle {
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    padding: 10px;
+    background-color: $white;
+    border-left: 1px solid $grey--dark;
+    border-right: 1px solid $grey--dark;
+    transform: translateY(100%);
+    transition: transform ease-in-out 250ms;
+
+
+    &:before {
+        content: 'Toggle Theme';
+        position: fixed;
+        bottom: 100%;
+        left: -1px;
+        right: -1px;
+        transform-origin: 100% 100%;
+        border: 1px solid $grey--dark;
+        border-bottom: 0;
+        font-weight: $font-weight-bold;
+        text-align: center;
+        padding: 10px;
+        border-radius: 8px 8px 0 0;
+        background: inline('#{$img-path}/icons/arrows/chevron.svg') $white 90% center no-repeat;
+    }
+
+    &:hover {
+        transform: translateX(0%);
+    }
+}
+    .sg-themeToggle-btn {
+        min-width: 200px;
+    }

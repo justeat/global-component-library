@@ -16,11 +16,17 @@ const docs = {
         whenHidden: 'Show Code',
         whenVisible: 'Hide Code'
     },
+    themeBtn: null,
+    themeBtnText: {
+        menulogBtnText: 'Switch to JE',
+        JEBtnText: 'Switch to Menulog'
+    },
 
     // controls all of our base initialsation functions
     init: () => {
         docs._demoHandler();
         docs._disableDemoLinks();
+        docs._themeHandler();
     },
 
     _demoHandler: () => {
@@ -68,8 +74,80 @@ const docs = {
                 e.preventDefault();
             });
         });
-    }
+    },
 
+    // enables a rebrand toggle checkbox which switches between legacy and rebranded styling
+    _themeHandler: () => {
+        const toggleContainer = document.createElement('div'),
+            toggleBtn = document.createElement('btn');
+
+        toggleContainer.classList.add('sg-themeToggle');
+
+        toggleBtn.classList.add('o-btn', 'o-btn--outline', 'sg-themeToggle-btn');
+        toggleBtn.textContent = 'Switch to Menulog';
+        toggleBtn.addEventListener('click', docs._themeToggle);
+
+        toggleContainer.append(toggleBtn);
+        document.body.append(toggleContainer);
+
+        docs.themeBtn = $.first('.sg-themeToggle-btn');
+
+        const currentTheme = docs._getTheme();
+        if (currentTheme !== 'je') {
+            docs._setTheme(currentTheme);
+        }
+    },
+
+    _themeToggle: event => {
+        const isMenulog = event.target.innerText.toLowerCase().includes('menulog');
+        // if the stylesheet currently includes the Menulog prefix, change theme to JE
+        if (isMenulog) {
+            docs._setTheme('ml');
+        } else {
+            docs._setTheme('je');
+        }
+    },
+
+    _getLocalStorageContext: (typeItem, name, value) => {
+        if (window.localStorage) {
+            return window.localStorage[typeItem](name, value);
+        }
+        return null;
+    },
+
+    _saveTheme: theme => {
+        if (theme !== null) {
+            docs._getLocalStorageContext('setItem', 'docsTheme', theme);
+        }
+    },
+
+    _getTheme: () => {
+        const storedTheme = docs._getLocalStorageContext('getItem', 'docsTheme');
+        if (storedTheme !== null) {
+            return storedTheme;
+        }
+        return 'je';
+    },
+
+    _setTheme: theme => {
+        const stylesheet = [].slice.call(document.getElementsByTagName('link')).find(css => css.href.includes('/je'));
+        const isDocsPage = stylesheet.href.includes('docs');
+        const btn = docs.themeBtn;
+
+        if (theme === 'je') {
+            stylesheet.href = stylesheet.href.replace('.menulog', '');
+            btn.textContent = docs.themeBtnText.JEBtnText;
+            docs._saveTheme('je');
+        } else {
+            if (isDocsPage) {
+                stylesheet.href = stylesheet.href.replace('/je-docs', '/je-docs.menulog');
+            } else {
+                stylesheet.href = stylesheet.href.replace('/je', '/je.menulog');
+            }
+            btn.textContent = docs.themeBtnText.menulogBtnText;
+            docs._saveTheme('ml');
+        }
+    }
 };
 
 new ScrollSpy({ selector: '[data-category-menu]' }); // eslint-disable-line no-new
