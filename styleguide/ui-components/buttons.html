@@ -133,6 +133,8 @@
                 <div class="c-card c-card--rounded c-card--smallResponsive">
                     <h1>Buttons</h1>
                     <h2 class="sg-sectionHeading">Default Button – <code>.o-btn</code></h2>
+<p>The default button class sets up the defaults for the other modifiers to build upon. This is just used as a base and it should always have a second class associated with it to define the specific button type.</p>
+
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
@@ -146,6 +148,7 @@
 
 
 <h2 class="sg-sectionHeading">Button Background Color Modifiers</h2>
+<p>The primary button design. This essentially the primary button style used on the website.</p>
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
@@ -174,36 +177,8 @@
 </div>
 
 
-<h2 class="sg-sectionHeading">Block Button – <code>.o-btn.o-btn--block</code></h2>
-<div class="demo">
-    <div class="demo-visual ">
-        <h4 class="demo-title">Example</h4>
-        <a class="o-btn o-btn--block">Button Block</a>
-    </div>
-    <div class="demo-code">
-<pre><code class="language-markup">&lt;a class=<span class="hljs-string">"o-btn o-btn--block"</span>&gt;<span class="hljs-keyword">Button </span><span class="hljs-keyword">Block&lt;/a&gt;
-</span></code></pre>
-    </div>
-</div>
-
-
-<h2 class="sg-sectionHeading">Button Link – <code>.o-btnLink</code></h2>
-<p>Make a button visually look like a default link.  Useful when we semantically want a button but don’t want all the default styling.</p>
-<p>Should only be applied to buttons</p>
-<div class="demo">
-    <div class="demo-visual ">
-        <h4 class="demo-title">Example</h4>
-        <a class="o-btnLink">Button Link</a>
-    </div>
-    <div class="demo-code">
-<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btnLink"</span>&gt;</span>Button Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-</code></pre>
-    </div>
-</div>
-
-
 <h2 class="sg-sectionHeading">Outline Button – <code>.o-btn.o-btn--outline</code></h2>
-<p></p>
+<p>Button style that provides an outline with highlighted hover/active state.</p>
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
@@ -216,29 +191,30 @@
 </div>
 
 
-<h2 class="sg-sectionHeading">Transparent Button – <code>.o-btn.o-btn--transparent</code></h2>
-<p></p>
+<h2 class="sg-sectionHeading">Block Button – <code>.o-btn.o-btn--block</code></h2>
+<p>This modifier makes the button expand to the full-width of it's parent container.</p>
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
-        <a class="o-btn o-btn--transparent">Button Transparent</a>
+        <a class="o-btn o-btn--primary o-btn--block">Button Block</a>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btn o-btn--transparent"</span>&gt;</span>Button Transparent<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-</code></pre>
+<pre><code class="language-markup">&lt;a class=<span class="hljs-string">"o-btn o-btn--primary o-btn--block"</span>&gt;<span class="hljs-keyword">Button </span><span class="hljs-keyword">Block&lt;/a&gt;
+</span></code></pre>
     </div>
 </div>
 
 
-<h2 class="sg-sectionHeading">Small Button – <code>.o-btn.o-btn--small</code></h2>
-<p></p>
+<h2 class="sg-sectionHeading">Button Link – <code>.o-btnLink</code></h2>
+<p>Make a button visually look like a default link. Useful when we semantically want to use a button element but don’t want all the default styling that comes with it.</p>
+<p>Should only be applied to button elements (as link elements should already be styled like this).</p>
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
-        <a class="o-btn o-btn--small">Button Small</a>
+        <a class="o-btnLink">Button Link</a>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btn o-btn--small"</span>&gt;</span>Button Small<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btnLink"</span>&gt;</span>Button Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 </code></pre>
     </div>
 </div>
@@ -258,131 +234,6 @@
 </div>
 
 
-<h2 class="sg-sectionHeading">Rounded Icon Button – <code>.o-btn.o-btn--roundedIcon</code></h2>
-<p></p>
-<div class="demo">
-    <div class="demo-visual ">
-        <h4 class="demo-title">Example</h4>
-        <a class="o-btn o-btn--roundedIcon c-icon--minus"></a>
-    </div>
-    <div class="demo-code">
-<pre><code class="language-markup">&lt;a class=<span class="hljs-string">"o-btn o-btn--roundedIcon c-icon--minus"</span>&gt;{<span class="hljs-symbol">$</span>ASYNCID<span class="hljs-symbol">$</span><span class="hljs-number">1</span><span class="hljs-symbol">$</span><span class="hljs-number">1390</span><span class="hljs-symbol">$</span>}&lt;/a&gt;
-</code></pre>
-    </div>
-</div>
-
-
-<h2 class="sg-sectionHeading">Small rounded Icon Button – <code>.o-btn.o-btn--roundedIcon.o-btn--roundedIcon--small</code></h2>
-<p></p>
-<div class="demo">
-    <div class="demo-visual ">
-        <h4 class="demo-title">Example</h4>
-        <a class="o-btn o-btn--roundedIcon o-btn--roundedIcon--small c-icon--minus"></a>
-    </div>
-    <div class="demo-code">
-<pre><code class="language-markup">&lt;<span class="hljs-comment">a</span> <span class="hljs-comment">class="o</span><span class="hljs-literal">-</span><span class="hljs-comment">btn</span> <span class="hljs-comment">o</span><span class="hljs-literal">-</span><span class="hljs-comment">btn</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">roundedIcon</span> <span class="hljs-comment">o</span><span class="hljs-literal">-</span><span class="hljs-comment">btn</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">roundedIcon</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">small</span> <span class="hljs-comment">c</span><span class="hljs-literal">-</span><span class="hljs-comment">icon</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">minus"</span>&gt;<span class="hljs-comment"></span>&lt;<span class="hljs-comment">/a</span>&gt;
-</code></pre>
-    </div>
-</div>
-
-
-<h2 class="sg-sectionHeading">Rounded Button – <code>.o-btn.o-btn--rounded</code></h2>
-<p></p>
-<div class="demo">
-    <div class="demo-visual ">
-        <h4 class="demo-title">Example</h4>
-        <a class="o-btn o-btn--rounded">+</a>
-    </div>
-    <div class="demo-code">
-<pre><code class="language-markup">&lt;a <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"o-btn o-btn--rounded"</span>&gt;+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>
-</code></pre>
-    </div>
-</div>
-
-
-<h2 class="sg-sectionHeading">Remove Button – <code>.o-btn.o-btn--remove</code></h2>
-<div class="demo">
-    <div class="demo-visual ">
-        <h4 class="demo-title">Example</h4>
-        <a class="o-btn o-btn--remove">-</a>
-    </div>
-    <div class="demo-code">
-<pre><code class="language-markup">&lt;a <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"o-btn o-btn--remove"</span>&gt;-<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span>
-</code></pre>
-    </div>
-</div>
-
-
-<h2 class="sg-sectionHeading">Button Group – <code>.o-btn-group .o-btn</code></h2>
-<p></p>
-<div class="demo">
-    <div class="demo-visual ">
-        <h4 class="demo-title">Example</h4>
-        <div class="btn-group">
-            <a class="o-btn">Cancel</a>
-            <a class="o-btn o-btn--primary">Done</a>
-        </div>
-    </div>
-    <div class="demo-code">
-<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-group"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btn"</span>&gt;</span>Cancel<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btn o-btn--primary"</span>&gt;</span>Done<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre>
-    </div>
-</div>
-
-
-<h2 class="sg-sectionHeading">Button Toggle – <code>.o-btnToggle</code></h2>
-<p></p>
-<div class="demo">
-    <div class="demo-visual ">
-        <h4 class="demo-title">Example</h4>
-        <div class="o-btnToggle">
-            <div class="g">
-                <div class="o-btnToggle-item g-col g-span6 g g--alignCenter g--alignCenter--v g g-span6">
-                    <input type="radio" name="radios" class="o-btnToggle-input" id="radio-1" checked />
-                    <label for="radio-1" class="o-btnToggle-label g g--alignCenter g--alignCenter--v">
-                        Collection
-                    </label>
-                </div>
-                <div class="o-btnToggle-item g-col g-span6 g g--alignCenter g--alignCenter--v">
-                    <input type="radio" class="o-btnToggle-input" name="radios" id="radio-2" />
-                    <label for="radio-2" class="o-btnToggle-label g g--alignCenter g--alignCenter--v">
-                        Delivery 3€
-                    </label>
-                </div>
-            </div>
-            <div class="g">
-                <div class="g-col g-span6 g g--alignCenter g--alignCenter--v">30 mins</div>
-                <div class="g-col g-span6 g g--alignCenter g--alignCenter--v">60 mins</div>
-            </div>
-        </div>
-    </div>
-    <div class="demo-code">
-<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"o-btnToggle"</span>&gt;
-    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"g"</span>&gt;
-        &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"o-btnToggle-item g-col g-span6 g g--alignCenter g--alignCenter--v g g-span6"</span>&gt;
-            &lt;input type=<span class="hljs-string">"radio"</span> <span class="hljs-built_in">name</span>=<span class="hljs-string">"radios"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"o-btnToggle-input"</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"radio-1"</span> checked /&gt;
-            &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"radio-1"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"o-btnToggle-label g g--alignCenter g--alignCenter--v"</span>&gt;
-                Collection
-            &lt;/label&gt;
-        &lt;/<span class="hljs-keyword">div</span>&gt;
-        &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"o-btnToggle-item g-col g-span6 g g--alignCenter g--alignCenter--v"</span>&gt;
-            &lt;input type=<span class="hljs-string">"radio"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"o-btnToggle-input"</span> <span class="hljs-built_in">name</span>=<span class="hljs-string">"radios"</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">"radio-2"</span> /&gt;
-            &lt;label <span class="hljs-keyword">for</span>=<span class="hljs-string">"radio-2"</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"o-btnToggle-label g g--alignCenter g--alignCenter--v"</span>&gt;
-                Delivery <span class="hljs-number">3</span>€
-            &lt;/label&gt;
-        &lt;/<span class="hljs-keyword">div</span>&gt;
-    &lt;/<span class="hljs-keyword">div</span>&gt;
-    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"g"</span>&gt;
-        &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"g-col g-span6 g g--alignCenter g--alignCenter--v"</span>&gt;<span class="hljs-number">30</span> mins&lt;/<span class="hljs-keyword">div</span>&gt;
-        &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"g-col g-span6 g g--alignCenter g--alignCenter--v"</span>&gt;<span class="hljs-number">60</span> mins&lt;/<span class="hljs-keyword">div</span>&gt;
-    &lt;/<span class="hljs-keyword">div</span>&gt;
-&lt;/<span class="hljs-keyword">div</span>&gt;
-</code></pre>
-    </div>
-</div>
 
                 </div>
             </div>

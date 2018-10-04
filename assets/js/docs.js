@@ -1,368 +1,500 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * Highlights the current navigation menu item which is in view.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * Core code been taken from the vue-scrollactive module and modified — https://github.com/eddiemf/vue-scrollactive
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+var _fDom = _interopRequireDefault(require("@justeat/f-dom"));
 
-var _fDom = require('@justeat/f-dom');
+var _bezierEasing = _interopRequireDefault(require("bezier-easing"));
 
-var _fDom2 = _interopRequireDefault(_fDom);
-
-var _bezierEasing = require('bezier-easing');
-
-var _bezierEasing2 = _interopRequireDefault(_bezierEasing);
-
-var _lodash = require('lodash.throttle');
-
-var _lodash2 = _interopRequireDefault(_lodash);
+var _lodash = _interopRequireDefault(require("lodash.throttle"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ScrollSpy = function () {
-    function ScrollSpy(_ref) {
-        var selector = _ref.selector;
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-        _classCallCheck(this, ScrollSpy);
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-        this.items = null;
-        this.exact = null;
-        this.observer = null;
-        this.currentItem = null;
-        this.lastActiveItem = null;
-        this.offset = 20;
-        this.activeClass = 'c-menu-item--active';
-        this.duration = 600;
-        this.alwaysTrack = false;
-        this.bezierEasingValue = '.5,0,.35,1';
-        this.modifyUrl = true;
-        this.bezierEasing = _bezierEasing2.default;
-        this.elem = _fDom2.default.first(selector);
+var ScrollSpy =
+/*#__PURE__*/
+function () {
+  function ScrollSpy(_ref) {
+    var selector = _ref.selector;
 
-        // Have to rebind the event handlers here so that the context is not lost and also so that
-        // the events can be correctly removed — when `.bind()` is appended it creates a new function.
-        this.onScrollHandler = (0, _lodash2.default)(this.onScroll.bind(this), 150);
-        this.onClickHandler = this.onClick.bind(this);
+    _classCallCheck(this, ScrollSpy);
 
-        if (this.elem) {
-            this.init();
-        }
+    this.items = null;
+    this.exact = null;
+    this.observer = null;
+    this.currentItem = null;
+    this.lastActiveItem = null;
+    this.offset = 20;
+    this.activeClass = 'c-menu-item--active';
+    this.duration = 600;
+    this.alwaysTrack = false;
+    this.bezierEasingValue = '.5,0,.35,1';
+    this.modifyUrl = true;
+    this.bezierEasing = _bezierEasing.default;
+    this.elem = _fDom.default.first(selector); // Have to rebind the event handlers here so that the context is not lost and also so that
+    // the events can be correctly removed — when `.bind()` is appended it creates a new function.
+
+    this.onScrollHandler = (0, _lodash.default)(this.onScroll.bind(this), 150);
+    this.onClickHandler = this.onClick.bind(this);
+
+    if (this.elem) {
+      this.init();
     }
+  }
 
-    _createClass(ScrollSpy, [{
-        key: 'getItemInsideWindow',
-        value: function getItemInsideWindow() {
-            var _this = this;
+  _createClass(ScrollSpy, [{
+    key: "getItemInsideWindow",
+    value: function getItemInsideWindow() {
+      var _this = this;
 
-            var currItem = void 0;
-            var _window = window,
-                pageYOffset = _window.pageYOffset;
+      var currItem;
+      var _window = window,
+          pageYOffset = _window.pageYOffset;
+      this.items.forEach(function (item) {
+        var hash = ScrollSpy.getHash(item);
+        var target = document.getElementById(hash.substr(1));
+        if (!target) return;
+        var offsetTop = ScrollSpy.getOffsetTop(target);
+        var isScreenPastSection = pageYOffset >= offsetTop - _this.offset;
+        var isScreenBeforeSectionEnd = pageYOffset < offsetTop - _this.offset + target.offsetHeight;
 
-
-            this.items.forEach(function (item) {
-                var hash = ScrollSpy.getHash(item);
-                var target = document.getElementById(hash.substr(1));
-
-                if (!target) return;
-
-                var offsetTop = ScrollSpy.getOffsetTop(target);
-                var isScreenPastSection = pageYOffset >= offsetTop - _this.offset;
-                var isScreenBeforeSectionEnd = pageYOffset < offsetTop - _this.offset + target.offsetHeight;
-
-                if (_this.exact && isScreenPastSection && isScreenBeforeSectionEnd) {
-                    currItem = item;
-                }
-                if (!_this.exact && isScreenPastSection) {
-                    currItem = item;
-                }
-            });
-
-            return currItem;
+        if (_this.exact && isScreenPastSection && isScreenBeforeSectionEnd) {
+          currItem = item;
         }
-    }, {
-        key: 'removeActiveClass',
-        value: function removeActiveClass() {
-            var _this2 = this;
 
-            this.items.forEach(function (item) {
-                item.classList.remove(_this2.activeClass);
-            });
+        if (!_this.exact && isScreenPastSection) {
+          currItem = item;
         }
-    }, {
-        key: 'addActiveClass',
-        value: function addActiveClass() {
-            if (this.currentItem) {
-                this.currentItem.classList.add(this.activeClass);
-            } else {
-                this.items[0].classList.add(this.activeClass);
-            }
+      });
+      return currItem;
+    }
+  }, {
+    key: "removeActiveClass",
+    value: function removeActiveClass() {
+      var _this2 = this;
+
+      this.items.forEach(function (item) {
+        item.classList.remove(_this2.activeClass);
+      });
+    }
+  }, {
+    key: "addActiveClass",
+    value: function addActiveClass() {
+      if (this.currentItem) {
+        this.currentItem.classList.add(this.activeClass);
+      } else {
+        this.items[0].classList.add(this.activeClass);
+      }
+    }
+  }, {
+    key: "onScroll",
+    value: function onScroll() {
+      this.currentItem = this.getItemInsideWindow();
+
+      if (this.currentItem !== this.lastActiveItem) {
+        this.removeActiveClass();
+        this.lastActiveItem = this.currentItem;
+      }
+
+      this.addActiveClass();
+    }
+  }, {
+    key: "scrollTo",
+    value: function scrollTo(target) {
+      var _this3 = this;
+
+      return new Promise(function (resolve) {
+        var targetDistanceFromTop = ScrollSpy.getOffsetTop(target);
+        var startingY = window.pageYOffset;
+        var difference = targetDistanceFromTop - startingY;
+
+        var easing = _this3.bezierEasing.apply(_this3, _toConsumableArray(_this3.bezierEasingValue.split(',')));
+
+        var start = null;
+
+        var step = function step(timestamp) {
+          if (!start) start = timestamp;
+          var progress = timestamp - start;
+          var progressPercentage = progress / _this3.duration;
+          if (progress >= _this3.duration) progress = _this3.duration;
+          if (progressPercentage >= 1) progressPercentage = 1;
+
+          var perTick = startingY + easing(progressPercentage) * (difference - _this3.offset);
+
+          window.scrollTo(0, perTick);
+
+          if (progress < _this3.duration) {
+            _this3.scrollAnimationFrame = window.requestAnimationFrame(step);
+          } else {
+            window.addEventListener('scroll', _this3.onScrollHandler);
+            resolve();
+          }
+        };
+
+        window.requestAnimationFrame(step);
+      });
+    }
+  }, {
+    key: "onClick",
+    value: function onClick(event) {
+      var _this4 = this;
+
+      event.preventDefault();
+      var hash = ScrollSpy.getHash(event.currentTarget);
+      var target = document.getElementById(hash.substr(1));
+
+      if (!target) {
+        return;
+      }
+      /**
+       *  Temporarily removes the scroll listener and the request animation frame so the active
+       *  class will only be applied to the clicked element, and not all elements while the window
+       *  is scrolling.
+       */
+
+
+      if (!this.alwaysTrack) {
+        window.removeEventListener('scroll', this.onScrollHandler);
+        window.cancelAnimationFrame(this.scrollAnimationFrame);
+        this.removeActiveClass();
+        event.currentTarget.classList.add(this.activeClass);
+      }
+
+      this.scrollTo(target).then(function () {
+        if (_this4.modifyUrl) {
+          // Update the location hash after we've finished animating
+          if (window.history.pushState) {
+            window.history.pushState(null, null, hash);
+          } else {
+            window.location.hash = hash;
+          }
         }
-    }, {
-        key: 'onScroll',
-        value: function onScroll() {
-            this.currentItem = this.getItemInsideWindow();
+      });
+    }
+  }, {
+    key: "initScrollActiveItems",
+    value: function initScrollActiveItems() {
+      var _this5 = this;
 
-            if (this.currentItem !== this.lastActiveItem) {
-                this.removeActiveClass();
-                this.lastActiveItem = this.currentItem;
-            }
+      this.items = (0, _fDom.default)('.c-menu-item', this.elem);
+      this.items.forEach(function (item) {
+        item.addEventListener('click', _this5.onClickHandler);
+      });
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
 
-            this.addActiveClass();
-        }
-    }, {
-        key: 'scrollTo',
-        value: function scrollTo(target) {
-            var _this3 = this;
+      if (!this.observer) {
+        this.observer = new MutationObserver(this.initScrollActiveItems);
+        this.observer.observe(this.elem, {
+          childList: true,
+          subtree: true
+        });
+      }
 
-            return new Promise(function (resolve) {
-                var targetDistanceFromTop = ScrollSpy.getOffsetTop(target);
-                var startingY = window.pageYOffset;
-                var difference = targetDistanceFromTop - startingY;
-                var easing = _this3.bezierEasing.apply(_this3, _toConsumableArray(_this3.bezierEasingValue.split(',')));
-                var start = null;
+      this.initScrollActiveItems();
+      this.removeActiveClass();
+      this.currentItem = this.getItemInsideWindow();
+      this.addActiveClass();
+      window.addEventListener('scroll', this.onScrollHandler);
+    }
+  }], [{
+    key: "getOffsetTop",
+    value: function getOffsetTop(element) {
+      var yPosition = 0;
+      var nextElement = element;
 
-                var step = function step(timestamp) {
-                    if (!start) start = timestamp;
-                    var progress = timestamp - start;
-                    var progressPercentage = progress / _this3.duration;
-                    if (progress >= _this3.duration) progress = _this3.duration;
-                    if (progressPercentage >= 1) progressPercentage = 1;
-                    var perTick = startingY + easing(progressPercentage) * (difference - _this3.offset);
+      while (nextElement) {
+        yPosition += nextElement.offsetTop;
+        nextElement = nextElement.offsetParent;
+      }
 
-                    window.scrollTo(0, perTick);
+      return yPosition;
+    }
+  }, {
+    key: "getHash",
+    value: function getHash(item) {
+      var _$$first = _fDom.default.first('.c-menu-link', item),
+          hash = _$$first.hash;
 
-                    if (progress < _this3.duration) {
-                        _this3.scrollAnimationFrame = window.requestAnimationFrame(step);
-                    } else {
-                        window.addEventListener('scroll', _this3.onScrollHandler);
-                        resolve();
-                    }
-                };
-                window.requestAnimationFrame(step);
-            });
-        }
-    }, {
-        key: 'onClick',
-        value: function onClick(event) {
-            var _this4 = this;
+      return hash;
+    }
+  }]);
 
-            event.preventDefault();
-            var hash = ScrollSpy.getHash(event.currentTarget);
-            var target = document.getElementById(hash.substr(1));
-
-            if (!target) {
-                return;
-            }
-
-            /**
-             *  Temporarily removes the scroll listener and the request animation frame so the active
-             *  class will only be applied to the clicked element, and not all elements while the window
-             *  is scrolling.
-             */
-            if (!this.alwaysTrack) {
-                window.removeEventListener('scroll', this.onScrollHandler);
-                window.cancelAnimationFrame(this.scrollAnimationFrame);
-
-                this.removeActiveClass();
-                event.currentTarget.classList.add(this.activeClass);
-            }
-
-            this.scrollTo(target).then(function () {
-                if (_this4.modifyUrl) {
-                    // Update the location hash after we've finished animating
-                    if (window.history.pushState) {
-                        window.history.pushState(null, null, hash);
-                    } else {
-                        window.location.hash = hash;
-                    }
-                }
-            });
-        }
-    }, {
-        key: 'initScrollActiveItems',
-        value: function initScrollActiveItems() {
-            var _this5 = this;
-
-            this.items = (0, _fDom2.default)('.c-menu-item', this.elem);
-
-            this.items.forEach(function (item) {
-                item.addEventListener('click', _this5.onClickHandler);
-            });
-        }
-    }, {
-        key: 'init',
-        value: function init() {
-            var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-
-            if (!this.observer) {
-                this.observer = new MutationObserver(this.initScrollActiveItems);
-                this.observer.observe(this.elem, {
-                    childList: true,
-                    subtree: true
-                });
-            }
-
-            this.initScrollActiveItems();
-            this.removeActiveClass();
-            this.currentItem = this.getItemInsideWindow();
-            this.addActiveClass();
-
-            window.addEventListener('scroll', this.onScrollHandler);
-        }
-    }], [{
-        key: 'getOffsetTop',
-        value: function getOffsetTop(element) {
-            var yPosition = 0;
-            var nextElement = element;
-
-            while (nextElement) {
-                yPosition += nextElement.offsetTop;
-                nextElement = nextElement.offsetParent;
-            }
-
-            return yPosition;
-        }
-    }, {
-        key: 'getHash',
-        value: function getHash(item) {
-            var _$$first = _fDom2.default.first('.c-menu-link', item),
-                hash = _$$first.hash;
-
-            return hash;
-        }
-    }]);
-
-    return ScrollSpy;
+  return ScrollSpy;
 }();
 
 exports.default = ScrollSpy;
 
-},{"@justeat/f-dom":4,"bezier-easing":8,"lodash.throttle":11}],2:[function(require,module,exports){
-'use strict';
+},{"@justeat/f-dom":4,"bezier-easing":9,"lodash.throttle":12}],2:[function(require,module,exports){
+"use strict";
 
-require('@justeat/f-toggle');
+require("@justeat/f-toggle");
 
-var _fDom = require('@justeat/f-dom');
+var _fDom = _interopRequireDefault(require("@justeat/f-dom"));
 
-var _fDom2 = _interopRequireDefault(_fDom);
+require("./ui-components/header");
 
-require('./ui-components/header');
-
-var _ScrollSpy = require('../ScrollSpy');
-
-var _ScrollSpy2 = _interopRequireDefault(_ScrollSpy);
+var _ScrollSpy = _interopRequireDefault(require("../ScrollSpy"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// any additional docs functionality goes in here
 /**
  * Custom JS for the documentation part of the site
  *
  * Can pull in logging modules – such as those used for the address lookup
  */
-
+// any additional docs functionality goes in here
 var docs = {
-    demoBtnText: {
-        whenHidden: 'Show Code',
-        whenVisible: 'Hide Code'
-    },
+  demoBtnText: {
+    whenHidden: 'Show Code',
+    whenVisible: 'Hide Code'
+  },
+  themeBtn: null,
+  themeBtnText: {
+    menulogBtnText: 'Switch to JE',
+    JEBtnText: 'Switch to Menulog'
+  },
+  // controls all of our base initialsation functions
+  init: function init() {
+    docs._demoHandler();
 
-    // controls all of our base initialsation functions
-    init: function init() {
-        docs._demoHandler();
-        docs._disableDemoLinks();
-    },
+    docs._disableDemoLinks();
 
-    _demoHandler: function _demoHandler() {
-        (0, _fDom2.default)('.demo').forEach(function (demoEl) {
-            var codeBlock = _fDom2.default.first('.demo-code', demoEl);
+    docs._themeHandler();
+  },
+  _demoHandler: function _demoHandler() {
+    (0, _fDom.default)('.demo').forEach(function (demoEl) {
+      var codeBlock = _fDom.default.first('.demo-code', demoEl);
 
-            codeBlock.classList.add('is-hidden');
+      codeBlock.classList.add('is-hidden');
+      var demoToggleBtn = document.createElement('button');
+      demoToggleBtn.type = 'button';
+      demoToggleBtn.classList.add('o-btn', 'o-btn--secondary', 'o-btn--codeToggle');
+      demoToggleBtn.textContent = docs.demoBtnText.whenHidden;
+      demoToggleBtn.addEventListener('click', docs._demoToggle);
+      demoEl.insertBefore(demoToggleBtn, codeBlock);
+    });
+    (0, _fDom.default)('.sg-sideNav .is-incomplete').forEach(function (el) {
+      el.setAttribute('tabindex', -1);
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+      });
+    });
+  },
+  _demoToggle: function _demoToggle(event) {
+    var btn = event.target;
+    var codeBlock = btn.nextElementSibling;
+    var isHidden = codeBlock.classList.contains('is-hidden');
+    codeBlock.classList.toggle('is-hidden');
+    btn.classList.toggle('is-clicked');
 
-            var demoToggleBtn = document.createElement('button');
+    if (isHidden) {
+      btn.textContent = docs.demoBtnText.whenVisible;
+    } else {
+      btn.textContent = docs.demoBtnText.whenHidden;
+    }
+  },
+  _disableDemoLinks: function _disableDemoLinks() {
+    (0, _fDom.default)('.demo a').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+      });
+    });
+  },
+  // enables a rebrand toggle checkbox which switches between legacy and rebranded styling
+  _themeHandler: function _themeHandler() {
+    var toggleContainer = document.createElement('div'),
+        toggleBtn = document.createElement('btn');
+    toggleContainer.classList.add('sg-themeToggle');
+    toggleBtn.classList.add('o-btn', 'o-btn--outline', 'sg-themeToggle-btn');
+    toggleBtn.textContent = 'Switch to Menulog';
+    toggleBtn.addEventListener('click', docs._themeToggle);
+    toggleContainer.append(toggleBtn);
+    document.body.append(toggleContainer);
+    docs.themeBtn = _fDom.default.first('.sg-themeToggle-btn');
 
-            demoToggleBtn.type = 'button';
-            demoToggleBtn.classList.add('o-btn', 'o-btn--secondary', 'o-btn--codeToggle');
-            demoToggleBtn.textContent = docs.demoBtnText.whenHidden;
-            demoToggleBtn.addEventListener('click', docs._demoToggle);
+    var currentTheme = docs._getTheme();
 
-            demoEl.insertBefore(demoToggleBtn, codeBlock);
-        });
+    if (currentTheme !== 'je') {
+      docs._setTheme(currentTheme);
+    }
+  },
+  _themeToggle: function _themeToggle(event) {
+    var isMenulog = event.target.innerText.toLowerCase().includes('menulog'); // if the stylesheet currently includes the Menulog prefix, change theme to JE
 
-        (0, _fDom2.default)('.sg-sideNav .is-incomplete').forEach(function (el) {
-            el.setAttribute('tabindex', -1);
-            el.addEventListener('click', function (e) {
-                e.preventDefault();
-            });
-        });
-    },
-
-    _demoToggle: function _demoToggle(event) {
-        var btn = event.target;
-        var codeBlock = btn.nextElementSibling;
-        var isHidden = codeBlock.classList.contains('is-hidden');
-
-        codeBlock.classList.toggle('is-hidden');
-        btn.classList.toggle('is-clicked');
-
-        if (isHidden) {
-            btn.textContent = docs.demoBtnText.whenVisible;
-        } else {
-            btn.textContent = docs.demoBtnText.whenHidden;
-        }
-    },
-
-    _disableDemoLinks: function _disableDemoLinks() {
-        (0, _fDom2.default)('.demo a').forEach(function (link) {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-            });
-        });
+    if (isMenulog) {
+      docs._setTheme('ml');
+    } else {
+      docs._setTheme('je');
+    }
+  },
+  _getLocalStorageContext: function _getLocalStorageContext(typeItem, name, value) {
+    if (window.localStorage) {
+      return window.localStorage[typeItem](name, value);
     }
 
-};
+    return null;
+  },
+  _saveTheme: function _saveTheme(theme) {
+    if (theme !== null) {
+      docs._getLocalStorageContext('setItem', 'docsTheme', theme);
+    }
+  },
+  _getTheme: function _getTheme() {
+    var storedTheme = docs._getLocalStorageContext('getItem', 'docsTheme');
 
-new _ScrollSpy2.default({ selector: '[data-category-menu]' }); // eslint-disable-line no-new
+    if (storedTheme !== null) {
+      return storedTheme;
+    }
+
+    return 'je';
+  },
+  _setTheme: function _setTheme(theme) {
+    var stylesheet = [].slice.call(document.getElementsByTagName('link')).find(function (css) {
+      return css.href.includes('/je');
+    });
+    var isDocsPage = stylesheet.href.includes('docs');
+    var btn = docs.themeBtn;
+
+    if (theme === 'je') {
+      stylesheet.href = stylesheet.href.replace('.menulog', '');
+      btn.textContent = docs.themeBtnText.JEBtnText;
+
+      docs._saveTheme('je');
+    } else {
+      if (isDocsPage) {
+        stylesheet.href = stylesheet.href.replace('/je-docs', '/je-docs.menulog');
+      } else {
+        stylesheet.href = stylesheet.href.replace('/je', '/je.menulog');
+      }
+
+      btn.textContent = docs.themeBtnText.menulogBtnText;
+
+      docs._saveTheme('ml');
+    }
+  }
+};
+new _ScrollSpy.default({
+  selector: '[data-category-menu]'
+}); // eslint-disable-line no-new
 
 docs.init();
 
 },{"../ScrollSpy":1,"./ui-components/header":3,"@justeat/f-dom":4,"@justeat/f-toggle":7}],3:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _fDom = require('@justeat/f-dom');
-
-var _fDom2 = _interopRequireDefault(_fDom);
+var _fDom = _interopRequireDefault(require("@justeat/f-dom"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var signedOutDemoEl = _fDom2.default.first('[data-js-header-signed-out]');
+var signedOutDemoEl = _fDom.default.first('[data-js-header-signed-out]');
+
 if (signedOutDemoEl) {
-    _fDom2.default.first('[data-auth-wrapper]', signedOutDemoEl).remove();
-    _fDom2.default.first('[data-login]', signedOutDemoEl).classList.remove('is-hidden');
+  _fDom.default.first('[data-auth-wrapper]', signedOutDemoEl).remove();
+
+  _fDom.default.first('[data-login]', signedOutDemoEl).classList.remove('is-hidden');
 }
 
-var signedInDemoEl = _fDom2.default.first('[data-js-header-signed-in]');
-if (signedInDemoEl) {
-    _fDom2.default.first('[data-name]', signedInDemoEl).textContent = 'Bear';
-    _fDom2.default.first('[data-email]', signedInDemoEl).textContent = 'ui@just-eat.com';
+var signedInDemoEl = _fDom.default.first('[data-js-header-signed-in]');
 
-    _fDom2.default.first('[data-auth-wrapper]', signedInDemoEl).classList.remove('is-hidden');
-    _fDom2.default.first('[data-login]', signedInDemoEl).remove();
+if (signedInDemoEl) {
+  _fDom.default.first('[data-name]', signedInDemoEl).textContent = 'Bear';
+  _fDom.default.first('[data-email]', signedInDemoEl).textContent = 'ui@just-eat.com';
+
+  _fDom.default.first('[data-auth-wrapper]', signedInDemoEl).classList.remove('is-hidden');
+
+  _fDom.default.first('[data-login]', signedInDemoEl).remove();
 }
 
 },{"@justeat/f-dom":4}],4:[function(require,module,exports){
-'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var _qwery=require('qwery'),_qwery2=_interopRequireDefault(_qwery);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var first=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)[0]},all=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)},exists=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return 0<(0,_qwery2.default)(a,b).length},dom=all;dom.all=all,dom.first=first,dom.exists=exists,exports.default=dom;
-},{"qwery":13}],5:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _qwery = _interopRequireDefault(require("qwery"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+* Returns first element in the DOM for the specified selector.
+*
+* @param {string} selector
+* @param {string} root (optional) - if defined, search is performed relatively from this element
+*
+* @return {Element}
+*/
+var first = function first(selector) {
+  var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  return (0, _qwery.default)(selector, root)[0];
+};
+/**
+* Returns all elements in the DOM for the specified selector.
+*
+* @param {string} selector
+* @param {string} root (optional) - if defined, search is performed relatively from this element
+*
+* @return {Array.<Element>}
+*/
+
+
+var all = function all(selector) {
+  var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  return (0, _qwery.default)(selector, root);
+};
+/**
+* Returns true, if at least one element exists in the DOM, otherwise returns false.
+*
+* @param {string} selector
+* @param {string} root (optional) - if defined, search is performed relatively from this element
+*
+* @return {boolean}
+*/
+
+
+var exists = function exists(selector) {
+  var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  return (0, _qwery.default)(selector, root).length > 0;
+};
+/**
+* Returns all elements in the DOM for the specified selector. Short syntax of `all` method.
+*
+* @param {string} selector
+* @param {string} root (optional) - if defined, search is performed relatively from this element
+*
+* @return {Array.<Element>}
+*/
+
+
+var dom = all;
+dom.all = all;
+dom.first = first;
+dom.exists = exists;
+var _default = dom;
+exports.default = _default;
+},{"qwery":14}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -478,7 +610,7 @@ var setToggleCallback = function setToggleCallback(selector, callback) {
 exports.toggleAccordion = toggleAccordion;
 exports.toggleSection = toggleSection;
 exports.setToggleCallback = setToggleCallback;
-},{"./internal":6,"@justeat/f-dom":4}],6:[function(require,module,exports){
+},{"./internal":6,"@justeat/f-dom":8}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -580,7 +712,7 @@ var handleAccordionToggles = function handleAccordionToggles(target, accordion) 
 exports.toggles = toggles;
 exports.handleToggles = handleToggles;
 exports.handleAccordionToggles = handleAccordionToggles;
-},{"@justeat/f-dom":4}],7:[function(require,module,exports){
+},{"@justeat/f-dom":8}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -682,7 +814,9 @@ exports.setToggleCallback = _external.setToggleCallback;
 (0, _liteReady2.default)(function () {
     setupToggle();
 });
-},{"./helpers/external":5,"./helpers/internal":6,"@justeat/f-dom":4,"closest":9,"lite-ready":10}],8:[function(require,module,exports){
+},{"./helpers/external":5,"./helpers/internal":6,"@justeat/f-dom":8,"closest":10,"lite-ready":11}],8:[function(require,module,exports){
+'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var _qwery=require('qwery'),_qwery2=_interopRequireDefault(_qwery);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var first=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)[0]},all=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)},exists=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return 0<(0,_qwery2.default)(a,b).length},dom=all;dom.all=all,dom.first=first,dom.exists=exists,exports.default=dom;
+},{"qwery":14}],9:[function(require,module,exports){
 /**
  * https://github.com/gre/bezier-easing
  * BezierEasing - use bezier curve for transition easing function
@@ -791,7 +925,7 @@ module.exports = function bezier (mX1, mY1, mX2, mY2) {
   };
 };
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 var matches = require('matches-selector')
 
 module.exports = function (element, selector, checkYoSelf) {
@@ -803,7 +937,7 @@ module.exports = function (element, selector, checkYoSelf) {
   }
 }
 
-},{"matches-selector":12}],10:[function(require,module,exports){
+},{"matches-selector":13}],11:[function(require,module,exports){
 module.exports = function (callback) {
 
 	if (document.readyState === 'complete' || document.readyState === 'interactive') {
@@ -823,7 +957,7 @@ module.exports = function (callback) {
 	}
 }
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 (function (global){
 /**
  * lodash (Custom Build) <https://lodash.com/>
@@ -1267,7 +1401,7 @@ module.exports = throttle;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 
 /**
  * Element prototype.
@@ -1308,7 +1442,7 @@ function match(el, selector) {
   }
   return false;
 }
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 /*!
   * @preserve Qwery - A selector engine
   * https://github.com/ded/qwery
