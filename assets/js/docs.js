@@ -42,7 +42,7 @@ function () {
     this.currentItem = null;
     this.lastActiveItem = null;
     this.offset = 20;
-    this.activeClass = 'c-menu-item--active';
+    this.activeClass = 'c-menu-link--active';
     this.duration = 600;
     this.alwaysTrack = false;
     this.bezierEasingValue = '.5,0,.35,1';
@@ -68,8 +68,7 @@ function () {
       var _window = window,
           pageYOffset = _window.pageYOffset;
       this.items.forEach(function (item) {
-        var hash = ScrollSpy.getHash(item);
-        var target = document.getElementById(hash.substr(1));
+        var target = document.getElementById(item.hash.substr(1));
         if (!target) return;
         var offsetTop = ScrollSpy.getOffsetTop(target);
         var isScreenPastSection = pageYOffset >= offsetTop - _this.offset;
@@ -157,7 +156,7 @@ function () {
       var _this4 = this;
 
       event.preventDefault();
-      var hash = ScrollSpy.getHash(event.currentTarget);
+      var hash = event.currentTarget.hash;
       var target = document.getElementById(hash.substr(1));
 
       if (!target) {
@@ -193,7 +192,7 @@ function () {
     value: function initScrollActiveItems() {
       var _this5 = this;
 
-      this.items = (0, _fDom.default)('.c-menu-item', this.elem);
+      this.items = (0, _fDom.default)('.c-menu-link', this.elem);
       this.items.forEach(function (item) {
         item.addEventListener('click', _this5.onClickHandler);
       });
@@ -229,14 +228,6 @@ function () {
       }
 
       return yPosition;
-    }
-  }, {
-    key: "getHash",
-    value: function getHash(item) {
-      var _$$first = _fDom.default.first('.c-menu-link', item),
-          hash = _$$first.hash;
-
-      return hash;
     }
   }]);
 

@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Menu UI Template</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+
+            <link rel="stylesheet" href="/assets/css/je.min.css">
+
+		<script src="/assets/js/libs/modernizr.min.js"></script>
+
+        <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:300,500' rel='stylesheet' type='text/css' />
+	</head>
+	<body class=" o-body--bgWhite--belowMid is-fontsLoading--base is-fontsLoading--heading u-noPad is-fontsLoading--base is-fontsLoading--heading">
+
+
+
+    <div class="skipTo">
+        <a class="is-visuallyHidden focusable u-text-marker" href="#skipToMain">Skip to main content</a>
+    </div>
+    <header class="c-header c-header--transparent">
+        <div class="l-container c-header-wrap">
+            <div class="c-logo">
+                <a href="/" aria-label="Just Eat Homepage">
+                    <div class="c-logo-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2611.9 513.4"><path fill="#FA0029" d="M2033.7 245l62.2-136c5.2-11.5 5.2-11.5 12.3-11.5 8 0 8 0 9.8 12.4l18.8 135h-103zm168-189.2c-10-53.3-10-53.3-85.4-53.3-71 0-70.2 0-91.5 43.5L1864 379.2c-23 48-19.5 51.5 40 51.5 46.2 0 45.3 0 65-42.7l25.7-57h154.6l8 57c6.2 42.7 8 42.7 54.2 42.7 52 0 57-3.7 47-55l-57-320zM1832.2 93c37.8 0 38-.3 45.6-45.2 7.8-45.2 7.7-45.3-27-45.3H1659c-67.5 0-66.2 0-77.8 68.4L1532 357c-12.5 73.8-11.8 73.8 57.6 73.8H1777c39.2 0 38.3 0 46.3-44.4 8-46.2 8-46.2-27.5-46.2H1634l13.3-82.6h134.2c36.4 0 36.4 0 42.7-42.7 7-43.6 7-43.6-42.7-43.6h-120l13.3-78.2h157.4zM1360.3 2.5h-269c-38 0-38 0-46 45.3S1038 93 1071.8 93h87.5l-48.8 282.7c-9 55-8 55 41.6 55 45.4 0 48 0 54.3-39L1258 93h83.5c37.7 0 37.7 0 45.6-45.2 8-45.2 8-45.3-26.7-45.3M625 2.5c-46.7 0-47.6.3-54.3 39.2l-35.4 205.8c-9.8 59.5-26 94.5-83.7 94.5-57.8 0-77.5-34.7-68.6-88l33.6-196.7c9-55 7.3-54.8-41.6-54.8-47.7 0-49-.4-55.2 38.7l-35.4 206.5C264 364.7 336 437 439 437c115.6 0 173.8-51.5 193.3-175l35.2-204.5c9.5-55 7.3-55-42.4-55m-396.8 0H110.6C72 2.5 72 2.5 64.2 47c-8 44.7-7 46 27.2 46h69.8l-38.8 226.2c-8.7 50.8-31.4 85-99.7 106C5.3 430 0 437 0 445c0 8.7 3.5 17.5 10.5 36 10.5 27 17.5 32.2 27 32.2 9.7 0 27.2-5.3 33.3-7 97-31.5 135.6-106 151.3-195l44-254.6c9.6-53.4 9.6-54.3-37.7-54.3m613 338.1c38-2.2 57.8-18.5 57.8-37 0-22.3-27.5-30.3-64-41-72-22.2-136-47.4-136-123.8C699.2 48.8 773.2 0 866.4 0c39 0 84 2.3 113 5 26.2 2.4 31 11.7 24.3 50.8-6.7 39-15.8 43-37.4 41.2-27-2.3-61.7-4.8-102.3-4.3-48 .6-61.6 17-61.6 33.7 0 20.4 18.7 32 63 43.5 82.7 24 137 56.4 137 127.5 0 83.5-62.3 132.4-161.8 136.3-54.2 2-100.8-2-142-8-31.8-4.5-33-5-25-50.6 7.2-41.5 8.2-44.4 37.3-41 56 7 92.5 8.4 130.4 6.2M2580.8 2.5h-269c-38 0-38 0-46 45.3s-7.2 45.3 26.6 45.3h87.6l-48.8 282.7c-9 55-8 55 41.6 55 45.4 0 48 0 54.3-39L2478.6 93h83.5c37.7 0 37.7 0 45.6-45.2 8-45.2 7.8-45.3-26.8-45.3"/></svg>
+                    </div>
+            
+                    <span class="is-visuallyHidden">Just Eat</span>
+                </a>
+            </div>
+    
+            <nav data-navglobal="" class="c-nav c-nav--global">
+                <input data-nav-enhance type="checkbox" class="c-nav-trigger" id="nav-trigger" />
+                <label data-nav-toggle class="c-nav-toggle" for="nav-trigger">
+                    <span class="c-nav-toggle-icon">Open Menu</span>
+                </label>
+                <div data-nav-container class="c-nav-container">
+                    <ul class="c-nav-list">
+                        <li data-login class="c-nav-list-item is-hidden" data-test-id="login">
+                <a href="#" data-gtm="header|click - navigation|login" class="c-nav-list-link">Log-in</a>
+            </li>
+             <li class="c-nav-list-item is-hidden is-shown--noJS" data-test-id="noscript-myaccount">
+                            <a href="#" class="c-nav-list-link">Account</a>
+                        </li>
+                        <li class="c-nav-list-item c-nav-list-item--support" data-test-id="support">
+                            <a href="#" data-gtm="header|click - navigation|help" class="c-nav-list-link">Help</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="c-pageBanner c-pageBanner--negativeBottom--aboveMid">
+        <picture>
+            <source class="c-pageBanner-img" media="(min-width: 860px)" srcset="/assets/img/examples/kebabs--wide.jpg" data-ft="restaurant-level-image--wide">
+            <source class="c-pageBanner-img" media="(min-width: 600px)" srcset="/assets/img/examples/kebabs--mid.jpg" data-ft="restaurant-level-image--mid">
+            <img class="c-pageBanner-img" srcset="/assets/img/examples/kebabs--narrow.jpg" alt="" data-ft="restaurant-level-image--narrow" >
+        </picture>
+    </div>
+
+<div class="l-container">
+    <div class="g g--stack g--gutter l-content u-spacingBottom--large">
+        <div class="g-col g-span2--mid u-showAboveMid">
+            <nav aria-labelledby="categories-title" class="u-sticky u-spacingBottom">
+                <h2 class="is-visuallyHidden" id="categories-title">Categories</h2>
+            
+                <ul class="c-menu c-menu--spacingTop--aboveMid" data-category-menu>
+                    <li class="c-menu-item has-icon">
+                        <a href="#cat0" class="c-menu-link c-menu-link--active">Popular</a>
+                            <svg viewBox="0 0 20 20" class="c-menu-icon c-icon c-icon--offer c-icon--offer--small c-icon--orange"><path d="M12.19 8.22a2.08 2.08 0 0 1-.67.74 1.82 1.82 0 0 1-1.14.31h-.05a.42.42 0 0 1-.37-.42c0-1.25-.23-1.94-.58-2.23a.7.7 0 0 0-.08-.06c-.09.96-.39 1.6-.96 2.32l-.22.29c-.43.54-.58.87-.58 1.47 0 1.17.95 1.87 2.47 1.87a2.41 2.41 0 0 0 2.49-2.32c0-.84-.12-1.5-.31-1.97zm-1.13.05c.28-.2.5-.53.62-1.06a.42.42 0 0 1 .65-.24c.16.11.36.36.55.75.28.6.45 1.42.45 2.48A3.24 3.24 0 0 1 10 13.34c-1.93 0-3.3-1.01-3.3-2.7 0-.81.23-1.32.76-1.99l.23-.28c.55-.7.78-1.26.8-2.3a.42.42 0 0 1 .32-.4l.08-.01a1.32 1.32 0 0 1 1.02.32c.51.42.82 1.2.88 2.42.08-.03.18-.07.26-.13zm6.05 4.11c.05-.16-.04-.4-.4-.97-.4-.67-.54-.95-.53-1.35 0-.37.14-.7.44-1.18l.11-.18c.37-.58.47-.8.42-.95-.04-.15-.26-.28-.86-.53l-.04-.02c-.7-.3-.99-.46-1.22-.78-.23-.33-.3-.66-.34-1.4-.04-.7-.1-.95-.23-1.05-.11-.08-.36-.06-1 .1l-.12.02c-.64.15-1 .18-1.38.05-.39-.13-.65-.37-1.12-.94a20.97 20.97 0 0 0-.18-.21c-.3-.35-.47-.49-.6-.49-.14 0-.34.16-.7.59l-.09.1c-.5.57-.73.8-1.12.92-.38.12-.73.07-1.41-.1L6.68 4c-.66-.16-.9-.19-1.03-.1-.12.09-.18.33-.24.99v.06c-.06.72-.13 1.06-.37 1.38-.24.33-.52.47-1.24.76-.63.25-.86.38-.91.54-.05.16.04.4.4.98.4.66.54.94.53 1.34 0 .37-.14.7-.44 1.18l-.11.18c-.37.58-.47.8-.42.95.04.15.26.28.86.53l.04.02c.7.3.99.45 1.22.78.23.33.3.66.34 1.4.04.7.1.95.23 1.05.11.08.36.06 1-.1l.12-.02c.64-.15 1-.18 1.38-.06.39.14.65.38 1.12.95l.18.21c.3.35.47.49.6.49.14 0 .34-.16.7-.59l.09-.1c.5-.57.74-.8 1.12-.92.38-.12.73-.08 1.41.1l.06.01c.66.17.9.2 1.03.1.12-.08.18-.32.24-.98v-.06c.06-.72.13-1.06.38-1.38.23-.33.51-.47 1.23-.76.63-.25.86-.38.91-.54zm-.6 1.32c-.56.22-.77.33-.88.47-.1.15-.16.4-.2.96l-.01.06c-.08.94-.17 1.3-.59 1.6-.41.3-.78.26-1.71.02l-.06-.01c-.53-.14-.78-.17-.96-.11-.17.05-.36.22-.74.67l-.08.1c-.54.62-.86.88-1.36.87-.45 0-.77-.25-1.22-.78l-.18-.22c-.37-.44-.56-.62-.75-.68-.17-.06-.43-.04-.92.08l-.11.02c-.94.22-1.3.25-1.7-.05-.42-.31-.5-.68-.56-1.64-.04-.6-.08-.84-.19-1-.1-.14-.32-.27-.86-.49-.9-.38-1.22-.58-1.38-1.07-.15-.49-.01-.82.51-1.65l.11-.17c.22-.36.32-.58.32-.75 0-.17-.1-.4-.41-.9-.5-.82-.65-1.18-.48-1.68.17-.5.5-.7 1.4-1.05.55-.22.76-.33.87-.47.1-.15.16-.4.2-.96l.01-.06c.08-.94.17-1.3.58-1.6.42-.3.79-.26 1.72-.02l.06.01c.53.14.78.17.95.11.18-.05.37-.22.75-.67l.08-.1c.54-.62.86-.88 1.35-.87.46 0 .78.25 1.23.78l.18.22c.37.44.56.62.75.68.17.06.43.04.92-.08l.11-.02c.94-.22 1.3-.25 1.7.05.42.31.5.68.56 1.64.04.6.08.84.19 1 .1.14.32.26.86.49.9.37 1.22.58 1.38 1.07.15.5.01.82-.51 1.65l-.1.16c-.23.37-.33.59-.33.76 0 .17.1.4.41.9.5.82.65 1.18.48 1.68-.17.5-.5.7-1.4 1.05z"/></svg>
+        </li>
+                    <li class="c-menu-item">
+                        <a href="#cat1" class="c-menu-link">Category 1</a>
+                    </li>
+                    <li class="c-menu-item">
+                        <a href="#cat2" class="c-menu-link">Category 2</a>
+                    </li>
+                    <li class="c-menu-item has-icon">
+                        <a href="#cat3" class="c-menu-link">Category 3 has a really really long title</a>
+                            <svg viewBox="0 0 20 20" class="c-menu-icon c-icon c-icon--offer c-icon--offer--small c-icon--orange"><path d="M12.19 8.22a2.08 2.08 0 0 1-.67.74 1.82 1.82 0 0 1-1.14.31h-.05a.42.42 0 0 1-.37-.42c0-1.25-.23-1.94-.58-2.23a.7.7 0 0 0-.08-.06c-.09.96-.39 1.6-.96 2.32l-.22.29c-.43.54-.58.87-.58 1.47 0 1.17.95 1.87 2.47 1.87a2.41 2.41 0 0 0 2.49-2.32c0-.84-.12-1.5-.31-1.97zm-1.13.05c.28-.2.5-.53.62-1.06a.42.42 0 0 1 .65-.24c.16.11.36.36.55.75.28.6.45 1.42.45 2.48A3.24 3.24 0 0 1 10 13.34c-1.93 0-3.3-1.01-3.3-2.7 0-.81.23-1.32.76-1.99l.23-.28c.55-.7.78-1.26.8-2.3a.42.42 0 0 1 .32-.4l.08-.01a1.32 1.32 0 0 1 1.02.32c.51.42.82 1.2.88 2.42.08-.03.18-.07.26-.13zm6.05 4.11c.05-.16-.04-.4-.4-.97-.4-.67-.54-.95-.53-1.35 0-.37.14-.7.44-1.18l.11-.18c.37-.58.47-.8.42-.95-.04-.15-.26-.28-.86-.53l-.04-.02c-.7-.3-.99-.46-1.22-.78-.23-.33-.3-.66-.34-1.4-.04-.7-.1-.95-.23-1.05-.11-.08-.36-.06-1 .1l-.12.02c-.64.15-1 .18-1.38.05-.39-.13-.65-.37-1.12-.94a20.97 20.97 0 0 0-.18-.21c-.3-.35-.47-.49-.6-.49-.14 0-.34.16-.7.59l-.09.1c-.5.57-.73.8-1.12.92-.38.12-.73.07-1.41-.1L6.68 4c-.66-.16-.9-.19-1.03-.1-.12.09-.18.33-.24.99v.06c-.06.72-.13 1.06-.37 1.38-.24.33-.52.47-1.24.76-.63.25-.86.38-.91.54-.05.16.04.4.4.98.4.66.54.94.53 1.34 0 .37-.14.7-.44 1.18l-.11.18c-.37.58-.47.8-.42.95.04.15.26.28.86.53l.04.02c.7.3.99.45 1.22.78.23.33.3.66.34 1.4.04.7.1.95.23 1.05.11.08.36.06 1-.1l.12-.02c.64-.15 1-.18 1.38-.06.39.14.65.38 1.12.95l.18.21c.3.35.47.49.6.49.14 0 .34-.16.7-.59l.09-.1c.5-.57.74-.8 1.12-.92.38-.12.73-.08 1.41.1l.06.01c.66.17.9.2 1.03.1.12-.08.18-.32.24-.98v-.06c.06-.72.13-1.06.38-1.38.23-.33.51-.47 1.23-.76.63-.25.86-.38.91-.54zm-.6 1.32c-.56.22-.77.33-.88.47-.1.15-.16.4-.2.96l-.01.06c-.08.94-.17 1.3-.59 1.6-.41.3-.78.26-1.71.02l-.06-.01c-.53-.14-.78-.17-.96-.11-.17.05-.36.22-.74.67l-.08.1c-.54.62-.86.88-1.36.87-.45 0-.77-.25-1.22-.78l-.18-.22c-.37-.44-.56-.62-.75-.68-.17-.06-.43-.04-.92.08l-.11.02c-.94.22-1.3.25-1.7-.05-.42-.31-.5-.68-.56-1.64-.04-.6-.08-.84-.19-1-.1-.14-.32-.27-.86-.49-.9-.38-1.22-.58-1.38-1.07-.15-.49-.01-.82.51-1.65l.11-.17c.22-.36.32-.58.32-.75 0-.17-.1-.4-.41-.9-.5-.82-.65-1.18-.48-1.68.17-.5.5-.7 1.4-1.05.55-.22.76-.33.87-.47.1-.15.16-.4.2-.96l.01-.06c.08-.94.17-1.3.58-1.6.42-.3.79-.26 1.72-.02l.06.01c.53.14.78.17.95.11.18-.05.37-.22.75-.67l.08-.1c.54-.62.86-.88 1.35-.87.46 0 .78.25 1.23.78l.18.22c.37.44.56.62.75.68.17.06.43.04.92-.08l.11-.02c.94-.22 1.3-.25 1.7.05.42.31.5.68.56 1.64.04.6.08.84.19 1 .1.14.32.26.86.49.9.37 1.22.58 1.38 1.07.15.5.01.82-.51 1.65l-.1.16c-.23.37-.33.59-.33.76 0 .17.1.4.41.9.5.82.65 1.18.48 1.68-.17.5-.5.7-1.4 1.05z"/></svg>
+        </li>
+                    <li class="c-menu-item">
+                        <a href="#cat4" class="c-menu-link">Category 4</a>
+                    </li>
+                    <li class="c-menu-item">
+                        <a href="#cat5" class="c-menu-link">Category 5</a>
+                    </li>
+                    <li class="c-menu-item">
+                        <a href="#cat6" class="c-menu-link">Category 6</a>
+                    </li>
+                    <li class="c-menu-item">
+                        <a href="#cat7" class="c-menu-link">Category 7</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="g-col g-span6--mid" style="position: relative;">
+                <div class="c-card c-toast c-toast--alert">
+    <div class="l-centred">
+        <p><strong>This restaurant’s popular right now</strong><br />
+            Delivery could take longer than usual</p>
+    </div>
+</div>
+
+            <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large " style="z-index: 1;">
+                <div class="c-mediaElement c-mediaElement--fullstack">
+                    <img
+                        class="c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"
+                        src="/assets/img/examples/restaurant-logo.gif"
+                        alt="Fozzie Kebab"
+                        itemprop="image" />
+                    <div class="c-mediaElement-content">
+                        <h1 class="text-center u-noSpacing">Fozzie Kebab</h1>
+                        <a class="c-mediaElement-infoLink u-showAboveMid" href="">
+                            <svg viewBox="0 0 22 22" class="c-icon c-icon--info c-icon--blue"><g fill-rule="evenodd"><path d="M11.58 15.25a.58.58 0 0 1-1.16 0V9.42a.58.58 0 0 1 1.16 0v5.83z"/><circle transform="rotate(-180 11 6.5)" cx="11" cy="6.5" r="1.17"/><path d="M11 21.5a10.5 10.5 0 1 1 0-21 10.5 10.5 0 0 1 0 21zm0-1.17a9.33 9.33 0 1 0 0-18.66 9.33 9.33 0 0 0 0 18.66z"/></g></svg>
+                            <span class="u-spacingLeft u-showAboveWide">Restaurant info</span>
+                        </a>
+                        <p class="l-centered u-noSpacing">
+                            <span class="c-badge c-badge--light c-badge--large">Kebab <span class="c-badge-icon"></span> Pizza</span>
+                        </p>
+                        <div class="l-centered u-spacingTop">
+                            <a class="l-centered u-noUnderline " href="">
+                                <div class="c-rating ">
+                                   <span class="c-rating--fill c-ratings--fill-60"></span>
+                                </div>
+                                <span class="is-visuallyHidden"> 6 stars out of 6.</span>
+                                    <strong class="u-spacingLeft">
+                            566
+                            <span class="is-visuallyHidden"> total ratings.</span>
+                        </strong>
+                </a>
+                        </div>
+                        <p class="l-centered u-spacingBottom--large">
+                            <span class="c-badge c-badge--info c-badge--rounded l-centered">
+    <svg viewBox="0 0 16 16" class="c-icon c-icon--inline c-icon--delivery c-icon--delivery--small c-icon--green u-spacingRight"><path d="M1.7 6.7a.3.3 0 1 1 0-.7h3.7a1 1 0 0 1 .9.6l1.1 2.3a.3.3 0 1 1-.6.2L5.7 7a.3.3 0 0 0-.3-.2H1.7zm4.2 4a2 2 0 1 1-3.8 0h-.4a.3.3 0 0 1-.4-.4v-.6A3.7 3.7 0 0 1 5 6a.3.3 0 1 1 0 .7 3 3 0 0 0-3 3v.3h6.9l2.4-2.4-2.5-4.3H7.7a.3.3 0 1 1 0-.6H9l.3.1L12 7.5a.3.3 0 0 1-.1.4l-2.7 2.7a.3.3 0 0 1-.2 0H5.9zm-.7 0H2.8a1.3 1.3 0 1 0 2.4 0zm7.5 2.6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0-.6a1.3 1.3 0 1 0 0-2.7 1.3 1.3 0 0 0 0 2.7z"/></svg>
+    Delivery free • Min order £10
+</span>
+            </p>
+                    </div>
+                </div>
+            </header>
+
+            <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
+                <header class="u-spacingTop--large u-spacingBottom--large">
+                    <h3 class="beta u-padTop--large--aboveMid" id="cat0">Popular</h3>
+                    <p class="u-spacingTop u-showAboveMid">Some of the most popular offerings from this restaurant</p>
+                    <p class="u-spacingTop u-showBelowMid u-text-truncate">Build your own pizza, Build your own pizza with a really long name</p>
+                </header>
+            
+                <div class="u-showAboveMid">
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+    <span class="c-badge c-badge--angled c-badge--success u-spacingTop--small">New</span>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza with a really long name</h4>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Long description arcu. Curabitur eleifend, urna tincidunt mollis ornare, dui nulla sollicitudin quam, et ornare mauris lorem magna.</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
+                <header class="u-spacingTop--large u-spacingBottom--large">
+                    <h3 class="beta u-padTop--large--aboveMid" id="cat1">Category 1</h3>
+                    <p class="u-spacingTop u-showAboveMid">Some of the most popular offerings from this restaurant</p>
+                    <p class="u-spacingTop u-showBelowMid u-text-truncate">Build your own pizza, Build your own pizza with a really long name</p>
+                </header>
+            
+                <div class="u-showAboveMid">
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+    <span class="c-badge c-badge--angled c-badge--success u-spacingTop--small">New</span>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza with a really long name</h4>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Long description arcu. Curabitur eleifend, urna tincidunt mollis ornare, dui nulla sollicitudin quam, et ornare mauris lorem magna.</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
+                <header class="u-spacingTop--large u-spacingBottom--large">
+                    <h3 class="beta u-padTop--large--aboveMid" id="cat2">Category 2</h3>
+                    <p class="u-spacingTop u-showAboveMid">Some of the most popular offerings from this restaurant</p>
+                    <p class="u-spacingTop u-showBelowMid u-text-truncate">Build your own pizza, Build your own pizza with a really long name</p>
+                </header>
+            
+                <div class="u-showAboveMid">
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+    <span class="c-badge c-badge--angled c-badge--success u-spacingTop--small">New</span>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza with a really long name</h4>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Long description arcu. Curabitur eleifend, urna tincidunt mollis ornare, dui nulla sollicitudin quam, et ornare mauris lorem magna.</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
+                <header class="u-spacingTop--large u-spacingBottom--large">
+                    <h3 class="beta u-padTop--large--aboveMid" id="cat3">Category 3</h3>
+                    <p class="u-spacingTop u-showAboveMid">Some of the most popular offerings from this restaurant</p>
+                    <p class="u-spacingTop u-showBelowMid u-text-truncate">Build your own pizza, Build your own pizza with a really long name</p>
+                </header>
+            
+                <div class="u-showAboveMid">
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+    <span class="c-badge c-badge--angled c-badge--success u-spacingTop--small">New</span>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza with a really long name</h4>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Long description arcu. Curabitur eleifend, urna tincidunt mollis ornare, dui nulla sollicitudin quam, et ornare mauris lorem magna.</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
+                <header class="u-spacingTop--large u-spacingBottom--large">
+                    <h3 class="beta u-padTop--large--aboveMid" id="cat4">Category 4</h3>
+                    <p class="u-spacingTop u-showAboveMid">Some of the most popular offerings from this restaurant</p>
+                    <p class="u-spacingTop u-showBelowMid u-text-truncate">Build your own pizza, Build your own pizza with a really long name</p>
+                </header>
+            
+                <div class="u-showAboveMid">
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+    <span class="c-badge c-badge--angled c-badge--success u-spacingTop--small">New</span>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza with a really long name</h4>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Long description arcu. Curabitur eleifend, urna tincidunt mollis ornare, dui nulla sollicitudin quam, et ornare mauris lorem magna.</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
+                <header class="u-spacingTop--large u-spacingBottom--large">
+                    <h3 class="beta u-padTop--large--aboveMid" id="cat5">Category 5</h3>
+                    <p class="u-spacingTop u-showAboveMid">Some of the most popular offerings from this restaurant</p>
+                    <p class="u-spacingTop u-showBelowMid u-text-truncate">Build your own pizza, Build your own pizza with a really long name</p>
+                </header>
+            
+                <div class="u-showAboveMid">
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+    <span class="c-badge c-badge--angled c-badge--success u-spacingTop--small">New</span>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza with a really long name</h4>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Long description arcu. Curabitur eleifend, urna tincidunt mollis ornare, dui nulla sollicitudin quam, et ornare mauris lorem magna.</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
+                <header class="u-spacingTop--large u-spacingBottom--large">
+                    <h3 class="beta u-padTop--large--aboveMid" id="cat6">Category 6</h3>
+                    <p class="u-spacingTop u-showAboveMid">Some of the most popular offerings from this restaurant</p>
+                    <p class="u-spacingTop u-showBelowMid u-text-truncate">Build your own pizza, Build your own pizza with a really long name</p>
+                </header>
+            
+                <div class="u-showAboveMid">
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+    <span class="c-badge c-badge--angled c-badge--success u-spacingTop--small">New</span>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza with a really long name</h4>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Long description arcu. Curabitur eleifend, urna tincidunt mollis ornare, dui nulla sollicitudin quam, et ornare mauris lorem magna.</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+            <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
+                <header class="u-spacingTop--large u-spacingBottom--large">
+                    <h3 class="beta u-padTop--large--aboveMid" id="cat7">Category 7</h3>
+                    <p class="u-spacingTop u-showAboveMid">Some of the most popular offerings from this restaurant</p>
+                    <p class="u-spacingTop u-showBelowMid u-text-truncate">Build your own pizza, Build your own pizza with a really long name</p>
+                </header>
+            
+                <div class="u-showAboveMid">
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+    <span class="c-badge c-badge--angled c-badge--success u-spacingTop--small">New</span>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza with a really long name</h4>
+    <span class="c-badge c-badge--angled c-badge--important u-spacingTop--small">Buy 1 get 1 free</span>
+</header>
+
+<p>Long description arcu. Curabitur eleifend, urna tincidunt mollis ornare, dui nulla sollicitudin quam, et ornare mauris lorem magna.</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--normaliseLinks u-spacingBottom u-noUnderline--all u-color-text" href="">
+                        <div class="g g--gutter">
+                            <div class="g-col g-span10">
+                                <header class="l-inlined--top">
+    <h4 class="u-spacingRight">Build your own pizza</h4>
+</header>
+
+<p>Choose your size, crust, and toppings</p>
+
+<p class="l-inlined">
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--vegetarian"><path fill="#028A00" d="M9.3 14.46a29.26 29.26 0 0 1 1.13-3.77c.72-1.9 1.58-3.41 2.61-4.4a.42.42 0 1 1 .58.6c-.92.89-1.73 2.3-2.41 4.1a28.45 28.45 0 0 0-1.1 3.66 30.5 30.5 0 0 0-.34 1.67.42.42 0 0 1-.41.35h-.4a.42.42 0 0 1-.38-.28 129.07 129.07 0 0 0-3.96-9.57.42.42 0 0 1 .75-.36A117.3 117.3 0 0 1 6.5 9a129.89 129.89 0 0 1 2.6 6.4c.05-.3.12-.6.2-.93zm7.37-10.72v.04c0 .32-.01.76-.07 1.3a10.46 10.46 0 0 1-.54 2.37 6.5 6.5 0 0 1-1.31 2.25 3.96 3.96 0 0 1-3.83 1.22.42.42 0 0 1-.3-.26C9.2 7.1 10.4 4.88 13.21 3.87a9.29 9.29 0 0 1 3.04-.54.42.42 0 0 1 .42.4zm-1.3.49a8.59 8.59 0 0 0-1.88.43c-2.34.83-3.3 2.5-2.18 5.49a3.14 3.14 0 0 0 2.82-1.02c.49-.52.87-1.19 1.15-1.96a9.63 9.63 0 0 0 .49-2.2l.06-.79-.46.05z"/></svg>
+    vegetarian
+
+    <svg viewBox="0 0 20 20" class="c-icon c-icon--spicy u-spacingLeft"><path fill="#D50525" d="M10.73 4.16a.42.42 0 0 1 .14-.82 2.46 2.46 0 0 1 2.05 2.55v.36a.42.42 0 0 1-.84 0v-.38a1.64 1.64 0 0 0-1.35-1.7zm3.58 2.42A2.44 2.44 0 0 1 15 8.44v1.1c0 4.85-7.54 9.1-9.9 6.29a.42.42 0 0 1 .15-.65 11.67 11.67 0 0 0 2.4-1.52c1.46-1.2 2.33-2.6 2.33-4.13V8.48a2.43 2.43 0 0 1 2.49-2.65 2.46 2.46 0 0 1 1.84.75zm-1.84-.33l-.02.42a1.6 1.6 0 0 0-1.2.5c-.32.33-.48.78-.43 1.27v1.1c0 1.82-1 3.41-2.65 4.77a12.49 12.49 0 0 1-2 1.34c2.23 1.27 8-2.25 8-6.12V8.41a1.63 1.63 0 0 0-1.69-1.74l-.01-.42z"/></svg>
+    mild spicy
+</p>
+        </div>
+                            <div class="g-col g-span2">
+                                <p class="u-noSpacing text-right u-color-link">from &pound;16.75</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <div class="g-col g-span4--mid">
+            <section class="c-card c-card--outline c-card--rounded--large u-showAboveMid u-spacingBottom u-sticky" style="z-index: 100;">
+                <h2>Your Basket</h2>
+                <h3>Your order</h3>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+    <footer class="c-footer">
+        <div class="l-container c-footer-row">
+            <div class="g g--stack--mid">
+                <div class="g-col g-span3 c-footer-panel" data-panel-collapsible data-toggle-name="footer-panel-1">
+                    <h2 class="c-footer-heading" data-footer-panel-heading data-toggle-target="footer-panel-1" data-toggle-class="is-collapsed">
+                        Customer service
+                        <svg class="c-footer-chevron c-icon--chevron u-showBelowMid" >
+                            <use xlink:href="/assets/img/sprite.svg#icons-arrows-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </h2>
+                    <ul class="c-footer-list">
+                        <li>
+                            <a href="#">Contact us</a>
+                        </li>
+                        <li>
+                            <a href="#">Log in</a>
+                        </li>
+                        <li>
+                            <a href="#">Sign up</a>
+                        </li>
+                        <li>
+                            <a href="#">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Mobile apps</a>
+                        </li>
+                        <li>
+                            <a href="#">Suggest a restaurant</a>
+                        </li>
+                        <li>
+                            <a href="#">My account</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="g-col g-span3 c-footer-panel" data-panel-collapsible data-toggle-name="footer-panel-2">
+                    <h2 class="c-footer-heading" data-footer-panel-heading data-toggle-target="footer-panel-2" data-toggle-class="is-collapsed">
+                        Top cuisines
+                        <svg class="c-footer-chevron c-icon--chevron u-showBelowMid" >
+                            <use xlink:href="/assets/img/sprite.svg#icons-arrows-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </h2>
+                    <ul class="c-footer-list">
+                        <li>
+                            <a href="#">Chinese</a>
+                        </li>
+                        <li>
+                            <a href="#">Indian</a>
+                        </li>
+                        <li>
+                            <a href="#">Italian</a>
+                        </li>
+                        <li>
+                            <a href="#">Japanese</a>
+                        </li>
+                        <li>
+                            <a href="#">Pizza delivery</a>
+                        </li>
+                        <li>
+                            <a href="#">View all cuisines</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="g-col g-span3 c-footer-panel" data-panel-collapsible data-toggle-name="footer-panel-3">
+                    <h2 class="c-footer-heading" data-footer-panel-heading data-toggle-target="footer-panel-3" data-toggle-class="is-collapsed">
+                        Locations
+                        <svg class="c-footer-chevron c-icon--chevron u-showBelowMid" >
+                            <use xlink:href="/assets/img/sprite.svg#icons-arrows-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </h2>
+                    <ul class="c-footer-list">
+                        <li>
+                            <a href="#">Birmingham</a>
+                        </li>
+                        <li>
+                            <a href="#">Cardiff</a>
+                        </li>
+                        <li>
+                            <a href="#">Glasgow</a>
+                        </li>
+                        <li>
+                            <a href="#">Leeds</a>
+                        </li>
+                        <li>
+                            <a href="#">Manchester</a>
+                        </li>
+                        <li>
+                            <a href="#">View all locations</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="g-col g-span3 c-footer-panel" data-panel-collapsible data-toggle-name="footer-panel-4">
+                    <h2 class="c-footer-heading" data-footer-panel-heading data-toggle-target="footer-panel-4" data-toggle-class="is-collapsed">
+                        A bit more about us
+                        <svg class="c-footer-chevron c-icon--chevron u-showBelowMid" >
+                            <use xlink:href="/assets/img/sprite.svg#icons-arrows-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                        </svg>
+                    </h2>
+                    <ul class="c-footer-list">
+                        <li>
+                            <a href="#" target="_self">Restaurant sign up</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_self">Price promise</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_self">How do we use cookies?</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_self">Privacy policy / T&amp;Cs</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_self">About us</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_self">Company website</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_self">Jobs</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="c-footer-row c-footer-row--light">
+            <div class="g g--stack--mid l-container">
+                <div class="g-col g-span6">
+                    <h2 class="c-footer-heading">Download our apps</h2>
+                    <ul class="c-footer-list c-footer-list--inline">
+                        <li class="c-footer-list-item">
+                            <a href="#" target="_blank">
+                                <img class="c-footer-icon c-icon--ios" alt="Download on the App Store" src="/assets/img/icons/appstore/ios.svg">
+                            </a>
+                        </li>
+                        <li class="c-footer-list-item">
+                            <a href="#" target="_blank">
+                                <img class="c-footer-icon c-icon--android" alt="Get it on Google Play" src="/assets/img/icons/appstore/android.svg">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="g-col g-span3 c-footer-social">
+                    <h2 class="c-footer-heading">Follow us</h2>
+                    <ul class="c-footer-list c-footer-list--inline">
+                        <li class="c-footer-list-item">
+                            <a href="#" target="_blank">
+                                <svg class="c-footer-icon c-footer-icon--social" >
+                                    <use xlink:href="/assets/img/sprite.svg#icons-social-icon-facebook" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="c-footer-list-item">
+                            <a href="#" target="_blank">
+                                <svg class="c-footer-icon c-footer-icon--social" >
+                                    <use xlink:href="/assets/img/sprite.svg#icons-social-icon-twitter" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="c-footer-list-item">
+                            <a href="#" target="_blank">
+                                <svg class="c-footer-icon c-footer-icon--social" >
+                                    <use xlink:href="/assets/img/sprite.svg#icons-social-icon-google-plus" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="c-footer-list-item">
+                            <a href="#" target="_blank">
+                                <svg class="c-footer-icon c-footer-icon--social" >
+                                    <use xlink:href="/assets/img/sprite.svg#icons-social-icon-rss" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="c-footer-list-item">
+                            <a href="#" target="_blank">
+                                <svg class="c-footer-icon c-footer-icon--social" >
+                                    <use xlink:href="/assets/img/sprite.svg#icons-social-icon-instagram" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="c-footer-list-item">
+                            <a href="#" target="_blank">
+                                <svg class="c-footer-icon c-footer-icon--social" >
+                                    <use xlink:href="/assets/img/sprite.svg#icons-social-icon-pinterest" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="g-col g-span3 c-footer-feedback is-invisible">
+                    <h2 class="c-footer-heading">Feedback</h2>
+                    <p class="c-footer-feedbackText">
+                        Help us improve our website
+                        <br>
+                        <a href="#">Send feedback</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="l-container c-footer-row">
+            <div class="g g--stack--mid">
+                <div class="g-col g-span8 c-footer-cards">
+                    <ul class="c-footer-list c-footer-list--inline">
+                        <li class="c-footer-list-item">
+                            <svg class="c-footer-icon c-footer-icon--card c-icon--mastercard--securecode" >
+                                <use xlink:href="/assets/img/sprite.svg#icons-cards-mastercard--securecode" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </li>
+                        <li class="c-footer-list-item">
+                            <svg class="c-footer-icon c-footer-icon--card c-icon--visa--verified" >
+                                <use xlink:href="/assets/img/sprite.svg#icons-cards-visa--verified" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </li>
+                        <li class="c-footer-list-item">
+                            <svg class="c-footer-icon c-footer-icon--card c-icon--paypal" >
+                                <use xlink:href="/assets/img/sprite.svg#icons-cards-paypal" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </li>
+                    </ul>
+                </div>
+                <div class="g-col g-span4 c-footer-countries">
+                    <div class="c-countrySelector">
+                        <button type="button" class="o-btn o-btnLink c-countrySelector-link c-countrySelector-link--selected" data-toggle-target="countrySelector-list" aria-label="You are on the UK website. Click here to change.">
+                            <svg class="c-icon--flag--small" >
+                                <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.gb" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                            <p>United Kingdom</p>
+                            <svg class="c-countrySelector-chevron c-icon--chevron--small" >
+                                <use xlink:href="/assets/img/sprite.svg#icons-arrows-chevron" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                            </svg>
+                        </button>
+                        <ul class="c-countrySelector-list is-hidden" data-toggle-name="countrySelector-list">
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+        <svg class="c-icon--flag--small" >
+            <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.br" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        <p>Brazil</p>
+    </a>
+</li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+        <svg class="c-icon--flag--small" >
+            <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.ca" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        <p>Canada</p>
+    </a>
+</li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+        <svg class="c-icon--flag--small" >
+            <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.dk" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        <p>Denmark</p>
+    </a>
+</li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+        <svg class="c-icon--flag--small" >
+            <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.fr" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        <p>France</p>
+    </a>
+</li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+        <svg class="c-icon--flag--small" >
+            <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.ie" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        <p>Ireland</p>
+    </a>
+</li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+        <svg class="c-icon--flag--small" >
+            <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.it" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        <p>Italy</p>
+    </a>
+</li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+        <svg class="c-icon--flag--small" >
+            <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.no" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        <p>Norway</p>
+    </a>
+</li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+        <svg class="c-icon--flag--small" >
+            <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.es" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        <p>Spain</p>
+    </a>
+</li>
+                            <li>
+                                <a class="c-countrySelector-link " target="_blank" href="#">
+        <svg class="c-icon--flag--small" >
+            <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.ca" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        <p>Switzerland</p>
+    </a>
+</li>
+                            <li>
+                                <button type="button" class="o-btn o-btnLink c-countrySelector-link c-countrySelector-link--selected" data-toggle-target="countrySelector-list">
+        <svg class="c-icon--flag--small" >
+            <use xlink:href="/assets/img/sprite.svg#icons-flags-flag.gb" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+        <p>United Kingdom</p>
+    </button>
+    <button type="button" class="o-btnLink" data-toggle-target="countrySelector-list" aria-label="Close">
+        <svg class="c-countrySelector-cross" >
+            <use xlink:href="/assets/img/sprite.svg#icons-operators-cross" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        </svg>
+    </button>
+
+
+</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+        <script>
+            var mockPaths = {
+            };
+        </script>
+        <script src="/assets/js/script.min.js"></script>
+        <script src="/assets/js/docs.min.js"></script>
+	</body>
+</html>

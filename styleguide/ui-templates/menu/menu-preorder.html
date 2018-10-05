@@ -3,14 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Menu UI Template – Just Eat Front-End Component Library and Documentation</title>
+		<title>Menu UI Template</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
-			<link rel="stylesheet" href="/assets/css/je-docs.min.css">
+            <link rel="stylesheet" href="/assets/css/je.min.css">
 
 		<script src="/assets/js/libs/modernizr.min.js"></script>
-		<script src="/assets/js/libs/prism.min.js"></script> <!-- Code highlighting for docs -->
 
         <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:300,500' rel='stylesheet' type='text/css' />
 	</head>
@@ -70,8 +69,8 @@
                 <h2 class="is-visuallyHidden" id="categories-title">Categories</h2>
             
                 <ul class="c-menu c-menu--spacingTop--aboveMid" data-category-menu>
-                    <li class="c-menu-item c-menu-item--active has-icon">
-                        <a href="#cat0" class="c-menu-link">Popular</a>
+                    <li class="c-menu-item has-icon">
+                        <a href="#cat0" class="c-menu-link c-menu-link--active">Popular</a>
                             <svg viewBox="0 0 20 20" class="c-menu-icon c-icon c-icon--offer c-icon--offer--small c-icon--orange"><path d="M12.19 8.22a2.08 2.08 0 0 1-.67.74 1.82 1.82 0 0 1-1.14.31h-.05a.42.42 0 0 1-.37-.42c0-1.25-.23-1.94-.58-2.23a.7.7 0 0 0-.08-.06c-.09.96-.39 1.6-.96 2.32l-.22.29c-.43.54-.58.87-.58 1.47 0 1.17.95 1.87 2.47 1.87a2.41 2.41 0 0 0 2.49-2.32c0-.84-.12-1.5-.31-1.97zm-1.13.05c.28-.2.5-.53.62-1.06a.42.42 0 0 1 .65-.24c.16.11.36.36.55.75.28.6.45 1.42.45 2.48A3.24 3.24 0 0 1 10 13.34c-1.93 0-3.3-1.01-3.3-2.7 0-.81.23-1.32.76-1.99l.23-.28c.55-.7.78-1.26.8-2.3a.42.42 0 0 1 .32-.4l.08-.01a1.32 1.32 0 0 1 1.02.32c.51.42.82 1.2.88 2.42.08-.03.18-.07.26-.13zm6.05 4.11c.05-.16-.04-.4-.4-.97-.4-.67-.54-.95-.53-1.35 0-.37.14-.7.44-1.18l.11-.18c.37-.58.47-.8.42-.95-.04-.15-.26-.28-.86-.53l-.04-.02c-.7-.3-.99-.46-1.22-.78-.23-.33-.3-.66-.34-1.4-.04-.7-.1-.95-.23-1.05-.11-.08-.36-.06-1 .1l-.12.02c-.64.15-1 .18-1.38.05-.39-.13-.65-.37-1.12-.94a20.97 20.97 0 0 0-.18-.21c-.3-.35-.47-.49-.6-.49-.14 0-.34.16-.7.59l-.09.1c-.5.57-.73.8-1.12.92-.38.12-.73.07-1.41-.1L6.68 4c-.66-.16-.9-.19-1.03-.1-.12.09-.18.33-.24.99v.06c-.06.72-.13 1.06-.37 1.38-.24.33-.52.47-1.24.76-.63.25-.86.38-.91.54-.05.16.04.4.4.98.4.66.54.94.53 1.34 0 .37-.14.7-.44 1.18l-.11.18c-.37.58-.47.8-.42.95.04.15.26.28.86.53l.04.02c.7.3.99.45 1.22.78.23.33.3.66.34 1.4.04.7.1.95.23 1.05.11.08.36.06 1-.1l.12-.02c.64-.15 1-.18 1.38-.06.39.14.65.38 1.12.95l.18.21c.3.35.47.49.6.49.14 0 .34-.16.7-.59l.09-.1c.5-.57.74-.8 1.12-.92.38-.12.73-.08 1.41.1l.06.01c.66.17.9.2 1.03.1.12-.08.18-.32.24-.98v-.06c.06-.72.13-1.06.38-1.38.23-.33.51-.47 1.23-.76.63-.25.86-.38.91-.54zm-.6 1.32c-.56.22-.77.33-.88.47-.1.15-.16.4-.2.96l-.01.06c-.08.94-.17 1.3-.59 1.6-.41.3-.78.26-1.71.02l-.06-.01c-.53-.14-.78-.17-.96-.11-.17.05-.36.22-.74.67l-.08.1c-.54.62-.86.88-1.36.87-.45 0-.77-.25-1.22-.78l-.18-.22c-.37-.44-.56-.62-.75-.68-.17-.06-.43-.04-.92.08l-.11.02c-.94.22-1.3.25-1.7-.05-.42-.31-.5-.68-.56-1.64-.04-.6-.08-.84-.19-1-.1-.14-.32-.27-.86-.49-.9-.38-1.22-.58-1.38-1.07-.15-.49-.01-.82.51-1.65l.11-.17c.22-.36.32-.58.32-.75 0-.17-.1-.4-.41-.9-.5-.82-.65-1.18-.48-1.68.17-.5.5-.7 1.4-1.05.55-.22.76-.33.87-.47.1-.15.16-.4.2-.96l.01-.06c.08-.94.17-1.3.58-1.6.42-.3.79-.26 1.72-.02l.06.01c.53.14.78.17.95.11.18-.05.37-.22.75-.67l.08-.1c.54-.62.86-.88 1.35-.87.46 0 .78.25 1.23.78l.18.22c.37.44.56.62.75.68.17.06.43.04.92-.08l.11-.02c.94-.22 1.3-.25 1.7.05.42.31.5.68.56 1.64.04.6.08.84.19 1 .1.14.32.26.86.49.9.37 1.22.58 1.38 1.07.15.5.01.82-.51 1.65l-.1.16c-.23.37-.33.59-.33.76 0 .17.1.4.41.9.5.82.65 1.18.48 1.68-.17.5-.5.7-1.4 1.05z"/></svg>
         </li>
                     <li class="c-menu-item">
@@ -100,8 +99,9 @@
             </nav>
         </div>
 
-        <div class="g-col g-span6--mid">
-            <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--noPadBottom c-menuHeader">
+        <div class="g-col g-span6--mid" style="position: relative;">
+            
+            <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large " style="z-index: 1;">
                 <div class="c-mediaElement c-mediaElement--fullstack">
                     <img
                         class="c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"
@@ -115,49 +115,29 @@
                             <span class="u-spacingLeft u-showAboveWide">Restaurant info</span>
                         </a>
                         <p class="l-centered u-noSpacing">
-                            <span class="c-badge c-badge--light c-badge--large">Kebab <span></span> Pizza</span>
+                            <span class="c-badge c-badge--light c-badge--large">Kebab <span class="c-badge-icon"></span> Pizza</span>
                         </p>
                         <div class="l-centered u-spacingTop">
-                                <span class="c-badge c-badge--angled c-badge--success">New</span>
-                <a class="l-centered u-noUnderline u-spacingLeft" href="">
+                            <a class="l-centered u-noUnderline " href="">
                                 <div class="c-rating ">
-                                   <span class="c-rating--fill c-ratings--fill-30"></span>
+                                   <span class="c-rating--fill c-ratings--fill-60"></span>
                                 </div>
-                                <span class="is-visuallyHidden"> 3 stars out of 6.</span>
+                                <span class="is-visuallyHidden"> 6 stars out of 6.</span>
                                     <strong class="u-spacingLeft">
                             566
                             <span class="is-visuallyHidden"> total ratings.</span>
                         </strong>
                 </a>
                         </div>
-                        <p class="l-centered">
-                <span class="c-badge c-badge--angled c-badge--award">BTA winner 2017, 2018</span>
-            </p>
-            <p class="l-centered u-spacingTop--large u-showBelowMid">
-                <span class="c-badge c-badge--angled c-badge--important">Offer</span>
-                <span class="u-noSpacing u-spacingLeft">20% off today on orders over £30</span>
-            </p>
-            <p class="l-centered u-spacingBottom--large">
-                            <span class="c-badge c-badge--info c-badge--rounded l-centered">
-    <svg viewBox="0 0 16 16" class="c-icon c-icon--inline c-icon--delivery c-icon--delivery--small c-icon--green u-spacingRight"><path d="M1.7 6.7a.3.3 0 1 1 0-.7h3.7a1 1 0 0 1 .9.6l1.1 2.3a.3.3 0 1 1-.6.2L5.7 7a.3.3 0 0 0-.3-.2H1.7zm4.2 4a2 2 0 1 1-3.8 0h-.4a.3.3 0 0 1-.4-.4v-.6A3.7 3.7 0 0 1 5 6a.3.3 0 1 1 0 .7 3 3 0 0 0-3 3v.3h6.9l2.4-2.4-2.5-4.3H7.7a.3.3 0 1 1 0-.6H9l.3.1L12 7.5a.3.3 0 0 1-.1.4l-2.7 2.7a.3.3 0 0 1-.2 0H5.9zm-.7 0H2.8a1.3 1.3 0 1 0 2.4 0zm7.5 2.6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0-.6a1.3 1.3 0 1 0 0-2.7 1.3 1.3 0 0 0 0 2.7z"/></svg>
-    Delivery free • Min order £10
+                        <p class="l-centered u-spacingBottom--large">
+                            <span class="c-badge c-badge--warning c-badge--rounded l-centered">
+    <svg viewBox="0 0 16 16" class="c-icon c-icon--inline c-icon--delivery c-icon--delivery--small c-icon--orange u-spacingRight"><path d="M1.7 6.7a.3.3 0 1 1 0-.7h3.7a1 1 0 0 1 .9.6l1.1 2.3a.3.3 0 1 1-.6.2L5.7 7a.3.3 0 0 0-.3-.2H1.7zm4.2 4a2 2 0 1 1-3.8 0h-.4a.3.3 0 0 1-.4-.4v-.6A3.7 3.7 0 0 1 5 6a.3.3 0 1 1 0 .7 3 3 0 0 0-3 3v.3h6.9l2.4-2.4-2.5-4.3H7.7a.3.3 0 1 1 0-.6H9l.3.1L12 7.5a.3.3 0 0 1-.1.4l-2.7 2.7a.3.3 0 0 1-.2 0H5.9zm-.7 0H2.8a1.3 1.3 0 1 0 2.4 0zm7.5 2.6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0-.6a1.3 1.3 0 1 0 0-2.7 1.3 1.3 0 0 0 0 2.7z"/></svg>
+    Order now • Delivering from 18:30
 </span>
             </p>
                     </div>
                 </div>
-                <div class="c-card-section c-card-section--collapsible c-card-section--collapsible--noPad c-card-section--collapsed"
-        data-toggle-name="menu-delivery"
-        data-toggle-target="menu-delivery"
-        data-toggle-class="c-card-section--collapsed">
-        <svg width="10" height="6" viewBox="0 0 10 6" class="c-card-section-indicator c-icon c-icon--chevron c-icon--blue"><path d="M5 4.41L9.29.12a.42.42 0 0 1 .59.6L5.29 5.28a.42.42 0 0 1-.58 0L.12.71a.42.42 0 0 1 .6-.59L5 4.42z" fill="#333" fill-rule="nonzero"/></svg>
-        <p>Note<span class="u-showAboveMid"> from the Restaurant</span>: All our dishes are dairy free, except for our mango &amp; Customers are advised to let the restaurant know if any food may cause allergic reaction prior to order. If you would like to know the list of ingredients used in a particular dish from the menu, the restaurant will be happy to assist you.</p>
-        <p>Please inform the restaurant directly if you have any allergies or dietary requirements, please ask for avoid dishes contain molluscs, lupin, sulphites, sesame, mustard, celery, nuts, milk, soyabeans, peanuts, fish, eggs, crustaceans, cereals containing gluten.</p>
-    </div>
-    <p class="c-card-section c-card-section--bottom c-card-section--highlight l-centered u-showAboveMid">
-        <svg viewBox="0 0 20 20" class="c-menu-icon c-icon c-icon--offer c-icon--white u-spacingRight"><path d="M12.19 8.22a2.08 2.08 0 0 1-.67.74 1.82 1.82 0 0 1-1.14.31h-.05a.42.42 0 0 1-.37-.42c0-1.25-.23-1.94-.58-2.23a.7.7 0 0 0-.08-.06c-.09.96-.39 1.6-.96 2.32l-.22.29c-.43.54-.58.87-.58 1.47 0 1.17.95 1.87 2.47 1.87a2.41 2.41 0 0 0 2.49-2.32c0-.84-.12-1.5-.31-1.97zm-1.13.05c.28-.2.5-.53.62-1.06a.42.42 0 0 1 .65-.24c.16.11.36.36.55.75.28.6.45 1.42.45 2.48A3.24 3.24 0 0 1 10 13.34c-1.93 0-3.3-1.01-3.3-2.7 0-.81.23-1.32.76-1.99l.23-.28c.55-.7.78-1.26.8-2.3a.42.42 0 0 1 .32-.4l.08-.01a1.32 1.32 0 0 1 1.02.32c.51.42.82 1.2.88 2.42.08-.03.18-.07.26-.13zm6.05 4.11c.05-.16-.04-.4-.4-.97-.4-.67-.54-.95-.53-1.35 0-.37.14-.7.44-1.18l.11-.18c.37-.58.47-.8.42-.95-.04-.15-.26-.28-.86-.53l-.04-.02c-.7-.3-.99-.46-1.22-.78-.23-.33-.3-.66-.34-1.4-.04-.7-.1-.95-.23-1.05-.11-.08-.36-.06-1 .1l-.12.02c-.64.15-1 .18-1.38.05-.39-.13-.65-.37-1.12-.94a20.97 20.97 0 0 0-.18-.21c-.3-.35-.47-.49-.6-.49-.14 0-.34.16-.7.59l-.09.1c-.5.57-.73.8-1.12.92-.38.12-.73.07-1.41-.1L6.68 4c-.66-.16-.9-.19-1.03-.1-.12.09-.18.33-.24.99v.06c-.06.72-.13 1.06-.37 1.38-.24.33-.52.47-1.24.76-.63.25-.86.38-.91.54-.05.16.04.4.4.98.4.66.54.94.53 1.34 0 .37-.14.7-.44 1.18l-.11.18c-.37.58-.47.8-.42.95.04.15.26.28.86.53l.04.02c.7.3.99.45 1.22.78.23.33.3.66.34 1.4.04.7.1.95.23 1.05.11.08.36.06 1-.1l.12-.02c.64-.15 1-.18 1.38-.06.39.14.65.38 1.12.95l.18.21c.3.35.47.49.6.49.14 0 .34-.16.7-.59l.09-.1c.5-.57.74-.8 1.12-.92.38-.12.73-.08 1.41.1l.06.01c.66.17.9.2 1.03.1.12-.08.18-.32.24-.98v-.06c.06-.72.13-1.06.38-1.38.23-.33.51-.47 1.23-.76.63-.25.86-.38.91-.54zm-.6 1.32c-.56.22-.77.33-.88.47-.1.15-.16.4-.2.96l-.01.06c-.08.94-.17 1.3-.59 1.6-.41.3-.78.26-1.71.02l-.06-.01c-.53-.14-.78-.17-.96-.11-.17.05-.36.22-.74.67l-.08.1c-.54.62-.86.88-1.36.87-.45 0-.77-.25-1.22-.78l-.18-.22c-.37-.44-.56-.62-.75-.68-.17-.06-.43-.04-.92.08l-.11.02c-.94.22-1.3.25-1.7-.05-.42-.31-.5-.68-.56-1.64-.04-.6-.08-.84-.19-1-.1-.14-.32-.27-.86-.49-.9-.38-1.22-.58-1.38-1.07-.15-.49-.01-.82.51-1.65l.11-.17c.22-.36.32-.58.32-.75 0-.17-.1-.4-.41-.9-.5-.82-.65-1.18-.48-1.68.17-.5.5-.7 1.4-1.05.55-.22.76-.33.87-.47.1-.15.16-.4.2-.96l.01-.06c.08-.94.17-1.3.58-1.6.42-.3.79-.26 1.72-.02l.06.01c.53.14.78.17.95.11.18-.05.37-.22.75-.67l.08-.1c.54-.62.86-.88 1.35-.87.46 0 .78.25 1.23.78l.18.22c.37.44.56.62.75.68.17.06.43.04.92-.08l.11-.02c.94-.22 1.3-.25 1.7.05.42.31.5.68.56 1.64.04.6.08.84.19 1 .1.14.32.26.86.49.9.37 1.22.58 1.38 1.07.15.5.01.82-.51 1.65l-.1.16c-.23.37-.33.59-.33.76 0 .17.1.4.41.9.5.82.65 1.18.48 1.68-.17.5-.5.7-1.4 1.05z"/></svg>
-        20% off today on orders over £30
-    </p>
-</header>
+            </header>
 
             <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
                 <header class="u-spacingTop--large u-spacingBottom--large">
@@ -250,7 +230,7 @@
                     </a>
                 </div>
             </section>
-
+            
             <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
                 <header class="u-spacingTop--large u-spacingBottom--large">
                     <h3 class="beta u-padTop--large--aboveMid" id="cat1">Category 1</h3>
@@ -342,7 +322,7 @@
                     </a>
                 </div>
             </section>
-
+            
             <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
                 <header class="u-spacingTop--large u-spacingBottom--large">
                     <h3 class="beta u-padTop--large--aboveMid" id="cat2">Category 2</h3>
@@ -434,7 +414,7 @@
                     </a>
                 </div>
             </section>
-
+            
             <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
                 <header class="u-spacingTop--large u-spacingBottom--large">
                     <h3 class="beta u-padTop--large--aboveMid" id="cat3">Category 3</h3>
@@ -526,7 +506,7 @@
                     </a>
                 </div>
             </section>
-
+            
             <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
                 <header class="u-spacingTop--large u-spacingBottom--large">
                     <h3 class="beta u-padTop--large--aboveMid" id="cat4">Category 4</h3>
@@ -618,7 +598,7 @@
                     </a>
                 </div>
             </section>
-
+            
             <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
                 <header class="u-spacingTop--large u-spacingBottom--large">
                     <h3 class="beta u-padTop--large--aboveMid" id="cat5">Category 5</h3>
@@ -710,7 +690,7 @@
                     </a>
                 </div>
             </section>
-
+            
             <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
                 <header class="u-spacingTop--large u-spacingBottom--large">
                     <h3 class="beta u-padTop--large--aboveMid" id="cat6">Category 6</h3>
@@ -802,7 +782,7 @@
                     </a>
                 </div>
             </section>
-
+            
             <section class="c-card c-card--noBgColor c-card--negativeSpacing c-card--noPad c-card--outlineTop--belowMid">
                 <header class="u-spacingTop--large u-spacingBottom--large">
                     <h3 class="beta u-padTop--large--aboveMid" id="cat7">Category 7</h3>
@@ -897,6 +877,10 @@
         </div>
 
         <div class="g-col g-span4--mid">
+            <section class="c-card c-card--outline c-card--rounded--large u-showAboveMid u-spacingBottom u-sticky" style="z-index: 100;">
+                <h2>Your Basket</h2>
+                <h3>Your order</h3>
+            </section>
         </div>
     </div>
 </div>

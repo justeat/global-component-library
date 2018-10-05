@@ -3,14 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Menu Header Variations – Just Eat Front-End Component Library and Documentation</title>
+		<title>Menu Header Variations</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
-			<link rel="stylesheet" href="/assets/css/je-docs.min.css">
+            <link rel="stylesheet" href="/assets/css/je.min.css">
 
 		<script src="/assets/js/libs/modernizr.min.js"></script>
-		<script src="/assets/js/libs/prism.min.js"></script> <!-- Code highlighting for docs -->
 
         <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:300,500' rel='stylesheet' type='text/css' />
 	</head>
@@ -126,7 +125,8 @@
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
-        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large  c-menuHeader">
+        
+        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large " style="z-index: 1;">
             <div class="c-mediaElement c-mediaElement--fullstack">
                 <img
                     class="c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"
@@ -140,7 +140,7 @@
                         <span class="u-spacingLeft u-showAboveWide">Restaurant info</span>
                     </a>
                     <p class="l-centered u-noSpacing">
-                        <span class="c-badge c-badge--light c-badge--large">Kebab <span></span> Pizza</span>
+                        <span class="c-badge c-badge--light c-badge--large">Kebab <span class="c-badge-icon"></span> Pizza</span>
                     </p>
                     <div class="l-centered u-spacingTop">
                         <a class="l-centered u-noUnderline " href="">
@@ -165,7 +165,8 @@
         </header>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string"> c-menuHeader"</span>&gt;</span>
+<pre><code class="language-markup"><span class="xml"></span><span class="hljs-template-variable"></span><span class="xml">
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"z-index: 1;"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement c-mediaElement--fullstack"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span>
             <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"</span>
@@ -179,7 +180,7 @@
                 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-spacingLeft u-showAboveWide"</span>&gt;</span>Restaurant info<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noSpacing"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge-icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-spacingTop"</span>&gt;</span>
 </span><span class="hljs-template-variable"></span><span class="xml">                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noUnderline </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>
@@ -209,7 +210,8 @@
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
-        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large  c-menuHeader">
+        
+        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large " style="z-index: 1;">
             <div class="c-mediaElement c-mediaElement--fullstack">
                 <img
                     class="c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"
@@ -223,7 +225,7 @@
                         <span class="u-spacingLeft u-showAboveWide">Restaurant info</span>
                     </a>
                     <p class="l-centered u-noSpacing">
-                        <span class="c-badge c-badge--light c-badge--large">Kebab <span></span> Pizza</span>
+                        <span class="c-badge c-badge--light c-badge--large">Kebab <span class="c-badge-icon"></span> Pizza</span>
                     </p>
                     <div class="l-centered u-spacingTop">
                         <a class="l-centered u-noUnderline " href="">
@@ -248,7 +250,8 @@
         </header>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string"> c-menuHeader"</span>&gt;</span>
+<pre><code class="language-markup"><span class="xml"></span><span class="hljs-template-variable"></span><span class="xml">
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"z-index: 1;"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement c-mediaElement--fullstack"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span>
             <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"</span>
@@ -262,7 +265,7 @@
                 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-spacingLeft u-showAboveWide"</span>&gt;</span>Restaurant info<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noSpacing"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge-icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-spacingTop"</span>&gt;</span>
 </span><span class="hljs-template-variable"></span><span class="xml">                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noUnderline </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>
@@ -292,7 +295,8 @@
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
-        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large  c-menuHeader">
+        
+        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large " style="z-index: 1;">
             <div class="c-mediaElement c-mediaElement--fullstack">
                 <img
                     class="c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"
@@ -306,7 +310,7 @@
                         <span class="u-spacingLeft u-showAboveWide">Restaurant info</span>
                     </a>
                     <p class="l-centered u-noSpacing">
-                        <span class="c-badge c-badge--light c-badge--large">Kebab <span></span> Pizza</span>
+                        <span class="c-badge c-badge--light c-badge--large">Kebab <span class="c-badge-icon"></span> Pizza</span>
                     </p>
                     <div class="l-centered u-spacingTop">
                         <a class="l-centered u-noUnderline " href="">
@@ -327,7 +331,8 @@
         </header>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string"> c-menuHeader"</span>&gt;</span>
+<pre><code class="language-markup"><span class="xml"></span><span class="hljs-template-variable"></span><span class="xml">
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"z-index: 1;"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement c-mediaElement--fullstack"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span>
             <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"</span>
@@ -341,7 +346,7 @@
                 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-spacingLeft u-showAboveWide"</span>&gt;</span>Restaurant info<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noSpacing"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge-icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-spacingTop"</span>&gt;</span>
 </span><span class="hljs-template-variable"></span><span class="xml">                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noUnderline </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>
@@ -367,7 +372,8 @@
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
-        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large  c-menuHeader">
+        
+        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large " style="z-index: 1;">
             <div class="c-mediaElement c-mediaElement--fullstack">
                 <img
                     class="c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"
@@ -381,7 +387,7 @@
                         <span class="u-spacingLeft u-showAboveWide">Restaurant info</span>
                     </a>
                     <p class="l-centered u-noSpacing">
-                        <span class="c-badge c-badge--light c-badge--large">Kebab <span></span> Pizza</span>
+                        <span class="c-badge c-badge--light c-badge--large">Kebab <span class="c-badge-icon"></span> Pizza</span>
                     </p>
                     <div class="l-centered u-spacingTop">
                         <a class="l-centered u-noUnderline " href="">
@@ -406,7 +412,8 @@
         </header>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string"> c-menuHeader"</span>&gt;</span>
+<pre><code class="language-markup"><span class="xml"></span><span class="hljs-template-variable"></span><span class="xml">
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"z-index: 1;"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement c-mediaElement--fullstack"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span>
             <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"</span>
@@ -420,7 +427,7 @@
                 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-spacingLeft u-showAboveWide"</span>&gt;</span>Restaurant info<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noSpacing"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge-icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-spacingTop"</span>&gt;</span>
 </span><span class="hljs-template-variable"></span><span class="xml">                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noUnderline </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>
@@ -450,7 +457,8 @@
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
-        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large  c-menuHeader">
+        
+        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large " style="z-index: 1;">
             <div class="c-mediaElement c-mediaElement--fullstack">
                 <img
                     class="c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"
@@ -464,7 +472,7 @@
                         <span class="u-spacingLeft u-showAboveWide">Restaurant info</span>
                     </a>
                     <p class="l-centered u-noSpacing">
-                        <span class="c-badge c-badge--light c-badge--large">Kebab <span></span> Pizza</span>
+                        <span class="c-badge c-badge--light c-badge--large">Kebab <span class="c-badge-icon"></span> Pizza</span>
                     </p>
                     <div class="l-centered u-spacingTop">
                             <span class="c-badge c-badge--angled c-badge--success">New</span>
@@ -490,7 +498,8 @@
         </header>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string"> c-menuHeader"</span>&gt;</span>
+<pre><code class="language-markup"><span class="xml"></span><span class="hljs-template-variable"></span><span class="xml">
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"z-index: 1;"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement c-mediaElement--fullstack"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span>
             <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"</span>
@@ -504,7 +513,7 @@
                 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-spacingLeft u-showAboveWide"</span>&gt;</span>Restaurant info<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noSpacing"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge-icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-spacingTop"</span>&gt;</span>
 </span><span class="hljs-template-variable">                    <span class="c-badge c-badge--angled c-badge--success">New</span>
@@ -535,7 +544,8 @@
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
-        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large  c-menuHeader">
+        
+        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large " style="z-index: 1;">
             <div class="c-mediaElement c-mediaElement--fullstack">
                 <img
                     class="c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"
@@ -549,7 +559,7 @@
                         <span class="u-spacingLeft u-showAboveWide">Restaurant info</span>
                     </a>
                     <p class="l-centered u-noSpacing">
-                        <span class="c-badge c-badge--light c-badge--large">Kebab <span></span> Pizza</span>
+                        <span class="c-badge c-badge--light c-badge--large">Kebab <span class="c-badge-icon"></span> Pizza</span>
                     </p>
                     <div class="l-centered u-spacingTop">
                         <a class="l-centered u-noUnderline " href="">
@@ -577,7 +587,8 @@
         </header>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string"> c-menuHeader"</span>&gt;</span>
+<pre><code class="language-markup"><span class="xml"></span><span class="hljs-template-variable"></span><span class="xml">
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"z-index: 1;"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement c-mediaElement--fullstack"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span>
             <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"</span>
@@ -591,7 +602,7 @@
                 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-spacingLeft u-showAboveWide"</span>&gt;</span>Restaurant info<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noSpacing"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge-icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-spacingTop"</span>&gt;</span>
 </span><span class="hljs-template-variable"></span><span class="xml">                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noUnderline </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>
@@ -624,7 +635,8 @@
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
-        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large  c-menuHeader">
+        
+        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large " style="z-index: 1;">
             <div class="c-mediaElement c-mediaElement--fullstack">
                 <img
                     class="c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"
@@ -638,7 +650,7 @@
                         <span class="u-spacingLeft u-showAboveWide">Restaurant info</span>
                     </a>
                     <p class="l-centered u-noSpacing">
-                        <span class="c-badge c-badge--light c-badge--large">Kebab <span></span> Pizza</span>
+                        <span class="c-badge c-badge--light c-badge--large">Kebab <span class="c-badge-icon"></span> Pizza</span>
                     </p>
                     <div class="l-centered u-spacingTop">
                         <a class="l-centered u-noUnderline " href="">
@@ -671,7 +683,8 @@
 </header>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string"> c-menuHeader"</span>&gt;</span>
+<pre><code class="language-markup"><span class="xml"></span><span class="hljs-template-variable"></span><span class="xml">
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"z-index: 1;"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement c-mediaElement--fullstack"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span>
             <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"</span>
@@ -685,7 +698,7 @@
                 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-spacingLeft u-showAboveWide"</span>&gt;</span>Restaurant info<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noSpacing"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge-icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-spacingTop"</span>&gt;</span>
 </span><span class="hljs-template-variable"></span><span class="xml">                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noUnderline </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>
@@ -723,7 +736,8 @@
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
-        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--noPadBottom c-menuHeader">
+        
+        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--noPadBottom" style="z-index: 1;">
             <div class="c-mediaElement c-mediaElement--fullstack">
                 <img
                     class="c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"
@@ -737,7 +751,7 @@
                         <span class="u-spacingLeft u-showAboveWide">Restaurant info</span>
                     </a>
                     <p class="l-centered u-noSpacing">
-                        <span class="c-badge c-badge--light c-badge--large">Kebab <span></span> Pizza</span>
+                        <span class="c-badge c-badge--light c-badge--large">Kebab <span class="c-badge-icon"></span> Pizza</span>
                     </p>
                     <div class="l-centered u-spacingTop">
                         <a class="l-centered u-noUnderline " href="">
@@ -770,7 +784,8 @@
 </header>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable">c-card--noPadBottom</span><span class="xml"><span class="hljs-tag"><span class="hljs-string"> c-menuHeader"</span>&gt;</span>
+<pre><code class="language-markup"><span class="xml"></span><span class="hljs-template-variable"></span><span class="xml">
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable">c-card--noPadBottom</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"z-index: 1;"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement c-mediaElement--fullstack"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span>
             <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"</span>
@@ -784,7 +799,7 @@
                 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-spacingLeft u-showAboveWide"</span>&gt;</span>Restaurant info<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noSpacing"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge-icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-spacingTop"</span>&gt;</span>
 </span><span class="hljs-template-variable"></span><span class="xml">                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noUnderline </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>
@@ -822,7 +837,8 @@
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
-        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--noPadBottom c-menuHeader">
+        
+        <header class="c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large c-card--noPadBottom" style="z-index: 1;">
             <div class="c-mediaElement c-mediaElement--fullstack">
                 <img
                     class="c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"
@@ -836,7 +852,7 @@
                         <span class="u-spacingLeft u-showAboveWide">Restaurant info</span>
                     </a>
                     <p class="l-centered u-noSpacing">
-                        <span class="c-badge c-badge--light c-badge--large">Kebab <span></span> Pizza</span>
+                        <span class="c-badge c-badge--light c-badge--large">Kebab <span class="c-badge-icon"></span> Pizza</span>
                     </p>
                     <div class="l-centered u-spacingTop">
                         <a class="l-centered u-noUnderline " href="">
@@ -877,7 +893,8 @@
 </header>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable">c-card--noPadBottom</span><span class="xml"><span class="hljs-tag"><span class="hljs-string"> c-menuHeader"</span>&gt;</span>
+<pre><code class="language-markup"><span class="xml"></span><span class="hljs-template-variable"></span><span class="xml">
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-card c-card--outline c-card--outline--aboveMid c-card--rounded--large </span></span></span><span class="hljs-template-variable">c-card--noPadBottom</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"z-index: 1;"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement c-mediaElement--fullstack"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">img</span>
             <span class="hljs-attr">class</span>=<span class="hljs-string">"c-mediaElement-img c-mediaElement-img--outlined c-mediaElement-img--negativeTop"</span>
@@ -891,7 +908,7 @@
                 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-spacingLeft u-showAboveWide"</span>&gt;</span>Restaurant info<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noSpacing"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge c-badge--light c-badge--large"</span>&gt;</span>Kebab <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-badge-icon"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> Pizza<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-spacingTop"</span>&gt;</span>
 </span><span class="hljs-template-variable"></span><span class="xml">                <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-centered u-noUnderline </span></span></span><span class="hljs-template-variable"></span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span>&gt;</span>

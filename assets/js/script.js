@@ -1450,7 +1450,7 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.getCurrentScreenWidth = exports.getBreakpoints = exports.stopFoit = undefined;
+exports.isWithinBreakpoint = exports.getCurrentScreenWidth = exports.getBreakpoints = exports.stopFoit = undefined;
 
 var _stopFoit = require('./modules/stopFoit');
 
@@ -1459,11 +1459,139 @@ var _breakpointHelper = require('./modules/breakpointHelper');
 exports.stopFoit = _stopFoit.stopFoit;
 exports.getBreakpoints = _breakpointHelper.getBreakpoints;
 exports.getCurrentScreenWidth = _breakpointHelper.getCurrentScreenWidth;
+exports.isWithinBreakpoint = _breakpointHelper.isWithinBreakpoint;
 
 // All helper functions will be imported here, so that they can all be exported within one object.
 },{"./modules/breakpointHelper":29,"./modules/stopFoit":30}],29:[function(require,module,exports){
-arguments[4][6][0].apply(exports,arguments)
-},{"dup":6}],30:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+/**
+ * @overview Breakpoint handler
+ *
+ * @module breakpointHelper
+ */
+
+var getBreakpoints = exports.getBreakpoints = function getBreakpoints() {
+    var output = {};
+
+    // Append hidden element to body
+    var screenSizer = document.createElement('div');
+    screenSizer.classList.add('c-screen-sizer');
+
+    document.body.appendChild(screenSizer);
+
+    // It should have a 'content' property containing the breakpoints
+    var breakpoints = window.getComputedStyle(document.querySelector('.c-screen-sizer')).getPropertyValue('content').replace(/["']/g, '').split(',');
+    // Gives a list of breakpoints in the form ['narrow:414px', ...etc]
+
+    // When there is no content, at this stage breakpoints should be ['']
+    if (breakpoints.length === 1 && breakpoints[0] === '') {
+        return output;
+    }
+
+    return breakpoints.reduce(function (prev, current) {
+        // `current` is of the form 'narrow:414px'
+        var _current$split = current.split(':'),
+            _current$split2 = _slicedToArray(_current$split, 2),
+            breakpointName = _current$split2[0],
+            breakpointValue = _current$split2[1];
+
+        prev[breakpointName] = breakpointValue; // <- the initial value is used for the first iteration
+        // The object, e.g., { 'narrow': '414px' } is returned to be used as `prev` in the next iteration
+        return prev;
+    }, output); // <- initial value
+};
+
+var createBreakpointArray = exports.createBreakpointArray = function createBreakpointArray(breakpoints) {
+    // Order the breakpoints from widest to narrowest,
+    // takes the form [['narrow', '414px'], [...etc]]
+    var bps = [];
+    Object.keys(breakpoints).forEach(function (key) {
+        bps.unshift([key, breakpoints[key]]);
+    });
+
+    return bps;
+};
+
+var getCurrentScreenWidth = exports.getCurrentScreenWidth = function getCurrentScreenWidth() {
+    var currentWidth = window.innerWidth;
+
+    var breakpoints = getBreakpoints();
+
+    var bps = createBreakpointArray(breakpoints);
+
+    for (var i = 0; i < bps.length; i++) {
+        // Loops through the breakpoints (in descending order)
+        // returning the first one that is narrower than currentWidth.
+
+        var breakpointWidth = parseInt(bps[i][1], 10); // This also strips the 'px' from the string
+
+        if (i === bps.length - 1 || currentWidth > breakpointWidth) {
+            // If we've reached the last breakpoint, and there still hasn't been a match, return the smallest breakpoint
+            return bps[i][0];
+        }
+    }
+    // If no breakpoints have been set
+    return false;
+};
+
+var isWithinBreakpoint = exports.isWithinBreakpoint = function isWithinBreakpoint(breakpointString) {
+    var operatorRegex = /[<>=]+/;
+    var operatorMatch = breakpointString.match(operatorRegex);
+    var operator = operatorMatch ? operatorMatch[0] : '';
+
+    var _breakpointString$spl = breakpointString.split(operatorRegex),
+        _breakpointString$spl2 = _slicedToArray(_breakpointString$spl, 2),
+        breakpoint = _breakpointString$spl2[1];
+
+    var currentScreenWidth = window.innerWidth;
+
+    var breakpoints = getBreakpoints();
+    var bps = createBreakpointArray(breakpoints);
+
+    // We loop through the breakpoint array until we get a match.
+    // If we match we return the px value as an int. If we do not match we return false
+    var breakpointToPX = function breakpointToPX(breakpointName) {
+        var match = false;
+
+        bps.forEach(function (bp) {
+            if (bp[0] === breakpointName) {
+                match = parseInt(bp[1], 10);
+            }
+        });
+        return match;
+    };
+
+    var breakpointInPX = breakpointToPX(breakpoint);
+
+    // If the breakpoint passed in does not match any we;
+    if (!breakpointInPX) {
+        return false;
+    }
+
+    // We match our passed in operator and execute a sum: current screen width [Passed operator] [Passed breakpoint in PX]
+    switch (operator) {
+        case '>':
+            return currentScreenWidth > breakpointInPX;
+        case '<':
+            return currentScreenWidth < breakpointInPX;
+        case '=':
+            return currentScreenWidth === breakpointInPX;
+        case '>=':
+            return currentScreenWidth >= breakpointInPX;
+        case '<=':
+            return currentScreenWidth <= breakpointInPX;
+        default:
+            return false;
+    }
+};
+},{}],30:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
