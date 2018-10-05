@@ -1,0 +1,42 @@
+---
+title: Menu UI Template
+
+layout: site-frame
+styleguide: true
+bodyClass: o-body--bgWhite--belowMid is-fontsLoading--base is-fontsLoading--heading u-noPad
+headerCssClass: c-header--transparent
+---
+
+{{> je-pageBanner }}
+
+<div class="l-container">
+    <div class="g g--stack g--gutter l-content u-spacingBottom--large">
+        <div class="g-col g-span2--mid u-showAboveMid">
+            {{> je-menu
+                navCssClass="u-sticky u-spacingBottom"
+                menuCssClass="c-menu--spacingTop--aboveMid"
+                ariaLabelledBy="categories-title"
+                showPopular=true }}
+        </div>
+
+        <div class="g-col g-span6--mid u-position--relative" style="position: relative;">
+            {{> je-menu-header
+                status="je-menu-status-delivery-open"
+                isNew=true
+                isBtaWinner=true
+                star-rating=30
+                star-rating-display=3
+                star-rating-count=566
+                showNote=true
+                noteToggleName="menu-delivery"
+                showOffer=true
+                toast="je-menu-toast-popular" }}
+
+            {{> je-menu-category-item-list }}
+        </div>
+
+        <div class="g-col g-span4--mid">
+            {{> je-menu-basket }}
+        </div>
+    </div>
+</div>

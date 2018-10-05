@@ -31,10 +31,11 @@
 
 @include badge();
 @include formToggle();
-@include pageBanner();
 @include listing();
 @include menu();
+@include pageBanner();
 @include rating();
+@include toast();
 
 
 

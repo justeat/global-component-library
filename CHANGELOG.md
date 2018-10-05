@@ -3,6 +3,23 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+v2.1.0
+------------------------------
+*October 5, 2018*
+
+### Added
+- Include optional `c-toast` Fozzie component.
+- Menu layouts for each menu type variation.
+
+### Changed
+- Updated `ScrollSpy` module to apply new active CSS class.
+- Sorted components into the correct categories following Fozzie v1 release.
+- Minimum required Node version changed to `>=6.0.0`.
+
+### Fixed
+- Only include prism JS file when a page has been tagged as `docs`.
+
+
 v2.0.0
 ------------------------------
 *October 3, 2018*

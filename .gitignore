@@ -26,6 +26,7 @@ logs
 .yalc
 yalc.lock
 .eyeglass_cache
+.publish
 
 # Templates
 templates
