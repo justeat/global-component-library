@@ -1,73 +1,55 @@
 ---
-title: Development Principles
+title: What is Fozzie?
 section-title: General Documentation
 docs: true
 
 navgroup: documentation
 navsub: docs-general
-navactive: principles
+navactive: fozzie
 ---
 
-UI at Just Eat encompasses many different projects and platforms.
+Fozzie is Just Eat's UI Component Framework, built to help modularise and share the UI code we write across all of our teams at Just Eat.
 
- Although we have language specific principles, our fundamental front-end principles are:
+Fozzie encompasses a number of modules developed by our UI team, which can be split roughly into four categories:
 
-- [Think in terms of components](#components)
-- [Reuse as much as possible: technologies and components](#reuse)
-- [Try to leave code in a better state than you found it](#improve)
-- [Our UI code should look like one person wrote it (or a team of people using the same rules)](#consistency)
-- [Ensure that we can pivot away from a dependency/pattern if needed](#pivot)
-- [Keep it simple](#simple)
-
-
-<a name="components"></a><h2 class="sg-sectionHeading">Think in terms of Components</h2>
-
-When developing, think about the thing you are building and break it down as much as possible. The simpler you can make that piece of functionality, the easier it will be for other developers to pick up at a later date (or yourself down the line).
-
-The Just Eat website is built of many small UI components pieced together to make a more complex application. By writing small components, we can change smaller pieces of our platform without worrying about the implications across whole templates and pages.
-
-When done well, this also vastly speeds up the time needed to create new functionality, as we can likely reuse tested, accessible components that are already productionised on our platform, extending this functionality to our needs.
+- **The Base [Fozzie Module](https://github.com/justeat/fozzie)**
+    The shared base Fozzie module gives a base set of styling and helper functions to any Just Eat project.
+- **Shared Components**
+    A component made up of HTML, Sass and JS that can be reused across projects. e.g. site navigation, footer and modal components.
+- **Shared JavaScript Modules**
+    Modules that just contain JS (much like any reusable NPM module). e.g. Common shared JS for features such as form validation, analytics or logging.
+- **Tooling**
+    Modules that help share our tooling across projects. e.g. build modules (gulp/webpack), linting configurations, JS test helpers etc.
 
 
-<a name="reuse"></a><h2 class="sg-sectionHeading">Reuse as much as possible</h2>
+<a name="aim"></a><h2 class="sg-sectionHeading">Core Aim</h2>
 
-Try to follow existing patterns as much as possible.
+Fozzie was created to facilitate developers at Just Eat to build and share a common set of UI components across all of our projects.
 
-Inconsistency soon manifests as complexity and then technical debt. What we are aiming to build is a maintainable platform where developers can move between applications with a low barrier to entry. [The best tool for the job, isn’t always](https://medium.com/@bentlegen/the-best-tool-for-the-job-isnt-always-6ed364f3f775) by Ben Vinegar covers this concept perfectly.
+Previously, there was a lot of wasted development effort going on across the company. For instance, the Just Eat main site header could be found duplicated by a number of different projects.  This work to create these components had been done multiple times by different developers working independently. This meant that when a design update or performance improvement was made to one of these separate components, there was no way to roll this out across all of our sites without copying and pasting the new code.
 
-Sometimes reusing code will take more initial work but it shouldn't be avoided. When building new features, try to identify reusable parts which can be abstracted to help other developers in the future.
-
-
-<a name="improve"></a><h2 class="sg-sectionHeading">Improve upon what's been built</h2>
-
-Try to leave code in a better state than you found it.
-
-If you notice that a piece of code can be improved while you are fixing a bug or adding a feature, take the time to make that change (within reason).
-
-Teams don't often get dedicated time to simply 'make the codebase better'. It's every UI engineers job at Just Eat to ensure the UI code is the best it can be.
+Fozzie components fix this issue by providing shared SCSS and JS that can be consumed by any project.  Components are versioned and released using NPM, meaning that projects consuming the components can upgrade at their own pace in line with their own release schedule.
 
 
-<a name="consistency"></a><h2 class="sg-sectionHeading">Consistency in our conventions</h2>
+<a name="techstack"></a><h2 class="sg-sectionHeading">Technology Stack</h2>
 
-As a team, we should decide on conventions to adhere to and stick to them.
+Fozzie itself has been created to be fairly technology agnostic.  At its core, it's simply a UI framework built on Sass and Vanilla JS.
 
-If done well, this leads to code that looks like anyone in the team could've written it, rather than every CSS and JavaScript file using a different set of conventions.
+Therefore teams at Just Eat are using Fozzie on projects built in React, Vue.js and Vanilla JS, using WebPack and Gulp as their task runner. Fozzie components can be used on any stack using Sass and Vanilla JS (including CMS platforms such as WordPress).
 
-We encourage the use of automation tools to help with this as much as possible.
-
-
-<a name="pivot"></a><h2 class="sg-sectionHeading">Ensure we can Pivot</h2>
-
-When making broad decisions about any project that you are working on, trust your expertise, but realise that things will change and we will likely need to pivot away from the technologies you choose (as front-end technology moves fast). There is a cost to removing something from the codebase which far outweighs the cost of adding it.
-
-Everything is up for discussion, but pivoting on such a large codebase can be a slow process so it's always worth spending the extra time to consider how deeply we would be tied into the decision and how quickly we could change course if needed.
+As a first iteration to provide HTML sharing, we have been using Handlebars for defining markup. We are currently looking at moving away from this, investigating how we can move our components over to using a framework such as Vue.js or React.
 
 
-<a name="simple"></a><h2 class="sg-sectionHeading">Keep it Simple</h2>
 
-If the code you're writing looks complicated to you, it's likely going to look complicated to the next developer to come across it.
+<a name="modules"></a><h2 class="sg-sectionHeading">Modules</h2>
 
-Try to make sure the code you write is as simple as possible.  If a function you're writing in JavaScript is getting unwieldy, break it up into smaller functions.
+To see the current list of public Fozzie modules, take a look on [our public Github account](https://github.com/search?q=topic%3Afozzie+org%3Ajusteat&type=Repositories).
 
-While it's not always possible to write code that is self documenting, it's always possible to comment your code. We encourage the liberal use of code comments – especially when describing JS functions and parameters, or when explaining what a component is used for in CSS.
+
+<a name="scss"></a><h2 class="sg-sectionHeading">Fozzie & Sass</h2>
+
+To find out more information on how to import Fozzie's SCSS, check out the ['Fozzie &amp; Sass']({{ ../baseUrl }}/documentation/css/fozzie) section of the documentation.
+
+
+
 

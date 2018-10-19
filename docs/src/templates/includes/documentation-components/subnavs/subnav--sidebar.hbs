@@ -131,7 +131,16 @@
 
 
 {{#is navsub 'docs-general'}}
-    <li><a href="{{ baseUrl }}/documentation/general/" class="{{#is navactive 'principles'}} is-active{{/is}}">Development Principles</a></li>
+    <li><a href="{{ baseUrl }}/documentation/general/" class="{{#is navactive 'fozzie'}} is-active{{/is}}">What is Fozzie?</a>
+        {{#is navactive 'fozzie'}}
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#aim">Core Aim</a></li>
+            <li><a href="#techstack">Tech Stack</a></li>
+            <li><a href="#modules">Current Modules</a></li>
+        </ul>
+        {{/is}}
+    </li>
+    <li><a href="{{ baseUrl }}/documentation/general/principles" class="{{#is navactive 'principles'}} is-active{{/is}}">Development Principles</a></li>
     <li><a href="{{ baseUrl }}/documentation/general/getting-started" class="{{#is navactive 'getting-started'}} is-active{{/is}}">Getting Started</a></li>
     <li><a href="{{ baseUrl }}/documentation/general/gulp" class="{{#is navactive 'gulp'}} is-active{{/is}}">Build Tasks – Gulp</a>
         {{#is navactive 'gulp'}}
@@ -187,17 +196,7 @@
         </ul>
         {{/is}}
     </li>
-    <li><a href="{{ baseUrl }}/documentation/css/css-naming" class="{{#is navactive 'css-naming'}} is-active{{/is}}">Naming</a>
-        {{#is navactive 'css-naming'}}
-        <ul class="sg-sideNav-subnav u-unstyled">
-            <li><a href="#scheme">Our Naming Scheme</a></li>
-            <li><a href="#modifiers">Modifiers</a></li>
-            <li><a href="#state">State</a></li>
-            <li><a href="#variables">Variable Naming</a></li>
-        </ul>
-        {{/is}}
-    </li>
-    <li><a href="{{ baseUrl }}/documentation/css/fozzie" class="{{#is navactive 'css-fozzie'}} is-active{{/is}}">Fozzie</a>
+    <li><a href="{{ baseUrl }}/documentation/css/fozzie" class="{{#is navactive 'css-fozzie'}} is-active{{/is}}">Fozzie & Sass</a>
         {{#is navactive 'css-fozzie'}}
         <ul class="sg-sideNav-subnav u-unstyled">
             <li><a href="#modules">Modules</a></li>
@@ -210,6 +209,16 @@
         <ul class="sg-sideNav-subnav u-unstyled">
             <li><a href="#folder-structure">SCSS Folder structure</a></li>
             <li><a href="#key-files">Key files</a></li>
+        </ul>
+        {{/is}}
+    </li>
+    <li><a href="{{ baseUrl }}/documentation/css/css-naming" class="{{#is navactive 'css-naming'}} is-active{{/is}}">Naming</a>
+        {{#is navactive 'css-naming'}}
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#scheme">Our Naming Scheme</a></li>
+            <li><a href="#modifiers">Modifiers</a></li>
+            <li><a href="#state">State</a></li>
+            <li><a href="#variables">Variable Naming</a></li>
         </ul>
         {{/is}}
     </li>
