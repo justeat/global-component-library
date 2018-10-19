@@ -1,5 +1,5 @@
 ---
-title: Fozzie
+title: Fozzie & Sass
 section-title: CSS Documentation
 description: Fozzie - Just Eat's component Library
 docs: true
@@ -11,24 +11,10 @@ navactive: css-fozzie
 
 Fozzie is Just Eat's UI Component Framework, built to help modularise and share the UI code we write across all of our teams at Just Eat.
 
-Fozzie encompasses a number of modules developed by our UI team, which can be split roughly into four categories:
-
-- **The Base [Fozzie Module](https://github.com/justeat/fozzie)**
-    The shared base Fozzie module gives a base set of styling and helper functions to any Just Eat project.
-- **Shared Components**
-    A component made up of HTML, Sass and JS that can be reused across projects. e.g. site navigation, footer and modal components.
-- **Shared JavaScript Modules**
-    Modules that just contain JS (much like any reusable NPM module). e.g. Common shared JS for features such as form validation, analytics or logging.
-- **Tooling**
-    Modules that help share our tooling across projects. e.g. build modules (gulp/webpack), linting configurations, JS test helpers etc.
+To see a full description of what Fozzie is, see the '[What is Fozzie?]({{ ../baseUrl }}/documentation/general)' section of this documentation.
 
 
-<a name="modules"></a><h2 class="sg-sectionHeading">Modules</h2>
-
-To see the current list of public Fozzie modules, take a look on [our public Github account](https://github.com/search?q=topic%3Afozzie+org%3Ajusteat&type=Repositories).
-
-
-<a name="import"></a><h2 class="sg-sectionHeading">Importing Fozzie Modules</h2>
+<a name="import"></a><h2 class="sg-sectionHeading">Importing Fozzie SCSS Modules with Eyeglass</h2>
 
 To help with importing fozzie SCSS styles, we use a tool called [**Eyeglass**](https://github.com/sass-eyeglass/eyeglass).
 
@@ -38,7 +24,7 @@ For example, say you have a project and want to include the base fozzie module i
 
 1. Install the base module using NPM or Yarn.
 
-```
+```bash
 yarn add @justeat/fozzie
 ```
 
@@ -50,7 +36,7 @@ yarn add @justeat/fozzie
 
 3. Within your project Sass files, you will then be able to import the base fozzie module like so:
 
-```
+```bash
 @import 'fozzie';
 ```
 
