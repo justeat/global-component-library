@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Development Principles – Just Eat Front-End Component Library and Documentation</title>
+		<title>What is Fozzie? – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -12,6 +12,7 @@
 		<script src="/assets/js/libs/modernizr.min.js"></script>
 			<script src="/assets/js/libs/prism.min.js"></script> <!-- Code highlighting for docs -->
 
+        <!-- Just Eat fontset via Google Fonts -->
         <link href='https://fonts.googleapis.com/css?family=Hind+Vadodara:300,500|Ubuntu:300,500' rel='stylesheet' type='text/css' />
 	</head>
 	<body class="body-docs  is-fontsLoading--base is-fontsLoading--heading">
@@ -79,7 +80,14 @@
                 
                 
                 
-                    <li><a href="/documentation/general/" class=" is-active">Development Principles</a></li>
+                    <li><a href="/documentation/general/" class=" is-active">What is Fozzie?</a>
+        <ul class="sg-sideNav-subnav u-unstyled">
+            <li><a href="#aim">Core Aim</a></li>
+            <li><a href="#techstack">Tech Stack</a></li>
+            <li><a href="#modules">Current Modules</a></li>
+        </ul>
+    </li>
+    <li><a href="/documentation/general/principles" class="">Development Principles</a></li>
     <li><a href="/documentation/general/getting-started" class="">Getting Started</a></li>
     <li><a href="/documentation/general/gulp" class="">Build Tasks – Gulp</a>
     </li>
@@ -99,40 +107,31 @@
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
-                    <h1>Development Principles</h1>
-<p>UI at Just Eat encompasses many different projects and platforms.</p>
-<p>Although we have language specific principles, our fundamental front-end principles are:</p>
+                    <h1>What is Fozzie?</h1>
+<p>Fozzie is Just Eat's UI Component Framework, built to help modularise and share the UI code we write across all of our teams at Just Eat.</p>
+<p>Fozzie encompasses a number of modules developed by our UI team, which can be split roughly into four categories:</p>
 <ul>
-<li><a href="#components">Think in terms of components</a></li>
-<li><a href="#reuse">Reuse as much as possible: technologies and components</a></li>
-<li><a href="#improve">Try to leave code in a better state than you found it</a></li>
-<li><a href="#consistency">Our UI code should look like one person wrote it (or a team of people using the same rules)</a></li>
-<li><a href="#pivot">Ensure that we can pivot away from a dependency/pattern if needed</a></li>
-<li><a href="#simple">Keep it simple</a></li>
+<li><strong>The Base <a href="https://github.com/justeat/fozzie">Fozzie Module</a></strong><br>
+The shared base Fozzie module gives a base set of styling and helper functions to any Just Eat project.</li>
+<li><strong>Shared Components</strong><br>
+A component made up of HTML, Sass and JS that can be reused across projects. e.g. site navigation, footer and modal components.</li>
+<li><strong>Shared JavaScript Modules</strong><br>
+Modules that just contain JS (much like any reusable NPM module). e.g. Common shared JS for features such as form validation, analytics or logging.</li>
+<li><strong>Tooling</strong><br>
+Modules that help share our tooling across projects. e.g. build modules (gulp/webpack), linting configurations, JS test helpers etc.</li>
 </ul>
-<p><a name="components"></a><h2 class="sg-sectionHeading">Think in terms of Components</h2></p>
-<p>When developing, think about the thing you are building and break it down as much as possible. The simpler you can make that piece of functionality, the easier it will be for other developers to pick up at a later date (or yourself down the line).</p>
-<p>The Just Eat website is built of many small UI components pieced together to make a more complex application. By writing small components, we can change smaller pieces of our platform without worrying about the implications across whole templates and pages.</p>
-<p>When done well, this also vastly speeds up the time needed to create new functionality, as we can likely reuse tested, accessible components that are already productionised on our platform, extending this functionality to our needs.</p>
-<p><a name="reuse"></a><h2 class="sg-sectionHeading">Reuse as much as possible</h2></p>
-<p>Try to follow existing patterns as much as possible.</p>
-<p>Inconsistency soon manifests as complexity and then technical debt. What we are aiming to build is a maintainable platform where developers can move between applications with a low barrier to entry. <a href="https://medium.com/@bentlegen/the-best-tool-for-the-job-isnt-always-6ed364f3f775">The best tool for the job, isn’t always</a> by Ben Vinegar covers this concept perfectly.</p>
-<p>Sometimes reusing code will take more initial work but it shouldn't be avoided. When building new features, try to identify reusable parts which can be abstracted to help other developers in the future.</p>
-<p><a name="improve"></a><h2 class="sg-sectionHeading">Improve upon what's been built</h2></p>
-<p>Try to leave code in a better state than you found it.</p>
-<p>If you notice that a piece of code can be improved while you are fixing a bug or adding a feature, take the time to make that change (within reason).</p>
-<p>Teams don't often get dedicated time to simply 'make the codebase better'. It's every UI engineers job at Just Eat to ensure the UI code is the best it can be.</p>
-<p><a name="consistency"></a><h2 class="sg-sectionHeading">Consistency in our conventions</h2></p>
-<p>As a team, we should decide on conventions to adhere to and stick to them.</p>
-<p>If done well, this leads to code that looks like anyone in the team could've written it, rather than every CSS and JavaScript file using a different set of conventions.</p>
-<p>We encourage the use of automation tools to help with this as much as possible.</p>
-<p><a name="pivot"></a><h2 class="sg-sectionHeading">Ensure we can Pivot</h2></p>
-<p>When making broad decisions about any project that you are working on, trust your expertise, but realise that things will change and we will likely need to pivot away from the technologies you choose (as front-end technology moves fast). There is a cost to removing something from the codebase which far outweighs the cost of adding it.</p>
-<p>Everything is up for discussion, but pivoting on such a large codebase can be a slow process so it's always worth spending the extra time to consider how deeply we would be tied into the decision and how quickly we could change course if needed.</p>
-<p><a name="simple"></a><h2 class="sg-sectionHeading">Keep it Simple</h2></p>
-<p>If the code you're writing looks complicated to you, it's likely going to look complicated to the next developer to come across it.</p>
-<p>Try to make sure the code you write is as simple as possible.  If a function you're writing in JavaScript is getting unwieldy, break it up into smaller functions.</p>
-<p>While it's not always possible to write code that is self documenting, it's always possible to comment your code. We encourage the liberal use of code comments – especially when describing JS functions and parameters, or when explaining what a component is used for in CSS.</p>
+<p><a name="aim"></a><h2 class="sg-sectionHeading">Core Aim</h2></p>
+<p>Fozzie was created to facilitate developers at Just Eat to build and share a common set of UI components across all of our projects.</p>
+<p>Previously, there was a lot of wasted development effort going on across the company. For instance, the Just Eat main site header could be found duplicated by a number of different projects.  This work to create these components had been done multiple times by different developers working independently. This meant that when a design update or performance improvement was made to one of these separate components, there was no way to roll this out across all of our sites without copying and pasting the new code.</p>
+<p>Fozzie components fix this issue by providing shared SCSS and JS that can be consumed by any project.  Components are versioned and released using NPM, meaning that projects consuming the components can upgrade at their own pace in line with their own release schedule.</p>
+<p><a name="techstack"></a><h2 class="sg-sectionHeading">Technology Stack</h2></p>
+<p>Fozzie itself has been created to be fairly technology agnostic.  At its core, it's simply a UI framework built on Sass and Vanilla JS.</p>
+<p>Therefore teams at Just Eat are using Fozzie on projects built in React, Vue.js and Vanilla JS, using WebPack and Gulp as their task runner. Fozzie components can be used on any stack using Sass and Vanilla JS (including CMS platforms such as WordPress).</p>
+<p>As a first iteration to provide HTML sharing, we have been using Handlebars for defining markup. We are currently looking at moving away from this, investigating how we can move our components over to using a framework such as Vue.js or React.</p>
+<p><a name="modules"></a><h2 class="sg-sectionHeading">Modules</h2></p>
+<p>To see the current list of public Fozzie modules, take a look on <a href="https://github.com/search?q=topic%3Afozzie+org%3Ajusteat&amp;type=Repositories">our public Github account</a>.</p>
+<p><a name="scss"></a><h2 class="sg-sectionHeading">Fozzie &amp; Sass</h2></p>
+<p>To find out more information on how to import Fozzie's SCSS, check out the <a href="/documentation/css/fozzie">'Fozzie &amp; Sass'</a> section of the documentation.</p>
                 </div>
             </div>
         </div>
@@ -141,7 +140,7 @@
             <!--  === Footer ===  -->
             <!--  ==============  -->
             <footer class="sg-footer" role="contentinfo">
-                <div class="l-container text-center">
+                <div class="l-container u-text-center">
                     <p>Fozzie and its associated documentation was created with ❤️ by the UI team at Just Eat.</p>
                     <hr>
                     <p>If you want to get in touch about anything mentioned here, feel free to <a href="mailto:ui@just-eat.com">drop us a message</a>!</p>

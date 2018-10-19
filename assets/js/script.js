@@ -50,7 +50,7 @@ function setupValidation() {
   }
 }
 
-},{"@justeat/f-dom":3,"@justeat/f-validate":15}],2:[function(require,module,exports){
+},{"@justeat/f-dom":3,"@justeat/f-validate":13}],2:[function(require,module,exports){
 "use strict";
 
 require("@justeat/f-footer");
@@ -76,7 +76,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   (0, _fHeader.checkForUser)();
 });
 
-},{"./docs/formValidationSetup":1,"@justeat/f-footer":4,"@justeat/f-header":7,"@justeat/fozzie":28,"lite-ready":32,"picturefill":34,"svg4everybody":36}],3:[function(require,module,exports){
+},{"./docs/formValidationSetup":1,"@justeat/f-footer":4,"@justeat/f-header":5,"@justeat/fozzie":26,"lite-ready":30,"picturefill":32,"svg4everybody":34}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -144,409 +144,303 @@ dom.first = first;
 dom.exists = exists;
 var _default = dom;
 exports.default = _default;
-},{"qwery":35}],4:[function(require,module,exports){
-'use strict';
+},{"qwery":33}],4:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-exports.resizeInit = exports.tabindexResize = exports.collapseFooterPanels = undefined;
+exports.resizeInit = exports.tabindexResize = exports.collapseFooterPanels = void 0;
 
-var _liteReady = require('lite-ready');
+var _liteReady = _interopRequireDefault(require("lite-ready"));
 
-var _liteReady2 = _interopRequireDefault(_liteReady);
+var _qwery = _interopRequireDefault(require("qwery"));
 
-var _qwery = require('qwery');
+var _fozzie = require("@justeat/fozzie");
 
-var _qwery2 = _interopRequireDefault(_qwery);
-
-var _fozzie = require('@justeat/fozzie');
-
-var _lodash = require('lodash.debounce');
-
-var _lodash2 = _interopRequireDefault(_lodash);
+var _lodash = _interopRequireDefault(require("lodash.debounce"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var footerPanels = void 0;
+var footerPanels;
 var breakpoints = null;
 
 var tabindexResize = function tabindexResize() {
+  if (breakpoints === null) {
+    breakpoints = (0, _fozzie.getBreakpoints)();
+  }
 
-    if (breakpoints === null) {
-        breakpoints = (0, _fozzie.getBreakpoints)();
-    }
-
-    if (window.matchMedia('(min-width: ' + breakpoints.mid + ')').matches) {
-        footerPanels.forEach(function (panel) {
-            panel.removeAttribute('tabindex');
-        });
-    } else {
-        footerPanels.forEach(function (panel) {
-            panel.tabIndex = 0;
-        });
-    }
+  if (window.matchMedia("(min-width: ".concat(breakpoints.mid, ")")).matches) {
+    footerPanels.forEach(function (panel) {
+      panel.removeAttribute('tabindex');
+    });
+  } else {
+    footerPanels.forEach(function (panel) {
+      panel.tabIndex = 0;
+    });
+  }
 };
+
+exports.tabindexResize = tabindexResize;
 
 var collapseFooterPanels = function collapseFooterPanels() {
-    (0, _qwery2.default)('[data-panel-collapsible]').forEach(function (panel) {
-        panel.classList.add('is-collapsed');
-    });
+  (0, _qwery.default)('[data-panel-collapsible]').forEach(function (panel) {
+    panel.classList.add('is-collapsed');
+  });
 };
-
-var resizeInit = function resizeInit() {
-    window.addEventListener('resize', (0, _lodash2.default)(tabindexResize, 100));
-    footerPanels = (0, _qwery2.default)('[data-footer-panel-heading]');
-    tabindexResize();
-};
-
-(0, _liteReady2.default)(function () {
-    collapseFooterPanels();
-    resizeInit();
-});
 
 exports.collapseFooterPanels = collapseFooterPanels;
-exports.tabindexResize = tabindexResize;
+
+var resizeInit = function resizeInit() {
+  window.addEventListener('resize', (0, _lodash.default)(tabindexResize, 100));
+  footerPanels = (0, _qwery.default)('[data-footer-panel-heading]');
+  tabindexResize();
+};
+
 exports.resizeInit = resizeInit;
-},{"@justeat/fozzie":5,"lite-ready":32,"lodash.debounce":33,"qwery":35}],5:[function(require,module,exports){
-'use strict';
+(0, _liteReady.default)(function () {
+  collapseFooterPanels();
+  resizeInit();
+});
+},{"@justeat/fozzie":26,"lite-ready":30,"lodash.debounce":31,"qwery":33}],5:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-exports.getCurrentScreenWidth = exports.getBreakpoints = undefined;
-
-var _breakpointHelper = require('./modules/breakpointHelper');
-
-exports.getBreakpoints = _breakpointHelper.getBreakpoints;
-exports.getCurrentScreenWidth = _breakpointHelper.getCurrentScreenWidth; // All helper functions will be imported here, so that they can all be exported within one object.
-},{"./modules/breakpointHelper":6}],6:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
+Object.defineProperty(exports, "checkForUser", {
+  enumerable: true,
+  get: function get() {
+    return _userAuth.checkForUser;
+  }
 });
+exports.setupHeader = void 0;
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+var _liteReady = _interopRequireDefault(require("lite-ready"));
 
-/**
- * @overview Breakpoint handler
- *
- * @module breakpointHelper
- */
-
-var getBreakpoints = exports.getBreakpoints = function getBreakpoints() {
-    var output = {};
-
-    // Append hidden element to body
-    var screenSizer = document.createElement('div');
-    screenSizer.classList.add('c-screen-sizer');
-
-    document.body.appendChild(screenSizer);
-
-    // It should have a 'content' property containing the breakpoints
-    var breakpoints = window.getComputedStyle(document.querySelector('.c-screen-sizer')).getPropertyValue('content').replace(/["']/g, '').split(',');
-    // Gives a list of breakpoints in the form ['narrow:414px', ...etc]
-
-    // When there is no content, at this stage breakpoints should be ['']
-    if (breakpoints.length === 1 && breakpoints[0] === '') {
-        return output;
-    }
-
-    return breakpoints.reduce(function (prev, current) {
-        // `current` is of the form 'narrow:414px'
-        var _current$split = current.split(':'),
-            _current$split2 = _slicedToArray(_current$split, 2),
-            breakpointName = _current$split2[0],
-            breakpointValue = _current$split2[1];
-
-        prev[breakpointName] = breakpointValue; // <- the initial value is used for the first iteration
-        // The object, e.g., { 'narrow': '414px' } is returned to be used as `prev` in the next iteration
-        return prev;
-    }, output); // <- initial value
-};
-
-var getCurrentScreenWidth = exports.getCurrentScreenWidth = function getCurrentScreenWidth() {
-    var currentWidth = window.innerWidth;
-
-    var breakpoints = getBreakpoints();
-
-    // Order the breakpoints from widest to narrowest,
-    // takes the form [['narrow', '414px'], [...etc]]
-    var bps = [];
-    Object.keys(breakpoints).forEach(function (key) {
-        bps.unshift([key, breakpoints[key]]);
-    });
-
-    for (var i = 0; i < bps.length; i++) {
-        // Loops through the breakpoints (in descending order)
-        // returning the first one that is narrower than currentWidth.
-
-        var breakpointWidth = parseInt(bps[i][1], 10); // This also strips the 'px' from the string
-
-        if (i === bps.length - 1 || currentWidth > breakpointWidth) {
-            // If we've reached the last breakpoint, and there still hasn't been a match, return the smallest breakpoint
-            return bps[i][0];
-        }
-    }
-    // If no breakpoints have been set
-    return false;
-};
-},{}],7:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.checkForUser = exports.setupHeader = undefined;
-
-var _liteReady = require('lite-ready');
-
-var _liteReady2 = _interopRequireDefault(_liteReady);
-
-var _userAuth = require('./userAuth');
+var _userAuth = require("./userAuth");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Converts an input to a button in order to improve accessibility.
- *
- * @param {string} selector
- */
 /**
  * @overview Fozzie header JavaScript behaviour.
  *
  * @module f-header
  */
 
-var convertInputToButton = function convertInputToButton(selector) {
-    var input = document.querySelector(selector);
-
-    if (input) {
-        var replaceTag = input.outerHTML.replace(/^<input/, '<button');
-        input.outerHTML = replaceTag + '</button>';
-
-        // Query the DOM again for this element now it has changed to a button
-        var button = document.querySelector(selector);
-        button.setAttribute('type', 'button');
-
-        return button;
-    }
-
-    return null;
-};
-
 /**
  * Setup the behaviour for the header component.
  */
 var setupHeader = function setupHeader() {
-    var menuButton = convertInputToButton('[data-nav-enhance]');
+  var menuButton = document.querySelector('[data-nav-button]');
 
-    if (menuButton) {
-        /**
-         * Attach click event handler — as this element is now a button this event will
-         * trigger when the `enter` and `spacebar` keys are pressed.
-         *
-         * @see {@link https://www.w3.org/TR/html51/editing.html#running-synthetic-click-activation-steps - synthetic click activation steps}
-         */
-        menuButton.addEventListener('click', function () {
-            var navContainer = document.querySelector('[data-nav-container]');
-            var navLabel = document.querySelector('[data-nav-toggle]');
+  if (menuButton) {
+    menuButton.addEventListener('click', function () {
+      var navContainer = document.querySelector('[data-nav-container]');
+      var navLabel = document.querySelector('[data-nav-toggle]');
 
-            if (navContainer) {
-                navContainer.classList.toggle('is-visible');
-            }
+      if (navContainer) {
+        navContainer.classList.toggle('is-visible');
+      }
 
-            if (navLabel) {
-                navLabel.classList.toggle('is-open');
-            }
+      if (navLabel) {
+        navLabel.classList.toggle('is-open');
+      }
 
-            document.documentElement.classList.toggle('is-navInView');
-        });
-    }
+      document.documentElement.classList.toggle('is-navInView');
+    });
+  }
 };
 
-(0, _liteReady2.default)(function () {
-    setupHeader();
-});
-
 exports.setupHeader = setupHeader;
-exports.checkForUser = _userAuth.checkForUser;
-},{"./userAuth":8,"lite-ready":32}],8:[function(require,module,exports){
-'use strict';
+(0, _liteReady.default)(function () {
+  setupHeader();
+});
+},{"./userAuth":6,"lite-ready":30}],6:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-exports.checkForUser = undefined;
+exports.checkForUser = void 0;
 
-var _userData = require('./userData');
+var _fLogger = require("@justeat/f-logger");
 
-var _userData2 = _interopRequireDefault(_userData);
+var _userData = _interopRequireDefault(require("./userData"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/**
+ * @overview Authorisation handler
+ *
+ * @module userAuth
+ */
 var removeElement = function removeElement(element) {
-    return element && element.remove();
-}; /**
-    * @overview Authorisation handler
-    *
-    * @module userAuth
-    */
+  return element && element.remove();
+};
 
 var removeHiddenClass = function removeHiddenClass(element) {
-    return element && element.classList.remove('is-hidden');
+  return element && element.classList.remove('is-hidden');
 };
 
 var updateDom = function updateDom(authData) {
-    var authEl = document.querySelector('[data-auth-wrapper]');
-    var loginEl = document.querySelector('[data-login]');
+  var authEl = document.querySelector('[data-auth-wrapper]');
+  var loginEl = document.querySelector('[data-login]');
 
-    if (authData.isAuthenticated) {
-        var headerName = document.querySelector('[data-name]');
-        var headerEmail = document.querySelector('[data-email]');
+  if (authData.isAuthenticated) {
+    var headerName = document.querySelector('[data-name]');
+    var headerEmail = document.querySelector('[data-email]');
 
-        if (headerName && authData.friendlyName !== '') {
-            headerName.textContent = authData.friendlyName;
-        }
-        if (headerEmail && authData.email !== '') {
-            headerEmail.textContent = authData.email;
-        }
-
-        removeHiddenClass(authEl);
-        removeElement(loginEl);
-    } else {
-        removeHiddenClass(loginEl);
-        removeElement(authEl);
+    if (headerName && authData.friendlyName !== '') {
+      headerName.textContent = authData.friendlyName;
     }
 
-    return authData;
-};
+    if (headerEmail && authData.email !== '') {
+      headerEmail.textContent = authData.email;
+    }
 
+    removeHiddenClass(authEl);
+    removeElement(loginEl);
+  } else {
+    removeHiddenClass(loginEl);
+    removeElement(authEl);
+  }
+
+  return authData;
+};
 /**
  * Checks if authorisation details can be found in the current session hits .net
  * endpoint and is returned valid auth details or no details if not logged in
  */
-var checkForUser = exports.checkForUser = function checkForUser() {
-    var authEl = document.querySelector('[data-auth-wrapper]');
 
-    // if our auth wrapper exists, get our user details
-    if (authEl) {
-        // this fetch logic will be extracted to a new module
-        return fetch('/api/account/details', {
-            method: 'GET',
-            credentials: 'same-origin'
-        }).then(function (response) {
-            return response.json();
-        }).then(updateDom).then(_userData2.default)
-        // should send this error to the f-logger but for now, just erroring here inline
-        .catch(function (error) {
-            console.log(error);
-        });
-    }
 
-    return Promise.resolve();
+var checkForUser = function checkForUser() {
+  var authEl = document.querySelector('[data-auth-wrapper]'); // if our auth wrapper exists, get our user details
+
+  if (authEl) {
+    // this fetch logic will be extracted to a new module
+    return fetch('/api/account/details', {
+      method: 'GET',
+      credentials: 'same-origin'
+    }).then(function (response) {
+      return response.json();
+    }).then(updateDom).then(_userData.default) // should send this error to the f-logger but for now, just erroring here inline
+    .catch(function (error) {
+      (0, _fLogger.logError)(error);
+    });
+  }
+
+  return Promise.resolve();
 };
-},{"./userData":9}],9:[function(require,module,exports){
-'use strict';
+
+exports.checkForUser = checkForUser;
+},{"./userData":7,"@justeat/f-logger":8}],7:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.saveUserData = void 0;
+
+var _fLogger = require("@justeat/f-logger");
+
 /**
  * @overview UserData handler
  *
  * @module userAuth/userData
  */
-
 var storeLocalAnalyticsBlob = function storeLocalAnalyticsBlob(result) {
-    window.localStorage.setItem('je-analytics', JSON.stringify(result));
-    return result;
+  window.localStorage.setItem('je-analytics', JSON.stringify(result));
+  return result;
 };
 
 var enrichUserDataWithCount = function enrichUserDataWithCount(userData, orderCountResponse) {
-    userData.orderCount = orderCountResponse.Count;
-    return userData;
+  userData.orderCount = orderCountResponse.Count;
+  return userData;
 };
 
 var pushUserData = function pushUserData(userData) {
-    return window.dataLayer.push({ userData: userData });
+  return window.dataLayer.push({
+    userData: userData
+  });
 };
 
 var fetchOrderCountAndSave = function fetchOrderCountAndSave(userData) {
-    var orderCountLink = document.querySelector('link[rel="ordercountlink"]');
-    var orderCountUrl = orderCountLink && orderCountLink.getAttribute('href');
+  var orderCountLink = document.querySelector('link[rel="ordercountlink"]');
+  var orderCountUrl = orderCountLink && orderCountLink.getAttribute('href');
 
-    if (orderCountUrl) {
-        return fetch(orderCountUrl, {
-            method: 'GET',
-            credentials: 'same-origin'
-        }).then(function (response) {
-            return response.json();
-        }).then(storeLocalAnalyticsBlob).then(function (result) {
-            return enrichUserDataWithCount(userData, result);
-        }).then(pushUserData).catch(function (err) {
-            console.log('Unable to get order count. ' + err);
-            pushUserData(userData);
-        });
-    }
+  if (orderCountUrl) {
+    return fetch(orderCountUrl, {
+      method: 'GET',
+      credentials: 'same-origin'
+    }).then(function (response) {
+      return response.json();
+    }).then(storeLocalAnalyticsBlob).then(function (result) {
+      return enrichUserDataWithCount(userData, result);
+    }).then(pushUserData).catch(function (err) {
+      (0, _fLogger.logError)("Unable to get order count. ".concat(err));
+      pushUserData(userData);
+    });
+  }
 
-    pushUserData(userData);
-    return Promise.reject();
+  pushUserData(userData);
+  return Promise.reject();
 };
 
 var getLocalAnalyticsBlob = function getLocalAnalyticsBlob() {
-    return window.localStorage.getItem('je-analytics');
+  return window.localStorage.getItem('je-analytics');
 };
 
 var orderCountSupported = function orderCountSupported() {
-    var supportedEl = document.querySelector('[data-order-count-supported]');
-    if (supportedEl && supportedEl.value) {
-        // Case insensitive regex test for value="true"
-        return (/^true$/i.test(supportedEl.value)
-        );
-    }
-    return Promise.reject();
+  var supportedEl = document.querySelector('[data-order-count-supported]');
+
+  if (supportedEl && supportedEl.value) {
+    // Case insensitive regex test for value="true"
+    return /^true$/i.test(supportedEl.value);
+  }
+
+  return Promise.reject();
 };
 
-var saveUserData = exports.saveUserData = function saveUserData(authData) {
-    if (!authData.isAuthenticated) {
-        return Promise.resolve();
-    }
-
-    var userData = authData.userData;
-
-
-    if (!orderCountSupported()) {
-        pushUserData(userData);
-        return Promise.resolve();
-    }
-
-    var savedAnalytics = getLocalAnalyticsBlob();
-    if (!savedAnalytics) {
-        return fetchOrderCountAndSave(userData);
-    }
-
-    var localOrderCount = JSON.parse(savedAnalytics);
-    var currentTime = new Date().getTime();
-    var localOrderCountExpires = Date.parse(localOrderCount.Expires);
-
-    if (localOrderCountExpires < currentTime) {
-        return fetchOrderCountAndSave(userData);
-    }
-
-    enrichUserDataWithCount(userData, localOrderCount);
-    pushUserData(userData);
-
+var saveUserData = function saveUserData(authData) {
+  if (!authData.isAuthenticated) {
     return Promise.resolve();
+  }
+
+  var userData = authData.userData;
+
+  if (!orderCountSupported()) {
+    pushUserData(userData);
+    return Promise.resolve();
+  }
+
+  var savedAnalytics = getLocalAnalyticsBlob();
+
+  if (!savedAnalytics) {
+    return fetchOrderCountAndSave(userData);
+  }
+
+  var localOrderCount = JSON.parse(savedAnalytics);
+  var currentTime = new Date().getTime();
+  var localOrderCountExpires = Date.parse(localOrderCount.Expires);
+
+  if (localOrderCountExpires < currentTime) {
+    return fetchOrderCountAndSave(userData);
+  }
+
+  enrichUserDataWithCount(userData, localOrderCount);
+  pushUserData(userData);
+  return Promise.resolve();
 };
-},{}],10:[function(require,module,exports){
+
+exports.saveUserData = saveUserData;
+},{"@justeat/f-logger":8}],8:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.getDebugMode=exports.disableDebugMode=exports.enableDebugMode=exports.clearHistory=exports.getHistory=exports.errorLogInit=exports.logError=exports.logWarning=exports.log=void 0;var _Logger=require('./modules/Logger'),_Logger2=_interopRequireDefault(_Logger),_ErrorLogger=require('./modules/ErrorLogger'),_ErrorLogger2=_interopRequireDefault(_ErrorLogger);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var debugMode=!1,logger=new _Logger2.default({debugMode:debugMode}),errorLogger=new _ErrorLogger2.default({logger:logger}),log=function(a){logger.log(a)},logError=function(a){errorLogger.log(a,'Error')},logWarning=function(a){errorLogger.log(a,'Warn')},getHistory=function(){logger.getPersistentData()},clearHistory=function(){logger.clearPersistentData()},enableDebugMode=function(){debugMode=!0,logger=new _Logger2.default({debugMode:debugMode}),errorLogger=new _ErrorLogger2.default({logger:logger})},disableDebugMode=function(){debugMode=!1,logger=new _Logger2.default({debugMode:debugMode}),errorLogger=new _ErrorLogger2.default({logger:logger})},errorLogInit=function(a){errorLogger.init(a)},getDebugMode=function(){return debugMode};exports.log=log,exports.logWarning=logWarning,exports.logError=logError,exports.errorLogInit=errorLogInit,exports.getHistory=getHistory,exports.clearHistory=clearHistory,exports.enableDebugMode=enableDebugMode,exports.disableDebugMode=disableDebugMode,exports.getDebugMode=getDebugMode;
-},{"./modules/ErrorLogger":11,"./modules/Logger":12}],11:[function(require,module,exports){
+},{"./modules/ErrorLogger":9,"./modules/Logger":10}],9:[function(require,module,exports){
 'use strict';var _typeof='function'==typeof Symbol&&'symbol'==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&'function'==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?'symbol':typeof a},_createClass=function(){function a(a,b){for(var c,d=0;d<b.length;d++)c=b[d],c.enumerable=c.enumerable||!1,c.configurable=!0,'value'in c&&(c.writable=!0),Object.defineProperty(a,c.key,c)}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}();Object.defineProperty(exports,'__esModule',{value:!0});function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError('Cannot call a class as a function')}var ErrorLogger=function(){function a(b){_classCallCheck(this,a),this.config=b,this.logger=b.logger,this.debugMode=b.logger.debugMode,this.config.serverFileUrl=b.serverFileUrl||'/js/shared/js-error.js',this.config.loggerCallback=b.loggerCallback||null,this.config.winlogCallback=b.winlogCallback||null,this.bindOnError()}return _createClass(a,[{key:'log',value:function log(a,b,c){var d=window.location.toString(),e={pageUrl:d,Exception:a,Level:b};this.logger.log(e),this.debugMode||(this.logToServer(e),'function'==typeof this.config.loggerCallback&&('Error'===b?this.config.winlogCallback.call(this,a,d,c):this.config.loggerCallback.call(this,a,d)))}},{key:'init',value:function init(a){this.config.serverFileUrl=a.serverFileUrl||this.config.serverFileUrl,this.config.loggerCallback=a.loggerCallback||this.config.loggerCallback,this.config.winlogCallback=a.winlogCallback||this.config.winlogCallback}},{key:'logToServer',value:function logToServer(a){var b,c='';c='object'===('undefined'==typeof a?'undefined':_typeof(a))?JSON.stringify(a):a;var d=this.config.serverFileUrl+'?error='+encodeURIComponent(c);if(window.XMLHttpRequest)b=new XMLHttpRequest;else if(window.ActiveXObject)b=new ActiveXObject('Microsoft.XMLHTTP');else return;b.open('GET',d),b.send()}},{key:'bindOnError',value:function bindOnError(){var a=this;window.onerror=function(b,c,d,e,f){var g=b+' : '+c+' : Line '+d+' : Char '+e+' : StackTrace '+(f?f.stack:'');return a.log(g,'Error',d),!0}}}]),a}();exports.default=ErrorLogger;
-},{}],12:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';var _typeof='function'==typeof Symbol&&'symbol'==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&'function'==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?'symbol':typeof a},_createClass=function(){function a(a,b){for(var c,d=0;d<b.length;d++)c=b[d],c.enumerable=c.enumerable||!1,c.configurable=!0,'value'in c&&(c.writable=!0),Object.defineProperty(a,c.key,c)}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}();Object.defineProperty(exports,'__esModule',{value:!0});function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError('Cannot call a class as a function')}var output=function(a){if('undefined'!=typeof window.console)window.console.log(a);else throw new Error('Console is not supported')},getPersistentData=function(){if(!localStorage)output('Local storage not available');else if(0<localStorage.length){var a,b,c,d;for(output('/***** Output local storage *****/'),a=0;a<localStorage.length;a++)b=+localStorage.key(a),c=localStorage[b],d=new Date(b),'Invalid Date'!==(d+'').valueOf()&&output(d+' => '+c);output('/***** End of local storage *****/')}else output('Local storage is empty')},clearPersistentData=function(){localStorage&&(localStorage.clear(),output('Local storage cleared'))},Logger=function(){function a(b){_classCallCheck(this,a),this.config=b,this.debugMode=this.config.debugMode,this.data={}}return _createClass(a,[{key:'log',value:function log(a){var b=a;if(this.debugMode){var c=Date.now().toString();this.data[c]=b,'object'===('undefined'==typeof localStorage?'undefined':_typeof(localStorage))&&(b=JSON.stringify(b),localStorage.setItem(c,b)),output(b)}}}]),a}();exports.getPersistentData=getPersistentData,exports.clearPersistentData=clearPersistentData,exports.default=Logger;
-},{}],13:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -571,7 +465,7 @@ var runCallbacks = exports.runCallbacks = function runCallbacks(callBacks) {
         callback();
     });
 };
-},{}],14:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -595,7 +489,7 @@ exports.default = {
     validationGroup: validationGroup,
     validateOnOptions: ['blur', 'keyup']
 };
-},{}],15:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -984,7 +878,7 @@ var FormValidation = function () {
 }();
 
 exports.default = FormValidation;
-},{"./callbacks":13,"./constants":14,"./messages":16,"./rules":21,"@justeat/f-dom":27}],16:[function(require,module,exports){
+},{"./callbacks":11,"./constants":12,"./messages":14,"./rules":19,"@justeat/f-dom":25}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1069,7 +963,7 @@ var getDefaultMessage = function getDefaultMessage(field, ruleName) {
 var getMessage = exports.getMessage = function getMessage(field, ruleName) {
     return field.getAttribute('data-val-' + ruleName + '-error') || getDefaultMessage(field, ruleName);
 };
-},{"./constants":14,"./rules":21,"@justeat/f-dom":27}],17:[function(require,module,exports){
+},{"./constants":12,"./rules":19,"@justeat/f-dom":25}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1103,7 +997,7 @@ exports.default = {
     * This also means that if the specified checkbox is checked, then the field is not required and the form will return valid when the field is empty.
     *
     */
-},{"@justeat/f-dom":27}],18:[function(require,module,exports){
+},{"@justeat/f-dom":25}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1131,7 +1025,7 @@ exports.default = {
 
     defaultMessage: 'Custom validation failed.'
 };
-},{}],19:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1177,7 +1071,7 @@ exports.default = {
     * When applied to a validation group, it returns true if the date entered in these fields is in the future.
     *
     */
-},{"@justeat/f-dom":27}],20:[function(require,module,exports){
+},{"@justeat/f-dom":25}],18:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1210,7 +1104,7 @@ exports.default = {
     * Checks for a valid email address
     *
     */
-},{"../constants":14}],21:[function(require,module,exports){
+},{"../constants":12}],19:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1266,7 +1160,7 @@ exports.default = {
     matches: _matches2.default,
     required: _required2.default
 };
-},{"./conditionalRequired":17,"./custom":18,"./dateInFuture":19,"./email":20,"./matches":22,"./maxlength":23,"./minlength":24,"./pattern":25,"./required":26}],22:[function(require,module,exports){
+},{"./conditionalRequired":15,"./custom":16,"./dateInFuture":17,"./email":18,"./matches":20,"./maxlength":21,"./minlength":22,"./pattern":23,"./required":24}],20:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1307,7 +1201,7 @@ exports.default = {
     * Checks that the value of the field being validated matches the value of a separate specified field
     *
     */
-},{"@justeat/f-dom":27}],23:[function(require,module,exports){
+},{"@justeat/f-dom":25}],21:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1338,7 +1232,7 @@ exports.default = {
         return parseInt(field.getAttribute('maxlength') || field.getAttribute('data-val-maxlength'), 10);
     }
 };
-},{}],24:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1370,7 +1264,7 @@ exports.default = {
         return parseInt(field.getAttribute('minlength') || field.getAttribute('data-val-minlength'), 10);
     }
 };
-},{}],25:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1403,7 +1297,7 @@ exports.default = {
 
     defaultMessage: 'This field contains a value that isn’t accepted.'
 };
-},{"../constants":14}],26:[function(require,module,exports){
+},{"../constants":12}],24:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1442,9 +1336,9 @@ exports.default = {
     * Checks that a value is present for the field being validated
     *
     */
-},{"@justeat/f-dom":27}],27:[function(require,module,exports){
+},{"@justeat/f-dom":25}],25:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var _qwery=require('qwery'),_qwery2=_interopRequireDefault(_qwery);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var first=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)[0]},all=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)},exists=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return 0<(0,_qwery2.default)(a,b).length},dom=all;dom.all=all,dom.first=first,dom.exists=exists,exports.default=dom;
-},{"qwery":35}],28:[function(require,module,exports){
+},{"qwery":33}],26:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1462,7 +1356,7 @@ exports.getCurrentScreenWidth = _breakpointHelper.getCurrentScreenWidth;
 exports.isWithinBreakpoint = _breakpointHelper.isWithinBreakpoint;
 
 // All helper functions will be imported here, so that they can all be exported within one object.
-},{"./modules/breakpointHelper":29,"./modules/stopFoit":30}],29:[function(require,module,exports){
+},{"./modules/breakpointHelper":27,"./modules/stopFoit":28}],27:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1591,7 +1485,7 @@ var isWithinBreakpoint = exports.isWithinBreakpoint = function isWithinBreakpoin
             return false;
     }
 };
-},{}],30:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1638,7 +1532,7 @@ var stopFoit = exports.stopFoit = function stopFoit() {
 };
 
 exports.default = stopFoit;
-},{"@justeat/f-logger":10,"fontfaceobserver":31}],31:[function(require,module,exports){
+},{"@justeat/f-logger":8,"fontfaceobserver":29}],29:[function(require,module,exports){
 /* Font Face Observer v2.0.13 - © Bram Stein. License: BSD-3-Clause */(function(){function l(a,b){document.addEventListener?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function m(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",function c(){document.removeEventListener("DOMContentLoaded",c);a()}):document.attachEvent("onreadystatechange",function k(){if("interactive"==document.readyState||"complete"==document.readyState)document.detachEvent("onreadystatechange",k),a()})};function r(a){this.a=document.createElement("div");this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.h=document.createElement("span");this.f=document.createElement("span");this.g=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
 this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.h.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;";this.b.appendChild(this.h);this.c.appendChild(this.f);this.a.appendChild(this.b);this.a.appendChild(this.c)}
 function t(a,b){a.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;white-space:nowrap;font-synthesis:none;font:"+b+";"}function y(a){var b=a.a.offsetWidth,c=b+100;a.f.style.width=c+"px";a.c.scrollLeft=c;a.b.scrollLeft=a.b.scrollWidth+100;return a.g!==b?(a.g=b,!0):!1}function z(a,b){function c(){var a=k;y(a)&&a.a.parentNode&&b(a.g)}var k=a;l(a.b,c);l(a.c,c);y(a)};function A(a,b){var c=b||{};this.family=a;this.style=c.style||"normal";this.weight=c.weight||"normal";this.stretch=c.stretch||"normal"}var B=null,C=null,E=null,F=null;function G(){if(null===C)if(J()&&/Apple/.test(window.navigator.vendor)){var a=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/.exec(window.navigator.userAgent);C=!!a&&603>parseInt(a[1],10)}else C=!1;return C}function J(){null===F&&(F=!!document.fonts);return F}
@@ -1648,7 +1542,7 @@ f&&-1!=g||-1!=f&&-1!=h||-1!=g&&-1!=h)(b=f!=g&&f!=h&&g!=h)||(null===B&&(b=/AppleW
 g=n.a.offsetWidth,h=p.a.offsetWidth,u();q=setTimeout(I,50)}}var e=new r(k),n=new r(k),p=new r(k),f=-1,g=-1,h=-1,v=-1,w=-1,x=-1,d=document.createElement("div");d.dir="ltr";t(e,L(c,"sans-serif"));t(n,L(c,"serif"));t(p,L(c,"monospace"));d.appendChild(e.a);d.appendChild(n.a);d.appendChild(p.a);document.body.appendChild(d);v=e.a.offsetWidth;w=n.a.offsetWidth;x=p.a.offsetWidth;I();z(e,function(a){f=a;u()});t(e,L(c,'"'+c.family+'",sans-serif'));z(n,function(a){g=a;u()});t(n,L(c,'"'+c.family+'",serif'));
 z(p,function(a){h=a;u()});t(p,L(c,'"'+c.family+'",monospace'))})})};"object"===typeof module?module.exports=A:(window.FontFaceObserver=A,window.FontFaceObserver.prototype.load=A.prototype.load);}());
 
-},{}],32:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 module.exports = function (callback) {
 
 	if (document.readyState === 'complete' || document.readyState === 'interactive') {
@@ -1668,7 +1562,7 @@ module.exports = function (callback) {
 	}
 }
 
-},{}],33:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 (function (global){
 /**
  * lodash (Custom Build) <https://lodash.com/>
@@ -2050,7 +1944,7 @@ module.exports = debounce;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],34:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 /*! picturefill - v3.0.2 - 2016-02-12
  * https://scottjehl.github.io/picturefill/
  * Copyright (c) 2016 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT
@@ -3596,7 +3490,7 @@ module.exports = debounce;
 
 } )( window, document );
 
-},{}],35:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 /*!
   * @preserve Qwery - A selector engine
   * https://github.com/ded/qwery
@@ -3692,7 +3586,7 @@ module.exports = debounce;
   return qwery
 }, this);
 
-},{}],36:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 !function(root, factory) {
     "function" == typeof define && define.amd ? // AMD. Register as an anonymous module unless amdModuleId is set
     define([], function() {
