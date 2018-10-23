@@ -88,8 +88,8 @@
     </li>
     <li><a href="/documentation/css/fozzie" class=" is-active">Fozzie & Sass</a>
         <ul class="sg-sideNav-subnav u-unstyled">
-            <li><a href="#modules">Modules</a></li>
             <li><a href="#import">Importing Fozzie Modules</a></li>
+            <li><a href="#themes">Applying Themes</a></li>
         </ul>
     </li>
     <li><a href="/documentation/css/structure" class="">Structure</a>
@@ -128,6 +128,49 @@
 </code></pre>
 <p>When your Sass is compiled, it will include the Sass from the fozzie module as well.</p>
 <p>If you want to check what <code>@import</code> keyword you need to include to import a module, you can check out the <a href="https://github.com/justeat/fozzie/blob/master/package.json#L51-L60">Eyeglass config</a> which is located in each modules <code>package.json</code>.</p>
+<p><a name="themes"></a><h2 class="sg-sectionHeading">Applying Themes (i.e. Menulog)</h2></p>
+<p>Fozzie and its associated components have been setup to allow for multiple themes to be generated from the same base set of styles.</p>
+<p>Currently, there are two themes available. The base Just Eat theme and the alternative Menulog theme (used on the Australia/New Zealand platforms).</p>
+<p><h3 class="sg-sectionHeading">Technical solution</h3></p>
+<p>Technically, this is done by specifying two colour palettes via the <code>fozzie-colour-palette</code> module; one that defines the <a href="https://github.com/justeat/fozzie-colour-palette/blob/3fe134a566c26ff034fe6761752810381f8e3969/src/scss/index.scss">default colour palette</a> for the Just Eat platform and a set of colour overrides specified in a <a href="https://github.com/justeat/fozzie-colour-palette/blob/3fe134a566c26ff034fe6761752810381f8e3969/src/scss/_menulog.scss">separate Menulog palette</a> wrapped inside a Sass mixin.</p>
+<p>Inside the base <code>fozzie</code> module, we can then do a check on a globally defined <code>$theme</code> variable to check whether we need to <a href="https://github.com/justeat/fozzie/blob/7292d70286c8d27bb608769af02e597528b3696b/src/scss/_dependencies.scss#L33-L36">include these theme overrides or not</a>:</p>
+<pre><code class="language-scss"><span class="hljs-comment">// The colour variables are imported from https://www.npmjs.com/package/@justeat/fozzie-colour-palette</span>
+<span class="hljs-comment">// If a custom theme is specified, it applies a set of colour overrides to the base theme depending on the $theme</span>
+@<span class="hljs-keyword">import</span> <span class="hljs-string">'fozzie-colour-palette'</span>;
+
+@<span class="hljs-keyword">if</span> (<span class="hljs-variable">$theme</span> == <span class="hljs-string">'ml'</span>) {
+    @<span class="hljs-keyword">include</span> applyScheme-menulog;
+}
+</code></pre>
+<p>By doing this, a project using fozzie can now generate CSS files based on these two themes.</p>
+<p>By not defining a <code>$theme</code> variable, fozzie will default to the base Just Eat colour palette and the stylesheet produced will be themed in line with the default theme. However, by setting the <code>$theme</code> variable to <code>'ml'</code> the Menulog theme overrides will be activated and these overrides will be applied to the resulting stylesheet.</p>
+<pre><code class="language-scss"><span class="hljs-variable">$theme</span>: <span class="hljs-string">'ml'</span>;
+
+<span class="hljs-comment">//importing fozzie now will mean the Menulog theme is applied to fozzie components</span>
+@<span class="hljs-keyword">import</span> <span class="hljs-string">'fozzie'</span>;
+</code></pre>
+<p><h3 class="sg-sectionHeading">Theming fozzie components</h3></p>
+<p>Component authors will need to hook onto the <code>$theme</code> variable to apply theme overrides to a component. The base component should always be defined with the default JE theme, with overrides for a theme applied via variables in a Sass <code>@if</code> directive.</p>
+<p>For example, in the <code>f-header</code> module the <a href="https://github.com/justeat/f-header/blob/e6ee8f15395c31a38520543616582e1f8d30829b/src/scss/partials/_nav.scss#L42-L51">following code overrides some of the components default colours</a>:</p>
+<pre><code class="language-scss"><span class="hljs-variable">$nav-text-color</span>                    : <span class="hljs-variable">$blue</span>;
+<span class="hljs-variable">$nav-text-color--hover</span>             : <span class="hljs-variable">$blue</span>;
+<span class="hljs-variable">$nav-toggleIcon-color</span>              : <span class="hljs-variable">$blue</span>;
+<span class="hljs-variable">$nav-icon-color</span>                    : <span class="hljs-variable">$blue</span>;
+<span class="hljs-variable">$nav-trigger-focus-color</span>           : <span class="hljs-variable">$blue</span>;
+<span class="hljs-variable">$nav-trigger-focus-bg</span>              : <span class="hljs-variable">$blue--offWhite</span>;
+
+<span class="hljs-comment">// Menulog theme overrides</span>
+@<span class="hljs-keyword">if</span> (<span class="hljs-variable">$theme</span> == <span class="hljs-string">'ml'</span>) {
+    <span class="hljs-variable">$nav-text-color</span>                : <span class="hljs-variable">$green</span>;
+    <span class="hljs-variable">$nav-text-color--hover</span>         : <span class="hljs-variable">$green--dark</span>;
+    <span class="hljs-variable">$nav-toggleIcon-color</span>          : <span class="hljs-variable">$brand--green</span>;
+    <span class="hljs-variable">$nav-icon-color</span>                : <span class="hljs-variable">$brand--green</span>;
+
+    <span class="hljs-variable">$nav-trigger-focus-color</span>       : <span class="hljs-variable">$green</span>;
+    <span class="hljs-variable">$nav-trigger-focus-bg</span>          : <span class="hljs-variable">$green--offWhite</span>;
+}
+</code></pre>
+<p>It's convention in <code>fozzie</code> to define the default variables at the top of a component SCSS file, followed by any theme specific overrides.</p>
                 </div>
             </div>
         </div>
