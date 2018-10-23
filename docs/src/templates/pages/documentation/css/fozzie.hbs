@@ -47,7 +47,7 @@ If you want to check what `@import` keyword you need to include to import a modu
 
 <a name="themes"></a><h2 class="sg-sectionHeading">Applying Themes (i.e. Menulog)</h2>
 
-Fozzie and it's associated components have been setup to allow for multiple themes to be generated from the same base set of styles.
+Fozzie and its associated components have been setup to allow for multiple themes to be generated from the same base set of styles.
 
 Currently, there are two themes available. The base Just Eat theme and the alternative Menulog theme (used on the Australia/New Zealand platforms).
 
@@ -69,7 +69,7 @@ Inside the base `fozzie` module, we can then do a check on a globally defined `$
 
 By doing this, a project using fozzie can now generate CSS files based on these two themes.
 
-By not defining a `$theme` variable, fozzie will default to the base Just Eat colour palette and the stylesheet produced will be themed in line with the default them. However, by setting the `$theme` variable to `'ml'` the Menulog theme overrides will be activated and these overrides will be applied to the resulting stylesheet.
+By not defining a `$theme` variable, fozzie will default to the base Just Eat colour palette and the stylesheet produced will be themed in line with the default theme. However, by setting the `$theme` variable to `'ml'` the Menulog theme overrides will be activated and these overrides will be applied to the resulting stylesheet.
 
 ```scss
 $theme: 'ml';
