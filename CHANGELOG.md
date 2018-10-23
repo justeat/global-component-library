@@ -3,6 +3,17 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+v2.3.0
+------------------------------
+*October 23, 2018*
+
+### Added
+- Section added in CSS docs on how to apply themes to fozzie components (and explaining how the solution works technically).
+
+### Changed
+- Minor package updates
+
+
 v2.2.0
 ------------------------------
 *October 19, 2018*

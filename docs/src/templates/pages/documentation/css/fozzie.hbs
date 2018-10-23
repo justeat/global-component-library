@@ -45,3 +45,63 @@ When your Sass is compiled, it will include the Sass from the fozzie module as w
 If you want to check what `@import` keyword you need to include to import a module, you can check out the [Eyeglass config](https://github.com/justeat/fozzie/blob/master/package.json#L51-L60) which is located in each modules `package.json`.
 
 
+<a name="themes"></a><h2 class="sg-sectionHeading">Applying Themes (i.e. Menulog)</h2>
+
+Fozzie and it's associated components have been setup to allow for multiple themes to be generated from the same base set of styles.
+
+Currently, there are two themes available. The base Just Eat theme and the alternative Menulog theme (used on the Australia/New Zealand platforms).
+
+<h3 class="sg-sectionHeading">Technical solution</h3>
+
+Technically, this is done by specifying two colour palettes via the `fozzie-colour-palette` module; one that defines the [default colour palette](https://github.com/justeat/fozzie-colour-palette/blob/3fe134a566c26ff034fe6761752810381f8e3969/src/scss/index.scss) for the Just Eat platform and a set of colour overrides specified in a [separate Menulog palette](https://github.com/justeat/fozzie-colour-palette/blob/3fe134a566c26ff034fe6761752810381f8e3969/src/scss/_menulog.scss) wrapped inside a Sass mixin.
+
+Inside the base `fozzie` module, we can then do a check on a globally defined `$theme` variable to check whether we need to [include these theme overrides or not](https://github.com/justeat/fozzie/blob/7292d70286c8d27bb608769af02e597528b3696b/src/scss/_dependencies.scss#L33-L36):
+
+```scss
+// The colour variables are imported from https://www.npmjs.com/package/@justeat/fozzie-colour-palette
+// If a custom theme is specified, it applies a set of colour overrides to the base theme depending on the $theme
+@import 'fozzie-colour-palette';
+
+@if ($theme == 'ml') {
+    @include applyScheme-menulog;
+}
+```
+
+By doing this, a project using fozzie can now generate CSS files based on these two themes.
+
+By not defining a `$theme` variable, fozzie will default to the base Just Eat colour palette and the stylesheet produced will be themed in line with the default them. However, by setting the `$theme` variable to `'ml'` the Menulog theme overrides will be activated and these overrides will be applied to the resulting stylesheet.
+
+```scss
+$theme: 'ml';
+
+//importing fozzie now will mean the Menulog theme is applied to fozzie components
+@import 'fozzie';
+```
+
+<h3 class="sg-sectionHeading">Theming fozzie components</h3>
+
+Component authors will need to hook onto the `$theme` variable to apply theme overrides to a component. The base component should always be defined with the default JE theme, with overrides for a theme applied via variables in a Sass `@if` directive.
+
+For example, in the `f-header` module the [following code overrides some of the components default colours](https://github.com/justeat/f-header/blob/e6ee8f15395c31a38520543616582e1f8d30829b/src/scss/partials/_nav.scss#L42-L51):
+
+```scss
+$nav-text-color                    : $blue;
+$nav-text-color--hover             : $blue;
+$nav-toggleIcon-color              : $blue;
+$nav-icon-color                    : $blue;
+$nav-trigger-focus-color           : $blue;
+$nav-trigger-focus-bg              : $blue--offWhite;
+
+// Menulog theme overrides
+@if ($theme == 'ml') {
+    $nav-text-color                : $green;
+    $nav-text-color--hover         : $green--dark;
+    $nav-toggleIcon-color          : $brand--green;
+    $nav-icon-color                : $brand--green;
+
+    $nav-trigger-focus-color       : $green;
+    $nav-trigger-focus-bg          : $green--offWhite;
+}
+```
+
+It's convention in `fozzie` to define the default variables at the top of a component SCSS file, followed by any theme specific overrides.

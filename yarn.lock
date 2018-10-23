@@ -601,20 +601,20 @@
     lodash.debounce "4.0.8"
     qwery "4.0.0"
 
-"@justeat/f-header@0.45.0":
-  version "0.45.0"
-  resolved "https://registry.npmjs.org/@justeat/f-header/-/f-header-0.45.0.tgz#e87f3ea73fc09f40f3e098e86d9ae4edcc5a333d"
+"@justeat/f-header@0.47.0":
+  version "0.47.0"
+  resolved "https://registry.npmjs.org/@justeat/f-header/-/f-header-0.47.0.tgz#be8480b3caf5100ff183c063250b4abb3203ee5b"
   dependencies:
     "@justeat/f-logger" "^0.7.1"
     "@justeat/f-utils" "^0.1.0"
-    "@justeat/fozzie" "^1.6.0"
+    "@justeat/fozzie" "^1.7.0"
     "@justeat/fozzie-colour-palette" "^2.1.0"
     include-media "^1.4.9"
     lite-ready "^1.0.4"
 
-"@justeat/f-icons@1.13.0":
-  version "1.13.0"
-  resolved "https://registry.npmjs.org/@justeat/f-icons/-/f-icons-1.13.0.tgz#4dfae25c44cbc6675ef2083c1007705aabc69833"
+"@justeat/f-icons@1.13.1":
+  version "1.13.1"
+  resolved "https://registry.npmjs.org/@justeat/f-icons/-/f-icons-1.13.1.tgz#e9e890cc90a926091ebb0a3b1eeb5d6aeff9fba3"
   dependencies:
     "@kickoff/utils.scss" "2.1.1"
     include-media "^1.4.9"
@@ -653,9 +653,22 @@
   version "2.1.0"
   resolved "https://registry.npmjs.org/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-2.1.0.tgz#42230c8d8d5aecc37d32eaccd5e9973e90cd4a4e"
 
-"@justeat/fozzie@1.6.0", "@justeat/fozzie@^1.6.0":
+"@justeat/fozzie@1.6.0":
   version "1.6.0"
   resolved "https://registry.npmjs.org/@justeat/fozzie/-/fozzie-1.6.0.tgz#8f8b0934bba6bcdc984e063504ad67c9fa6a8e0b"
+  dependencies:
+    "@justeat/f-dom" "1.0.0"
+    "@justeat/f-logger" "0.7.1"
+    "@justeat/f-utils" "0.1.0"
+    "@justeat/fozzie-colour-palette" "2.1.0"
+    fontfaceobserver "^2.0.13"
+    include-media "1.4.9"
+    kickoff-grid.css "1.1.2"
+    normalize-scss "7.0.1"
+
+"@justeat/fozzie@1.7.0", "@justeat/fozzie@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.npmjs.org/@justeat/fozzie/-/fozzie-1.7.0.tgz#e8ac4780015bd36a0c138ffb6b6b2c02b7d6d948"
   dependencies:
     "@justeat/f-dom" "1.0.0"
     "@justeat/f-logger" "0.7.1"
@@ -3464,9 +3477,9 @@ d@1:
   dependencies:
     es5-ext "^0.10.9"
 
-danger@4.4.8:
-  version "4.4.8"
-  resolved "https://registry.npmjs.org/danger/-/danger-4.4.8.tgz#40e0448c3b20d44455b9a630fa895348811e6b78"
+danger@6.0.2:
+  version "6.0.2"
+  resolved "https://registry.npmjs.org/danger/-/danger-6.0.2.tgz#760f7603bf8bdd1c451236cd29c790baa4cf8185"
   dependencies:
     "@babel/polyfill" "^7.0.0"
     "@octokit/rest" "^15.12.1"
@@ -3487,6 +3500,7 @@ danger@4.4.8:
     memfs-or-file-map-to-github-branch "^1.1.0"
     node-cleanup "^2.1.2"
     node-fetch "^2.2.0"
+    override-require "^1.1.1"
     p-limit "^2.0.0"
     parse-diff "^0.5.1"
     parse-git-config "^2.0.3"
@@ -9402,6 +9416,10 @@ output-file-sync@^2.0.0:
     is-plain-obj "^1.1.0"
     mkdirp "^0.5.1"
 
+override-require@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/override-require/-/override-require-1.1.1.tgz#6ae22fadeb1f850ffb0cf4c20ff7b87e5eb650df"
+
 p-finally@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/p-finally/-/p-finally-1.0.0.tgz#3fbcfb15b899a44123b34b6dcc18b724336a2cae"
@@ -9711,9 +9729,9 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmjs.org/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
 
-picturefill@3.0.2:
-  version "3.0.2"
-  resolved "https://registry.npmjs.org/picturefill/-/picturefill-3.0.2.tgz#fa3d35fffbef5ab5300fe2ad9dca8f2e36cba27b"
+picturefill@3.0.3:
+  version "3.0.3"
+  resolved "https://registry.npmjs.org/picturefill/-/picturefill-3.0.3.tgz#a5c38eeb02d74def38e1790ff61e166166b4f224"
 
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
