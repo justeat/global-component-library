@@ -3,6 +3,15 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+
+v2.4.0
+------------------------------
+*November 2, 2018*
+
+### Changed
+- Package updates for `f-footer`, `f-icons`, `f-header`, `fozzie`
+
+
 v2.3.0
 ------------------------------
 *October 23, 2018*
@@ -641,4 +650,3 @@ v0.1.0
 ### Added
 - Proof of concept at this stage for the documentation repository for fozzie.
 - Includes base structure of module and repository as well as
-
