@@ -32,7 +32,8 @@
     "lodash.throttle": "4.1.1",
     "picturefill": "3.0.3",
     "qwery": "4.0.0",
-    "svg4everybody": "2.1.9"
+    "svg4everybody": "2.1.9",
+    "snyk": "^1.107.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.1.0",
@@ -50,10 +51,11 @@
     "start": "gulp docs",
     "predeploy": "yarn --ignore-optional",
     "deploy": "gulp docs:deploy",
-    "prepare": "yarn lint",
+    "prepare": "npm run snyk-protect; yarn lint",
     "lint": "yarn run lint:css && yarn run lint:js",
     "lint:css": "gulp scss:lint --prod",
-    "lint:js": "gulp scripts:lint --prod"
+    "lint:js": "gulp scripts:lint --prod",
+    "snyk-protect": "snyk protect"
   },
   "scripts-info": {
     "start": "Start up the Global Component Library locally",
@@ -64,5 +66,6 @@
     "last 2 versions",
     "Safari >= 8",
     "not ie 10"
-  ]
+  ],
+  "snyk": true
 }
