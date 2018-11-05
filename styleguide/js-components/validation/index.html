@@ -331,17 +331,17 @@
         </div>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup">&lt;div <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"g g--alignCenter"</span>&gt;
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span6"</span>&gt;</span>
+<pre><code class="language-markup"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g g--alignCenter"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g-col g-span6"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"test-form"</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Pattern (Valid pattern = a string of 1-6 letters):
-                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">pattern</span>=<span class="hljs-string">"[a-z]{1,6}"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">pattern</span>=<span class="hljs-string">"[a-z]</span></span></span><span class="hljs-template-variable">{1,6}</span><span class="xml"><span class="hljs-tag"><span class="hljs-string">"</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"o-btn o-btn--primary o-btn--block"</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
-</code></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span></code></pre>
     </div>
 </div>
 <p><a name="rules-matches"></a><h3 class="sg-sectionHeading">Matches</h3></p>
@@ -410,16 +410,16 @@
 <p>Currently, this rule only validates dates specified with a month and year and has not yet been extended to test for day.</p>
 <p>To validate a group with this rule, set the <code>data-val-group</code> and <code>data-val-dateinfuture</code> attributes on the container wrapping the <code>select</code> fields.</p>
 <p>Then apply the <code>data-val-dateinfuture-type=&quot;month&quot;</code> and <code>data-val-dateinfuture-type=&quot;year&quot; attributes to each</code>select` field, such that:</p>
-<pre><code class="language-markup"><span class="hljs-comment">// Apply `data-val-dateinfuture` attribute to the outer container</span>
-&lt;div data-val-<span class="hljs-built_in">group</span> data-val-dateinfuture&gt;
-    <span class="hljs-comment">// Apply `data-val-dateinfuture-type` attributes to the relevant `select` fields</span>
-    &lt;<span class="hljs-keyword">select</span> data-val-dateinfuture-<span class="hljs-built_in">type</span>=<span class="hljs-string">"year"</span>&gt;
-        &lt;option <span class="hljs-built_in">value</span>=<span class="hljs-string">""</span> &gt;&lt;/option&gt;
-        &lt;option <span class="hljs-built_in">value</span>=<span class="hljs-string">"2018"</span>&gt;&lt;/option&gt;
+<pre><code class="language-markup">// Apply `data-val-dateinfuture` <span class="hljs-keyword">attribute</span> <span class="hljs-keyword">to</span> the <span class="hljs-keyword">outer</span> container
+&lt;div data-val-<span class="hljs-keyword">group</span> data-val-dateinfuture&gt;
+    // Apply `data-val-dateinfuture-<span class="hljs-keyword">type</span>` attributes <span class="hljs-keyword">to</span> the relevant `<span class="hljs-keyword">select</span>` fields
+    &lt;<span class="hljs-keyword">select</span> data-val-dateinfuture-<span class="hljs-keyword">type</span>="year"&gt;
+        &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="" &gt;&lt;/<span class="hljs-keyword">option</span>&gt;
+        &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="2018"&gt;&lt;/<span class="hljs-keyword">option</span>&gt;
     &lt;/<span class="hljs-keyword">select</span>&gt;
-    &lt;<span class="hljs-keyword">select</span> data-val-dateinfuture-<span class="hljs-built_in">type</span>=<span class="hljs-string">"month"</span>&gt;
-        &lt;option <span class="hljs-built_in">value</span>=<span class="hljs-string">""</span> &gt;&lt;/option&gt;
-        &lt;option <span class="hljs-built_in">value</span>=<span class="hljs-string">"01"</span>&gt;&lt;/option&gt;
+    &lt;<span class="hljs-keyword">select</span> data-val-dateinfuture-<span class="hljs-keyword">type</span>="month"&gt;
+        &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="" &gt;&lt;/<span class="hljs-keyword">option</span>&gt;
+        &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="01"&gt;&lt;/<span class="hljs-keyword">option</span>&gt;
     &lt;/<span class="hljs-keyword">select</span>&gt;
 &lt;/div&gt;
 </code></pre>
@@ -459,34 +459,34 @@
         </div>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup">&lt;div class=<span class="hljs-string">"g"</span>&gt;
-    &lt;div class=<span class="hljs-string">"g-col g-span4"</span>&gt;
-        &lt;form name=<span class="hljs-string">"test-form"</span>&gt;
-            &lt;div data-val-group data-val-dateinfuture&gt;
-                &lt;select data-val-dateinfuture-type=<span class="hljs-string">"year"</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">""</span> &gt;&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"2017"</span>&gt;<span class="hljs-number">2017</span>&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"2018"</span>&gt;<span class="hljs-number">2018</span>&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"2019"</span>&gt;<span class="hljs-number">2019</span>&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"2020"</span>&gt;<span class="hljs-number">2020</span>&lt;/<span class="hljs-keyword">option</span>&gt;
-                &lt;/select&gt;
-                &lt;select data-val-dateinfuture-type=<span class="hljs-string">"month"</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">""</span> &gt;&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"01"</span>&gt;<span class="hljs-number">01</span>&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"02"</span>&gt;<span class="hljs-number">02</span>&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"03"</span>&gt;<span class="hljs-number">03</span>&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"04"</span>&gt;<span class="hljs-number">04</span>&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"05"</span>&gt;<span class="hljs-number">05</span>&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"06"</span>&gt;<span class="hljs-number">06</span>&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"07"</span>&gt;<span class="hljs-number">07</span>&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"08"</span>&gt;08&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"09"</span>&gt;09&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"10"</span>&gt;<span class="hljs-number">10</span>&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"11"</span>&gt;<span class="hljs-number">11</span>&lt;/<span class="hljs-keyword">option</span>&gt;
-                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>=<span class="hljs-string">"12"</span>&gt;<span class="hljs-number">12</span>&lt;/<span class="hljs-keyword">option</span>&gt;
-                &lt;/select&gt;
+<pre><code class="language-markup">&lt;div <span class="hljs-keyword">class</span>="g"&gt;
+    &lt;div <span class="hljs-keyword">class</span>="g-col g-span4"&gt;
+        &lt;form <span class="hljs-type">name</span>="test-form"&gt;
+            &lt;div data-val-<span class="hljs-keyword">group</span> data-val-dateinfuture&gt;
+                &lt;<span class="hljs-keyword">select</span> data-val-dateinfuture-<span class="hljs-keyword">type</span>="year"&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="" &gt;&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="2017"&gt;<span class="hljs-number">2017</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="2018"&gt;<span class="hljs-number">2018</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="2019"&gt;<span class="hljs-number">2019</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="2020"&gt;<span class="hljs-number">2020</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                &lt;/<span class="hljs-keyword">select</span>&gt;
+                &lt;<span class="hljs-keyword">select</span> data-val-dateinfuture-<span class="hljs-keyword">type</span>="month"&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="" &gt;&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="01"&gt;<span class="hljs-number">01</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="02"&gt;<span class="hljs-number">02</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="03"&gt;<span class="hljs-number">03</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="04"&gt;<span class="hljs-number">04</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="05"&gt;<span class="hljs-number">05</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="06"&gt;<span class="hljs-number">06</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="07"&gt;<span class="hljs-number">07</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="08"&gt;<span class="hljs-number">08</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="09"&gt;<span class="hljs-number">09</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="10"&gt;<span class="hljs-number">10</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="11"&gt;<span class="hljs-number">11</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                    &lt;<span class="hljs-keyword">option</span> <span class="hljs-keyword">value</span>="12"&gt;<span class="hljs-number">12</span>&lt;/<span class="hljs-keyword">option</span>&gt;
+                &lt;/<span class="hljs-keyword">select</span>&gt;
             &lt;/div&gt;
-            &lt;button type=<span class="hljs-string">"submit"</span> class=<span class="hljs-string">"o-btn o-btn--primary o-btn--block"</span>&gt;Submit&lt;/button&gt;
+            &lt;button <span class="hljs-keyword">type</span>="submit" <span class="hljs-keyword">class</span>="o-btn o-btn--primary o-btn--block"&gt;Submit&lt;/button&gt;
         &lt;/form&gt;
     &lt;/div&gt;
 &lt;/div&gt;
@@ -827,15 +827,15 @@ validateForm.addCustomValidation(<span class="hljs-string">'customRule'</span>, 
 </div>
 <p><a name="multiple-rules"></a><h2 class="sg-sectionHeading">Applying Multiple Rules</h2></p>
 <p>To apply multiple rules to the same field, you simply need to add multiple attributes to define the rules you want to validate.</p>
-<pre><code class="language-markup">// <span class="hljs-type">To</span> make a field validate <span class="hljs-keyword">as</span> required and <span class="hljs-keyword">of</span> <span class="hljs-class"><span class="hljs-keyword">type</span> email</span>
-&lt;input <span class="hljs-class"><span class="hljs-keyword">type</span>="email" required /&gt;</span>
+<pre><code class="language-markup">// <span class="hljs-keyword">To</span> make a field <span class="hljs-keyword">validate</span> <span class="hljs-keyword">as</span> required <span class="hljs-keyword">and</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">type</span> email
+&lt;<span class="hljs-keyword">input</span> <span class="hljs-keyword">type</span>="email" required /&gt;
 
-// <span class="hljs-type">To</span> make a field validate <span class="hljs-keyword">as</span> minlength and maxlength
-&lt;input <span class="hljs-class"><span class="hljs-keyword">type</span>="text"</span>
-    <span class="hljs-class"><span class="hljs-keyword">data</span>-val-minlength</span>
-    <span class="hljs-class"><span class="hljs-keyword">data</span>-val-maxlength</span>
-    <span class="hljs-class"><span class="hljs-keyword">data</span>-val-minlength-error="<span class="hljs-type">Custom</span> error minlength"</span>
-    <span class="hljs-class"><span class="hljs-keyword">data</span>-val-maxlength-error="<span class="hljs-type">Custom</span> error maxlength" /&gt;</span>
+// <span class="hljs-keyword">To</span> make a field <span class="hljs-keyword">validate</span> <span class="hljs-keyword">as</span> minlength <span class="hljs-keyword">and</span> maxlength
+&lt;<span class="hljs-keyword">input</span> <span class="hljs-keyword">type</span>="text"
+    data-val-minlength
+    data-val-maxlength
+    data-val-minlength-error="Custom error minlength"
+    data-val-maxlength-error="Custom error maxlength" /&gt;
 </code></pre>
 <div class="demo">
     <div class="demo-visual ">
