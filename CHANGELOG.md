@@ -5,8 +5,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 v2.5.0
-------------------------------
-*November 5, 2018*
+
+*November 6, 2018*
 
 ### Changed
 - UI-components icons to be called from svg sprite to improve "Show code" behaviour
