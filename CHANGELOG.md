@@ -4,6 +4,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v2.5.0
+------------------------------
+*November 6, 2018*
+
+### Changed
+- UI-components icons to be called from svg sprite to improve "Show code" behaviour
+
+### Added
+- Social icons to UI icons component examples
+
 v2.4.0
 ------------------------------
 *November 2, 2018*
