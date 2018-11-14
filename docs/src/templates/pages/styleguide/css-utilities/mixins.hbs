@@ -1,0 +1,112 @@
+---
+title: Utility Sass Mixins
+docs: true
+
+navgroup: styleguide
+navsub: css-utilities
+navactive: scss-mixins
+layout: components
+---
+
+<div class="sg-index">
+
+{{#markdown}}
+
+## Colorize the alert
+
+`alert-variant(backgroundColour, textColour)`
+
+Used in alert modifier classes to colorize the alert
+
+```css
+@include alert-variant(orange, black);
+```
+
+---
+
+## Borders styling
+
+`bordered(borderRadius, padding, borderColour)`
+
+Add padding, border and border radius to element
+
+Defaults: borderRadius: $border-radius; padding: spacing(x3); borderColour: $color-border
+
+```css
+@include bordered();
+
+//Override default values
+@include bordered(10px, 30px, green);
+```
+
+---
+
+## Fill the star rating
+
+`rating-fill(maxStars)`
+
+Used in rating modifier to fill the star ratings
+
+Defaults: maxStars: 6
+
+```css
+@include rating-fill();
+
+//Override default values
+@include rating-fill(5);
+```
+
+---
+
+## Truncate
+
+`truncate(boundary)`
+
+Forces overly long lines of text to truncate
+
+Defaults: boundary: null
+
+```css
+@include truncate();
+
+//Override default values
+@include truncate(200px);
+```
+
+---
+
+## Convert value to REMs
+
+`rem(property, sizeValue)`
+
+Defaults: sizeValue: $font-size-base
+
+```css
+@include rem(font-size, 16px);
+```
+
+---
+
+## Convert value to EMs
+
+`em(property, sizeValue)`
+
+```css
+@include em(font-size, 16px);
+```
+
+---
+
+## Font-size mixin
+
+`font-size(key, lineHeight, scale, relativeToParent)`
+
+Allows direct use of font-size map keys rather than specific values and converts px definitions to REM with respect to the base font-size.
+
+```css
+@include font-size(mid);
+```
+
+{{/markdown}}
+
+</div>

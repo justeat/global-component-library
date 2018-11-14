@@ -1,0 +1,64 @@
+---
+title: Responsive helper classes
+docs: true
+
+navgroup: styleguide
+navsub: css-utilities
+navactive: css-rwd
+layout: components
+---
+<div class="sg-index">
+
+{{#markdown}}
+
+Responsive helper classes to show/hide content based on our media-queries
+
+`.u-showBelowNarrow`
+
+Hide element for screens >= narrow (>= 414px)
+
+`.u-showBelowMid`
+
+Hide element for screens >= mid (>= 768px)
+
+`.u-showBelowWide`
+
+Hide element for screens >= wide (>= 1025px)
+
+`.u-showBelowHuge`
+
+Hide element for screens >= huge (>= 1280px)
+
+`.u-showAboveNarrow`
+
+Hide element for screens < narrow (< 414px)
+
+`.u-showAboveMid,`
+`.no-js .u-showAboveMid--noJS`
+
+Hide element for screens < mid (< 768px)
+
+`.u-showAboveWide`
+
+Hide element for screens < wide (< 1025px)
+
+`.u-showAboveHuge`
+
+Hide element for screens < huge (< 1280px)
+
+{{#>demo-block }}
+<p>Resize browser window to see different elements</p>
+<br>
+<div class="u-showBelowNarrow">The screen is below narrow</div>
+<div class="u-showBelowMid">The screen is below middle</div>
+<div class="u-showBelowWide">The screen is below wide</div>
+<div class="u-showBelowHuge">The screen is below huge</div>
+<div class="u-showAboveNarrow">The screen is above narrow</div>
+<div class="u-showAboveMid">The screen is above middle</div>
+<div class="u-showAboveWide">The screen is above wide</div>
+<div class="u-showAboveHuge">The screen is above huge</div>
+{{/demo-block }}
+
+{{/markdown}}
+
+</div>

@@ -17,16 +17,305 @@ Utility classes available to developers for common tasks.
 
 ## Clearfix
 
-<h3><code>.u-clearfix</code></h3>
-<p>Clear the current element so it always appears on a new line.  Can also use the clearfix mixin – <code>@include clearfix()</code> in your CSS.</p>
+`.u-clearfix`
+
+Clear the current element so it always appears on a new line. Can also use the clearfix mixin – `@include clearfix()` in your CSS.
 
 {{#>demo-block }}
 <span class="u-clearfix">Lorem</span>
 <span>Ipsum</span>
 {{/demo-block }}
 
+---
 
-<!--## Responsive Helpers-->
+## Colour Utilities
+
+`.u-lightenBg`
+
+Add the lightest background colour to the element
+
+{{#>demo-block }}
+<div style="background-color: #f5f5f5; padding: 10px">
+    <div class="u-lightenBg">Lorem</div>
+    <div>Ipsum</div>
+</div>
+{{/demo-block }}
+
+`.u-bordered,`
+`%u-bordered`
+
+Add default padding, border and border radius to the element.
+
+Can also use the bordered mixin – `@include bordered(borderRadius, padding, borderColour)` in your CSS.
+
+{{#>demo-block }}
+<div class="u-bordered">Lorem Ipsum</div>
+{{/demo-block }}
+
+
+`.u-bordered--mid`
+
+Add default padding, border and border radius to the element for medium(> 768px) screen size
+
+{{#>demo-block }}
+<div class="u-bordered--mid">Lorem Ipsum</div>
+{{/demo-block }}
+
+---
+## Display Utilities
+
+`.is-hidden,`
+`.no-js .is-hidden--noJS`
+`.is-shown,`
+`.no-js .is-shown--noJS`
+
+Hide/Show from both screenreaders and browsers
+
+{{#>demo-block }}
+<span class="is-hidden">Lorem</span>
+<span>Ipsum</span>
+{{/demo-block }}
+
+`.is-visuallyHidden,`
+
+Hide only visually, but have it available for screenreaders
+
+{{#>demo-block }}
+<span class="is-visuallyHidden">Lorem</span>
+<span>Ipsum</span>
+{{/demo-block }}
+
+`&.focusable:active,`
+`&.focusable:focus`
+
+Extends the `.is-visuallyhidden` class to allow the element to be focusable when navigated to via the keyboard
+
+{{#>demo-block }}
+<div class="is-visuallyHidden focusable:active">Lorem</div>
+<div class="is-visuallyHidden focusable:focus">Ipsum</div>
+<div>Dolor</div>
+{{/demo-block }}
+
+`.is-invisible`
+
+Hide visually and from screenreaders, but maintain layout
+
+{{#>demo-block }}
+<div class="is-invisible">Lorem</div>
+<div>Ipsum</div>
+{{/demo-block }}
+
+`.u-pointer`
+
+{{#>demo-block }}
+<div class="u-pointer">Lorem Ipsum</div>
+{{/demo-block }}
+
+---
+
+## Position Utilities
+
+`.is-sticky`
+
+Fixed position for the element
+
+`.u-sticky`
+
+Sticky position for the element with doubled default spacing at the top
+
+---
+
+## Typographic Utilities
+
+`.u-noWrap`
+
+Ensure text inside helper never wraps
+
+{{#>demo-block }}
+<div class="u-noWrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+{{/demo-block }}
+
+
+`.u-uppercase`
+
+{{#>demo-block }}
+<div class="u-uppercase">Lorem Ipsum</div>
+{{/demo-block }}
+
+`.u-textPad`
+
+Add tab indentation (spacing(x4))
+
+{{#>demo-block }}
+<div>Lorem</div>
+<div class="u-textPad">Ipsum</div>
+{{/demo-block }}
+
+`.u-text-truncate`
+
+Forces overly long lines of text to truncate. Can also use the truncate mixin – `@include truncate();` in your CSS.
+
+{{#>demo-block }}
+<div class="u-text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+{{/demo-block }}
+
+`.u-noUnderline`
+
+Add underline text decoration for hover, active and focus satates
+
+{{#>demo-block }}
+<div class="u-noUnderline">Lorem Ipsum</div>
+{{/demo-block }}
+
+`.u-text-centre`
+
+{{#>demo-block }}
+<div class="u-text-centre">Lorem Ipsum</div>
+{{/demo-block }}
+
+`.u-text-left`
+
+{{#>demo-block }}
+<div class="u-text-left">Lorem Ipsum</div>
+{{/demo-block }}
+
+`.u-text-right`
+
+{{#>demo-block }}
+<div class="u-text-right">Lorem Ipsum</div>
+{{/demo-block }}
+
+`.u-text-highlight`
+
+{{#>demo-block }}
+<span class="u-text-highlight">Lorem Ipsum</span>
+{{/demo-block }}
+
+`.u-text-indent`
+
+Add text indentation (spacing(x2))
+
+{{#>demo-block }}
+<div>Lorem</div>
+<div class="u-text-indent">Ipsum</div>
+{{/demo-block }}
+
+---
+
+## Spacing Utilities (margins)
+
+`.u-noSpacing`
+
+Remove all margins from the element
+
+`.u-spacingTop`
+
+Adds default marging to the top (spacing())
+
+`.u-spacingTop--small`
+
+Add half of default marging to the top (spacing(x0.5))
+
+`.u-spacingTop--large`
+
+Add doubled default marging to the top (spacing(x2))
+
+`.u-spacingRight`
+
+Add default marging to the right (spacing())
+
+`.u-spacingBottom`
+
+Add default marging to the bottom (spacing())
+
+`.u-spacingBottom--large`
+
+Add doubled default marging to the bottom (spacing(x2))
+
+`.u-spacingLeft`
+
+Add default marging to the left (spacing())
+
+{{#>demo-block }}
+<div class="u-noSpacing">NoSpacing</div>
+<div class="u-spacingTop">SpacingTop</div>
+<div class="u-spacingTop--small">Small SpacingTop</div>
+<div class="u-spacingTop--large">Large SpacingTop</div>
+<div class="u-spacingRight">SpacingRight</div>
+<div class="u-spacingBottom">SpacingBottom</div>
+<div class="u-spacingBottom--large">Large SpacingBottom</div>
+<div class="u-spacingLeft">SpacingLeft</div>
+{{/demo-block }}
+
+---
+
+## Padding Utilities
+
+`.u-noPad`
+
+Remove all paddings from the element
+
+`.u-padTop`
+
+Add default padding to the top (spacing())
+
+`.u-padTop--large`
+
+Add doubled default padding to the top (spacing(x2))
+
+`.u-padTop--large--aboveMid`
+
+Add doubled default padding to the top for medium(> 768px) media query (spacing(x2))
+
+{{#>demo-block }}
+<div class="u-noPad">NoPadding</div>
+<div class="u-padTop">PaddingTop</div>
+<div class="u-padTop--large">Large PaddingTop</div>
+<div class="u-padTop--large--aboveMid">Large PaddingTop for screens more than 768px</div>
+{{/demo-block }}
+
+---
+
+## Image Replacement Techniques
+
+`%u-ir,`
+`.u-ir`
+
+Background image replacement
+
+`.u-hideText,`
+`%u-hideText`
+
+Alternative image replacement technique
+
+---
+
+## List Helper
+
+`.u-unstyled,`
+`%u-unstyled`
+
+{{#>demo-block }}
+<ul class="u-unstyled">
+    <li>Unstyled list element</li>
+    <li>Unstyled list element</li>
+    <li>Unstyled list element</li>
+</ul>
+{{/demo-block }}
+
+---
+
+## Helper classes for focus accessibility
+
+`%u-elementFocus,`
+`.u-elementFocus`
+
+Custom outline styling for elements that have a focus state
+
+`%u-elementFocus--boxShadow,`
+`.u-elementFocus--boxShadow`
+
+Custom visual outline emulation for better appearance on elements with rounded corners
 
 {{/markdown}}
 

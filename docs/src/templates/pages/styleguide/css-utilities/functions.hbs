@@ -1,0 +1,160 @@
+---
+title: Utility Sass Functions
+docs: true
+
+navgroup: styleguide
+navsub: css-utilities
+navactive: scss-functions
+layout: components
+---
+
+<div class="sg-index">
+
+{{#markdown}}
+
+## Spacing function
+
+`spacing(key)`
+
+Allows developers to specify the amount of spacing they require via a shortcut function.
+
+Accesses the spacing map definition in the fozzie variables file.
+
+Avaliable keys: x0.5; base; x1.5; x2; x3; x4; x5; x6; x7; x8
+
+Defaults: key: 'base'
+
+```css
+margin: spacing(x2);
+```
+
+---
+
+## Line height function
+
+`line-height(fontSize, lineHeight, scale)`
+
+Given a font-size and a line-height (in px) returns a unitless line-height value.
+
+Defaults: fontSize: 'base', lineHeight: '16', scale: 'default'
+
+```css
+line-height: line-height(16px, 24px);
+```
+
+---
+
+## Strip units function
+
+`strip-units(value)`
+
+Remove the unit of a measurement
+
+```css
+strip-units(400px) //400
+```
+
+---
+
+## px to ems function
+
+`em(pxval, baseFontSize)`
+
+Convert px values to em
+
+Defaults: baseFontSize: $font-size-base
+
+```css
+font-size: em(12);
+font-size: em(12, 24); // If the parent is another value say 24px
+```
+
+---
+
+## Map to ems function
+
+`map-to-em(breakpointMap, baseFontSize)`
+
+Convert a map of px breakpoints to ems
+
+Defaults: baseFontSize: $font-size-base
+
+```css
+$breakpoints: map-to-em((
+    narrow : 400px,
+    mid    : 750px,
+    wide   : 1000px,
+    huge   : 1250px
+), 16);
+```
+
+---
+
+## Decimal round function
+
+`decimal-round(number, digits, mode)`
+
+Round number to the amount of decimals(digits) according to the mode
+
+Avaliable modes: round, ceil, floor
+
+Defaults: digits: 0, mode: round
+
+```css
+decimal-round(($line-height / $font-size), 2);
+```
+
+---
+
+## em to px function
+
+`em-to-px(emVal, $baseFontSize)`
+
+Convert em values to px
+
+Defaults: baseFontSize: $font-size-base
+
+```css
+em-to-px(4, 16) //64px
+```
+
+---
+
+## Map to px funtion
+
+`map-to-px(breakpoints, baseFontSize)`
+
+Convert a map of em breakpoints to px
+
+Defaults: baseFontSize: $font-size-base
+
+```css
+map-to-px((
+    narrow : 25em,
+    mid    : 46.875em,
+    wide   : 62.5em,
+    huge   : 78.125em
+), 16);
+```
+
+---
+
+## zIndex function
+
+`zIndex(key)`
+
+Allows developers to specify the amount of zIndex they require via a shortcut function.
+
+Accesses the spacing map zIndex definition in the fozzie variables file.
+
+Avaliable keys: lowest, low, mid, belowHighest, high
+
+Defaults: key: 'lowest'
+
+```css
+z-index: zIndex(high);
+```
+
+{{/markdown}}
+
+</div>
