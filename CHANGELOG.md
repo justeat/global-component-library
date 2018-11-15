@@ -5,7 +5,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 v2.6.0
 ------------------------------
-*November 14, 2018*
+*November 15, 2018*
 
 ### Added
 - CSS utilities documentation

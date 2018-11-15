@@ -17,7 +17,7 @@ Utility classes available to developers for common tasks.
 
 ## Clearfix
 
-`.u-clearfix`
+### `.u-clearfix`
 
 Clear the current element so it always appears on a new line. Can also use the clearfix mixin – `@include clearfix()` in your CSS.
 
@@ -30,7 +30,7 @@ Clear the current element so it always appears on a new line. Can also use the c
 
 ## Colour Utilities
 
-`.u-lightenBg`
+### `.u-lightenBg`
 
 Add the lightest background colour to the element
 
@@ -41,8 +41,8 @@ Add the lightest background colour to the element
 </div>
 {{/demo-block }}
 
-`.u-bordered,`
-`%u-bordered`
+<h3>`.u-bordered,`
+`%u-bordered`</h3>
 
 Add default padding, border and border radius to the element.
 
@@ -53,7 +53,7 @@ Can also use the bordered mixin – `@include bordered(borderRadius, padding, bo
 {{/demo-block }}
 
 
-`.u-bordered--mid`
+### `.u-bordered--mid`
 
 Add default padding, border and border radius to the element for medium(> 768px) screen size
 
@@ -64,10 +64,10 @@ Add default padding, border and border radius to the element for medium(> 768px)
 ---
 ## Display Utilities
 
-`.is-hidden,`
+<h3>`.is-hidden,`
 `.no-js .is-hidden--noJS`
 `.is-shown,`
-`.no-js .is-shown--noJS`
+`.no-js .is-shown--noJS`</h3>
 
 Hide/Show from both screenreaders and browsers
 
@@ -76,7 +76,7 @@ Hide/Show from both screenreaders and browsers
 <span>Ipsum</span>
 {{/demo-block }}
 
-`.is-visuallyHidden,`
+### `.is-visuallyHidden`
 
 Hide only visually, but have it available for screenreaders
 
@@ -85,8 +85,8 @@ Hide only visually, but have it available for screenreaders
 <span>Ipsum</span>
 {{/demo-block }}
 
-`&.focusable:active,`
-`&.focusable:focus`
+<h3>`&.focusable:active,`
+`&.focusable:focus`</h3>
 
 Extends the `.is-visuallyhidden` class to allow the element to be focusable when navigated to via the keyboard
 
@@ -96,7 +96,7 @@ Extends the `.is-visuallyhidden` class to allow the element to be focusable when
 <div>Dolor</div>
 {{/demo-block }}
 
-`.is-invisible`
+### `.is-invisible`
 
 Hide visually and from screenreaders, but maintain layout
 
@@ -105,7 +105,7 @@ Hide visually and from screenreaders, but maintain layout
 <div>Ipsum</div>
 {{/demo-block }}
 
-`.u-pointer`
+### `.u-pointer`
 
 {{#>demo-block }}
 <div class="u-pointer">Lorem Ipsum</div>
@@ -115,11 +115,11 @@ Hide visually and from screenreaders, but maintain layout
 
 ## Position Utilities
 
-`.is-sticky`
+### `.is-sticky`
 
 Fixed position for the element
 
-`.u-sticky`
+### `.u-sticky`
 
 Sticky position for the element with doubled default spacing at the top
 
@@ -127,7 +127,7 @@ Sticky position for the element with doubled default spacing at the top
 
 ## Typographic Utilities
 
-`.u-noWrap`
+### `.u-noWrap`
 
 Ensure text inside helper never wraps
 
@@ -135,14 +135,13 @@ Ensure text inside helper never wraps
 <div class="u-noWrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
 {{/demo-block }}
 
-
-`.u-uppercase`
+### `.u-uppercase`
 
 {{#>demo-block }}
 <div class="u-uppercase">Lorem Ipsum</div>
 {{/demo-block }}
 
-`.u-textPad`
+### `.u-textPad`
 
 Add tab indentation (spacing(x4))
 
@@ -151,7 +150,7 @@ Add tab indentation (spacing(x4))
 <div class="u-textPad">Ipsum</div>
 {{/demo-block }}
 
-`.u-text-truncate`
+### `.u-text-truncate`
 
 Forces overly long lines of text to truncate. Can also use the truncate mixin – `@include truncate();` in your CSS.
 
@@ -159,7 +158,7 @@ Forces overly long lines of text to truncate. Can also use the truncate mixin �
 <div class="u-text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 {{/demo-block }}
 
-`.u-noUnderline`
+### `.u-noUnderline`
 
 Add underline text decoration for hover, active and focus satates
 
@@ -167,31 +166,23 @@ Add underline text decoration for hover, active and focus satates
 <div class="u-noUnderline">Lorem Ipsum</div>
 {{/demo-block }}
 
-`.u-text-centre`
-
-{{#>demo-block }}
-<div class="u-text-centre">Lorem Ipsum</div>
-{{/demo-block }}
-
+<h3>`.u-text-centre`
 `.u-text-left`
+`.u-text-right`</h3>
 
 {{#>demo-block }}
-<div class="u-text-left">Lorem Ipsum</div>
+<div class="u-text-centre">I am centered positioned</div>
+<div class="u-text-left">I am left positioned</div>
+<div class="u-text-right">I am right positioned</div>
 {{/demo-block }}
 
-`.u-text-right`
-
-{{#>demo-block }}
-<div class="u-text-right">Lorem Ipsum</div>
-{{/demo-block }}
-
-`.u-text-highlight`
+### `.u-text-highlight`
 
 {{#>demo-block }}
 <span class="u-text-highlight">Lorem Ipsum</span>
 {{/demo-block }}
 
-`.u-text-indent`
+### `.u-text-indent`
 
 Add text indentation (spacing(x2))
 
@@ -204,35 +195,35 @@ Add text indentation (spacing(x2))
 
 ## Spacing Utilities (margins)
 
-`.u-noSpacing`
+### `.u-noSpacing`
 
 Remove all margins from the element
 
-`.u-spacingTop`
+### `.u-spacingTop`
 
 Adds default marging to the top (spacing())
 
-`.u-spacingTop--small`
+### `.u-spacingTop--small`
 
 Add half of default marging to the top (spacing(x0.5))
 
-`.u-spacingTop--large`
+### `.u-spacingTop--large`
 
 Add doubled default marging to the top (spacing(x2))
 
-`.u-spacingRight`
+### `.u-spacingRight`
 
 Add default marging to the right (spacing())
 
-`.u-spacingBottom`
+### `.u-spacingBottom`
 
 Add default marging to the bottom (spacing())
 
-`.u-spacingBottom--large`
+### `.u-spacingBottom--large`
 
 Add doubled default marging to the bottom (spacing(x2))
 
-`.u-spacingLeft`
+### `.u-spacingLeft`
 
 Add default marging to the left (spacing())
 
@@ -251,19 +242,19 @@ Add default marging to the left (spacing())
 
 ## Padding Utilities
 
-`.u-noPad`
+### `.u-noPad`
 
 Remove all paddings from the element
 
-`.u-padTop`
+### `.u-padTop`
 
 Add default padding to the top (spacing())
 
-`.u-padTop--large`
+### `.u-padTop--large`
 
 Add doubled default padding to the top (spacing(x2))
 
-`.u-padTop--large--aboveMid`
+### `.u-padTop--large--aboveMid`
 
 Add doubled default padding to the top for medium(> 768px) media query (spacing(x2))
 
@@ -278,13 +269,13 @@ Add doubled default padding to the top for medium(> 768px) media query (spacing(
 
 ## Image Replacement Techniques
 
-`%u-ir,`
-`.u-ir`
+<h3>`%u-ir,`
+`.u-ir`</h3>
 
 Background image replacement
 
-`.u-hideText,`
-`%u-hideText`
+<h3>`.u-hideText,`
+`%u-hideText`</h3>
 
 Alternative image replacement technique
 
@@ -292,8 +283,8 @@ Alternative image replacement technique
 
 ## List Helper
 
-`.u-unstyled,`
-`%u-unstyled`
+<h3>`.u-unstyled,`
+`%u-unstyled`</h3>
 
 {{#>demo-block }}
 <ul class="u-unstyled">
@@ -307,13 +298,13 @@ Alternative image replacement technique
 
 ## Helper classes for focus accessibility
 
-`%u-elementFocus,`
-`.u-elementFocus`
+<h3>`%u-elementFocus,`
+`.u-elementFocus`</h3>
 
 Custom outline styling for elements that have a focus state
 
-`%u-elementFocus--boxShadow,`
-`.u-elementFocus--boxShadow`
+<h3>`%u-elementFocus--boxShadow,`
+`.u-elementFocus--boxShadow`</h3>
 
 Custom visual outline emulation for better appearance on elements with rounded corners
 
