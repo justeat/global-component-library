@@ -3,12 +3,26 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+
+v2.7.0
+------------------------------
+*November 20, 2018*
+
+### Changed
+- `c-pageBanner` component become more reusable
+- Package updates for `fozzie`, `f-icons`, `f-footer`
+
+### Added
+- zIndex for `sg-themeToggle`
+
+
 v2.6.0
 ------------------------------
 *November 20, 2018*
 
 ### Added
 - CSS utilities documentation
+
 
 v2.5.0
 ------------------------------
@@ -19,6 +33,7 @@ v2.5.0
 
 ### Added
 - Social icons to UI icons component examples
+
 
 v2.4.0
 ------------------------------

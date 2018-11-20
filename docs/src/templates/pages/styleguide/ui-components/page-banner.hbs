@@ -9,11 +9,29 @@ navactive: pagebanner
 layout: components
 ---
 
-<p>Page Banners stretch to the full width of their container, and contain banner images which typically use a <code>picture</code> element. They also display a white version of the Just Eat rays at the bottom.</p>
+<p>Page Banners stretch to the full width of their container, and contain banner images which typically use a <code>picture</code> element. They optionally can display a white or a coloured version of the Just Eat rays at the bottom.</p>
 
 <p><em>The <code>pageBanner</code> component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding <code>@include pageBanner();</code> into your SCSS dependencies file.</em></p>
 
-<h2 class="sg-sectionHeading">Page Banner</h2>
-{{#>demo-block demoVisualCssClass="demo-visual--spacingBottom" }}
-{{> je-pageBanner }}
+
+<h2 class="sg-sectionHeading">Menu Page Banner With White Rays</h2>
+{{#>demo-block demoVisualCssClass="demo-visual--noSpacing demo-visual--spacingBottom" }}
+{{> je-pageBanner
+        optionalClassNames="c-pageBanner--narrow c-pageBanner--withRays--white c-pageBanner--negativeBottom--aboveMid"
+        srcSetWide="/assets/img/examples/kebabs--wide.jpg"
+        srcSetMid="/assets/img/examples/kebabs--mid.jpg"
+        srcSetNarrow="/assets/img/examples/kebabs--narrow.jpg"
+}}
+{{/demo-block }}
+
+<h2 class="sg-sectionHeading">Homepage Banner With Coloured Rays</h2>
+
+{{#>demo-block demoVisualCssClass="demo-visual--noSpacing"}}
+
+{{> je-pageBanner
+        optionalClassNames="c-pageBanner--tall c-pageBanner--withRays--coloured"
+        srcSetWide="/assets/img/examples/homepageBanner--wide.jpg"
+        srcSetMid="/assets/img/examples/homepageBanner--mid.jpg"
+        srcSetNarrow="/assets/img/examples/homepageBanner--narrow.jpg"
+}}
 {{/demo-block }}
