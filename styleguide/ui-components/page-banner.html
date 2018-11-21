@@ -135,17 +135,18 @@
                 </ul>
             </div>
             <div class="g-col g-span10--mid">
-                <div class="c-card c-card--rounded c-card--smallResponsive">
+                <div class="c-card c-card--rounded">
                     <h1>Page Banner</h1>
-                    <p>Page Banners stretch to the full width of their container, and contain banner images which typically use a <code>picture</code> element. They also display a white version of the Just Eat rays at the bottom.</p>
+                    <p>Page Banners stretch to the full width of their container, and contain banner images which typically use a <code>picture</code> element. They optionally can display a white or a coloured version of the Just Eat rays at the bottom.</p>
 
 <p><em>The <code>pageBanner</code> component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding <code>@include pageBanner();</code> into your SCSS dependencies file.</em></p>
 
-<h2 class="sg-sectionHeading">Page Banner</h2>
+
+<h2 class="sg-sectionHeading">Menu Page Banner With White Rays</h2>
 <div class="demo">
-    <div class="demo-visual demo-visual--spacingBottom">
+    <div class="demo-visual demo-visual--noSpacing demo-visual--spacingBottom">
         <h4 class="demo-title">Example</h4>
-        <div class="c-pageBanner c-pageBanner--negativeBottom--aboveMid">
+        <div class="c-pageBanner c-pageBanner--narrow c-pageBanner--withRays--white c-pageBanner--negativeBottom--aboveMid">
             <picture>
                 <source class="c-pageBanner-img" media="(min-width: 860px)" srcset="/assets/img/examples/kebabs--wide.jpg" data-ft="restaurant-level-image--wide">
                 <source class="c-pageBanner-img" media="(min-width: 600px)" srcset="/assets/img/examples/kebabs--mid.jpg" data-ft="restaurant-level-image--mid">
@@ -154,11 +155,38 @@
         </div>
     </div>
     <div class="demo-code">
-<pre><code class="language-markup">&lt;div class=<span class="hljs-string">"c-pageBanner c-pageBanner--negativeBottom--aboveMid"</span>&gt;
+<pre><code class="language-markup">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-pageBanner c-pageBanner--narrow c-pageBanner--withRays--white c-pageBanner--negativeBottom--aboveMid"</span>&gt;
     &lt;picture&gt;
-        &lt;<span class="hljs-built_in">source</span> class=<span class="hljs-string">"c-pageBanner-img"</span> media=<span class="hljs-string">"(min-width: 860px)"</span> srcset=<span class="hljs-string">"{<span class="hljs-variable">$ASYNCID</span><span class="hljs-variable">$1</span><span class="hljs-variable">$2050</span>$}/assets/img/examples/kebabs--wide.jpg"</span> data-ft=<span class="hljs-string">"restaurant-level-image--wide"</span>&gt;
-        &lt;<span class="hljs-built_in">source</span> class=<span class="hljs-string">"c-pageBanner-img"</span> media=<span class="hljs-string">"(min-width: 600px)"</span> srcset=<span class="hljs-string">"{<span class="hljs-variable">$ASYNCID</span><span class="hljs-variable">$1</span><span class="hljs-variable">$2051</span>$}/assets/img/examples/kebabs--mid.jpg"</span> data-ft=<span class="hljs-string">"restaurant-level-image--mid"</span>&gt;
-        &lt;img class=<span class="hljs-string">"c-pageBanner-img"</span> srcset=<span class="hljs-string">"{<span class="hljs-variable">$ASYNCID</span><span class="hljs-variable">$1</span><span class="hljs-variable">$2052</span>$}/assets/img/examples/kebabs--narrow.jpg"</span> alt=<span class="hljs-string">""</span> data-ft=<span class="hljs-string">"restaurant-level-image--narrow"</span> &gt;
+        &lt;source <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-pageBanner-img"</span> media=<span class="hljs-string">"(min-width: 860px)"</span> srcset=<span class="hljs-string">"/assets/img/examples/kebabs--wide.jpg"</span> <span class="hljs-class"><span class="hljs-keyword">data</span>-ft="restaurant-level-image<span class="hljs-comment">--wide"&gt;</span></span>
+        &lt;source <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-pageBanner-img"</span> media=<span class="hljs-string">"(min-width: 600px)"</span> srcset=<span class="hljs-string">"/assets/img/examples/kebabs--mid.jpg"</span> <span class="hljs-class"><span class="hljs-keyword">data</span>-ft="restaurant-level-image<span class="hljs-comment">--mid"&gt;</span></span>
+        &lt;img <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-pageBanner-img"</span> srcset=<span class="hljs-string">"/assets/img/examples/kebabs--narrow.jpg"</span> alt=<span class="hljs-string">""</span> <span class="hljs-class"><span class="hljs-keyword">data</span>-ft="restaurant-level-image<span class="hljs-comment">--narrow" &gt;</span></span>
+    &lt;/picture&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+</div>
+
+<h2 class="sg-sectionHeading">Homepage Banner With Coloured Rays</h2>
+
+<div class="demo">
+    <div class="demo-visual demo-visual--noSpacing">
+        <h4 class="demo-title">Example</h4>
+        
+        <div class="c-pageBanner c-pageBanner--tall c-pageBanner--withRays--coloured">
+            <picture>
+                <source class="c-pageBanner-img" media="(min-width: 860px)" srcset="/assets/img/examples/homepageBanner--wide.jpg" data-ft="restaurant-level-image--wide">
+                <source class="c-pageBanner-img" media="(min-width: 600px)" srcset="/assets/img/examples/homepageBanner--mid.jpg" data-ft="restaurant-level-image--mid">
+                <img class="c-pageBanner-img" srcset="/assets/img/examples/homepageBanner--narrow.jpg" alt="" data-ft="restaurant-level-image--narrow" >
+            </picture>
+        </div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">
+&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-pageBanner c-pageBanner--tall c-pageBanner--withRays--coloured"</span>&gt;
+    &lt;picture&gt;
+        &lt;source <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-pageBanner-img"</span> media=<span class="hljs-string">"(min-width: 860px)"</span> srcset=<span class="hljs-string">"/assets/img/examples/homepageBanner--wide.jpg"</span> <span class="hljs-class"><span class="hljs-keyword">data</span>-ft="restaurant-level-image<span class="hljs-comment">--wide"&gt;</span></span>
+        &lt;source <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-pageBanner-img"</span> media=<span class="hljs-string">"(min-width: 600px)"</span> srcset=<span class="hljs-string">"/assets/img/examples/homepageBanner--mid.jpg"</span> <span class="hljs-class"><span class="hljs-keyword">data</span>-ft="restaurant-level-image<span class="hljs-comment">--mid"&gt;</span></span>
+        &lt;img <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-pageBanner-img"</span> srcset=<span class="hljs-string">"/assets/img/examples/homepageBanner--narrow.jpg"</span> alt=<span class="hljs-string">""</span> <span class="hljs-class"><span class="hljs-keyword">data</span>-ft="restaurant-level-image<span class="hljs-comment">--narrow" &gt;</span></span>
     &lt;/picture&gt;
 &lt;/div&gt;
 </code></pre>

@@ -145,63 +145,69 @@ dom.exists = exists;
 var _default = dom;
 exports.default = _default;
 },{"qwery":36}],4:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
-exports.resizeInit = exports.tabindexResize = exports.collapseFooterPanels = void 0;
+exports.resizeInit = exports.tabindexResize = exports.collapseFooterPanels = undefined;
 
-var _liteReady = _interopRequireDefault(require("lite-ready"));
+var _liteReady = require('lite-ready');
 
-var _qwery = _interopRequireDefault(require("qwery"));
+var _liteReady2 = _interopRequireDefault(_liteReady);
 
-var _fozzie = require("@justeat/fozzie");
+var _qwery = require('qwery');
 
-var _lodash = _interopRequireDefault(require("lodash.debounce"));
+var _qwery2 = _interopRequireDefault(_qwery);
+
+var _fozzie = require('@justeat/fozzie');
+
+var _lodash = require('lodash.debounce');
+
+var _lodash2 = _interopRequireDefault(_lodash);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var footerPanels;
+var footerPanels = void 0;
 var breakpoints = null;
 
 var tabindexResize = function tabindexResize() {
-  if (breakpoints === null) {
-    breakpoints = (0, _fozzie.getBreakpoints)();
-  }
 
-  if (window.matchMedia("(min-width: ".concat(breakpoints.mid, ")")).matches) {
-    footerPanels.forEach(function (panel) {
-      panel.removeAttribute('tabindex');
-    });
-  } else {
-    footerPanels.forEach(function (panel) {
-      panel.tabIndex = 0;
-    });
-  }
+    if (breakpoints === null) {
+        breakpoints = (0, _fozzie.getBreakpoints)();
+    }
+
+    if (window.matchMedia('(min-width: ' + breakpoints.mid + ')').matches) {
+        footerPanels.forEach(function (panel) {
+            panel.removeAttribute('tabindex');
+        });
+    } else {
+        footerPanels.forEach(function (panel) {
+            panel.tabIndex = 0;
+        });
+    }
 };
-
-exports.tabindexResize = tabindexResize;
 
 var collapseFooterPanels = function collapseFooterPanels() {
-  (0, _qwery.default)('[data-panel-collapsible]').forEach(function (panel) {
-    panel.classList.add('is-collapsed');
-  });
+    (0, _qwery2.default)('[data-panel-collapsible]').forEach(function (panel) {
+        panel.classList.add('is-collapsed');
+    });
 };
-
-exports.collapseFooterPanels = collapseFooterPanels;
 
 var resizeInit = function resizeInit() {
-  window.addEventListener('resize', (0, _lodash.default)(tabindexResize, 100));
-  footerPanels = (0, _qwery.default)('[data-footer-panel-heading]');
-  tabindexResize();
+    window.addEventListener('resize', (0, _lodash2.default)(tabindexResize, 100));
+    footerPanels = (0, _qwery2.default)('[data-footer-panel-heading]');
+    tabindexResize();
 };
 
-exports.resizeInit = resizeInit;
-(0, _liteReady.default)(function () {
-  collapseFooterPanels();
-  resizeInit();
+(0, _liteReady2.default)(function () {
+    collapseFooterPanels();
+    resizeInit();
 });
+
+exports.collapseFooterPanels = collapseFooterPanels;
+exports.tabindexResize = tabindexResize;
+exports.resizeInit = resizeInit;
 },{"@justeat/fozzie":5,"lite-ready":33,"lodash.debounce":34,"qwery":36}],5:[function(require,module,exports){
 'use strict';
 
@@ -1535,8 +1541,135 @@ exports.default = {
 },{"qwery":36}],29:[function(require,module,exports){
 arguments[4][5][0].apply(exports,arguments)
 },{"./modules/breakpointHelper":30,"./modules/stopFoit":31,"dup":5}],30:[function(require,module,exports){
-arguments[4][6][0].apply(exports,arguments)
-},{"dup":6}],31:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+/**
+ * @overview Breakpoint handler
+ *
+ * @module breakpointHelper
+ */
+
+var getBreakpoints = exports.getBreakpoints = function getBreakpoints() {
+    var output = {};
+
+    // Append hidden element to body
+    var screenSizer = document.createElement('div');
+    screenSizer.classList.add('c-screen-sizer');
+
+    document.body.appendChild(screenSizer);
+
+    // It should have a 'content' property containing the breakpoints
+    var breakpoints = window.getComputedStyle(document.querySelector('.c-screen-sizer')).getPropertyValue('content').replace(/["']/g, '').split(',');
+    // Gives a list of breakpoints in the form ['narrow:414px', ...etc]
+
+    // When there is no content, at this stage breakpoints should be ['']
+    if (breakpoints.length === 1 && breakpoints[0] === '') {
+        return output;
+    }
+
+    return breakpoints.reduce(function (prev, current) {
+        // `current` is of the form 'narrow:414px'
+        var _current$split = current.split(':'),
+            _current$split2 = _slicedToArray(_current$split, 2),
+            breakpointName = _current$split2[0],
+            breakpointValue = _current$split2[1];
+
+        prev[breakpointName] = breakpointValue; // <- the initial value is used for the first iteration
+        // The object, e.g., { 'narrow': '414px' } is returned to be used as `prev` in the next iteration
+        return prev;
+    }, output); // <- initial value
+};
+
+var createBreakpointArray = exports.createBreakpointArray = function createBreakpointArray(breakpoints) {
+    // Order the breakpoints from widest to narrowest,
+    // takes the form [['narrow', '414px'], [...etc]]
+    var bps = [];
+    Object.keys(breakpoints).forEach(function (key) {
+        bps.unshift([key, breakpoints[key]]);
+    });
+
+    return bps;
+};
+
+var getCurrentScreenWidth = exports.getCurrentScreenWidth = function getCurrentScreenWidth() {
+    var currentWidth = window.innerWidth;
+
+    var breakpoints = getBreakpoints();
+
+    var bps = createBreakpointArray(breakpoints);
+
+    for (var i = 0; i < bps.length; i++) {
+        // Loops through the breakpoints (in descending order)
+        // returning the first one that is narrower than currentWidth.
+
+        var breakpointWidth = parseInt(bps[i][1], 10); // This also strips the 'px' from the string
+
+        if (i === bps.length - 1 || currentWidth > breakpointWidth) {
+            // If we've reached the last breakpoint, and there still hasn't been a match, return the smallest breakpoint
+            return bps[i][0];
+        }
+    }
+    // If no breakpoints have been set
+    return false;
+};
+
+var isWithinBreakpoint = exports.isWithinBreakpoint = function isWithinBreakpoint(breakpointString) {
+    var operatorRegex = /[<>=]+/;
+    var operatorMatch = breakpointString.match(operatorRegex);
+    var operator = operatorMatch ? operatorMatch[0] : '';
+
+    var _breakpointString$spl = breakpointString.split(operatorRegex),
+        _breakpointString$spl2 = _slicedToArray(_breakpointString$spl, 2),
+        breakpoint = _breakpointString$spl2[1];
+
+    var currentScreenWidth = window.innerWidth;
+
+    var breakpoints = getBreakpoints();
+    var bps = createBreakpointArray(breakpoints);
+
+    // We loop through the breakpoint array until we get a match.
+    // If we match we return the px value as an int. If we do not match we return false
+    var breakpointToPX = function breakpointToPX(breakpointName) {
+        var match = false;
+
+        bps.forEach(function (bp) {
+            if (bp[0] === breakpointName) {
+                match = parseInt(bp[1], 10);
+            }
+        });
+        return match;
+    };
+
+    var breakpointInPX = breakpointToPX(breakpoint);
+
+    // If the breakpoint passed in does not match any we;
+    if (!breakpointInPX) {
+        return false;
+    }
+
+    var mediaQuery = {
+        '>': currentScreenWidth > breakpointInPX,
+        '<': currentScreenWidth < breakpointInPX,
+        '=': currentScreenWidth === breakpointInPX,
+        '>=': currentScreenWidth >= breakpointInPX,
+        '<=': currentScreenWidth <= breakpointInPX
+    };
+
+    var result = mediaQuery[operator];
+
+    if (result == null) {
+        return false;
+    }
+
+    return result;
+};
+},{}],31:[function(require,module,exports){
 arguments[4][7][0].apply(exports,arguments)
 },{"@justeat/f-logger":11,"dup":7,"fontfaceobserver":32}],32:[function(require,module,exports){
 /* Font Face Observer v2.0.13 - © Bram Stein. License: BSD-3-Clause */(function(){function l(a,b){document.addEventListener?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function m(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",function c(){document.removeEventListener("DOMContentLoaded",c);a()}):document.attachEvent("onreadystatechange",function k(){if("interactive"==document.readyState||"complete"==document.readyState)document.detachEvent("onreadystatechange",k),a()})};function r(a){this.a=document.createElement("div");this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.h=document.createElement("span");this.f=document.createElement("span");this.g=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";

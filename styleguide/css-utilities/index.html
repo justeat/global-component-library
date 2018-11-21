@@ -83,15 +83,13 @@
 
     <!-- title – Classes -->
     <li><a href="/styleguide/css-utilities/" class=" is-active">General Utilities</a></li>
-    <li><a href="/styleguide/css-utilities/legacy-support" class="is-incomplete ">Legacy Support</a></li>
-    <li><a href="/styleguide/css-utilities/no-js" class="is-incomplete ">No JavaScript</a></li>
+    <li><a href="/styleguide/css-utilities/css-rwd" class="">Responsive</a></li>
 
     <!-- title – Mixins -->
-    <li><a href="/styleguide/css-utilities/mixins-rwd" class="is-incomplete ">Responsive</a></li>
-    <li><a href="/styleguide/css-utilities/mixins-utility" class="is-incomplete ">Utility</a></li>
+    <li><a href="/styleguide/css-utilities/mixins" class="">Mixins</a></li>
 
-    <!-- title – Helpers -->
-    <li><a href="/styleguide/css-utilities/media" class="is-incomplete ">Media</a></li>
+    <!-- title – Functions -->
+    <li><a href="/styleguide/css-utilities/functions" class="">Functions</a></li>
 
                 
                 
@@ -105,14 +103,14 @@
                 </ul>
             </div>
             <div class="g-col g-span10--mid">
-                <div class="c-card c-card--rounded c-card--smallResponsive">
+                <div class="c-card c-card--rounded">
                     <h1>General CSS Classes</h1>
                     <div class="sg-index">
 
 <p>Utility classes available to developers for common tasks.</p>
 <h2>Clearfix</h2>
-<p><h3><code>.u-clearfix</code></h3></p>
-<p>Clear the current element so it always appears on a new line.  Can also use the clearfix mixin – <code>@include clearfix()</code> in your CSS.</p>
+<h3><code>.u-clearfix</code></h3>
+<p>Clear the current element so it always appears on a new line. Can also use the clearfix mixin – <code>@include clearfix()</code> in your CSS.</p>
 <div class="demo">
     <div class="demo-visual ">
         <h4 class="demo-title">Example</h4>
@@ -125,7 +123,344 @@
 </code></pre>
     </div>
 </div>
-<!--## Responsive Helpers-->
+<hr>
+<h2>Colour Utilities</h2>
+<h3><code>.u-lightenBg</code></h3>
+<p>Add the lightest background colour to the element</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div style="background-color: #f5f5f5; padding: 10px">
+            <div class="u-lightenBg">Lorem</div>
+            <div>Ipsum</div>
+        </div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> style=<span class="hljs-string">"background-color: #f5f5f5; padding: 10px"</span>&gt;
+    &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-lightenBg"</span>&gt;Lorem&lt;/<span class="hljs-keyword">div</span>&gt;
+    &lt;<span class="hljs-keyword">div</span>&gt;Ipsum&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<p><h3><code>.u-bordered,</code><br>
+<code>%u-bordered</code></h3></p>
+<p>Add default padding, border and border radius to the element.</p>
+<p>Can also use the bordered mixin – <code>@include bordered(borderRadius, padding, borderColour)</code> in your CSS.</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div class="u-bordered">Lorem Ipsum</div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-bordered"</span>&gt;Lorem Ipsum&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<h3><code>.u-bordered--mid</code></h3>
+<p>Add default padding, border and border radius to the element for medium(&gt; 768px) screen size</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div class="u-bordered--mid">Lorem Ipsum</div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-bordered--mid"</span>&gt;Lorem Ipsum&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<hr>
+<h2>Display Utilities</h2>
+<p><h3><code>.is-hidden,</code><br>
+<code>.no-js .is-hidden--noJS</code><br>
+<code>.is-shown,</code><br>
+<code>.no-js .is-shown--noJS</code></h3></p>
+<p>Hide/Show from both screenreaders and browsers</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <span class="is-hidden">Lorem</span>
+        <span>Ipsum</span>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"is-hidden"</span>&gt;</span>Lorem<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+    </div>
+</div>
+<h3><code>.is-visuallyHidden</code></h3>
+<p>Hide only visually, but have it available for screenreaders</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <span class="is-visuallyHidden">Lorem</span>
+        <span>Ipsum</span>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"is-visuallyHidden"</span>&gt;</span>Lorem<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+    </div>
+</div>
+<p><h3><code>&amp;.focusable:active,</code><br>
+<code>&amp;.focusable:focus</code></h3></p>
+<p>Extends the <code>.is-visuallyhidden</code> class to allow the element to be focusable when navigated to via the keyboard</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div class="is-visuallyHidden focusable:active">Lorem</div>
+        <div class="is-visuallyHidden focusable:focus">Ipsum</div>
+        <div>Dolor</div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"is-visuallyHidden focusable:active"</span>&gt;Lorem&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"is-visuallyHidden focusable:focus"</span>&gt;Ipsum&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span>&gt;Dolor&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<h3><code>.is-invisible</code></h3>
+<p>Hide visually and from screenreaders, but maintain layout</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div class="is-invisible">Lorem</div>
+        <div>Ipsum</div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"is-invisible"</span>&gt;Lorem&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span>&gt;Ipsum&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<h3><code>.u-pointer</code></h3>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div class="u-pointer">Lorem Ipsum</div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-pointer"</span>&gt;Lorem Ipsum&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<hr>
+<h2>Position Utilities</h2>
+<h3><code>.is-sticky</code></h3>
+<p>Fixed position for the element</p>
+<h3><code>.u-sticky</code></h3>
+<p>Sticky position for the element with doubled default spacing at the top</p>
+<hr>
+<h2>Typographic Utilities</h2>
+<h3><code>.u-noWrap</code></h3>
+<p>Ensure text inside helper never wraps</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div class="u-noWrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-noWrap"</span>&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor <span class="hljs-keyword">in</span> reprehenderit <span class="hljs-keyword">in</span> voluptate velit esse cillum dolore eu fugiat nulla pariatur.&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<h3><code>.u-uppercase</code></h3>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div class="u-uppercase">Lorem Ipsum</div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-uppercase"</span>&gt;Lorem Ipsum&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<h3><code>.u-textPad</code></h3>
+<p>Add tab indentation (spacing(x4))</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div>Lorem</div>
+        <div class="u-textPad">Ipsum</div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span>&gt;Lorem&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-textPad"</span>&gt;Ipsum&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<h3><code>.u-text-truncate</code></h3>
+<p>Forces overly long lines of text to truncate. Can also use the truncate mixin – <code>@include truncate();</code> in your CSS.</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div class="u-text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"u-text-truncate"</span>&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed <span class="hljs-keyword">do</span> eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip <span class="hljs-keyword">ex</span> ea commodo consequat. Duis aute irure dolor <span class="hljs-keyword">in</span> reprehenderit <span class="hljs-keyword">in</span> voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt <span class="hljs-keyword">in</span> culpa <span class="hljs-keyword">qui</span> officia deserunt mollit anim id <span class="hljs-keyword">est</span> laborum.&lt;/div&gt;
+</code></pre>
+    </div>
+</div>
+<h3><code>.u-noUnderline</code></h3>
+<p>Add underline text decoration for hover, active and focus satates</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div class="u-noUnderline">Lorem Ipsum</div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-noUnderline"</span>&gt;Lorem Ipsum&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<p><h3><code>.u-text-centre</code><br>
+<code>.u-text-left</code><br>
+<code>.u-text-right</code></h3></p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div class="u-text-centre">I am centered positioned</div>
+        <div class="u-text-left">I am left positioned</div>
+        <div class="u-text-right">I am right positioned</div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-text-centre"</span>&gt;I am centered positioned&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-text-left"</span>&gt;I am left positioned&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-text-right"</span>&gt;I am right positioned&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<h3><code>.u-text-highlight</code></h3>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <span class="u-text-highlight">Lorem Ipsum</span>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"u-text-highlight"</span>&gt;</span>Lorem Ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+    </div>
+</div>
+<h3><code>.u-text-indent</code></h3>
+<p>Add text indentation (spacing(x2))</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div>Lorem</div>
+        <div class="u-text-indent">Ipsum</div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span>&gt;Lorem&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-text-indent"</span>&gt;Ipsum&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<hr>
+<h2>Spacing Utilities (margins)</h2>
+<h3><code>.u-noSpacing</code></h3>
+<p>Remove all margins from the element</p>
+<h3><code>.u-spacingTop</code></h3>
+<p>Adds default marging to the top (spacing())</p>
+<h3><code>.u-spacingTop--small</code></h3>
+<p>Add half of default marging to the top (spacing(x0.5))</p>
+<h3><code>.u-spacingTop--large</code></h3>
+<p>Add doubled default marging to the top (spacing(x2))</p>
+<h3><code>.u-spacingRight</code></h3>
+<p>Add default marging to the right (spacing())</p>
+<h3><code>.u-spacingBottom</code></h3>
+<p>Add default marging to the bottom (spacing())</p>
+<h3><code>.u-spacingBottom--large</code></h3>
+<p>Add doubled default marging to the bottom (spacing(x2))</p>
+<h3><code>.u-spacingLeft</code></h3>
+<p>Add default marging to the left (spacing())</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div class="u-noSpacing">NoSpacing</div>
+        <div class="u-spacingTop">SpacingTop</div>
+        <div class="u-spacingTop--small">Small SpacingTop</div>
+        <div class="u-spacingTop--large">Large SpacingTop</div>
+        <div class="u-spacingRight">SpacingRight</div>
+        <div class="u-spacingBottom">SpacingBottom</div>
+        <div class="u-spacingBottom--large">Large SpacingBottom</div>
+        <div class="u-spacingLeft">SpacingLeft</div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-noSpacing"</span>&gt;NoSpacing&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-spacingTop"</span>&gt;SpacingTop&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-spacingTop--small"</span>&gt;Small SpacingTop&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-spacingTop--large"</span>&gt;Large SpacingTop&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-spacingRight"</span>&gt;SpacingRight&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-spacingBottom"</span>&gt;SpacingBottom&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-spacingBottom--large"</span>&gt;Large SpacingBottom&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-spacingLeft"</span>&gt;SpacingLeft&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<hr>
+<h2>Padding Utilities</h2>
+<h3><code>.u-noPad</code></h3>
+<p>Remove all paddings from the element</p>
+<h3><code>.u-padTop</code></h3>
+<p>Add default padding to the top (spacing())</p>
+<h3><code>.u-padTop--large</code></h3>
+<p>Add doubled default padding to the top (spacing(x2))</p>
+<h3><code>.u-padTop--large--aboveMid</code></h3>
+<p>Add doubled default padding to the top for medium(&gt; 768px) media query (spacing(x2))</p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div class="u-noPad">NoPadding</div>
+        <div class="u-padTop">PaddingTop</div>
+        <div class="u-padTop--large">Large PaddingTop</div>
+        <div class="u-padTop--large--aboveMid">Large PaddingTop for screens more than 768px</div>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-noPad"</span>&gt;NoPadding&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-padTop"</span>&gt;PaddingTop&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-padTop--large"</span>&gt;Large PaddingTop&lt;/<span class="hljs-keyword">div</span>&gt;
+&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-padTop--large--aboveMid"</span>&gt;Large PaddingTop <span class="hljs-keyword">for</span> screens more than <span class="hljs-number">768</span>px&lt;/<span class="hljs-keyword">div</span>&gt;
+</code></pre>
+    </div>
+</div>
+<hr>
+<h2>Image Replacement Techniques</h2>
+<p><h3><code>%u-ir,</code><br>
+<code>.u-ir</code></h3></p>
+<p>Background image replacement</p>
+<p><h3><code>.u-hideText,</code><br>
+<code>%u-hideText</code></h3></p>
+<p>Alternative image replacement technique</p>
+<hr>
+<h2>List Helper</h2>
+<p><h3><code>.u-unstyled,</code><br>
+<code>%u-unstyled</code></h3></p>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <ul class="u-unstyled">
+            <li>Unstyled list element</li>
+            <li>Unstyled list element</li>
+            <li>Unstyled list element</li>
+        </ul>
+    </div>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;ul <span class="hljs-keyword">class</span>=<span class="hljs-string">"u-unstyled"</span>&gt;
+    &lt;<span class="hljs-keyword">li</span>&gt;Unstyled <span class="hljs-keyword">list</span> element&lt;/<span class="hljs-keyword">li</span>&gt;
+    &lt;<span class="hljs-keyword">li</span>&gt;Unstyled <span class="hljs-keyword">list</span> element&lt;/<span class="hljs-keyword">li</span>&gt;
+    &lt;<span class="hljs-keyword">li</span>&gt;Unstyled <span class="hljs-keyword">list</span> element&lt;/<span class="hljs-keyword">li</span>&gt;
+&lt;/ul&gt;
+</code></pre>
+    </div>
+</div>
+<hr>
+<h2>Helper classes for focus accessibility</h2>
+<p><h3><code>%u-elementFocus,</code><br>
+<code>.u-elementFocus</code></h3></p>
+<p>Custom outline styling for elements that have a focus state</p>
+<p><h3><code>%u-elementFocus--boxShadow,</code><br>
+<code>.u-elementFocus--boxShadow</code></h3></p>
+<p>Custom visual outline emulation for better appearance on elements with rounded corners</p>
 
 </div>
 
