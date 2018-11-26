@@ -7,7 +7,12 @@ bodyClass: o-body--bgWhite--belowMid is-fontsLoading--base is-fontsLoading--head
 headerCssClass: c-header--transparent
 ---
 
-{{> je-pageBanner }}
+{{> je-pageBanner
+    optionalClassNames="c-pageBanner--narrow c-pageBanner--withRays--white c-pageBanner--negativeBottom--aboveMid"
+    srcSetWide="/assets/img/examples/kebabs--wide.jpg"
+    srcSetMid="/assets/img/examples/kebabs--mid.jpg"
+    srcSetNarrow="/assets/img/examples/kebabs--narrow.jpg"
+}}
 
 <div class="l-container">
     <div class="g g--stack g--gutter l-content u-spacingBottom--large">
