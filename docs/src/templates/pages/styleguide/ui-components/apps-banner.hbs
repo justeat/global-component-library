@@ -1,0 +1,32 @@
+---
+title: Apps Banner
+section-title: UI Components
+docs: true
+
+navgroup: styleguide
+navsub: ui-components
+navactive: apps-banner
+layout: components
+---
+
+<p><em>The <code>appsBanner</code> component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding <code>@include appsBanner();</code> into your SCSS dependencies file.</em></p>
+
+
+<h2 class="sg-sectionHeading">Apps banner</h2>
+{{#>demo-block }}
+<div class="l-container">
+{{> je-appsBanner
+        srcSetWide="/assets/img/examples/appsBanner--wide.jpg"
+        srcSetMid="/assets/img/examples/appsBanner--mid.jpg"
+        srcSetNarrow="/assets/img/examples/appsBanner--narrow.jpg"
+        headingText="Find your flavour even faster"
+        subheadingText="Download the Just Eat app for faster ordering and more personalised recommendations."
+        iosAppSrc="/assets/img/icons/appstore/ios.svg"
+        androidAppSrc="/assets/img/icons/appstore/android.svg"
+        iosAppLink="https://app.adjust.com/oc511o_1455tm?utm_medium=internal&amp;campaign=homepage"
+        androidAppLink="https://app.adjust.com/oc511o_1455tm?utm_medium=internal&amp;campaign=homepage"
+        iosImageAltText="Download the Just Eat app on iOS"
+        androidImageAltText="Download the Just Eat app on Android"
+}}
+</div>
+{{/demo-block }}

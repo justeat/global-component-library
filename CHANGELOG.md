@@ -4,6 +4,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v2.11.0
+------------------------------
+*December 5, 2018*
+
+### Added
+- `c-appsBanner` component
+
+### Changed
+- `fozzie` module version update
+
+
 v2.10.0
 ------------------------------
 *December 5, 2018*
