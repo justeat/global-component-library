@@ -4,6 +4,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v2.10.0
+------------------------------
+*December 4, 2018*
+
+### Added
+- `c-cuisinesWidget` component
+
+### Changed
+- `fozzie` module update
+
+
 v2.9.0
 ------------------------------
 *November 28, 2018*
