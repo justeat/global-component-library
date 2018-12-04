@@ -32,23 +32,23 @@
         border: 1px solid $color-border--interactive;
         padding: spacing(x5) spacing(x5);
         position: relative;
+    }
 
-        &.demo-visual--noSpacing {
-            padding: 0;
-        }
+    .demo-visual--noSpacing {
+        padding: 0;
+    }
 
-        &.demo-visual--spacingBottom {
-            padding-bottom: 160px;
+    .demo-visual--spacingBottom {
+        padding-bottom: 160px;
 
-            @include media('<mid') {
-                padding-bottom: spacing(x5);
-            }
+        @include media('<mid') {
+            padding-bottom: spacing(x5);
         }
     }
 
-        .demo-visual--spacingTopAndBottom {
-            padding: spacing(x5) 0;
-        }
+    .demo-visual--spacingTopAndBottom {
+        padding: spacing(x5) 0;
+    }
 
     .demo-code {
         margin-bottom: 0;

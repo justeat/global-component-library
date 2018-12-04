@@ -12,7 +12,7 @@ v2.10.0
 - `c-cuisinesWidget` component
 
 ### Changed
-- `fozzie` module update
+- `fozzie` module version update
 
 
 v2.9.0
