@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 v2.10.0
 ------------------------------
-*December 4, 2018*
+*December 5, 2018*
 
 ### Added
 - `c-cuisinesWidget` component
