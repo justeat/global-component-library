@@ -716,17 +716,17 @@
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-2.1.0.tgz#42230c8d8d5aecc37d32eaccd5e9973e90cd4a4e"
 
-"@justeat/fozzie@1.16.0":
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.16.0.tgz#b45aa3a7d4fd11b344f516285f8e2dc60e870c42"
+"@justeat/fozzie@1.17.0":
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.17.0.tgz#fcc131bae8acf0916abdca60da2756ae6881c5ef"
   dependencies:
-    "@justeat/f-dom" "1.0.0"
+    "@justeat/f-dom" "1.1.0"
     "@justeat/f-logger" "0.7.1"
     "@justeat/f-utils" "0.1.0"
     "@justeat/fozzie-colour-palette" "2.1.0"
     fontfaceobserver "^2.0.13"
     include-media "1.4.9"
-    kickoff-grid.css "1.1.2"
+    kickoff-grid.css "1.2.0"
     normalize-scss "7.0.1"
 
 "@justeat/fozzie@1.6.0":

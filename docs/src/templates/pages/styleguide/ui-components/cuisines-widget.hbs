@@ -1,0 +1,53 @@
+---
+title: Cuisines Widget
+section-title: UI Components
+docs: true
+
+navgroup: styleguide
+navsub: ui-components
+navactive: cuisines-widget
+layout: components
+---
+
+<p><em>The <code>c-cuisinesWidget</code> component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding <code>@include cuisinesWidget();</code> into your SCSS dependencies file.</em></p>
+
+<h2 class="sg-sectionHeading">Cuisines Widget</h2>
+<p>Styles look a little bit broken here because of fixed width container. In future full width block will be avaliable in UI templates page.</p>
+
+{{#>demo-block demoVisualCssClass="demo-visual--spacingTopAndBottom"}}
+<div class="l-container">
+<div class="c-cuisinesWidget-grid c-cuisinesWidget--docsStylesFix">
+{{> je-cuisinesWidget
+        optionalClassNames="c-cuisinesWidget--gridOfThree"
+        cuisinesnName="Chinese"
+        cuisinesImage="/assets/img/examples/cuisines-widget.jpg"
+}}
+{{> je-cuisinesWidget
+        optionalClassNames="c-cuisinesWidget--gridOfThree"
+        cuisinesnName="Chiken"
+        cuisinesImage="/assets/img/examples/cuisines-widget.jpg"
+}}
+{{> je-cuisinesWidget
+        optionalClassNames="c-cuisinesWidget--gridOfThree"
+        cuisinesnName="Pizza"
+        cuisinesImage="/assets/img/examples/cuisines-widget.jpg"
+}}
+{{> je-cuisinesWidget
+        optionalClassNames="c-cuisinesWidget--gridOfThree"
+        cuisinesnName="Indian"
+        cuisinesImage="/assets/img/examples/cuisines-widget.jpg"
+}}
+{{> je-cuisinesWidget
+        optionalClassNames="c-cuisinesWidget--gridOfThree"
+        cuisinesnName="Kebabs"
+        cuisinesImage="/assets/img/examples/cuisines-widget.jpg"
+}}
+{{> je-cuisinesWidget
+        optionalClassNames="c-cuisinesWidget--gridOfThree"
+        cuisinesnName="Fish & chips"
+        cuisinesImage="/assets/img/examples/cuisines-widget.jpg"
+}}
+</div>
+</div>
+
+{{/demo-block }}
