@@ -1539,139 +1539,216 @@ exports.default = {
 },{"@justeat/f-dom":28}],28:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var _qwery=require('qwery'),_qwery2=_interopRequireDefault(_qwery);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var first=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)[0]},all=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)},exists=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return 0<(0,_qwery2.default)(a,b).length},dom=all;dom.all=all,dom.first=first,dom.exists=exists,exports.default=dom;
 },{"qwery":36}],29:[function(require,module,exports){
-arguments[4][5][0].apply(exports,arguments)
-},{"./modules/breakpointHelper":30,"./modules/stopFoit":31,"dup":5}],30:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
+});
+Object.defineProperty(exports, "stopFoit", {
+  enumerable: true,
+  get: function get() {
+    return _stopFoit.stopFoit;
+  }
+});
+Object.defineProperty(exports, "getBreakpoints", {
+  enumerable: true,
+  get: function get() {
+    return _breakpointHelper.getBreakpoints;
+  }
+});
+Object.defineProperty(exports, "getCurrentScreenWidth", {
+  enumerable: true,
+  get: function get() {
+    return _breakpointHelper.getCurrentScreenWidth;
+  }
+});
+Object.defineProperty(exports, "isWithinBreakpoint", {
+  enumerable: true,
+  get: function get() {
+    return _breakpointHelper.isWithinBreakpoint;
+  }
 });
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+var _stopFoit = require("./modules/stopFoit");
+
+var _breakpointHelper = require("./modules/breakpointHelper");
+},{"./modules/breakpointHelper":30,"./modules/stopFoit":31}],30:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.isWithinBreakpoint = exports.getCurrentScreenWidth = exports.createBreakpointArray = exports.getBreakpoints = void 0;
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 /**
  * @overview Breakpoint handler
  *
  * @module breakpointHelper
  */
+var getBreakpoints = function getBreakpoints() {
+  var output = {}; // Append hidden element to body
 
-var getBreakpoints = exports.getBreakpoints = function getBreakpoints() {
-    var output = {};
+  var screenSizer = document.createElement('div');
+  screenSizer.classList.add('c-screen-sizer');
+  document.body.appendChild(screenSizer); // It should have a 'content' property containing the breakpoints
 
-    // Append hidden element to body
-    var screenSizer = document.createElement('div');
-    screenSizer.classList.add('c-screen-sizer');
+  var breakpoints = window.getComputedStyle(document.querySelector('.c-screen-sizer')).getPropertyValue('content').replace(/["']/g, '').split(','); // Gives a list of breakpoints in the form ['narrow:414px', ...etc]
+  // When there is no content, at this stage breakpoints should be ['']
 
-    document.body.appendChild(screenSizer);
+  if (breakpoints.length === 1 && breakpoints[0] === '') {
+    return output;
+  }
 
-    // It should have a 'content' property containing the breakpoints
-    var breakpoints = window.getComputedStyle(document.querySelector('.c-screen-sizer')).getPropertyValue('content').replace(/["']/g, '').split(',');
-    // Gives a list of breakpoints in the form ['narrow:414px', ...etc]
+  return breakpoints.reduce(function (prev, current) {
+    // `current` is of the form 'narrow:414px'
+    var _current$split = current.split(':'),
+        _current$split2 = _slicedToArray(_current$split, 2),
+        breakpointName = _current$split2[0],
+        breakpointValue = _current$split2[1];
 
-    // When there is no content, at this stage breakpoints should be ['']
-    if (breakpoints.length === 1 && breakpoints[0] === '') {
-        return output;
-    }
+    prev[breakpointName] = breakpointValue; // <- the initial value is used for the first iteration
+    // The object, e.g., { 'narrow': '414px' } is returned to be used as `prev` in the next iteration
 
-    return breakpoints.reduce(function (prev, current) {
-        // `current` is of the form 'narrow:414px'
-        var _current$split = current.split(':'),
-            _current$split2 = _slicedToArray(_current$split, 2),
-            breakpointName = _current$split2[0],
-            breakpointValue = _current$split2[1];
-
-        prev[breakpointName] = breakpointValue; // <- the initial value is used for the first iteration
-        // The object, e.g., { 'narrow': '414px' } is returned to be used as `prev` in the next iteration
-        return prev;
-    }, output); // <- initial value
+    return prev;
+  }, output); // <- initial value
 };
 
-var createBreakpointArray = exports.createBreakpointArray = function createBreakpointArray(breakpoints) {
-    // Order the breakpoints from widest to narrowest,
-    // takes the form [['narrow', '414px'], [...etc]]
-    var bps = [];
-    Object.keys(breakpoints).forEach(function (key) {
-        bps.unshift([key, breakpoints[key]]);
+exports.getBreakpoints = getBreakpoints;
+
+var createBreakpointArray = function createBreakpointArray(breakpoints) {
+  // Order the breakpoints from widest to narrowest,
+  // takes the form [['narrow', '414px'], [...etc]]
+  var bps = [];
+  Object.keys(breakpoints).forEach(function (key) {
+    bps.unshift([key, breakpoints[key]]);
+  });
+  return bps;
+};
+
+exports.createBreakpointArray = createBreakpointArray;
+
+var getCurrentScreenWidth = function getCurrentScreenWidth() {
+  var currentWidth = window.innerWidth;
+  var breakpoints = getBreakpoints();
+  var bps = createBreakpointArray(breakpoints);
+
+  for (var i = 0; i < bps.length; i++) {
+    // Loops through the breakpoints (in descending order)
+    // returning the first one that is narrower than currentWidth.
+    var breakpointWidth = parseInt(bps[i][1], 10); // This also strips the 'px' from the string
+
+    if (i === bps.length - 1 || currentWidth > breakpointWidth) {
+      // If we've reached the last breakpoint, and there still hasn't been a match, return the smallest breakpoint
+      return bps[i][0];
+    }
+  } // If no breakpoints have been set
+
+
+  return false;
+};
+
+exports.getCurrentScreenWidth = getCurrentScreenWidth;
+
+var isWithinBreakpoint = function isWithinBreakpoint(breakpointString) {
+  var operatorRegex = /[<>=]+/;
+  var operatorMatch = breakpointString.match(operatorRegex);
+  var operator = operatorMatch ? operatorMatch[0] : '';
+
+  var _breakpointString$spl = breakpointString.split(operatorRegex),
+      _breakpointString$spl2 = _slicedToArray(_breakpointString$spl, 2),
+      breakpoint = _breakpointString$spl2[1];
+
+  var currentScreenWidth = window.innerWidth;
+  var breakpoints = getBreakpoints();
+  var bps = createBreakpointArray(breakpoints); // We loop through the breakpoint array until we get a match.
+  // If we match we return the px value as an int. If we do not match we return false
+
+  var breakpointToPX = function breakpointToPX(breakpointName) {
+    var match = false;
+    bps.forEach(function (bp) {
+      if (bp[0] === breakpointName) {
+        match = parseInt(bp[1], 10);
+      }
     });
+    return match;
+  };
 
-    return bps;
-};
+  var breakpointInPX = breakpointToPX(breakpoint); // If the breakpoint passed in does not match any we;
 
-var getCurrentScreenWidth = exports.getCurrentScreenWidth = function getCurrentScreenWidth() {
-    var currentWidth = window.innerWidth;
-
-    var breakpoints = getBreakpoints();
-
-    var bps = createBreakpointArray(breakpoints);
-
-    for (var i = 0; i < bps.length; i++) {
-        // Loops through the breakpoints (in descending order)
-        // returning the first one that is narrower than currentWidth.
-
-        var breakpointWidth = parseInt(bps[i][1], 10); // This also strips the 'px' from the string
-
-        if (i === bps.length - 1 || currentWidth > breakpointWidth) {
-            // If we've reached the last breakpoint, and there still hasn't been a match, return the smallest breakpoint
-            return bps[i][0];
-        }
-    }
-    // If no breakpoints have been set
+  if (!breakpointInPX) {
     return false;
+  }
+
+  var mediaQuery = {
+    '>': currentScreenWidth > breakpointInPX,
+    '<': currentScreenWidth < breakpointInPX,
+    '=': currentScreenWidth === breakpointInPX,
+    '>=': currentScreenWidth >= breakpointInPX,
+    '<=': currentScreenWidth <= breakpointInPX
+  };
+  var result = mediaQuery[operator];
+
+  if (result == null) {
+    return false;
+  }
+
+  return result;
 };
 
-var isWithinBreakpoint = exports.isWithinBreakpoint = function isWithinBreakpoint(breakpointString) {
-    var operatorRegex = /[<>=]+/;
-    var operatorMatch = breakpointString.match(operatorRegex);
-    var operator = operatorMatch ? operatorMatch[0] : '';
-
-    var _breakpointString$spl = breakpointString.split(operatorRegex),
-        _breakpointString$spl2 = _slicedToArray(_breakpointString$spl, 2),
-        breakpoint = _breakpointString$spl2[1];
-
-    var currentScreenWidth = window.innerWidth;
-
-    var breakpoints = getBreakpoints();
-    var bps = createBreakpointArray(breakpoints);
-
-    // We loop through the breakpoint array until we get a match.
-    // If we match we return the px value as an int. If we do not match we return false
-    var breakpointToPX = function breakpointToPX(breakpointName) {
-        var match = false;
-
-        bps.forEach(function (bp) {
-            if (bp[0] === breakpointName) {
-                match = parseInt(bp[1], 10);
-            }
-        });
-        return match;
-    };
-
-    var breakpointInPX = breakpointToPX(breakpoint);
-
-    // If the breakpoint passed in does not match any we;
-    if (!breakpointInPX) {
-        return false;
-    }
-
-    var mediaQuery = {
-        '>': currentScreenWidth > breakpointInPX,
-        '<': currentScreenWidth < breakpointInPX,
-        '=': currentScreenWidth === breakpointInPX,
-        '>=': currentScreenWidth >= breakpointInPX,
-        '<=': currentScreenWidth <= breakpointInPX
-    };
-
-    var result = mediaQuery[operator];
-
-    if (result == null) {
-        return false;
-    }
-
-    return result;
-};
+exports.isWithinBreakpoint = isWithinBreakpoint;
 },{}],31:[function(require,module,exports){
-arguments[4][7][0].apply(exports,arguments)
-},{"@justeat/f-logger":11,"dup":7,"fontfaceobserver":32}],32:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = exports.stopFoit = void 0;
+
+var _fontfaceobserver = _interopRequireDefault(require("fontfaceobserver"));
+
+var _fLogger = require("@justeat/f-logger");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * @overview stopFOIT reduces the amount of time a user has invisible text when using webfonts.
+ *
+ * @module stopFOIT
+ */
+
+/**
+* Init method initialises the FontFaceObserver events
+*
+*/
+var stopFoit = function stopFoit() {
+  // Create a new `FontFaceObserver` for each webfont
+  var baseFont = new _fontfaceobserver.default('Hind Vadodara');
+  var headingFont = new _fontfaceobserver.default('Ubuntu'); // On load of each font we add `has-fontsLoaded` class with the font type modifier
+
+  baseFont.load(null, 3000).then(function () {
+    document.body.classList.remove('is-fontsLoading--base');
+  }).catch(function () {
+    (0, _fLogger.logError)('Custom font is unable to load');
+  });
+  headingFont.load(null, 3000).then(function () {
+    document.body.classList.remove('is-fontsLoading--heading');
+  }).catch(function () {
+    (0, _fLogger.logError)('Custom font is unable to load');
+  });
+};
+
+exports.stopFoit = stopFoit;
+var _default = stopFoit;
+exports.default = _default;
+},{"@justeat/f-logger":11,"fontfaceobserver":32}],32:[function(require,module,exports){
 /* Font Face Observer v2.0.13 - © Bram Stein. License: BSD-3-Clause */(function(){function l(a,b){document.addEventListener?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function m(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",function c(){document.removeEventListener("DOMContentLoaded",c);a()}):document.attachEvent("onreadystatechange",function k(){if("interactive"==document.readyState||"complete"==document.readyState)document.detachEvent("onreadystatechange",k),a()})};function r(a){this.a=document.createElement("div");this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.h=document.createElement("span");this.f=document.createElement("span");this.g=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
 this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.h.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;";this.b.appendChild(this.h);this.c.appendChild(this.f);this.a.appendChild(this.b);this.a.appendChild(this.c)}
 function t(a,b){a.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;white-space:nowrap;font-synthesis:none;font:"+b+";"}function y(a){var b=a.a.offsetWidth,c=b+100;a.f.style.width=c+"px";a.c.scrollLeft=c;a.b.scrollLeft=a.b.scrollWidth+100;return a.g!==b?(a.g=b,!0):!1}function z(a,b){function c(){var a=k;y(a)&&a.a.parentNode&&b(a.g)}var k=a;l(a.b,c);l(a.c,c);y(a)};function A(a,b){var c=b||{};this.family=a;this.style=c.style||"normal";this.weight=c.weight||"normal";this.stretch=c.stretch||"normal"}var B=null,C=null,E=null,F=null;function G(){if(null===C)if(J()&&/Apple/.test(window.navigator.vendor)){var a=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/.exec(window.navigator.userAgent);C=!!a&&603>parseInt(a[1],10)}else C=!1;return C}function J(){null===F&&(F=!!document.fonts);return F}

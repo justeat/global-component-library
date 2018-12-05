@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>UI Components – Just Eat Front-End Component Library and Documentation</title>
+		<title>Cuisines Widget – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -135,56 +135,84 @@
                 </ul>
             </div>
             <div class="g-col g-span10--mid">
-                <div class="c-card c-card--rounded sg-content">
-                    <h1>UI Components</h1>
-<p>Note. Only components that are part of the global platform should be added to this page of components.</p>
-<div class="g g--gutter g--stack--mid">
-    <div class="g-col g-span4">
-<p><h3 class="sg-sectionHeading">Objects</h3></p>
-<ul>
-<li><a href="buttons">Buttons</a></li>
-<li><a href="forms/checkboxes">Checkboxes</a></li>
-<li><a href="forms/radio-buttons">Radio Buttons</a></li>
-</ul>
+                <div class="c-card c-card--rounded">
+                    <h1>Cuisines Widget</h1>
+                    <p><em>The <code>c-cuisinesWidget</code> component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding <code>@include cuisinesWidget();</code> into your SCSS dependencies file.</em></p>
+
+<h2 class="sg-sectionHeading">Cuisines Widget</h2>
+<p>Styles look a little bit broken here because of fixed width container. In future full width block will be avaliable in UI templates page.</p>
+
+<div class="demo">
+    <div class="demo-visual demo-visual--spacingTopAndBottom">
+        <h4 class="demo-title">Example</h4>
+        <div class="l-container">
+        <div class="c-cuisinesWidget-grid c-cuisinesWidget--docsStylesFix">
+        <a class="c-cuisinesWidget c-cuisinesWidget--gridOfThree" href="#">
+            <img src="/assets/img/examples/cuisines-widget.jpg" alt="" class="c-cuisinesWidget-img">
+            <h3 class="c-cuisinesWidget-name">Chinese</h3>
+        </a>
+        <a class="c-cuisinesWidget c-cuisinesWidget--gridOfThree" href="#">
+            <img src="/assets/img/examples/cuisines-widget.jpg" alt="" class="c-cuisinesWidget-img">
+            <h3 class="c-cuisinesWidget-name">Chiken</h3>
+        </a>
+        <a class="c-cuisinesWidget c-cuisinesWidget--gridOfThree" href="#">
+            <img src="/assets/img/examples/cuisines-widget.jpg" alt="" class="c-cuisinesWidget-img">
+            <h3 class="c-cuisinesWidget-name">Pizza</h3>
+        </a>
+        <a class="c-cuisinesWidget c-cuisinesWidget--gridOfThree" href="#">
+            <img src="/assets/img/examples/cuisines-widget.jpg" alt="" class="c-cuisinesWidget-img">
+            <h3 class="c-cuisinesWidget-name">Indian</h3>
+        </a>
+        <a class="c-cuisinesWidget c-cuisinesWidget--gridOfThree" href="#">
+            <img src="/assets/img/examples/cuisines-widget.jpg" alt="" class="c-cuisinesWidget-img">
+            <h3 class="c-cuisinesWidget-name">Kebabs</h3>
+        </a>
+        <a class="c-cuisinesWidget c-cuisinesWidget--gridOfThree" href="#">
+            <img src="/assets/img/examples/cuisines-widget.jpg" alt="" class="c-cuisinesWidget-img">
+            <h3 class="c-cuisinesWidget-name">Fish &amp; chips</h3>
+        </a>
+        </div>
+        </div>
+        
     </div>
-    <div class="g-col g-span4">
-<p><h3 class="sg-sectionHeading">Components</h3></p>
-<ul>
-<li><a href="breadcrumbs">Breadcrumbs</a></li>
-<li><a href="cards">Cards</a></li>
-<li><a href="mediaElement">Media Element</a></li>
-</ul>
-    </div>
-    <div class="g-col g-span4">
-<p><h3 class="sg-sectionHeading">Optional Components</h3></p>
-<ul>
-<li><a href="badges">Badges</a></li>
-<li><a href="listings">Listings</a></li>
-<li><a href="menu">Menu</a></li>
-<li><a href="page-banner">Page Banners</a></li>
-<li><a href="star-ratings">Ratings</a></li>
-<li><a href="toast">Toast</a></li>
-<li><a href="ui-icons">Icons</a></li>
-<li><a href="headers/">Headers</a></li>
-<li><a href="footers/">Footers</a></li>
-<li><a href="cuisines-widget">Cuisines Widget</a></li>
-</ul>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"l-container"</span>&gt;
+&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget-grid c-cuisinesWidget--docsStylesFix"</span>&gt;
+&lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget c-cuisinesWidget--gridOfThree"</span> href=<span class="hljs-string">"#"</span>&gt;
+    &lt;img src=<span class="hljs-string">"/assets/img/examples/cuisines-widget.jpg"</span> alt=<span class="hljs-string">""</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget-img"</span>&gt;
+    &lt;h3 <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget-name"</span>&gt;Chinese&lt;/h3&gt;
+&lt;/a&gt;
+&lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget c-cuisinesWidget--gridOfThree"</span> href=<span class="hljs-string">"#"</span>&gt;
+    &lt;img src=<span class="hljs-string">"/assets/img/examples/cuisines-widget.jpg"</span> alt=<span class="hljs-string">""</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget-img"</span>&gt;
+    &lt;h3 <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget-name"</span>&gt;Chiken&lt;/h3&gt;
+&lt;/a&gt;
+&lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget c-cuisinesWidget--gridOfThree"</span> href=<span class="hljs-string">"#"</span>&gt;
+    &lt;img src=<span class="hljs-string">"/assets/img/examples/cuisines-widget.jpg"</span> alt=<span class="hljs-string">""</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget-img"</span>&gt;
+    &lt;h3 <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget-name"</span>&gt;Pizza&lt;/h3&gt;
+&lt;/a&gt;
+&lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget c-cuisinesWidget--gridOfThree"</span> href=<span class="hljs-string">"#"</span>&gt;
+    &lt;img src=<span class="hljs-string">"/assets/img/examples/cuisines-widget.jpg"</span> alt=<span class="hljs-string">""</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget-img"</span>&gt;
+    &lt;h3 <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget-name"</span>&gt;Indian&lt;/h3&gt;
+&lt;/a&gt;
+&lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget c-cuisinesWidget--gridOfThree"</span> href=<span class="hljs-string">"#"</span>&gt;
+    &lt;img src=<span class="hljs-string">"/assets/img/examples/cuisines-widget.jpg"</span> alt=<span class="hljs-string">""</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget-img"</span>&gt;
+    &lt;h3 <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget-name"</span>&gt;Kebabs&lt;/h3&gt;
+&lt;/a&gt;
+&lt;a <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget c-cuisinesWidget--gridOfThree"</span> href=<span class="hljs-string">"#"</span>&gt;
+    &lt;img src=<span class="hljs-string">"/assets/img/examples/cuisines-widget.jpg"</span> alt=<span class="hljs-string">""</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget-img"</span>&gt;
+    &lt;h3 <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-cuisinesWidget-name"</span>&gt;Fish &amp;amp; chips&lt;/h3&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
     </div>
 </div>
+
                 </div>
             </div>
         </div>
     </div><!-- Close .l-container -->
-            <!--  ==============  -->
-            <!--  === Footer ===  -->
-            <!--  ==============  -->
-            <footer class="sg-footer" role="contentinfo">
-                <div class="l-container u-text-center">
-                    <p>Fozzie and its associated documentation was created with ❤️ by the UI team at Just Eat.</p>
-                    <hr>
-                    <p>If you want to get in touch about anything mentioned here, feel free to <a href="mailto:ui@just-eat.com">drop us a message</a>!</p>
-                </div>
-            </footer>
 
         <script>
             var mockPaths = {
