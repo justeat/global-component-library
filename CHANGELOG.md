@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 v2.11.0
 ------------------------------
-*December 5, 2018*
+*December 6, 2018*
 
 ### Added
 - `c-appsBanner` component
