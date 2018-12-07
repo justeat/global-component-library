@@ -1,0 +1,22 @@
+<div class="c-appsBanner">
+    <div class="c-appsBanner-image">
+        <picture>
+            <source media="(min-width: 860px)" srcset="{{ srcSetWide }}" >
+            <source media="(min-width: 600px)" srcset="{{ srcSetMid }}" >
+            <img srcset="{{ srcSetNarrow }}" alt="" >
+        </picture>
+    </div>
+
+    <div class="c-appsBanner-content">
+        <h3 class="c-appsBanner-heading">{{ headingText }}</h3>
+        <p>{{ subheadingText }}</p>
+        <div class="c-appsBanner-buttons">
+            <a class="c-appsBanner-appBtn" href="{{ iosAppLink }}" target="_blank" data-gtm="homepage|app_promotion|visit_app_store">
+                <img class="c-icon--ios" src="{{ iosAppSrc }}" alt="{{ iosImageAltText }}" />
+            </a>
+            <a class="c-appsBanner-appBtn" href="{{ androidAppLink }}" target="_blank" data-gtm="homepage|app_promotion|visit_play_store">
+                <img class="c-icon--android" src="{{ androidAppSrc }}" alt="{{ androidImageAltText }}" />
+            </a>
+        </div>
+    </div>
+</div>
