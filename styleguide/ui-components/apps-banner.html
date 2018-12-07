@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>UI Components – Just Eat Front-End Component Library and Documentation</title>
+		<title>Apps Banner – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -135,57 +135,73 @@
                 </ul>
             </div>
             <div class="g-col g-span10--mid">
-                <div class="c-card c-card--rounded sg-content">
-                    <h1>UI Components</h1>
-<p>Note. Only components that are part of the global platform should be added to this page of components.</p>
-<div class="g g--gutter g--stack--mid">
-    <div class="g-col g-span4">
-<p><h3 class="sg-sectionHeading">Objects</h3></p>
-<ul>
-<li><a href="buttons">Buttons</a></li>
-<li><a href="forms/checkboxes">Checkboxes</a></li>
-<li><a href="forms/radio-buttons">Radio Buttons</a></li>
-</ul>
+                <div class="c-card c-card--rounded">
+                    <h1>Apps Banner</h1>
+                    <p><em>The <code>appsBanner</code> component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding <code>@include appsBanner();</code> into your SCSS dependencies file.</em></p>
+
+
+<h2 class="sg-sectionHeading">Apps banner</h2>
+<div class="demo">
+    <div class="demo-visual ">
+        <h4 class="demo-title">Example</h4>
+        <div class="l-container">
+        <div class="c-appsBanner">
+            <div class="c-appsBanner-image">
+                <picture>
+                    <source media="(min-width: 860px)" srcset="/assets/img/examples/appsBanner--wide.jpg" >
+                    <source media="(min-width: 600px)" srcset="/assets/img/examples/appsBanner--mid.jpg" >
+                    <img srcset="/assets/img/examples/appsBanner--narrow.jpg" alt="" >
+                </picture>
+            </div>
+        
+            <div class="c-appsBanner-content">
+                <h3 class="c-appsBanner-heading">Find your flavour even faster</h3>
+                <p>Download the Just Eat app for faster ordering and more personalised recommendations.</p>
+                <div class="c-appsBanner-buttons">
+                    <a class="c-appsBanner-appBtn" href="https://app.adjust.com/oc511o_1455tm?utm_medium&#x3D;internal&amp;amp;campaign&#x3D;homepage" target="_blank" data-gtm="homepage|app_promotion|visit_app_store">
+                        <img class="c-icon--ios" src="/assets/img/icons/appstore/ios.svg" alt="Download the Just Eat app on iOS" />
+                    </a>
+                    <a class="c-appsBanner-appBtn" href="https://app.adjust.com/oc511o_1455tm?utm_medium&#x3D;internal&amp;amp;campaign&#x3D;homepage" target="_blank" data-gtm="homepage|app_promotion|visit_play_store">
+                        <img class="c-icon--android" src="/assets/img/icons/appstore/android.svg" alt="Download the Just Eat app on Android" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
     </div>
-    <div class="g-col g-span4">
-<p><h3 class="sg-sectionHeading">Components</h3></p>
-<ul>
-<li><a href="breadcrumbs">Breadcrumbs</a></li>
-<li><a href="cards">Cards</a></li>
-<li><a href="mediaElement">Media Element</a></li>
-</ul>
-    </div>
-    <div class="g-col g-span4">
-<p><h3 class="sg-sectionHeading">Optional Components</h3></p>
-<ul>
-<li><a href="badges">Badges</a></li>
-<li><a href="listings">Listings</a></li>
-<li><a href="menu">Menu</a></li>
-<li><a href="page-banner">Page Banners</a></li>
-<li><a href="star-ratings">Ratings</a></li>
-<li><a href="toast">Toast</a></li>
-<li><a href="ui-icons">Icons</a></li>
-<li><a href="headers/">Headers</a></li>
-<li><a href="footers/">Footers</a></li>
-<li><a href="cuisines-widget">Cuisines Widget</a></li>
-<li><a href="apps-banner">Apps Banner</a></li>
-</ul>
+    <div class="demo-code">
+<pre><code class="language-markup"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"l-container"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-appsBanner"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-appsBanner-image"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">picture</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 860px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"/assets/img/examples/appsBanner--wide.jpg"</span> &gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"(min-width: 600px)"</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"/assets/img/examples/appsBanner--mid.jpg"</span> &gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">srcset</span>=<span class="hljs-string">"/assets/img/examples/appsBanner--narrow.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> &gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">picture</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-appsBanner-content"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-appsBanner-heading"</span>&gt;</span>Find your flavour even faster<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Download the Just Eat app for faster ordering and more personalised recommendations.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-appsBanner-buttons"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-appsBanner-appBtn"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://app.adjust.com/oc511o_1455tm?utm_medium&amp;#x3D;internal&amp;amp;amp;campaign&amp;#x3D;homepage"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"homepage|app_promotion|visit_app_store"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--ios"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/appstore/ios.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Download the Just Eat app on iOS"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-appsBanner-appBtn"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://app.adjust.com/oc511o_1455tm?utm_medium&amp;#x3D;internal&amp;amp;amp;campaign&amp;#x3D;homepage"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span> <span class="hljs-attr">data-gtm</span>=<span class="hljs-string">"homepage|app_promotion|visit_play_store"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c-icon--android"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/assets/img/icons/appstore/android.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Download the Just Eat app on Android"</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
     </div>
 </div>
+
                 </div>
             </div>
         </div>
     </div><!-- Close .l-container -->
-            <!--  ==============  -->
-            <!--  === Footer ===  -->
-            <!--  ==============  -->
-            <footer class="sg-footer" role="contentinfo">
-                <div class="l-container u-text-center">
-                    <p>Fozzie and its associated documentation was created with ❤️ by the UI team at Just Eat.</p>
-                    <hr>
-                    <p>If you want to get in touch about anything mentioned here, feel free to <a href="mailto:ui@just-eat.com">drop us a message</a>!</p>
-                </div>
-            </footer>
 
         <script>
             var mockPaths = {
