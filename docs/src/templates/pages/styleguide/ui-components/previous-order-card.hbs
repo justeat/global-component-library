@@ -1,0 +1,55 @@
+---
+title: Previous Order Card
+section-title: UI Components
+docs: true
+navgroup: styleguide
+navsub: ui-components
+navactive: previous-order-card
+layout: components
+---
+<p><em>The <code>c-previousOrderCard</code> component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding <code>@include previousOrderCard();</code> into your SCSS dependencies file.</em></p>
+<h2 class="sg-sectionHeading">Previous Order Card</h2>
+
+{{#>demo-block demoVisualCssClass="demo-visual--spacingTopAndBottom"}}
+<div class="l-innerContainer">
+    <div class="c-overflowCarousel--withBlockElements">
+
+{{> je-previousOrderCard
+        optionalClassNames="c-overflowCarousel-item"
+        restaurantName="Pizza Loco"
+        restaurantLink="#"
+        orderAgainLinkTitle="Order this meal again"
+        restaurantImageUrl="/assets/img/examples/cuisines-widget.jpg"
+        orderDate="01/12/2018"
+        orderSummary="1 x Sushi Salmon, 3 x Tuna Sashimi, 1 x Coconut Water"
+        showMoreText="+ 3 more"
+        orderTotal="£45.00"
+        orderAgainText="Order again"
+}}
+{{> je-previousOrderCard
+        optionalClassNames="c-overflowCarousel-item"
+        restaurantName="Pizza Loco"
+        restaurantLink="#"
+        orderAgainLinkTitle="Order this meal again"
+        restaurantImageUrl="/assets/img/examples/cuisines-widget.jpg"
+        orderDate="01/12/2018"
+        orderSummary="1 x Sushi Salmon, 3 x Tuna Sashimi, 1 x Coconut Water"
+        showMoreText="+ 1 more"
+        orderTotal="£45.00"
+        orderAgainText="Order again"
+}}
+{{> je-previousOrderCard
+        optionalClassNames="c-overflowCarousel-item"
+        restaurantName="Pizza Loco"
+        restaurantLink="#"
+        orderAgainLinkTitle="Order this meal again"
+        restaurantImageUrl="/assets/img/examples/cuisines-widget.jpg"
+        orderDate="01/12/2018"
+        orderSummary="1 x Sushi Salmon, 3 x Tuna Sashimi, 1 x Coconut Water"
+        showMoreText="+ 3 more"
+        orderTotal="£45.00"
+        orderAgainText="Order again"
+}}
+</div>
+</div>
+{{/demo-block }}
