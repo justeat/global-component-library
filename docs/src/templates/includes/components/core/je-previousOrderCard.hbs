@@ -6,7 +6,7 @@
 >
 
     <div class="c-previousOrderCard-image">
-        <img src="{{ restaurantImageUrl }}" alt="" class="c-previousOrderCard-img">
+        <img src="{{ restaurantImageUrl }}" alt="{{ restaurantName }}" class="c-previousOrderCard-img">
     </div>
 
     <div class="c-previousOrderCard-content">
@@ -15,7 +15,7 @@
         <div class="c-previousOrderCard-summary-grid">
             <div class="c-previousOrderCard-summary">
                 {{ orderSummary }}
-                <strong class="c-previousOrderCard-showMore" href="#">{{ showMoreText }}</strong>
+                <strong class="c-previousOrderCard-showMore" tabindex="0">{{ showMoreText }}</strong>
             </div>
             <strong class="c-previousOrderCard-orderTotal">{{ orderTotal }}</strong>
         </div>
