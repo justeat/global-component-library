@@ -4,17 +4,17 @@ section-title: UI Components
 docs: true
 navgroup: styleguide
 navsub: ui-components
-navactive: previous-order-card
+navactive: order-card
 layout: components
 ---
-<p><em>The <code>c-previousOrderCard</code> component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding <code>@include previousOrderCard();</code> into your SCSS dependencies file.</em></p>
-<h2 class="sg-sectionHeading">Previous Order Card</h2>
+<p><em>The <code>c-orderCard</code> component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding <code>@include orderCard();</code> into your SCSS dependencies file.</em></p>
+<h2 class="sg-sectionHeading">Order Card</h2>
 
 {{#>demo-block demoVisualCssClass="demo-visual--spacingTopAndBottom"}}
 <div class="l-innerContainer">
     <div class="c-overflowCarousel--withBlockElements">
 
-{{> je-previousOrderCard
+{{> je-orderCard
         optionalClassNames="c-overflowCarousel-item"
         restaurantName="Pizza Loco"
         restaurantLink="#"
@@ -26,7 +26,7 @@ layout: components
         orderTotal="£45.00"
         orderAgainText="Order again"
 }}
-{{> je-previousOrderCard
+{{> je-orderCard
         optionalClassNames="c-overflowCarousel-item"
         restaurantName="Pizza Loco"
         restaurantLink="#"
@@ -38,7 +38,7 @@ layout: components
         orderTotal="£45.00"
         orderAgainText="Order again"
 }}
-{{> je-previousOrderCard
+{{> je-orderCard
         optionalClassNames="c-overflowCarousel-item"
         restaurantName="Pizza Loco"
         restaurantLink="#"
