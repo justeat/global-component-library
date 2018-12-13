@@ -2,7 +2,6 @@
     class="c-orderCard {{ optionalClassNames }}"
     href="{{ restaurantLink }}"
     title="{{ orderAgainLinkTitle }}"
-    data-gtm="home|click-previous|reorder"
 >
 
     <div class="c-orderCard-image">
@@ -11,7 +10,7 @@
 
     <div class="c-orderCard-content">
         <h3 class="c-orderCard-title">{{ restaurantName }}</h3>
-        <p class="c-orderCard-date">{{ orderDate }}</p>
+        <time class="c-orderCard-date">{{ orderDate }}</time>
         <div class="c-orderCard-summary-grid">
             <div class="c-orderCard-summary">
                 {{ orderSummary }}
