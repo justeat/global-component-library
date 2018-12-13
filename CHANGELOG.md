@@ -6,10 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 v2.12.0
 ------------------------------
-*December 12, 2018*
+*December 14, 2018*
 
 ### Added
 - `c-orderCard` component
+
+### Changed
+- `fozzie` module version update
 
 
 v2.11.0
