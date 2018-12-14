@@ -1,0 +1,24 @@
+<a href="{{ restaurantLink }}"
+    class="c-orderCard {{ optionalClassNames }}"
+    href="{{ restaurantLink }}"
+    title="{{ orderAgainLinkTitle }}"
+>
+
+    <div class="c-orderCard-image">
+        <img src="{{ restaurantImageUrl }}" alt="{{ restaurantName }}" class="c-orderCard-img">
+    </div>
+
+    <div class="c-orderCard-content">
+        <h3 class="c-orderCard-title">{{ restaurantName }}</h3>
+        <time class="c-orderCard-date">{{ orderDate }}</time>
+        <div class="c-orderCard-summary-grid">
+            <div class="c-orderCard-summary">
+                {{ orderSummary }}
+                <strong class="c-orderCard-showMore">{{ showMoreText }}</strong>
+            </div>
+            <strong class="c-orderCard-orderTotal">{{ orderTotal }}</strong>
+        </div>
+
+        <p class="c-orderCard-order">{{ orderAgainText }}</p>
+    </div>
+</a>
