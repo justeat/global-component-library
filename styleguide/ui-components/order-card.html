@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>UI Components – Just Eat Front-End Component Library and Documentation</title>
+		<title>Previous Order Card – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -135,58 +135,178 @@
                 </ul>
             </div>
             <div class="g-col g-span10--mid">
-                <div class="c-card c-card--rounded sg-content">
-                    <h1>UI Components</h1>
-<p>Note. Only components that are part of the global platform should be added to this page of components.</p>
-<div class="g g--gutter g--stack--mid">
-    <div class="g-col g-span4">
-<p><h3 class="sg-sectionHeading">Objects</h3></p>
-<ul>
-<li><a href="buttons">Buttons</a></li>
-<li><a href="forms/checkboxes">Checkboxes</a></li>
-<li><a href="forms/radio-buttons">Radio Buttons</a></li>
-</ul>
+                <div class="c-card c-card--rounded">
+                    <h1>Previous Order Card</h1>
+                    <p><em>The <code>c-orderCard</code> component is an optional mixin within Fozzie — if you'd like to use it in your project you can include it by adding <code>@include orderCard();</code> into your SCSS dependencies file.</em></p>
+<h2 class="sg-sectionHeading">Order Card</h2>
+
+<div class="demo">
+    <div class="demo-visual demo-visual--spacingTopAndBottom">
+        <h4 class="demo-title">Example</h4>
+        <div class="l-innerContainer">
+            <div class="c-overflowCarousel--withBlockElements">
+        
+        <a href="#"
+            class="c-orderCard c-overflowCarousel-item"
+            href="#"
+            title="Order this meal again"
+        >
+        
+            <div class="c-orderCard-image">
+                <img src="/assets/img/examples/cuisines-widget.jpg" alt="Pizza Loco" class="c-orderCard-img">
+            </div>
+        
+            <div class="c-orderCard-content">
+                <h3 class="c-orderCard-title">Pizza Loco</h3>
+                <time class="c-orderCard-date">01/12/2018</time>
+                <div class="c-orderCard-summary-grid">
+                    <div class="c-orderCard-summary">
+                        1 x Sushi Salmon, 3 x Tuna Sashimi, 1 x Coconut Water
+                        <strong class="c-orderCard-showMore">+ 3 more</strong>
+                    </div>
+                    <strong class="c-orderCard-orderTotal">£45.00</strong>
+                </div>
+        
+                <p class="c-orderCard-order">Order again</p>
+            </div>
+        </a>
+        <a href="#"
+            class="c-orderCard c-overflowCarousel-item"
+            href="#"
+            title="Order this meal again"
+        >
+        
+            <div class="c-orderCard-image">
+                <img src="/assets/img/examples/cuisines-widget.jpg" alt="Pizza Loco" class="c-orderCard-img">
+            </div>
+        
+            <div class="c-orderCard-content">
+                <h3 class="c-orderCard-title">Pizza Loco</h3>
+                <time class="c-orderCard-date">01/12/2018</time>
+                <div class="c-orderCard-summary-grid">
+                    <div class="c-orderCard-summary">
+                        1 x Sushi Salmon, 3 x Tuna Sashimi, 1 x Coconut Water
+                        <strong class="c-orderCard-showMore">+ 1 more</strong>
+                    </div>
+                    <strong class="c-orderCard-orderTotal">£45.00</strong>
+                </div>
+        
+                <p class="c-orderCard-order">Order again</p>
+            </div>
+        </a>
+        <a href="#"
+            class="c-orderCard c-overflowCarousel-item"
+            href="#"
+            title="Order this meal again"
+        >
+        
+            <div class="c-orderCard-image">
+                <img src="/assets/img/examples/cuisines-widget.jpg" alt="Pizza Loco" class="c-orderCard-img">
+            </div>
+        
+            <div class="c-orderCard-content">
+                <h3 class="c-orderCard-title">Pizza Loco</h3>
+                <time class="c-orderCard-date">01/12/2018</time>
+                <div class="c-orderCard-summary-grid">
+                    <div class="c-orderCard-summary">
+                        1 x Sushi Salmon, 3 x Tuna Sashimi, 1 x Coconut Water
+                        <strong class="c-orderCard-showMore">+ 3 more</strong>
+                    </div>
+                    <strong class="c-orderCard-orderTotal">£45.00</strong>
+                </div>
+        
+                <p class="c-orderCard-order">Order again</p>
+            </div>
+        </a>
+        </div>
+        </div>
     </div>
-    <div class="g-col g-span4">
-<p><h3 class="sg-sectionHeading">Components</h3></p>
-<ul>
-<li><a href="breadcrumbs">Breadcrumbs</a></li>
-<li><a href="cards">Cards</a></li>
-<li><a href="mediaElement">Media Element</a></li>
-</ul>
-    </div>
-    <div class="g-col g-span4">
-<p><h3 class="sg-sectionHeading">Optional Components</h3></p>
-<ul>
-<li><a href="badges">Badges</a></li>
-<li><a href="listings">Listings</a></li>
-<li><a href="menu">Menu</a></li>
-<li><a href="page-banner">Page Banners</a></li>
-<li><a href="star-ratings">Ratings</a></li>
-<li><a href="toast">Toast</a></li>
-<li><a href="ui-icons">Icons</a></li>
-<li><a href="headers/">Headers</a></li>
-<li><a href="footers/">Footers</a></li>
-<li><a href="cuisines-widget">Cuisines Widget</a></li>
-<li><a href="apps-banner">Apps Banner</a></li>
-<li><a href="order-card">Order Card</a></li>
-</ul>
+    <div class="demo-code">
+<pre><code class="language-markup">&lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"l-innerContainer"</span>&gt;
+    &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-overflowCarousel--withBlockElements"</span>&gt;
+
+&lt;a href=<span class="hljs-string">"#"</span>
+    <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard c-overflowCarousel-item"</span>
+    href=<span class="hljs-string">"#"</span>
+    title=<span class="hljs-string">"Order this meal again"</span>
+&gt;
+
+    &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-image"</span>&gt;
+        &lt;img src=<span class="hljs-string">"/assets/img/examples/cuisines-widget.jpg"</span> alt=<span class="hljs-string">"Pizza Loco"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-img"</span>&gt;
+    &lt;/div&gt;
+
+    &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-content"</span>&gt;
+        &lt;h3 <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-title"</span>&gt;Pizza Loco&lt;/h3&gt;
+        &lt;time <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-date"</span>&gt;<span class="hljs-number">01</span>/<span class="hljs-number">12</span>/<span class="hljs-number">2018</span>&lt;/time&gt;
+        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-summary-grid"</span>&gt;
+            &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-summary"</span>&gt;
+                <span class="hljs-number">1</span> x Sushi Salmon, <span class="hljs-number">3</span> x Tuna Sashimi, <span class="hljs-number">1</span> x Coconut Water
+                &lt;strong <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-showMore"</span>&gt;+ <span class="hljs-number">3</span> more&lt;/strong&gt;
+            &lt;/div&gt;
+            &lt;strong <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-orderTotal"</span>&gt;£<span class="hljs-number">45.00</span>&lt;/strong&gt;
+        &lt;/div&gt;
+
+        &lt;p <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-order"</span>&gt;Order again&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/a&gt;
+&lt;a href=<span class="hljs-string">"#"</span>
+    <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard c-overflowCarousel-item"</span>
+    href=<span class="hljs-string">"#"</span>
+    title=<span class="hljs-string">"Order this meal again"</span>
+&gt;
+
+    &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-image"</span>&gt;
+        &lt;img src=<span class="hljs-string">"/assets/img/examples/cuisines-widget.jpg"</span> alt=<span class="hljs-string">"Pizza Loco"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-img"</span>&gt;
+    &lt;/div&gt;
+
+    &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-content"</span>&gt;
+        &lt;h3 <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-title"</span>&gt;Pizza Loco&lt;/h3&gt;
+        &lt;time <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-date"</span>&gt;<span class="hljs-number">01</span>/<span class="hljs-number">12</span>/<span class="hljs-number">2018</span>&lt;/time&gt;
+        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-summary-grid"</span>&gt;
+            &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-summary"</span>&gt;
+                <span class="hljs-number">1</span> x Sushi Salmon, <span class="hljs-number">3</span> x Tuna Sashimi, <span class="hljs-number">1</span> x Coconut Water
+                &lt;strong <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-showMore"</span>&gt;+ <span class="hljs-number">1</span> more&lt;/strong&gt;
+            &lt;/div&gt;
+            &lt;strong <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-orderTotal"</span>&gt;£<span class="hljs-number">45.00</span>&lt;/strong&gt;
+        &lt;/div&gt;
+
+        &lt;p <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-order"</span>&gt;Order again&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/a&gt;
+&lt;a href=<span class="hljs-string">"#"</span>
+    <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard c-overflowCarousel-item"</span>
+    href=<span class="hljs-string">"#"</span>
+    title=<span class="hljs-string">"Order this meal again"</span>
+&gt;
+
+    &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-image"</span>&gt;
+        &lt;img src=<span class="hljs-string">"/assets/img/examples/cuisines-widget.jpg"</span> alt=<span class="hljs-string">"Pizza Loco"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-img"</span>&gt;
+    &lt;/div&gt;
+
+    &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-content"</span>&gt;
+        &lt;h3 <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-title"</span>&gt;Pizza Loco&lt;/h3&gt;
+        &lt;time <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-date"</span>&gt;<span class="hljs-number">01</span>/<span class="hljs-number">12</span>/<span class="hljs-number">2018</span>&lt;/time&gt;
+        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-summary-grid"</span>&gt;
+            &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-summary"</span>&gt;
+                <span class="hljs-number">1</span> x Sushi Salmon, <span class="hljs-number">3</span> x Tuna Sashimi, <span class="hljs-number">1</span> x Coconut Water
+                &lt;strong <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-showMore"</span>&gt;+ <span class="hljs-number">3</span> more&lt;/strong&gt;
+            &lt;/div&gt;
+            &lt;strong <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-orderTotal"</span>&gt;£<span class="hljs-number">45.00</span>&lt;/strong&gt;
+        &lt;/div&gt;
+
+        &lt;p <span class="hljs-keyword">class</span>=<span class="hljs-string">"c-orderCard-order"</span>&gt;Order again&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
     </div>
 </div>
+
                 </div>
             </div>
         </div>
     </div><!-- Close .l-container -->
-            <!--  ==============  -->
-            <!--  === Footer ===  -->
-            <!--  ==============  -->
-            <footer class="sg-footer" role="contentinfo">
-                <div class="l-container u-text-center">
-                    <p>Fozzie and its associated documentation was created with ❤️ by the UI team at Just Eat.</p>
-                    <hr>
-                    <p>If you want to get in touch about anything mentioned here, feel free to <a href="mailto:ui@just-eat.com">drop us a message</a>!</p>
-                </div>
-            </footer>
 
         <script>
             var mockPaths = {
