@@ -3,6 +3,13 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+v2.14.0
+------------------------------
+*December 17, 2018*
+
+### Changed
+- Typography updated to latests designs
+
 
 v2.13.0
 ------------------------------
