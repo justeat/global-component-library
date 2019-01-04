@@ -5,10 +5,12 @@
  */
 
 import '@justeat/f-toggle';
+import '@justeat/fozzie';
 import $ from '@justeat/f-dom';
 import './ui-components/header';
+import * as utils from '@justeat/f-utilities';
+// import cookieBanner from './test';
 import ScrollSpy from '../ScrollSpy';
-
 
 // any additional docs functionality goes in here
 const docs = {
@@ -24,6 +26,12 @@ const docs = {
 
     // controls all of our base initialsation functions
     init: () => {
+        // console.log(cookieBanner);
+        // cookieBanner.init();
+        console.log(utils);
+        console.log(utils.cookieBanner);
+        console.log(utils.cookieBanner.init);
+        utils.cookieBanner.init('.sg-page');
         docs._demoHandler();
         docs._disableDemoLinks();
         docs._themeHandler();

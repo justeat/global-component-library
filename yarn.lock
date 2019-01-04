@@ -639,6 +639,12 @@
     closest "0.0.1"
     lite-ready "1.0.4"
 
+"@justeat/f-utilities@file:.yalc/@justeat/f-utilities":
+  version "0.4.0-5ee01fcc"
+  dependencies:
+    "@justeat/f-dom" "^0.4.0"
+    lodash.throttle "^4.1.1"
+
 "@justeat/f-utils@0.1.0", "@justeat/f-utils@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@justeat/f-utils/-/f-utils-0.1.0.tgz#38ac810d87ae356dc1dd06444ddce4797d726b3e"
@@ -653,7 +659,20 @@
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-2.1.0.tgz#42230c8d8d5aecc37d32eaccd5e9973e90cd4a4e"
 
-"@justeat/fozzie@1.18.0", "@justeat/fozzie@^1.7.0":
+"@justeat/fozzie@1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.6.0.tgz#8f8b0934bba6bcdc984e063504ad67c9fa6a8e0b"
+  dependencies:
+    "@justeat/f-dom" "1.0.0"
+    "@justeat/f-logger" "0.7.1"
+    "@justeat/f-utils" "0.1.0"
+    "@justeat/fozzie-colour-palette" "2.1.0"
+    fontfaceobserver "^2.0.13"
+    include-media "1.4.9"
+    kickoff-grid.css "1.1.2"
+    normalize-scss "7.0.1"
+
+"@justeat/fozzie@^1.7.0":
   version "1.18.0"
   resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.18.0.tgz#d07fae576644e96c8cac8349a08d7dd6aae16ecf"
   dependencies:
@@ -666,17 +685,16 @@
     kickoff-grid.css "1.2.0"
     normalize-scss "7.0.1"
 
-"@justeat/fozzie@1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.6.0.tgz#8f8b0934bba6bcdc984e063504ad67c9fa6a8e0b"
+"@justeat/fozzie@file:.yalc/@justeat/fozzie":
+  version "1.20.0-c199be38"
   dependencies:
-    "@justeat/f-dom" "1.0.0"
+    "@justeat/f-dom" "1.1.0"
     "@justeat/f-logger" "0.7.1"
     "@justeat/f-utils" "0.1.0"
     "@justeat/fozzie-colour-palette" "2.1.0"
     fontfaceobserver "^2.0.13"
     include-media "1.4.9"
-    kickoff-grid.css "1.1.2"
+    kickoff-grid.css "1.2.0"
     normalize-scss "7.0.1"
 
 "@justeat/gulp-build-fozzie@8.3.0":
@@ -8189,7 +8207,7 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "~3.0.0"
 
-lodash.throttle@4.1.1:
+lodash.throttle@4.1.1, lodash.throttle@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
 
