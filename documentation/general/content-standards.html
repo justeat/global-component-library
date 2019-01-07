@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Browser Support – Just Eat Front-End Component Library and Documentation</title>
+		<title>Content Standards (MoSCoW) – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -53,7 +53,7 @@
 	
 <div class="sg-secondaryBar">
     <div class="l-container g">
-        <h2 class="sg-secondaryBar-title g-col g-col--shrink gamma">General Documentation</h2>
+        <h2 class="sg-secondaryBar-title g-col g-col--shrink gamma">Just Eat Content Standards (MoSCoW)</h2>
 
         <ul class="sg-subnav g-col g g--alignRight g--alignBottom u-unstyled">
         
@@ -83,11 +83,11 @@
                     <li><a href="/documentation/general/" class="">What is Fozzie?</a>
     </li>
     <li><a href="/documentation/general/principles" class="">Development Principles</a></li>
-    <li><a href="/documentation/general/content-standards" class="">Content Standards (MoSCoW)</a></li>
+    <li><a href="/documentation/general/content-standards" class=" is-active">Content Standards (MoSCoW)</a></li>
     <li><a href="/documentation/general/getting-started" class="">Getting Started</a></li>
     <li><a href="/documentation/general/gulp" class="">Build Tasks – Gulp</a>
     </li>
-    <li><a href="/documentation/general/browser-support" class=" is-active">Browser support</a></li>
+    <li><a href="/documentation/general/browser-support" class="">Browser support</a></li>
     <li><a href="/documentation/general/accessibility" class="">Accessibility</a>
     <li><a href="/documentation/general/accessibility/checklist" class="">A11y Checklist</a>
     </li>
@@ -103,130 +103,31 @@
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
-                    <h1>Browser Support</h1>
-<p>The number of browsers available to our users is vast, especially for those using mobile devices. Below, we have defined a rating system that helps us to specify the level of browser support we aim to achieve and to clarify what level of testing is required.</p>
-<p>As with any browser support checklist, this list should be reviewed often and updated in-line with the browsers and devices that our users are choosing to access our platforms via.</p>
-<p><h2 class="sg-sectionHeading">Priority definitions</h2></p>
-<h3>Priority level A – Fully supported</h3>
+                    <h1>Content Standards (MoSCoW)</h1>
+<p>In principle, all pertinent page content - including server-rendered JavaScript pages - will adhere to the same guidelines as traditional &quot;flat HTML&quot; pages and CMS templates.</p>
+<p><h2 class="sg-sectionHeading">Must</h2></p>
 <ul>
-<li>Testing is required.</li>
-<li>All content must be available.</li>
-<li>Layout must comply with the creative design unless there is a technical need not to do so.</li>
-<li>All functionality must be available and work as required.</li>
+<li>Use <a href="https://fozzie.just-eat.com/documentation/general/accessibility/checklist">valid, well-structured, semantic</a> HTML5</li>
+<li>Have all key content present in the response markup <a href="https://www.elephate.com/blog/everything-you-know-about-javascript-indexing-is-wrong/">before the browser processes the page</a></li>
+<li>Each page/view of significant content has a canonical, meaningful URL (without params)</li>
+<li>Implement standard anchor links (<code>&lt;a href=&quot;...&quot;&gt;</code>) for connections to other content</li>
+<li>Respect our <a href="https://fozzie.just-eat.com/documentation/general/browser-support">latest matrix of supported browsers</a></li>
 </ul>
-<h3>Priority level B – Mostly supported*</h3>
+<p><em>For reference, Elephate offers a comprehensive guide to <a href="https://www.elephate.com/blog/ultimate-guide-javascript-seo/">server-side rendered JavaScript SEO best practices</a>, which should be observed and adhered to as much as possible.</em></p>
+<p><h2 class="sg-sectionHeading">Should</h2></p>
 <ul>
-<li>Testing is required.</li>
-<li>All content must be available.</li>
-<li>Layout does not have to look identical to creative design (i.e. degradation of appearance is acceptable).</li>
-<li>All functionality must be available and work as required.</li>
+<li>Load as fast as possible</li>
+<li>Aim for a baseline Lighthouse score of 50/100</li>
+<li>Make effective use of <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques">appropriate ARIA/HTML5 ‘roles’</a> to enrich the semantic user experience</li>
 </ul>
-<h3>Priority level C – Partially supported*</h3>
+<p><h2 class="sg-sectionHeading">Could</h2></p>
 <ul>
-<li>Testing is required.</li>
-<li>All content must be available.</li>
-<li>Layout does not have to look identical to creative design (ie degradation of appearance is acceptable).</li>
-<li>All functionality must be available and work as required, however it may function in a more basic manner.</li>
+<li>Aim for <a href="https://checklyhq.com/blog/2018/08/how-we-got-a-100-lighthouse-performance-score-for-our-vue.js-app/">a Lighthouse score of 90+</a></li>
 </ul>
-<h3>Priority level D – Not supported*</h3>
+<p><h2 class="sg-sectionHeading">Would</h2></p>
 <ul>
-<li>Testing is not required</li>
-</ul>
-<p>With any platforms rated this level, no testing will be carried out, however the experience may still result in a higher level experience due to responsive build approach.</p>
-<p><strong>N.b.</strong> With all grading the actual experience/functionality &amp; design may result in a higher grade. The site is going to be built in a responsive nature so support may be better than stated.</p>
-<p><h2 class="sg-sectionHeading">Browser Matrices</h2></p>
-<h3>Desktop</h3>
-<table class="o-table c-matrix not-striped" role="grid">
-    <thead>
-        <tr role="row">
-            <th data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none">Browser</th>
-            <th data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none">Grading</th>
-        </tr>
-    </thead>
-    <tbody aria-live="polite" aria-relevant="all">
-        <tr role="row">
-            <td>Chrome 59+ (MacOS &amp; Windows)</td>
-            <td class="c-matrix-gradeA">A</td>
-        </tr>
-        <tr role="row">
-            <td>Safari 10+ (MacOS)</td>
-            <td class="c-matrix-gradeA">A</td>
-        </tr>
-        <tr role="row">
-            <td>IE11</td>
-            <td class="c-matrix-gradeA">A</td>
-        </tr>
-        <tr role="row">
-            <td>Firefox 54+ (Windows)</td>
-            <td class="c-matrix-gradeA">A</td>
-        </tr>
-        <tr role="row">
-            <td>Edge 14+</td>
-            <td class="c-matrix-gradeB">B</td>
-        </tr>
-        <tr role="row">
-            <td>Safari 9 (MacOS)</td>
-            <td class="c-matrix-gradeC">C</td>
-        </tr>
-        <tr role="row">
-            <td>All other browsers &amp; versions</td>
-            <td class="c-matrix-gradeD">D</td>
-        </tr>
-    </tbody>
-</table>
-<h3>Mobile</h3>
-<table class="o-table c-matrix not-striped" role="grid" resolved="">
-    <thead>
-        <tr role="row">
-            <th data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="ascending">Browser</th>
-            <th data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" aria-sort="none">Grading</th>
-        </tr>
-    </thead>
-    <tbody aria-live="polite" aria-relevant="all">
-        <tr role="row">
-            <tr role="row">
-                <td>Android Chrome 51</td>
-                <td class="c-matrix-gradeA">A</td>
-            </tr>
-            <tr role="row">
-                <td>Android Chrome 56</td>
-                <td class="c-matrix-gradeC">C</td>
-            </tr>
-            <tr role="row">
-                <td>Android Chrome 58</td>
-                <td class="c-matrix-gradeC">C</td>
-            </tr>
-            <tr role="row">
-                <td>Android Chrome 59</td>
-                <td class="c-matrix-gradeA">A</td>
-            </tr>
-            <tr role="row">
-                <td>Android Chrome 60</td>
-                <td class="c-matrix-gradeC">C</td>
-            </tr>
-            <tr role="row">
-                <td>iOS Chrome 60 - iPhone/iPad</td>
-                <td class="c-matrix-gradeC">C</td>
-            </tr>
-            <tr role="row">
-                <td>iOS Safari 9 - iPhone/iPad</td>
-                <td class="c-matrix-gradeB">B</td>
-            </tr>
-            <tr role="row">
-                <td>iOS Safari 10 - iPhone/iPad</td>
-                <td class="c-matrix-gradeA">A</td>
-            </tr>
-            <tr role="row">
-                <td>iOS Safari 602.x - iPhone/iPad</td>
-                <td class="c-matrix-gradeC">C</td>
-            </tr>
-                <td>All other versions*</td>
-                <td class="c-matrix-gradeD">D</td>
-            </tr>
-    </tbody>
-</table>
-<ul>
-<li>may work but will not be tested</li>
+<li>Be easy and reliable to <a href="https://developers.google.com/web/tools/workbox/guides/precache-files/cli">cache properly, and flush/update reliably</a></li>
+<li>Provide a seamless offline experience for non-volatile pages (e.g. menus, restaurant pages)</li>
 </ul>
                 </div>
             </div>
