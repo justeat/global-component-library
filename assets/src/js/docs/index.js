@@ -5,7 +5,6 @@
  */
 
 import '@justeat/f-toggle';
-import '@justeat/fozzie';
 import $ from '@justeat/f-dom';
 import './ui-components/header';
 import ScrollSpy from '../ScrollSpy';
@@ -24,8 +23,6 @@ const docs = {
 
     // controls all of our base initialsation functions
     init: () => {
-        // console.log(cookieBanner);
-        // cookieBanner.init();
         docs._demoHandler();
         docs._disableDemoLinks();
         docs._themeHandler();
