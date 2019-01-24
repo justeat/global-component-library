@@ -661,6 +661,7 @@
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-2.1.0.tgz#42230c8d8d5aecc37d32eaccd5e9973e90cd4a4e"
 
+<<<<<<< HEAD
 "@justeat/fozzie@1.6.0":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.6.0.tgz#8f8b0934bba6bcdc984e063504ad67c9fa6a8e0b"
@@ -677,6 +678,12 @@
 "@justeat/fozzie@^1.7.0":
   version "1.18.0"
   resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.18.0.tgz#d07fae576644e96c8cac8349a08d7dd6aae16ecf"
+=======
+"@justeat/fozzie@1.19.0":
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.19.0.tgz#093a3e0a002057053ea2179bf142726d40cc2037"
+  integrity sha512-ehJ13XFiHFe6SDHmqMoirzyV/cSOKOtaFI+suoX95z8j6H97F/IUwhhAB0NFkbuLXiV2PEGjFJd30/OZgrLV+Q==
+>>>>>>> master
   dependencies:
     "@justeat/f-dom" "1.1.0"
     "@justeat/f-logger" "0.7.1"
@@ -689,6 +696,19 @@
 
 "@justeat/fozzie@file:.yalc/@justeat/fozzie":
   version "1.20.0-1d3bbda5"
+  dependencies:
+    "@justeat/f-dom" "1.1.0"
+    "@justeat/f-logger" "0.7.1"
+    "@justeat/f-utils" "0.1.0"
+    "@justeat/fozzie-colour-palette" "2.1.0"
+    fontfaceobserver "^2.0.13"
+    include-media "1.4.9"
+    kickoff-grid.css "1.2.0"
+    normalize-scss "7.0.1"
+
+"@justeat/fozzie@^1.7.0":
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.18.0.tgz#d07fae576644e96c8cac8349a08d7dd6aae16ecf"
   dependencies:
     "@justeat/f-dom" "1.1.0"
     "@justeat/f-logger" "0.7.1"
