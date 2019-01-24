@@ -36,7 +36,6 @@ v2.12.0
 
 ### Changed
 - `fozzie` module version update
->>>>>>> master
 
 
 v2.11.0
