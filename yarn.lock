@@ -639,8 +639,10 @@
     closest "0.0.1"
     lite-ready "1.0.4"
 
-"@justeat/f-utilities@file:.yalc/@justeat/f-utilities":
-  version "0.4.0-5ee01fcc"
+"@justeat/f-utilities@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-utilities/-/f-utilities-0.4.0.tgz#f62d8700462ba82ef758da1f27013410b1bff1bc"
+  integrity sha512-m4ulZOduYRXLT0/kAfj6cOp/BLildQjYWomEIRoN5qD1OmEhbNWjrLjgHpLuTbWqhLbw2gDLTUT8cQ8hFxecMA==
   dependencies:
     "@justeat/f-dom" "^0.4.0"
     lodash.throttle "^4.1.1"
@@ -686,7 +688,7 @@
     normalize-scss "7.0.1"
 
 "@justeat/fozzie@file:.yalc/@justeat/fozzie":
-  version "1.20.0-c199be38"
+  version "1.20.0-1d3bbda5"
   dependencies:
     "@justeat/f-dom" "1.1.0"
     "@justeat/f-logger" "0.7.1"

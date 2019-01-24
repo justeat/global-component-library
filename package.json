@@ -24,7 +24,7 @@
     "@justeat/f-header": "1.1.0",
     "@justeat/f-icons": "1.16.0",
     "@justeat/f-toggle": "1.1.0",
-    "@justeat/f-utilities": "file:.yalc/@justeat/f-utilities",
+    "@justeat/f-utilities": "0.5.0",
     "@justeat/f-validate": "1.1.0",
     "@justeat/fozzie": "file:.yalc/@justeat/fozzie",
     "bezier-easing": "2.1.0",
