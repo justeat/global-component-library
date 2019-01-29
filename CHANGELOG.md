@@ -5,12 +5,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 v2.15.0
 ------------------------------
-*January 24, 2018*
+*January 24, 2019*
 
 ### Added
 - Cookie banner component page
 
-=======
 v2.14.0
 ------------------------------
 *December 17, 2018*
