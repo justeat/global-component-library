@@ -50,7 +50,7 @@ function setupValidation() {
   }
 }
 
-},{"@justeat/f-dom":3,"@justeat/f-validate":16}],2:[function(require,module,exports){
+},{"@justeat/f-dom":3,"@justeat/f-validate":21}],2:[function(require,module,exports){
 "use strict";
 
 require("@justeat/f-footer");
@@ -63,9 +63,13 @@ var _liteReady = _interopRequireDefault(require("lite-ready"));
 
 var _svg4everybody = _interopRequireDefault(require("svg4everybody"));
 
+var utils = _interopRequireWildcard(require("@justeat/f-utilities"));
+
 var _formValidationSetup = _interopRequireDefault(require("./docs/formValidationSetup"));
 
 require("picturefill");
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -74,9 +78,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   (0, _svg4everybody.default)();
   (0, _formValidationSetup.default)();
   (0, _fHeader.checkForUser)();
+  utils.cookieBanner.init('#CookieAnchor');
 });
 
-},{"./docs/formValidationSetup":1,"@justeat/f-footer":4,"@justeat/f-header":8,"@justeat/fozzie":29,"lite-ready":33,"picturefill":35,"svg4everybody":37}],3:[function(require,module,exports){
+},{"./docs/formValidationSetup":1,"@justeat/f-footer":4,"@justeat/f-header":8,"@justeat/f-utilities":14,"@justeat/fozzie":34,"lite-ready":38,"picturefill":41,"svg4everybody":43}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -144,7 +149,7 @@ dom.first = first;
 dom.exists = exists;
 var _default = dom;
 exports.default = _default;
-},{"qwery":36}],4:[function(require,module,exports){
+},{"qwery":42}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -208,7 +213,7 @@ var resizeInit = function resizeInit() {
 exports.collapseFooterPanels = collapseFooterPanels;
 exports.tabindexResize = tabindexResize;
 exports.resizeInit = resizeInit;
-},{"@justeat/fozzie":5,"lite-ready":33,"lodash.debounce":34,"qwery":36}],5:[function(require,module,exports){
+},{"@justeat/fozzie":5,"lite-ready":38,"lodash.debounce":39,"qwery":42}],5:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -402,7 +407,7 @@ var stopFoit = exports.stopFoit = function stopFoit() {
 };
 
 exports.default = stopFoit;
-},{"@justeat/f-logger":11,"fontfaceobserver":32}],8:[function(require,module,exports){
+},{"@justeat/f-logger":11,"fontfaceobserver":37}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -456,7 +461,7 @@ exports.setupHeader = setupHeader;
 (0, _liteReady.default)(function () {
   setupHeader();
 });
-},{"./userAuth":9,"lite-ready":33}],9:[function(require,module,exports){
+},{"./userAuth":9,"lite-ready":38}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -641,6 +646,16 @@ exports.saveUserData = saveUserData;
 },{}],13:[function(require,module,exports){
 'use strict';var _typeof='function'==typeof Symbol&&'symbol'==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&'function'==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?'symbol':typeof a},_createClass=function(){function a(a,b){for(var c,d=0;d<b.length;d++)c=b[d],c.enumerable=c.enumerable||!1,c.configurable=!0,'value'in c&&(c.writable=!0),Object.defineProperty(a,c.key,c)}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}();Object.defineProperty(exports,'__esModule',{value:!0});function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError('Cannot call a class as a function')}var output=function(a){if('undefined'!=typeof window.console)window.console.log(a);else throw new Error('Console is not supported')},getPersistentData=function(){if(!localStorage)output('Local storage not available');else if(0<localStorage.length){var a,b,c,d;for(output('/***** Output local storage *****/'),a=0;a<localStorage.length;a++)b=+localStorage.key(a),c=localStorage[b],d=new Date(b),'Invalid Date'!==(d+'').valueOf()&&output(d+' => '+c);output('/***** End of local storage *****/')}else output('Local storage is empty')},clearPersistentData=function(){localStorage&&(localStorage.clear(),output('Local storage cleared'))},Logger=function(){function a(b){_classCallCheck(this,a),this.config=b,this.debugMode=this.config.debugMode,this.data={}}return _createClass(a,[{key:'log',value:function log(a){var b=a;if(this.debugMode){var c=Date.now().toString();this.data[c]=b,'object'===('undefined'==typeof localStorage?'undefined':_typeof(localStorage))&&(b=JSON.stringify(b),localStorage.setItem(c,b)),output(b)}}}]),a}();exports.getPersistentData=getPersistentData,exports.clearPersistentData=clearPersistentData,exports.default=Logger;
 },{}],14:[function(require,module,exports){
+'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.cookieBanner=exports.lazyLoad=exports.formReset=void 0;var _formReset=require('./modules/formReset'),_formReset2=_interopRequireDefault(_formReset),_lazyLoad=require('./modules/lazyLoad'),_lazyLoad2=_interopRequireDefault(_lazyLoad),_cookieBanner=require('./modules/cookieBanner'),_cookieBanner2=_interopRequireDefault(_cookieBanner);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}exports.formReset=_formReset2.default,exports.lazyLoad=_lazyLoad2.default,exports.cookieBanner=_cookieBanner2.default;
+},{"./modules/cookieBanner":15,"./modules/formReset":16,"./modules/lazyLoad":17}],15:[function(require,module,exports){
+'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var anchorElement={},cookieName='je-banner_cookie',cookieBannerMarkup='\n    <div class="c-cookieWarning">\n        <div class="c-cookieWarning-inner">\n            <p>We use cookies to improve your browsing experience. By continuing, you agree to receive cookies on our website.</p>\n            <button class="c-cookieWarning-btn"></button>\n        </div>\n    </div>',hideBanner=function(){var a=document.querySelector('.c-cookieWarning');a.classList.contains('is-hidden')||(a.classList.add('is-hidden'),document.cookie='je-banner_cookie=130315')},createBannerElements=function(){anchorElement.insertAdjacentHTML('beforeend',cookieBannerMarkup);var a=document.querySelector('.c-cookieWarning-btn');a.addEventListener('click',function(){return hideBanner()})},init=function(a){var b=document.cookie.includes(cookieName);if(!b){if(anchorElement=document.querySelector(a),!anchorElement)throw new Error('no matching element found to anchor cookie banner');createBannerElements()}};exports.default={init:init};
+},{}],16:[function(require,module,exports){
+'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.init=exports.resetInputs=void 0;var _fDom=require('@justeat/f-dom'),_fDom2=_interopRequireDefault(_fDom);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var resetInputs=exports.resetInputs=function(a){var b=a.target,c=b.getAttribute('data-js-reset'),d=(0,_fDom2.default)('[data-js-reset-input="'+c+'"]');d.forEach(function(a){if(a.checked){a.checked=!1;var b=new Event('change');return void a.dispatchEvent(b)}0<a.value.length&&(a.value='')})},init=exports.init=function(){var a=(0,_fDom2.default)('[data-js-reset]');0<a.length&&a.forEach(function(a){a.addEventListener('click',function(a){return resetInputs(a)})})};exports.default=init;
+},{"@justeat/f-dom":18}],17:[function(require,module,exports){
+'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.init=exports.lazyLoadItems=exports.inViewport=exports.swapAttribute=void 0;var _fDom=require('@justeat/f-dom'),_fDom2=_interopRequireDefault(_fDom),_lodash=require('lodash.throttle'),_lodash2=_interopRequireDefault(_lodash);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var lazyLoadElements=void 0,swapAttribute=exports.swapAttribute=function(a){var b=a.getAttribute('data-js-lazy-src');return!!b&&(a.setAttribute('src',b),!0)},inViewport=exports.inViewport=function(a){var b=a.getBoundingClientRect();return 0<=b.bottom&&0<=b.right&&b.top<=window.innerHeight&&b.left<=window.innerWidth},lazyLoadItems=exports.lazyLoadItems=function(a){return!!Array.isArray(a)&&(a.forEach(function(a){var b=inViewport(a);b&&(swapAttribute(a),lazyLoadElements=lazyLoadElements.filter(function(b){return b!==a}))}),!0)},init=exports.init=function(){return lazyLoadElements=(0,_fDom2.default)('[data-js-lazy]'),!!(0<lazyLoadElements.length)&&(lazyLoadItems(lazyLoadElements),window.addEventListener('scroll',(0,_lodash2.default)(function(){lazyLoadItems(lazyLoadElements)},250)),window.addEventListener('resize',(0,_lodash2.default)(function(){lazyLoadItems(lazyLoadElements)},250)),window.addEventListener('lazyload',function(){lazyLoadItems(lazyLoadElements)}),!0)};exports.default=init;
+},{"@justeat/f-dom":18,"lodash.throttle":40}],18:[function(require,module,exports){
+'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var _qwery=require('qwery'),_qwery2=_interopRequireDefault(_qwery);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var first=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)[0]},all=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)},exists=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return 0<(0,_qwery2.default)(a,b).length},dom=all;dom.all=all,dom.first=first,dom.exists=exists,exports.default=dom;
+},{"qwery":42}],19:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -665,7 +680,7 @@ var runCallbacks = exports.runCallbacks = function runCallbacks(callBacks) {
         callback();
     });
 };
-},{}],15:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -689,7 +704,7 @@ exports.default = {
     validationGroup: validationGroup,
     validateOnOptions: ['blur', 'keyup']
 };
-},{}],16:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1078,7 +1093,7 @@ var FormValidation = function () {
 }();
 
 exports.default = FormValidation;
-},{"./callbacks":14,"./constants":15,"./messages":17,"./rules":22,"@justeat/f-dom":28}],17:[function(require,module,exports){
+},{"./callbacks":19,"./constants":20,"./messages":22,"./rules":27,"@justeat/f-dom":33}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1163,7 +1178,7 @@ var getDefaultMessage = function getDefaultMessage(field, ruleName) {
 var getMessage = exports.getMessage = function getMessage(field, ruleName) {
     return field.getAttribute('data-val-' + ruleName + '-error') || getDefaultMessage(field, ruleName);
 };
-},{"./constants":15,"./rules":22,"@justeat/f-dom":28}],18:[function(require,module,exports){
+},{"./constants":20,"./rules":27,"@justeat/f-dom":33}],23:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1197,7 +1212,7 @@ exports.default = {
     * This also means that if the specified checkbox is checked, then the field is not required and the form will return valid when the field is empty.
     *
     */
-},{"@justeat/f-dom":28}],19:[function(require,module,exports){
+},{"@justeat/f-dom":33}],24:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1225,7 +1240,7 @@ exports.default = {
 
     defaultMessage: 'Custom validation failed.'
 };
-},{}],20:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1271,7 +1286,7 @@ exports.default = {
     * When applied to a validation group, it returns true if the date entered in these fields is in the future.
     *
     */
-},{"@justeat/f-dom":28}],21:[function(require,module,exports){
+},{"@justeat/f-dom":33}],26:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1304,7 +1319,7 @@ exports.default = {
     * Checks for a valid email address
     *
     */
-},{"../constants":15}],22:[function(require,module,exports){
+},{"../constants":20}],27:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1360,7 +1375,7 @@ exports.default = {
     matches: _matches2.default,
     required: _required2.default
 };
-},{"./conditionalRequired":18,"./custom":19,"./dateInFuture":20,"./email":21,"./matches":23,"./maxlength":24,"./minlength":25,"./pattern":26,"./required":27}],23:[function(require,module,exports){
+},{"./conditionalRequired":23,"./custom":24,"./dateInFuture":25,"./email":26,"./matches":28,"./maxlength":29,"./minlength":30,"./pattern":31,"./required":32}],28:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1401,7 +1416,7 @@ exports.default = {
     * Checks that the value of the field being validated matches the value of a separate specified field
     *
     */
-},{"@justeat/f-dom":28}],24:[function(require,module,exports){
+},{"@justeat/f-dom":33}],29:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1432,7 +1447,7 @@ exports.default = {
         return parseInt(field.getAttribute('maxlength') || field.getAttribute('data-val-maxlength'), 10);
     }
 };
-},{}],25:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1464,7 +1479,7 @@ exports.default = {
         return parseInt(field.getAttribute('minlength') || field.getAttribute('data-val-minlength'), 10);
     }
 };
-},{}],26:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1497,7 +1512,7 @@ exports.default = {
 
     defaultMessage: 'This field contains a value that isn’t accepted.'
 };
-},{"../constants":15}],27:[function(require,module,exports){
+},{"../constants":20}],32:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1536,9 +1551,9 @@ exports.default = {
     * Checks that a value is present for the field being validated
     *
     */
-},{"@justeat/f-dom":28}],28:[function(require,module,exports){
-'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var _qwery=require('qwery'),_qwery2=_interopRequireDefault(_qwery);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var first=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)[0]},all=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)},exists=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return 0<(0,_qwery2.default)(a,b).length},dom=all;dom.all=all,dom.first=first,dom.exists=exists,exports.default=dom;
-},{"qwery":36}],29:[function(require,module,exports){
+},{"@justeat/f-dom":33}],33:[function(require,module,exports){
+arguments[4][18][0].apply(exports,arguments)
+},{"dup":18,"qwery":42}],34:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1572,7 +1587,7 @@ Object.defineProperty(exports, "isWithinBreakpoint", {
 var _stopFoit = require("./modules/stopFoit");
 
 var _breakpointHelper = require("./modules/breakpointHelper");
-},{"./modules/breakpointHelper":30,"./modules/stopFoit":31}],30:[function(require,module,exports){
+},{"./modules/breakpointHelper":35,"./modules/stopFoit":36}],35:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1704,7 +1719,7 @@ var isWithinBreakpoint = function isWithinBreakpoint(breakpointString) {
 };
 
 exports.isWithinBreakpoint = isWithinBreakpoint;
-},{}],31:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1748,7 +1763,7 @@ var stopFoit = function stopFoit() {
 exports.stopFoit = stopFoit;
 var _default = stopFoit;
 exports.default = _default;
-},{"@justeat/f-logger":11,"fontfaceobserver":32}],32:[function(require,module,exports){
+},{"@justeat/f-logger":11,"fontfaceobserver":37}],37:[function(require,module,exports){
 /* Font Face Observer v2.1.0 - © Bram Stein. License: BSD-3-Clause */(function(){function l(a,b){document.addEventListener?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function m(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",function c(){document.removeEventListener("DOMContentLoaded",c);a()}):document.attachEvent("onreadystatechange",function k(){if("interactive"==document.readyState||"complete"==document.readyState)document.detachEvent("onreadystatechange",k),a()})};function t(a){this.a=document.createElement("div");this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.h=document.createElement("span");this.f=document.createElement("span");this.g=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
 this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.h.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;";this.b.appendChild(this.h);this.c.appendChild(this.f);this.a.appendChild(this.b);this.a.appendChild(this.c)}
 function u(a,b){a.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;white-space:nowrap;font-synthesis:none;font:"+b+";"}function z(a){var b=a.a.offsetWidth,c=b+100;a.f.style.width=c+"px";a.c.scrollLeft=c;a.b.scrollLeft=a.b.scrollWidth+100;return a.g!==b?(a.g=b,!0):!1}function A(a,b){function c(){var a=k;z(a)&&a.a.parentNode&&b(a.g)}var k=a;l(a.b,c);l(a.c,c);z(a)};function B(a,b){var c=b||{};this.family=a;this.style=c.style||"normal";this.weight=c.weight||"normal";this.stretch=c.stretch||"normal"}var C=null,D=null,E=null,F=null;function G(){if(null===D)if(J()&&/Apple/.test(window.navigator.vendor)){var a=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/.exec(window.navigator.userAgent);D=!!a&&603>parseInt(a[1],10)}else D=!1;return D}function J(){null===F&&(F=!!document.fonts);return F}
@@ -1758,7 +1773,7 @@ b)}else m(function(){function v(){var b;if(b=-1!=f&&-1!=g||-1!=f&&-1!=h||-1!=g&&
 n+"ms timeout exceeded"));else{var a=document.hidden;if(!0===a||void 0===a)f=e.a.offsetWidth,g=p.a.offsetWidth,h=q.a.offsetWidth,v();r=setTimeout(I,50)}}var e=new t(k),p=new t(k),q=new t(k),f=-1,g=-1,h=-1,w=-1,x=-1,y=-1,d=document.createElement("div");d.dir="ltr";u(e,L(c,"sans-serif"));u(p,L(c,"serif"));u(q,L(c,"monospace"));d.appendChild(e.a);d.appendChild(p.a);d.appendChild(q.a);document.body.appendChild(d);w=e.a.offsetWidth;x=p.a.offsetWidth;y=q.a.offsetWidth;I();A(e,function(a){f=a;v()});u(e,
 L(c,'"'+c.family+'",sans-serif'));A(p,function(a){g=a;v()});u(p,L(c,'"'+c.family+'",serif'));A(q,function(a){h=a;v()});u(q,L(c,'"'+c.family+'",monospace'))})})};"object"===typeof module?module.exports=B:(window.FontFaceObserver=B,window.FontFaceObserver.prototype.load=B.prototype.load);}());
 
-},{}],33:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 module.exports = function (callback) {
 
 	if (document.readyState === 'complete' || document.readyState === 'interactive') {
@@ -1778,7 +1793,7 @@ module.exports = function (callback) {
 	}
 }
 
-},{}],34:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 (function (global){
 /**
  * lodash (Custom Build) <https://lodash.com/>
@@ -2160,7 +2175,451 @@ module.exports = debounce;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],35:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
+(function (global){
+/**
+ * lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** Used as the `TypeError` message for "Functions" methods. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/** Used as references for various `Number` constants. */
+var NAN = 0 / 0;
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/** Used to match leading and trailing whitespace. */
+var reTrim = /^\s+|\s+$/g;
+
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+/** Used to detect binary string values. */
+var reIsBinary = /^0b[01]+$/i;
+
+/** Used to detect octal string values. */
+var reIsOctal = /^0o[0-7]+$/i;
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseInt = parseInt;
+
+/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeMax = Math.max,
+    nativeMin = Math.min;
+
+/**
+ * Gets the timestamp of the number of milliseconds that have elapsed since
+ * the Unix epoch (1 January 1970 00:00:00 UTC).
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Date
+ * @returns {number} Returns the timestamp.
+ * @example
+ *
+ * _.defer(function(stamp) {
+ *   console.log(_.now() - stamp);
+ * }, _.now());
+ * // => Logs the number of milliseconds it took for the deferred invocation.
+ */
+var now = function() {
+  return root.Date.now();
+};
+
+/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * milliseconds have elapsed since the last time the debounced function was
+ * invoked. The debounced function comes with a `cancel` method to cancel
+ * delayed `func` invocations and a `flush` method to immediately invoke them.
+ * Provide `options` to indicate whether `func` should be invoked on the
+ * leading and/or trailing edge of the `wait` timeout. The `func` is invoked
+ * with the last arguments provided to the debounced function. Subsequent
+ * calls to the debounced function return the result of the last `func`
+ * invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the debounced function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `_.debounce` and `_.throttle`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to debounce.
+ * @param {number} [wait=0] The number of milliseconds to delay.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=false]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {number} [options.maxWait]
+ *  The maximum time `func` is allowed to be delayed before it's invoked.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new debounced function.
+ * @example
+ *
+ * // Avoid costly calculations while the window size is in flux.
+ * jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+ *
+ * // Invoke `sendMail` when clicked, debouncing subsequent calls.
+ * jQuery(element).on('click', _.debounce(sendMail, 300, {
+ *   'leading': true,
+ *   'trailing': false
+ * }));
+ *
+ * // Ensure `batchLog` is invoked once after 1 second of debounced calls.
+ * var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });
+ * var source = new EventSource('/stream');
+ * jQuery(source).on('message', debounced);
+ *
+ * // Cancel the trailing debounced invocation.
+ * jQuery(window).on('popstate', debounced.cancel);
+ */
+function debounce(func, wait, options) {
+  var lastArgs,
+      lastThis,
+      maxWait,
+      result,
+      timerId,
+      lastCallTime,
+      lastInvokeTime = 0,
+      leading = false,
+      maxing = false,
+      trailing = true;
+
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  wait = toNumber(wait) || 0;
+  if (isObject(options)) {
+    leading = !!options.leading;
+    maxing = 'maxWait' in options;
+    maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
+    trailing = 'trailing' in options ? !!options.trailing : trailing;
+  }
+
+  function invokeFunc(time) {
+    var args = lastArgs,
+        thisArg = lastThis;
+
+    lastArgs = lastThis = undefined;
+    lastInvokeTime = time;
+    result = func.apply(thisArg, args);
+    return result;
+  }
+
+  function leadingEdge(time) {
+    // Reset any `maxWait` timer.
+    lastInvokeTime = time;
+    // Start the timer for the trailing edge.
+    timerId = setTimeout(timerExpired, wait);
+    // Invoke the leading edge.
+    return leading ? invokeFunc(time) : result;
+  }
+
+  function remainingWait(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime,
+        result = wait - timeSinceLastCall;
+
+    return maxing ? nativeMin(result, maxWait - timeSinceLastInvoke) : result;
+  }
+
+  function shouldInvoke(time) {
+    var timeSinceLastCall = time - lastCallTime,
+        timeSinceLastInvoke = time - lastInvokeTime;
+
+    // Either this is the first call, activity has stopped and we're at the
+    // trailing edge, the system time has gone backwards and we're treating
+    // it as the trailing edge, or we've hit the `maxWait` limit.
+    return (lastCallTime === undefined || (timeSinceLastCall >= wait) ||
+      (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait));
+  }
+
+  function timerExpired() {
+    var time = now();
+    if (shouldInvoke(time)) {
+      return trailingEdge(time);
+    }
+    // Restart the timer.
+    timerId = setTimeout(timerExpired, remainingWait(time));
+  }
+
+  function trailingEdge(time) {
+    timerId = undefined;
+
+    // Only invoke if we have `lastArgs` which means `func` has been
+    // debounced at least once.
+    if (trailing && lastArgs) {
+      return invokeFunc(time);
+    }
+    lastArgs = lastThis = undefined;
+    return result;
+  }
+
+  function cancel() {
+    if (timerId !== undefined) {
+      clearTimeout(timerId);
+    }
+    lastInvokeTime = 0;
+    lastArgs = lastCallTime = lastThis = timerId = undefined;
+  }
+
+  function flush() {
+    return timerId === undefined ? result : trailingEdge(now());
+  }
+
+  function debounced() {
+    var time = now(),
+        isInvoking = shouldInvoke(time);
+
+    lastArgs = arguments;
+    lastThis = this;
+    lastCallTime = time;
+
+    if (isInvoking) {
+      if (timerId === undefined) {
+        return leadingEdge(lastCallTime);
+      }
+      if (maxing) {
+        // Handle invocations in a tight loop.
+        timerId = setTimeout(timerExpired, wait);
+        return invokeFunc(lastCallTime);
+      }
+    }
+    if (timerId === undefined) {
+      timerId = setTimeout(timerExpired, wait);
+    }
+    return result;
+  }
+  debounced.cancel = cancel;
+  debounced.flush = flush;
+  return debounced;
+}
+
+/**
+ * Creates a throttled function that only invokes `func` at most once per
+ * every `wait` milliseconds. The throttled function comes with a `cancel`
+ * method to cancel delayed `func` invocations and a `flush` method to
+ * immediately invoke them. Provide `options` to indicate whether `func`
+ * should be invoked on the leading and/or trailing edge of the `wait`
+ * timeout. The `func` is invoked with the last arguments provided to the
+ * throttled function. Subsequent calls to the throttled function return the
+ * result of the last `func` invocation.
+ *
+ * **Note:** If `leading` and `trailing` options are `true`, `func` is
+ * invoked on the trailing edge of the timeout only if the throttled function
+ * is invoked more than once during the `wait` timeout.
+ *
+ * If `wait` is `0` and `leading` is `false`, `func` invocation is deferred
+ * until to the next tick, similar to `setTimeout` with a timeout of `0`.
+ *
+ * See [David Corbacho's article](https://css-tricks.com/debouncing-throttling-explained-examples/)
+ * for details over the differences between `_.throttle` and `_.debounce`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to throttle.
+ * @param {number} [wait=0] The number of milliseconds to throttle invocations to.
+ * @param {Object} [options={}] The options object.
+ * @param {boolean} [options.leading=true]
+ *  Specify invoking on the leading edge of the timeout.
+ * @param {boolean} [options.trailing=true]
+ *  Specify invoking on the trailing edge of the timeout.
+ * @returns {Function} Returns the new throttled function.
+ * @example
+ *
+ * // Avoid excessively updating the position while scrolling.
+ * jQuery(window).on('scroll', _.throttle(updatePosition, 100));
+ *
+ * // Invoke `renewToken` when the click event is fired, but not more than once every 5 minutes.
+ * var throttled = _.throttle(renewToken, 300000, { 'trailing': false });
+ * jQuery(element).on('click', throttled);
+ *
+ * // Cancel the trailing throttled invocation.
+ * jQuery(window).on('popstate', throttled.cancel);
+ */
+function throttle(func, wait, options) {
+  var leading = true,
+      trailing = true;
+
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  if (isObject(options)) {
+    leading = 'leading' in options ? !!options.leading : leading;
+    trailing = 'trailing' in options ? !!options.trailing : trailing;
+  }
+  return debounce(func, wait, {
+    'leading': leading,
+    'maxWait': wait,
+    'trailing': trailing
+  });
+}
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return !!value && (type == 'object' || type == 'function');
+}
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return !!value && typeof value == 'object';
+}
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && objectToString.call(value) == symbolTag);
+}
+
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = value.replace(reTrim, '');
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+module.exports = throttle;
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
+},{}],41:[function(require,module,exports){
 /*! picturefill - v3.0.2 - 2016-02-12
  * https://scottjehl.github.io/picturefill/
  * Copyright (c) 2016 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT
@@ -3706,7 +4165,7 @@ module.exports = debounce;
 
 } )( window, document );
 
-},{}],36:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 /*!
   * @preserve Qwery - A selector engine
   * https://github.com/ded/qwery
@@ -3802,7 +4261,7 @@ module.exports = debounce;
   return qwery
 }, this);
 
-},{}],37:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 !function(root, factory) {
     "function" == typeof define && define.amd ? // AMD. Register as an anonymous module unless amdModuleId is set
     define([], function() {
