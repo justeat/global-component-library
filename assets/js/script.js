@@ -150,69 +150,63 @@ dom.exists = exists;
 var _default = dom;
 exports.default = _default;
 },{"qwery":42}],4:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-exports.resizeInit = exports.tabindexResize = exports.collapseFooterPanels = undefined;
+exports.resizeInit = exports.tabindexResize = exports.collapseFooterPanels = void 0;
 
-var _liteReady = require('lite-ready');
+var _liteReady = _interopRequireDefault(require("lite-ready"));
 
-var _liteReady2 = _interopRequireDefault(_liteReady);
+var _qwery = _interopRequireDefault(require("qwery"));
 
-var _qwery = require('qwery');
+var _fozzie = require("@justeat/fozzie");
 
-var _qwery2 = _interopRequireDefault(_qwery);
-
-var _fozzie = require('@justeat/fozzie');
-
-var _lodash = require('lodash.debounce');
-
-var _lodash2 = _interopRequireDefault(_lodash);
+var _lodash = _interopRequireDefault(require("lodash.debounce"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var footerPanels = void 0;
+var footerPanels;
 var breakpoints = null;
 
 var tabindexResize = function tabindexResize() {
+  if (breakpoints === null) {
+    breakpoints = (0, _fozzie.getBreakpoints)();
+  }
 
-    if (breakpoints === null) {
-        breakpoints = (0, _fozzie.getBreakpoints)();
-    }
-
-    if (window.matchMedia('(min-width: ' + breakpoints.mid + ')').matches) {
-        footerPanels.forEach(function (panel) {
-            panel.removeAttribute('tabindex');
-        });
-    } else {
-        footerPanels.forEach(function (panel) {
-            panel.tabIndex = 0;
-        });
-    }
+  if (window.matchMedia("(min-width: ".concat(breakpoints.mid, ")")).matches) {
+    footerPanels.forEach(function (panel) {
+      panel.removeAttribute('tabindex');
+    });
+  } else {
+    footerPanels.forEach(function (panel) {
+      panel.tabIndex = 0;
+    });
+  }
 };
+
+exports.tabindexResize = tabindexResize;
 
 var collapseFooterPanels = function collapseFooterPanels() {
-    (0, _qwery2.default)('[data-panel-collapsible]').forEach(function (panel) {
-        panel.classList.add('is-collapsed');
-    });
+  (0, _qwery.default)('[data-panel-collapsible]').forEach(function (panel) {
+    panel.classList.add('is-collapsed');
+  });
 };
-
-var resizeInit = function resizeInit() {
-    window.addEventListener('resize', (0, _lodash2.default)(tabindexResize, 100));
-    footerPanels = (0, _qwery2.default)('[data-footer-panel-heading]');
-    tabindexResize();
-};
-
-(0, _liteReady2.default)(function () {
-    collapseFooterPanels();
-    resizeInit();
-});
 
 exports.collapseFooterPanels = collapseFooterPanels;
-exports.tabindexResize = tabindexResize;
+
+var resizeInit = function resizeInit() {
+  window.addEventListener('resize', (0, _lodash.default)(tabindexResize, 100));
+  footerPanels = (0, _qwery.default)('[data-footer-panel-heading]');
+  tabindexResize();
+};
+
 exports.resizeInit = resizeInit;
+(0, _liteReady.default)(function () {
+  collapseFooterPanels();
+  resizeInit();
+});
 },{"@justeat/fozzie":5,"lite-ready":38,"lodash.debounce":39,"qwery":42}],5:[function(require,module,exports){
 'use strict';
 
@@ -648,7 +642,7 @@ exports.saveUserData = saveUserData;
 },{}],14:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.cookieBanner=exports.lazyLoad=exports.formReset=void 0;var _formReset=require('./modules/formReset'),_formReset2=_interopRequireDefault(_formReset),_lazyLoad=require('./modules/lazyLoad'),_lazyLoad2=_interopRequireDefault(_lazyLoad),_cookieBanner=require('./modules/cookieBanner'),_cookieBanner2=_interopRequireDefault(_cookieBanner);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}exports.formReset=_formReset2.default,exports.lazyLoad=_lazyLoad2.default,exports.cookieBanner=_cookieBanner2.default;
 },{"./modules/cookieBanner":15,"./modules/formReset":16,"./modules/lazyLoad":17}],15:[function(require,module,exports){
-'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var anchorElement={},cookieName='je-banner_cookie',cookieBannerMarkup='\n    <div class="c-cookieWarning">\n        <div class="c-cookieWarning-inner">\n            <p>We use cookies to improve your browsing experience. By continuing, you agree to receive cookies on our website.</p>\n            <button class="c-cookieWarning-btn"></button>\n        </div>\n    </div>',hideBanner=function(){var a=document.querySelector('.c-cookieWarning');a.classList.contains('is-hidden')||(a.classList.add('is-hidden'),document.cookie='je-banner_cookie=130315')},createBannerElements=function(){anchorElement.insertAdjacentHTML('beforeend',cookieBannerMarkup);var a=document.querySelector('.c-cookieWarning-btn');a.addEventListener('click',function(){return hideBanner()})},init=function(a){var b=document.cookie.includes(cookieName);if(!b){if(anchorElement=document.querySelector(a),!anchorElement)throw new Error('no matching element found to anchor cookie banner');createBannerElements()}};exports.default={init:init};
+'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var anchorElement={},cookieName='je-banner_cookie',cookieBannerMarkup='\n    <div class="c-cookieWarning">\n        <div class="c-cookieWarning-inner">\n            <p>We use cookies to improve your browsing experience. By continuing, you agree to receive cookies on our website. <a class="c-cookieWarning-link" href="/cookies-policy">Learn more</a></p>\n            <button class="c-cookieWarning-btn"></button>\n        </div>\n    </div>',hideBanner=function(){var a=document.querySelector('.c-cookieWarning');a.classList.contains('is-hidden')||(a.classList.add('is-hidden'),document.cookie='je-banner_cookie=130315')},createBannerElements=function(){anchorElement.insertAdjacentHTML('beforeend',cookieBannerMarkup);var a=document.querySelector('.c-cookieWarning-btn');a.addEventListener('click',function(){return hideBanner()})},init=function(a){var b=-1!==document.cookie.indexOf(cookieName);if(!b){if(anchorElement=document.querySelector(a),!anchorElement)throw new Error('no matching element found to anchor cookie banner');createBannerElements()}};exports.default={init:init};
 },{}],16:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.init=exports.resetInputs=void 0;var _fDom=require('@justeat/f-dom'),_fDom2=_interopRequireDefault(_fDom);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var resetInputs=exports.resetInputs=function(a){var b=a.target,c=b.getAttribute('data-js-reset'),d=(0,_fDom2.default)('[data-js-reset-input="'+c+'"]');d.forEach(function(a){if(a.checked){a.checked=!1;var b=new Event('change');return void a.dispatchEvent(b)}0<a.value.length&&(a.value='')})},init=exports.init=function(){var a=(0,_fDom2.default)('[data-js-reset]');0<a.length&&a.forEach(function(a){a.addEventListener('click',function(a){return resetInputs(a)})})};exports.default=init;
 },{"@justeat/f-dom":18}],17:[function(require,module,exports){
