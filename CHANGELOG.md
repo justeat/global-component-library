@@ -3,12 +3,23 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+
+v2.16.0
+------------------------------
+*February 11, 2019*
+
+### Changed
+- Package updates
+- Small changes for Cuisines Widget component 
+
+
 v2.15.0
 ------------------------------
 *January 24, 2019*
 
 ### Added
 - Cookie banner component page
+
 
 v2.14.0
 ------------------------------

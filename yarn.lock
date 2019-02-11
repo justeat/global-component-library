@@ -589,11 +589,11 @@
   dependencies:
     qwery "4.0.0"
 
-"@justeat/f-footer@1.8.1":
-  version "1.8.1"
-  resolved "https://registry.yarnpkg.com/@justeat/f-footer/-/f-footer-1.8.1.tgz#42212ab743dcb3bfdfb0d8612b9d4f4dbcd97b6e"
+"@justeat/f-footer@1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-footer/-/f-footer-1.12.0.tgz#c3953d3fdcef782023bb7a2d09128e8e4a884a4d"
   dependencies:
-    "@justeat/f-utils" "^0.1.0"
+    "@justeat/f-utils" "0.1.0"
     "@justeat/fozzie" "1.6.0"
     "@justeat/fozzie-colour-palette" "2.1.0"
     include-media "1.4.9"
@@ -601,9 +601,9 @@
     lodash.debounce "4.0.8"
     qwery "4.0.0"
 
-"@justeat/f-header@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-header/-/f-header-1.1.0.tgz#d0fd7db14e9ccc6a91dddbaeda8d90ad880371d2"
+"@justeat/f-header@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@justeat/f-header/-/f-header-1.2.1.tgz#f4098940a5f63101c1f26dadc4d03778d0417ba4"
   dependencies:
     "@justeat/f-logger" "^0.7.1"
     "@justeat/f-utils" "^0.1.0"
@@ -612,12 +612,12 @@
     include-media "^1.4.9"
     lite-ready "^1.0.4"
 
-"@justeat/f-icons@1.16.0":
-  version "1.16.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-1.16.0.tgz#34cd94d75bed19268757f22b9a114e1a27dc3558"
+"@justeat/f-icons@1.19.1":
+  version "1.19.1"
+  resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-1.19.1.tgz#da60e83fecac95c60e1713cb1e0a0f3d2861f1e9"
   dependencies:
     "@kickoff/utils.scss" "2.1.1"
-    include-media "^1.4.9"
+    include-media "1.4.9"
 
 "@justeat/f-logger@0.7.1", "@justeat/f-logger@^0.7.1":
   version "0.7.1"
@@ -639,10 +639,9 @@
     closest "0.0.1"
     lite-ready "1.0.4"
 
-"@justeat/f-utilities@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-utilities/-/f-utilities-0.4.0.tgz#f62d8700462ba82ef758da1f27013410b1bff1bc"
-  integrity sha512-m4ulZOduYRXLT0/kAfj6cOp/BLildQjYWomEIRoN5qD1OmEhbNWjrLjgHpLuTbWqhLbw2gDLTUT8cQ8hFxecMA==
+"@justeat/f-utilities@0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@justeat/f-utilities/-/f-utilities-0.6.1.tgz#e484a4a09fa3beaa3e8e4f125bcb2d84dbed4953"
   dependencies:
     "@justeat/f-dom" "^0.4.0"
     lodash.throttle "^4.1.1"
@@ -661,7 +660,19 @@
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-2.1.0.tgz#42230c8d8d5aecc37d32eaccd5e9973e90cd4a4e"
 
-<<<<<<< HEAD
+"@justeat/fozzie@1.30.0":
+  version "1.30.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.30.0.tgz#adb92a1bc4e68915485cce9abbb6acd04aae5ef8"
+  dependencies:
+    "@justeat/f-dom" "1.1.0"
+    "@justeat/f-logger" "0.7.1"
+    "@justeat/f-utils" "0.1.0"
+    "@justeat/fozzie-colour-palette" "2.1.0"
+    fontfaceobserver "^2.0.13"
+    include-media "1.4.9"
+    kickoff-grid.css "1.2.0"
+    normalize-scss "7.0.1"
+
 "@justeat/fozzie@1.6.0":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.6.0.tgz#8f8b0934bba6bcdc984e063504ad67c9fa6a8e0b"
@@ -673,37 +684,6 @@
     fontfaceobserver "^2.0.13"
     include-media "1.4.9"
     kickoff-grid.css "1.1.2"
-    normalize-scss "7.0.1"
-
-"@justeat/fozzie@^1.7.0":
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.18.0.tgz#d07fae576644e96c8cac8349a08d7dd6aae16ecf"
-=======
-"@justeat/fozzie@1.19.0":
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.19.0.tgz#093a3e0a002057053ea2179bf142726d40cc2037"
-  integrity sha512-ehJ13XFiHFe6SDHmqMoirzyV/cSOKOtaFI+suoX95z8j6H97F/IUwhhAB0NFkbuLXiV2PEGjFJd30/OZgrLV+Q==
->>>>>>> master
-  dependencies:
-    "@justeat/f-dom" "1.1.0"
-    "@justeat/f-logger" "0.7.1"
-    "@justeat/f-utils" "0.1.0"
-    "@justeat/fozzie-colour-palette" "2.1.0"
-    fontfaceobserver "^2.0.13"
-    include-media "1.4.9"
-    kickoff-grid.css "1.2.0"
-    normalize-scss "7.0.1"
-
-"@justeat/fozzie@file:.yalc/@justeat/fozzie":
-  version "1.20.0-1d3bbda5"
-  dependencies:
-    "@justeat/f-dom" "1.1.0"
-    "@justeat/f-logger" "0.7.1"
-    "@justeat/f-utils" "0.1.0"
-    "@justeat/fozzie-colour-palette" "2.1.0"
-    fontfaceobserver "^2.0.13"
-    include-media "1.4.9"
-    kickoff-grid.css "1.2.0"
     normalize-scss "7.0.1"
 
 "@justeat/fozzie@^1.7.0":
