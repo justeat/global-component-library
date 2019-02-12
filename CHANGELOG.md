@@ -3,6 +3,13 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+v2.17.0
+------------------------------
+*February 12, 2019*
+
+### Fixed
+- Updated link to Menulog fonts in SCSS build
+
 
 v2.16.0
 ------------------------------
@@ -10,7 +17,7 @@ v2.16.0
 
 ### Changed
 - Package updates
-- Small changes for Cuisines Widget component 
+- Small changes for Cuisines Widget component
 
 
 v2.15.0
