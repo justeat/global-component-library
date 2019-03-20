@@ -595,6 +595,15 @@ The properties or attributes that can be defined are as follows:
             <p>By default, `novalidate` is added to a form that is being validated to supress native HTML5 validation.  By setting this option to `true` this attribute is not set and native HTML5 validation will not be supressed.</p>
         </td>
     </tr>
+    <tr>
+        <td><code>hybridMode</code></td>
+        <td>boolean</td>
+        <td><code>true</code> | <code>false</code> (default)</td>
+        <td>
+            <p>When set, both blur (focus lost) and keydown events are bound to each applicable input field.</p>
+            <p>Validation won't run until the user has blurred the input at least once, giving them a chance to enter a valid value before seeing an error.</p>
+        </td>
+    </tr>
     <!-- <tr>
         <td><code>focus</code></td>
         <td>boolean</td>
