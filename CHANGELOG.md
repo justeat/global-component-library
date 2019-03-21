@@ -5,6 +5,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 v2.17.0
 ------------------------------
+*March 21, 2019*
+
+### Added
+- Documentation for `f-validate` `hyrbridMode` configuration option
+
+
+v2.17.0
+------------------------------
 *February 12, 2019*
 
 ### Fixed
