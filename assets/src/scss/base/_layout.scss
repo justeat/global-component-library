@@ -135,9 +135,7 @@
     margin: spacing(x5) 40px;
 }
 
-
-
-
-
-
-
+td > ul, td > ol {
+    margin-top: 0;
+    margin-bottom: 0;
+}
