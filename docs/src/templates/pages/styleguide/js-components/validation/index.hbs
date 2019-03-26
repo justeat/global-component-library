@@ -698,3 +698,52 @@ To apply multiple rules to the same field, you simply need to add multiple attri
     </div>
 </div>
 {{/demo-block }}
+
+
+<a name="multiple-rules"></a><h2 class="sg-sectionHeading">Callback events</h2>
+
+`f-validate` has a number of events you can hook into. These can be setup by proving a callback function in the options object. Examples of this are show below:
+
+
+```javascript
+new FormValidation(nameOfForm, {
+    onSuccess: function() {
+        console.log("Great success!");
+    },
+    onError: function() {
+        console.log("Form validation failed");
+    },
+    onElementError: function(element, validationType) {
+        console.log(`The ${element.name} element failed the ${validationType} validator`);
+    }
+});
+```
+
+<table class="js-options">
+    <tr>
+        <th>Event</th>
+        <th>Description</th>
+        <th>Parameters</th>
+    </tr>
+    <tr>
+        <td><code>onSuccess</code></td>
+        <td>Fired after the entire form is validated and is considered valid.</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td><code>onError</code></td>
+        <td>Fired after the entire form is validated and considered invalid.</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td><code>onElementError</code></td>
+        <td>Fired after an individual form element fails a validation check</td>
+        <td>
+            <ul>
+            <li><code>element</code> &ndash; the DOM element that failed the validation checkbox</li>
+            <li><code>validationType</code> &ndash; the name of the validation check that failed</li>
+            </ul>
+        </td>
+    </tr>
+
+</table>

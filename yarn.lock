@@ -711,9 +711,10 @@
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@justeat/f-utils/-/f-utils-0.1.0.tgz#38ac810d87ae356dc1dd06444ddce4797d726b3e"
 
-"@justeat/f-validate@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-validate/-/f-validate-1.1.0.tgz#195b477733c30a81f6dd867c79b159532cd8767a"
+"@justeat/f-validate@1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-validate/-/f-validate-1.3.0.tgz#dc30b182e06c11667be0cd9ef49982ccc99a941f"
+  integrity sha512-yQwRS5v4m3BMtSIwMxT6HlrS5zE1ra+Yi5OLXZb2+LSqblDzqK8PGaaKjLKtU8ypH2dC8D2AxPkuqO1gs7N0XA==
   dependencies:
     "@justeat/f-dom" "^0.4.0"
 
