@@ -3,6 +3,16 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+
+v2.20.0
+------------------------------
+*June 14, 2019*
+
+### Changed
+- Updated npm dependencies.
+- yarn.lock update for indirect dependencies to fix vulnerability issues.
+
+
 v2.19.0
 ------------------------------
 *March 25, 2019*
