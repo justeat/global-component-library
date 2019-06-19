@@ -143,11 +143,11 @@
         <h4 class="demo-title">Example</h4>
         <input data-order-count-supported type="hidden" value="true" />
         
-        <div class="skipTo">
-            <a class="is-visuallyHidden focusable u-text-marker" href="#skipToMain">Skip to main content</a>
-        </div>
+            <div class="c-skipTo c-skipTo--whiteLink">
+                <a class="is-visuallyHidden focusable u-text-marker" href="#skipToMain">Skip to main content</a>
+            </div>
         
-        <header class="c-header c-header--transparent c-header--gradient" data-sticky-element>
+        <header class="c-header c-header--transparent c-header--gradient" data-sticky-element data-header>
                 <div class="c-infoBar c-infoBar--dark u-showBelowMid" data-test-id="languageToggle">
                     <div class="c-infoBar-row c-languageSwitcher">
                         <span class="c-languageSwitcher-countryCode">EN</span>
@@ -155,7 +155,7 @@
                         <a class="c-languageSwitcher-action" href="#">
                             <span class="is-visuallyHidden">Changer la langue pour le</span>
                             Français
-                            <svg width="10" height="6" viewBox="0 0 10 6" class="c-languageSwitcher-icon c-icon c-icon--chevron c-icon--chevron--small c-icon--chevron--right c-icon--chevron--light"><path d="M5 4.41L9.29.12a.42.42 0 0 1 .59.6L5.29 5.28a.42.42 0 0 1-.58 0L.12.71a.42.42 0 0 1 .6-.59L5 4.42z" fill="#333" fill-rule="nonzero"/></svg>
+                            <svg viewBox="0 0 10 6" class="c-languageSwitcher-icon c-icon c-icon--chevron c-icon--chevron--small c-icon--chevron--right c-icon--chevron--light"><path d="M5 4.41L9.29.12a.42.42 0 0 1 .59.6L5.29 5.28a.42.42 0 0 1-.58 0L.12.71a.42.42 0 0 1 .6-.59L5 4.42z" fill="#333" fill-rule="nonzero"/></svg>
                         </a>
                     </div>
                 </div>
@@ -164,7 +164,7 @@
                 <div class="c-logo">
                     <a href="/" aria-label="Just Eat Homepage">
                         <div class="c-logo-img">
-                            <img alt="Just Eat Food Delivery" src="/assets/img/logos/je-logo.v1.svg" width="152" height="30" />
+                            <img alt="Just Eat Food Delivery" src="/assets/img/logos/je-logo.v2.svg" />
                         </div>
                         <span class="is-visuallyHidden">Just Eat</span>
                     </a>
@@ -172,7 +172,7 @@
         
                 <nav data-navglobal class="c-nav c-nav--global">
                     <button data-nav-button class="c-nav-trigger is-hidden--noJS">Open Menu</button>
-                    <input  data-nav-accessible-button type="checkbox" class="c-nav-trigger is-shown--noJS" id="nav-trigger" />
+                    <input data-nav-accessible-button type="checkbox" class="c-nav-trigger is-shown--noJS" id="nav-trigger" />
         
                     <label data-nav-toggle class="c-nav-toggle" for="nav-trigger">
                         <span class="c-nav-toggle-icon">Open Menu</span>
@@ -228,13 +228,13 @@
                             </li>
         
                             <li data-login class="c-nav-list-item is-hidden" data-test-id="login">
-                                <a href="#" class="c-nav-list-link">
-                                    Log-in
+                                <a href="#" rel="nofollow" class="c-nav-list-link">
+                                    Log in
                                 </a>
                             </li>
         
                             <li class="c-nav-list-item is-hidden is-shown--noJS" data-test-id="noscript-myaccount">
-                                <a href="#" class="c-nav-list-link">
+                                <a href="#" rel="nofollow" class="c-nav-list-link">
                                     Account
                                 </a>
                             </li>
@@ -263,11 +263,11 @@
     <div class="demo-code">
 <pre><code class="language-markup">&lt;<span class="hljs-selector-tag">input</span> data-<span class="hljs-attribute">order</span>-count-supported type=<span class="hljs-string">"hidden"</span> value=<span class="hljs-string">"true"</span> /&gt;
 
-&lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"skipTo"</span>&gt;
-    &lt;<span class="hljs-selector-tag">a</span> class=<span class="hljs-string">"is-visuallyHidden focusable u-text-marker"</span> href=<span class="hljs-string">"#skipToMain"</span>&gt;Skip to main <span class="hljs-attribute">content</span>&lt;/a&gt;
-&lt;/div&gt;
+    &lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"c-skipTo c-skipTo--whiteLink"</span>&gt;
+        &lt;<span class="hljs-selector-tag">a</span> class=<span class="hljs-string">"is-visuallyHidden focusable u-text-marker"</span> href=<span class="hljs-string">"#skipToMain"</span>&gt;Skip to main <span class="hljs-attribute">content</span>&lt;/a&gt;
+    &lt;/div&gt;
 
-&lt;<span class="hljs-selector-tag">header</span> class=<span class="hljs-string">"c-header c-header--transparent c-header--gradient"</span> data-sticky-element&gt;
+&lt;<span class="hljs-selector-tag">header</span> class=<span class="hljs-string">"c-header c-header--transparent c-header--gradient"</span> data-sticky-element data-header&gt;
         &lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"c-infoBar c-infoBar--dark u-showBelowMid"</span> data-test-id=<span class="hljs-string">"languageToggle"</span>&gt;
             &lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"c-infoBar-row c-languageSwitcher"</span>&gt;
                 &lt;<span class="hljs-selector-tag">span</span> class=<span class="hljs-string">"c-languageSwitcher-countryCode"</span>&gt;EN&lt;/span&gt;
@@ -275,7 +275,7 @@
                 &lt;<span class="hljs-selector-tag">a</span> class=<span class="hljs-string">"c-languageSwitcher-action"</span> href=<span class="hljs-string">"#"</span>&gt;
                     &lt;<span class="hljs-selector-tag">span</span> class=<span class="hljs-string">"is-visuallyHidden"</span>&gt;Changer la langue pour le&lt;/span&gt;
                     Français
-                    &lt;svg <span class="hljs-attribute">width</span>=<span class="hljs-string">"10"</span> height=<span class="hljs-string">"6"</span> viewBox=<span class="hljs-string">"0 0 10 6"</span> class=<span class="hljs-string">"c-languageSwitcher-icon c-icon c-icon--chevron c-icon--chevron--small c-icon--chevron--right c-icon--chevron--light"</span>&gt;&lt;path d=<span class="hljs-string">"M5 4.41L9.29.12a.42.42 0 0 1 .59.6L5.29 5.28a.42.42 0 0 1-.58 0L.12.71a.42.42 0 0 1 .6-.59L5 4.42z"</span> fill=<span class="hljs-string">"#333"</span> fill-rule=<span class="hljs-string">"nonzero"</span>/&gt;&lt;/svg&gt;
+                    &lt;svg viewBox=<span class="hljs-string">"0 0 10 6"</span> class=<span class="hljs-string">"c-languageSwitcher-icon c-icon c-icon--chevron c-icon--chevron--small c-icon--chevron--right c-icon--chevron--light"</span>&gt;&lt;path d=<span class="hljs-string">"M5 4.41L9.29.12a.42.42 0 0 1 .59.6L5.29 5.28a.42.42 0 0 1-.58 0L.12.71a.42.42 0 0 1 .6-.59L5 4.42z"</span> fill=<span class="hljs-string">"#333"</span> fill-rule=<span class="hljs-string">"nonzero"</span>/&gt;&lt;/svg&gt;
                 &lt;/a&gt;
             &lt;/div&gt;
         &lt;/div&gt;
@@ -284,7 +284,7 @@
         &lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"c-logo"</span>&gt;
             &lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"/"</span> aria-label=<span class="hljs-string">"Just Eat Homepage"</span>&gt;
                 &lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"c-logo-img"</span>&gt;
-                    &lt;<span class="hljs-selector-tag">img</span> alt=<span class="hljs-string">"Just Eat Food Delivery"</span> src=<span class="hljs-string">"/assets/img/logos/je-logo.v1.svg"</span> <span class="hljs-attribute">width</span>=<span class="hljs-string">"152"</span> height=<span class="hljs-string">"30"</span> /&gt;
+                    &lt;<span class="hljs-selector-tag">img</span> alt=<span class="hljs-string">"Just Eat Food Delivery"</span> src=<span class="hljs-string">"/assets/img/logos/je-logo.v2.svg"</span> /&gt;
                 &lt;/div&gt;
                 &lt;<span class="hljs-selector-tag">span</span> class=<span class="hljs-string">"is-visuallyHidden"</span>&gt;Just Eat&lt;/span&gt;
             &lt;/a&gt;
@@ -292,7 +292,7 @@
 
         &lt;<span class="hljs-selector-tag">nav</span> data-navglobal class=<span class="hljs-string">"c-nav c-nav--global"</span>&gt;
             &lt;<span class="hljs-selector-tag">button</span> data-nav-<span class="hljs-selector-tag">button</span> class=<span class="hljs-string">"c-nav-trigger is-hidden--noJS"</span>&gt;Open Menu&lt;/button&gt;
-            &lt;<span class="hljs-selector-tag">input</span>  data-nav-accessible-<span class="hljs-selector-tag">button</span> type=<span class="hljs-string">"checkbox"</span> class=<span class="hljs-string">"c-nav-trigger is-shown--noJS"</span> id=<span class="hljs-string">"nav-trigger"</span> /&gt;
+            &lt;<span class="hljs-selector-tag">input</span> data-nav-accessible-<span class="hljs-selector-tag">button</span> type=<span class="hljs-string">"checkbox"</span> class=<span class="hljs-string">"c-nav-trigger is-shown--noJS"</span> id=<span class="hljs-string">"nav-trigger"</span> /&gt;
 
             &lt;<span class="hljs-selector-tag">label</span> data-nav-toggle class=<span class="hljs-string">"c-nav-toggle"</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"nav-trigger"</span>&gt;
                 &lt;<span class="hljs-selector-tag">span</span> class=<span class="hljs-string">"c-nav-toggle-icon"</span>&gt;Open Menu&lt;/span&gt;
@@ -348,13 +348,13 @@
                     &lt;/li&gt;
 
                     &lt;<span class="hljs-selector-tag">li</span> data-login class=<span class="hljs-string">"c-nav-list-item is-hidden"</span> data-test-id=<span class="hljs-string">"login"</span>&gt;
-                        &lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"#"</span> class=<span class="hljs-string">"c-nav-list-link"</span>&gt;
-                            Log-<span class="hljs-keyword">in</span>
+                        &lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"#"</span> rel=<span class="hljs-string">"nofollow"</span> class=<span class="hljs-string">"c-nav-list-link"</span>&gt;
+                            Log <span class="hljs-keyword">in</span>
                         &lt;/a&gt;
                     &lt;/li&gt;
 
                     &lt;<span class="hljs-selector-tag">li</span> class=<span class="hljs-string">"c-nav-list-item is-hidden is-shown--noJS"</span> data-test-id=<span class="hljs-string">"noscript-myaccount"</span>&gt;
-                        &lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"#"</span> class=<span class="hljs-string">"c-nav-list-link"</span>&gt;
+                        &lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"#"</span> rel=<span class="hljs-string">"nofollow"</span> class=<span class="hljs-string">"c-nav-list-link"</span>&gt;
                             Account
                         &lt;/a&gt;
                     &lt;/li&gt;
@@ -394,11 +394,11 @@
         <h4 class="demo-title">Example</h4>
         <input data-order-count-supported type="hidden" value="true" />
         
-        <div class="skipTo">
-            <a class="is-visuallyHidden focusable u-text-marker" href="#skipToMain">Skip to main content</a>
-        </div>
+            <div class="c-skipTo c-skipTo--whiteLink">
+                <a class="is-visuallyHidden focusable u-text-marker" href="#skipToMain">Skip to main content</a>
+            </div>
         
-        <header class="c-header c-header--transparent c-header--gradient" data-sticky-element>
+        <header class="c-header c-header--transparent c-header--gradient" data-sticky-element data-header>
                 <div class="c-infoBar c-infoBar--dark u-showBelowMid" data-test-id="languageToggle">
                     <div class="c-infoBar-row c-languageSwitcher">
                         <span class="c-languageSwitcher-countryCode">EN</span>
@@ -406,7 +406,7 @@
                         <a class="c-languageSwitcher-action" href="#">
                             <span class="is-visuallyHidden">Changer la langue pour le</span>
                             Français
-                            <svg width="10" height="6" viewBox="0 0 10 6" class="c-languageSwitcher-icon c-icon c-icon--chevron c-icon--chevron--small c-icon--chevron--right c-icon--chevron--light"><path d="M5 4.41L9.29.12a.42.42 0 0 1 .59.6L5.29 5.28a.42.42 0 0 1-.58 0L.12.71a.42.42 0 0 1 .6-.59L5 4.42z" fill="#333" fill-rule="nonzero"/></svg>
+                            <svg viewBox="0 0 10 6" class="c-languageSwitcher-icon c-icon c-icon--chevron c-icon--chevron--small c-icon--chevron--right c-icon--chevron--light"><path d="M5 4.41L9.29.12a.42.42 0 0 1 .59.6L5.29 5.28a.42.42 0 0 1-.58 0L.12.71a.42.42 0 0 1 .6-.59L5 4.42z" fill="#333" fill-rule="nonzero"/></svg>
                         </a>
                     </div>
                 </div>
@@ -415,7 +415,7 @@
                 <div class="c-logo">
                     <a href="/" aria-label="Just Eat Homepage">
                         <div class="c-logo-img">
-                            <img alt="Just Eat Food Delivery" src="/assets/img/logos/je-logo.v1.svg" width="152" height="30" />
+                            <img alt="Just Eat Food Delivery" src="/assets/img/logos/je-logo.v2.svg" />
                         </div>
                         <span class="is-visuallyHidden">Just Eat</span>
                     </a>
@@ -423,7 +423,7 @@
         
                 <nav data-navglobal class="c-nav c-nav--global">
                     <button data-nav-button class="c-nav-trigger is-hidden--noJS">Open Menu</button>
-                    <input  data-nav-accessible-button type="checkbox" class="c-nav-trigger is-shown--noJS" id="nav-trigger" />
+                    <input data-nav-accessible-button type="checkbox" class="c-nav-trigger is-shown--noJS" id="nav-trigger" />
         
                     <label data-nav-toggle class="c-nav-toggle" for="nav-trigger">
                         <span class="c-nav-toggle-icon">Open Menu</span>
@@ -479,13 +479,13 @@
                             </li>
         
                             <li data-login class="c-nav-list-item is-hidden" data-test-id="login">
-                                <a href="#" class="c-nav-list-link">
-                                    Log-in
+                                <a href="#" rel="nofollow" class="c-nav-list-link">
+                                    Log in
                                 </a>
                             </li>
         
                             <li class="c-nav-list-item is-hidden is-shown--noJS" data-test-id="noscript-myaccount">
-                                <a href="#" class="c-nav-list-link">
+                                <a href="#" rel="nofollow" class="c-nav-list-link">
                                     Account
                                 </a>
                             </li>
@@ -514,11 +514,11 @@
     <div class="demo-code">
 <pre><code class="language-markup">&lt;<span class="hljs-selector-tag">input</span> data-<span class="hljs-attribute">order</span>-count-supported type=<span class="hljs-string">"hidden"</span> value=<span class="hljs-string">"true"</span> /&gt;
 
-&lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"skipTo"</span>&gt;
-    &lt;<span class="hljs-selector-tag">a</span> class=<span class="hljs-string">"is-visuallyHidden focusable u-text-marker"</span> href=<span class="hljs-string">"#skipToMain"</span>&gt;Skip to main <span class="hljs-attribute">content</span>&lt;/a&gt;
-&lt;/div&gt;
+    &lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"c-skipTo c-skipTo--whiteLink"</span>&gt;
+        &lt;<span class="hljs-selector-tag">a</span> class=<span class="hljs-string">"is-visuallyHidden focusable u-text-marker"</span> href=<span class="hljs-string">"#skipToMain"</span>&gt;Skip to main <span class="hljs-attribute">content</span>&lt;/a&gt;
+    &lt;/div&gt;
 
-&lt;<span class="hljs-selector-tag">header</span> class=<span class="hljs-string">"c-header c-header--transparent c-header--gradient"</span> data-sticky-element&gt;
+&lt;<span class="hljs-selector-tag">header</span> class=<span class="hljs-string">"c-header c-header--transparent c-header--gradient"</span> data-sticky-element data-header&gt;
         &lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"c-infoBar c-infoBar--dark u-showBelowMid"</span> data-test-id=<span class="hljs-string">"languageToggle"</span>&gt;
             &lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"c-infoBar-row c-languageSwitcher"</span>&gt;
                 &lt;<span class="hljs-selector-tag">span</span> class=<span class="hljs-string">"c-languageSwitcher-countryCode"</span>&gt;EN&lt;/span&gt;
@@ -526,7 +526,7 @@
                 &lt;<span class="hljs-selector-tag">a</span> class=<span class="hljs-string">"c-languageSwitcher-action"</span> href=<span class="hljs-string">"#"</span>&gt;
                     &lt;<span class="hljs-selector-tag">span</span> class=<span class="hljs-string">"is-visuallyHidden"</span>&gt;Changer la langue pour le&lt;/span&gt;
                     Français
-                    &lt;svg <span class="hljs-attribute">width</span>=<span class="hljs-string">"10"</span> height=<span class="hljs-string">"6"</span> viewBox=<span class="hljs-string">"0 0 10 6"</span> class=<span class="hljs-string">"c-languageSwitcher-icon c-icon c-icon--chevron c-icon--chevron--small c-icon--chevron--right c-icon--chevron--light"</span>&gt;&lt;path d=<span class="hljs-string">"M5 4.41L9.29.12a.42.42 0 0 1 .59.6L5.29 5.28a.42.42 0 0 1-.58 0L.12.71a.42.42 0 0 1 .6-.59L5 4.42z"</span> fill=<span class="hljs-string">"#333"</span> fill-rule=<span class="hljs-string">"nonzero"</span>/&gt;&lt;/svg&gt;
+                    &lt;svg viewBox=<span class="hljs-string">"0 0 10 6"</span> class=<span class="hljs-string">"c-languageSwitcher-icon c-icon c-icon--chevron c-icon--chevron--small c-icon--chevron--right c-icon--chevron--light"</span>&gt;&lt;path d=<span class="hljs-string">"M5 4.41L9.29.12a.42.42 0 0 1 .59.6L5.29 5.28a.42.42 0 0 1-.58 0L.12.71a.42.42 0 0 1 .6-.59L5 4.42z"</span> fill=<span class="hljs-string">"#333"</span> fill-rule=<span class="hljs-string">"nonzero"</span>/&gt;&lt;/svg&gt;
                 &lt;/a&gt;
             &lt;/div&gt;
         &lt;/div&gt;
@@ -535,7 +535,7 @@
         &lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"c-logo"</span>&gt;
             &lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"/"</span> aria-label=<span class="hljs-string">"Just Eat Homepage"</span>&gt;
                 &lt;<span class="hljs-selector-tag">div</span> class=<span class="hljs-string">"c-logo-img"</span>&gt;
-                    &lt;<span class="hljs-selector-tag">img</span> alt=<span class="hljs-string">"Just Eat Food Delivery"</span> src=<span class="hljs-string">"/assets/img/logos/je-logo.v1.svg"</span> <span class="hljs-attribute">width</span>=<span class="hljs-string">"152"</span> height=<span class="hljs-string">"30"</span> /&gt;
+                    &lt;<span class="hljs-selector-tag">img</span> alt=<span class="hljs-string">"Just Eat Food Delivery"</span> src=<span class="hljs-string">"/assets/img/logos/je-logo.v2.svg"</span> /&gt;
                 &lt;/div&gt;
                 &lt;<span class="hljs-selector-tag">span</span> class=<span class="hljs-string">"is-visuallyHidden"</span>&gt;Just Eat&lt;/span&gt;
             &lt;/a&gt;
@@ -543,7 +543,7 @@
 
         &lt;<span class="hljs-selector-tag">nav</span> data-navglobal class=<span class="hljs-string">"c-nav c-nav--global"</span>&gt;
             &lt;<span class="hljs-selector-tag">button</span> data-nav-<span class="hljs-selector-tag">button</span> class=<span class="hljs-string">"c-nav-trigger is-hidden--noJS"</span>&gt;Open Menu&lt;/button&gt;
-            &lt;<span class="hljs-selector-tag">input</span>  data-nav-accessible-<span class="hljs-selector-tag">button</span> type=<span class="hljs-string">"checkbox"</span> class=<span class="hljs-string">"c-nav-trigger is-shown--noJS"</span> id=<span class="hljs-string">"nav-trigger"</span> /&gt;
+            &lt;<span class="hljs-selector-tag">input</span> data-nav-accessible-<span class="hljs-selector-tag">button</span> type=<span class="hljs-string">"checkbox"</span> class=<span class="hljs-string">"c-nav-trigger is-shown--noJS"</span> id=<span class="hljs-string">"nav-trigger"</span> /&gt;
 
             &lt;<span class="hljs-selector-tag">label</span> data-nav-toggle class=<span class="hljs-string">"c-nav-toggle"</span> <span class="hljs-keyword">for</span>=<span class="hljs-string">"nav-trigger"</span>&gt;
                 &lt;<span class="hljs-selector-tag">span</span> class=<span class="hljs-string">"c-nav-toggle-icon"</span>&gt;Open Menu&lt;/span&gt;
@@ -599,13 +599,13 @@
                     &lt;/li&gt;
 
                     &lt;<span class="hljs-selector-tag">li</span> data-login class=<span class="hljs-string">"c-nav-list-item is-hidden"</span> data-test-id=<span class="hljs-string">"login"</span>&gt;
-                        &lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"#"</span> class=<span class="hljs-string">"c-nav-list-link"</span>&gt;
-                            Log-<span class="hljs-keyword">in</span>
+                        &lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"#"</span> rel=<span class="hljs-string">"nofollow"</span> class=<span class="hljs-string">"c-nav-list-link"</span>&gt;
+                            Log <span class="hljs-keyword">in</span>
                         &lt;/a&gt;
                     &lt;/li&gt;
 
                     &lt;<span class="hljs-selector-tag">li</span> class=<span class="hljs-string">"c-nav-list-item is-hidden is-shown--noJS"</span> data-test-id=<span class="hljs-string">"noscript-myaccount"</span>&gt;
-                        &lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"#"</span> class=<span class="hljs-string">"c-nav-list-link"</span>&gt;
+                        &lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"#"</span> rel=<span class="hljs-string">"nofollow"</span> class=<span class="hljs-string">"c-nav-list-link"</span>&gt;
                             Account
                         &lt;/a&gt;
                     &lt;/li&gt;

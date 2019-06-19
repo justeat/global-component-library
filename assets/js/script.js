@@ -50,7 +50,7 @@ function setupValidation() {
   }
 }
 
-},{"@justeat/f-dom":3,"@justeat/f-validate":21}],2:[function(require,module,exports){
+},{"@justeat/f-dom":3,"@justeat/f-validate":23}],2:[function(require,module,exports){
 "use strict";
 
 require("@justeat/f-footer");
@@ -81,7 +81,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   utils.cookieBanner.init('#CookieAnchor');
 });
 
-},{"./docs/formValidationSetup":1,"@justeat/f-footer":4,"@justeat/f-header":8,"@justeat/f-utilities":14,"@justeat/fozzie":34,"lite-ready":38,"picturefill":41,"svg4everybody":43}],3:[function(require,module,exports){
+},{"./docs/formValidationSetup":1,"@justeat/f-footer":4,"@justeat/f-header":8,"@justeat/f-utilities":14,"@justeat/fozzie":35,"lite-ready":39,"picturefill":42,"svg4everybody":44}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -149,7 +149,7 @@ dom.first = first;
 dom.exists = exists;
 var _default = dom;
 exports.default = _default;
-},{"qwery":42}],4:[function(require,module,exports){
+},{"qwery":43}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -175,7 +175,7 @@ var tabindexResize = function tabindexResize() {
     breakpoints = (0, _fozzie.getBreakpoints)();
   }
 
-  if (window.matchMedia("(min-width: ".concat(breakpoints.mid, ")")).matches) {
+  if (window.matchMedia("(min-width: ".concat(breakpoints.wide, ")")).matches) {
     footerPanels.forEach(function (panel) {
       panel.removeAttribute('tabindex');
     });
@@ -207,166 +207,183 @@ exports.resizeInit = resizeInit;
   collapseFooterPanels();
   resizeInit();
 });
-},{"@justeat/fozzie":5,"lite-ready":38,"lodash.debounce":39,"qwery":42}],5:[function(require,module,exports){
-'use strict';
+},{"@justeat/fozzie":5,"lite-ready":39,"lodash.debounce":40,"qwery":43}],5:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-exports.isWithinBreakpoint = exports.getCurrentScreenWidth = exports.getBreakpoints = exports.stopFoit = undefined;
+Object.defineProperty(exports, "stopFoit", {
+  enumerable: true,
+  get: function get() {
+    return _stopFoit.stopFoit;
+  }
+});
+Object.defineProperty(exports, "getBreakpoints", {
+  enumerable: true,
+  get: function get() {
+    return _breakpointHelper.getBreakpoints;
+  }
+});
+Object.defineProperty(exports, "getCurrentScreenWidth", {
+  enumerable: true,
+  get: function get() {
+    return _breakpointHelper.getCurrentScreenWidth;
+  }
+});
+Object.defineProperty(exports, "isWithinBreakpoint", {
+  enumerable: true,
+  get: function get() {
+    return _breakpointHelper.isWithinBreakpoint;
+  }
+});
 
-var _stopFoit = require('./modules/stopFoit');
+var _stopFoit = require("./modules/stopFoit");
 
-var _breakpointHelper = require('./modules/breakpointHelper');
-
-exports.stopFoit = _stopFoit.stopFoit;
-exports.getBreakpoints = _breakpointHelper.getBreakpoints;
-exports.getCurrentScreenWidth = _breakpointHelper.getCurrentScreenWidth;
-exports.isWithinBreakpoint = _breakpointHelper.isWithinBreakpoint;
-
-// All helper functions will be imported here, so that they can all be exported within one object.
+var _breakpointHelper = require("./modules/breakpointHelper");
 },{"./modules/breakpointHelper":6,"./modules/stopFoit":7}],6:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.isWithinBreakpoint = exports.getCurrentScreenWidth = exports.createBreakpointArray = exports.getBreakpoints = void 0;
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 /**
  * @overview Breakpoint handler
  *
  * @module breakpointHelper
  */
+var getBreakpoints = function getBreakpoints() {
+  var output = {}; // Append hidden element to body
 
-var getBreakpoints = exports.getBreakpoints = function getBreakpoints() {
-    var output = {};
+  var screenSizer = document.createElement('div');
+  screenSizer.classList.add('c-screen-sizer');
+  document.body.appendChild(screenSizer); // It should have a 'content' property containing the breakpoints
 
-    // Append hidden element to body
-    var screenSizer = document.createElement('div');
-    screenSizer.classList.add('c-screen-sizer');
+  var breakpoints = window.getComputedStyle(document.querySelector('.c-screen-sizer')).getPropertyValue('content').replace(/["']/g, '').split(','); // Gives a list of breakpoints in the form ['narrow:414px', ...etc]
+  // When there is no content, at this stage breakpoints should be ['']
 
-    document.body.appendChild(screenSizer);
+  if (breakpoints.length === 1 && breakpoints[0] === '') {
+    return output;
+  }
 
-    // It should have a 'content' property containing the breakpoints
-    var breakpoints = window.getComputedStyle(document.querySelector('.c-screen-sizer')).getPropertyValue('content').replace(/["']/g, '').split(',');
-    // Gives a list of breakpoints in the form ['narrow:414px', ...etc]
+  return breakpoints.reduce(function (prev, current) {
+    // `current` is of the form 'narrow:414px'
+    var _current$split = current.split(':'),
+        _current$split2 = _slicedToArray(_current$split, 2),
+        breakpointName = _current$split2[0],
+        breakpointValue = _current$split2[1];
 
-    // When there is no content, at this stage breakpoints should be ['']
-    if (breakpoints.length === 1 && breakpoints[0] === '') {
-        return output;
-    }
+    prev[breakpointName] = breakpointValue; // <- the initial value is used for the first iteration
+    // The object, e.g., { 'narrow': '414px' } is returned to be used as `prev` in the next iteration
 
-    return breakpoints.reduce(function (prev, current) {
-        // `current` is of the form 'narrow:414px'
-        var _current$split = current.split(':'),
-            _current$split2 = _slicedToArray(_current$split, 2),
-            breakpointName = _current$split2[0],
-            breakpointValue = _current$split2[1];
-
-        prev[breakpointName] = breakpointValue; // <- the initial value is used for the first iteration
-        // The object, e.g., { 'narrow': '414px' } is returned to be used as `prev` in the next iteration
-        return prev;
-    }, output); // <- initial value
+    return prev;
+  }, output); // <- initial value
 };
 
-var createBreakpointArray = exports.createBreakpointArray = function createBreakpointArray(breakpoints) {
-    // Order the breakpoints from widest to narrowest,
-    // takes the form [['narrow', '414px'], [...etc]]
-    var bps = [];
-    Object.keys(breakpoints).forEach(function (key) {
-        bps.unshift([key, breakpoints[key]]);
+exports.getBreakpoints = getBreakpoints;
+
+var createBreakpointArray = function createBreakpointArray(breakpoints) {
+  // Order the breakpoints from widest to narrowest,
+  // takes the form [['narrow', '414px'], [...etc]]
+  var bps = [];
+  Object.keys(breakpoints).forEach(function (key) {
+    bps.unshift([key, breakpoints[key]]);
+  });
+  return bps;
+};
+
+exports.createBreakpointArray = createBreakpointArray;
+
+var getCurrentScreenWidth = function getCurrentScreenWidth() {
+  var currentWidth = window.innerWidth;
+  var breakpoints = getBreakpoints();
+  var bps = createBreakpointArray(breakpoints);
+
+  for (var i = 0; i < bps.length; i++) {
+    // Loops through the breakpoints (in descending order)
+    // returning the first one that is narrower than currentWidth.
+    var breakpointWidth = parseInt(bps[i][1], 10); // This also strips the 'px' from the string
+
+    if (i === bps.length - 1 || currentWidth > breakpointWidth) {
+      // If we've reached the last breakpoint, and there still hasn't been a match, return the smallest breakpoint
+      return bps[i][0];
+    }
+  } // If no breakpoints have been set
+
+
+  return false;
+};
+
+exports.getCurrentScreenWidth = getCurrentScreenWidth;
+
+var isWithinBreakpoint = function isWithinBreakpoint(breakpointString) {
+  var operatorRegex = /[<>=]+/;
+  var operatorMatch = breakpointString.match(operatorRegex);
+  var operator = operatorMatch ? operatorMatch[0] : '';
+
+  var _breakpointString$spl = breakpointString.split(operatorRegex),
+      _breakpointString$spl2 = _slicedToArray(_breakpointString$spl, 2),
+      breakpoint = _breakpointString$spl2[1];
+
+  var currentScreenWidth = window.innerWidth;
+  var breakpoints = getBreakpoints();
+  var bps = createBreakpointArray(breakpoints); // We loop through the breakpoint array until we get a match.
+  // If we match we return the px value as an int. If we do not match we return false
+
+  var breakpointToPX = function breakpointToPX(breakpointName) {
+    var match = false;
+    bps.forEach(function (bp) {
+      if (bp[0] === breakpointName) {
+        match = parseInt(bp[1], 10);
+      }
     });
+    return match;
+  };
 
-    return bps;
-};
+  var breakpointInPX = breakpointToPX(breakpoint); // If the breakpoint passed in does not match any we;
 
-var getCurrentScreenWidth = exports.getCurrentScreenWidth = function getCurrentScreenWidth() {
-    var currentWidth = window.innerWidth;
-
-    var breakpoints = getBreakpoints();
-
-    var bps = createBreakpointArray(breakpoints);
-
-    for (var i = 0; i < bps.length; i++) {
-        // Loops through the breakpoints (in descending order)
-        // returning the first one that is narrower than currentWidth.
-
-        var breakpointWidth = parseInt(bps[i][1], 10); // This also strips the 'px' from the string
-
-        if (i === bps.length - 1 || currentWidth > breakpointWidth) {
-            // If we've reached the last breakpoint, and there still hasn't been a match, return the smallest breakpoint
-            return bps[i][0];
-        }
-    }
-    // If no breakpoints have been set
+  if (!breakpointInPX) {
     return false;
+  }
+
+  var mediaQuery = {
+    '>': currentScreenWidth > breakpointInPX,
+    '<': currentScreenWidth < breakpointInPX,
+    '=': currentScreenWidth === breakpointInPX,
+    '>=': currentScreenWidth >= breakpointInPX,
+    '<=': currentScreenWidth <= breakpointInPX
+  };
+  var result = mediaQuery[operator];
+
+  if (result == null) {
+    return false;
+  }
+
+  return result;
 };
 
-var isWithinBreakpoint = exports.isWithinBreakpoint = function isWithinBreakpoint(breakpointString) {
-    var operatorRegex = /[<>=]+/;
-    var operatorMatch = breakpointString.match(operatorRegex);
-    var operator = operatorMatch ? operatorMatch[0] : '';
-
-    var _breakpointString$spl = breakpointString.split(operatorRegex),
-        _breakpointString$spl2 = _slicedToArray(_breakpointString$spl, 2),
-        breakpoint = _breakpointString$spl2[1];
-
-    var currentScreenWidth = window.innerWidth;
-
-    var breakpoints = getBreakpoints();
-    var bps = createBreakpointArray(breakpoints);
-
-    // We loop through the breakpoint array until we get a match.
-    // If we match we return the px value as an int. If we do not match we return false
-    var breakpointToPX = function breakpointToPX(breakpointName) {
-        var match = false;
-
-        bps.forEach(function (bp) {
-            if (bp[0] === breakpointName) {
-                match = parseInt(bp[1], 10);
-            }
-        });
-        return match;
-    };
-
-    var breakpointInPX = breakpointToPX(breakpoint);
-
-    // If the breakpoint passed in does not match any we;
-    if (!breakpointInPX) {
-        return false;
-    }
-
-    // We match our passed in operator and execute a sum: current screen width [Passed operator] [Passed breakpoint in PX]
-    switch (operator) {
-        case '>':
-            return currentScreenWidth > breakpointInPX;
-        case '<':
-            return currentScreenWidth < breakpointInPX;
-        case '=':
-            return currentScreenWidth === breakpointInPX;
-        case '>=':
-            return currentScreenWidth >= breakpointInPX;
-        case '<=':
-            return currentScreenWidth <= breakpointInPX;
-        default:
-            return false;
-    }
-};
+exports.isWithinBreakpoint = isWithinBreakpoint;
 },{}],7:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-exports.stopFoit = undefined;
+exports.default = exports.stopFoit = void 0;
 
-var _fontfaceobserver = require('fontfaceobserver');
+var _fontfaceobserver = _interopRequireDefault(require("fontfaceobserver"));
 
-var _fontfaceobserver2 = _interopRequireDefault(_fontfaceobserver);
-
-var _fLogger = require('@justeat/f-logger');
+var _fLogger = require("@justeat/f-logger");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -380,28 +397,27 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 * Init method initialises the FontFaceObserver events
 *
 */
+var stopFoit = function stopFoit() {
+  // Create a new `FontFaceObserver` for each webfont
+  var baseFont = new _fontfaceobserver.default('Hind Vadodara');
+  var headingFont = new _fontfaceobserver.default('Ubuntu'); // On load of each font we add `has-fontsLoaded` class with the font type modifier
 
-var stopFoit = exports.stopFoit = function stopFoit() {
-    // Create a new `FontFaceObserver` for each webfont
-    var baseFont = new _fontfaceobserver2.default('Hind Vadodara');
-    var headingFont = new _fontfaceobserver2.default('Ubuntu');
-
-    // On load of each font we add `has-fontsLoaded` class with the font type modifier
-    baseFont.load(null, 3000).then(function () {
-        document.body.classList.remove('is-fontsLoading--base');
-    }).catch(function () {
-        (0, _fLogger.logError)('Custom font is unable to load');
-    });
-
-    headingFont.load(null, 3000).then(function () {
-        document.body.classList.remove('is-fontsLoading--heading');
-    }).catch(function () {
-        (0, _fLogger.logError)('Custom font is unable to load');
-    });
+  baseFont.load(null, 3000).then(function () {
+    document.body.classList.remove('is-fontsLoading--base');
+  }).catch(function () {
+    (0, _fLogger.logError)('Custom font is unable to load');
+  });
+  headingFont.load(null, 3000).then(function () {
+    document.body.classList.remove('is-fontsLoading--heading');
+  }).catch(function () {
+    (0, _fLogger.logError)('Custom font is unable to load');
+  });
 };
 
-exports.default = stopFoit;
-},{"@justeat/f-logger":11,"fontfaceobserver":37}],8:[function(require,module,exports){
+exports.stopFoit = stopFoit;
+var _default = stopFoit;
+exports.default = _default;
+},{"@justeat/f-logger":11,"fontfaceobserver":38}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -426,27 +442,50 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  *
  * @module f-header
  */
-
+var CLASSNAMES = {
+  headerTransparent: 'c-header--transparent'
+};
 /**
  * Setup the behaviour for the header component.
  */
-var setupHeader = function setupHeader() {
-  var menuButton = document.querySelector('[data-nav-button]');
 
-  if (menuButton) {
-    menuButton.addEventListener('click', function () {
+var setupHeader = function setupHeader() {
+  var headerEl = document.querySelector('[data-header]');
+  var navButton = document.querySelector('[data-nav-button]');
+  var navToggleLabel = document.querySelector('[data-nav-toggle]');
+  var navToggleCheckbox = document.querySelector('[data-nav-accessible-button]');
+
+  if (navButton) {
+    navButton.addEventListener('click', function () {
       var navContainer = document.querySelector('[data-nav-container]');
-      var navLabel = document.querySelector('[data-nav-toggle]');
 
       if (navContainer) {
         navContainer.classList.toggle('is-visible');
       }
 
-      if (navLabel) {
-        navLabel.classList.toggle('is-open');
-      }
+      if (navToggleLabel) {
+        navToggleLabel.classList.toggle('is-open');
+      } // This is added to remove the ability to scroll the page content when the mobile navigation is open
 
-      document.documentElement.classList.toggle('is-navInView');
+
+      document.documentElement.classList.toggle('is-navInView'); // If the header is already fixed/absolute (as it is when the header is transparent)
+      // then the content doesn't need to be padded down when the nav comes into view, as it's already flush with the top of the screen
+
+      if (headerEl && headerEl.classList.contains(CLASSNAMES.headerTransparent)) {
+        document.documentElement.classList.toggle('is-navInView--noPad');
+      }
+    });
+  } // make sure that hamburger menu is closed when the user navigates back to the page
+
+
+  if (navToggleCheckbox) {
+    navToggleCheckbox.checked = false;
+  } // setup click event on the navigation label, as the button is hidden by default (as used for tabbing only)
+
+
+  if (navToggleLabel) {
+    navToggleLabel.addEventListener('click', function () {
+      navButton.click();
     });
   }
 };
@@ -455,7 +494,7 @@ exports.setupHeader = setupHeader;
 (0, _liteReady.default)(function () {
   setupHeader();
 });
-},{"./userAuth":9,"lite-ready":38}],9:[function(require,module,exports){
+},{"./userAuth":9,"lite-ready":39}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -640,845 +679,869 @@ exports.saveUserData = saveUserData;
 },{}],13:[function(require,module,exports){
 'use strict';var _typeof='function'==typeof Symbol&&'symbol'==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&'function'==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?'symbol':typeof a},_createClass=function(){function a(a,b){for(var c,d=0;d<b.length;d++)c=b[d],c.enumerable=c.enumerable||!1,c.configurable=!0,'value'in c&&(c.writable=!0),Object.defineProperty(a,c.key,c)}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}();Object.defineProperty(exports,'__esModule',{value:!0});function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError('Cannot call a class as a function')}var output=function(a){if('undefined'!=typeof window.console)window.console.log(a);else throw new Error('Console is not supported')},getPersistentData=function(){if(!localStorage)output('Local storage not available');else if(0<localStorage.length){var a,b,c,d;for(output('/***** Output local storage *****/'),a=0;a<localStorage.length;a++)b=+localStorage.key(a),c=localStorage[b],d=new Date(b),'Invalid Date'!==(d+'').valueOf()&&output(d+' => '+c);output('/***** End of local storage *****/')}else output('Local storage is empty')},clearPersistentData=function(){localStorage&&(localStorage.clear(),output('Local storage cleared'))},Logger=function(){function a(b){_classCallCheck(this,a),this.config=b,this.debugMode=this.config.debugMode,this.data={}}return _createClass(a,[{key:'log',value:function log(a){var b=a;if(this.debugMode){var c=Date.now().toString();this.data[c]=b,'object'===('undefined'==typeof localStorage?'undefined':_typeof(localStorage))&&(b=JSON.stringify(b),localStorage.setItem(c,b)),output(b)}}}]),a}();exports.getPersistentData=getPersistentData,exports.clearPersistentData=clearPersistentData,exports.default=Logger;
 },{}],14:[function(require,module,exports){
-'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.cookieBanner=exports.lazyLoad=exports.formReset=void 0;var _formReset=require('./modules/formReset'),_formReset2=_interopRequireDefault(_formReset),_lazyLoad=require('./modules/lazyLoad'),_lazyLoad2=_interopRequireDefault(_lazyLoad),_cookieBanner=require('./modules/cookieBanner'),_cookieBanner2=_interopRequireDefault(_cookieBanner);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}exports.formReset=_formReset2.default,exports.lazyLoad=_lazyLoad2.default,exports.cookieBanner=_cookieBanner2.default;
-},{"./modules/cookieBanner":15,"./modules/formReset":16,"./modules/lazyLoad":17}],15:[function(require,module,exports){
-'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var anchorElement={},cookieName='je-banner_cookie',cookieBannerMarkup='\n    <div class="c-cookieWarning">\n        <div class="c-cookieWarning-inner">\n            <p>We use cookies to improve your browsing experience. By continuing, you agree to receive cookies on our website. <a class="c-cookieWarning-link" href="/cookies-policy">Learn more</a></p>\n            <button class="c-cookieWarning-btn"></button>\n        </div>\n    </div>',hideBanner=function(){var a=document.querySelector('.c-cookieWarning');a.classList.contains('is-hidden')||(a.classList.add('is-hidden'),document.cookie='je-banner_cookie=130315')},createBannerElements=function(){anchorElement.insertAdjacentHTML('beforeend',cookieBannerMarkup);var a=document.querySelector('.c-cookieWarning-btn');a.addEventListener('click',function(){return hideBanner()})},init=function(a){var b=-1!==document.cookie.indexOf(cookieName);if(!b){if(anchorElement=document.querySelector(a),!anchorElement)throw new Error('no matching element found to anchor cookie banner');createBannerElements()}};exports.default={init:init};
-},{}],16:[function(require,module,exports){
+'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.elementHelper=exports.cookieBanner=exports.lazyLoad=exports.formReset=void 0;var _formReset=require('./modules/formReset'),_formReset2=_interopRequireDefault(_formReset),_lazyLoad=require('./modules/lazyLoad'),_lazyLoad2=_interopRequireDefault(_lazyLoad),_cookieBanner=require('./modules/cookieBanner'),_cookieBanner2=_interopRequireDefault(_cookieBanner),_elementHelper=require('./modules/elementHelper'),_elementHelper2=_interopRequireDefault(_elementHelper);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}exports.formReset=_formReset2.default,exports.lazyLoad=_lazyLoad2.default,exports.cookieBanner=_cookieBanner2.default,exports.elementHelper=_elementHelper2.default;
+},{"./modules/cookieBanner":15,"./modules/elementHelper":17,"./modules/formReset":18,"./modules/lazyLoad":19}],15:[function(require,module,exports){
+'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var _translations=require('./translations'),anchorElement={},cookieName='je-banner_cookie',cookieBannerMarkup='\n    <div class="c-cookieWarning">\n        <div class="c-cookieWarning-inner">\n            '+(0,_translations.getBodyTranslation)()+'\n            <button class="c-cookieWarning-btn" data-test-id="cookieBanner-close-button" aria-label="Close"></button>\n        </div>\n    </div>',hideBanner=function(){var a=document.querySelector('.c-cookieWarning');a.classList.contains('is-hidden')||(a.classList.add('is-hidden'),document.cookie='je-banner_cookie=130315')},createBannerElements=function(){anchorElement.insertAdjacentHTML('beforeend',cookieBannerMarkup);var a=document.querySelector('.c-cookieWarning-btn');a.addEventListener('click',function(){return hideBanner()})},init=function(a){var b=-1!==document.cookie.indexOf(cookieName);if(!b){if(anchorElement=document.querySelector(a),!anchorElement)throw new Error('no matching element found to anchor cookie banner');createBannerElements()}};exports.default={init:init};
+},{"./translations":16}],16:[function(require,module,exports){
+'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.getBodyTranslation=getBodyTranslation;var tranlsations={"en-GB":'<p>We use cookies to improve your browsing experience. By continuing, you agree to receive cookies on our website. <a class="c-cookieWarning-link" href="/cookies-policy">Learn more about our cookies policy.</a></p>',"es-ES":'<p class="u-hideTextOverflow--narrow">Just Eat utiliza cookies para mejorar tu experiencia en la p\xE1gina. Si contin\xFAas navegando consideramos que aceptas su uso, si no es as\xED puedes limitar la configuraci\xF3n de cookies en tu explorador. Lee nuestra <a href="/cookies-policy">pol\xEDtica sobre cookies</a> para m\xE1s informaci\xF3n</p>',"it-IT":'<p class="u-hideTextOverflow--narrow"><span style="font-weight: bold;">JUST EAT</span> utilizza cookie di profilazione, propri e di terzi, per inviarti pubblicit\xE0 online in funzione delle tue preferenze manifestate nella navigazione e consentirti una miglior esperienza di navigazione. Se accedi ad un qualunque elemento del sito sottostante acconsenti all\u2019uso di tali cookie. Per avere maggiori informazioni su come noi, o i terzi, usiamo i cookie, sapere come negare il consenso a tutti o solo alcuni cookie, e come impostare il proprio browser si prega di leggere la nostra <a href="/cookies-policy">cookie policy</a></p>',"en-IE":'<p class="u-hideTextOverflow--narrow"><span style="font-weight: bold;">Updated cookies policy:</span> Just Eat uses cookies to improve your browsing experience. If you continue, we\'ll assume that you are happy to receive cookies on our website. You can change your browser\'s cookie settings at any time. To find out more about how we use cookies and how to manage your browser settings read our <a href="/cookies-policy"> cookies policy</a>.</p>',"da-DK":'<p class="u-hideTextOverflow--narrow"><span style="font-weight: bold;">JUST EAT</span> anvender cookies til at forbedre din brugeroplevelse og til at g\xF8re det muligt for dig at bestille mad. Hvis du forts\xE6tter brugen af hjemmesiden, antager vi, at du er indforst\xE5et med og accepterer at modtage cookies fra JUST EAT hjemmesiden. Hvis du \xF8nsker det, kan du \xE6ndre dine cookie-indstillinger i din browser p\xE5 ethvert tidspunkt. L\xE6s vores cookiebetingelser for mere information <a href="/cookies-policy"> her</a>.</p>',fr:'<p>En poursuivant votre navigation sur notre site, vous acceptez l\'utilisation de cookies. Pour en savoir plus &nbsp;<a href="https://www.just-eat.fr/accept-cookie-policy" data-url="https://www.just-eat.fr/accept-cookie-policy">cliquez-ici.</a></p>'};function getBodyTranslation(){var a=document.querySelector('html').lang;return tranlsations[a]||tranlsations['en-GB']}
+},{}],17:[function(require,module,exports){
+'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var hide=function(a){a.classList.add('is-hidden')},hideVisually=function(a){a.classList.add('is-visuallyHidden')},hideVisibility=function(a){a.classList.add('is-invisible')},show=function(a){a.classList.remove('is-hidden'),a.classList.remove('is-visuallyHidden'),a.classList.remove('is-invisible')},toggle=function(a,b){a&&('undefined'==typeof b?a.classList.contains('is-hidden')?show(a):hide(a):b?show(a):hide(a))};exports.default={hide:hide,hideVisually:hideVisually,hideVisibility:hideVisibility,show:show,toggle:toggle};
+},{}],18:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.init=exports.resetInputs=void 0;var _fDom=require('@justeat/f-dom'),_fDom2=_interopRequireDefault(_fDom);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var resetInputs=exports.resetInputs=function(a){var b=a.target,c=b.getAttribute('data-js-reset'),d=(0,_fDom2.default)('[data-js-reset-input="'+c+'"]');d.forEach(function(a){if(a.checked){a.checked=!1;var b=new Event('change');return void a.dispatchEvent(b)}0<a.value.length&&(a.value='')})},init=exports.init=function(){var a=(0,_fDom2.default)('[data-js-reset]');0<a.length&&a.forEach(function(a){a.addEventListener('click',function(a){return resetInputs(a)})})};exports.default=init;
-},{"@justeat/f-dom":18}],17:[function(require,module,exports){
-'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.init=exports.lazyLoadItems=exports.inViewport=exports.swapAttribute=void 0;var _fDom=require('@justeat/f-dom'),_fDom2=_interopRequireDefault(_fDom),_lodash=require('lodash.throttle'),_lodash2=_interopRequireDefault(_lodash);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var lazyLoadElements=void 0,swapAttribute=exports.swapAttribute=function(a){var b=a.getAttribute('data-js-lazy-src');return!!b&&(a.setAttribute('src',b),!0)},inViewport=exports.inViewport=function(a){var b=a.getBoundingClientRect();return 0<=b.bottom&&0<=b.right&&b.top<=window.innerHeight&&b.left<=window.innerWidth},lazyLoadItems=exports.lazyLoadItems=function(a){return!!Array.isArray(a)&&(a.forEach(function(a){var b=inViewport(a);b&&(swapAttribute(a),lazyLoadElements=lazyLoadElements.filter(function(b){return b!==a}))}),!0)},init=exports.init=function(){return lazyLoadElements=(0,_fDom2.default)('[data-js-lazy]'),!!(0<lazyLoadElements.length)&&(lazyLoadItems(lazyLoadElements),window.addEventListener('scroll',(0,_lodash2.default)(function(){lazyLoadItems(lazyLoadElements)},250)),window.addEventListener('resize',(0,_lodash2.default)(function(){lazyLoadItems(lazyLoadElements)},250)),window.addEventListener('lazyload',function(){lazyLoadItems(lazyLoadElements)}),!0)};exports.default=init;
-},{"@justeat/f-dom":18,"lodash.throttle":40}],18:[function(require,module,exports){
+},{"@justeat/f-dom":20}],19:[function(require,module,exports){
+'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.init=exports.lazyLoadItems=exports.inViewport=exports.swapAttribute=void 0;var _fDom=require('@justeat/f-dom'),_fDom2=_interopRequireDefault(_fDom),_lodash=require('lodash.throttle'),_lodash2=_interopRequireDefault(_lodash);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var lazyLoadElements=void 0,swapAttribute=exports.swapAttribute=function(a){var b=a.getAttribute('data-js-lazy-src');return!!b&&(a.setAttribute('src',b),!0)},inViewport=exports.inViewport=function(a){var b=a.getBoundingClientRect();return-250<=b.bottom&&0<=b.right&&b.top<=window.innerHeight+250&&b.left<=window.innerWidth},lazyLoadItems=exports.lazyLoadItems=function(a){return!!Array.isArray(a)&&(a.forEach(function(a){var b=inViewport(a);b&&(swapAttribute(a),lazyLoadElements=lazyLoadElements.filter(function(b){return b!==a}))}),!0)},init=exports.init=function(){return lazyLoadElements=(0,_fDom2.default)('[data-js-lazy]'),!!(0<lazyLoadElements.length)&&(lazyLoadItems(lazyLoadElements),window.addEventListener('scroll',(0,_lodash2.default)(function(){lazyLoadItems(lazyLoadElements)},125)),window.addEventListener('resize',(0,_lodash2.default)(function(){lazyLoadItems(lazyLoadElements)},250)),window.addEventListener('lazyload',function(){lazyLoadItems(lazyLoadElements)}),!0)};exports.default=init;
+},{"@justeat/f-dom":20,"lodash.throttle":41}],20:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var _qwery=require('qwery'),_qwery2=_interopRequireDefault(_qwery);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var first=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)[0]},all=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)},exists=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return 0<(0,_qwery2.default)(a,b).length},dom=all;dom.all=all,dom.first=first,dom.exists=exists,exports.default=dom;
-},{"qwery":42}],19:[function(require,module,exports){
-'use strict';
+},{"qwery":43}],21:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-var addCallBack = exports.addCallBack = function addCallBack(callBacks, callBack) {
+exports.runCallbacks = exports.addCallBack = void 0;
 
-    if (typeof callBack !== 'function') {
-        throw new TypeError('call back is not a function');
-    }
+var addCallBack = function addCallBack(callBacks, callBack) {
+  if (typeof callBack !== 'function') {
+    throw new TypeError('call back is not a function');
+  }
 
-    callBacks.push(callBack);
+  callBacks.push(callBack);
 };
 
-var runCallbacks = exports.runCallbacks = function runCallbacks(callBacks) {
+exports.addCallBack = addCallBack;
 
-    if (!callBacks) {
-        return;
-    }
+var runCallbacks = function runCallbacks(callBacks) {
+  for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    args[_key - 1] = arguments[_key];
+  }
 
-    callBacks.forEach(function (callback) {
-        callback();
-    });
+  if (!callBacks) {
+    return;
+  }
+
+  callBacks.forEach(function (callback) {
+    callback.apply(void 0, args);
+  });
 };
-},{}],20:[function(require,module,exports){
-'use strict';
+
+exports.runCallbacks = runCallbacks;
+},{}],22:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
 var cssClasses = {
-    isHidden: 'is-hidden',
-    formError: 'form-error',
-    formErrors: 'form-errors',
-    hasError: 'has-error',
-    hasSuccess: 'has-success'
+  isHidden: 'is-hidden',
+  formError: 'form-error',
+  formErrors: 'form-errors',
+  hasError: 'has-error',
+  hasSuccess: 'has-success'
 };
-
 var validationGroup = 'data-val-group';
-
-exports.default = {
-    cssClasses: cssClasses,
-    email: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-    escapeChars: /[|\\{}()[\]^$+*?.]/g,
-    fieldValues: 'input, select, textarea, [' + validationGroup + ']',
-    validationGroup: validationGroup,
-    validateOnOptions: ['blur', 'keyup']
+var _default = {
+  cssClasses: cssClasses,
+  email: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+  escapeChars: /[|\\{}()[\]^$+*?.]/g,
+  fieldValues: "input, select, textarea, [".concat(validationGroup, "]"),
+  validationGroup: validationGroup,
+  blurredAttr: 'data-blurred',
+  validateOnOptions: ['blur', 'keyup']
 };
-},{}],21:[function(require,module,exports){
-'use strict';
+exports.default = _default;
+},{}],23:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-exports.defaultOptions = undefined;
+exports.default = exports.defaultOptions = void 0;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _fDom = _interopRequireDefault(require("@justeat/f-dom"));
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
-                                                                                                                                                                                                                                                                               * @module Validate
-                                                                                                                                                                                                                                                                               *
-                                                                                                                                                                                                                                                                               * ## Goals
-                                                                                                                                                                                                                                                                               *
-                                                                                                                                                                                                                                                                               * To validate a form based on the HTML5 attributes each form has, or the data attributes specified on them
-                                                                                                                                                                                                                                                                               *
-                                                                                                                                                                                                                                                                               * Should accept either:
-                                                                                                                                                                                                                                                                               *
-                                                                                                                                                                                                                                                                               * 1. A form DOM Element
-                                                                                                                                                                                                                                                                               * 2. A string relating to the name of the form
-                                                                                                                                                                                                                                                                               *
-                                                                                                                                                                                                                                                                               * Should also be able to label a form field with `data-novalidate`
-                                                                                                                                                                                                                                                                               * to remove it from those being validated
-                                                                                                                                                                                                                                                                               *
-                                                                                                                                                                                                                                                                               */
+var _rules = _interopRequireDefault(require("./rules"));
 
-var _fDom = require('@justeat/f-dom');
+var _callbacks = require("./callbacks");
 
-var _fDom2 = _interopRequireDefault(_fDom);
+var _messages = require("./messages");
 
-var _rules = require('./rules');
-
-var _rules2 = _interopRequireDefault(_rules);
-
-var _callbacks = require('./callbacks');
-
-var _messages = require('./messages');
-
-var _constants = require('./constants');
-
-var _constants2 = _interopRequireDefault(_constants);
+var _constants = _interopRequireDefault(require("./constants"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-// Load in the set of test definitions to validate against
-var VALIDATION_KEYS = Object.keys(_rules2.default);
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-var defaultOptions = exports.defaultOptions = {
-    errorClass: _constants2.default.cssClasses.hasError,
-    successClass: _constants2.default.cssClasses.hasSuccess,
-    focus: false,
-    groupErrorPlacement: false,
-    enableHTML5Validation: false
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+// Load in the set of test definitions to validate against
+var VALIDATION_KEYS = Object.keys(_rules.default);
+var defaultOptions = {
+  errorClass: _constants.default.cssClasses.hasError,
+  successClass: _constants.default.cssClasses.hasSuccess,
+  focus: false,
+  groupErrorPlacement: false,
+  enableHTML5Validation: false,
+  hybridMode: false // setups both onblur and onkeydown events
+
 };
+exports.defaultOptions = defaultOptions;
 
 var getForm = function getForm(descriptor) {
+  if (!descriptor) {
+    throw new Error('f-validate: expected form name or form node parameter');
+  }
 
-    if (!descriptor) {
-        throw new Error('f-validate: expected form name or form node parameter');
-    }
+  var form = _typeof(descriptor) === 'object' && descriptor.tagName === 'FORM' ? descriptor : document.forms[descriptor];
 
-    var form = (typeof descriptor === 'undefined' ? 'undefined' : _typeof(descriptor)) === 'object' && descriptor.tagName === 'FORM' ? descriptor : document.forms[descriptor];
+  if (!form) {
+    throw new Error('f-validate: form not found');
+  }
 
-    if (!form) {
-        throw new Error('f-validate: form not found');
-    }
-
-    return form;
+  return form;
 };
 
 var elementsUntouched = function elementsUntouched(element, current, touchedSelectors) {
+  var notInErrorState = !current.field.classList.contains(_constants.default.cssClasses.hasError);
+  var elementsNotTouched = touchedSelectors.map(function (childSelector) {
+    return _fDom.default.first(childSelector, element);
+  }).filter(function (el) {
+    return el && !el.hasAttribute('data-touched');
+  }); // If one select has not been interacted with do not run test method
 
-    var notInErrorState = !current.field.classList.contains(_constants2.default.cssClasses.hasError);
-    var elementsNotTouched = touchedSelectors.map(function (childSelector) {
-        return _fDom2.default.first(childSelector, element);
-    }).filter(function (el) {
-        return el && !el.hasAttribute('data-touched');
-    });
-
-    // If one select has not been interacted with do not run test method
-    return notInErrorState && elementsNotTouched.length > 0;
+  return notInErrorState && elementsNotTouched.length > 0;
 };
 
-var FormValidation = function () {
-    function FormValidation(nameOrNode) {
-        var _this = this;
+var FormValidation =
+/*#__PURE__*/
+function () {
+  function FormValidation(nameOrNode) {
+    var _this = this;
 
-        var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-        _classCallCheck(this, FormValidation);
+    _classCallCheck(this, FormValidation);
 
-        this.options = Object.assign({}, defaultOptions, options);
-        this.form = getForm(nameOrNode);
-        this.fields = this.getFields();
+    this.options = Object.assign({}, defaultOptions, options);
+    this.form = getForm(nameOrNode);
+    this.fields = this.getFields(); // Allow fields to be validated on 'enter'
 
-        // Allow fields to be validated on 'enter'
-        this.fields.forEach(function (field) {
-            field.addEventListener('keydown', function (event) {
-                if (event.key === 'Enter') {
-                    _this.isValid(event);
-                }
-            });
-        });
-
-        this.customHandlers = {};
-        this.callBacks = {};
-        this.errorMessages = [];
-
-        if (this.options.onSuccess) {
-            this.on('success', this.options.onSuccess);
+    this.fields.forEach(function (field) {
+      field.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+          _this.isValid(event);
         }
-        if (this.options.onError) {
-            this.on('error', this.options.onError);
-        }
-        if (this.options.validateOn) {
-            this.validateOn();
-        }
+      });
+    });
+    this.customHandlers = {};
+    this.callBacks = {};
+    this.errorMessages = [];
 
-        this.setFormNoValidate();
-        this.form.addEventListener('submit', this.isValid.bind(this));
+    if (this.options.onSuccess) {
+      this.on('success', this.options.onSuccess);
     }
 
+    if (this.options.onError) {
+      this.on('error', this.options.onError);
+    }
+
+    if (this.options.onElementError) {
+      this.on('elementError', this.options.onElementError);
+    }
+
+    if (this.options.validateOn) {
+      this.validateOn();
+    }
+
+    if (this.options.hybridMode) {
+      this.setupHybridValidate();
+    }
+
+    this.setFormNoValidate();
+    this.form.addEventListener('submit', this.isValid.bind(this));
+  }
+  /**
+   * on - Associates a callback with an event.
+   * Callbacks associated with an event will be called when the event fires.
+   * example:
+   *      formValidator.on('success', () => {
+   *          Do something when the form is found to be valid.
+   *      });
+   *      formValidator.on('error', () => {
+   *          Do something when the form is found to be invalid.
+   *      });
+   */
+
+
+  _createClass(FormValidation, [{
+    key: "on",
+    value: function on(callBackEvent, callBack) {
+      if (!this.callBacks[callBackEvent]) {
+        this.callBacks[callBackEvent] = [];
+      }
+
+      try {
+        (0, _callbacks.addCallBack)(this.callBacks[callBackEvent], callBack, callBackEvent);
+      } catch (exception) {
+        throw new TypeError("f-validate: ".concat(callBackEvent, " callback must be a function"));
+      }
+    }
+  }, {
+    key: "setSuccess",
+    value: function setSuccess(element) {
+      element.classList.remove(this.options.errorClass);
+      element.classList.add(this.options.successClass);
+    }
+  }, {
+    key: "setError",
+    value: function setError(element) {
+      element.classList.remove(this.options.successClass);
+      element.classList.add(this.options.errorClass);
+    }
+  }, {
+    key: "setFormNoValidate",
+    value: function setFormNoValidate() {
+      if (!this.options.enableHTML5Validation) {
+        this.form.setAttribute('novalidate', '');
+      }
+    }
     /**
-     * on - Associates a callback with an event.
-     * Callbacks associated with an event will be called when the event fires.
-     * example:
-     *      formValidator.on('success', () => {
-     *          Do something when the form is found to be valid.
-     *      });
-     *      formValidator.on('error', () => {
-     *          Do something when the form is found to be invalid.
-     *      });
+     * Validates the form
+     *
+     * @param event
+     * @param {object} currentElement
+     * @returns {boolean}
      */
 
+  }, {
+    key: "isValid",
+    value: function isValid(event, currentElement, eventType) {
+      var _this2 = this;
 
-    _createClass(FormValidation, [{
-        key: 'on',
-        value: function on(callBackEvent, callBack) {
+      var formValid = true;
+      this.errorMessages = [];
+      this.fields.forEach(function (field) {
+        // currentElement refers to an element that is being validated on blur/keyup
+        // only validate on blur/keyup if the field is not empty and is not required
+        if (currentElement && (currentElement.field !== field || field.value === '' && !_rules.default.required.condition(field))) {
+          return;
+        } // if hybrid validation is active, give the user a chance to input a value before we start validating
 
-            if (!this.callBacks[callBackEvent]) {
-                this.callBacks[callBackEvent] = [];
+
+        if (_this2.options.hybridMode && currentElement && eventType === 'keyup' && !field.hasAttribute(_constants.default.blurredAttr)) {
+          return;
+        }
+
+        var errorMessage = ''; // This needs to be set outside of the forEach loop, as otherwise only the final rule will apply the state
+
+        var fieldValid = true; // This prevents us from applying state classes to fields without rules
+
+        var fieldHasValidation = false;
+        VALIDATION_KEYS.forEach(function (ruleName) {
+          var definition = _rules.default[ruleName];
+
+          if (field.getAttribute('data-val-custom')) {
+            _rules.default.custom.test = _this2.customHandlers[field.getAttribute('data-val-custom')];
+          }
+
+          if (definition.condition(field)) {
+            fieldHasValidation = true;
+            var skipTest = false; // If rule has elements that need to be checked for touch, and validation is happening on blur/keyup
+
+            if (definition.touchedSelectors && currentElement) {
+              currentElement.childField.setAttribute('data-touched', true);
+              skipTest = elementsUntouched(field, currentElement, definition.touchedSelectors);
             }
 
-            try {
-                (0, _callbacks.addCallBack)(this.callBacks[callBackEvent], callBack, callBackEvent);
-            } catch (exception) {
-                throw new TypeError('f-validate: ' + callBackEvent + ' callback must be a function');
+            if (!skipTest && !definition.test(field, currentElement)) {
+              fieldValid = false;
+              errorMessage = (0, _messages.getMessage)(field, ruleName);
+
+              _this2.errorMessages.push(errorMessage);
+
+              (0, _callbacks.runCallbacks)(_this2.callBacks.elementError, field, ruleName);
             }
-        }
-    }, {
-        key: 'setSuccess',
-        value: function setSuccess(element) {
-            element.classList.remove(this.options.errorClass);
-            element.classList.add(this.options.successClass);
-        }
-    }, {
-        key: 'setError',
-        value: function setError(element) {
-            element.classList.remove(this.options.successClass);
-            element.classList.add(this.options.errorClass);
-        }
-    }, {
-        key: 'setFormNoValidate',
-        value: function setFormNoValidate() {
+          }
+        });
 
-            if (!this.options.enableHTML5Validation) {
-                this.form.setAttribute('novalidate', '');
-            }
-        }
+        if (fieldHasValidation) {
+          if (fieldValid) {
+            _this2.setSuccess(field);
+          } else {
+            formValid = false;
 
-        /**
-         * Validates the form
-         *
-         * @param event
-         * @param {object} currentElement
-         * @returns {boolean}
-         */
+            _this2.setError(field);
+          } // if we aren't handling a group field validation
 
-    }, {
-        key: 'isValid',
-        value: function isValid(event, currentElement) {
-            var _this2 = this;
 
-            var formValid = true;
-            this.errorMessages = [];
+          if (!_this2.options.groupErrorPlacement) {
+            var errorElement = (0, _messages.getInlineErrorElement)(field, _this2.form);
 
-            this.fields.forEach(function (field) {
-
-                // currentElement refers to an element that is being validated on blur/keyup
-                // only validate on blur/keyup if the field is not empty and is not required
-                if (currentElement && (currentElement.field !== field || field.value === '' && !_rules2.default.required.condition(field))) {
-                    return;
-                }
-
-                var errorMessage = '';
-
-                // This needs to be set outside of the forEach loop, as otherwise only the final rule will apply the state
-                var fieldValid = true;
-
-                // This prevents us from applying state classes to fields without rules
-                var fieldHasValidation = false;
-
-                VALIDATION_KEYS.forEach(function (ruleName) {
-                    var definition = _rules2.default[ruleName];
-
-                    if (field.getAttribute('data-val-custom')) {
-                        _rules2.default.custom.test = _this2.customHandlers[field.getAttribute('data-val-custom')];
-                    }
-
-                    if (definition.condition(field)) {
-                        fieldHasValidation = true;
-                        var skipTest = false;
-
-                        // If rule has elements that need to be checked for touch, and validation is happening on blur/keyup
-                        if (definition.touchedSelectors && currentElement) {
-                            currentElement.childField.setAttribute('data-touched', true);
-                            skipTest = elementsUntouched(field, currentElement, definition.touchedSelectors);
-                        }
-
-                        if (!skipTest && !definition.test(field, currentElement)) {
-                            fieldValid = false;
-                            errorMessage = (0, _messages.getMessage)(field, ruleName);
-                            _this2.errorMessages.push(errorMessage);
-                        }
-                    }
-                });
-
-                if (fieldHasValidation) {
-
-                    if (fieldValid) {
-                        _this2.setSuccess(field);
-                    } else {
-                        formValid = false;
-                        _this2.setError(field);
-                    }
-
-                    // if we aren't handling a group field validation
-                    if (!_this2.options.groupErrorPlacement) {
-                        var errorElement = (0, _messages.getInlineErrorElement)(field, _this2.form);
-                        if (fieldValid) {
-                            (0, _messages.hideMessage)(errorElement);
-                        } else {
-                            (0, _messages.displayInlineMessage)(errorElement, errorMessage, field, _this2.form);
-                        }
-                    }
-                }
-            });
-
-            if (!formValid) {
-                this.setError(this.form);
-                (0, _callbacks.runCallbacks)(this.callBacks.error);
-
-                if (event) {
-                    event.preventDefault();
-                }
+            if (fieldValid) {
+              (0, _messages.hideMessage)(errorElement);
             } else {
-                this.setSuccess(this.form);
-                (0, _callbacks.runCallbacks)(this.callBacks.success);
+              (0, _messages.displayInlineMessage)(errorElement, errorMessage, field, _this2.form);
             }
-
-            if (this.options.groupErrorPlacement) {
-                var groupedErrorElement = this.findGroupedErrorElement();
-                if (formValid) {
-                    (0, _messages.hideMessage)(groupedErrorElement);
-                } else {
-                    this.displayGroupedMessages(groupedErrorElement);
-                }
-            }
-
-            return formValid;
+          }
         }
-    }, {
-        key: 'addCustomValidation',
-        value: function addCustomValidation(name, handler) {
-            if (!name || typeof name !== 'string') {
-                throw new Error('f-validate: please provide the name');
-            }
-            if (!handler || typeof handler !== 'function') {
-                throw new Error('f-validate: please provide a custom method');
-            }
+      });
 
-            this.customHandlers[name] = handler;
+      if (!formValid) {
+        this.setError(this.form);
+        (0, _callbacks.runCallbacks)(this.callBacks.error);
+
+        if (event) {
+          event.preventDefault();
         }
-    }, {
-        key: 'getFields',
-        value: function getFields() {
-            var fields = (0, _fDom2.default)(_constants2.default.fieldValues, this.form);
+      } else {
+        this.setSuccess(this.form);
+        (0, _callbacks.runCallbacks)(this.callBacks.success);
+      }
 
-            return fields.filter(function (f) {
-                return !(f.hasAttribute('type') && f.getAttribute('type') === 'hidden') && !f.hasAttribute('disabled') && !f.hasAttribute('data-novalidate') && !f.parentElement.hasAttribute(_constants2.default.validationGroup);
-            });
+      if (this.options.groupErrorPlacement) {
+        var groupedErrorElement = this.findGroupedErrorElement();
+
+        if (formValid) {
+          (0, _messages.hideMessage)(groupedErrorElement);
+        } else {
+          this.displayGroupedMessages(groupedErrorElement);
         }
-    }, {
-        key: 'findGroupedErrorElement',
-        value: function findGroupedErrorElement() {
-            var groupedErrorElement = _fDom2.default.first('.' + _constants2.default.cssClasses.formErrors, this.form);
+      }
 
-            return groupedErrorElement;
+      return formValid;
+    }
+  }, {
+    key: "addCustomValidation",
+    value: function addCustomValidation(name, handler) {
+      if (!name || typeof name !== 'string') {
+        throw new Error('f-validate: please provide the name');
+      }
+
+      if (!handler || typeof handler !== 'function') {
+        throw new Error('f-validate: please provide a custom method');
+      }
+
+      this.customHandlers[name] = handler;
+    }
+  }, {
+    key: "getFields",
+    value: function getFields() {
+      var fields = (0, _fDom.default)(_constants.default.fieldValues, this.form);
+      return fields.filter(function (f) {
+        return !(f.hasAttribute('type') && f.getAttribute('type') === 'hidden') && !f.hasAttribute('disabled') && !f.hasAttribute('data-novalidate') && !f.parentElement.hasAttribute(_constants.default.validationGroup);
+      });
+    }
+  }, {
+    key: "findGroupedErrorElement",
+    value: function findGroupedErrorElement() {
+      var groupedErrorElement = _fDom.default.first(".".concat(_constants.default.cssClasses.formErrors), this.form);
+
+      return groupedErrorElement;
+    }
+  }, {
+    key: "displayGroupedMessages",
+    value: function displayGroupedMessages(groupedErrorElement) {
+      var updateElement = groupedErrorElement;
+
+      if (!groupedErrorElement) {
+        updateElement = document.createElement('ul');
+        updateElement.classList.add(_constants.default.cssClasses.formErrors);
+        this.form.insertBefore(updateElement, this.getGroupedErrorPosition());
+      } else {
+        groupedErrorElement.innerHTML = '';
+      }
+
+      this.errorMessages.forEach(function (error) {
+        var li = document.createElement('li');
+        li.textContent = error;
+        updateElement.appendChild(li);
+      });
+    }
+  }, {
+    key: "getGroupedErrorPosition",
+    value: function getGroupedErrorPosition() {
+      var groupElement = _fDom.default.first(this.options.groupErrorPlacement, this.form);
+
+      if (groupElement) {
+        return groupElement;
+      }
+
+      if (this.options.groupErrorPlacement === 'bottom') {
+        return this.form.lastChild;
+      }
+
+      return this.form.firstChild;
+    }
+    /**
+     * Validates form field(s) based on the event passed into options.validateOn
+     *
+     * example:
+     *       this.validation = new FormValidation(this.form, {
+     *           validateOn: 'blur'
+     *       });
+     */
+
+  }, {
+    key: "validateOn",
+    value: function validateOn() {
+      var _this3 = this;
+
+      if (this.options.groupErrorPlacement) {
+        throw new Error('f-validate: validation on \'blur\' or \'keyup\' cannot be performed if errors are grouped');
+      }
+
+      if (_constants.default.validateOnOptions.indexOf(this.options.validateOn) === -1) {
+        throw new Error('f-validate: valid options for the \'validateOn\' property are \'blur\' or \'keyup\'');
+      }
+
+      this.fields.forEach(function (field) {
+        if (field.hasAttribute(_constants.default.validationGroup)) {
+          (0, _fDom.default)(_constants.default.fieldValues, field).forEach(function (childField) {
+            return (// Binds each form element within a validation-group to the specified event.
+              // When this event is triggered the validation-group element will be passed as the element to test.
+              // The child field is also passed for use within a rule test method
+              // Null is being passed as the isValid method expects 'field' as its second argument
+              childField.addEventListener(_this3.options.validateOn, _this3.isValid.bind(_this3, null, {
+                field: field,
+                childField: childField
+              }))
+            );
+          });
+        } else {
+          // Null is being passed as the isValid method expects 'field' as its second argument
+          field.addEventListener(_this3.options.validateOn, _this3.isValid.bind(_this3, null, {
+            field: field
+          }));
         }
-    }, {
-        key: 'displayGroupedMessages',
-        value: function displayGroupedMessages(groupedErrorElement) {
+      });
+    }
+  }, {
+    key: "markFieldAsBlurred",
+    value: function markFieldAsBlurred(field) {
+      if (!field.hasAttribute(_constants.default.blurredAttr)) {
+        field.setAttribute(_constants.default.blurredAttr, '');
+      }
+    }
+    /**
+     * Validates form field(s) on both blur and keyup events.
+     * Initial validate is delayed until user blurs to avoid untimely validation errors.
+     *
+     * example:
+     *       this.validation = new FormValidation(this.form, {
+     *           hybridMode: true
+     *       });
+     */
 
-            var updateElement = groupedErrorElement;
+  }, {
+    key: "setupHybridValidate",
+    value: function setupHybridValidate() {
+      var _this4 = this;
 
-            if (!groupedErrorElement) {
-                updateElement = document.createElement('ul');
-                updateElement.classList.add(_constants2.default.cssClasses.formErrors);
+      if (this.options.groupErrorPlacement) {
+        throw new Error('f-validate: hybridMode cannot be used if errors are grouped');
+      }
 
-                this.form.insertBefore(updateElement, this.getGroupedErrorPosition());
-            } else {
-                groupedErrorElement.innerHTML = '';
-            }
+      if (this.options.validateOn) {
+        throw new Error('f-validate: hybridMode cannot be used with the validateOn option');
+      } // 'hybridMode' listens to both keyup and blur events, delaying validation until the first blur event
 
-            this.errorMessages.forEach(function (error) {
-                var li = document.createElement('li');
-                li.textContent = error;
-                updateElement.appendChild(li);
-            });
-        }
-    }, {
-        key: 'getGroupedErrorPosition',
-        value: function getGroupedErrorPosition() {
 
-            var groupElement = _fDom2.default.first(this.options.groupErrorPlacement, this.form);
+      this.fields.forEach(function (field) {
+        field.addEventListener('blur', _this4.isValid.bind(_this4, null, {
+          field: field
+        }, 'blur'));
+        field.addEventListener('blur', _this4.markFieldAsBlurred.bind(_this4, field));
+        field.addEventListener('keyup', _this4.isValid.bind(_this4, null, {
+          field: field
+        }, 'keyup'));
+      });
+    }
+  }]);
 
-            if (groupElement) {
-                return groupElement;
-            }
-
-            if (this.options.groupErrorPlacement === 'bottom') {
-                return this.form.lastChild;
-            }
-
-            return this.form.firstChild;
-        }
-
-        /**
-         * Validates form field(s) based on the event passed into options.validateOn
-         *
-         * example:
-         *       this.validation = new FormValidation(this.form, {
-         *           validateOn: 'blur'
-         *       });
-         */
-
-    }, {
-        key: 'validateOn',
-        value: function validateOn() {
-            var _this3 = this;
-
-            if (this.options.groupErrorPlacement) {
-                throw new Error('f-validate: validation on \'blur\' or \'keyup\' cannot be performed if errors are grouped');
-            }
-
-            if (_constants2.default.validateOnOptions.indexOf(this.options.validateOn) === -1) {
-                throw new Error('f-validate: valid options for the \'validateOn\' property are \'blur\' or \'keyup\'');
-            }
-
-            this.fields.forEach(function (field) {
-                if (field.hasAttribute(_constants2.default.validationGroup)) {
-                    (0, _fDom2.default)(_constants2.default.fieldValues, field).forEach(function (childField) {
-                        return (
-
-                            // Binds each form element within a validation-group to the specified event.
-                            // When this event is triggered the validation-group element will be passed as the element to test.
-                            // The child field is also passed for use within a rule test method
-                            // Null is being passed as the isValid method expects 'field' as its second argument
-                            childField.addEventListener(_this3.options.validateOn, _this3.isValid.bind(_this3, null, {
-                                field: field,
-                                childField: childField
-                            }))
-                        );
-                    });
-                } else {
-                    // Null is being passed as the isValid method expects 'field' as its second argument
-                    field.addEventListener(_this3.options.validateOn, _this3.isValid.bind(_this3, null, { field: field }));
-                }
-            });
-        }
-    }]);
-
-    return FormValidation;
+  return FormValidation;
 }();
 
 exports.default = FormValidation;
-},{"./callbacks":19,"./constants":20,"./messages":22,"./rules":27,"@justeat/f-dom":33}],22:[function(require,module,exports){
-'use strict';
+},{"./callbacks":21,"./constants":22,"./messages":24,"./rules":29,"@justeat/f-dom":3}],24:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-exports.getMessage = exports.hideMessage = exports.displayInlineMessage = exports.getInlineErrorElement = undefined;
+exports.getMessage = exports.hideMessage = exports.displayInlineMessage = exports.getInlineErrorElement = void 0;
 
-var _fDom = require('@justeat/f-dom');
+var _fDom = _interopRequireDefault(require("@justeat/f-dom"));
 
-var _fDom2 = _interopRequireDefault(_fDom);
+var _rules = _interopRequireDefault(require("./rules"));
 
-var _rules = require('./rules');
-
-var _rules2 = _interopRequireDefault(_rules);
-
-var _constants = require('./constants');
-
-var _constants2 = _interopRequireDefault(_constants);
+var _constants = _interopRequireDefault(require("./constants"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var getCustomErrorElement = function getCustomErrorElement(field, form) {
-    var errorPlacement = field.getAttribute('data-val-error-placement');
-    var errorElement = _fDom2.default.first(errorPlacement, form);
+  var errorPlacement = field.getAttribute('data-val-error-placement');
 
-    if (errorElement) {
-        return errorElement;
-    }
+  var errorElement = _fDom.default.first(errorPlacement, form);
 
-    return false;
+  if (errorElement) {
+    return errorElement;
+  }
+
+  return false;
 };
 
-var getInlineErrorElement = exports.getInlineErrorElement = function getInlineErrorElement(field, form) {
-    var nextSibling = field.nextElementSibling;
-    var customErrorEl = getCustomErrorElement(field, form);
+var getInlineErrorElement = function getInlineErrorElement(field, form) {
+  var nextSibling = field.nextElementSibling;
+  var customErrorEl = getCustomErrorElement(field, form);
 
-    if (customErrorEl && customErrorEl.nextElementSibling && customErrorEl.nextElementSibling.classList.contains(_constants2.default.cssClasses.formError)) {
-        return customErrorEl.nextElementSibling;
-    }
+  if (customErrorEl && customErrorEl.nextElementSibling && customErrorEl.nextElementSibling.classList.contains(_constants.default.cssClasses.formError)) {
+    return customErrorEl.nextElementSibling;
+  }
 
-    if (nextSibling && nextSibling.classList.contains(_constants2.default.cssClasses.formError)) {
+  if (nextSibling && nextSibling.classList.contains(_constants.default.cssClasses.formError)) {
+    return nextSibling;
+  }
 
-        return nextSibling;
-    }
-
-    return false;
+  return false;
 };
 
-var displayInlineMessage = exports.displayInlineMessage = function displayInlineMessage(errorElement, customMessage, field, form) {
+exports.getInlineErrorElement = getInlineErrorElement;
 
-    var updateElement = errorElement;
-    var customErrorEl = getCustomErrorElement(field, form) || field;
+var displayInlineMessage = function displayInlineMessage(errorElement, customMessage, field, form) {
+  var updateElement = errorElement;
+  var customErrorEl = getCustomErrorElement(field, form) || field;
 
-    if (!errorElement) {
-        updateElement = document.createElement('p');
-        updateElement.classList.add(_constants2.default.cssClasses.formError);
-        field.parentNode.insertBefore(updateElement, customErrorEl.nextSibling);
-    }
+  if (!errorElement) {
+    updateElement = document.createElement('p');
+    updateElement.classList.add(_constants.default.cssClasses.formError);
+    field.parentNode.insertBefore(updateElement, customErrorEl.nextSibling);
+  }
 
-    updateElement.textContent = customMessage;
-    updateElement.classList.remove(_constants2.default.cssClasses.isHidden);
+  updateElement.textContent = customMessage;
+  updateElement.classList.remove(_constants.default.cssClasses.isHidden);
 };
 
-var hideMessage = exports.hideMessage = function hideMessage(errorElement) {
-    if (!errorElement) {
-        return;
-    }
+exports.displayInlineMessage = displayInlineMessage;
 
-    errorElement.classList.add(_constants2.default.cssClasses.isHidden);
-    errorElement.innerHTML = '';
+var hideMessage = function hideMessage(errorElement) {
+  if (!errorElement) {
+    return;
+  }
+
+  errorElement.classList.add(_constants.default.cssClasses.isHidden);
+  errorElement.innerHTML = '';
 };
+
+exports.hideMessage = hideMessage;
 
 var getDefaultMessage = function getDefaultMessage(field, ruleName) {
+  if (!_rules.default[ruleName].defaultMessageValue) {
+    return _rules.default[ruleName].defaultMessage;
+  }
 
-    if (!_rules2.default[ruleName].defaultMessageValue) {
-        return _rules2.default[ruleName].defaultMessage;
-    }
-
-    return _rules2.default[ruleName].defaultMessage.replace('{0}', _rules2.default[ruleName].defaultMessageValue(field));
+  return _rules.default[ruleName].defaultMessage.replace('{0}', _rules.default[ruleName].defaultMessageValue(field));
 };
 
-var getMessage = exports.getMessage = function getMessage(field, ruleName) {
-    return field.getAttribute('data-val-' + ruleName + '-error') || getDefaultMessage(field, ruleName);
+var getMessage = function getMessage(field, ruleName) {
+  return field.getAttribute("data-val-".concat(ruleName, "-error")) || getDefaultMessage(field, ruleName);
 };
-},{"./constants":20,"./rules":27,"@justeat/f-dom":33}],23:[function(require,module,exports){
-'use strict';
+
+exports.getMessage = getMessage;
+},{"./constants":22,"./rules":29,"@justeat/f-dom":3}],25:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
 
-var _fDom = require('@justeat/f-dom');
-
-var _fDom2 = _interopRequireDefault(_fDom);
+var _fDom = _interopRequireDefault(require("@justeat/f-dom"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = {
-    condition: function condition(field) {
-        return field.hasAttribute('data-val-conditionalRequired');
-    },
+/**
+ * Conditional Required Rule
+ * -------------------------
+ * This validation rule checks that if a specified checkbox is not checked, then it is required that a value must be entered in the field with this validation check.
+ *
+ * This also means that if the specified checkbox is checked, then the field is not required and the form will return valid when the field is empty.
+ *
+ */
+var _default = {
+  condition: function condition(field) {
+    return field.hasAttribute('data-val-conditionalRequired');
+  },
+  test: function test(field) {
+    var input = _fDom.default.first("[name='".concat(field.getAttribute('data-val-conditionalRequired'), "']"));
 
-    test: function test(field) {
-        var input = _fDom2.default.first('[name=\'' + field.getAttribute('data-val-conditionalRequired') + '\']');
-        var isChecked = input ? input.checked : true;
-
-        return isChecked || field.value.trim().length > 0;
-    },
-
-    defaultMessage: 'This field is required.'
-}; /**
-    * Conditional Required Rule
-    * -------------------------
-    * This validation rule checks that if a specified checkbox is not checked, then it is required that a value must be entered in the field with this validation check.
-    *
-    * This also means that if the specified checkbox is checked, then the field is not required and the form will return valid when the field is empty.
-    *
-    */
-},{"@justeat/f-dom":33}],24:[function(require,module,exports){
-'use strict';
+    var isChecked = input ? input.checked : true;
+    return isChecked || field.value.trim().length > 0;
+  },
+  defaultMessage: 'This field is required.'
+};
+exports.default = _default;
+},{"@justeat/f-dom":3}],26:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
+
 /**
  * Custom Rule
  * --------------
  * This validation rule allows the addition of a custom validation check to be added to the field.
  *
  */
-exports.default = {
-    condition: function condition(field) {
-        var hasCustom = field.hasAttribute('data-val-custom');
-        var hasCustomError = field.hasAttribute('data-val-custom-error');
+var _default = {
+  condition: function condition(field) {
+    var hasCustom = field.hasAttribute('data-val-custom');
+    var hasCustomError = field.hasAttribute('data-val-custom-error');
 
-        if (hasCustomError && !hasCustom) {
-            throw new Error('f-validate: specify data-val-custom along with data-val-custom-error attribute');
-        }
-
-        return hasCustom;
-    },
-
-    test: null,
-
-    defaultMessage: 'Custom validation failed.'
-};
-},{}],25:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _fDom = require('@justeat/f-dom');
-
-var _fDom2 = _interopRequireDefault(_fDom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-    condition: function condition(field) {
-        return field.hasAttribute('data-val-dateInFuture');
-    },
-
-    test: function test(element) {
-
-        var dateToday = new Date();
-        var currentMonth = dateToday.getMonth() + 1;
-        var currentYear = dateToday.getFullYear();
-
-        var selectedMonthEl = _fDom2.default.first('[data-val-dateInFuture-type="month"]', element);
-        var selectedYearEl = _fDom2.default.first('[data-val-dateInFuture-type="year"]', element);
-        var selectedMonthVal = Number(selectedMonthEl.value);
-        var selectedYearVal = Number(selectedYearEl.value);
-
-        if (selectedYearVal > currentYear && selectedMonthVal > 0) {
-            return true;
-        }
-
-        return selectedYearVal === currentYear && selectedMonthVal >= currentMonth;
-    },
-
-    touchedSelectors: ['[data-val-dateInFuture-type="month"]', '[data-val-dateInFuture-type="year"]'],
-
-    defaultMessage: 'This date must be in the future.'
-}; /**
-    * Date In Future Rule
-    * -------------------
-    * This rule is for validating dates entered by a collection of `select` fields.
-    * When applied to a validation group, it returns true if the date entered in these fields is in the future.
-    *
-    */
-},{"@justeat/f-dom":33}],26:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _constants = require('../constants');
-
-var _constants2 = _interopRequireDefault(_constants);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-    condition: function condition(field) {
-        return field.getAttribute('type') === 'email';
-    },
-
-    test: function test(field) {
-        // if the field is empty, should validate as true
-        if (field.value === '') {
-            return true;
-        }
-        return _constants2.default.email.test(field.value);
-    },
-
-    defaultMessage: 'This field must contain a valid email address.'
-}; /**
-    * Email Rule
-    * --------------
-    * Checks for a valid email address
-    *
-    */
-},{"../constants":20}],27:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _required = require('./required');
-
-var _required2 = _interopRequireDefault(_required);
-
-var _maxlength = require('./maxlength');
-
-var _maxlength2 = _interopRequireDefault(_maxlength);
-
-var _minlength = require('./minlength');
-
-var _minlength2 = _interopRequireDefault(_minlength);
-
-var _pattern = require('./pattern');
-
-var _pattern2 = _interopRequireDefault(_pattern);
-
-var _email = require('./email');
-
-var _email2 = _interopRequireDefault(_email);
-
-var _matches = require('./matches');
-
-var _matches2 = _interopRequireDefault(_matches);
-
-var _dateInFuture = require('./dateInFuture');
-
-var _dateInFuture2 = _interopRequireDefault(_dateInFuture);
-
-var _conditionalRequired = require('./conditionalRequired');
-
-var _conditionalRequired2 = _interopRequireDefault(_conditionalRequired);
-
-var _custom = require('./custom');
-
-var _custom2 = _interopRequireDefault(_custom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-    custom: _custom2.default,
-    dateInFuture: _dateInFuture2.default,
-    conditionalRequired: _conditionalRequired2.default,
-    maxlength: _maxlength2.default,
-    minlength: _minlength2.default,
-    pattern: _pattern2.default,
-    email: _email2.default,
-    matches: _matches2.default,
-    required: _required2.default
-};
-},{"./conditionalRequired":23,"./custom":24,"./dateInFuture":25,"./email":26,"./matches":28,"./maxlength":29,"./minlength":30,"./pattern":31,"./required":32}],28:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _fDom = require('@justeat/f-dom');
-
-var _fDom2 = _interopRequireDefault(_fDom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-    condition: function condition(field) {
-        return field.hasAttribute('data-val-equalto');
-    },
-
-    test: function test(field) {
-        var matchedFieldName = field.getAttribute('data-val-equalto');
-
-        if (matchedFieldName) {
-            var input = _fDom2.default.first('input[name=' + matchedFieldName + ']');
-
-            return matchedFieldName && input && field.value === input.value;
-        }
-
-        return false;
-    },
-
-    defaultMessage: 'This field does not match the {0} field.',
-
-    defaultMessageValue: function defaultMessageValue(field) {
-        return field.getAttribute('data-val-equalto').replace('*.', '');
+    if (hasCustomError && !hasCustom) {
+      throw new Error('f-validate: specify data-val-custom along with data-val-custom-error attribute');
     }
-}; /**
-    * Matches Rule
-    * ------------
-    * Checks that the value of the field being validated matches the value of a separate specified field
-    *
-    */
-},{"@justeat/f-dom":33}],29:[function(require,module,exports){
-'use strict';
+
+    return hasCustom;
+  },
+  test: null,
+  defaultMessage: 'Custom validation failed.'
+};
+exports.default = _default;
+},{}],27:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
+
+var _fDom = _interopRequireDefault(require("@justeat/f-dom"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Date In Future Rule
+ * -------------------
+ * This rule is for validating dates entered by a collection of `select` fields.
+ * When applied to a validation group, it returns true if the date entered in these fields is in the future.
+ *
+ */
+var _default = {
+  condition: function condition(field) {
+    return field.hasAttribute('data-val-dateInFuture');
+  },
+  test: function test(element) {
+    var dateToday = new Date();
+    var currentMonth = dateToday.getMonth() + 1;
+    var currentYear = dateToday.getFullYear();
+
+    var selectedMonthEl = _fDom.default.first('[data-val-dateInFuture-type="month"]', element);
+
+    var selectedYearEl = _fDom.default.first('[data-val-dateInFuture-type="year"]', element);
+
+    var selectedMonthVal = Number(selectedMonthEl.value);
+    var selectedYearVal = Number(selectedYearEl.value);
+
+    if (selectedYearVal > currentYear && selectedMonthVal > 0) {
+      return true;
+    }
+
+    return selectedYearVal === currentYear && selectedMonthVal >= currentMonth;
+  },
+  touchedSelectors: ['[data-val-dateInFuture-type="month"]', '[data-val-dateInFuture-type="year"]'],
+  defaultMessage: 'This date must be in the future.'
+};
+exports.default = _default;
+},{"@justeat/f-dom":3}],28:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _constants = _interopRequireDefault(require("../constants"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Email Rule
+ * --------------
+ * Checks for a valid email address
+ *
+ */
+var _default = {
+  condition: function condition(field) {
+    return field.getAttribute('type') === 'email';
+  },
+  test: function test(field) {
+    // if the field is empty, should validate as true
+    if (field.value === '') {
+      return true;
+    }
+
+    return _constants.default.email.test(field.value);
+  },
+  defaultMessage: 'This field must contain a valid email address.'
+};
+exports.default = _default;
+},{"../constants":22}],29:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _required = _interopRequireDefault(require("./required"));
+
+var _maxlength = _interopRequireDefault(require("./maxlength"));
+
+var _minlength = _interopRequireDefault(require("./minlength"));
+
+var _pattern = _interopRequireDefault(require("./pattern"));
+
+var _email = _interopRequireDefault(require("./email"));
+
+var _matches = _interopRequireDefault(require("./matches"));
+
+var _dateInFuture = _interopRequireDefault(require("./dateInFuture"));
+
+var _conditionalRequired = _interopRequireDefault(require("./conditionalRequired"));
+
+var _custom = _interopRequireDefault(require("./custom"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _default = {
+  custom: _custom.default,
+  dateInFuture: _dateInFuture.default,
+  conditionalRequired: _conditionalRequired.default,
+  maxlength: _maxlength.default,
+  minlength: _minlength.default,
+  pattern: _pattern.default,
+  email: _email.default,
+  matches: _matches.default,
+  required: _required.default
+};
+exports.default = _default;
+},{"./conditionalRequired":25,"./custom":26,"./dateInFuture":27,"./email":28,"./matches":30,"./maxlength":31,"./minlength":32,"./pattern":33,"./required":34}],30:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _fDom = _interopRequireDefault(require("@justeat/f-dom"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Matches Rule
+ * ------------
+ * Checks that the value of the field being validated matches the value of a separate specified field
+ *
+ */
+var _default = {
+  condition: function condition(field) {
+    return field.hasAttribute('data-val-equalto');
+  },
+  test: function test(field) {
+    var matchedFieldName = field.getAttribute('data-val-equalto');
+
+    if (matchedFieldName) {
+      var input = _fDom.default.first("input[name=".concat(matchedFieldName, "]"));
+
+      return matchedFieldName && input && field.value === input.value;
+    }
+
+    return false;
+  },
+  defaultMessage: 'This field does not match the {0} field.',
+  defaultMessageValue: function defaultMessageValue(field) {
+    return field.getAttribute('data-val-equalto').replace('*.', '');
+  }
+};
+exports.default = _default;
+},{"@justeat/f-dom":3}],31:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
 /**
  * Maxlength Rule
  * --------------
  * Checks that the value of the field is not greater than the specified maximum length.
  *
  */
-exports.default = {
-    condition: function condition(field) {
-        return field.hasAttribute('maxlength') || field.hasAttribute('data-val-maxlength');
-    },
-
-    test: function test(field) {
-        // if the field is empty, or attribute is set with no value, should validate as true
-        if (field.value === '' || field.getAttribute('maxlength') === '' || field.getAttribute('data-val-maxlength') === '') {
-            return true;
-        }
-        return field.value.trim().length <= parseInt(field.getAttribute('maxlength') || field.getAttribute('data-val-maxlength'), 10);
-    },
-
-    defaultMessage: 'This field must not exceed {0} characters in length.',
-
-    defaultMessageValue: function defaultMessageValue(field) {
-        return parseInt(field.getAttribute('maxlength') || field.getAttribute('data-val-maxlength'), 10);
+var _default = {
+  condition: function condition(field) {
+    return field.hasAttribute('maxlength') || field.hasAttribute('data-val-maxlength');
+  },
+  test: function test(field) {
+    // if the field is empty, or attribute is set with no value, should validate as true
+    if (field.value === '' || field.getAttribute('maxlength') === '' || field.getAttribute('data-val-maxlength') === '') {
+      return true;
     }
+
+    return field.value.trim().length <= parseInt(field.getAttribute('maxlength') || field.getAttribute('data-val-maxlength'), 10);
+  },
+  defaultMessage: 'This field must not exceed {0} characters in length.',
+  defaultMessageValue: function defaultMessageValue(field) {
+    return parseInt(field.getAttribute('maxlength') || field.getAttribute('data-val-maxlength'), 10);
+  }
 };
-},{}],30:[function(require,module,exports){
-'use strict';
+exports.default = _default;
+},{}],32:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
+
 /**
  * Minlength Rule
  * --------------
  * Checks that the value of the field is of a specified minimum length.
  *
  */
-exports.default = {
-    condition: function condition(field) {
-        return field.hasAttribute('minlength') || field.hasAttribute('data-val-minlength');
-    },
-
-    test: function test(field) {
-        // if the field is empty, or attribute is set with no value, should validate as true
-        if (field.value === '' || field.getAttribute('minlength') === '' || field.getAttribute('data-val-minlength') === '') {
-            return true;
-        }
-
-        return field.value.trim().length >= parseInt(field.getAttribute('minlength') || field.getAttribute('data-val-minlength'), 10);
-    },
-
-    defaultMessage: 'This field must be at least {0} characters in length.',
-
-    defaultMessageValue: function defaultMessageValue(field) {
-        return parseInt(field.getAttribute('minlength') || field.getAttribute('data-val-minlength'), 10);
+var _default = {
+  condition: function condition(field) {
+    return field.hasAttribute('minlength') || field.hasAttribute('data-val-minlength');
+  },
+  test: function test(field) {
+    // if the field is empty, or attribute is set with no value, should validate as true
+    if (field.value === '' || field.getAttribute('minlength') === '' || field.getAttribute('data-val-minlength') === '') {
+      return true;
     }
+
+    return field.value.trim().length >= parseInt(field.getAttribute('minlength') || field.getAttribute('data-val-minlength'), 10);
+  },
+  defaultMessage: 'This field must be at least {0} characters in length.',
+  defaultMessageValue: function defaultMessageValue(field) {
+    return parseInt(field.getAttribute('minlength') || field.getAttribute('data-val-minlength'), 10);
+  }
 };
-},{}],31:[function(require,module,exports){
-'use strict';
+exports.default = _default;
+},{}],33:[function(require,module,exports){
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
+exports.default = void 0;
+
 /**
  * Pattern Rule
  * --------------
@@ -1487,277 +1550,69 @@ Object.defineProperty(exports, "__esModule", {
  */
 var CONSTANTS = require('../constants');
 
-exports.default = {
-    condition: function condition(field) {
-        return field.hasAttribute('pattern') || field.hasAttribute('data-val-regex');
-    },
+var _default = {
+  condition: function condition(field) {
+    return field.hasAttribute('pattern') || field.hasAttribute('data-val-regex');
+  },
+  test: function test(field) {
+    // if the field is empty, should validate as true
+    if (field.value === '') {
+      return true;
+    } // escape characters that have special meaning inside a regular expression in field value
 
-    test: function test(field) {
-        // if the field is empty, should validate as true
-        if (field.value === '') {
-            return true;
-        }
-        // escape characters that have special meaning inside a regular expression in field value
-        var fieldValue = field.value.replace(CONSTANTS.escapeChars, '\\$&');
-        var pattern = field.getAttribute('pattern') || field.getAttribute('data-val-regex');
 
-        return RegExp('^(?:' + pattern + ')$', 'gim').test(fieldValue);
-    },
-
-    defaultMessage: 'This field contains a value that isn’t accepted.'
+    var fieldValue = field.value.replace(CONSTANTS.escapeChars, '\\$&');
+    var pattern = field.getAttribute('pattern') || field.getAttribute('data-val-regex');
+    return RegExp("^(?:".concat(pattern, ")$"), 'gim').test(fieldValue);
+  },
+  defaultMessage: 'This field contains a value that isn’t accepted.'
 };
-},{"../constants":20}],32:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _fDom = require('@justeat/f-dom');
-
-var _fDom2 = _interopRequireDefault(_fDom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-    condition: function condition(field) {
-        return field.hasAttribute('required') || field.hasAttribute('data-val-required');
-    },
-
-    test: function test(field) {
-        // Required checkbox & radio, 1 should be checked.
-        if (field.type === 'radio') {
-            var radioInputs = (0, _fDom2.default)('[name=\'' + field.name + '\']:checked');
-            return radioInputs.length > 0;
-        }
-
-        if (field.type === 'checkbox') {
-            return field.checked === true;
-        }
-
-        return field.value.trim().length > 0;
-    },
-
-    defaultMessage: 'This field is required.'
-}; /**
-    * Required Rule
-    * -------------
-    * Checks that a value is present for the field being validated
-    *
-    */
-},{"@justeat/f-dom":33}],33:[function(require,module,exports){
-arguments[4][18][0].apply(exports,arguments)
-},{"dup":18,"qwery":42}],34:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "stopFoit", {
-  enumerable: true,
-  get: function get() {
-    return _stopFoit.stopFoit;
-  }
-});
-Object.defineProperty(exports, "getBreakpoints", {
-  enumerable: true,
-  get: function get() {
-    return _breakpointHelper.getBreakpoints;
-  }
-});
-Object.defineProperty(exports, "getCurrentScreenWidth", {
-  enumerable: true,
-  get: function get() {
-    return _breakpointHelper.getCurrentScreenWidth;
-  }
-});
-Object.defineProperty(exports, "isWithinBreakpoint", {
-  enumerable: true,
-  get: function get() {
-    return _breakpointHelper.isWithinBreakpoint;
-  }
-});
-
-var _stopFoit = require("./modules/stopFoit");
-
-var _breakpointHelper = require("./modules/breakpointHelper");
-},{"./modules/breakpointHelper":35,"./modules/stopFoit":36}],35:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.isWithinBreakpoint = exports.getCurrentScreenWidth = exports.createBreakpointArray = exports.getBreakpoints = void 0;
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-/**
- * @overview Breakpoint handler
- *
- * @module breakpointHelper
- */
-var getBreakpoints = function getBreakpoints() {
-  var output = {}; // Append hidden element to body
-
-  var screenSizer = document.createElement('div');
-  screenSizer.classList.add('c-screen-sizer');
-  document.body.appendChild(screenSizer); // It should have a 'content' property containing the breakpoints
-
-  var breakpoints = window.getComputedStyle(document.querySelector('.c-screen-sizer')).getPropertyValue('content').replace(/["']/g, '').split(','); // Gives a list of breakpoints in the form ['narrow:414px', ...etc]
-  // When there is no content, at this stage breakpoints should be ['']
-
-  if (breakpoints.length === 1 && breakpoints[0] === '') {
-    return output;
-  }
-
-  return breakpoints.reduce(function (prev, current) {
-    // `current` is of the form 'narrow:414px'
-    var _current$split = current.split(':'),
-        _current$split2 = _slicedToArray(_current$split, 2),
-        breakpointName = _current$split2[0],
-        breakpointValue = _current$split2[1];
-
-    prev[breakpointName] = breakpointValue; // <- the initial value is used for the first iteration
-    // The object, e.g., { 'narrow': '414px' } is returned to be used as `prev` in the next iteration
-
-    return prev;
-  }, output); // <- initial value
-};
-
-exports.getBreakpoints = getBreakpoints;
-
-var createBreakpointArray = function createBreakpointArray(breakpoints) {
-  // Order the breakpoints from widest to narrowest,
-  // takes the form [['narrow', '414px'], [...etc]]
-  var bps = [];
-  Object.keys(breakpoints).forEach(function (key) {
-    bps.unshift([key, breakpoints[key]]);
-  });
-  return bps;
-};
-
-exports.createBreakpointArray = createBreakpointArray;
-
-var getCurrentScreenWidth = function getCurrentScreenWidth() {
-  var currentWidth = window.innerWidth;
-  var breakpoints = getBreakpoints();
-  var bps = createBreakpointArray(breakpoints);
-
-  for (var i = 0; i < bps.length; i++) {
-    // Loops through the breakpoints (in descending order)
-    // returning the first one that is narrower than currentWidth.
-    var breakpointWidth = parseInt(bps[i][1], 10); // This also strips the 'px' from the string
-
-    if (i === bps.length - 1 || currentWidth > breakpointWidth) {
-      // If we've reached the last breakpoint, and there still hasn't been a match, return the smallest breakpoint
-      return bps[i][0];
-    }
-  } // If no breakpoints have been set
-
-
-  return false;
-};
-
-exports.getCurrentScreenWidth = getCurrentScreenWidth;
-
-var isWithinBreakpoint = function isWithinBreakpoint(breakpointString) {
-  var operatorRegex = /[<>=]+/;
-  var operatorMatch = breakpointString.match(operatorRegex);
-  var operator = operatorMatch ? operatorMatch[0] : '';
-
-  var _breakpointString$spl = breakpointString.split(operatorRegex),
-      _breakpointString$spl2 = _slicedToArray(_breakpointString$spl, 2),
-      breakpoint = _breakpointString$spl2[1];
-
-  var currentScreenWidth = window.innerWidth;
-  var breakpoints = getBreakpoints();
-  var bps = createBreakpointArray(breakpoints); // We loop through the breakpoint array until we get a match.
-  // If we match we return the px value as an int. If we do not match we return false
-
-  var breakpointToPX = function breakpointToPX(breakpointName) {
-    var match = false;
-    bps.forEach(function (bp) {
-      if (bp[0] === breakpointName) {
-        match = parseInt(bp[1], 10);
-      }
-    });
-    return match;
-  };
-
-  var breakpointInPX = breakpointToPX(breakpoint); // If the breakpoint passed in does not match any we;
-
-  if (!breakpointInPX) {
-    return false;
-  }
-
-  var mediaQuery = {
-    '>': currentScreenWidth > breakpointInPX,
-    '<': currentScreenWidth < breakpointInPX,
-    '=': currentScreenWidth === breakpointInPX,
-    '>=': currentScreenWidth >= breakpointInPX,
-    '<=': currentScreenWidth <= breakpointInPX
-  };
-  var result = mediaQuery[operator];
-
-  if (result == null) {
-    return false;
-  }
-
-  return result;
-};
-
-exports.isWithinBreakpoint = isWithinBreakpoint;
-},{}],36:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.stopFoit = void 0;
-
-var _fontfaceobserver = _interopRequireDefault(require("fontfaceobserver"));
-
-var _fLogger = require("@justeat/f-logger");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * @overview stopFOIT reduces the amount of time a user has invisible text when using webfonts.
- *
- * @module stopFOIT
- */
-
-/**
-* Init method initialises the FontFaceObserver events
-*
-*/
-var stopFoit = function stopFoit() {
-  // Create a new `FontFaceObserver` for each webfont
-  var baseFont = new _fontfaceobserver.default('Hind Vadodara');
-  var headingFont = new _fontfaceobserver.default('Ubuntu'); // On load of each font we add `has-fontsLoaded` class with the font type modifier
-
-  baseFont.load(null, 3000).then(function () {
-    document.body.classList.remove('is-fontsLoading--base');
-  }).catch(function () {
-    (0, _fLogger.logError)('Custom font is unable to load');
-  });
-  headingFont.load(null, 3000).then(function () {
-    document.body.classList.remove('is-fontsLoading--heading');
-  }).catch(function () {
-    (0, _fLogger.logError)('Custom font is unable to load');
-  });
-};
-
-exports.stopFoit = stopFoit;
-var _default = stopFoit;
 exports.default = _default;
-},{"@justeat/f-logger":11,"fontfaceobserver":37}],37:[function(require,module,exports){
+},{"../constants":22}],34:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _fDom = _interopRequireDefault(require("@justeat/f-dom"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Required Rule
+ * -------------
+ * Checks that a value is present for the field being validated
+ *
+ */
+var _default = {
+  condition: function condition(field) {
+    return field.hasAttribute('required') || field.hasAttribute('data-val-required');
+  },
+  test: function test(field) {
+    // Required checkbox & radio, 1 should be checked.
+    if (field.type === 'radio') {
+      var radioInputs = (0, _fDom.default)("[name='".concat(field.name, "']:checked"));
+      return radioInputs.length > 0;
+    }
+
+    if (field.type === 'checkbox') {
+      return field.checked === true;
+    }
+
+    return field.value.trim().length > 0;
+  },
+  defaultMessage: 'This field is required.'
+};
+exports.default = _default;
+},{"@justeat/f-dom":3}],35:[function(require,module,exports){
+arguments[4][5][0].apply(exports,arguments)
+},{"./modules/breakpointHelper":36,"./modules/stopFoit":37,"dup":5}],36:[function(require,module,exports){
+arguments[4][6][0].apply(exports,arguments)
+},{"dup":6}],37:[function(require,module,exports){
+arguments[4][7][0].apply(exports,arguments)
+},{"@justeat/f-logger":11,"dup":7,"fontfaceobserver":38}],38:[function(require,module,exports){
 /* Font Face Observer v2.1.0 - © Bram Stein. License: BSD-3-Clause */(function(){function l(a,b){document.addEventListener?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function m(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",function c(){document.removeEventListener("DOMContentLoaded",c);a()}):document.attachEvent("onreadystatechange",function k(){if("interactive"==document.readyState||"complete"==document.readyState)document.detachEvent("onreadystatechange",k),a()})};function t(a){this.a=document.createElement("div");this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.h=document.createElement("span");this.f=document.createElement("span");this.g=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
 this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.h.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;";this.b.appendChild(this.h);this.c.appendChild(this.f);this.a.appendChild(this.b);this.a.appendChild(this.c)}
 function u(a,b){a.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;white-space:nowrap;font-synthesis:none;font:"+b+";"}function z(a){var b=a.a.offsetWidth,c=b+100;a.f.style.width=c+"px";a.c.scrollLeft=c;a.b.scrollLeft=a.b.scrollWidth+100;return a.g!==b?(a.g=b,!0):!1}function A(a,b){function c(){var a=k;z(a)&&a.a.parentNode&&b(a.g)}var k=a;l(a.b,c);l(a.c,c);z(a)};function B(a,b){var c=b||{};this.family=a;this.style=c.style||"normal";this.weight=c.weight||"normal";this.stretch=c.stretch||"normal"}var C=null,D=null,E=null,F=null;function G(){if(null===D)if(J()&&/Apple/.test(window.navigator.vendor)){var a=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/.exec(window.navigator.userAgent);D=!!a&&603>parseInt(a[1],10)}else D=!1;return D}function J(){null===F&&(F=!!document.fonts);return F}
@@ -1767,7 +1622,7 @@ b)}else m(function(){function v(){var b;if(b=-1!=f&&-1!=g||-1!=f&&-1!=h||-1!=g&&
 n+"ms timeout exceeded"));else{var a=document.hidden;if(!0===a||void 0===a)f=e.a.offsetWidth,g=p.a.offsetWidth,h=q.a.offsetWidth,v();r=setTimeout(I,50)}}var e=new t(k),p=new t(k),q=new t(k),f=-1,g=-1,h=-1,w=-1,x=-1,y=-1,d=document.createElement("div");d.dir="ltr";u(e,L(c,"sans-serif"));u(p,L(c,"serif"));u(q,L(c,"monospace"));d.appendChild(e.a);d.appendChild(p.a);d.appendChild(q.a);document.body.appendChild(d);w=e.a.offsetWidth;x=p.a.offsetWidth;y=q.a.offsetWidth;I();A(e,function(a){f=a;v()});u(e,
 L(c,'"'+c.family+'",sans-serif'));A(p,function(a){g=a;v()});u(p,L(c,'"'+c.family+'",serif'));A(q,function(a){h=a;v()});u(q,L(c,'"'+c.family+'",monospace'))})})};"object"===typeof module?module.exports=B:(window.FontFaceObserver=B,window.FontFaceObserver.prototype.load=B.prototype.load);}());
 
-},{}],38:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 module.exports = function (callback) {
 
 	if (document.readyState === 'complete' || document.readyState === 'interactive') {
@@ -1787,7 +1642,7 @@ module.exports = function (callback) {
 	}
 }
 
-},{}],39:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 (function (global){
 /**
  * lodash (Custom Build) <https://lodash.com/>
@@ -2169,7 +2024,7 @@ module.exports = debounce;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],40:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 (function (global){
 /**
  * lodash (Custom Build) <https://lodash.com/>
@@ -2613,7 +2468,7 @@ module.exports = throttle;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],41:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 /*! picturefill - v3.0.2 - 2016-02-12
  * https://scottjehl.github.io/picturefill/
  * Copyright (c) 2016 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT
@@ -4159,7 +4014,7 @@ module.exports = throttle;
 
 } )( window, document );
 
-},{}],42:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 /*!
   * @preserve Qwery - A selector engine
   * https://github.com/ded/qwery
@@ -4255,7 +4110,7 @@ module.exports = throttle;
   return qwery
 }, this);
 
-},{}],43:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 !function(root, factory) {
     "function" == typeof define && define.amd ? // AMD. Register as an anonymous module unless amdModuleId is set
     define([], function() {

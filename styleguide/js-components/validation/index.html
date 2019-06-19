@@ -754,6 +754,15 @@ validateForm.addCustomValidation(<span class="hljs-string">'customRule'</span>, 
             <p>By default, `novalidate` is added to a form that is being validated to supress native HTML5 validation.  By setting this option to `true` this attribute is not set and native HTML5 validation will not be supressed.</p>
         </td>
     </tr>
+    <tr>
+        <td><code>hybridMode</code></td>
+        <td>boolean</td>
+        <td><code>true</code> | <code>false</code> (default)</td>
+        <td>
+            <p>When set, both blur (focus lost) and keydown events are bound to each applicable input field.</p>
+            <p>Validation won't run until the user has blurred the input at least once, giving them a chance to enter a valid value before seeing an error.</p>
+        </td>
+    </tr>
     <!-- <tr>
         <td><code>focus</code></td>
         <td>boolean</td>
@@ -891,6 +900,47 @@ validateForm.addCustomValidation(<span class="hljs-string">'customRule'</span>, 
 </span></code></pre>
     </div>
 </div>
+<p><a name="multiple-rules"></a><h2 class="sg-sectionHeading">Callback events</h2></p>
+<p><code>f-validate</code> has a number of events you can hook into. These can be setup by proving a callback function in the options object. Examples of this are show below:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">new</span> FormValidation(nameOfForm, {
+    <span class="hljs-attr">onSuccess</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Great success!"</span>);
+    },
+    <span class="hljs-attr">onError</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Form validation failed"</span>);
+    },
+    <span class="hljs-attr">onElementError</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element, validationType</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`The <span class="hljs-subst">${element.name}</span> element failed the <span class="hljs-subst">${validationType}</span> validator`</span>);
+    }
+});
+</code></pre>
+<table class="js-options">
+    <tr>
+        <th>Event</th>
+        <th>Description</th>
+        <th>Parameters</th>
+    </tr>
+    <tr>
+        <td><code>onSuccess</code></td>
+        <td>Fired after the entire form is validated and is considered valid.</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td><code>onError</code></td>
+        <td>Fired after the entire form is validated and considered invalid.</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td><code>onElementError</code></td>
+        <td>Fired after an individual form element fails a validation check</td>
+        <td>
+            <ul>
+            <li><code>element</code> &ndash; the DOM element that failed the validation checkbox</li>
+            <li><code>validationType</code> &ndash; the name of the validation check that failed</li>
+            </ul>
+        </td>
+    </tr>
+</table>
                 </div>
             </div>
         </div>
