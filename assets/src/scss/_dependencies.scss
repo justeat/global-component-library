@@ -39,7 +39,6 @@ $font-path: '/assets/fonts';
 @include rating();
 @include toast();
 @include cuisinesWidget();
-@include cuisinesCollage();
 @include appsBanner();
 @include cookieWarning();
 @include overflowCarousel();

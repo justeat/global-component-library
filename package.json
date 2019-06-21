@@ -2,7 +2,7 @@
   "name": "je-global-component-library",
   "title": "Just Eat – Component Library",
   "description": "Component Library and Guidelines for all of Just Eat’s Front-End Platforms",
-  "version": "2.21.0",
+  "version": "2.20.0",
   "homepage": "https://github.com/justeat/global-component-library",
   "contributors": [
     "Github contributors <https://github.com/justeat/global-component-library/graphs/contributors>"
@@ -26,7 +26,7 @@
     "@justeat/f-toggle": "1.1.0",
     "@justeat/f-utilities": "0.8.2",
     "@justeat/f-validate": "1.4.0",
-    "@justeat/fozzie": "1.56.0",
+    "@justeat/fozzie": "1.54.0",
     "bezier-easing": "2.1.0",
     "kickoff-grid.css": "1.2.0",
     "lite-ready": "1.0.4",

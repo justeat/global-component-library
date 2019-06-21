@@ -4,16 +4,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
-v2.21.0
-------------------------------
-*June 19, 2019*
-
-### Added
-- `c-cuisinesCollage` component
-
-### Changed
-- `fozzie` module version update
-
 v2.20.0
 ------------------------------
 *June 14, 2019*
