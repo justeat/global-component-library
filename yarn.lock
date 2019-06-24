@@ -1011,10 +1011,10 @@
     kickoff-grid.css "1.2.0"
     normalize-scss "7.0.1"
 
-"@justeat/fozzie@^1.56.0":
-  version "1.56.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.56.0.tgz#e0169ca108a4df012b30541128c6a94a588aadd4"
-  integrity sha512-TTdTRIsrJswt3mV0jTvvjNHSy+yjVuVosvgRzWshjqzc+et14VQxveVm3IkgHmUHiRpTFI+m9mjghDkB6iycQA==
+"@justeat/fozzie@1.57.0":
+  version "1.57.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.57.0.tgz#6f1f062c4f69083fa344741e439f9edfab513fa5"
+  integrity sha512-FVs8ouJ7jbRZMhlG2Jv4XULaaTEAhDwJD9QWaP+KG+IRU6wW2wpk4EzOvSI59ptuNhmZ3SfQlTKd5CV0T2NsSA==
   dependencies:
     "@justeat/f-dom" "1.1.0"
     "@justeat/f-logger" "0.7.1"
