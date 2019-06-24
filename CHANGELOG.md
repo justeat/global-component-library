@@ -5,7 +5,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 v2.22.0
 ------------------------------
-*June 21, 2019*
+*June 24, 2019*
 
 ### Changed
 - `fozzie` module version update
