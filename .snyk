@@ -1,0 +1,36 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - kickoff-grid.css > eyeglass > node-sass > gaze > globule > lodash:
+        patched: '2019-07-04T05:59:48.962Z'
+    - kickoff-grid.css > release-it > lodash:
+        patched: '2019-07-04T05:59:48.962Z'
+    - kickoff-grid.css > release-it > inquirer > lodash:
+        patched: '2019-07-04T05:59:48.962Z'
+    - '@justeat/f-footer > @justeat/fozzie > kickoff-grid.css > release-it > lodash':
+        patched: '2019-07-04T05:59:48.962Z'
+    - kickoff-grid.css > eyeglass > node-sass > sass-graph > lodash:
+        patched: '2019-07-04T05:59:48.962Z'
+    - '@justeat/fozzie > kickoff-grid.css > release-it > inquirer > lodash':
+        patched: '2019-07-04T05:59:48.962Z'
+    - kickoff-grid.css > kickoff-utils.scss > release-it > inquirer > lodash:
+        patched: '2019-07-04T05:59:48.962Z'
+    - '@justeat/fozzie > kickoff-grid.css > release-it > lodash':
+        patched: '2019-07-04T05:59:48.962Z'
+    - '@justeat/f-footer > @justeat/fozzie > kickoff-grid.css > release-it > inquirer > lodash':
+        patched: '2019-07-04T05:59:48.962Z'
+    - '@justeat/fozzie > kickoff-grid.css > kickoff-utils.scss > release-it > inquirer > lodash':
+        patched: '2019-07-04T05:59:48.962Z'
+    - '@justeat/fozzie > kickoff-grid.css > eyeglass > node-sass > sass-graph > lodash':
+        patched: '2019-07-04T05:59:48.962Z'
+    - '@justeat/f-header > @justeat/fozzie > kickoff-grid.css > kickoff-utils.scss > release-it > inquirer > lodash':
+        patched: '2019-07-04T05:59:48.962Z'
+    - '@justeat/f-footer > @justeat/fozzie > kickoff-grid.css > eyeglass > node-sass > sass-graph > lodash':
+        patched: '2019-07-04T05:59:48.962Z'
+    - '@justeat/fozzie > kickoff-grid.css > eyeglass > node-sass > gaze > globule > lodash':
+        patched: '2019-07-04T05:59:48.962Z'
+    - '@justeat/f-header > @justeat/fozzie > kickoff-grid.css > eyeglass > node-sass > gaze > globule > lodash':
+        patched: '2019-07-04T05:59:48.962Z'
