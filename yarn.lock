@@ -911,10 +911,10 @@
   dependencies:
     qwery "4.0.0"
 
-"@justeat/f-footer@1.24.0":
-  version "1.24.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-footer/-/f-footer-1.24.0.tgz#c1bdc07dc7723c0d1c7895e337993b25f5f4446f"
-  integrity sha512-RsMH6QPHTEZ3NnppMF91VZHIZrVKGRV0Uvq6MIdOGkhHTjMZIJtmTxQOndA1YuhnzaIzuyqScXNPpo6CyuXEPQ==
+"@justeat/f-footer@1.25.6":
+  version "1.25.6"
+  resolved "https://registry.yarnpkg.com/@justeat/f-footer/-/f-footer-1.25.6.tgz#92b766ff785075b7a323ca8dbd9692311442b1f1"
+  integrity sha512-g1Qu/YYI+1Hm4y0oGBt2RlIOojZYntdqPNuarZ/1MvIZ0AiCR1mznCT+azKaypzHGzkzxGGCMZHLNH5BSgxUlQ==
   dependencies:
     "@justeat/f-utils" "0.2.0"
     "@justeat/fozzie" "1.50.0"
@@ -924,29 +924,36 @@
     lodash.debounce "4.0.8"
     qwery "4.0.0"
 
-"@justeat/f-header@1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-header/-/f-header-1.11.0.tgz#3247273cb6c25222bcf79b32251ef08510de92db"
-  integrity sha512-trFyYNDIAPsWVxiHUxlqexZDWFtaJC6XVOqiGWf77mpZ/HT2CjC3QGT43L96LfJzofgVc+XfqlochWvfpFyCzQ==
+"@justeat/f-header@1.14.0":
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-header/-/f-header-1.14.0.tgz#12de673dee2e0416000b7039e1ca52de51548174"
+  integrity sha512-F4y4AuXZNOwrr6cY1tZw0D7izn4fNksdNaZUkeP9VDbsf7uOO3b7iXS88w3V+NOEPMMra9EPX6W16a56SAsVlg==
   dependencies:
-    "@justeat/f-logger" "^0.7.1"
-    "@justeat/f-utils" "^0.1.0"
-    "@justeat/fozzie" "^1.7.0"
-    "@justeat/fozzie-colour-palette" "^2.1.0"
+    "@justeat/f-logger" "0.7.2"
+    "@justeat/f-utils" "0.3.0"
+    "@justeat/fozzie" "1.66.0"
+    "@justeat/fozzie-colour-palette" "2.4.0"
     include-media "^1.4.9"
     lite-ready "^1.0.4"
 
-"@justeat/f-icons@1.26.0":
-  version "1.26.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-1.26.0.tgz#610342f39521879fde6b3b1358882289601b2dce"
-  integrity sha512-LPr8dGikBVdmHp7wlwruWu2HaFTDmfmKEIKAIYc2k+nUjq4w8asX7ADwqO0JNBo4iu4N6qmkBx4UOyQOlIDirg==
+"@justeat/f-icons@1.29.1":
+  version "1.29.1"
+  resolved "https://registry.yarnpkg.com/@justeat/f-icons/-/f-icons-1.29.1.tgz#54c8e8c6254b11416c3918cf274c97fee663c9a0"
+  integrity sha512-oel3cZV9WxaN98uNBwMqtzWB5XDPGHUfrcp6lzIG/yRAdljBOuJf8oeLKoVWrRsNteiwEYE8RxUbsbTMvX1tkA==
   dependencies:
-    "@justeat/f-utils" "0.1.0"
+    "@justeat/f-utils" "0.3.0"
     include-media "1.4.9"
 
-"@justeat/f-logger@0.7.1", "@justeat/f-logger@^0.7.1":
+"@justeat/f-logger@0.7.1":
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/@justeat/f-logger/-/f-logger-0.7.1.tgz#06e728d3c65733cab7c9bbfc813b401fa68ba82b"
+
+"@justeat/f-logger@0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@justeat/f-logger/-/f-logger-0.7.2.tgz#7bb117bbca48d910e2c45f3c283688eec3dc01dc"
+  integrity sha512-EUB1Vzy4kc0e/K+r3sf+ISvdEd6BtamKaJ9MTsPYQI4vIiAsR0aVgbs5AdGdV9BkA4lUvXByuqiD+Ejb9RvLbA==
+  dependencies:
+    window-or-global "^1.0.1"
 
 "@justeat/f-templates-loader@0.1.1":
   version "0.1.1"
@@ -972,14 +979,15 @@
     "@justeat/f-dom" "0.4.0"
     lodash.throttle "4.1.1"
 
-"@justeat/f-utils@0.1.0", "@justeat/f-utils@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@justeat/f-utils/-/f-utils-0.1.0.tgz#38ac810d87ae356dc1dd06444ddce4797d726b3e"
-
 "@justeat/f-utils@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@justeat/f-utils/-/f-utils-0.2.0.tgz#b2333b5ddf20b4157af25091e6bc54706358100c"
   integrity sha512-lmnjGTAburU/rNsylj4ScWqApL/VifiwTce+hfujOJBZHHMUnJ/tmuVy3lxFtxtZIzCMTb502sB6ZjZbH82SOA==
+
+"@justeat/f-utils@0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@justeat/f-utils/-/f-utils-0.3.0.tgz#1f18ba13ad7061e21c2112387234a77ba45fb5d3"
+  integrity sha512-hqRiGA2lP++Z1oqawsv1V2Duf3YShaAbJ3S5JEPTpTMP5RjH36Xpc8nRbIVFBmwnZCu7L9iF7AebYTUX8XhiZA==
 
 "@justeat/f-validate@1.4.0":
   version "1.4.0"
@@ -988,14 +996,15 @@
   dependencies:
     "@justeat/f-dom" "1.1.0"
 
-"@justeat/fozzie-colour-palette@2.1.0", "@justeat/fozzie-colour-palette@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-2.1.0.tgz#42230c8d8d5aecc37d32eaccd5e9973e90cd4a4e"
-
 "@justeat/fozzie-colour-palette@2.3.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-2.3.0.tgz#1ad4b7e827b6c7c7bb0a73d2b72cf8d608fc09b5"
   integrity sha512-eVzfPhKojCQ0IxXQQL73fnami/ffjtwgRIcnnFik9E/GmJ26WtoxFrBCL6YksmEKU8JKP9tqVkLsC+JqYbjB9Q==
+
+"@justeat/fozzie-colour-palette@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie-colour-palette/-/fozzie-colour-palette-2.4.0.tgz#dfc6f8b6ba86e5ca5833d75a7fedf7b0b6abd5d7"
+  integrity sha512-JmKzKNHpZkF0ZkI1gdO5XnXk1KcFj7YBbPGCHd/H0+h1Z8uWq3pJ0fbD3misj/6qVih9XWtYCLerzNVyTaWIqg==
 
 "@justeat/fozzie@1.50.0":
   version "1.50.0"
@@ -1011,10 +1020,10 @@
     kickoff-grid.css "1.2.0"
     normalize-scss "7.0.1"
 
-"@justeat/fozzie@1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.57.0.tgz#6f1f062c4f69083fa344741e439f9edfab513fa5"
-  integrity sha512-FVs8ouJ7jbRZMhlG2Jv4XULaaTEAhDwJD9QWaP+KG+IRU6wW2wpk4EzOvSI59ptuNhmZ3SfQlTKd5CV0T2NsSA==
+"@justeat/fozzie@1.66.0":
+  version "1.66.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.66.0.tgz#7fbba331589ff10861044b935f960cf033e00b6b"
+  integrity sha512-I/ZCNDUnc8JAI5N1L51nOLmCq8I7m3ZQ35foUW36z6ZM451H6dx8q0xICHZmFZ0pNfbCE30ttUa/HRsObpzNmA==
   dependencies:
     "@justeat/f-dom" "1.1.0"
     "@justeat/f-logger" "0.7.1"
@@ -1025,14 +1034,15 @@
     kickoff-grid.css "1.2.0"
     normalize-scss "7.0.1"
 
-"@justeat/fozzie@^1.7.0":
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.18.0.tgz#d07fae576644e96c8cac8349a08d7dd6aae16ecf"
+"@justeat/fozzie@1.70.0":
+  version "1.70.0"
+  resolved "https://registry.yarnpkg.com/@justeat/fozzie/-/fozzie-1.70.0.tgz#787f943f03d3a57d21a05cad8f9bb7b74e46583e"
+  integrity sha512-r8X68wuKhyAIM0Nx7p9NnZAjgP7XdRZ3QWGJC2634U3yZYcbpzLmwC1yPSimFwi+opd3Fpk9HbC1hhposeZEKw==
   dependencies:
     "@justeat/f-dom" "1.1.0"
     "@justeat/f-logger" "0.7.1"
-    "@justeat/f-utils" "0.1.0"
-    "@justeat/fozzie-colour-palette" "2.1.0"
+    "@justeat/f-utils" "0.2.0"
+    "@justeat/fozzie-colour-palette" "2.3.0"
     fontfaceobserver "^2.0.13"
     include-media "1.4.9"
     kickoff-grid.css "1.2.0"
@@ -13649,6 +13659,11 @@ widest-line@^2.0.0:
   resolved "https://registry.yarnpkg.com/widest-line/-/widest-line-2.0.1.tgz#7438764730ec7ef4381ce4df82fb98a53142a3fc"
   dependencies:
     string-width "^2.1.1"
+
+window-or-global@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/window-or-global/-/window-or-global-1.0.1.tgz#dbe45ba2a291aabc56d62cf66c45b7fa322946de"
+  integrity sha1-2+RboqKRqrxW1iz2bEW3+jIpRt4=
 
 window-size@^0.2.0:
   version "0.2.0"
