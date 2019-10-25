@@ -1,0 +1,50 @@
+---
+title: Fozzie mono-repo
+section-title: Open source
+description:
+docs: true
+
+navgroup: documentation
+navsub: open-source
+navactive: os-mono-repo
+---
+
+<a name="intro-to-mono-repo"></a>
+## Introduction
+As of October 2019, new Fozzie components will be created using the Vue.js framework. These new components will be stored in a _mono-repo_, a single repository where all components reside. Each individual component can be found in the [`packages`](https://github.com/justeat/fozzie-components/tree/master/packages) directory, and are all controlled from a top level `packages.json`.
+
+
+<a name="naming-your-packages"></a>
+## Naming your packages in the mono-repo
+
+ The general naming convention for a Fozzie package is to use `f-{your-package-name}` e.g. [`f-footer`](https://github.com/justeat/fozzie-components/tree/master/packages/f-footer), [`f-header`](https://github.com/justeat/fozzie-components/tree/master/packages/f-header), [`f-vue-icons`](https://github.com/justeat/fozzie-components/tree/master/packages/f-vue-icons).
+
+
+<a name="publishing-to-npm"></a>
+## Publishing to npm
+
+To publish a package to **npm**, please first ensure that you have registered an account. You may use an existing public account, but many Just Eat employees prefer to set up a new Just Eat-specific account.
+
+Internal contributors (Just Eat employees) can request to be added to the Just Eat npm org by asking in the #guild-ui Slack channel and providing your npm account details. External contributors should raise a pull request and the release will be handled for you once approved
+
+Once you are happy that the package is ready to be published to the npm registry, ensure you are on the correct branch — typically the master branch with the latest changes pulled — then run `npm publish` on the command line.
+
+<a name="badges"></a>
+## Badges
+
+<a name="general-badges"></a>
+### General Badges (should be added to all packages)
+
+
+
+* npm version badge from [badge.fury.io](https://badge.fury.io/)
+
+
+<a name="optional-badges"></a>
+### Optional Badges
+
+* To report the build status you can [add a Travis CI badge](https://travis-ci.org/justeat/)
+* If there are JavaScript unit tests in the package you can [add a coveralls badge](https://coveralls.io/github/justeat/)
+* Check for known vulnerabilities in your package with a [Snyk.io badge](https://snyk.io/test/)
+
+

@@ -1,0 +1,72 @@
+---
+title: Creating a separate GitHub repository
+section-title: Open source
+description:
+docs: true
+
+navgroup: documentation
+navsub: open-source
+navactive: os-creating
+---
+
+**NOTE:** While we prefer the mono-repo approach, you can also create a separate repository for your Fozzie package.
+
+<a name="naming-your-package"></a>
+## Naming your package
+
+The general naming convention for a Fozzie package is to use `f-{your-package-name}` e.g. [`f-footer`](https://github.com/justeat/fozzie-components/tree/master/packages/f-footer), [`f-header`](https://github.com/justeat/fozzie-components/tree/master/packages/f-header), [`f-vue-icons`](https://github.com/justeat/fozzie-components/tree/master/packages/f-vue-icons).
+
+
+
+<a name="create-github-repository"></a>
+## Create a new Fozzie GitHub repository
+
+To create a new repository go to the [new repository page](https://github.com/new) and set the owner to the `justeat` org, visiblity to `private`, initialise with a README, and add a Node `.gitignore` &amp; Apache-2.0 license.
+
+![Create a new repository on GitHub]({{ ../baseUrl }}/assets/img/os/create-new-repo.png)
+
+
+<a name="access-settings"></a>
+## Access settings
+
+Configure the access settings in `Settings` -> `Collaborators &amp; teams` giving the ***UI Admins*** team "admin" permissions, and the ***UI Developers*** team "write" permissions.
+
+![GitHub repository access settings]({{ ../baseUrl }}/assets/img/os/access-settings.png)
+
+
+<a name="configure-master-branch-protection"></a>
+## Configure master branch protection
+
+Configure branch protection in `Settings` -> `Branches` selecting the master branch from the dropdown in the "Protected branches" section.
+
+The minimum recommended settings to select are
+
+```
+* [x] Protect this branch
+  * [x] Require pull request reviews before merging
+    * [x] Dismiss stale pull request approvals when new commits are pushed
+    * [x] Require review from Code Owners
+  * [x] Require status checks to pass before merging
+    * [x] Require branches to be up to date before merging
+```
+
+
+<a name="status-checks"></a>
+### Status checks
+
+If/once you have any services set up with status checks then you'll be able to select them in the "Require status checks to pass before merging" section in order to require the checks to pass before a pull request can be merged.
+
+
+<a name="publishing-to-npm"></a>
+## Publishing to npm
+
+To publish a package to **npm**, please first ensure that you have registered an account. You may use an existing public account, but many Just Eat employees prefer to set up a new Just Eat-specific account.
+
+Internal contributors (Just Eat employees) can request to be added to the Just Eat npm org by asking in the #guild-ui Slack channel and providing your npm account details. External contributors should raise a pull request and the release will be handled for you once approved
+
+Once you are happy that the package is ready to be published to the npm registry, ensure you are on the correct branch — typically the master branch with the latest changes pulled — then run `npm publish` on the command line.
+
+<a name="problems"></a>
+## Problems
+
+Have a look at the [module issues page]({{ ../baseUrl }}/documentation/open-source/module-issues) for common issues and how to resolve them.

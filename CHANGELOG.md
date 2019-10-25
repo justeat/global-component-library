@@ -3,6 +3,20 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+v2.23.0
+------------------------------
+*October 24, 2019*
+
+### Added
+- documentation - added new contents page for 'open source' tab
+- documentation - added page explaining mono-repo structure for 'open source' tab
+
+### Changed
+- updated various links, text in 'open source' tab
+- marked info in "Developing Shared HTML Templates" page as deprecated
+
+
+
 v2.22.0
 ------------------------------
 *June 24, 2019*
