@@ -50,7 +50,7 @@ function setupValidation() {
   }
 }
 
-},{"@justeat/f-dom":3,"@justeat/f-validate":23}],2:[function(require,module,exports){
+},{"@justeat/f-dom":3,"@justeat/f-validate":26}],2:[function(require,module,exports){
 "use strict";
 
 require("@justeat/f-footer");
@@ -69,7 +69,9 @@ var _formValidationSetup = _interopRequireDefault(require("./docs/formValidation
 
 require("picturefill");
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -81,7 +83,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   utils.cookieBanner.init('#CookieAnchor');
 });
 
-},{"./docs/formValidationSetup":1,"@justeat/f-footer":4,"@justeat/f-header":8,"@justeat/f-utilities":14,"@justeat/fozzie":35,"lite-ready":39,"picturefill":42,"svg4everybody":44}],3:[function(require,module,exports){
+},{"./docs/formValidationSetup":1,"@justeat/f-footer":4,"@justeat/f-header":8,"@justeat/f-utilities":17,"@justeat/fozzie":38,"lite-ready":42,"picturefill":45,"svg4everybody":47}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -149,7 +151,7 @@ dom.first = first;
 dom.exists = exists;
 var _default = dom;
 exports.default = _default;
-},{"qwery":43}],4:[function(require,module,exports){
+},{"qwery":46}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -207,7 +209,7 @@ exports.resizeInit = resizeInit;
   collapseFooterPanels();
   resizeInit();
 });
-},{"@justeat/fozzie":5,"lite-ready":39,"lodash.debounce":40,"qwery":43}],5:[function(require,module,exports){
+},{"@justeat/fozzie":5,"lite-ready":42,"lodash.debounce":43,"qwery":46}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -417,7 +419,7 @@ var stopFoit = function stopFoit() {
 exports.stopFoit = stopFoit;
 var _default = stopFoit;
 exports.default = _default;
-},{"@justeat/f-logger":11,"fontfaceobserver":38}],8:[function(require,module,exports){
+},{"@justeat/f-logger":14,"fontfaceobserver":41}],8:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -494,7 +496,7 @@ exports.setupHeader = setupHeader;
 (0, _liteReady.default)(function () {
   setupHeader();
 });
-},{"./userAuth":9,"lite-ready":39}],9:[function(require,module,exports){
+},{"./userAuth":9,"lite-ready":42}],9:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -675,24 +677,30 @@ exports.saveUserData = saveUserData;
 },{"@justeat/f-logger":11}],11:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.getDebugMode=exports.disableDebugMode=exports.enableDebugMode=exports.clearHistory=exports.getHistory=exports.errorLogInit=exports.logError=exports.logWarning=exports.log=void 0;var _Logger=require('./modules/Logger'),_Logger2=_interopRequireDefault(_Logger),_ErrorLogger=require('./modules/ErrorLogger'),_ErrorLogger2=_interopRequireDefault(_ErrorLogger);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var debugMode=!1,logger=new _Logger2.default({debugMode:debugMode}),errorLogger=new _ErrorLogger2.default({logger:logger}),log=function(a){logger.log(a)},logError=function(a){errorLogger.log(a,'Error')},logWarning=function(a){errorLogger.log(a,'Warn')},getHistory=function(){logger.getPersistentData()},clearHistory=function(){logger.clearPersistentData()},enableDebugMode=function(){debugMode=!0,logger=new _Logger2.default({debugMode:debugMode}),errorLogger=new _ErrorLogger2.default({logger:logger})},disableDebugMode=function(){debugMode=!1,logger=new _Logger2.default({debugMode:debugMode}),errorLogger=new _ErrorLogger2.default({logger:logger})},errorLogInit=function(a){errorLogger.init(a)},getDebugMode=function(){return debugMode};exports.log=log,exports.logWarning=logWarning,exports.logError=logError,exports.errorLogInit=errorLogInit,exports.getHistory=getHistory,exports.clearHistory=clearHistory,exports.enableDebugMode=enableDebugMode,exports.disableDebugMode=disableDebugMode,exports.getDebugMode=getDebugMode;
 },{"./modules/ErrorLogger":12,"./modules/Logger":13}],12:[function(require,module,exports){
-'use strict';var _typeof='function'==typeof Symbol&&'symbol'==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&'function'==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?'symbol':typeof a},_createClass=function(){function a(a,b){for(var c,d=0;d<b.length;d++)c=b[d],c.enumerable=c.enumerable||!1,c.configurable=!0,'value'in c&&(c.writable=!0),Object.defineProperty(a,c.key,c)}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}();Object.defineProperty(exports,'__esModule',{value:!0});function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError('Cannot call a class as a function')}var ErrorLogger=function(){function a(b){_classCallCheck(this,a),this.config=b,this.logger=b.logger,this.debugMode=b.logger.debugMode,this.config.serverFileUrl=b.serverFileUrl||'/js/shared/js-error.js',this.config.loggerCallback=b.loggerCallback||null,this.config.winlogCallback=b.winlogCallback||null,this.bindOnError()}return _createClass(a,[{key:'log',value:function log(a,b,c){var d=window.location.toString(),e={pageUrl:d,Exception:a,Level:b};this.logger.log(e),this.debugMode||(this.logToServer(e),'function'==typeof this.config.loggerCallback&&('Error'===b?this.config.winlogCallback.call(this,a,d,c):this.config.loggerCallback.call(this,a,d)))}},{key:'init',value:function init(a){this.config.serverFileUrl=a.serverFileUrl||this.config.serverFileUrl,this.config.loggerCallback=a.loggerCallback||this.config.loggerCallback,this.config.winlogCallback=a.winlogCallback||this.config.winlogCallback}},{key:'logToServer',value:function logToServer(a){var b,c='';c='object'===('undefined'==typeof a?'undefined':_typeof(a))?JSON.stringify(a):a;var d=this.config.serverFileUrl+'?error='+encodeURIComponent(c);if(window.XMLHttpRequest)b=new XMLHttpRequest;else if(window.ActiveXObject)b=new ActiveXObject('Microsoft.XMLHTTP');else return;b.open('GET',d),b.send()}},{key:'bindOnError',value:function bindOnError(){var a=this;window.onerror=function(b,c,d,e,f){var g=b+' : '+c+' : Line '+d+' : Char '+e+' : StackTrace '+(f?f.stack:'');return a.log(g,'Error',d),!0}}}]),a}();exports.default=ErrorLogger;
-},{}],13:[function(require,module,exports){
+'use strict';var _typeof='function'==typeof Symbol&&'symbol'==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&'function'==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?'symbol':typeof a},_createClass=function(){function a(a,b){for(var c,d=0;d<b.length;d++)c=b[d],c.enumerable=c.enumerable||!1,c.configurable=!0,'value'in c&&(c.writable=!0),Object.defineProperty(a,c.key,c)}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}(),_windowOrGlobal=require('window-or-global'),_windowOrGlobal2=_interopRequireDefault(_windowOrGlobal);Object.defineProperty(exports,'__esModule',{value:!0});function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError('Cannot call a class as a function')}var ErrorLogger=function(){function a(b){_classCallCheck(this,a),this.config=b,this.logger=b.logger,this.debugMode=b.logger.debugMode,this.config.serverFileUrl=b.serverFileUrl||'/js/shared/js-error.js',this.config.loggerCallback=b.loggerCallback||null,this.config.winlogCallback=b.winlogCallback||null,this.bindOnError()}return _createClass(a,[{key:'log',value:function log(a,b,c){var d=_windowOrGlobal2.default.location.toString(),e={pageUrl:d,Exception:a,Level:b};this.logger.log(e),this.debugMode||(this.logToServer(e),'function'==typeof this.config.loggerCallback&&('Error'===b?this.config.winlogCallback.call(this,a,d,c):this.config.loggerCallback.call(this,a,d)))}},{key:'init',value:function init(a){this.config.serverFileUrl=a.serverFileUrl||this.config.serverFileUrl,this.config.loggerCallback=a.loggerCallback||this.config.loggerCallback,this.config.winlogCallback=a.winlogCallback||this.config.winlogCallback}},{key:'logToServer',value:function logToServer(a){var b,c='';c='object'===('undefined'==typeof a?'undefined':_typeof(a))?JSON.stringify(a):a;var d=this.config.serverFileUrl+'?error='+encodeURIComponent(c);if(_windowOrGlobal2.default.XMLHttpRequest)b=new XMLHttpRequest;else if(_windowOrGlobal2.default.ActiveXObject)b=new ActiveXObject('Microsoft.XMLHTTP');else return;b.open('GET',d),b.send()}},{key:'bindOnError',value:function bindOnError(){var a=this;_windowOrGlobal2.default.onerror=function(b,c,d,e,f){var g=b+' : '+c+' : Line '+d+' : Char '+e+' : StackTrace '+(f?f.stack:'');return a.log(g,'Error',d),!0}}}]),a}();exports.default=ErrorLogger;
+},{"window-or-global":48}],13:[function(require,module,exports){
 'use strict';var _typeof='function'==typeof Symbol&&'symbol'==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&'function'==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?'symbol':typeof a},_createClass=function(){function a(a,b){for(var c,d=0;d<b.length;d++)c=b[d],c.enumerable=c.enumerable||!1,c.configurable=!0,'value'in c&&(c.writable=!0),Object.defineProperty(a,c.key,c)}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}();Object.defineProperty(exports,'__esModule',{value:!0});function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError('Cannot call a class as a function')}var output=function(a){if('undefined'!=typeof window.console)window.console.log(a);else throw new Error('Console is not supported')},getPersistentData=function(){if(!localStorage)output('Local storage not available');else if(0<localStorage.length){var a,b,c,d;for(output('/***** Output local storage *****/'),a=0;a<localStorage.length;a++)b=+localStorage.key(a),c=localStorage[b],d=new Date(b),'Invalid Date'!==(d+'').valueOf()&&output(d+' => '+c);output('/***** End of local storage *****/')}else output('Local storage is empty')},clearPersistentData=function(){localStorage&&(localStorage.clear(),output('Local storage cleared'))},Logger=function(){function a(b){_classCallCheck(this,a),this.config=b,this.debugMode=this.config.debugMode,this.data={}}return _createClass(a,[{key:'log',value:function log(a){var b=a;if(this.debugMode){var c=Date.now().toString();this.data[c]=b,'object'===('undefined'==typeof localStorage?'undefined':_typeof(localStorage))&&(b=JSON.stringify(b),localStorage.setItem(c,b)),output(b)}}}]),a}();exports.getPersistentData=getPersistentData,exports.clearPersistentData=clearPersistentData,exports.default=Logger;
 },{}],14:[function(require,module,exports){
+arguments[4][11][0].apply(exports,arguments)
+},{"./modules/ErrorLogger":15,"./modules/Logger":16,"dup":11}],15:[function(require,module,exports){
+'use strict';var _typeof='function'==typeof Symbol&&'symbol'==typeof Symbol.iterator?function(a){return typeof a}:function(a){return a&&'function'==typeof Symbol&&a.constructor===Symbol&&a!==Symbol.prototype?'symbol':typeof a},_createClass=function(){function a(a,b){for(var c,d=0;d<b.length;d++)c=b[d],c.enumerable=c.enumerable||!1,c.configurable=!0,'value'in c&&(c.writable=!0),Object.defineProperty(a,c.key,c)}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}();Object.defineProperty(exports,'__esModule',{value:!0});function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError('Cannot call a class as a function')}var ErrorLogger=function(){function a(b){_classCallCheck(this,a),this.config=b,this.logger=b.logger,this.debugMode=b.logger.debugMode,this.config.serverFileUrl=b.serverFileUrl||'/js/shared/js-error.js',this.config.loggerCallback=b.loggerCallback||null,this.config.winlogCallback=b.winlogCallback||null,this.bindOnError()}return _createClass(a,[{key:'log',value:function log(a,b,c){var d=window.location.toString(),e={pageUrl:d,Exception:a,Level:b};this.logger.log(e),this.debugMode||(this.logToServer(e),'function'==typeof this.config.loggerCallback&&('Error'===b?this.config.winlogCallback.call(this,a,d,c):this.config.loggerCallback.call(this,a,d)))}},{key:'init',value:function init(a){this.config.serverFileUrl=a.serverFileUrl||this.config.serverFileUrl,this.config.loggerCallback=a.loggerCallback||this.config.loggerCallback,this.config.winlogCallback=a.winlogCallback||this.config.winlogCallback}},{key:'logToServer',value:function logToServer(a){var b,c='';c='object'===('undefined'==typeof a?'undefined':_typeof(a))?JSON.stringify(a):a;var d=this.config.serverFileUrl+'?error='+encodeURIComponent(c);if(window.XMLHttpRequest)b=new XMLHttpRequest;else if(window.ActiveXObject)b=new ActiveXObject('Microsoft.XMLHTTP');else return;b.open('GET',d),b.send()}},{key:'bindOnError',value:function bindOnError(){var a=this;window.onerror=function(b,c,d,e,f){var g=b+' : '+c+' : Line '+d+' : Char '+e+' : StackTrace '+(f?f.stack:'');return a.log(g,'Error',d),!0}}}]),a}();exports.default=ErrorLogger;
+},{}],16:[function(require,module,exports){
+arguments[4][13][0].apply(exports,arguments)
+},{"dup":13}],17:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.elementHelper=exports.cookieBanner=exports.lazyLoad=exports.formReset=void 0;var _formReset=require('./modules/formReset'),_formReset2=_interopRequireDefault(_formReset),_lazyLoad=require('./modules/lazyLoad'),_lazyLoad2=_interopRequireDefault(_lazyLoad),_cookieBanner=require('./modules/cookieBanner'),_cookieBanner2=_interopRequireDefault(_cookieBanner),_elementHelper=require('./modules/elementHelper'),_elementHelper2=_interopRequireDefault(_elementHelper);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}exports.formReset=_formReset2.default,exports.lazyLoad=_lazyLoad2.default,exports.cookieBanner=_cookieBanner2.default,exports.elementHelper=_elementHelper2.default;
-},{"./modules/cookieBanner":15,"./modules/elementHelper":17,"./modules/formReset":18,"./modules/lazyLoad":19}],15:[function(require,module,exports){
+},{"./modules/cookieBanner":18,"./modules/elementHelper":20,"./modules/formReset":21,"./modules/lazyLoad":22}],18:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var _translations=require('./translations'),anchorElement={},cookieName='je-banner_cookie',cookieBannerMarkup='\n    <div class="c-cookieWarning">\n        <div class="c-cookieWarning-inner">\n            '+(0,_translations.getBodyTranslation)()+'\n            <button class="c-cookieWarning-btn" data-test-id="cookieBanner-close-button" aria-label="Close"></button>\n        </div>\n    </div>',hideBanner=function(){var a=document.querySelector('.c-cookieWarning');a.classList.contains('is-hidden')||(a.classList.add('is-hidden'),document.cookie='je-banner_cookie=130315')},createBannerElements=function(){anchorElement.insertAdjacentHTML('beforeend',cookieBannerMarkup);var a=document.querySelector('.c-cookieWarning-btn');a.addEventListener('click',function(){return hideBanner()})},init=function(a){var b=-1!==document.cookie.indexOf(cookieName);if(!b){if(anchorElement=document.querySelector(a),!anchorElement)throw new Error('no matching element found to anchor cookie banner');createBannerElements()}};exports.default={init:init};
-},{"./translations":16}],16:[function(require,module,exports){
+},{"./translations":19}],19:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.getBodyTranslation=getBodyTranslation;var tranlsations={"en-GB":'<p>We use cookies to improve your browsing experience. By continuing, you agree to receive cookies on our website. <a class="c-cookieWarning-link" href="/cookies-policy">Learn more about our cookies policy.</a></p>',"es-ES":'<p class="u-hideTextOverflow--narrow">Just Eat utiliza cookies para mejorar tu experiencia en la p\xE1gina. Si contin\xFAas navegando consideramos que aceptas su uso, si no es as\xED puedes limitar la configuraci\xF3n de cookies en tu explorador. Lee nuestra <a href="/cookies-policy">pol\xEDtica sobre cookies</a> para m\xE1s informaci\xF3n</p>',"it-IT":'<p class="u-hideTextOverflow--narrow"><span style="font-weight: bold;">JUST EAT</span> utilizza cookie di profilazione, propri e di terzi, per inviarti pubblicit\xE0 online in funzione delle tue preferenze manifestate nella navigazione e consentirti una miglior esperienza di navigazione. Se accedi ad un qualunque elemento del sito sottostante acconsenti all\u2019uso di tali cookie. Per avere maggiori informazioni su come noi, o i terzi, usiamo i cookie, sapere come negare il consenso a tutti o solo alcuni cookie, e come impostare il proprio browser si prega di leggere la nostra <a href="/cookies-policy">cookie policy</a></p>',"en-IE":'<p class="u-hideTextOverflow--narrow"><span style="font-weight: bold;">Updated cookies policy:</span> Just Eat uses cookies to improve your browsing experience. If you continue, we\'ll assume that you are happy to receive cookies on our website. You can change your browser\'s cookie settings at any time. To find out more about how we use cookies and how to manage your browser settings read our <a href="/cookies-policy"> cookies policy</a>.</p>',"da-DK":'<p class="u-hideTextOverflow--narrow"><span style="font-weight: bold;">JUST EAT</span> anvender cookies til at forbedre din brugeroplevelse og til at g\xF8re det muligt for dig at bestille mad. Hvis du forts\xE6tter brugen af hjemmesiden, antager vi, at du er indforst\xE5et med og accepterer at modtage cookies fra JUST EAT hjemmesiden. Hvis du \xF8nsker det, kan du \xE6ndre dine cookie-indstillinger i din browser p\xE5 ethvert tidspunkt. L\xE6s vores cookiebetingelser for mere information <a href="/cookies-policy"> her</a>.</p>',fr:'<p>En poursuivant votre navigation sur notre site, vous acceptez l\'utilisation de cookies. Pour en savoir plus &nbsp;<a href="https://www.just-eat.fr/accept-cookie-policy" data-url="https://www.just-eat.fr/accept-cookie-policy">cliquez-ici.</a></p>'};function getBodyTranslation(){var a=document.querySelector('html').lang;return tranlsations[a]||tranlsations['en-GB']}
-},{}],17:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var hide=function(a){a.classList.add('is-hidden')},hideVisually=function(a){a.classList.add('is-visuallyHidden')},hideVisibility=function(a){a.classList.add('is-invisible')},show=function(a){a.classList.remove('is-hidden'),a.classList.remove('is-visuallyHidden'),a.classList.remove('is-invisible')},toggle=function(a,b){a&&('undefined'==typeof b?a.classList.contains('is-hidden')?show(a):hide(a):b?show(a):hide(a))};exports.default={hide:hide,hideVisually:hideVisually,hideVisibility:hideVisibility,show:show,toggle:toggle};
-},{}],18:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.init=exports.resetInputs=void 0;var _fDom=require('@justeat/f-dom'),_fDom2=_interopRequireDefault(_fDom);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var resetInputs=exports.resetInputs=function(a){var b=a.target,c=b.getAttribute('data-js-reset'),d=(0,_fDom2.default)('[data-js-reset-input="'+c+'"]');d.forEach(function(a){if(a.checked){a.checked=!1;var b=new Event('change');return void a.dispatchEvent(b)}0<a.value.length&&(a.value='')})},init=exports.init=function(){var a=(0,_fDom2.default)('[data-js-reset]');0<a.length&&a.forEach(function(a){a.addEventListener('click',function(a){return resetInputs(a)})})};exports.default=init;
-},{"@justeat/f-dom":20}],19:[function(require,module,exports){
+},{"@justeat/f-dom":23}],22:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0}),exports.init=exports.lazyLoadItems=exports.inViewport=exports.swapAttribute=void 0;var _fDom=require('@justeat/f-dom'),_fDom2=_interopRequireDefault(_fDom),_lodash=require('lodash.throttle'),_lodash2=_interopRequireDefault(_lodash);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var lazyLoadElements=void 0,swapAttribute=exports.swapAttribute=function(a){var b=a.getAttribute('data-js-lazy-src');return!!b&&(a.setAttribute('src',b),!0)},inViewport=exports.inViewport=function(a){var b=a.getBoundingClientRect();return-250<=b.bottom&&0<=b.right&&b.top<=window.innerHeight+250&&b.left<=window.innerWidth},lazyLoadItems=exports.lazyLoadItems=function(a){return!!Array.isArray(a)&&(a.forEach(function(a){var b=inViewport(a);b&&(swapAttribute(a),lazyLoadElements=lazyLoadElements.filter(function(b){return b!==a}))}),!0)},init=exports.init=function(){return lazyLoadElements=(0,_fDom2.default)('[data-js-lazy]'),!!(0<lazyLoadElements.length)&&(lazyLoadItems(lazyLoadElements),window.addEventListener('scroll',(0,_lodash2.default)(function(){lazyLoadItems(lazyLoadElements)},125)),window.addEventListener('resize',(0,_lodash2.default)(function(){lazyLoadItems(lazyLoadElements)},250)),window.addEventListener('lazyload',function(){lazyLoadItems(lazyLoadElements)}),!0)};exports.default=init;
-},{"@justeat/f-dom":20,"lodash.throttle":41}],20:[function(require,module,exports){
+},{"@justeat/f-dom":23,"lodash.throttle":44}],23:[function(require,module,exports){
 'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var _qwery=require('qwery'),_qwery2=_interopRequireDefault(_qwery);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}var first=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)[0]},all=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return(0,_qwery2.default)(a,b)},exists=function(a){var b=1<arguments.length&&arguments[1]!==void 0?arguments[1]:null;return 0<(0,_qwery2.default)(a,b).length},dom=all;dom.all=all,dom.first=first,dom.exists=exists,exports.default=dom;
-},{"qwery":43}],21:[function(require,module,exports){
+},{"qwery":46}],24:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -725,7 +733,7 @@ var runCallbacks = function runCallbacks(callBacks) {
 };
 
 exports.runCallbacks = runCallbacks;
-},{}],22:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -750,7 +758,7 @@ var _default = {
   validateOnOptions: ['blur', 'keyup']
 };
 exports.default = _default;
-},{}],23:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1166,7 +1174,7 @@ function () {
 }();
 
 exports.default = FormValidation;
-},{"./callbacks":21,"./constants":22,"./messages":24,"./rules":29,"@justeat/f-dom":3}],24:[function(require,module,exports){
+},{"./callbacks":24,"./constants":25,"./messages":27,"./rules":32,"@justeat/f-dom":3}],27:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1251,7 +1259,7 @@ var getMessage = function getMessage(field, ruleName) {
 };
 
 exports.getMessage = getMessage;
-},{"./constants":22,"./rules":29,"@justeat/f-dom":3}],25:[function(require,module,exports){
+},{"./constants":25,"./rules":32,"@justeat/f-dom":3}],28:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1284,7 +1292,7 @@ var _default = {
   defaultMessage: 'This field is required.'
 };
 exports.default = _default;
-},{"@justeat/f-dom":3}],26:[function(require,module,exports){
+},{"@justeat/f-dom":3}],29:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1313,7 +1321,7 @@ var _default = {
   defaultMessage: 'Custom validation failed.'
 };
 exports.default = _default;
-},{}],27:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1358,7 +1366,7 @@ var _default = {
   defaultMessage: 'This date must be in the future.'
 };
 exports.default = _default;
-},{"@justeat/f-dom":3}],28:[function(require,module,exports){
+},{"@justeat/f-dom":3}],31:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1391,7 +1399,7 @@ var _default = {
   defaultMessage: 'This field must contain a valid email address.'
 };
 exports.default = _default;
-},{"../constants":22}],29:[function(require,module,exports){
+},{"../constants":25}],32:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1431,7 +1439,7 @@ var _default = {
   required: _required.default
 };
 exports.default = _default;
-},{"./conditionalRequired":25,"./custom":26,"./dateInFuture":27,"./email":28,"./matches":30,"./maxlength":31,"./minlength":32,"./pattern":33,"./required":34}],30:[function(require,module,exports){
+},{"./conditionalRequired":28,"./custom":29,"./dateInFuture":30,"./email":31,"./matches":33,"./maxlength":34,"./minlength":35,"./pattern":36,"./required":37}],33:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1470,7 +1478,7 @@ var _default = {
   }
 };
 exports.default = _default;
-},{"@justeat/f-dom":3}],31:[function(require,module,exports){
+},{"@justeat/f-dom":3}],34:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1502,7 +1510,7 @@ var _default = {
   }
 };
 exports.default = _default;
-},{}],32:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1534,7 +1542,7 @@ var _default = {
   }
 };
 exports.default = _default;
-},{}],33:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1568,7 +1576,7 @@ var _default = {
   defaultMessage: 'This field contains a value that isn’t accepted.'
 };
 exports.default = _default;
-},{"../constants":22}],34:[function(require,module,exports){
+},{"../constants":25}],37:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1606,13 +1614,13 @@ var _default = {
   defaultMessage: 'This field is required.'
 };
 exports.default = _default;
-},{"@justeat/f-dom":3}],35:[function(require,module,exports){
+},{"@justeat/f-dom":3}],38:[function(require,module,exports){
 arguments[4][5][0].apply(exports,arguments)
-},{"./modules/breakpointHelper":36,"./modules/stopFoit":37,"dup":5}],36:[function(require,module,exports){
+},{"./modules/breakpointHelper":39,"./modules/stopFoit":40,"dup":5}],39:[function(require,module,exports){
 arguments[4][6][0].apply(exports,arguments)
-},{"dup":6}],37:[function(require,module,exports){
+},{"dup":6}],40:[function(require,module,exports){
 arguments[4][7][0].apply(exports,arguments)
-},{"@justeat/f-logger":11,"dup":7,"fontfaceobserver":38}],38:[function(require,module,exports){
+},{"@justeat/f-logger":14,"dup":7,"fontfaceobserver":41}],41:[function(require,module,exports){
 /* Font Face Observer v2.1.0 - © Bram Stein. License: BSD-3-Clause */(function(){function l(a,b){document.addEventListener?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function m(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",function c(){document.removeEventListener("DOMContentLoaded",c);a()}):document.attachEvent("onreadystatechange",function k(){if("interactive"==document.readyState||"complete"==document.readyState)document.detachEvent("onreadystatechange",k),a()})};function t(a){this.a=document.createElement("div");this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.h=document.createElement("span");this.f=document.createElement("span");this.g=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
 this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.h.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;";this.b.appendChild(this.h);this.c.appendChild(this.f);this.a.appendChild(this.b);this.a.appendChild(this.c)}
 function u(a,b){a.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;white-space:nowrap;font-synthesis:none;font:"+b+";"}function z(a){var b=a.a.offsetWidth,c=b+100;a.f.style.width=c+"px";a.c.scrollLeft=c;a.b.scrollLeft=a.b.scrollWidth+100;return a.g!==b?(a.g=b,!0):!1}function A(a,b){function c(){var a=k;z(a)&&a.a.parentNode&&b(a.g)}var k=a;l(a.b,c);l(a.c,c);z(a)};function B(a,b){var c=b||{};this.family=a;this.style=c.style||"normal";this.weight=c.weight||"normal";this.stretch=c.stretch||"normal"}var C=null,D=null,E=null,F=null;function G(){if(null===D)if(J()&&/Apple/.test(window.navigator.vendor)){var a=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/.exec(window.navigator.userAgent);D=!!a&&603>parseInt(a[1],10)}else D=!1;return D}function J(){null===F&&(F=!!document.fonts);return F}
@@ -1622,7 +1630,7 @@ b)}else m(function(){function v(){var b;if(b=-1!=f&&-1!=g||-1!=f&&-1!=h||-1!=g&&
 n+"ms timeout exceeded"));else{var a=document.hidden;if(!0===a||void 0===a)f=e.a.offsetWidth,g=p.a.offsetWidth,h=q.a.offsetWidth,v();r=setTimeout(I,50)}}var e=new t(k),p=new t(k),q=new t(k),f=-1,g=-1,h=-1,w=-1,x=-1,y=-1,d=document.createElement("div");d.dir="ltr";u(e,L(c,"sans-serif"));u(p,L(c,"serif"));u(q,L(c,"monospace"));d.appendChild(e.a);d.appendChild(p.a);d.appendChild(q.a);document.body.appendChild(d);w=e.a.offsetWidth;x=p.a.offsetWidth;y=q.a.offsetWidth;I();A(e,function(a){f=a;v()});u(e,
 L(c,'"'+c.family+'",sans-serif'));A(p,function(a){g=a;v()});u(p,L(c,'"'+c.family+'",serif'));A(q,function(a){h=a;v()});u(q,L(c,'"'+c.family+'",monospace'))})})};"object"===typeof module?module.exports=B:(window.FontFaceObserver=B,window.FontFaceObserver.prototype.load=B.prototype.load);}());
 
-},{}],39:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 module.exports = function (callback) {
 
 	if (document.readyState === 'complete' || document.readyState === 'interactive') {
@@ -1642,7 +1650,7 @@ module.exports = function (callback) {
 	}
 }
 
-},{}],40:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 (function (global){
 /**
  * lodash (Custom Build) <https://lodash.com/>
@@ -2024,7 +2032,7 @@ module.exports = debounce;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],41:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 (function (global){
 /**
  * lodash (Custom Build) <https://lodash.com/>
@@ -2468,7 +2476,7 @@ module.exports = throttle;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],42:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 /*! picturefill - v3.0.2 - 2016-02-12
  * https://scottjehl.github.io/picturefill/
  * Copyright (c) 2016 https://github.com/scottjehl/picturefill/blob/master/Authors.txt; Licensed MIT
@@ -4014,7 +4022,7 @@ module.exports = throttle;
 
 } )( window, document );
 
-},{}],43:[function(require,module,exports){
+},{}],46:[function(require,module,exports){
 /*!
   * @preserve Qwery - A selector engine
   * https://github.com/ded/qwery
@@ -4110,7 +4118,7 @@ module.exports = throttle;
   return qwery
 }, this);
 
-},{}],44:[function(require,module,exports){
+},{}],47:[function(require,module,exports){
 !function(root, factory) {
     "function" == typeof define && define.amd ? // AMD. Register as an anonymous module unless amdModuleId is set
     define([], function() {
@@ -4217,5 +4225,14 @@ module.exports = throttle;
     }
     return svg4everybody;
 });
+},{}],48:[function(require,module,exports){
+(function (global){
+'use strict'
+module.exports = (typeof self === 'object' && self.self === self && self) ||
+  (typeof global === 'object' && global.global === global && global) ||
+  this
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+
 },{}]},{},[2])
 //# sourceMappingURL=script.js.map

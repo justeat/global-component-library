@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 26">
   <defs>
-    <linearGradient id="a" x1="49.988%" x2="49.988%" y1="-34.226%" y2="137.575%">
+    <linearGradient id="dk-a" x1="49.988%" x2="49.988%" y1="-34.226%" y2="137.575%">
       <stop stop-color="#ED1C24" offset="0%"/>
       <stop stop-color="#EA1B23" offset="26%"/>
       <stop stop-color="#E01920" offset="48%"/>
@@ -8,7 +8,7 @@
       <stop stop-color="#B71016" offset="85%"/>
       <stop stop-color="#9E0B0F" offset="100%"/>
     </linearGradient>
-    <linearGradient id="b" x1="5208%" x2="5208%" y1="624%" y2="5754%">
+    <linearGradient id="dk-b" x1="5208%" x2="5208%" y1="624%" y2="5754%">
       <stop stop-color="#ED1C24" offset="0%"/>
       <stop stop-color="#EA1B23" offset="26%"/>
       <stop stop-color="#E01920" offset="48%"/>
@@ -16,7 +16,7 @@
       <stop stop-color="#B71016" offset="85%"/>
       <stop stop-color="#9E0B0F" offset="100%"/>
     </linearGradient>
-    <linearGradient id="c" x1="3112%" x2="3112%" y1="624%" y2="5754%">
+    <linearGradient id="dk-c" x1="3112%" x2="3112%" y1="624%" y2="5754%">
       <stop stop-color="#ED1C24" offset="0%"/>
       <stop stop-color="#EA1B23" offset="26%"/>
       <stop stop-color="#E01920" offset="48%"/>
@@ -27,9 +27,9 @@
   </defs>
   <g fill="none">
     <path fill="#FFF" stroke="#333" stroke-width=".45" d="M30.168.19H13.5c-4.466 0-8.592 2.364-10.825 6.2-2.233 3.838-2.233 8.565 0 12.402 2.233 3.836 6.36 6.2 10.825 6.2h16.668c6.904 0 12.5-5.552 12.5-12.4 0-6.85-5.596-12.402-12.5-12.402z"/>
-    <path fill="url(#a)" d="M32.08 11.84l5.54 6.54c2.5-3.583 2.42-8.348-.196-11.848l-5.344 5.31z" transform="translate(1)"/>
-    <path fill="url(#b)" d="M16.376 5.98c4.14 0 7.256 1.044 7.576 4.504l4.356-4.504h8.676c-1.947-2.28-4.804-3.595-7.816-3.6H12.5c-3.007 0-5.864 1.304-7.816 3.573l11.692.028z" transform="translate(1)"/>
-    <path fill="url(#c)" d="M9.556 10.34L8.08 14.374h5.96c1.764 0 2.296-.722 2.692-2.12.396-1.396-.592-1.912-1.796-1.912h-5.38z" transform="translate(1)"/>
-    <path fill="url(#b)" d="M28.344 18.933l-4.604-5.778c-.852 3.936-3.64 5.774-8.868 5.774h-10.4c1.947 2.434 4.91 3.855 8.044 3.855h16.652c3.13-.003 6.087-1.42 8.032-3.853h-8.856z" transform="translate(1)"/>
+    <path fill="url(#dk-a)" d="M32.08 11.84l5.54 6.54c2.5-3.583 2.42-8.348-.196-11.848l-5.344 5.31z" transform="translate(1)"/>
+    <path fill="url(#dk-b)" d="M16.376 5.98c4.14 0 7.256 1.044 7.576 4.504l4.356-4.504h8.676c-1.947-2.28-4.804-3.595-7.816-3.6H12.5c-3.007 0-5.864 1.304-7.816 3.573l11.692.028z" transform="translate(1)"/>
+    <path fill="url(#dk-c)" d="M9.556 10.34L8.08 14.374h5.96c1.764 0 2.296-.722 2.692-2.12.396-1.396-.592-1.912-1.796-1.912h-5.38z" transform="translate(1)"/>
+    <path fill="url(#dk-b)" d="M28.344 18.933l-4.604-5.778c-.852 3.936-3.64 5.774-8.868 5.774h-10.4c1.947 2.434 4.91 3.855 8.044 3.855h16.652c3.13-.003 6.087-1.42 8.032-3.853h-8.856z" transform="translate(1)"/>
   </g>
 </svg>

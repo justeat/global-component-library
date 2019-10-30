@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Developing Shared HTML Templates – Just Eat Front-End Component Library and Documentation</title>
+		<title>(deprecated) Developing Shared HTML Templates – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -88,17 +88,20 @@
                 
                 
                 
-                    <li><a href="/documentation/open-source" class="">Creating a module</a></li>
+                    <li><a href="/documentation/open-source" class="">Overview</a></li>
+    <li><a href="/documentation/open-source/mono-repo" class="">Mono-repo</a></li>
+    <li><a href="/documentation/open-source/creating-repo" class="">Creating a separate repo</a></li>
     <li><a href="/documentation/open-source/module-maintenance" class="">Module maintenance</a></li>
-    <li><a href="/documentation/open-source/utility-tools" class="">Utility Tools</a></li>
-    <li><a href="/documentation/open-source/developing-shared-html-templates" class=" is-active">Developing Shared HTML Templates</a></li>
+    <li><a href="/documentation/open-source/utility-tools" class="">Utility tools</a></li>
+    <li><a href="/documentation/open-source/developing-shared-html-templates" class=" is-active">(deprecated) HTML templates</a></li>
     <li><a href="/documentation/open-source/module-issues" class="">Issues</a></li>
 </ul>
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
-                    <h1>Developing Shared HTML Templates</h1>
+                    <h1>(deprecated) Developing Shared HTML Templates</h1>
 <p><a name="naming-your-module"></a></p>
+<p><strong><em>October 22nd 2019:</em></strong> The information on this page is old and is not relevant for new Fozzie components made using Vue.js.</p>
 <h2>Naming your module</h2>
 <p>It is possible, and recommended, to develop HTML templates within the Fozzie UI documentation. In order to do this there are a few steps required to get things set up.</p>
 <p>In this walkthrough we will use the footer template as an example.</p>
@@ -221,7 +224,7 @@
 </code></pre>
 <p>Notice the <code>#with</code> block, this has been added as the scope changes within an <code>#each</code> block in Handlebars.</p>
 <p>Removing the <code>#with</code> block will cause the template compilation to fail with a message like</p>
-<pre><code class="language-bash">{<span class="hljs-variable">$ASYNCID</span><span class="hljs-variable">$1</span><span class="hljs-variable">$909</span>$} helper: the <span class="hljs-string">'language'</span> parameter is not defined.
+<pre><code class="language-bash">{<span class="hljs-variable">$ASYNCID</span><span class="hljs-variable">$1</span><span class="hljs-variable">$454</span>$} helper: the <span class="hljs-string">'language'</span> parameter is not defined.
 </code></pre>
 <p>This is because the i18n helper is on the parent scope of the <code>#each</code> block and therefore couldn't be found.</p>
 <h3>Adding partials</h3>

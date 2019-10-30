@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Fozzie module issues – Just Eat Front-End Component Library and Documentation</title>
+		<title>Creating a separate GitHub repository – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -90,59 +90,50 @@
                 
                     <li><a href="/documentation/open-source" class="">Overview</a></li>
     <li><a href="/documentation/open-source/mono-repo" class="">Mono-repo</a></li>
-    <li><a href="/documentation/open-source/creating-repo" class="">Creating a separate repo</a></li>
+    <li><a href="/documentation/open-source/creating-repo" class=" is-active">Creating a separate repo</a></li>
     <li><a href="/documentation/open-source/module-maintenance" class="">Module maintenance</a></li>
     <li><a href="/documentation/open-source/utility-tools" class="">Utility tools</a></li>
     <li><a href="/documentation/open-source/developing-shared-html-templates" class="">(deprecated) HTML templates</a></li>
-    <li><a href="/documentation/open-source/module-issues" class=" is-active">Issues</a></li>
+    <li><a href="/documentation/open-source/module-issues" class="">Issues</a></li>
 </ul>
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
-                    <h1>Fozzie module issues</h1>
-<h2><code>publish Failed PUT 402</code></h2>
-<h3><em>Problem</em></h3>
-<pre><code class="language-bash">npm ERR! publish Failed PUT 402
-npm ERR! You must sign up <span class="hljs-keyword">for</span> private packages : @justeat/{package-name}
+                    <h1>Creating a separate GitHub repository</h1>
+<p><strong>NOTE:</strong> While we prefer the mono-repo approach, you can also create a separate repository for your Fozzie package.</p>
+<p><a name="naming-your-package"></a></p>
+<h2>Naming your package</h2>
+<p>The general naming convention for a Fozzie package is to use <code>f-{your-package-name}</code> e.g. <a href="https://github.com/justeat/fozzie-components/tree/master/packages/f-footer"><code>f-footer</code></a>, <a href="https://github.com/justeat/fozzie-components/tree/master/packages/f-header"><code>f-header</code></a>, <a href="https://github.com/justeat/fozzie-components/tree/master/packages/f-vue-icons"><code>f-vue-icons</code></a>.</p>
+<p><a name="create-github-repository"></a></p>
+<h2>Create a new Fozzie GitHub repository</h2>
+<p>To create a new repository go to the <a href="https://github.com/new">new repository page</a> and set the owner to the <code>justeat</code> org, visiblity to <code>private</code>, initialise with a README, and add a Node <code>.gitignore</code> &amp; Apache-2.0 license.</p>
+<p><img src="/assets/img/os/create-new-repo.png" alt="Create a new repository on GitHub"></p>
+<p><a name="access-settings"></a></p>
+<h2>Access settings</h2>
+<p>Configure the access settings in <code>Settings</code> -&gt; <code>Collaborators &amp;amp; teams</code> giving the <strong><em>UI Admins</em></strong> team &quot;admin&quot; permissions, and the <strong><em>UI Developers</em></strong> team &quot;write&quot; permissions.</p>
+<p><img src="/assets/img/os/access-settings.png" alt="GitHub repository access settings"></p>
+<p><a name="configure-master-branch-protection"></a></p>
+<h2>Configure master branch protection</h2>
+<p>Configure branch protection in <code>Settings</code> -&gt; <code>Branches</code> selecting the master branch from the dropdown in the &quot;Protected branches&quot; section.</p>
+<p>The minimum recommended settings to select are</p>
+<pre><code>* [x] Protect this <span class="hljs-keyword">branch
+</span>  * [x] <span class="hljs-meta">Require</span> pull request <span class="hljs-keyword">reviews </span><span class="hljs-keyword">before </span>merging
+    * [x] Dismiss stale pull request approvals when new commits are <span class="hljs-keyword">pushed
+</span>    * [x] <span class="hljs-meta">Require</span> <span class="hljs-keyword">review </span>from <span class="hljs-meta">Code</span> Owners
+  * [x] <span class="hljs-meta">Require</span> status checks to pass <span class="hljs-keyword">before </span>merging
+    * [x] <span class="hljs-meta">Require</span> <span class="hljs-keyword">branches </span>to <span class="hljs-keyword">be </span>up to date <span class="hljs-keyword">before </span>merging
 </code></pre>
-<h3><em>Solution</em></h3>
-<p>Execute the publish command with public access — <code>npm publish --access public</code>.</p>
-<h2><code>EPERM: operation not permitted</code></h2>
-<h3><em>Problem</em></h3>
-<pre><code class="language-bash">npm ERR! code EPERM
-npm ERR! errno -4048
-Error: EPERM: operation not permitted
-</code></pre>
-<h3><em>Solution</em></h3>
-<p>Execute the npm login command — <code>npm login</code> — on the command line then sign in using your npm credentials.</p>
-<h2>SCSS imports cannot be found</h2>
-<h3><em>Problem</em></h3>
-<p>If you are having issues with SCSS eyeglass packages which cannot be located e.g.</p>
-<pre><code class="language-bash">Error: Could not import kickoff-utils from any of the following locations:
-&gt;&gt; @import <span class="hljs-string">'kickoff-utils'</span>; // imports a <span class="hljs-built_in">set</span> of helper <span class="hljs-built_in">functions</span> and mixins – h
---------^
-</code></pre>
-<h3><em>Solution</em></h3>
-<p>Check the dependencies section of the package.json file and ensure that the package in question is present — if it's in the devDependencies section then it should be moved to the dependencies section.</p>
-<h2>Package.json <code>&quot;Files&quot;</code> property</h2>
-<h3><em>Problem</em></h3>
-<p>None of the files are present when the package is deployed to npm</p>
-<h3><em>Solution</em></h3>
-<p>The paths should be declared like so</p>
-<p>Bad</p>
-<pre><code class="language-json">"files": [
-  "./dist",
-  "./src/img",
-  "./src/scss"
-]
-</code></pre>
-<p>Good</p>
-<pre><code class="language-json">"files": [
-  "dist",
-  "src/img",
-  "src/scss"
-]
-</code></pre>
+<p><a name="status-checks"></a></p>
+<h3>Status checks</h3>
+<p>If/once you have any services set up with status checks then you'll be able to select them in the &quot;Require status checks to pass before merging&quot; section in order to require the checks to pass before a pull request can be merged.</p>
+<p><a name="publishing-to-npm"></a></p>
+<h2>Publishing to npm</h2>
+<p>To publish a package to <strong>npm</strong>, please first ensure that you have registered an account. You may use an existing public account, but many Just Eat employees prefer to set up a new Just Eat-specific account.</p>
+<p>Internal contributors (Just Eat employees) can request to be added to the Just Eat npm org by asking in the #guild-ui Slack channel and providing your npm account details. External contributors should raise a pull request and the release will be handled for you once approved</p>
+<p>Once you are happy that the package is ready to be published to the npm registry, ensure you are on the correct branch — typically the master branch with the latest changes pulled — then run <code>npm publish</code> on the command line.</p>
+<p><a name="problems"></a></p>
+<h2>Problems</h2>
+<p>Have a look at the <a href="/documentation/open-source/module-issues">module issues page</a> for common issues and how to resolve them.</p>
                 </div>
             </div>
         </div>

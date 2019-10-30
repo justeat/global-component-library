@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Creating a Fozzie module – Just Eat Front-End Component Library and Documentation</title>
+		<title>Overview – Just Eat Front-End Component Library and Documentation</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
@@ -88,75 +88,29 @@
                 
                 
                 
-                    <li><a href="/documentation/open-source" class=" is-active">Creating a module</a></li>
+                    <li><a href="/documentation/open-source" class=" is-active">Overview</a></li>
+    <li><a href="/documentation/open-source/mono-repo" class="">Mono-repo</a></li>
+    <li><a href="/documentation/open-source/creating-repo" class="">Creating a separate repo</a></li>
     <li><a href="/documentation/open-source/module-maintenance" class="">Module maintenance</a></li>
-    <li><a href="/documentation/open-source/utility-tools" class="">Utility Tools</a></li>
-    <li><a href="/documentation/open-source/developing-shared-html-templates" class="">Developing Shared HTML Templates</a></li>
+    <li><a href="/documentation/open-source/utility-tools" class="">Utility tools</a></li>
+    <li><a href="/documentation/open-source/developing-shared-html-templates" class="">(deprecated) HTML templates</a></li>
     <li><a href="/documentation/open-source/module-issues" class="">Issues</a></li>
 </ul>
             </div>
             <div class="g-col g-span10--mid">
                 <div class="c-card c-card--rounded sg-content">
-                    <h1>Creating a Fozzie module</h1>
-<p><a name="naming-your-module"></a></p>
-<h2>Naming your module</h2>
-<p>The general naming convention for a fozzie module is to use <code>f-{your-repo-name}</code> e.g. <a href="https://github.com/justeat/f-icons"><code>f-icons</code></a>, <a href="https://github.com/justeat/f-dom"><code>f-dom</code></a>, <a href="https://github.com/justeat/f-serviceworker"><code>f-serviceworker</code></a>.</p>
-<p><a name="create-the-github-repository"></a></p>
-<h2>Create the GitHub repository</h2>
-<p>To create a new repository go to the <a href="https://github.com/new">new repository page</a> and set the owner to the <code>justeat</code> org, visiblity to <code>private</code>, initialise with a README, and add a Node <code>.gitignore</code> &amp; Apache-2.0 license.</p>
-<p><img src="/assets/img/os/create-new-repo.png" alt="Create a new repository on GitHub"></p>
-<p><a name="access-settings"></a></p>
-<h2>Access settings</h2>
-<p>Configure the access settings in <code>Settings</code> -&gt; <code>Collaborators &amp;amp; teams</code> giving the <strong><em>UI Admins</em></strong> team &quot;admin&quot; permissions, and the <strong><em>UI Developers</em></strong> team &quot;write&quot; permissions.</p>
-<p><img src="/assets/img/os/access-settings.png" alt="GitHub repository access settings"></p>
-<p><a name="configure-master-branch-protection"></a></p>
-<h2>Configure master branch protection</h2>
-<p>Configure branch protection in <code>Settings</code> -&gt; <code>Branches</code> selecting the master branch from the dropdown in the &quot;Protected branches&quot; section.</p>
-<p>The minimum recommended settings to select are</p>
-<pre><code>* [x] Protect this <span class="hljs-keyword">branch
-</span>  * [x] <span class="hljs-meta">Require</span> pull request <span class="hljs-keyword">reviews </span><span class="hljs-keyword">before </span>merging
-    * [x] Dismiss stale pull request approvals when new commits are <span class="hljs-keyword">pushed
-</span>    * [x] <span class="hljs-meta">Require</span> <span class="hljs-keyword">review </span>from <span class="hljs-meta">Code</span> Owners
-  * [x] <span class="hljs-meta">Require</span> status checks to pass <span class="hljs-keyword">before </span>merging
-    * [x] <span class="hljs-meta">Require</span> <span class="hljs-keyword">branches </span>to <span class="hljs-keyword">be </span>up to date <span class="hljs-keyword">before </span>merging
-</code></pre>
-<p><a name="status-checks"></a></p>
-<h3>Status checks</h3>
-<p>If/once you have any services set up with status checks then you'll be able to select them in the &quot;Require status checks to pass before merging&quot; section in order to require the checks to pass before a pull request can be merged.</p>
-<p><a name="set-up-the-project-on-your-computer"></a></p>
-<h2>Seting up the project on your computer</h2>
-<p>The recommended way to add the files required as a starting point for a new module is to <a href="https://github.com/justeat/generator-fozzie">use the Fozzie yeoman generator</a>, follow the instructions in the readme of the project to get started, then follow these steps:</p>
-<ol>
-<li>Clone the repository you created above on your machine</li>
-<li>Create a new branch which will contain the initial files you're going to add</li>
-<li>On the command line, esure you are in the new modules' directory then run <code>yo fozzie</code> and follow the guide.</li>
-<li>Ensure that all the files you expect have been added</li>
-<li>Commit the changes to your new branch
-<ol>
-<li>At this point you can begin work on your module and do the next step once you are happy with your changes.</li>
-</ol></li>
-<li>Push the branch to GitHub and open a pull request</li>
-</ol>
-<p><a name="publishing-to-npm"></a></p>
-<h2>Publishing to npm</h2>
-<p>Before attempting to publish to the npm registry please ensure that you have been added to the Just Eat npm org — <a href="https://www.npmjs.com/org/justeat/members">refer to this page</a> for a list of owners who can add you to the org.</p>
-<p>Once you are happy that the package is ready to be published to the npm registry, ensure you are on the correct branch — typically the master branch with the latest changes pulled — then run <code>npm publish</code> on the command line.</p>
-<p><a name="badges"></a></p>
-<h2>Badges</h2>
-<p><a name="general-badges"></a></p>
-<h3>General Badges</h3>
-<p>These badges should be added to all repositories</p>
-<ul>
-<li>npm version badge from <a href="https://badge.fury.io/">badge.fury.io</a>.</li>
-<li>Gemnasium badge from <a href="https://gemnasium.com/dashboard">gemnasium.com</a>.</li>
-</ul>
-<p><a name="optional-badges"></a></p>
-<h3>Optional Badges</h3>
-<p>To report the build status you can <a href="https://travis-ci.org/justeat/">add a Travis CI badge</a>.</p>
-<p>If there are JavaScript unit tests in the module you can <a href="https://coveralls.io/github/justeat/">add a coveralls badge</a>.</p>
-<p><a name="problems"></a></p>
-<h2>Problems</h2>
-<p>Have a look at the <a href="/documentation/open-source/module-issues">module issues page</a> for common issues and how to resolve them.</p>
+                    <h1>Overview</h1>
+<h2>1. <a href="/documentation/open-source/mono-repo">Mono-repo overview</a></h2>
+<p>Overview of new mono-repo structure for all Fozzie components.</p>
+<h2>2. <a href="/documentation/open-source/creating-repo">Creating a separate GitHub repo</a></h2>
+<p>Information for setting up a standalone GitHub repo for a Fozzie component.</p>
+<h2>3. <a href="/documentation/open-source/module-maintenance">Module maintenance</a></h2>
+<p>Steps for maintaining your Fozzie modules.</p>
+<h2>4. <a href="/documentation/open-source/utility-tools">Utility tools</a></h2>
+<p>Other helpful tools.</p>
+<h2>5. <a href="/documentation/open-source/developing-shared-html-templates">(deprecated) HTML Templates</a></h2>
+<h2>6. <a href="/documentation/open-source/module-issues">Common issues</a></h2>
+<p>Commonly occuring errors.</p>
                 </div>
             </div>
         </div>
