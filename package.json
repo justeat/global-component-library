@@ -2,7 +2,7 @@
   "name": "je-global-component-library",
   "title": "Just Eat – Component Library",
   "description": "Component Library and Guidelines for all of Just Eat’s Front-End Platforms",
-  "version": "2.23.0",
+  "version": "2.23.1",
   "homepage": "https://github.com/justeat/global-component-library",
   "contributors": [
     "Github contributors <https://github.com/justeat/global-component-library/graphs/contributors>"
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.4.5",
-    "@justeat/gulp-build-fozzie": "8.4.0",
+    "@justeat/gulp-build-fozzie": "8.5.0",
     "danger": "6.1.8",
     "eslint-plugin-import": "2.17.3",
     "gulp": "3.9.1"
