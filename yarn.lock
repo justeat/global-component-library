@@ -850,10 +850,10 @@
     kickoff-grid.css "1.2.0"
     normalize-scss "7.0.1"
 
-"@justeat/gulp-build-fozzie@8.4.0":
-  version "8.4.0"
-  resolved "https://registry.yarnpkg.com/@justeat/gulp-build-fozzie/-/gulp-build-fozzie-8.4.0.tgz#e371edd86aef634fe357ef0b09c9df6ed1b3ff6f"
-  integrity sha512-Ig1jd6/Alej5KSJ4IxNhtrn3Jb7q7z7xWlVvqCe3l2TfjLvCLyb7Ykn/a8kI81FC3ecinTNSDywu4YK8cl2JMg==
+"@justeat/gulp-build-fozzie@8.5.0":
+  version "8.5.0"
+  resolved "https://registry.yarnpkg.com/@justeat/gulp-build-fozzie/-/gulp-build-fozzie-8.5.0.tgz#849acdf1abce2160efb280f6811dc669ad744db8"
+  integrity sha512-2KUyjPxDMfoI3XByBL/9yV2kTHrFmRQvD/SyXlReK/YtL2wAFy9kD8PP4TnL+MkLxsymZVQS0T322aAH8OWSiw==
   dependencies:
     "@babel/cli" "^7.1.5"
     "@babel/core" "^7.1.6"
