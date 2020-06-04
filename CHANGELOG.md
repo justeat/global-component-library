@@ -4,9 +4,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
+v2.25.0
+------------------------------
+*June 4, 2020*
+
+### Fixed
+- Packages updated so that component library runs.
+- Media element nav item fixed.
+
+
 v2.24.1
 ------------------------------
-*january 2, 2020*
+*January 2, 2020*
 
 ### Fixed
 - Small discrepancy in asterisks

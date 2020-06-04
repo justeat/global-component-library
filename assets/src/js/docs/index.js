@@ -83,7 +83,7 @@ const docs = {
 
         toggleContainer.classList.add('sg-themeToggle');
 
-        toggleBtn.classList.add('o-btn', 'o-btn--outline', 'sg-themeToggle-btn');
+        toggleBtn.classList.add('o-btn', 'o-btn--secondary', 'sg-themeToggle-btn');
         toggleBtn.textContent = 'Switch to Menulog';
         toggleBtn.addEventListener('click', docs._themeToggle);
 
